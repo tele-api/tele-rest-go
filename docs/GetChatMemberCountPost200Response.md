@@ -1,0 +1,72 @@
+# GetChatMemberCountPost200Response
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Ok** | **bool** |  | [default to true]
+**Result** | **int32** |  | 
+
+## Methods
+
+### NewGetChatMemberCountPost200Response
+
+`func NewGetChatMemberCountPost200Response(ok bool, result int32, ) *GetChatMemberCountPost200Response`
+
+NewGetChatMemberCountPost200Response instantiates a new GetChatMemberCountPost200Response object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewGetChatMemberCountPost200ResponseWithDefaults
+
+`func NewGetChatMemberCountPost200ResponseWithDefaults() *GetChatMemberCountPost200Response`
+
+NewGetChatMemberCountPost200ResponseWithDefaults instantiates a new GetChatMemberCountPost200Response object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetOk
+
+`func (o *GetChatMemberCountPost200Response) GetOk() bool`
+
+GetOk returns the Ok field if non-nil, zero value otherwise.
+
+### GetOkOk
+
+`func (o *GetChatMemberCountPost200Response) GetOkOk() (*bool, bool)`
+
+GetOkOk returns a tuple with the Ok field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOk
+
+`func (o *GetChatMemberCountPost200Response) SetOk(v bool)`
+
+SetOk sets Ok field to given value.
+
+
+### GetResult
+
+`func (o *GetChatMemberCountPost200Response) GetResult() int32`
+
+GetResult returns the Result field if non-nil, zero value otherwise.
+
+### GetResultOk
+
+`func (o *GetChatMemberCountPost200Response) GetResultOk() (*int32, bool)`
+
+GetResultOk returns a tuple with the Result field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResult
+
+`func (o *GetChatMemberCountPost200Response) SetResult(v int32)`
+
+SetResult sets Result field to given value.
+
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

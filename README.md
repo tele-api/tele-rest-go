@@ -1,12 +1,13 @@
 # Go API client for tele_rest
 
-Auto-generated OpenAPI schema
+The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram.
+To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
 
 ## Overview
 
 - API version: 9.0.0
 - Package version: 9.0.0
-- Build date: 2025-07-01T14:14:20.091913680Z[Etc/UTC]
+- Build date: 2025-07-01T14:36:13.209453861Z[Etc/UTC]
 - Generator version: 7.14.0
 
 ## Installation
@@ -686,5 +687,5 @@ Each of these functions takes a value of the given basic type and returns a poin
 
 ## Author
 
-
+gitctrlx@gmail.com
 

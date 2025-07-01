@@ -1,12 +1,12 @@
 /** 
  * Telegram Bot API - REST API Client
- * Auto-generated OpenAPI schema
+ * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
  *    * - **Version**: 9.0.0
- *    * - **Modified**: 2025-07-01T14:14:20.091913680Z[Etc/UTC]
+ *    * - **Modified**: 2025-07-01T14:36:13.209453861Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -47,59 +47,105 @@ package tele_rest
 import (
 	"encoding/json"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
-
-// ChatBoostSource This object describes the source of a chat boost. It can be one of  * [ChatBoostSourcePremium](https://core.telegram.org/bots/api/#chatboostsourcepremium) * [ChatBoostSourceGiftCode](https://core.telegram.org/bots/api/#chatboostsourcegiftcode) * [ChatBoostSourceGiveaway](https://core.telegram.org/bots/api/#chatboostsourcegiveaway)
+// ChatBoostSource - This object describes the source of a chat boost. It can be one of  * [ChatBoostSourcePremium](https://core.telegram.org/bots/api/#chatboostsourcepremium) * [ChatBoostSourceGiftCode](https://core.telegram.org/bots/api/#chatboostsourcegiftcode) * [ChatBoostSourceGiveaway](https://core.telegram.org/bots/api/#chatboostsourcegiveaway)
 type ChatBoostSource struct {
 	ChatBoostSourceGiftCode *ChatBoostSourceGiftCode
 	ChatBoostSourceGiveaway *ChatBoostSourceGiveaway
 	ChatBoostSourcePremium *ChatBoostSourcePremium
 }
 
-// Unmarshal JSON data into any of the pointers in the struct
+// ChatBoostSourceGiftCodeAsChatBoostSource is a convenience function that returns ChatBoostSourceGiftCode wrapped in ChatBoostSource
+func ChatBoostSourceGiftCodeAsChatBoostSource(v *ChatBoostSourceGiftCode) ChatBoostSource {
+	return ChatBoostSource{
+		ChatBoostSourceGiftCode: v,
+	}
+}
+
+// ChatBoostSourceGiveawayAsChatBoostSource is a convenience function that returns ChatBoostSourceGiveaway wrapped in ChatBoostSource
+func ChatBoostSourceGiveawayAsChatBoostSource(v *ChatBoostSourceGiveaway) ChatBoostSource {
+	return ChatBoostSource{
+		ChatBoostSourceGiveaway: v,
+	}
+}
+
+// ChatBoostSourcePremiumAsChatBoostSource is a convenience function that returns ChatBoostSourcePremium wrapped in ChatBoostSource
+func ChatBoostSourcePremiumAsChatBoostSource(v *ChatBoostSourcePremium) ChatBoostSource {
+	return ChatBoostSource{
+		ChatBoostSourcePremium: v,
+	}
+}
+
+
+// Unmarshal JSON data into one of the pointers in the struct
 func (dst *ChatBoostSource) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ChatBoostSourceGiftCode
-	err = json.Unmarshal(data, &dst.ChatBoostSourceGiftCode);
+	match := 0
+	// try to unmarshal data into ChatBoostSourceGiftCode
+	err = newStrictDecoder(data).Decode(&dst.ChatBoostSourceGiftCode)
 	if err == nil {
 		jsonChatBoostSourceGiftCode, _ := json.Marshal(dst.ChatBoostSourceGiftCode)
 		if string(jsonChatBoostSourceGiftCode) == "{}" { // empty struct
 			dst.ChatBoostSourceGiftCode = nil
 		} else {
-			return nil // data stored in dst.ChatBoostSourceGiftCode, return on the first match
+			if err = validator.Validate(dst.ChatBoostSourceGiftCode); err != nil {
+				dst.ChatBoostSourceGiftCode = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.ChatBoostSourceGiftCode = nil
 	}
 
-	// try to unmarshal JSON data into ChatBoostSourceGiveaway
-	err = json.Unmarshal(data, &dst.ChatBoostSourceGiveaway);
+	// try to unmarshal data into ChatBoostSourceGiveaway
+	err = newStrictDecoder(data).Decode(&dst.ChatBoostSourceGiveaway)
 	if err == nil {
 		jsonChatBoostSourceGiveaway, _ := json.Marshal(dst.ChatBoostSourceGiveaway)
 		if string(jsonChatBoostSourceGiveaway) == "{}" { // empty struct
 			dst.ChatBoostSourceGiveaway = nil
 		} else {
-			return nil // data stored in dst.ChatBoostSourceGiveaway, return on the first match
+			if err = validator.Validate(dst.ChatBoostSourceGiveaway); err != nil {
+				dst.ChatBoostSourceGiveaway = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.ChatBoostSourceGiveaway = nil
 	}
 
-	// try to unmarshal JSON data into ChatBoostSourcePremium
-	err = json.Unmarshal(data, &dst.ChatBoostSourcePremium);
+	// try to unmarshal data into ChatBoostSourcePremium
+	err = newStrictDecoder(data).Decode(&dst.ChatBoostSourcePremium)
 	if err == nil {
 		jsonChatBoostSourcePremium, _ := json.Marshal(dst.ChatBoostSourcePremium)
 		if string(jsonChatBoostSourcePremium) == "{}" { // empty struct
 			dst.ChatBoostSourcePremium = nil
 		} else {
-			return nil // data stored in dst.ChatBoostSourcePremium, return on the first match
+			if err = validator.Validate(dst.ChatBoostSourcePremium); err != nil {
+				dst.ChatBoostSourcePremium = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.ChatBoostSourcePremium = nil
 	}
 
-	return fmt.Errorf("data failed to match schemas in anyOf(ChatBoostSource)")
+	if match > 1 { // more than 1 match
+		// reset to nil
+		dst.ChatBoostSourceGiftCode = nil
+		dst.ChatBoostSourceGiveaway = nil
+		dst.ChatBoostSourcePremium = nil
+
+		return fmt.Errorf("data matches more than one schema in oneOf(ChatBoostSource)")
+	} else if match == 1 {
+		return nil // exactly one match
+	} else { // no match
+		return fmt.Errorf("data failed to match schemas in oneOf(ChatBoostSource)")
+	}
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON
@@ -116,9 +162,47 @@ func (src ChatBoostSource) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.ChatBoostSourcePremium)
 	}
 
-	return nil, nil // no data in anyOf schemas
+	return nil, nil // no data in oneOf schemas
 }
 
+// Get the actual instance
+func (obj *ChatBoostSource) GetActualInstance() (interface{}) {
+	if obj == nil {
+		return nil
+	}
+	if obj.ChatBoostSourceGiftCode != nil {
+		return obj.ChatBoostSourceGiftCode
+	}
+
+	if obj.ChatBoostSourceGiveaway != nil {
+		return obj.ChatBoostSourceGiveaway
+	}
+
+	if obj.ChatBoostSourcePremium != nil {
+		return obj.ChatBoostSourcePremium
+	}
+
+	// all schemas are nil
+	return nil
+}
+
+// Get the actual instance value
+func (obj ChatBoostSource) GetActualInstanceValue() (interface{}) {
+	if obj.ChatBoostSourceGiftCode != nil {
+		return *obj.ChatBoostSourceGiftCode
+	}
+
+	if obj.ChatBoostSourceGiveaway != nil {
+		return *obj.ChatBoostSourceGiveaway
+	}
+
+	if obj.ChatBoostSourcePremium != nil {
+		return *obj.ChatBoostSourcePremium
+	}
+
+	// all schemas are nil
+	return nil
+}
 
 type NullableChatBoostSource struct {
 	value *ChatBoostSource

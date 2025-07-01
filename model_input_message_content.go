@@ -1,12 +1,12 @@
 /** 
  * Telegram Bot API - REST API Client
- * Auto-generated OpenAPI schema
+ * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
  *    * - **Version**: 9.0.0
- *    * - **Modified**: 2025-07-01T14:14:20.091913680Z[Etc/UTC]
+ *    * - **Modified**: 2025-07-01T14:36:13.209453861Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -47,10 +47,10 @@ package tele_rest
 import (
 	"encoding/json"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
-
-// InputMessageContent This object represents the content of a message to be sent as a result of an inline query. Telegram clients currently support the following 5 types:  * [InputTextMessageContent](https://core.telegram.org/bots/api/#inputtextmessagecontent) * [InputLocationMessageContent](https://core.telegram.org/bots/api/#inputlocationmessagecontent) * [InputVenueMessageContent](https://core.telegram.org/bots/api/#inputvenuemessagecontent) * [InputContactMessageContent](https://core.telegram.org/bots/api/#inputcontactmessagecontent) * [InputInvoiceMessageContent](https://core.telegram.org/bots/api/#inputinvoicemessagecontent)
+// InputMessageContent - This object represents the content of a message to be sent as a result of an inline query. Telegram clients currently support the following 5 types:  * [InputTextMessageContent](https://core.telegram.org/bots/api/#inputtextmessagecontent) * [InputLocationMessageContent](https://core.telegram.org/bots/api/#inputlocationmessagecontent) * [InputVenueMessageContent](https://core.telegram.org/bots/api/#inputvenuemessagecontent) * [InputContactMessageContent](https://core.telegram.org/bots/api/#inputcontactmessagecontent) * [InputInvoiceMessageContent](https://core.telegram.org/bots/api/#inputinvoicemessagecontent)
 type InputMessageContent struct {
 	InputContactMessageContent *InputContactMessageContent
 	InputInvoiceMessageContent *InputInvoiceMessageContent
@@ -59,75 +59,145 @@ type InputMessageContent struct {
 	InputVenueMessageContent *InputVenueMessageContent
 }
 
-// Unmarshal JSON data into any of the pointers in the struct
+// InputContactMessageContentAsInputMessageContent is a convenience function that returns InputContactMessageContent wrapped in InputMessageContent
+func InputContactMessageContentAsInputMessageContent(v *InputContactMessageContent) InputMessageContent {
+	return InputMessageContent{
+		InputContactMessageContent: v,
+	}
+}
+
+// InputInvoiceMessageContentAsInputMessageContent is a convenience function that returns InputInvoiceMessageContent wrapped in InputMessageContent
+func InputInvoiceMessageContentAsInputMessageContent(v *InputInvoiceMessageContent) InputMessageContent {
+	return InputMessageContent{
+		InputInvoiceMessageContent: v,
+	}
+}
+
+// InputLocationMessageContentAsInputMessageContent is a convenience function that returns InputLocationMessageContent wrapped in InputMessageContent
+func InputLocationMessageContentAsInputMessageContent(v *InputLocationMessageContent) InputMessageContent {
+	return InputMessageContent{
+		InputLocationMessageContent: v,
+	}
+}
+
+// InputTextMessageContentAsInputMessageContent is a convenience function that returns InputTextMessageContent wrapped in InputMessageContent
+func InputTextMessageContentAsInputMessageContent(v *InputTextMessageContent) InputMessageContent {
+	return InputMessageContent{
+		InputTextMessageContent: v,
+	}
+}
+
+// InputVenueMessageContentAsInputMessageContent is a convenience function that returns InputVenueMessageContent wrapped in InputMessageContent
+func InputVenueMessageContentAsInputMessageContent(v *InputVenueMessageContent) InputMessageContent {
+	return InputMessageContent{
+		InputVenueMessageContent: v,
+	}
+}
+
+
+// Unmarshal JSON data into one of the pointers in the struct
 func (dst *InputMessageContent) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into InputContactMessageContent
-	err = json.Unmarshal(data, &dst.InputContactMessageContent);
+	match := 0
+	// try to unmarshal data into InputContactMessageContent
+	err = newStrictDecoder(data).Decode(&dst.InputContactMessageContent)
 	if err == nil {
 		jsonInputContactMessageContent, _ := json.Marshal(dst.InputContactMessageContent)
 		if string(jsonInputContactMessageContent) == "{}" { // empty struct
 			dst.InputContactMessageContent = nil
 		} else {
-			return nil // data stored in dst.InputContactMessageContent, return on the first match
+			if err = validator.Validate(dst.InputContactMessageContent); err != nil {
+				dst.InputContactMessageContent = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.InputContactMessageContent = nil
 	}
 
-	// try to unmarshal JSON data into InputInvoiceMessageContent
-	err = json.Unmarshal(data, &dst.InputInvoiceMessageContent);
+	// try to unmarshal data into InputInvoiceMessageContent
+	err = newStrictDecoder(data).Decode(&dst.InputInvoiceMessageContent)
 	if err == nil {
 		jsonInputInvoiceMessageContent, _ := json.Marshal(dst.InputInvoiceMessageContent)
 		if string(jsonInputInvoiceMessageContent) == "{}" { // empty struct
 			dst.InputInvoiceMessageContent = nil
 		} else {
-			return nil // data stored in dst.InputInvoiceMessageContent, return on the first match
+			if err = validator.Validate(dst.InputInvoiceMessageContent); err != nil {
+				dst.InputInvoiceMessageContent = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.InputInvoiceMessageContent = nil
 	}
 
-	// try to unmarshal JSON data into InputLocationMessageContent
-	err = json.Unmarshal(data, &dst.InputLocationMessageContent);
+	// try to unmarshal data into InputLocationMessageContent
+	err = newStrictDecoder(data).Decode(&dst.InputLocationMessageContent)
 	if err == nil {
 		jsonInputLocationMessageContent, _ := json.Marshal(dst.InputLocationMessageContent)
 		if string(jsonInputLocationMessageContent) == "{}" { // empty struct
 			dst.InputLocationMessageContent = nil
 		} else {
-			return nil // data stored in dst.InputLocationMessageContent, return on the first match
+			if err = validator.Validate(dst.InputLocationMessageContent); err != nil {
+				dst.InputLocationMessageContent = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.InputLocationMessageContent = nil
 	}
 
-	// try to unmarshal JSON data into InputTextMessageContent
-	err = json.Unmarshal(data, &dst.InputTextMessageContent);
+	// try to unmarshal data into InputTextMessageContent
+	err = newStrictDecoder(data).Decode(&dst.InputTextMessageContent)
 	if err == nil {
 		jsonInputTextMessageContent, _ := json.Marshal(dst.InputTextMessageContent)
 		if string(jsonInputTextMessageContent) == "{}" { // empty struct
 			dst.InputTextMessageContent = nil
 		} else {
-			return nil // data stored in dst.InputTextMessageContent, return on the first match
+			if err = validator.Validate(dst.InputTextMessageContent); err != nil {
+				dst.InputTextMessageContent = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.InputTextMessageContent = nil
 	}
 
-	// try to unmarshal JSON data into InputVenueMessageContent
-	err = json.Unmarshal(data, &dst.InputVenueMessageContent);
+	// try to unmarshal data into InputVenueMessageContent
+	err = newStrictDecoder(data).Decode(&dst.InputVenueMessageContent)
 	if err == nil {
 		jsonInputVenueMessageContent, _ := json.Marshal(dst.InputVenueMessageContent)
 		if string(jsonInputVenueMessageContent) == "{}" { // empty struct
 			dst.InputVenueMessageContent = nil
 		} else {
-			return nil // data stored in dst.InputVenueMessageContent, return on the first match
+			if err = validator.Validate(dst.InputVenueMessageContent); err != nil {
+				dst.InputVenueMessageContent = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.InputVenueMessageContent = nil
 	}
 
-	return fmt.Errorf("data failed to match schemas in anyOf(InputMessageContent)")
+	if match > 1 { // more than 1 match
+		// reset to nil
+		dst.InputContactMessageContent = nil
+		dst.InputInvoiceMessageContent = nil
+		dst.InputLocationMessageContent = nil
+		dst.InputTextMessageContent = nil
+		dst.InputVenueMessageContent = nil
+
+		return fmt.Errorf("data matches more than one schema in oneOf(InputMessageContent)")
+	} else if match == 1 {
+		return nil // exactly one match
+	} else { // no match
+		return fmt.Errorf("data failed to match schemas in oneOf(InputMessageContent)")
+	}
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON
@@ -152,9 +222,63 @@ func (src InputMessageContent) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.InputVenueMessageContent)
 	}
 
-	return nil, nil // no data in anyOf schemas
+	return nil, nil // no data in oneOf schemas
 }
 
+// Get the actual instance
+func (obj *InputMessageContent) GetActualInstance() (interface{}) {
+	if obj == nil {
+		return nil
+	}
+	if obj.InputContactMessageContent != nil {
+		return obj.InputContactMessageContent
+	}
+
+	if obj.InputInvoiceMessageContent != nil {
+		return obj.InputInvoiceMessageContent
+	}
+
+	if obj.InputLocationMessageContent != nil {
+		return obj.InputLocationMessageContent
+	}
+
+	if obj.InputTextMessageContent != nil {
+		return obj.InputTextMessageContent
+	}
+
+	if obj.InputVenueMessageContent != nil {
+		return obj.InputVenueMessageContent
+	}
+
+	// all schemas are nil
+	return nil
+}
+
+// Get the actual instance value
+func (obj InputMessageContent) GetActualInstanceValue() (interface{}) {
+	if obj.InputContactMessageContent != nil {
+		return *obj.InputContactMessageContent
+	}
+
+	if obj.InputInvoiceMessageContent != nil {
+		return *obj.InputInvoiceMessageContent
+	}
+
+	if obj.InputLocationMessageContent != nil {
+		return *obj.InputLocationMessageContent
+	}
+
+	if obj.InputTextMessageContent != nil {
+		return *obj.InputTextMessageContent
+	}
+
+	if obj.InputVenueMessageContent != nil {
+		return *obj.InputVenueMessageContent
+	}
+
+	// all schemas are nil
+	return nil
+}
 
 type NullableInputMessageContent struct {
 	value *InputMessageContent

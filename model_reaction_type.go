@@ -1,12 +1,12 @@
 /** 
  * Telegram Bot API - REST API Client
- * Auto-generated OpenAPI schema
+ * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
  *    * - **Version**: 9.0.0
- *    * - **Modified**: 2025-07-01T14:14:20.091913680Z[Etc/UTC]
+ *    * - **Modified**: 2025-07-01T14:36:13.209453861Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -47,59 +47,105 @@ package tele_rest
 import (
 	"encoding/json"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
-
-// ReactionType This object describes the type of a reaction. Currently, it can be one of  * [ReactionTypeEmoji](https://core.telegram.org/bots/api/#reactiontypeemoji) * [ReactionTypeCustomEmoji](https://core.telegram.org/bots/api/#reactiontypecustomemoji) * [ReactionTypePaid](https://core.telegram.org/bots/api/#reactiontypepaid)
+// ReactionType - This object describes the type of a reaction. Currently, it can be one of  * [ReactionTypeEmoji](https://core.telegram.org/bots/api/#reactiontypeemoji) * [ReactionTypeCustomEmoji](https://core.telegram.org/bots/api/#reactiontypecustomemoji) * [ReactionTypePaid](https://core.telegram.org/bots/api/#reactiontypepaid)
 type ReactionType struct {
 	ReactionTypeCustomEmoji *ReactionTypeCustomEmoji
 	ReactionTypeEmoji *ReactionTypeEmoji
 	ReactionTypePaid *ReactionTypePaid
 }
 
-// Unmarshal JSON data into any of the pointers in the struct
+// ReactionTypeCustomEmojiAsReactionType is a convenience function that returns ReactionTypeCustomEmoji wrapped in ReactionType
+func ReactionTypeCustomEmojiAsReactionType(v *ReactionTypeCustomEmoji) ReactionType {
+	return ReactionType{
+		ReactionTypeCustomEmoji: v,
+	}
+}
+
+// ReactionTypeEmojiAsReactionType is a convenience function that returns ReactionTypeEmoji wrapped in ReactionType
+func ReactionTypeEmojiAsReactionType(v *ReactionTypeEmoji) ReactionType {
+	return ReactionType{
+		ReactionTypeEmoji: v,
+	}
+}
+
+// ReactionTypePaidAsReactionType is a convenience function that returns ReactionTypePaid wrapped in ReactionType
+func ReactionTypePaidAsReactionType(v *ReactionTypePaid) ReactionType {
+	return ReactionType{
+		ReactionTypePaid: v,
+	}
+}
+
+
+// Unmarshal JSON data into one of the pointers in the struct
 func (dst *ReactionType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ReactionTypeCustomEmoji
-	err = json.Unmarshal(data, &dst.ReactionTypeCustomEmoji);
+	match := 0
+	// try to unmarshal data into ReactionTypeCustomEmoji
+	err = newStrictDecoder(data).Decode(&dst.ReactionTypeCustomEmoji)
 	if err == nil {
 		jsonReactionTypeCustomEmoji, _ := json.Marshal(dst.ReactionTypeCustomEmoji)
 		if string(jsonReactionTypeCustomEmoji) == "{}" { // empty struct
 			dst.ReactionTypeCustomEmoji = nil
 		} else {
-			return nil // data stored in dst.ReactionTypeCustomEmoji, return on the first match
+			if err = validator.Validate(dst.ReactionTypeCustomEmoji); err != nil {
+				dst.ReactionTypeCustomEmoji = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.ReactionTypeCustomEmoji = nil
 	}
 
-	// try to unmarshal JSON data into ReactionTypeEmoji
-	err = json.Unmarshal(data, &dst.ReactionTypeEmoji);
+	// try to unmarshal data into ReactionTypeEmoji
+	err = newStrictDecoder(data).Decode(&dst.ReactionTypeEmoji)
 	if err == nil {
 		jsonReactionTypeEmoji, _ := json.Marshal(dst.ReactionTypeEmoji)
 		if string(jsonReactionTypeEmoji) == "{}" { // empty struct
 			dst.ReactionTypeEmoji = nil
 		} else {
-			return nil // data stored in dst.ReactionTypeEmoji, return on the first match
+			if err = validator.Validate(dst.ReactionTypeEmoji); err != nil {
+				dst.ReactionTypeEmoji = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.ReactionTypeEmoji = nil
 	}
 
-	// try to unmarshal JSON data into ReactionTypePaid
-	err = json.Unmarshal(data, &dst.ReactionTypePaid);
+	// try to unmarshal data into ReactionTypePaid
+	err = newStrictDecoder(data).Decode(&dst.ReactionTypePaid)
 	if err == nil {
 		jsonReactionTypePaid, _ := json.Marshal(dst.ReactionTypePaid)
 		if string(jsonReactionTypePaid) == "{}" { // empty struct
 			dst.ReactionTypePaid = nil
 		} else {
-			return nil // data stored in dst.ReactionTypePaid, return on the first match
+			if err = validator.Validate(dst.ReactionTypePaid); err != nil {
+				dst.ReactionTypePaid = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.ReactionTypePaid = nil
 	}
 
-	return fmt.Errorf("data failed to match schemas in anyOf(ReactionType)")
+	if match > 1 { // more than 1 match
+		// reset to nil
+		dst.ReactionTypeCustomEmoji = nil
+		dst.ReactionTypeEmoji = nil
+		dst.ReactionTypePaid = nil
+
+		return fmt.Errorf("data matches more than one schema in oneOf(ReactionType)")
+	} else if match == 1 {
+		return nil // exactly one match
+	} else { // no match
+		return fmt.Errorf("data failed to match schemas in oneOf(ReactionType)")
+	}
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON
@@ -116,9 +162,47 @@ func (src ReactionType) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.ReactionTypePaid)
 	}
 
-	return nil, nil // no data in anyOf schemas
+	return nil, nil // no data in oneOf schemas
 }
 
+// Get the actual instance
+func (obj *ReactionType) GetActualInstance() (interface{}) {
+	if obj == nil {
+		return nil
+	}
+	if obj.ReactionTypeCustomEmoji != nil {
+		return obj.ReactionTypeCustomEmoji
+	}
+
+	if obj.ReactionTypeEmoji != nil {
+		return obj.ReactionTypeEmoji
+	}
+
+	if obj.ReactionTypePaid != nil {
+		return obj.ReactionTypePaid
+	}
+
+	// all schemas are nil
+	return nil
+}
+
+// Get the actual instance value
+func (obj ReactionType) GetActualInstanceValue() (interface{}) {
+	if obj.ReactionTypeCustomEmoji != nil {
+		return *obj.ReactionTypeCustomEmoji
+	}
+
+	if obj.ReactionTypeEmoji != nil {
+		return *obj.ReactionTypeEmoji
+	}
+
+	if obj.ReactionTypePaid != nil {
+		return *obj.ReactionTypePaid
+	}
+
+	// all schemas are nil
+	return nil
+}
 
 type NullableReactionType struct {
 	value *ReactionType

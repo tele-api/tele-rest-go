@@ -1,12 +1,12 @@
 /** 
  * Telegram Bot API - REST API Client
- * Auto-generated OpenAPI schema
+ * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
  *    * - **Version**: 9.0.0
- *    * - **Modified**: 2025-07-01T14:14:20.091913680Z[Etc/UTC]
+ *    * - **Modified**: 2025-07-01T14:36:13.209453861Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -47,45 +47,79 @@ package tele_rest
 import (
 	"encoding/json"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
-
-// OwnedGift This object describes a gift received and owned by a user or a chat. Currently, it can be one of  * [OwnedGiftRegular](https://core.telegram.org/bots/api/#ownedgiftregular) * [OwnedGiftUnique](https://core.telegram.org/bots/api/#ownedgiftunique)
+// OwnedGift - This object describes a gift received and owned by a user or a chat. Currently, it can be one of  * [OwnedGiftRegular](https://core.telegram.org/bots/api/#ownedgiftregular) * [OwnedGiftUnique](https://core.telegram.org/bots/api/#ownedgiftunique)
 type OwnedGift struct {
 	OwnedGiftRegular *OwnedGiftRegular
 	OwnedGiftUnique *OwnedGiftUnique
 }
 
-// Unmarshal JSON data into any of the pointers in the struct
+// OwnedGiftRegularAsOwnedGift is a convenience function that returns OwnedGiftRegular wrapped in OwnedGift
+func OwnedGiftRegularAsOwnedGift(v *OwnedGiftRegular) OwnedGift {
+	return OwnedGift{
+		OwnedGiftRegular: v,
+	}
+}
+
+// OwnedGiftUniqueAsOwnedGift is a convenience function that returns OwnedGiftUnique wrapped in OwnedGift
+func OwnedGiftUniqueAsOwnedGift(v *OwnedGiftUnique) OwnedGift {
+	return OwnedGift{
+		OwnedGiftUnique: v,
+	}
+}
+
+
+// Unmarshal JSON data into one of the pointers in the struct
 func (dst *OwnedGift) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into OwnedGiftRegular
-	err = json.Unmarshal(data, &dst.OwnedGiftRegular);
+	match := 0
+	// try to unmarshal data into OwnedGiftRegular
+	err = newStrictDecoder(data).Decode(&dst.OwnedGiftRegular)
 	if err == nil {
 		jsonOwnedGiftRegular, _ := json.Marshal(dst.OwnedGiftRegular)
 		if string(jsonOwnedGiftRegular) == "{}" { // empty struct
 			dst.OwnedGiftRegular = nil
 		} else {
-			return nil // data stored in dst.OwnedGiftRegular, return on the first match
+			if err = validator.Validate(dst.OwnedGiftRegular); err != nil {
+				dst.OwnedGiftRegular = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.OwnedGiftRegular = nil
 	}
 
-	// try to unmarshal JSON data into OwnedGiftUnique
-	err = json.Unmarshal(data, &dst.OwnedGiftUnique);
+	// try to unmarshal data into OwnedGiftUnique
+	err = newStrictDecoder(data).Decode(&dst.OwnedGiftUnique)
 	if err == nil {
 		jsonOwnedGiftUnique, _ := json.Marshal(dst.OwnedGiftUnique)
 		if string(jsonOwnedGiftUnique) == "{}" { // empty struct
 			dst.OwnedGiftUnique = nil
 		} else {
-			return nil // data stored in dst.OwnedGiftUnique, return on the first match
+			if err = validator.Validate(dst.OwnedGiftUnique); err != nil {
+				dst.OwnedGiftUnique = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.OwnedGiftUnique = nil
 	}
 
-	return fmt.Errorf("data failed to match schemas in anyOf(OwnedGift)")
+	if match > 1 { // more than 1 match
+		// reset to nil
+		dst.OwnedGiftRegular = nil
+		dst.OwnedGiftUnique = nil
+
+		return fmt.Errorf("data matches more than one schema in oneOf(OwnedGift)")
+	} else if match == 1 {
+		return nil // exactly one match
+	} else { // no match
+		return fmt.Errorf("data failed to match schemas in oneOf(OwnedGift)")
+	}
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON
@@ -98,9 +132,39 @@ func (src OwnedGift) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.OwnedGiftUnique)
 	}
 
-	return nil, nil // no data in anyOf schemas
+	return nil, nil // no data in oneOf schemas
 }
 
+// Get the actual instance
+func (obj *OwnedGift) GetActualInstance() (interface{}) {
+	if obj == nil {
+		return nil
+	}
+	if obj.OwnedGiftRegular != nil {
+		return obj.OwnedGiftRegular
+	}
+
+	if obj.OwnedGiftUnique != nil {
+		return obj.OwnedGiftUnique
+	}
+
+	// all schemas are nil
+	return nil
+}
+
+// Get the actual instance value
+func (obj OwnedGift) GetActualInstanceValue() (interface{}) {
+	if obj.OwnedGiftRegular != nil {
+		return *obj.OwnedGiftRegular
+	}
+
+	if obj.OwnedGiftUnique != nil {
+		return *obj.OwnedGiftUnique
+	}
+
+	// all schemas are nil
+	return nil
+}
 
 type NullableOwnedGift struct {
 	value *OwnedGift

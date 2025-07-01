@@ -1,12 +1,12 @@
 /** 
  * Telegram Bot API - REST API Client
- * Auto-generated OpenAPI schema
+ * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
  *    * - **Version**: 9.0.0
- *    * - **Modified**: 2025-07-01T14:14:20.091913680Z[Etc/UTC]
+ *    * - **Modified**: 2025-07-01T14:36:13.209453861Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -47,45 +47,79 @@ package tele_rest
 import (
 	"encoding/json"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
-
-// InputProfilePhoto This object describes a profile photo to set. Currently, it can be one of  * [InputProfilePhotoStatic](https://core.telegram.org/bots/api/#inputprofilephotostatic) * [InputProfilePhotoAnimated](https://core.telegram.org/bots/api/#inputprofilephotoanimated)
+// InputProfilePhoto - This object describes a profile photo to set. Currently, it can be one of  * [InputProfilePhotoStatic](https://core.telegram.org/bots/api/#inputprofilephotostatic) * [InputProfilePhotoAnimated](https://core.telegram.org/bots/api/#inputprofilephotoanimated)
 type InputProfilePhoto struct {
 	InputProfilePhotoAnimated *InputProfilePhotoAnimated
 	InputProfilePhotoStatic *InputProfilePhotoStatic
 }
 
-// Unmarshal JSON data into any of the pointers in the struct
+// InputProfilePhotoAnimatedAsInputProfilePhoto is a convenience function that returns InputProfilePhotoAnimated wrapped in InputProfilePhoto
+func InputProfilePhotoAnimatedAsInputProfilePhoto(v *InputProfilePhotoAnimated) InputProfilePhoto {
+	return InputProfilePhoto{
+		InputProfilePhotoAnimated: v,
+	}
+}
+
+// InputProfilePhotoStaticAsInputProfilePhoto is a convenience function that returns InputProfilePhotoStatic wrapped in InputProfilePhoto
+func InputProfilePhotoStaticAsInputProfilePhoto(v *InputProfilePhotoStatic) InputProfilePhoto {
+	return InputProfilePhoto{
+		InputProfilePhotoStatic: v,
+	}
+}
+
+
+// Unmarshal JSON data into one of the pointers in the struct
 func (dst *InputProfilePhoto) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into InputProfilePhotoAnimated
-	err = json.Unmarshal(data, &dst.InputProfilePhotoAnimated);
+	match := 0
+	// try to unmarshal data into InputProfilePhotoAnimated
+	err = newStrictDecoder(data).Decode(&dst.InputProfilePhotoAnimated)
 	if err == nil {
 		jsonInputProfilePhotoAnimated, _ := json.Marshal(dst.InputProfilePhotoAnimated)
 		if string(jsonInputProfilePhotoAnimated) == "{}" { // empty struct
 			dst.InputProfilePhotoAnimated = nil
 		} else {
-			return nil // data stored in dst.InputProfilePhotoAnimated, return on the first match
+			if err = validator.Validate(dst.InputProfilePhotoAnimated); err != nil {
+				dst.InputProfilePhotoAnimated = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.InputProfilePhotoAnimated = nil
 	}
 
-	// try to unmarshal JSON data into InputProfilePhotoStatic
-	err = json.Unmarshal(data, &dst.InputProfilePhotoStatic);
+	// try to unmarshal data into InputProfilePhotoStatic
+	err = newStrictDecoder(data).Decode(&dst.InputProfilePhotoStatic)
 	if err == nil {
 		jsonInputProfilePhotoStatic, _ := json.Marshal(dst.InputProfilePhotoStatic)
 		if string(jsonInputProfilePhotoStatic) == "{}" { // empty struct
 			dst.InputProfilePhotoStatic = nil
 		} else {
-			return nil // data stored in dst.InputProfilePhotoStatic, return on the first match
+			if err = validator.Validate(dst.InputProfilePhotoStatic); err != nil {
+				dst.InputProfilePhotoStatic = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.InputProfilePhotoStatic = nil
 	}
 
-	return fmt.Errorf("data failed to match schemas in anyOf(InputProfilePhoto)")
+	if match > 1 { // more than 1 match
+		// reset to nil
+		dst.InputProfilePhotoAnimated = nil
+		dst.InputProfilePhotoStatic = nil
+
+		return fmt.Errorf("data matches more than one schema in oneOf(InputProfilePhoto)")
+	} else if match == 1 {
+		return nil // exactly one match
+	} else { // no match
+		return fmt.Errorf("data failed to match schemas in oneOf(InputProfilePhoto)")
+	}
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON
@@ -98,9 +132,39 @@ func (src InputProfilePhoto) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.InputProfilePhotoStatic)
 	}
 
-	return nil, nil // no data in anyOf schemas
+	return nil, nil // no data in oneOf schemas
 }
 
+// Get the actual instance
+func (obj *InputProfilePhoto) GetActualInstance() (interface{}) {
+	if obj == nil {
+		return nil
+	}
+	if obj.InputProfilePhotoAnimated != nil {
+		return obj.InputProfilePhotoAnimated
+	}
+
+	if obj.InputProfilePhotoStatic != nil {
+		return obj.InputProfilePhotoStatic
+	}
+
+	// all schemas are nil
+	return nil
+}
+
+// Get the actual instance value
+func (obj InputProfilePhoto) GetActualInstanceValue() (interface{}) {
+	if obj.InputProfilePhotoAnimated != nil {
+		return *obj.InputProfilePhotoAnimated
+	}
+
+	if obj.InputProfilePhotoStatic != nil {
+		return *obj.InputProfilePhotoStatic
+	}
+
+	// all schemas are nil
+	return nil
+}
 
 type NullableInputProfilePhoto struct {
 	value *InputProfilePhoto

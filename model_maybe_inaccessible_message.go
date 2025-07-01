@@ -1,12 +1,12 @@
 /** 
  * Telegram Bot API - REST API Client
- * Auto-generated OpenAPI schema
+ * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
  *    * - **Version**: 9.0.0
- *    * - **Modified**: 2025-07-01T14:14:20.091913680Z[Etc/UTC]
+ *    * - **Modified**: 2025-07-01T14:36:13.209453861Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -47,45 +47,79 @@ package tele_rest
 import (
 	"encoding/json"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
-
-// MaybeInaccessibleMessage This object describes a message that can be inaccessible to the bot. It can be one of  * [Message](https://core.telegram.org/bots/api/#message) * [InaccessibleMessage](https://core.telegram.org/bots/api/#inaccessiblemessage)
+// MaybeInaccessibleMessage - This object describes a message that can be inaccessible to the bot. It can be one of  * [Message](https://core.telegram.org/bots/api/#message) * [InaccessibleMessage](https://core.telegram.org/bots/api/#inaccessiblemessage)
 type MaybeInaccessibleMessage struct {
 	InaccessibleMessage *InaccessibleMessage
 	Message *Message
 }
 
-// Unmarshal JSON data into any of the pointers in the struct
+// InaccessibleMessageAsMaybeInaccessibleMessage is a convenience function that returns InaccessibleMessage wrapped in MaybeInaccessibleMessage
+func InaccessibleMessageAsMaybeInaccessibleMessage(v *InaccessibleMessage) MaybeInaccessibleMessage {
+	return MaybeInaccessibleMessage{
+		InaccessibleMessage: v,
+	}
+}
+
+// MessageAsMaybeInaccessibleMessage is a convenience function that returns Message wrapped in MaybeInaccessibleMessage
+func MessageAsMaybeInaccessibleMessage(v *Message) MaybeInaccessibleMessage {
+	return MaybeInaccessibleMessage{
+		Message: v,
+	}
+}
+
+
+// Unmarshal JSON data into one of the pointers in the struct
 func (dst *MaybeInaccessibleMessage) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into InaccessibleMessage
-	err = json.Unmarshal(data, &dst.InaccessibleMessage);
+	match := 0
+	// try to unmarshal data into InaccessibleMessage
+	err = newStrictDecoder(data).Decode(&dst.InaccessibleMessage)
 	if err == nil {
 		jsonInaccessibleMessage, _ := json.Marshal(dst.InaccessibleMessage)
 		if string(jsonInaccessibleMessage) == "{}" { // empty struct
 			dst.InaccessibleMessage = nil
 		} else {
-			return nil // data stored in dst.InaccessibleMessage, return on the first match
+			if err = validator.Validate(dst.InaccessibleMessage); err != nil {
+				dst.InaccessibleMessage = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.InaccessibleMessage = nil
 	}
 
-	// try to unmarshal JSON data into Message
-	err = json.Unmarshal(data, &dst.Message);
+	// try to unmarshal data into Message
+	err = newStrictDecoder(data).Decode(&dst.Message)
 	if err == nil {
 		jsonMessage, _ := json.Marshal(dst.Message)
 		if string(jsonMessage) == "{}" { // empty struct
 			dst.Message = nil
 		} else {
-			return nil // data stored in dst.Message, return on the first match
+			if err = validator.Validate(dst.Message); err != nil {
+				dst.Message = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.Message = nil
 	}
 
-	return fmt.Errorf("data failed to match schemas in anyOf(MaybeInaccessibleMessage)")
+	if match > 1 { // more than 1 match
+		// reset to nil
+		dst.InaccessibleMessage = nil
+		dst.Message = nil
+
+		return fmt.Errorf("data matches more than one schema in oneOf(MaybeInaccessibleMessage)")
+	} else if match == 1 {
+		return nil // exactly one match
+	} else { // no match
+		return fmt.Errorf("data failed to match schemas in oneOf(MaybeInaccessibleMessage)")
+	}
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON
@@ -98,9 +132,39 @@ func (src MaybeInaccessibleMessage) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.Message)
 	}
 
-	return nil, nil // no data in anyOf schemas
+	return nil, nil // no data in oneOf schemas
 }
 
+// Get the actual instance
+func (obj *MaybeInaccessibleMessage) GetActualInstance() (interface{}) {
+	if obj == nil {
+		return nil
+	}
+	if obj.InaccessibleMessage != nil {
+		return obj.InaccessibleMessage
+	}
+
+	if obj.Message != nil {
+		return obj.Message
+	}
+
+	// all schemas are nil
+	return nil
+}
+
+// Get the actual instance value
+func (obj MaybeInaccessibleMessage) GetActualInstanceValue() (interface{}) {
+	if obj.InaccessibleMessage != nil {
+		return *obj.InaccessibleMessage
+	}
+
+	if obj.Message != nil {
+		return *obj.Message
+	}
+
+	// all schemas are nil
+	return nil
+}
 
 type NullableMaybeInaccessibleMessage struct {
 	value *MaybeInaccessibleMessage

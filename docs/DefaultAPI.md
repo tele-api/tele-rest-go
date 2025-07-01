@@ -326,7 +326,7 @@ import (
 
 func main() {
 	inlineQueryId := "inlineQueryId_example" // string | Unique identifier for the answered query
-	results := []openapiclient.InlineQueryResult{*openapiclient.NewInlineQueryResult("Type_example", "Id_example", "AudioFileId_example", *openapiclient.NewInputMessageContent("MessageText_example", float32(123), float32(123), "Title_example", "Address_example", "PhoneNumber_example", "FirstName_example", "Description_example", "Payload_example", "Currency_example", []openapiclient.LabeledPrice{*openapiclient.NewLabeledPrice("Label_example", int32(123))}), "Title_example", "DocumentFileId_example", "GifFileId_example", "Mpeg4FileId_example", "PhotoFileId_example", "StickerFileId_example", "VideoFileId_example", "VoiceFileId_example", "ThumbnailUrl_example", "AudioUrl_example", "PhoneNumber_example", "FirstName_example", "GameShortName_example", "DocumentUrl_example", "MimeType_example", "GifUrl_example", float32(123), float32(123), "Mpeg4Url_example", "PhotoUrl_example", "Address_example", "VideoUrl_example", "VoiceUrl_example")} // []InlineQueryResult | A JSON-serialized array of results for the inline query
+	results := []openapiclient.InlineQueryResult{openapiclient.InlineQueryResult{InlineQueryResultArticle: openapiclient.NewInlineQueryResultArticle("Type_example", "Id_example", "Title_example", openapiclient.InputMessageContent{InputContactMessageContent: openapiclient.NewInputContactMessageContent("PhoneNumber_example", "FirstName_example")})}} // []InlineQueryResult | A JSON-serialized array of results for the inline query
 	cacheTime := int32(56) // int32 | The maximum amount of time in seconds that the result of the inline query may be cached on the server. Defaults to 300. (optional) (default to 300)
 	isPersonal := true // bool | Pass *True* if results may be cached on the server side only for the user that sent the query. By default, results may be returned to any user who sends the same query. (optional)
 	nextOffset := "nextOffset_example" // string | Pass the offset that a client should send in the next query with the same text to receive more results. Pass an empty string if there are no more results or if you don't support pagination. Offset length can't exceed 64 bytes. (optional)
@@ -544,7 +544,7 @@ import (
 
 func main() {
 	webAppQueryId := "webAppQueryId_example" // string | Unique identifier for the query to be answered
-	result := *openapiclient.NewInlineQueryResult("Type_example", "Id_example", "AudioFileId_example", *openapiclient.NewInputMessageContent("MessageText_example", float32(123), float32(123), "Title_example", "Address_example", "PhoneNumber_example", "FirstName_example", "Description_example", "Payload_example", "Currency_example", []openapiclient.LabeledPrice{*openapiclient.NewLabeledPrice("Label_example", int32(123))}), "Title_example", "DocumentFileId_example", "GifFileId_example", "Mpeg4FileId_example", "PhotoFileId_example", "StickerFileId_example", "VideoFileId_example", "VoiceFileId_example", "ThumbnailUrl_example", "AudioUrl_example", "PhoneNumber_example", "FirstName_example", "GameShortName_example", "DocumentUrl_example", "MimeType_example", "GifUrl_example", float32(123), float32(123), "Mpeg4Url_example", "PhotoUrl_example", "Address_example", "VideoUrl_example", "VoiceUrl_example") // InlineQueryResult | 
+	result := openapiclient.InlineQueryResult{InlineQueryResultArticle: openapiclient.NewInlineQueryResultArticle("Type_example", "Id_example", "Title_example", openapiclient.InputMessageContent{InputContactMessageContent: openapiclient.NewInputContactMessageContent("PhoneNumber_example", "FirstName_example")})} // InlineQueryResult | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -611,7 +611,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
 	userId := int32(56) // int32 | Unique identifier of the target user
 
 	configuration := openapiclient.NewConfiguration()
@@ -679,7 +679,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewBanChatMemberPostRequestChatId() // BanChatMemberPostRequestChatId | 
+	chatId := openapiclient._banChatMember_post_request_chat_id{Int32: new(int32)} // BanChatMemberPostRequestChatId | 
 	userId := int32(56) // int32 | Unique identifier of the target user
 	untilDate := int32(56) // int32 | Date when the user will be unbanned; Unix time. If user is banned for more than 366 days or less than 30 seconds from the current time they are considered to be banned forever. Applied for supergroups and channels only. (optional)
 	revokeMessages := true // bool | Pass *True* to delete all messages from the chat for the user that is being removed. If *False*, the user will be able to see messages in the group that were sent before the user was removed. Always *True* for supergroups and channels. (optional)
@@ -751,7 +751,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
 	senderChatId := int32(56) // int32 | Unique identifier of the target sender chat
 
 	configuration := openapiclient.NewConfiguration()
@@ -819,7 +819,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewRestrictChatMemberPostRequestChatId() // RestrictChatMemberPostRequestChatId | 
+	chatId := openapiclient._restrictChatMember_post_request_chat_id{Int32: new(int32)} // RestrictChatMemberPostRequestChatId | 
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread of the forum topic
 
 	configuration := openapiclient.NewConfiguration()
@@ -887,7 +887,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewRestrictChatMemberPostRequestChatId() // RestrictChatMemberPostRequestChatId | 
+	chatId := openapiclient._restrictChatMember_post_request_chat_id{Int32: new(int32)} // RestrictChatMemberPostRequestChatId | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1082,8 +1082,8 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
-	fromChatId := *openapiclient.NewForwardMessagePostRequestFromChatId() // ForwardMessagePostRequestFromChatId | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
+	fromChatId := openapiclient._forwardMessage_post_request_from_chat_id{Int32: new(int32)} // ForwardMessagePostRequestFromChatId | 
 	messageId := int32(56) // int32 | Message identifier in the chat specified in *from\\\\_chat\\\\_id*
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
 	videoStartTimestamp := int32(56) // int32 | New start timestamp for the copied video in the message (optional)
@@ -1095,7 +1095,7 @@ func main() {
 	protectContent := true // bool | Protects the contents of the sent message from forwarding and saving (optional)
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
-	replyMarkup := *openapiclient.NewSendMessagePostRequestReplyMarkup([][]InlineKeyboardButton{[]openapiclient.InlineKeyboardButton{*openapiclient.NewInlineKeyboardButton("Text_example")}}, [][]KeyboardButton{[]openapiclient.KeyboardButton{*openapiclient.NewKeyboardButton("Text_example")}}, false, false) // SendMessagePostRequestReplyMarkup |  (optional)
+	replyMarkup := openapiclient._sendMessage_post_request_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessagePostRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1174,8 +1174,8 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
-	fromChatId := *openapiclient.NewForwardMessagesPostRequestFromChatId() // ForwardMessagesPostRequestFromChatId | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
+	fromChatId := openapiclient._forwardMessages_post_request_from_chat_id{Int32: new(int32)} // ForwardMessagesPostRequestFromChatId | 
 	messageIds := []int32{int32(123)} // []int32 | A JSON-serialized list of 1-100 identifiers of messages in the chat *from\\\\_chat\\\\_id* to copy. The identifiers must be specified in a strictly increasing order.
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
 	disableNotification := true // bool | Sends the messages [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. (optional)
@@ -1252,7 +1252,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
 	name := "name_example" // string | Invite link name; 0-32 characters (optional)
 	expireDate := int32(56) // int32 | Point in time (Unix timestamp) when the link will expire (optional)
 	memberLimit := int32(56) // int32 | The maximum number of users that can be members of the chat simultaneously after joining the chat via this invite link; 1-99999 (optional)
@@ -1326,7 +1326,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewCreateChatSubscriptionInviteLinkPostRequestChatId() // CreateChatSubscriptionInviteLinkPostRequestChatId | 
+	chatId := openapiclient._createChatSubscriptionInviteLink_post_request_chat_id{Int32: new(int32)} // CreateChatSubscriptionInviteLinkPostRequestChatId | 
 	subscriptionPeriod := int32(56) // int32 | The number of seconds the subscription will be active for before the next payment. Currently, it must always be 2592000 (30 days).
 	subscriptionPrice := int32(56) // int32 | The amount of Telegram Stars a user must pay initially and after each subsequent subscription period to be a member of the chat; 1-10000
 	name := "name_example" // string | Invite link name; 0-32 characters (optional)
@@ -1398,7 +1398,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewRestrictChatMemberPostRequestChatId() // RestrictChatMemberPostRequestChatId | 
+	chatId := openapiclient._restrictChatMember_post_request_chat_id{Int32: new(int32)} // RestrictChatMemberPostRequestChatId | 
 	name := "name_example" // string | Topic name, 1-128 characters
 	iconColor := int32(56) // int32 | Color of the topic icon in RGB format. Currently, must be one of 7322096 (0x6FB9F0), 16766590 (0xFFD67E), 13338331 (0xCB86DB), 9367192 (0x8EEE98), 16749490 (0xFF93B2), or 16478047 (0xFB6F5F) (optional)
 	iconCustomEmojiId := "iconCustomEmojiId_example" // string | Unique identifier of the custom emoji shown as the topic icon. Use [getForumTopicIconStickers](https://core.telegram.org/bots/api/#getforumtopiciconstickers) to get all allowed custom emoji identifiers. (optional)
@@ -1654,7 +1654,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
 	userId := int32(56) // int32 | Unique identifier of the target user
 
 	configuration := openapiclient.NewConfiguration()
@@ -1790,7 +1790,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1856,7 +1856,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewRestrictChatMemberPostRequestChatId() // RestrictChatMemberPostRequestChatId | 
+	chatId := openapiclient._restrictChatMember_post_request_chat_id{Int32: new(int32)} // RestrictChatMemberPostRequestChatId | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1922,7 +1922,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewRestrictChatMemberPostRequestChatId() // RestrictChatMemberPostRequestChatId | 
+	chatId := openapiclient._restrictChatMember_post_request_chat_id{Int32: new(int32)} // RestrictChatMemberPostRequestChatId | 
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread of the forum topic
 
 	configuration := openapiclient.NewConfiguration()
@@ -1990,7 +1990,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
 	messageId := int32(56) // int32 | Identifier of the message to delete
 
 	configuration := openapiclient.NewConfiguration()
@@ -2058,7 +2058,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
 	messageIds := []int32{int32(123)} // []int32 | A JSON-serialized list of 1-100 identifiers of messages to delete. See [deleteMessage](https://core.telegram.org/bots/api/#deletemessage) for limitations on which messages can be deleted
 
 	configuration := openapiclient.NewConfiguration()
@@ -2126,7 +2126,7 @@ import (
 )
 
 func main() {
-	scope := *openapiclient.NewBotCommandScope("Type_example", *openapiclient.NewRestrictChatMemberPostRequestChatId(), int32(123)) // BotCommandScope |  (optional)
+	scope := openapiclient.BotCommandScope{BotCommandScopeAllChatAdministrators: openapiclient.NewBotCommandScopeAllChatAdministrators("Type_example")} // BotCommandScope |  (optional)
 	languageCode := "languageCode_example" // string | A two-letter ISO 639-1 language code. If empty, commands will be applied to all users from the given scope, for whose language there are no dedicated commands (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -2460,7 +2460,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
 	inviteLink := "inviteLink_example" // string | The invite link to edit
 	name := "name_example" // string | Invite link name; 0-32 characters (optional)
 	expireDate := int32(56) // int32 | Point in time (Unix timestamp) when the link will expire (optional)
@@ -2536,7 +2536,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
 	inviteLink := "inviteLink_example" // string | The invite link to edit
 	name := "name_example" // string | Invite link name; 0-32 characters (optional)
 
@@ -2606,7 +2606,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewRestrictChatMemberPostRequestChatId() // RestrictChatMemberPostRequestChatId | 
+	chatId := openapiclient._restrictChatMember_post_request_chat_id{Int32: new(int32)} // RestrictChatMemberPostRequestChatId | 
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread of the forum topic
 	name := "name_example" // string | New topic name, 0-128 characters. If not specified or empty, the current name of the topic will be kept (optional)
 	iconCustomEmojiId := "iconCustomEmojiId_example" // string | New unique identifier of the custom emoji shown as the topic icon. Use [getForumTopicIconStickers](https://core.telegram.org/bots/api/#getforumtopiciconstickers) to get all allowed custom emoji identifiers. Pass an empty string to remove the icon. If not specified, the current icon will be kept (optional)
@@ -2678,7 +2678,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewRestrictChatMemberPostRequestChatId() // RestrictChatMemberPostRequestChatId | 
+	chatId := openapiclient._restrictChatMember_post_request_chat_id{Int32: new(int32)} // RestrictChatMemberPostRequestChatId | 
 	name := "name_example" // string | New topic name, 1-128 characters
 
 	configuration := openapiclient.NewConfiguration()
@@ -2747,7 +2747,7 @@ import (
 
 func main() {
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message to be edited was sent (optional)
-	chatId := *openapiclient.NewEditMessageTextPostRequestChatId() // EditMessageTextPostRequestChatId |  (optional)
+	chatId := openapiclient._editMessageText_post_request_chat_id{Int32: new(int32)} // EditMessageTextPostRequestChatId |  (optional)
 	messageId := int32(56) // int32 | Required if *inline\\\\_message\\\\_id* is not specified. Identifier of the message to edit (optional)
 	inlineMessageId := "inlineMessageId_example" // string | Required if *chat\\\\_id* and *message\\\\_id* are not specified. Identifier of the inline message (optional)
 	caption := "caption_example" // string | New caption of the message, 0-1024 characters after entities parsing (optional)
@@ -2831,7 +2831,7 @@ func main() {
 	latitude := float32(8.14) // float32 | Latitude of new location
 	longitude := float32(8.14) // float32 | Longitude of new location
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message to be edited was sent (optional)
-	chatId := *openapiclient.NewEditMessageTextPostRequestChatId() // EditMessageTextPostRequestChatId |  (optional)
+	chatId := openapiclient._editMessageText_post_request_chat_id{Int32: new(int32)} // EditMessageTextPostRequestChatId |  (optional)
 	messageId := int32(56) // int32 | Required if *inline\\\\_message\\\\_id* is not specified. Identifier of the message to edit (optional)
 	inlineMessageId := "inlineMessageId_example" // string | Required if *chat\\\\_id* and *message\\\\_id* are not specified. Identifier of the inline message (optional)
 	livePeriod := int32(56) // int32 | New period in seconds during which the location can be updated, starting from the message send date. If 0x7FFFFFFF is specified, then the location can be updated forever. Otherwise, the new value must not exceed the current *live\\\\_period* by more than a day, and the live location expiration date must remain within the next 90 days. If not specified, then *live\\\\_period* remains unchanged (optional)
@@ -2914,9 +2914,9 @@ import (
 )
 
 func main() {
-	media := *openapiclient.NewInputMedia("Type_example", "Media_example") // InputMedia | 
+	media := openapiclient.InputMedia{InputMediaAnimation: openapiclient.NewInputMediaAnimation("Type_example", "Media_example")} // InputMedia | 
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message to be edited was sent (optional)
-	chatId := *openapiclient.NewEditMessageTextPostRequestChatId() // EditMessageTextPostRequestChatId |  (optional)
+	chatId := openapiclient._editMessageText_post_request_chat_id{Int32: new(int32)} // EditMessageTextPostRequestChatId |  (optional)
 	messageId := int32(56) // int32 | Required if *inline\\\\_message\\\\_id* is not specified. Identifier of the message to edit (optional)
 	inlineMessageId := "inlineMessageId_example" // string | Required if *chat\\\\_id* and *message\\\\_id* are not specified. Identifier of the inline message (optional)
 	replyMarkup := *openapiclient.NewInlineKeyboardMarkup([][]InlineKeyboardButton{[]openapiclient.InlineKeyboardButton{*openapiclient.NewInlineKeyboardButton("Text_example")}}) // InlineKeyboardMarkup |  (optional)
@@ -2991,7 +2991,7 @@ import (
 
 func main() {
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message to be edited was sent (optional)
-	chatId := *openapiclient.NewEditMessageTextPostRequestChatId() // EditMessageTextPostRequestChatId |  (optional)
+	chatId := openapiclient._editMessageText_post_request_chat_id{Int32: new(int32)} // EditMessageTextPostRequestChatId |  (optional)
 	messageId := int32(56) // int32 | Required if *inline\\\\_message\\\\_id* is not specified. Identifier of the message to edit (optional)
 	inlineMessageId := "inlineMessageId_example" // string | Required if *chat\\\\_id* and *message\\\\_id* are not specified. Identifier of the inline message (optional)
 	replyMarkup := *openapiclient.NewInlineKeyboardMarkup([][]InlineKeyboardButton{[]openapiclient.InlineKeyboardButton{*openapiclient.NewInlineKeyboardButton("Text_example")}}) // InlineKeyboardMarkup |  (optional)
@@ -3066,7 +3066,7 @@ import (
 func main() {
 	text := "text_example" // string | New text of the message, 1-4096 characters after entities parsing
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message to be edited was sent (optional)
-	chatId := *openapiclient.NewEditMessageTextPostRequestChatId() // EditMessageTextPostRequestChatId |  (optional)
+	chatId := openapiclient._editMessageText_post_request_chat_id{Int32: new(int32)} // EditMessageTextPostRequestChatId |  (optional)
 	messageId := int32(56) // int32 | Required if *inline\\\\_message\\\\_id* is not specified. Identifier of the message to edit (optional)
 	inlineMessageId := "inlineMessageId_example" // string | Required if *chat\\\\_id* and *message\\\\_id* are not specified. Identifier of the inline message (optional)
 	parseMode := "parseMode_example" // string | Mode for parsing entities in the message text. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. (optional)
@@ -3148,11 +3148,11 @@ import (
 func main() {
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection
 	storyId := int32(56) // int32 | Unique identifier of the story to edit
-	content := *openapiclient.NewInputStoryContent("Type_example", "Photo_example", "Video_example") // InputStoryContent | 
+	content := openapiclient.InputStoryContent{InputStoryContentPhoto: openapiclient.NewInputStoryContentPhoto("Type_example", "Photo_example")} // InputStoryContent | 
 	caption := "caption_example" // string | Caption of the story, 0-2048 characters after entities parsing (optional)
 	parseMode := "parseMode_example" // string | Mode for parsing entities in the story caption. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. (optional)
 	captionEntities := []openapiclient.MessageEntity{*openapiclient.NewMessageEntity("Type_example", int32(123), int32(123))} // []MessageEntity | A JSON-serialized list of special entities that appear in the caption, which can be specified instead of *parse\\\\_mode* (optional)
-	areas := []openapiclient.StoryArea{*openapiclient.NewStoryArea(*openapiclient.NewStoryAreaPosition(float32(123), float32(123), float32(123), float32(123), float32(123), float32(123)), *openapiclient.NewStoryAreaType("Type_example", float32(123), float32(123), *openapiclient.NewReactionType("Type_example", "Emoji_example", "CustomEmojiId_example"), "Url_example", float32(123), "Emoji_example", int32(123), "Name_example"))} // []StoryArea | A JSON-serialized list of clickable areas to be shown on the story (optional)
+	areas := []openapiclient.StoryArea{*openapiclient.NewStoryArea(*openapiclient.NewStoryAreaPosition(float32(123), float32(123), float32(123), float32(123), float32(123), float32(123)), openapiclient.StoryAreaType{StoryAreaTypeLink: openapiclient.NewStoryAreaTypeLink("Type_example", "Url_example")})} // []StoryArea | A JSON-serialized list of clickable areas to be shown on the story (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3294,7 +3294,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3360,8 +3360,8 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
-	fromChatId := *openapiclient.NewForwardMessagePostRequestFromChatId() // ForwardMessagePostRequestFromChatId | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
+	fromChatId := openapiclient._forwardMessage_post_request_from_chat_id{Int32: new(int32)} // ForwardMessagePostRequestFromChatId | 
 	messageId := int32(56) // int32 | Message identifier in the chat specified in *from\\\\_chat\\\\_id*
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
 	videoStartTimestamp := int32(56) // int32 | New start timestamp for the forwarded video in the message (optional)
@@ -3438,8 +3438,8 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
-	fromChatId := *openapiclient.NewForwardMessagesPostRequestFromChatId() // ForwardMessagesPostRequestFromChatId | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
+	fromChatId := openapiclient._forwardMessages_post_request_from_chat_id{Int32: new(int32)} // ForwardMessagesPostRequestFromChatId | 
 	messageIds := []int32{int32(123)} // []int32 | A JSON-serialized list of 1-100 identifiers of messages in the chat *from\\\\_chat\\\\_id* to forward. The identifiers must be specified in a strictly increasing order.
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
 	disableNotification := true // bool | Sends the messages [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. (optional)
@@ -3789,7 +3789,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewLeaveChatPostRequestChatId() // LeaveChatPostRequestChatId | 
+	chatId := openapiclient._leaveChat_post_request_chat_id{Int32: new(int32)} // LeaveChatPostRequestChatId | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3855,7 +3855,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewLeaveChatPostRequestChatId() // LeaveChatPostRequestChatId | 
+	chatId := openapiclient._leaveChat_post_request_chat_id{Int32: new(int32)} // LeaveChatPostRequestChatId | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3921,7 +3921,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewLeaveChatPostRequestChatId() // LeaveChatPostRequestChatId | 
+	chatId := openapiclient._leaveChat_post_request_chat_id{Int32: new(int32)} // LeaveChatPostRequestChatId | 
 	userId := int32(56) // int32 | Unique identifier of the target user
 
 	configuration := openapiclient.NewConfiguration()
@@ -4055,7 +4055,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewLeaveChatPostRequestChatId() // LeaveChatPostRequestChatId | 
+	chatId := openapiclient._leaveChat_post_request_chat_id{Int32: new(int32)} // LeaveChatPostRequestChatId | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4447,7 +4447,7 @@ import (
 )
 
 func main() {
-	scope := *openapiclient.NewBotCommandScope("Type_example", *openapiclient.NewRestrictChatMemberPostRequestChatId(), int32(123)) // BotCommandScope |  (optional)
+	scope := openapiclient.BotCommandScope{BotCommandScopeAllChatAdministrators: openapiclient.NewBotCommandScopeAllChatAdministrators("Type_example")} // BotCommandScope |  (optional)
 	languageCode := "languageCode_example" // string | A two-letter ISO 639-1 language code or an empty string (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -4985,7 +4985,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewGetUserChatBoostsPostRequestChatId() // GetUserChatBoostsPostRequestChatId | 
+	chatId := openapiclient._getUserChatBoosts_post_request_chat_id{Int32: new(int32)} // GetUserChatBoostsPostRequestChatId | 
 	userId := int32(56) // int32 | Unique identifier of the target user
 
 	configuration := openapiclient.NewConfiguration()
@@ -5260,7 +5260,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewRestrictChatMemberPostRequestChatId() // RestrictChatMemberPostRequestChatId | 
+	chatId := openapiclient._restrictChatMember_post_request_chat_id{Int32: new(int32)} // RestrictChatMemberPostRequestChatId | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5326,7 +5326,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewLeaveChatPostRequestChatId() // LeaveChatPostRequestChatId | 
+	chatId := openapiclient._leaveChat_post_request_chat_id{Int32: new(int32)} // LeaveChatPostRequestChatId | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5453,7 +5453,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
 	messageId := int32(56) // int32 | Identifier of a message to pin
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be pinned (optional)
 	disableNotification := true // bool | Pass *True* if it is not necessary to send a notification to all chat members about the new pinned message. Notifications are always disabled in channels and private chats. (optional)
@@ -5526,12 +5526,12 @@ import (
 
 func main() {
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection
-	content := *openapiclient.NewInputStoryContent("Type_example", "Photo_example", "Video_example") // InputStoryContent | 
+	content := openapiclient.InputStoryContent{InputStoryContentPhoto: openapiclient.NewInputStoryContentPhoto("Type_example", "Photo_example")} // InputStoryContent | 
 	activePeriod := int32(56) // int32 | Period after which the story is moved to the archive, in seconds; must be one of `6 * 3600`, `12 * 3600`, `86400`, or `2 * 86400`
 	caption := "caption_example" // string | Caption of the story, 0-2048 characters after entities parsing (optional)
 	parseMode := "parseMode_example" // string | Mode for parsing entities in the story caption. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. (optional)
 	captionEntities := []openapiclient.MessageEntity{*openapiclient.NewMessageEntity("Type_example", int32(123), int32(123))} // []MessageEntity | A JSON-serialized list of special entities that appear in the caption, which can be specified instead of *parse\\\\_mode* (optional)
-	areas := []openapiclient.StoryArea{*openapiclient.NewStoryArea(*openapiclient.NewStoryAreaPosition(float32(123), float32(123), float32(123), float32(123), float32(123), float32(123)), *openapiclient.NewStoryAreaType("Type_example", float32(123), float32(123), *openapiclient.NewReactionType("Type_example", "Emoji_example", "CustomEmojiId_example"), "Url_example", float32(123), "Emoji_example", int32(123), "Name_example"))} // []StoryArea | A JSON-serialized list of clickable areas to be shown on the story (optional)
+	areas := []openapiclient.StoryArea{*openapiclient.NewStoryArea(*openapiclient.NewStoryAreaPosition(float32(123), float32(123), float32(123), float32(123), float32(123), float32(123)), openapiclient.StoryAreaType{StoryAreaTypeLink: openapiclient.NewStoryAreaTypeLink("Type_example", "Url_example")})} // []StoryArea | A JSON-serialized list of clickable areas to be shown on the story (optional)
 	postToChatPage := true // bool | Pass *True* to keep the story accessible after it expires (optional)
 	protectContent := true // bool | Pass *True* if the content of the story must be protected from forwarding and screenshotting (optional)
 
@@ -5607,7 +5607,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
 	userId := int32(56) // int32 | Unique identifier of the target user
 	isAnonymous := true // bool | Pass *True* if the administrator's presence in the chat is hidden (optional)
 	canManageChat := true // bool | Pass *True* if the administrator can access the chat event log, get boost list, see hidden supergroup and channel members, report spam messages and ignore slow mode. Implied by any other administrator privilege. (optional)
@@ -5911,7 +5911,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6043,7 +6043,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewRestrictChatMemberPostRequestChatId() // RestrictChatMemberPostRequestChatId | 
+	chatId := openapiclient._restrictChatMember_post_request_chat_id{Int32: new(int32)} // RestrictChatMemberPostRequestChatId | 
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread of the forum topic
 
 	configuration := openapiclient.NewConfiguration()
@@ -6111,7 +6111,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewRestrictChatMemberPostRequestChatId() // RestrictChatMemberPostRequestChatId | 
+	chatId := openapiclient._restrictChatMember_post_request_chat_id{Int32: new(int32)} // RestrictChatMemberPostRequestChatId | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6249,7 +6249,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewRestrictChatMemberPostRequestChatId() // RestrictChatMemberPostRequestChatId | 
+	chatId := openapiclient._restrictChatMember_post_request_chat_id{Int32: new(int32)} // RestrictChatMemberPostRequestChatId | 
 	userId := int32(56) // int32 | Unique identifier of the target user
 	permissions := *openapiclient.NewChatPermissions() // ChatPermissions | 
 	useIndependentChatPermissions := true // bool | Pass *True* if chat permissions are set independently. Otherwise, the *can\\\\_send\\\\_other\\\\_messages* and *can\\\\_add\\\\_web\\\\_page\\\\_previews* permissions will imply the *can\\\\_send\\\\_messages*, *can\\\\_send\\\\_audios*, *can\\\\_send\\\\_documents*, *can\\\\_send\\\\_photos*, *can\\\\_send\\\\_videos*, *can\\\\_send\\\\_video\\\\_notes*, and *can\\\\_send\\\\_voice\\\\_notes* permissions; the *can\\\\_send\\\\_polls* permission will imply the *can\\\\_send\\\\_messages* permission. (optional)
@@ -6323,7 +6323,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewRevokeChatInviteLinkPostRequestChatId() // RevokeChatInviteLinkPostRequestChatId | 
+	chatId := openapiclient._revokeChatInviteLink_post_request_chat_id{Int32: new(int32)} // RevokeChatInviteLinkPostRequestChatId | 
 	inviteLink := "inviteLink_example" // string | The invite link to revoke
 
 	configuration := openapiclient.NewConfiguration()
@@ -6392,7 +6392,7 @@ import (
 
 func main() {
 	userId := int32(56) // int32 | Unique identifier of the target user that can use the prepared message
-	result := *openapiclient.NewInlineQueryResult("Type_example", "Id_example", "AudioFileId_example", *openapiclient.NewInputMessageContent("MessageText_example", float32(123), float32(123), "Title_example", "Address_example", "PhoneNumber_example", "FirstName_example", "Description_example", "Payload_example", "Currency_example", []openapiclient.LabeledPrice{*openapiclient.NewLabeledPrice("Label_example", int32(123))}), "Title_example", "DocumentFileId_example", "GifFileId_example", "Mpeg4FileId_example", "PhotoFileId_example", "StickerFileId_example", "VideoFileId_example", "VoiceFileId_example", "ThumbnailUrl_example", "AudioUrl_example", "PhoneNumber_example", "FirstName_example", "GameShortName_example", "DocumentUrl_example", "MimeType_example", "GifUrl_example", float32(123), float32(123), "Mpeg4Url_example", "PhotoUrl_example", "Address_example", "VideoUrl_example", "VoiceUrl_example") // InlineQueryResult | 
+	result := openapiclient.InlineQueryResult{InlineQueryResultArticle: openapiclient.NewInlineQueryResultArticle("Type_example", "Id_example", "Title_example", openapiclient.InputMessageContent{InputContactMessageContent: openapiclient.NewInputContactMessageContent("PhoneNumber_example", "FirstName_example")})} // InlineQueryResult | 
 	allowUserChats := true // bool | Pass *True* if the message can be sent to private chats with users (optional)
 	allowBotChats := true // bool | Pass *True* if the message can be sent to private chats with bots (optional)
 	allowGroupChats := true // bool | Pass *True* if the message can be sent to group and supergroup chats (optional)
@@ -6467,14 +6467,14 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
-	animation := *openapiclient.NewSendAnimationPostRequestAnimation() // SendAnimationPostRequestAnimation | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
+	animation := openapiclient._sendAnimation_post_request_animation{Any: new(interface{})} // SendAnimationPostRequestAnimation | 
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
 	duration := int32(56) // int32 | Duration of sent animation in seconds (optional)
 	width := int32(56) // int32 | Animation width (optional)
 	height := int32(56) // int32 | Animation height (optional)
-	thumbnail := *openapiclient.NewSendAudioPostRequestThumbnail() // SendAudioPostRequestThumbnail |  (optional)
+	thumbnail := openapiclient._sendAudio_post_request_thumbnail{Any: new(interface{})} // SendAudioPostRequestThumbnail |  (optional)
 	caption := "caption_example" // string | Animation caption (may also be used when resending animation by *file\\\\_id*), 0-1024 characters after entities parsing (optional)
 	parseMode := "parseMode_example" // string | Mode for parsing entities in the animation caption. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. (optional)
 	captionEntities := []openapiclient.MessageEntity{*openapiclient.NewMessageEntity("Type_example", int32(123), int32(123))} // []MessageEntity | A JSON-serialized list of special entities that appear in the caption, which can be specified instead of *parse\\\\_mode* (optional)
@@ -6485,7 +6485,7 @@ func main() {
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
-	replyMarkup := *openapiclient.NewSendMessagePostRequestReplyMarkup([][]InlineKeyboardButton{[]openapiclient.InlineKeyboardButton{*openapiclient.NewInlineKeyboardButton("Text_example")}}, [][]KeyboardButton{[]openapiclient.KeyboardButton{*openapiclient.NewKeyboardButton("Text_example")}}, false, false) // SendMessagePostRequestReplyMarkup |  (optional)
+	replyMarkup := openapiclient._sendMessage_post_request_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessagePostRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6569,8 +6569,8 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
-	audio := *openapiclient.NewSendAudioPostRequestAudio() // SendAudioPostRequestAudio | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
+	audio := openapiclient._sendAudio_post_request_audio{Any: new(interface{})} // SendAudioPostRequestAudio | 
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
 	caption := "caption_example" // string | Audio caption, 0-1024 characters after entities parsing (optional)
@@ -6579,13 +6579,13 @@ func main() {
 	duration := int32(56) // int32 | Duration of the audio in seconds (optional)
 	performer := "performer_example" // string | Performer (optional)
 	title := "title_example" // string | Track name (optional)
-	thumbnail := *openapiclient.NewSendAudioPostRequestThumbnail() // SendAudioPostRequestThumbnail |  (optional)
+	thumbnail := openapiclient._sendAudio_post_request_thumbnail{Any: new(interface{})} // SendAudioPostRequestThumbnail |  (optional)
 	disableNotification := true // bool | Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. (optional)
 	protectContent := true // bool | Protects the contents of the sent message from forwarding and saving (optional)
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
-	replyMarkup := *openapiclient.NewSendMessagePostRequestReplyMarkup([][]InlineKeyboardButton{[]openapiclient.InlineKeyboardButton{*openapiclient.NewInlineKeyboardButton("Text_example")}}, [][]KeyboardButton{[]openapiclient.KeyboardButton{*openapiclient.NewKeyboardButton("Text_example")}}, false, false) // SendMessagePostRequestReplyMarkup |  (optional)
+	replyMarkup := openapiclient._sendMessage_post_request_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessagePostRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6667,7 +6667,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
 	action := "action_example" // string | Type of action to broadcast. Choose one, depending on what the user is about to receive: *typing* for [text messages](https://core.telegram.org/bots/api/#sendmessage), *upload\\\\_photo* for [photos](https://core.telegram.org/bots/api/#sendphoto), *record\\\\_video* or *upload\\\\_video* for [videos](https://core.telegram.org/bots/api/#sendvideo), *record\\\\_voice* or *upload\\\\_voice* for [voice notes](https://core.telegram.org/bots/api/#sendvoice), *upload\\\\_document* for [general files](https://core.telegram.org/bots/api/#senddocument), *choose\\\\_sticker* for [stickers](https://core.telegram.org/bots/api/#sendsticker), *find\\\\_location* for [location data](https://core.telegram.org/bots/api/#sendlocation), *record\\\\_video\\\\_note* or *upload\\\\_video\\\\_note* for [video notes](https://core.telegram.org/bots/api/#sendvideonote).
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the action will be sent (optional)
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread; for supergroups only (optional)
@@ -6739,7 +6739,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
 	phoneNumber := "phoneNumber_example" // string | Contact's phone number
 	firstName := "firstName_example" // string | Contact's first name
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
@@ -6751,7 +6751,7 @@ func main() {
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
-	replyMarkup := *openapiclient.NewSendMessagePostRequestReplyMarkup([][]InlineKeyboardButton{[]openapiclient.InlineKeyboardButton{*openapiclient.NewInlineKeyboardButton("Text_example")}}, [][]KeyboardButton{[]openapiclient.KeyboardButton{*openapiclient.NewKeyboardButton("Text_example")}}, false, false) // SendMessagePostRequestReplyMarkup |  (optional)
+	replyMarkup := openapiclient._sendMessage_post_request_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessagePostRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6829,7 +6829,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
 	emoji := "emoji_example" // string | Emoji on which the dice throw animation is based. Currently, must be one of “🎲”, “🎯”, “🏀”, “⚽”, “🎳”, or “🎰”. Dice can have values 1-6 for “🎲”, “🎯” and “🎳”, values 1-5 for “🏀” and “⚽”, and values 1-64 for “🎰”. Defaults to “🎲” (optional) (default to "🎲")
@@ -6838,7 +6838,7 @@ func main() {
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
-	replyMarkup := *openapiclient.NewSendMessagePostRequestReplyMarkup([][]InlineKeyboardButton{[]openapiclient.InlineKeyboardButton{*openapiclient.NewInlineKeyboardButton("Text_example")}}, [][]KeyboardButton{[]openapiclient.KeyboardButton{*openapiclient.NewKeyboardButton("Text_example")}}, false, false) // SendMessagePostRequestReplyMarkup |  (optional)
+	replyMarkup := openapiclient._sendMessage_post_request_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessagePostRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6913,11 +6913,11 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
-	document := *openapiclient.NewSendDocumentPostRequestDocument() // SendDocumentPostRequestDocument | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
+	document := openapiclient._sendDocument_post_request_document{Any: new(interface{})} // SendDocumentPostRequestDocument | 
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
-	thumbnail := *openapiclient.NewSendAudioPostRequestThumbnail() // SendAudioPostRequestThumbnail |  (optional)
+	thumbnail := openapiclient._sendAudio_post_request_thumbnail{Any: new(interface{})} // SendAudioPostRequestThumbnail |  (optional)
 	caption := "caption_example" // string | Document caption (may also be used when resending documents by *file\\\\_id*), 0-1024 characters after entities parsing (optional)
 	parseMode := "parseMode_example" // string | Mode for parsing entities in the document caption. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. (optional)
 	captionEntities := []openapiclient.MessageEntity{*openapiclient.NewMessageEntity("Type_example", int32(123), int32(123))} // []MessageEntity | A JSON-serialized list of special entities that appear in the caption, which can be specified instead of *parse\\\\_mode* (optional)
@@ -6927,7 +6927,7 @@ func main() {
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
-	replyMarkup := *openapiclient.NewSendMessagePostRequestReplyMarkup([][]InlineKeyboardButton{[]openapiclient.InlineKeyboardButton{*openapiclient.NewInlineKeyboardButton("Text_example")}}, [][]KeyboardButton{[]openapiclient.KeyboardButton{*openapiclient.NewKeyboardButton("Text_example")}}, false, false) // SendMessagePostRequestReplyMarkup |  (optional)
+	replyMarkup := openapiclient._sendMessage_post_request_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessagePostRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7093,7 +7093,7 @@ import (
 func main() {
 	giftId := "giftId_example" // string | Identifier of the gift
 	userId := int32(56) // int32 | Required if *chat\\\\_id* is not specified. Unique identifier of the target user who will receive the gift. (optional)
-	chatId := *openapiclient.NewSendGiftPostRequestChatId() // SendGiftPostRequestChatId |  (optional)
+	chatId := openapiclient._sendGift_post_request_chat_id{Int32: new(int32)} // SendGiftPostRequestChatId |  (optional)
 	payForUpgrade := true // bool | Pass *True* to pay for the gift upgrade from the bot's balance, thereby making the upgrade free for the receiver (optional)
 	text := "text_example" // string | Text that will be shown along with the gift; 0-128 characters (optional)
 	textParseMode := "textParseMode_example" // string | Mode for parsing entities in the text. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, and “custom\\\\_emoji” are ignored. (optional)
@@ -7169,7 +7169,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
 	title := "title_example" // string | Product name, 1-32 characters
 	description := "description_example" // string | Product description, 1-255 characters
 	payload := "payload_example" // string | Bot-defined invoice payload, 1-128 bytes. This will not be displayed to the user, use it for your internal processes.
@@ -7291,7 +7291,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
 	latitude := float32(8.14) // float32 | Latitude of the location
 	longitude := float32(8.14) // float32 | Longitude of the location
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
@@ -7305,7 +7305,7 @@ func main() {
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
-	replyMarkup := *openapiclient.NewSendMessagePostRequestReplyMarkup([][]InlineKeyboardButton{[]openapiclient.InlineKeyboardButton{*openapiclient.NewInlineKeyboardButton("Text_example")}}, [][]KeyboardButton{[]openapiclient.KeyboardButton{*openapiclient.NewKeyboardButton("Text_example")}}, false, false) // SendMessagePostRequestReplyMarkup |  (optional)
+	replyMarkup := openapiclient._sendMessage_post_request_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessagePostRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7385,8 +7385,8 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
-	media := []openapiclient.SendMediaGroupPostRequestMediaInner{*openapiclient.NewSendMediaGroupPostRequestMediaInner("Type_example", "Media_example")} // []SendMediaGroupPostRequestMediaInner | A JSON-serialized array describing messages to be sent, must include 2-10 items
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
+	media := []openapiclient.SendMediaGroupPostRequestMediaInner{openapiclient._sendMediaGroup_post_request_media_inner{InputMediaAudio: openapiclient.NewInputMediaAudio("Type_example", "Media_example")}} // []SendMediaGroupPostRequestMediaInner | A JSON-serialized array describing messages to be sent, must include 2-10 items
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
 	disableNotification := true // bool | Sends messages [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. (optional)
@@ -7467,7 +7467,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
 	text := "text_example" // string | Text of the message to be sent, 1-4096 characters after entities parsing
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
@@ -7479,7 +7479,7 @@ func main() {
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
-	replyMarkup := *openapiclient.NewSendMessagePostRequestReplyMarkup([][]InlineKeyboardButton{[]openapiclient.InlineKeyboardButton{*openapiclient.NewInlineKeyboardButton("Text_example")}}, [][]KeyboardButton{[]openapiclient.KeyboardButton{*openapiclient.NewKeyboardButton("Text_example")}}, false, false) // SendMessagePostRequestReplyMarkup |  (optional)
+	replyMarkup := openapiclient._sendMessage_post_request_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessagePostRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7557,9 +7557,9 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendPaidMediaPostRequestChatId() // SendPaidMediaPostRequestChatId | 
+	chatId := openapiclient._sendPaidMedia_post_request_chat_id{Int32: new(int32)} // SendPaidMediaPostRequestChatId | 
 	starCount := int32(56) // int32 | The number of Telegram Stars that must be paid to buy access to the media; 1-10000
-	media := []openapiclient.InputPaidMedia{*openapiclient.NewInputPaidMedia("Type_example", "Media_example")} // []InputPaidMedia | A JSON-serialized array describing the media to be sent; up to 10 items
+	media := []openapiclient.InputPaidMedia{openapiclient.InputPaidMedia{InputPaidMediaPhoto: openapiclient.NewInputPaidMediaPhoto("Type_example", "Media_example")}} // []InputPaidMedia | A JSON-serialized array describing the media to be sent; up to 10 items
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
 	payload := "payload_example" // string | Bot-defined paid media payload, 0-128 bytes. This will not be displayed to the user, use it for your internal processes. (optional)
 	caption := "caption_example" // string | Media caption, 0-1024 characters after entities parsing (optional)
@@ -7570,7 +7570,7 @@ func main() {
 	protectContent := true // bool | Protects the contents of the sent message from forwarding and saving (optional)
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
-	replyMarkup := *openapiclient.NewSendMessagePostRequestReplyMarkup([][]InlineKeyboardButton{[]openapiclient.InlineKeyboardButton{*openapiclient.NewInlineKeyboardButton("Text_example")}}, [][]KeyboardButton{[]openapiclient.KeyboardButton{*openapiclient.NewKeyboardButton("Text_example")}}, false, false) // SendMessagePostRequestReplyMarkup |  (optional)
+	replyMarkup := openapiclient._sendMessage_post_request_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessagePostRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7649,8 +7649,8 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
-	photo := *openapiclient.NewSendPhotoPostRequestPhoto() // SendPhotoPostRequestPhoto | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
+	photo := openapiclient._sendPhoto_post_request_photo{Any: new(interface{})} // SendPhotoPostRequestPhoto | 
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
 	caption := "caption_example" // string | Photo caption (may also be used when resending photos by *file\\\\_id*), 0-1024 characters after entities parsing (optional)
@@ -7663,7 +7663,7 @@ func main() {
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
-	replyMarkup := *openapiclient.NewSendMessagePostRequestReplyMarkup([][]InlineKeyboardButton{[]openapiclient.InlineKeyboardButton{*openapiclient.NewInlineKeyboardButton("Text_example")}}, [][]KeyboardButton{[]openapiclient.KeyboardButton{*openapiclient.NewKeyboardButton("Text_example")}}, false, false) // SendMessagePostRequestReplyMarkup |  (optional)
+	replyMarkup := openapiclient._sendMessage_post_request_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessagePostRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7743,7 +7743,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
 	question := "question_example" // string | Poll question, 1-300 characters
 	options := []openapiclient.InputPollOption{*openapiclient.NewInputPollOption("Text_example")} // []InputPollOption | A JSON-serialized list of 2-10 answer options
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
@@ -7765,7 +7765,7 @@ func main() {
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
-	replyMarkup := *openapiclient.NewSendMessagePostRequestReplyMarkup([][]InlineKeyboardButton{[]openapiclient.InlineKeyboardButton{*openapiclient.NewInlineKeyboardButton("Text_example")}}, [][]KeyboardButton{[]openapiclient.KeyboardButton{*openapiclient.NewKeyboardButton("Text_example")}}, false, false) // SendMessagePostRequestReplyMarkup |  (optional)
+	replyMarkup := openapiclient._sendMessage_post_request_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessagePostRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7853,8 +7853,8 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
-	sticker := *openapiclient.NewSendStickerPostRequestSticker() // SendStickerPostRequestSticker | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
+	sticker := openapiclient._sendSticker_post_request_sticker{Any: new(interface{})} // SendStickerPostRequestSticker | 
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
 	emoji := "emoji_example" // string | Emoji associated with the sticker; only for just uploaded stickers (optional)
@@ -7863,7 +7863,7 @@ func main() {
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
-	replyMarkup := *openapiclient.NewSendMessagePostRequestReplyMarkup([][]InlineKeyboardButton{[]openapiclient.InlineKeyboardButton{*openapiclient.NewInlineKeyboardButton("Text_example")}}, [][]KeyboardButton{[]openapiclient.KeyboardButton{*openapiclient.NewKeyboardButton("Text_example")}}, false, false) // SendMessagePostRequestReplyMarkup |  (optional)
+	replyMarkup := openapiclient._sendMessage_post_request_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessagePostRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7939,7 +7939,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
 	latitude := float32(8.14) // float32 | Latitude of the venue
 	longitude := float32(8.14) // float32 | Longitude of the venue
 	title := "title_example" // string | Name of the venue
@@ -7955,7 +7955,7 @@ func main() {
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
-	replyMarkup := *openapiclient.NewSendMessagePostRequestReplyMarkup([][]InlineKeyboardButton{[]openapiclient.InlineKeyboardButton{*openapiclient.NewInlineKeyboardButton("Text_example")}}, [][]KeyboardButton{[]openapiclient.KeyboardButton{*openapiclient.NewKeyboardButton("Text_example")}}, false, false) // SendMessagePostRequestReplyMarkup |  (optional)
+	replyMarkup := openapiclient._sendMessage_post_request_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessagePostRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8037,19 +8037,19 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
-	videoNote := *openapiclient.NewSendVideoNotePostRequestVideoNote() // SendVideoNotePostRequestVideoNote | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
+	videoNote := openapiclient._sendVideoNote_post_request_video_note{Any: new(interface{})} // SendVideoNotePostRequestVideoNote | 
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
 	duration := int32(56) // int32 | Duration of sent video in seconds (optional)
 	length := int32(56) // int32 | Video width and height, i.e. diameter of the video message (optional)
-	thumbnail := *openapiclient.NewSendAudioPostRequestThumbnail() // SendAudioPostRequestThumbnail |  (optional)
+	thumbnail := openapiclient._sendAudio_post_request_thumbnail{Any: new(interface{})} // SendAudioPostRequestThumbnail |  (optional)
 	disableNotification := true // bool | Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. (optional)
 	protectContent := true // bool | Protects the contents of the sent message from forwarding and saving (optional)
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
-	replyMarkup := *openapiclient.NewSendMessagePostRequestReplyMarkup([][]InlineKeyboardButton{[]openapiclient.InlineKeyboardButton{*openapiclient.NewInlineKeyboardButton("Text_example")}}, [][]KeyboardButton{[]openapiclient.KeyboardButton{*openapiclient.NewKeyboardButton("Text_example")}}, false, false) // SendMessagePostRequestReplyMarkup |  (optional)
+	replyMarkup := openapiclient._sendMessage_post_request_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessagePostRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8127,15 +8127,15 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
-	video := *openapiclient.NewSendVideoPostRequestVideo() // SendVideoPostRequestVideo | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
+	video := openapiclient._sendVideo_post_request_video{Any: new(interface{})} // SendVideoPostRequestVideo | 
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
 	duration := int32(56) // int32 | Duration of sent video in seconds (optional)
 	width := int32(56) // int32 | Video width (optional)
 	height := int32(56) // int32 | Video height (optional)
-	thumbnail := *openapiclient.NewSendAudioPostRequestThumbnail() // SendAudioPostRequestThumbnail |  (optional)
-	cover := *openapiclient.NewSendVideoPostRequestCover() // SendVideoPostRequestCover |  (optional)
+	thumbnail := openapiclient._sendAudio_post_request_thumbnail{Any: new(interface{})} // SendAudioPostRequestThumbnail |  (optional)
+	cover := openapiclient._sendVideo_post_request_cover{Any: new(interface{})} // SendVideoPostRequestCover |  (optional)
 	startTimestamp := int32(56) // int32 | Start timestamp for the video in the message (optional)
 	caption := "caption_example" // string | Video caption (may also be used when resending videos by *file\\\\_id*), 0-1024 characters after entities parsing (optional)
 	parseMode := "parseMode_example" // string | Mode for parsing entities in the video caption. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. (optional)
@@ -8148,7 +8148,7 @@ func main() {
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
-	replyMarkup := *openapiclient.NewSendMessagePostRequestReplyMarkup([][]InlineKeyboardButton{[]openapiclient.InlineKeyboardButton{*openapiclient.NewInlineKeyboardButton("Text_example")}}, [][]KeyboardButton{[]openapiclient.KeyboardButton{*openapiclient.NewKeyboardButton("Text_example")}}, false, false) // SendMessagePostRequestReplyMarkup |  (optional)
+	replyMarkup := openapiclient._sendMessage_post_request_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessagePostRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8235,8 +8235,8 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
-	voice := *openapiclient.NewSendVoicePostRequestVoice() // SendVoicePostRequestVoice | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
+	voice := openapiclient._sendVoice_post_request_voice{Any: new(interface{})} // SendVoicePostRequestVoice | 
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
 	caption := "caption_example" // string | Voice message caption, 0-1024 characters after entities parsing (optional)
@@ -8248,7 +8248,7 @@ func main() {
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
-	replyMarkup := *openapiclient.NewSendMessagePostRequestReplyMarkup([][]InlineKeyboardButton{[]openapiclient.InlineKeyboardButton{*openapiclient.NewInlineKeyboardButton("Text_example")}}, [][]KeyboardButton{[]openapiclient.KeyboardButton{*openapiclient.NewKeyboardButton("Text_example")}}, false, false) // SendMessagePostRequestReplyMarkup |  (optional)
+	replyMarkup := openapiclient._sendMessage_post_request_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessagePostRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8536,7 +8536,7 @@ import (
 
 func main() {
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection
-	photo := *openapiclient.NewInputProfilePhoto("Type_example", "Photo_example", "Animation_example") // InputProfilePhoto | 
+	photo := openapiclient.InputProfilePhoto{InputProfilePhotoAnimated: openapiclient.NewInputProfilePhotoAnimated("Type_example", "Animation_example")} // InputProfilePhoto | 
 	isPublic := true // bool | Pass True to set the public photo, which will be visible even if the main photo is hidden by the business account's privacy settings. An account can have only one public photo. (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -8673,7 +8673,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewRestrictChatMemberPostRequestChatId() // RestrictChatMemberPostRequestChatId | 
+	chatId := openapiclient._restrictChatMember_post_request_chat_id{Int32: new(int32)} // RestrictChatMemberPostRequestChatId | 
 	userId := int32(56) // int32 | Unique identifier of the target user
 	customTitle := "customTitle_example" // string | New custom title for the administrator; 0-16 characters, emoji are not allowed
 
@@ -8743,7 +8743,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
 	description := "description_example" // string | New chat description, 0-255 characters (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -8812,7 +8812,7 @@ import (
 
 func main() {
 	chatId := int32(56) // int32 | Unique identifier for the target private chat. If not specified, default bot's menu button will be changed (optional)
-	menuButton := *openapiclient.NewMenuButton("Type_example", "Text_example", *openapiclient.NewWebAppInfo("Url_example")) // MenuButton |  (optional)
+	menuButton := openapiclient.MenuButton{MenuButtonCommands: openapiclient.NewMenuButtonCommands("Type_example")} // MenuButton |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8879,7 +8879,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewRestrictChatMemberPostRequestChatId() // RestrictChatMemberPostRequestChatId | 
+	chatId := openapiclient._restrictChatMember_post_request_chat_id{Int32: new(int32)} // RestrictChatMemberPostRequestChatId | 
 	permissions := *openapiclient.NewChatPermissions() // ChatPermissions | 
 	useIndependentChatPermissions := true // bool | Pass *True* if chat permissions are set independently. Otherwise, the *can\\\\_send\\\\_other\\\\_messages* and *can\\\\_add\\\\_web\\\\_page\\\\_previews* permissions will imply the *can\\\\_send\\\\_messages*, *can\\\\_send\\\\_audios*, *can\\\\_send\\\\_documents*, *can\\\\_send\\\\_photos*, *can\\\\_send\\\\_videos*, *can\\\\_send\\\\_video\\\\_notes*, and *can\\\\_send\\\\_voice\\\\_notes* permissions; the *can\\\\_send\\\\_polls* permission will imply the *can\\\\_send\\\\_messages* permission. (optional)
 
@@ -8949,7 +8949,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
 	photo := TODO // interface{} | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -9017,7 +9017,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewRestrictChatMemberPostRequestChatId() // RestrictChatMemberPostRequestChatId | 
+	chatId := openapiclient._restrictChatMember_post_request_chat_id{Int32: new(int32)} // RestrictChatMemberPostRequestChatId | 
 	stickerSetName := "stickerSetName_example" // string | Name of the sticker set to be set as the group sticker set
 
 	configuration := openapiclient.NewConfiguration()
@@ -9085,7 +9085,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
 	title := "title_example" // string | New chat title, 1-128 characters
 
 	configuration := openapiclient.NewConfiguration()
@@ -9299,9 +9299,9 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
 	messageId := int32(56) // int32 | Identifier of the target message. If the message belongs to a media group, the reaction is set to the first non-deleted message in the group instead.
-	reaction := []openapiclient.ReactionType{*openapiclient.NewReactionType("Type_example", "Emoji_example", "CustomEmojiId_example")} // []ReactionType | A JSON-serialized list of reaction types to set on the message. Currently, as non-premium users, bots can set up to one reaction per message. A custom emoji reaction can be used if it is either already present on the message or explicitly allowed by chat administrators. Paid reactions can't be used by bots. (optional)
+	reaction := []openapiclient.ReactionType{openapiclient.ReactionType{ReactionTypeCustomEmoji: openapiclient.NewReactionTypeCustomEmoji("Type_example", "CustomEmojiId_example")}} // []ReactionType | A JSON-serialized list of reaction types to set on the message. Currently, as non-premium users, bots can set up to one reaction per message. A custom emoji reaction can be used if it is either already present on the message or explicitly allowed by chat administrators. Paid reactions can't be used by bots. (optional)
 	isBig := true // bool | Pass *True* to set the reaction with a big animation (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -9372,7 +9372,7 @@ import (
 
 func main() {
 	commands := []openapiclient.BotCommand{*openapiclient.NewBotCommand("Command_example", "Description_example")} // []BotCommand | A JSON-serialized list of bot commands to be set as the list of the bot's commands. At most 100 commands can be specified.
-	scope := *openapiclient.NewBotCommandScope("Type_example", *openapiclient.NewRestrictChatMemberPostRequestChatId(), int32(123)) // BotCommandScope |  (optional)
+	scope := openapiclient.BotCommandScope{BotCommandScopeAllChatAdministrators: openapiclient.NewBotCommandScopeAllChatAdministrators("Type_example")} // BotCommandScope |  (optional)
 	languageCode := "languageCode_example" // string | A two-letter ISO 639-1 language code. If empty, commands will be applied to all users from the given scope, for whose language there are no dedicated commands (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -9714,7 +9714,7 @@ import (
 
 func main() {
 	userId := int32(56) // int32 | User identifier
-	errors := []openapiclient.PassportElementError{*openapiclient.NewPassportElementError("Source_example", "Type_example", "FieldName_example", "DataHash_example", "Message_example", "FileHash_example", []string{"FileHashes_example"}, "ElementHash_example")} // []PassportElementError | A JSON-serialized array describing the errors
+	errors := []openapiclient.PassportElementError{openapiclient.PassportElementError{PassportElementErrorDataField: openapiclient.NewPassportElementErrorDataField("Source_example", "Type_example", "FieldName_example", "DataHash_example", "Message_example")}} // []PassportElementError | A JSON-serialized array describing the errors
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10056,7 +10056,7 @@ func main() {
 	name := "name_example" // string | Sticker set name
 	userId := int32(56) // int32 | User identifier of the sticker set owner
 	format := "format_example" // string | Format of the thumbnail, must be one of “static” for a **.WEBP** or **.PNG** image, “animated” for a **.TGS** animation, or “video” for a **.WEBM** video
-	thumbnail := *openapiclient.NewSetStickerSetThumbnailPostRequestThumbnail() // SetStickerSetThumbnailPostRequestThumbnail |  (optional)
+	thumbnail := openapiclient._setStickerSetThumbnail_post_request_thumbnail{Any: new(interface{})} // SetStickerSetThumbnailPostRequestThumbnail |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10342,7 +10342,7 @@ import (
 
 func main() {
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message to be edited was sent (optional)
-	chatId := *openapiclient.NewEditMessageTextPostRequestChatId() // EditMessageTextPostRequestChatId |  (optional)
+	chatId := openapiclient._editMessageText_post_request_chat_id{Int32: new(int32)} // EditMessageTextPostRequestChatId |  (optional)
 	messageId := int32(56) // int32 | Required if *inline\\\\_message\\\\_id* is not specified. Identifier of the message with live location to stop (optional)
 	inlineMessageId := "inlineMessageId_example" // string | Required if *chat\\\\_id* and *message\\\\_id* are not specified. Identifier of the inline message (optional)
 	replyMarkup := *openapiclient.NewInlineKeyboardMarkup([][]InlineKeyboardButton{[]openapiclient.InlineKeyboardButton{*openapiclient.NewInlineKeyboardButton("Text_example")}}) // InlineKeyboardMarkup |  (optional)
@@ -10415,7 +10415,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
 	messageId := int32(56) // int32 | Identifier of the original message with the poll
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message to be edited was sent (optional)
 	replyMarkup := *openapiclient.NewInlineKeyboardMarkup([][]InlineKeyboardButton{[]openapiclient.InlineKeyboardButton{*openapiclient.NewInlineKeyboardButton("Text_example")}}) // InlineKeyboardMarkup |  (optional)
@@ -10627,7 +10627,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewBanChatMemberPostRequestChatId() // BanChatMemberPostRequestChatId | 
+	chatId := openapiclient._banChatMember_post_request_chat_id{Int32: new(int32)} // BanChatMemberPostRequestChatId | 
 	userId := int32(56) // int32 | Unique identifier of the target user
 	onlyIfBanned := true // bool | Do nothing if the user is not banned (optional)
 
@@ -10697,7 +10697,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
 	senderChatId := int32(56) // int32 | Unique identifier of the target sender chat
 
 	configuration := openapiclient.NewConfiguration()
@@ -10765,7 +10765,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewRestrictChatMemberPostRequestChatId() // RestrictChatMemberPostRequestChatId | 
+	chatId := openapiclient._restrictChatMember_post_request_chat_id{Int32: new(int32)} // RestrictChatMemberPostRequestChatId | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10831,7 +10831,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10897,7 +10897,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewRestrictChatMemberPostRequestChatId() // RestrictChatMemberPostRequestChatId | 
+	chatId := openapiclient._restrictChatMember_post_request_chat_id{Int32: new(int32)} // RestrictChatMemberPostRequestChatId | 
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread of the forum topic
 
 	configuration := openapiclient.NewConfiguration()
@@ -10965,7 +10965,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewRestrictChatMemberPostRequestChatId() // RestrictChatMemberPostRequestChatId | 
+	chatId := openapiclient._restrictChatMember_post_request_chat_id{Int32: new(int32)} // RestrictChatMemberPostRequestChatId | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -11031,7 +11031,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be unpinned (optional)
 	messageId := int32(56) // int32 | Identifier of the message to unpin. Required if *business\\\\_connection\\\\_id* is specified. If not specified, the most recent pinned message (by sending date) will be unpinned. (optional)
 
@@ -11243,7 +11243,7 @@ import (
 )
 
 func main() {
-	chatId := *openapiclient.NewSendMessagePostRequestChatId() // SendMessagePostRequestChatId | 
+	chatId := openapiclient._sendMessage_post_request_chat_id{Int32: new(int32)} // SendMessagePostRequestChatId | 
 	customDescription := "customDescription_example" // string | Custom description for the verification; 0-70 characters. Must be empty if the organization isn't allowed to provide a custom verification description. (optional)
 
 	configuration := openapiclient.NewConfiguration()

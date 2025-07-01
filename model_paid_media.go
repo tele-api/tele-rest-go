@@ -1,12 +1,12 @@
 /** 
  * Telegram Bot API - REST API Client
- * Auto-generated OpenAPI schema
+ * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
  *    * - **Version**: 9.0.0
- *    * - **Modified**: 2025-07-01T14:14:20.091913680Z[Etc/UTC]
+ *    * - **Modified**: 2025-07-01T14:36:13.209453861Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -47,59 +47,105 @@ package tele_rest
 import (
 	"encoding/json"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
-
-// PaidMedia This object describes paid media. Currently, it can be one of  * [PaidMediaPreview](https://core.telegram.org/bots/api/#paidmediapreview) * [PaidMediaPhoto](https://core.telegram.org/bots/api/#paidmediaphoto) * [PaidMediaVideo](https://core.telegram.org/bots/api/#paidmediavideo)
+// PaidMedia - This object describes paid media. Currently, it can be one of  * [PaidMediaPreview](https://core.telegram.org/bots/api/#paidmediapreview) * [PaidMediaPhoto](https://core.telegram.org/bots/api/#paidmediaphoto) * [PaidMediaVideo](https://core.telegram.org/bots/api/#paidmediavideo)
 type PaidMedia struct {
 	PaidMediaPhoto *PaidMediaPhoto
 	PaidMediaPreview *PaidMediaPreview
 	PaidMediaVideo *PaidMediaVideo
 }
 
-// Unmarshal JSON data into any of the pointers in the struct
+// PaidMediaPhotoAsPaidMedia is a convenience function that returns PaidMediaPhoto wrapped in PaidMedia
+func PaidMediaPhotoAsPaidMedia(v *PaidMediaPhoto) PaidMedia {
+	return PaidMedia{
+		PaidMediaPhoto: v,
+	}
+}
+
+// PaidMediaPreviewAsPaidMedia is a convenience function that returns PaidMediaPreview wrapped in PaidMedia
+func PaidMediaPreviewAsPaidMedia(v *PaidMediaPreview) PaidMedia {
+	return PaidMedia{
+		PaidMediaPreview: v,
+	}
+}
+
+// PaidMediaVideoAsPaidMedia is a convenience function that returns PaidMediaVideo wrapped in PaidMedia
+func PaidMediaVideoAsPaidMedia(v *PaidMediaVideo) PaidMedia {
+	return PaidMedia{
+		PaidMediaVideo: v,
+	}
+}
+
+
+// Unmarshal JSON data into one of the pointers in the struct
 func (dst *PaidMedia) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into PaidMediaPhoto
-	err = json.Unmarshal(data, &dst.PaidMediaPhoto);
+	match := 0
+	// try to unmarshal data into PaidMediaPhoto
+	err = newStrictDecoder(data).Decode(&dst.PaidMediaPhoto)
 	if err == nil {
 		jsonPaidMediaPhoto, _ := json.Marshal(dst.PaidMediaPhoto)
 		if string(jsonPaidMediaPhoto) == "{}" { // empty struct
 			dst.PaidMediaPhoto = nil
 		} else {
-			return nil // data stored in dst.PaidMediaPhoto, return on the first match
+			if err = validator.Validate(dst.PaidMediaPhoto); err != nil {
+				dst.PaidMediaPhoto = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.PaidMediaPhoto = nil
 	}
 
-	// try to unmarshal JSON data into PaidMediaPreview
-	err = json.Unmarshal(data, &dst.PaidMediaPreview);
+	// try to unmarshal data into PaidMediaPreview
+	err = newStrictDecoder(data).Decode(&dst.PaidMediaPreview)
 	if err == nil {
 		jsonPaidMediaPreview, _ := json.Marshal(dst.PaidMediaPreview)
 		if string(jsonPaidMediaPreview) == "{}" { // empty struct
 			dst.PaidMediaPreview = nil
 		} else {
-			return nil // data stored in dst.PaidMediaPreview, return on the first match
+			if err = validator.Validate(dst.PaidMediaPreview); err != nil {
+				dst.PaidMediaPreview = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.PaidMediaPreview = nil
 	}
 
-	// try to unmarshal JSON data into PaidMediaVideo
-	err = json.Unmarshal(data, &dst.PaidMediaVideo);
+	// try to unmarshal data into PaidMediaVideo
+	err = newStrictDecoder(data).Decode(&dst.PaidMediaVideo)
 	if err == nil {
 		jsonPaidMediaVideo, _ := json.Marshal(dst.PaidMediaVideo)
 		if string(jsonPaidMediaVideo) == "{}" { // empty struct
 			dst.PaidMediaVideo = nil
 		} else {
-			return nil // data stored in dst.PaidMediaVideo, return on the first match
+			if err = validator.Validate(dst.PaidMediaVideo); err != nil {
+				dst.PaidMediaVideo = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.PaidMediaVideo = nil
 	}
 
-	return fmt.Errorf("data failed to match schemas in anyOf(PaidMedia)")
+	if match > 1 { // more than 1 match
+		// reset to nil
+		dst.PaidMediaPhoto = nil
+		dst.PaidMediaPreview = nil
+		dst.PaidMediaVideo = nil
+
+		return fmt.Errorf("data matches more than one schema in oneOf(PaidMedia)")
+	} else if match == 1 {
+		return nil // exactly one match
+	} else { // no match
+		return fmt.Errorf("data failed to match schemas in oneOf(PaidMedia)")
+	}
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON
@@ -116,9 +162,47 @@ func (src PaidMedia) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.PaidMediaVideo)
 	}
 
-	return nil, nil // no data in anyOf schemas
+	return nil, nil // no data in oneOf schemas
 }
 
+// Get the actual instance
+func (obj *PaidMedia) GetActualInstance() (interface{}) {
+	if obj == nil {
+		return nil
+	}
+	if obj.PaidMediaPhoto != nil {
+		return obj.PaidMediaPhoto
+	}
+
+	if obj.PaidMediaPreview != nil {
+		return obj.PaidMediaPreview
+	}
+
+	if obj.PaidMediaVideo != nil {
+		return obj.PaidMediaVideo
+	}
+
+	// all schemas are nil
+	return nil
+}
+
+// Get the actual instance value
+func (obj PaidMedia) GetActualInstanceValue() (interface{}) {
+	if obj.PaidMediaPhoto != nil {
+		return *obj.PaidMediaPhoto
+	}
+
+	if obj.PaidMediaPreview != nil {
+		return *obj.PaidMediaPreview
+	}
+
+	if obj.PaidMediaVideo != nil {
+		return *obj.PaidMediaVideo
+	}
+
+	// all schemas are nil
+	return nil
+}
 
 type NullablePaidMedia struct {
 	value *PaidMedia

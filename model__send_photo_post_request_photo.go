@@ -1,12 +1,12 @@
 /** 
  * Telegram Bot API - REST API Client
- * Auto-generated OpenAPI schema
+ * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
  *    * - **Version**: 9.0.0
- *    * - **Modified**: 2025-07-01T14:14:20.091913680Z[Etc/UTC]
+ *    * - **Modified**: 2025-07-01T14:36:13.209453861Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -47,45 +47,79 @@ package tele_rest
 import (
 	"encoding/json"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
-
-// SendPhotoPostRequestPhoto Photo to send. Pass a file\\_id as String to send a photo that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a photo from the Internet, or upload a new photo using multipart/form-data. The photo must be at most 10 MB in size. The photo's width and height must not exceed 10000 in total. Width and height ratio must be at most 20. [More information on Sending Files »](https://core.telegram.org/bots/api/#sending-files)
+// SendPhotoPostRequestPhoto - Photo to send. Pass a file\\_id as String to send a photo that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a photo from the Internet, or upload a new photo using multipart/form-data. The photo must be at most 10 MB in size. The photo's width and height must not exceed 10000 in total. Width and height ratio must be at most 20. [More information on Sending Files »](https://core.telegram.org/bots/api/#sending-files)
 type SendPhotoPostRequestPhoto struct {
 	Any *interface{}
 	String *string
 }
 
-// Unmarshal JSON data into any of the pointers in the struct
+// interface{}AsSendPhotoPostRequestPhoto is a convenience function that returns interface{} wrapped in SendPhotoPostRequestPhoto
+func AnyAsSendPhotoPostRequestPhoto(v *interface{}) SendPhotoPostRequestPhoto {
+	return SendPhotoPostRequestPhoto{
+		Any: v,
+	}
+}
+
+// stringAsSendPhotoPostRequestPhoto is a convenience function that returns string wrapped in SendPhotoPostRequestPhoto
+func StringAsSendPhotoPostRequestPhoto(v *string) SendPhotoPostRequestPhoto {
+	return SendPhotoPostRequestPhoto{
+		String: v,
+	}
+}
+
+
+// Unmarshal JSON data into one of the pointers in the struct
 func (dst *SendPhotoPostRequestPhoto) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into Any
-	err = json.Unmarshal(data, &dst.Any);
+	match := 0
+	// try to unmarshal data into Any
+	err = newStrictDecoder(data).Decode(&dst.Any)
 	if err == nil {
 		jsonAny, _ := json.Marshal(dst.Any)
 		if string(jsonAny) == "{}" { // empty struct
 			dst.Any = nil
 		} else {
-			return nil // data stored in dst.Any, return on the first match
+			if err = validator.Validate(dst.Any); err != nil {
+				dst.Any = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.Any = nil
 	}
 
-	// try to unmarshal JSON data into String
-	err = json.Unmarshal(data, &dst.String);
+	// try to unmarshal data into String
+	err = newStrictDecoder(data).Decode(&dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
 			dst.String = nil
 		} else {
-			return nil // data stored in dst.String, return on the first match
+			if err = validator.Validate(dst.String); err != nil {
+				dst.String = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.String = nil
 	}
 
-	return fmt.Errorf("data failed to match schemas in anyOf(SendPhotoPostRequestPhoto)")
+	if match > 1 { // more than 1 match
+		// reset to nil
+		dst.Any = nil
+		dst.String = nil
+
+		return fmt.Errorf("data matches more than one schema in oneOf(SendPhotoPostRequestPhoto)")
+	} else if match == 1 {
+		return nil // exactly one match
+	} else { // no match
+		return fmt.Errorf("data failed to match schemas in oneOf(SendPhotoPostRequestPhoto)")
+	}
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON
@@ -98,9 +132,39 @@ func (src SendPhotoPostRequestPhoto) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.String)
 	}
 
-	return nil, nil // no data in anyOf schemas
+	return nil, nil // no data in oneOf schemas
 }
 
+// Get the actual instance
+func (obj *SendPhotoPostRequestPhoto) GetActualInstance() (interface{}) {
+	if obj == nil {
+		return nil
+	}
+	if obj.Any != nil {
+		return obj.Any
+	}
+
+	if obj.String != nil {
+		return obj.String
+	}
+
+	// all schemas are nil
+	return nil
+}
+
+// Get the actual instance value
+func (obj SendPhotoPostRequestPhoto) GetActualInstanceValue() (interface{}) {
+	if obj.Any != nil {
+		return *obj.Any
+	}
+
+	if obj.String != nil {
+		return *obj.String
+	}
+
+	// all schemas are nil
+	return nil
+}
 
 type NullableSendPhotoPostRequestPhoto struct {
 	value *SendPhotoPostRequestPhoto

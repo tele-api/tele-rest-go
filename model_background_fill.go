@@ -1,12 +1,12 @@
 /** 
  * Telegram Bot API - REST API Client
- * Auto-generated OpenAPI schema
+ * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
  *    * - **Version**: 9.0.0
- *    * - **Modified**: 2025-07-01T14:14:20.091913680Z[Etc/UTC]
+ *    * - **Modified**: 2025-07-01T14:36:13.209453861Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -47,59 +47,105 @@ package tele_rest
 import (
 	"encoding/json"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
-
-// BackgroundFill This object describes the way a background is filled based on the selected colors. Currently, it can be one of  * [BackgroundFillSolid](https://core.telegram.org/bots/api/#backgroundfillsolid) * [BackgroundFillGradient](https://core.telegram.org/bots/api/#backgroundfillgradient) * [BackgroundFillFreeformGradient](https://core.telegram.org/bots/api/#backgroundfillfreeformgradient)
+// BackgroundFill - This object describes the way a background is filled based on the selected colors. Currently, it can be one of  * [BackgroundFillSolid](https://core.telegram.org/bots/api/#backgroundfillsolid) * [BackgroundFillGradient](https://core.telegram.org/bots/api/#backgroundfillgradient) * [BackgroundFillFreeformGradient](https://core.telegram.org/bots/api/#backgroundfillfreeformgradient)
 type BackgroundFill struct {
 	BackgroundFillFreeformGradient *BackgroundFillFreeformGradient
 	BackgroundFillGradient *BackgroundFillGradient
 	BackgroundFillSolid *BackgroundFillSolid
 }
 
-// Unmarshal JSON data into any of the pointers in the struct
+// BackgroundFillFreeformGradientAsBackgroundFill is a convenience function that returns BackgroundFillFreeformGradient wrapped in BackgroundFill
+func BackgroundFillFreeformGradientAsBackgroundFill(v *BackgroundFillFreeformGradient) BackgroundFill {
+	return BackgroundFill{
+		BackgroundFillFreeformGradient: v,
+	}
+}
+
+// BackgroundFillGradientAsBackgroundFill is a convenience function that returns BackgroundFillGradient wrapped in BackgroundFill
+func BackgroundFillGradientAsBackgroundFill(v *BackgroundFillGradient) BackgroundFill {
+	return BackgroundFill{
+		BackgroundFillGradient: v,
+	}
+}
+
+// BackgroundFillSolidAsBackgroundFill is a convenience function that returns BackgroundFillSolid wrapped in BackgroundFill
+func BackgroundFillSolidAsBackgroundFill(v *BackgroundFillSolid) BackgroundFill {
+	return BackgroundFill{
+		BackgroundFillSolid: v,
+	}
+}
+
+
+// Unmarshal JSON data into one of the pointers in the struct
 func (dst *BackgroundFill) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into BackgroundFillFreeformGradient
-	err = json.Unmarshal(data, &dst.BackgroundFillFreeformGradient);
+	match := 0
+	// try to unmarshal data into BackgroundFillFreeformGradient
+	err = newStrictDecoder(data).Decode(&dst.BackgroundFillFreeformGradient)
 	if err == nil {
 		jsonBackgroundFillFreeformGradient, _ := json.Marshal(dst.BackgroundFillFreeformGradient)
 		if string(jsonBackgroundFillFreeformGradient) == "{}" { // empty struct
 			dst.BackgroundFillFreeformGradient = nil
 		} else {
-			return nil // data stored in dst.BackgroundFillFreeformGradient, return on the first match
+			if err = validator.Validate(dst.BackgroundFillFreeformGradient); err != nil {
+				dst.BackgroundFillFreeformGradient = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.BackgroundFillFreeformGradient = nil
 	}
 
-	// try to unmarshal JSON data into BackgroundFillGradient
-	err = json.Unmarshal(data, &dst.BackgroundFillGradient);
+	// try to unmarshal data into BackgroundFillGradient
+	err = newStrictDecoder(data).Decode(&dst.BackgroundFillGradient)
 	if err == nil {
 		jsonBackgroundFillGradient, _ := json.Marshal(dst.BackgroundFillGradient)
 		if string(jsonBackgroundFillGradient) == "{}" { // empty struct
 			dst.BackgroundFillGradient = nil
 		} else {
-			return nil // data stored in dst.BackgroundFillGradient, return on the first match
+			if err = validator.Validate(dst.BackgroundFillGradient); err != nil {
+				dst.BackgroundFillGradient = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.BackgroundFillGradient = nil
 	}
 
-	// try to unmarshal JSON data into BackgroundFillSolid
-	err = json.Unmarshal(data, &dst.BackgroundFillSolid);
+	// try to unmarshal data into BackgroundFillSolid
+	err = newStrictDecoder(data).Decode(&dst.BackgroundFillSolid)
 	if err == nil {
 		jsonBackgroundFillSolid, _ := json.Marshal(dst.BackgroundFillSolid)
 		if string(jsonBackgroundFillSolid) == "{}" { // empty struct
 			dst.BackgroundFillSolid = nil
 		} else {
-			return nil // data stored in dst.BackgroundFillSolid, return on the first match
+			if err = validator.Validate(dst.BackgroundFillSolid); err != nil {
+				dst.BackgroundFillSolid = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.BackgroundFillSolid = nil
 	}
 
-	return fmt.Errorf("data failed to match schemas in anyOf(BackgroundFill)")
+	if match > 1 { // more than 1 match
+		// reset to nil
+		dst.BackgroundFillFreeformGradient = nil
+		dst.BackgroundFillGradient = nil
+		dst.BackgroundFillSolid = nil
+
+		return fmt.Errorf("data matches more than one schema in oneOf(BackgroundFill)")
+	} else if match == 1 {
+		return nil // exactly one match
+	} else { // no match
+		return fmt.Errorf("data failed to match schemas in oneOf(BackgroundFill)")
+	}
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON
@@ -116,9 +162,47 @@ func (src BackgroundFill) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.BackgroundFillSolid)
 	}
 
-	return nil, nil // no data in anyOf schemas
+	return nil, nil // no data in oneOf schemas
 }
 
+// Get the actual instance
+func (obj *BackgroundFill) GetActualInstance() (interface{}) {
+	if obj == nil {
+		return nil
+	}
+	if obj.BackgroundFillFreeformGradient != nil {
+		return obj.BackgroundFillFreeformGradient
+	}
+
+	if obj.BackgroundFillGradient != nil {
+		return obj.BackgroundFillGradient
+	}
+
+	if obj.BackgroundFillSolid != nil {
+		return obj.BackgroundFillSolid
+	}
+
+	// all schemas are nil
+	return nil
+}
+
+// Get the actual instance value
+func (obj BackgroundFill) GetActualInstanceValue() (interface{}) {
+	if obj.BackgroundFillFreeformGradient != nil {
+		return *obj.BackgroundFillFreeformGradient
+	}
+
+	if obj.BackgroundFillGradient != nil {
+		return *obj.BackgroundFillGradient
+	}
+
+	if obj.BackgroundFillSolid != nil {
+		return *obj.BackgroundFillSolid
+	}
+
+	// all schemas are nil
+	return nil
+}
 
 type NullableBackgroundFill struct {
 	value *BackgroundFill

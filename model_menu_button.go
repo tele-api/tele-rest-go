@@ -1,12 +1,12 @@
 /** 
  * Telegram Bot API - REST API Client
- * Auto-generated OpenAPI schema
+ * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
  *    * - **Version**: 9.0.0
- *    * - **Modified**: 2025-07-01T14:14:20.091913680Z[Etc/UTC]
+ *    * - **Modified**: 2025-07-01T14:36:13.209453861Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -47,59 +47,105 @@ package tele_rest
 import (
 	"encoding/json"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
-
-// MenuButton This object describes the bot's menu button in a private chat. It should be one of  * [MenuButtonCommands](https://core.telegram.org/bots/api/#menubuttoncommands) * [MenuButtonWebApp](https://core.telegram.org/bots/api/#menubuttonwebapp) * [MenuButtonDefault](https://core.telegram.org/bots/api/#menubuttondefault)
+// MenuButton - This object describes the bot's menu button in a private chat. It should be one of  * [MenuButtonCommands](https://core.telegram.org/bots/api/#menubuttoncommands) * [MenuButtonWebApp](https://core.telegram.org/bots/api/#menubuttonwebapp) * [MenuButtonDefault](https://core.telegram.org/bots/api/#menubuttondefault)
 type MenuButton struct {
 	MenuButtonCommands *MenuButtonCommands
 	MenuButtonDefault *MenuButtonDefault
 	MenuButtonWebApp *MenuButtonWebApp
 }
 
-// Unmarshal JSON data into any of the pointers in the struct
+// MenuButtonCommandsAsMenuButton is a convenience function that returns MenuButtonCommands wrapped in MenuButton
+func MenuButtonCommandsAsMenuButton(v *MenuButtonCommands) MenuButton {
+	return MenuButton{
+		MenuButtonCommands: v,
+	}
+}
+
+// MenuButtonDefaultAsMenuButton is a convenience function that returns MenuButtonDefault wrapped in MenuButton
+func MenuButtonDefaultAsMenuButton(v *MenuButtonDefault) MenuButton {
+	return MenuButton{
+		MenuButtonDefault: v,
+	}
+}
+
+// MenuButtonWebAppAsMenuButton is a convenience function that returns MenuButtonWebApp wrapped in MenuButton
+func MenuButtonWebAppAsMenuButton(v *MenuButtonWebApp) MenuButton {
+	return MenuButton{
+		MenuButtonWebApp: v,
+	}
+}
+
+
+// Unmarshal JSON data into one of the pointers in the struct
 func (dst *MenuButton) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into MenuButtonCommands
-	err = json.Unmarshal(data, &dst.MenuButtonCommands);
+	match := 0
+	// try to unmarshal data into MenuButtonCommands
+	err = newStrictDecoder(data).Decode(&dst.MenuButtonCommands)
 	if err == nil {
 		jsonMenuButtonCommands, _ := json.Marshal(dst.MenuButtonCommands)
 		if string(jsonMenuButtonCommands) == "{}" { // empty struct
 			dst.MenuButtonCommands = nil
 		} else {
-			return nil // data stored in dst.MenuButtonCommands, return on the first match
+			if err = validator.Validate(dst.MenuButtonCommands); err != nil {
+				dst.MenuButtonCommands = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.MenuButtonCommands = nil
 	}
 
-	// try to unmarshal JSON data into MenuButtonDefault
-	err = json.Unmarshal(data, &dst.MenuButtonDefault);
+	// try to unmarshal data into MenuButtonDefault
+	err = newStrictDecoder(data).Decode(&dst.MenuButtonDefault)
 	if err == nil {
 		jsonMenuButtonDefault, _ := json.Marshal(dst.MenuButtonDefault)
 		if string(jsonMenuButtonDefault) == "{}" { // empty struct
 			dst.MenuButtonDefault = nil
 		} else {
-			return nil // data stored in dst.MenuButtonDefault, return on the first match
+			if err = validator.Validate(dst.MenuButtonDefault); err != nil {
+				dst.MenuButtonDefault = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.MenuButtonDefault = nil
 	}
 
-	// try to unmarshal JSON data into MenuButtonWebApp
-	err = json.Unmarshal(data, &dst.MenuButtonWebApp);
+	// try to unmarshal data into MenuButtonWebApp
+	err = newStrictDecoder(data).Decode(&dst.MenuButtonWebApp)
 	if err == nil {
 		jsonMenuButtonWebApp, _ := json.Marshal(dst.MenuButtonWebApp)
 		if string(jsonMenuButtonWebApp) == "{}" { // empty struct
 			dst.MenuButtonWebApp = nil
 		} else {
-			return nil // data stored in dst.MenuButtonWebApp, return on the first match
+			if err = validator.Validate(dst.MenuButtonWebApp); err != nil {
+				dst.MenuButtonWebApp = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.MenuButtonWebApp = nil
 	}
 
-	return fmt.Errorf("data failed to match schemas in anyOf(MenuButton)")
+	if match > 1 { // more than 1 match
+		// reset to nil
+		dst.MenuButtonCommands = nil
+		dst.MenuButtonDefault = nil
+		dst.MenuButtonWebApp = nil
+
+		return fmt.Errorf("data matches more than one schema in oneOf(MenuButton)")
+	} else if match == 1 {
+		return nil // exactly one match
+	} else { // no match
+		return fmt.Errorf("data failed to match schemas in oneOf(MenuButton)")
+	}
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON
@@ -116,9 +162,47 @@ func (src MenuButton) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.MenuButtonWebApp)
 	}
 
-	return nil, nil // no data in anyOf schemas
+	return nil, nil // no data in oneOf schemas
 }
 
+// Get the actual instance
+func (obj *MenuButton) GetActualInstance() (interface{}) {
+	if obj == nil {
+		return nil
+	}
+	if obj.MenuButtonCommands != nil {
+		return obj.MenuButtonCommands
+	}
+
+	if obj.MenuButtonDefault != nil {
+		return obj.MenuButtonDefault
+	}
+
+	if obj.MenuButtonWebApp != nil {
+		return obj.MenuButtonWebApp
+	}
+
+	// all schemas are nil
+	return nil
+}
+
+// Get the actual instance value
+func (obj MenuButton) GetActualInstanceValue() (interface{}) {
+	if obj.MenuButtonCommands != nil {
+		return *obj.MenuButtonCommands
+	}
+
+	if obj.MenuButtonDefault != nil {
+		return *obj.MenuButtonDefault
+	}
+
+	if obj.MenuButtonWebApp != nil {
+		return *obj.MenuButtonWebApp
+	}
+
+	// all schemas are nil
+	return nil
+}
 
 type NullableMenuButton struct {
 	value *MenuButton

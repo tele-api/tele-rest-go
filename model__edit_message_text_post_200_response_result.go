@@ -1,12 +1,12 @@
 /** 
  * Telegram Bot API - REST API Client
- * Auto-generated OpenAPI schema
+ * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
  *    * - **Version**: 9.0.0
- *    * - **Modified**: 2025-07-01T14:14:20.091913680Z[Etc/UTC]
+ *    * - **Modified**: 2025-07-01T14:36:13.209453861Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -47,45 +47,79 @@ package tele_rest
 import (
 	"encoding/json"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
-
-// EditMessageTextPost200ResponseResult struct for EditMessageTextPost200ResponseResult
+// EditMessageTextPost200ResponseResult - struct for EditMessageTextPost200ResponseResult
 type EditMessageTextPost200ResponseResult struct {
 	Message *Message
 	Bool *bool
 }
 
-// Unmarshal JSON data into any of the pointers in the struct
+// MessageAsEditMessageTextPost200ResponseResult is a convenience function that returns Message wrapped in EditMessageTextPost200ResponseResult
+func MessageAsEditMessageTextPost200ResponseResult(v *Message) EditMessageTextPost200ResponseResult {
+	return EditMessageTextPost200ResponseResult{
+		Message: v,
+	}
+}
+
+// boolAsEditMessageTextPost200ResponseResult is a convenience function that returns bool wrapped in EditMessageTextPost200ResponseResult
+func BoolAsEditMessageTextPost200ResponseResult(v *bool) EditMessageTextPost200ResponseResult {
+	return EditMessageTextPost200ResponseResult{
+		Bool: v,
+	}
+}
+
+
+// Unmarshal JSON data into one of the pointers in the struct
 func (dst *EditMessageTextPost200ResponseResult) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into Message
-	err = json.Unmarshal(data, &dst.Message);
+	match := 0
+	// try to unmarshal data into Message
+	err = newStrictDecoder(data).Decode(&dst.Message)
 	if err == nil {
 		jsonMessage, _ := json.Marshal(dst.Message)
 		if string(jsonMessage) == "{}" { // empty struct
 			dst.Message = nil
 		} else {
-			return nil // data stored in dst.Message, return on the first match
+			if err = validator.Validate(dst.Message); err != nil {
+				dst.Message = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.Message = nil
 	}
 
-	// try to unmarshal JSON data into Bool
-	err = json.Unmarshal(data, &dst.Bool);
+	// try to unmarshal data into Bool
+	err = newStrictDecoder(data).Decode(&dst.Bool)
 	if err == nil {
 		jsonBool, _ := json.Marshal(dst.Bool)
 		if string(jsonBool) == "{}" { // empty struct
 			dst.Bool = nil
 		} else {
-			return nil // data stored in dst.Bool, return on the first match
+			if err = validator.Validate(dst.Bool); err != nil {
+				dst.Bool = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.Bool = nil
 	}
 
-	return fmt.Errorf("data failed to match schemas in anyOf(EditMessageTextPost200ResponseResult)")
+	if match > 1 { // more than 1 match
+		// reset to nil
+		dst.Message = nil
+		dst.Bool = nil
+
+		return fmt.Errorf("data matches more than one schema in oneOf(EditMessageTextPost200ResponseResult)")
+	} else if match == 1 {
+		return nil // exactly one match
+	} else { // no match
+		return fmt.Errorf("data failed to match schemas in oneOf(EditMessageTextPost200ResponseResult)")
+	}
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON
@@ -98,9 +132,39 @@ func (src EditMessageTextPost200ResponseResult) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.Bool)
 	}
 
-	return nil, nil // no data in anyOf schemas
+	return nil, nil // no data in oneOf schemas
 }
 
+// Get the actual instance
+func (obj *EditMessageTextPost200ResponseResult) GetActualInstance() (interface{}) {
+	if obj == nil {
+		return nil
+	}
+	if obj.Message != nil {
+		return obj.Message
+	}
+
+	if obj.Bool != nil {
+		return obj.Bool
+	}
+
+	// all schemas are nil
+	return nil
+}
+
+// Get the actual instance value
+func (obj EditMessageTextPost200ResponseResult) GetActualInstanceValue() (interface{}) {
+	if obj.Message != nil {
+		return *obj.Message
+	}
+
+	if obj.Bool != nil {
+		return *obj.Bool
+	}
+
+	// all schemas are nil
+	return nil
+}
 
 type NullableEditMessageTextPost200ResponseResult struct {
 	value *EditMessageTextPost200ResponseResult

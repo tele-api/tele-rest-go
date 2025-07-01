@@ -1,12 +1,12 @@
 /** 
  * Telegram Bot API - REST API Client
- * Auto-generated OpenAPI schema
+ * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
  *    * - **Version**: 9.0.0
- *    * - **Modified**: 2025-07-01T14:14:20.091913680Z[Etc/UTC]
+ *    * - **Modified**: 2025-07-01T14:36:13.209453861Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -47,10 +47,10 @@ package tele_rest
 import (
 	"encoding/json"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
-
-// ChatMember This object contains information about one member of a chat. Currently, the following 6 types of chat members are supported:  * [ChatMemberOwner](https://core.telegram.org/bots/api/#chatmemberowner) * [ChatMemberAdministrator](https://core.telegram.org/bots/api/#chatmemberadministrator) * [ChatMemberMember](https://core.telegram.org/bots/api/#chatmembermember) * [ChatMemberRestricted](https://core.telegram.org/bots/api/#chatmemberrestricted) * [ChatMemberLeft](https://core.telegram.org/bots/api/#chatmemberleft) * [ChatMemberBanned](https://core.telegram.org/bots/api/#chatmemberbanned)
+// ChatMember - This object contains information about one member of a chat. Currently, the following 6 types of chat members are supported:  * [ChatMemberOwner](https://core.telegram.org/bots/api/#chatmemberowner) * [ChatMemberAdministrator](https://core.telegram.org/bots/api/#chatmemberadministrator) * [ChatMemberMember](https://core.telegram.org/bots/api/#chatmembermember) * [ChatMemberRestricted](https://core.telegram.org/bots/api/#chatmemberrestricted) * [ChatMemberLeft](https://core.telegram.org/bots/api/#chatmemberleft) * [ChatMemberBanned](https://core.telegram.org/bots/api/#chatmemberbanned)
 type ChatMember struct {
 	ChatMemberAdministrator *ChatMemberAdministrator
 	ChatMemberBanned *ChatMemberBanned
@@ -60,88 +60,170 @@ type ChatMember struct {
 	ChatMemberRestricted *ChatMemberRestricted
 }
 
-// Unmarshal JSON data into any of the pointers in the struct
+// ChatMemberAdministratorAsChatMember is a convenience function that returns ChatMemberAdministrator wrapped in ChatMember
+func ChatMemberAdministratorAsChatMember(v *ChatMemberAdministrator) ChatMember {
+	return ChatMember{
+		ChatMemberAdministrator: v,
+	}
+}
+
+// ChatMemberBannedAsChatMember is a convenience function that returns ChatMemberBanned wrapped in ChatMember
+func ChatMemberBannedAsChatMember(v *ChatMemberBanned) ChatMember {
+	return ChatMember{
+		ChatMemberBanned: v,
+	}
+}
+
+// ChatMemberLeftAsChatMember is a convenience function that returns ChatMemberLeft wrapped in ChatMember
+func ChatMemberLeftAsChatMember(v *ChatMemberLeft) ChatMember {
+	return ChatMember{
+		ChatMemberLeft: v,
+	}
+}
+
+// ChatMemberMemberAsChatMember is a convenience function that returns ChatMemberMember wrapped in ChatMember
+func ChatMemberMemberAsChatMember(v *ChatMemberMember) ChatMember {
+	return ChatMember{
+		ChatMemberMember: v,
+	}
+}
+
+// ChatMemberOwnerAsChatMember is a convenience function that returns ChatMemberOwner wrapped in ChatMember
+func ChatMemberOwnerAsChatMember(v *ChatMemberOwner) ChatMember {
+	return ChatMember{
+		ChatMemberOwner: v,
+	}
+}
+
+// ChatMemberRestrictedAsChatMember is a convenience function that returns ChatMemberRestricted wrapped in ChatMember
+func ChatMemberRestrictedAsChatMember(v *ChatMemberRestricted) ChatMember {
+	return ChatMember{
+		ChatMemberRestricted: v,
+	}
+}
+
+
+// Unmarshal JSON data into one of the pointers in the struct
 func (dst *ChatMember) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ChatMemberAdministrator
-	err = json.Unmarshal(data, &dst.ChatMemberAdministrator);
+	match := 0
+	// try to unmarshal data into ChatMemberAdministrator
+	err = newStrictDecoder(data).Decode(&dst.ChatMemberAdministrator)
 	if err == nil {
 		jsonChatMemberAdministrator, _ := json.Marshal(dst.ChatMemberAdministrator)
 		if string(jsonChatMemberAdministrator) == "{}" { // empty struct
 			dst.ChatMemberAdministrator = nil
 		} else {
-			return nil // data stored in dst.ChatMemberAdministrator, return on the first match
+			if err = validator.Validate(dst.ChatMemberAdministrator); err != nil {
+				dst.ChatMemberAdministrator = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.ChatMemberAdministrator = nil
 	}
 
-	// try to unmarshal JSON data into ChatMemberBanned
-	err = json.Unmarshal(data, &dst.ChatMemberBanned);
+	// try to unmarshal data into ChatMemberBanned
+	err = newStrictDecoder(data).Decode(&dst.ChatMemberBanned)
 	if err == nil {
 		jsonChatMemberBanned, _ := json.Marshal(dst.ChatMemberBanned)
 		if string(jsonChatMemberBanned) == "{}" { // empty struct
 			dst.ChatMemberBanned = nil
 		} else {
-			return nil // data stored in dst.ChatMemberBanned, return on the first match
+			if err = validator.Validate(dst.ChatMemberBanned); err != nil {
+				dst.ChatMemberBanned = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.ChatMemberBanned = nil
 	}
 
-	// try to unmarshal JSON data into ChatMemberLeft
-	err = json.Unmarshal(data, &dst.ChatMemberLeft);
+	// try to unmarshal data into ChatMemberLeft
+	err = newStrictDecoder(data).Decode(&dst.ChatMemberLeft)
 	if err == nil {
 		jsonChatMemberLeft, _ := json.Marshal(dst.ChatMemberLeft)
 		if string(jsonChatMemberLeft) == "{}" { // empty struct
 			dst.ChatMemberLeft = nil
 		} else {
-			return nil // data stored in dst.ChatMemberLeft, return on the first match
+			if err = validator.Validate(dst.ChatMemberLeft); err != nil {
+				dst.ChatMemberLeft = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.ChatMemberLeft = nil
 	}
 
-	// try to unmarshal JSON data into ChatMemberMember
-	err = json.Unmarshal(data, &dst.ChatMemberMember);
+	// try to unmarshal data into ChatMemberMember
+	err = newStrictDecoder(data).Decode(&dst.ChatMemberMember)
 	if err == nil {
 		jsonChatMemberMember, _ := json.Marshal(dst.ChatMemberMember)
 		if string(jsonChatMemberMember) == "{}" { // empty struct
 			dst.ChatMemberMember = nil
 		} else {
-			return nil // data stored in dst.ChatMemberMember, return on the first match
+			if err = validator.Validate(dst.ChatMemberMember); err != nil {
+				dst.ChatMemberMember = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.ChatMemberMember = nil
 	}
 
-	// try to unmarshal JSON data into ChatMemberOwner
-	err = json.Unmarshal(data, &dst.ChatMemberOwner);
+	// try to unmarshal data into ChatMemberOwner
+	err = newStrictDecoder(data).Decode(&dst.ChatMemberOwner)
 	if err == nil {
 		jsonChatMemberOwner, _ := json.Marshal(dst.ChatMemberOwner)
 		if string(jsonChatMemberOwner) == "{}" { // empty struct
 			dst.ChatMemberOwner = nil
 		} else {
-			return nil // data stored in dst.ChatMemberOwner, return on the first match
+			if err = validator.Validate(dst.ChatMemberOwner); err != nil {
+				dst.ChatMemberOwner = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.ChatMemberOwner = nil
 	}
 
-	// try to unmarshal JSON data into ChatMemberRestricted
-	err = json.Unmarshal(data, &dst.ChatMemberRestricted);
+	// try to unmarshal data into ChatMemberRestricted
+	err = newStrictDecoder(data).Decode(&dst.ChatMemberRestricted)
 	if err == nil {
 		jsonChatMemberRestricted, _ := json.Marshal(dst.ChatMemberRestricted)
 		if string(jsonChatMemberRestricted) == "{}" { // empty struct
 			dst.ChatMemberRestricted = nil
 		} else {
-			return nil // data stored in dst.ChatMemberRestricted, return on the first match
+			if err = validator.Validate(dst.ChatMemberRestricted); err != nil {
+				dst.ChatMemberRestricted = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.ChatMemberRestricted = nil
 	}
 
-	return fmt.Errorf("data failed to match schemas in anyOf(ChatMember)")
+	if match > 1 { // more than 1 match
+		// reset to nil
+		dst.ChatMemberAdministrator = nil
+		dst.ChatMemberBanned = nil
+		dst.ChatMemberLeft = nil
+		dst.ChatMemberMember = nil
+		dst.ChatMemberOwner = nil
+		dst.ChatMemberRestricted = nil
+
+		return fmt.Errorf("data matches more than one schema in oneOf(ChatMember)")
+	} else if match == 1 {
+		return nil // exactly one match
+	} else { // no match
+		return fmt.Errorf("data failed to match schemas in oneOf(ChatMember)")
+	}
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON
@@ -170,9 +252,71 @@ func (src ChatMember) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.ChatMemberRestricted)
 	}
 
-	return nil, nil // no data in anyOf schemas
+	return nil, nil // no data in oneOf schemas
 }
 
+// Get the actual instance
+func (obj *ChatMember) GetActualInstance() (interface{}) {
+	if obj == nil {
+		return nil
+	}
+	if obj.ChatMemberAdministrator != nil {
+		return obj.ChatMemberAdministrator
+	}
+
+	if obj.ChatMemberBanned != nil {
+		return obj.ChatMemberBanned
+	}
+
+	if obj.ChatMemberLeft != nil {
+		return obj.ChatMemberLeft
+	}
+
+	if obj.ChatMemberMember != nil {
+		return obj.ChatMemberMember
+	}
+
+	if obj.ChatMemberOwner != nil {
+		return obj.ChatMemberOwner
+	}
+
+	if obj.ChatMemberRestricted != nil {
+		return obj.ChatMemberRestricted
+	}
+
+	// all schemas are nil
+	return nil
+}
+
+// Get the actual instance value
+func (obj ChatMember) GetActualInstanceValue() (interface{}) {
+	if obj.ChatMemberAdministrator != nil {
+		return *obj.ChatMemberAdministrator
+	}
+
+	if obj.ChatMemberBanned != nil {
+		return *obj.ChatMemberBanned
+	}
+
+	if obj.ChatMemberLeft != nil {
+		return *obj.ChatMemberLeft
+	}
+
+	if obj.ChatMemberMember != nil {
+		return *obj.ChatMemberMember
+	}
+
+	if obj.ChatMemberOwner != nil {
+		return *obj.ChatMemberOwner
+	}
+
+	if obj.ChatMemberRestricted != nil {
+		return *obj.ChatMemberRestricted
+	}
+
+	// all schemas are nil
+	return nil
+}
 
 type NullableChatMember struct {
 	value *ChatMember

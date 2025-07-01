@@ -1,12 +1,12 @@
 /** 
  * Telegram Bot API - REST API Client
- * Auto-generated OpenAPI schema
+ * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
  *    * - **Version**: 9.0.0
- *    * - **Modified**: 2025-07-01T14:14:20.091913680Z[Etc/UTC]
+ *    * - **Modified**: 2025-07-01T14:36:13.209453861Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -47,45 +47,79 @@ package tele_rest
 import (
 	"encoding/json"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
-
-// ForwardMessagePostRequestFromChatId Unique identifier for the chat where the original message was sent (or channel username in the format `@channelusername`)
+// ForwardMessagePostRequestFromChatId - Unique identifier for the chat where the original message was sent (or channel username in the format `@channelusername`)
 type ForwardMessagePostRequestFromChatId struct {
 	Int32 *int32
 	String *string
 }
 
-// Unmarshal JSON data into any of the pointers in the struct
+// int32AsForwardMessagePostRequestFromChatId is a convenience function that returns int32 wrapped in ForwardMessagePostRequestFromChatId
+func Int32AsForwardMessagePostRequestFromChatId(v *int32) ForwardMessagePostRequestFromChatId {
+	return ForwardMessagePostRequestFromChatId{
+		Int32: v,
+	}
+}
+
+// stringAsForwardMessagePostRequestFromChatId is a convenience function that returns string wrapped in ForwardMessagePostRequestFromChatId
+func StringAsForwardMessagePostRequestFromChatId(v *string) ForwardMessagePostRequestFromChatId {
+	return ForwardMessagePostRequestFromChatId{
+		String: v,
+	}
+}
+
+
+// Unmarshal JSON data into one of the pointers in the struct
 func (dst *ForwardMessagePostRequestFromChatId) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into Int32
-	err = json.Unmarshal(data, &dst.Int32);
+	match := 0
+	// try to unmarshal data into Int32
+	err = newStrictDecoder(data).Decode(&dst.Int32)
 	if err == nil {
 		jsonInt32, _ := json.Marshal(dst.Int32)
 		if string(jsonInt32) == "{}" { // empty struct
 			dst.Int32 = nil
 		} else {
-			return nil // data stored in dst.Int32, return on the first match
+			if err = validator.Validate(dst.Int32); err != nil {
+				dst.Int32 = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.Int32 = nil
 	}
 
-	// try to unmarshal JSON data into String
-	err = json.Unmarshal(data, &dst.String);
+	// try to unmarshal data into String
+	err = newStrictDecoder(data).Decode(&dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
 			dst.String = nil
 		} else {
-			return nil // data stored in dst.String, return on the first match
+			if err = validator.Validate(dst.String); err != nil {
+				dst.String = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.String = nil
 	}
 
-	return fmt.Errorf("data failed to match schemas in anyOf(ForwardMessagePostRequestFromChatId)")
+	if match > 1 { // more than 1 match
+		// reset to nil
+		dst.Int32 = nil
+		dst.String = nil
+
+		return fmt.Errorf("data matches more than one schema in oneOf(ForwardMessagePostRequestFromChatId)")
+	} else if match == 1 {
+		return nil // exactly one match
+	} else { // no match
+		return fmt.Errorf("data failed to match schemas in oneOf(ForwardMessagePostRequestFromChatId)")
+	}
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON
@@ -98,9 +132,39 @@ func (src ForwardMessagePostRequestFromChatId) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.String)
 	}
 
-	return nil, nil // no data in anyOf schemas
+	return nil, nil // no data in oneOf schemas
 }
 
+// Get the actual instance
+func (obj *ForwardMessagePostRequestFromChatId) GetActualInstance() (interface{}) {
+	if obj == nil {
+		return nil
+	}
+	if obj.Int32 != nil {
+		return obj.Int32
+	}
+
+	if obj.String != nil {
+		return obj.String
+	}
+
+	// all schemas are nil
+	return nil
+}
+
+// Get the actual instance value
+func (obj ForwardMessagePostRequestFromChatId) GetActualInstanceValue() (interface{}) {
+	if obj.Int32 != nil {
+		return *obj.Int32
+	}
+
+	if obj.String != nil {
+		return *obj.String
+	}
+
+	// all schemas are nil
+	return nil
+}
 
 type NullableForwardMessagePostRequestFromChatId struct {
 	value *ForwardMessagePostRequestFromChatId

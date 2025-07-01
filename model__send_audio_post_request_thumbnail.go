@@ -1,12 +1,12 @@
 /** 
  * Telegram Bot API - REST API Client
- * Auto-generated OpenAPI schema
+ * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
  *    * - **Version**: 9.0.0
- *    * - **Modified**: 2025-07-01T14:14:20.091913680Z[Etc/UTC]
+ *    * - **Modified**: 2025-07-01T14:36:13.209453861Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -47,45 +47,79 @@ package tele_rest
 import (
 	"encoding/json"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
-
-// SendAudioPostRequestThumbnail Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail's width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can't be reused and can be only uploaded as a new file, so you can pass “attach://\\<file\\_attach\\_name\\>” if the thumbnail was uploaded using multipart/form-data under \\<file\\_attach\\_name\\>. [More information on Sending Files »](https://core.telegram.org/bots/api/#sending-files)
+// SendAudioPostRequestThumbnail - Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail's width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can't be reused and can be only uploaded as a new file, so you can pass “attach://\\<file\\_attach\\_name\\>” if the thumbnail was uploaded using multipart/form-data under \\<file\\_attach\\_name\\>. [More information on Sending Files »](https://core.telegram.org/bots/api/#sending-files)
 type SendAudioPostRequestThumbnail struct {
 	Any *interface{}
 	String *string
 }
 
-// Unmarshal JSON data into any of the pointers in the struct
+// interface{}AsSendAudioPostRequestThumbnail is a convenience function that returns interface{} wrapped in SendAudioPostRequestThumbnail
+func AnyAsSendAudioPostRequestThumbnail(v *interface{}) SendAudioPostRequestThumbnail {
+	return SendAudioPostRequestThumbnail{
+		Any: v,
+	}
+}
+
+// stringAsSendAudioPostRequestThumbnail is a convenience function that returns string wrapped in SendAudioPostRequestThumbnail
+func StringAsSendAudioPostRequestThumbnail(v *string) SendAudioPostRequestThumbnail {
+	return SendAudioPostRequestThumbnail{
+		String: v,
+	}
+}
+
+
+// Unmarshal JSON data into one of the pointers in the struct
 func (dst *SendAudioPostRequestThumbnail) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into Any
-	err = json.Unmarshal(data, &dst.Any);
+	match := 0
+	// try to unmarshal data into Any
+	err = newStrictDecoder(data).Decode(&dst.Any)
 	if err == nil {
 		jsonAny, _ := json.Marshal(dst.Any)
 		if string(jsonAny) == "{}" { // empty struct
 			dst.Any = nil
 		} else {
-			return nil // data stored in dst.Any, return on the first match
+			if err = validator.Validate(dst.Any); err != nil {
+				dst.Any = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.Any = nil
 	}
 
-	// try to unmarshal JSON data into String
-	err = json.Unmarshal(data, &dst.String);
+	// try to unmarshal data into String
+	err = newStrictDecoder(data).Decode(&dst.String)
 	if err == nil {
 		jsonString, _ := json.Marshal(dst.String)
 		if string(jsonString) == "{}" { // empty struct
 			dst.String = nil
 		} else {
-			return nil // data stored in dst.String, return on the first match
+			if err = validator.Validate(dst.String); err != nil {
+				dst.String = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.String = nil
 	}
 
-	return fmt.Errorf("data failed to match schemas in anyOf(SendAudioPostRequestThumbnail)")
+	if match > 1 { // more than 1 match
+		// reset to nil
+		dst.Any = nil
+		dst.String = nil
+
+		return fmt.Errorf("data matches more than one schema in oneOf(SendAudioPostRequestThumbnail)")
+	} else if match == 1 {
+		return nil // exactly one match
+	} else { // no match
+		return fmt.Errorf("data failed to match schemas in oneOf(SendAudioPostRequestThumbnail)")
+	}
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON
@@ -98,9 +132,39 @@ func (src SendAudioPostRequestThumbnail) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.String)
 	}
 
-	return nil, nil // no data in anyOf schemas
+	return nil, nil // no data in oneOf schemas
 }
 
+// Get the actual instance
+func (obj *SendAudioPostRequestThumbnail) GetActualInstance() (interface{}) {
+	if obj == nil {
+		return nil
+	}
+	if obj.Any != nil {
+		return obj.Any
+	}
+
+	if obj.String != nil {
+		return obj.String
+	}
+
+	// all schemas are nil
+	return nil
+}
+
+// Get the actual instance value
+func (obj SendAudioPostRequestThumbnail) GetActualInstanceValue() (interface{}) {
+	if obj.Any != nil {
+		return *obj.Any
+	}
+
+	if obj.String != nil {
+		return *obj.String
+	}
+
+	// all schemas are nil
+	return nil
+}
 
 type NullableSendAudioPostRequestThumbnail struct {
 	value *SendAudioPostRequestThumbnail

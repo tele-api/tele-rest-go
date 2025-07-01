@@ -1,12 +1,12 @@
 /** 
  * Telegram Bot API - REST API Client
- * Auto-generated OpenAPI schema
+ * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
  *    * - **Version**: 9.0.0
- *    * - **Modified**: 2025-07-01T14:14:20.091913680Z[Etc/UTC]
+ *    * - **Modified**: 2025-07-01T14:36:13.209453861Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -47,10 +47,10 @@ package tele_rest
 import (
 	"encoding/json"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
-
-// InputMedia This object represents the content of a media message to be sent. It should be one of  * [InputMediaAnimation](https://core.telegram.org/bots/api/#inputmediaanimation) * [InputMediaDocument](https://core.telegram.org/bots/api/#inputmediadocument) * [InputMediaAudio](https://core.telegram.org/bots/api/#inputmediaaudio) * [InputMediaPhoto](https://core.telegram.org/bots/api/#inputmediaphoto) * [InputMediaVideo](https://core.telegram.org/bots/api/#inputmediavideo)
+// InputMedia - This object represents the content of a media message to be sent. It should be one of  * [InputMediaAnimation](https://core.telegram.org/bots/api/#inputmediaanimation) * [InputMediaDocument](https://core.telegram.org/bots/api/#inputmediadocument) * [InputMediaAudio](https://core.telegram.org/bots/api/#inputmediaaudio) * [InputMediaPhoto](https://core.telegram.org/bots/api/#inputmediaphoto) * [InputMediaVideo](https://core.telegram.org/bots/api/#inputmediavideo)
 type InputMedia struct {
 	InputMediaAnimation *InputMediaAnimation
 	InputMediaAudio *InputMediaAudio
@@ -59,75 +59,145 @@ type InputMedia struct {
 	InputMediaVideo *InputMediaVideo
 }
 
-// Unmarshal JSON data into any of the pointers in the struct
+// InputMediaAnimationAsInputMedia is a convenience function that returns InputMediaAnimation wrapped in InputMedia
+func InputMediaAnimationAsInputMedia(v *InputMediaAnimation) InputMedia {
+	return InputMedia{
+		InputMediaAnimation: v,
+	}
+}
+
+// InputMediaAudioAsInputMedia is a convenience function that returns InputMediaAudio wrapped in InputMedia
+func InputMediaAudioAsInputMedia(v *InputMediaAudio) InputMedia {
+	return InputMedia{
+		InputMediaAudio: v,
+	}
+}
+
+// InputMediaDocumentAsInputMedia is a convenience function that returns InputMediaDocument wrapped in InputMedia
+func InputMediaDocumentAsInputMedia(v *InputMediaDocument) InputMedia {
+	return InputMedia{
+		InputMediaDocument: v,
+	}
+}
+
+// InputMediaPhotoAsInputMedia is a convenience function that returns InputMediaPhoto wrapped in InputMedia
+func InputMediaPhotoAsInputMedia(v *InputMediaPhoto) InputMedia {
+	return InputMedia{
+		InputMediaPhoto: v,
+	}
+}
+
+// InputMediaVideoAsInputMedia is a convenience function that returns InputMediaVideo wrapped in InputMedia
+func InputMediaVideoAsInputMedia(v *InputMediaVideo) InputMedia {
+	return InputMedia{
+		InputMediaVideo: v,
+	}
+}
+
+
+// Unmarshal JSON data into one of the pointers in the struct
 func (dst *InputMedia) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into InputMediaAnimation
-	err = json.Unmarshal(data, &dst.InputMediaAnimation);
+	match := 0
+	// try to unmarshal data into InputMediaAnimation
+	err = newStrictDecoder(data).Decode(&dst.InputMediaAnimation)
 	if err == nil {
 		jsonInputMediaAnimation, _ := json.Marshal(dst.InputMediaAnimation)
 		if string(jsonInputMediaAnimation) == "{}" { // empty struct
 			dst.InputMediaAnimation = nil
 		} else {
-			return nil // data stored in dst.InputMediaAnimation, return on the first match
+			if err = validator.Validate(dst.InputMediaAnimation); err != nil {
+				dst.InputMediaAnimation = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.InputMediaAnimation = nil
 	}
 
-	// try to unmarshal JSON data into InputMediaAudio
-	err = json.Unmarshal(data, &dst.InputMediaAudio);
+	// try to unmarshal data into InputMediaAudio
+	err = newStrictDecoder(data).Decode(&dst.InputMediaAudio)
 	if err == nil {
 		jsonInputMediaAudio, _ := json.Marshal(dst.InputMediaAudio)
 		if string(jsonInputMediaAudio) == "{}" { // empty struct
 			dst.InputMediaAudio = nil
 		} else {
-			return nil // data stored in dst.InputMediaAudio, return on the first match
+			if err = validator.Validate(dst.InputMediaAudio); err != nil {
+				dst.InputMediaAudio = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.InputMediaAudio = nil
 	}
 
-	// try to unmarshal JSON data into InputMediaDocument
-	err = json.Unmarshal(data, &dst.InputMediaDocument);
+	// try to unmarshal data into InputMediaDocument
+	err = newStrictDecoder(data).Decode(&dst.InputMediaDocument)
 	if err == nil {
 		jsonInputMediaDocument, _ := json.Marshal(dst.InputMediaDocument)
 		if string(jsonInputMediaDocument) == "{}" { // empty struct
 			dst.InputMediaDocument = nil
 		} else {
-			return nil // data stored in dst.InputMediaDocument, return on the first match
+			if err = validator.Validate(dst.InputMediaDocument); err != nil {
+				dst.InputMediaDocument = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.InputMediaDocument = nil
 	}
 
-	// try to unmarshal JSON data into InputMediaPhoto
-	err = json.Unmarshal(data, &dst.InputMediaPhoto);
+	// try to unmarshal data into InputMediaPhoto
+	err = newStrictDecoder(data).Decode(&dst.InputMediaPhoto)
 	if err == nil {
 		jsonInputMediaPhoto, _ := json.Marshal(dst.InputMediaPhoto)
 		if string(jsonInputMediaPhoto) == "{}" { // empty struct
 			dst.InputMediaPhoto = nil
 		} else {
-			return nil // data stored in dst.InputMediaPhoto, return on the first match
+			if err = validator.Validate(dst.InputMediaPhoto); err != nil {
+				dst.InputMediaPhoto = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.InputMediaPhoto = nil
 	}
 
-	// try to unmarshal JSON data into InputMediaVideo
-	err = json.Unmarshal(data, &dst.InputMediaVideo);
+	// try to unmarshal data into InputMediaVideo
+	err = newStrictDecoder(data).Decode(&dst.InputMediaVideo)
 	if err == nil {
 		jsonInputMediaVideo, _ := json.Marshal(dst.InputMediaVideo)
 		if string(jsonInputMediaVideo) == "{}" { // empty struct
 			dst.InputMediaVideo = nil
 		} else {
-			return nil // data stored in dst.InputMediaVideo, return on the first match
+			if err = validator.Validate(dst.InputMediaVideo); err != nil {
+				dst.InputMediaVideo = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.InputMediaVideo = nil
 	}
 
-	return fmt.Errorf("data failed to match schemas in anyOf(InputMedia)")
+	if match > 1 { // more than 1 match
+		// reset to nil
+		dst.InputMediaAnimation = nil
+		dst.InputMediaAudio = nil
+		dst.InputMediaDocument = nil
+		dst.InputMediaPhoto = nil
+		dst.InputMediaVideo = nil
+
+		return fmt.Errorf("data matches more than one schema in oneOf(InputMedia)")
+	} else if match == 1 {
+		return nil // exactly one match
+	} else { // no match
+		return fmt.Errorf("data failed to match schemas in oneOf(InputMedia)")
+	}
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON
@@ -152,9 +222,63 @@ func (src InputMedia) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.InputMediaVideo)
 	}
 
-	return nil, nil // no data in anyOf schemas
+	return nil, nil // no data in oneOf schemas
 }
 
+// Get the actual instance
+func (obj *InputMedia) GetActualInstance() (interface{}) {
+	if obj == nil {
+		return nil
+	}
+	if obj.InputMediaAnimation != nil {
+		return obj.InputMediaAnimation
+	}
+
+	if obj.InputMediaAudio != nil {
+		return obj.InputMediaAudio
+	}
+
+	if obj.InputMediaDocument != nil {
+		return obj.InputMediaDocument
+	}
+
+	if obj.InputMediaPhoto != nil {
+		return obj.InputMediaPhoto
+	}
+
+	if obj.InputMediaVideo != nil {
+		return obj.InputMediaVideo
+	}
+
+	// all schemas are nil
+	return nil
+}
+
+// Get the actual instance value
+func (obj InputMedia) GetActualInstanceValue() (interface{}) {
+	if obj.InputMediaAnimation != nil {
+		return *obj.InputMediaAnimation
+	}
+
+	if obj.InputMediaAudio != nil {
+		return *obj.InputMediaAudio
+	}
+
+	if obj.InputMediaDocument != nil {
+		return *obj.InputMediaDocument
+	}
+
+	if obj.InputMediaPhoto != nil {
+		return *obj.InputMediaPhoto
+	}
+
+	if obj.InputMediaVideo != nil {
+		return *obj.InputMediaVideo
+	}
+
+	// all schemas are nil
+	return nil
+}
 
 type NullableInputMedia struct {
 	value *InputMedia

@@ -1,12 +1,12 @@
 /** 
  * Telegram Bot API - REST API Client
- * Auto-generated OpenAPI schema
+ * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
  *    * - **Version**: 9.0.0
- *    * - **Modified**: 2025-07-01T14:14:20.091913680Z[Etc/UTC]
+ *    * - **Modified**: 2025-07-01T14:36:13.209453861Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -47,45 +47,79 @@ package tele_rest
 import (
 	"encoding/json"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
-
-// InputStoryContent This object describes the content of a story to post. Currently, it can be one of  * [InputStoryContentPhoto](https://core.telegram.org/bots/api/#inputstorycontentphoto) * [InputStoryContentVideo](https://core.telegram.org/bots/api/#inputstorycontentvideo)
+// InputStoryContent - This object describes the content of a story to post. Currently, it can be one of  * [InputStoryContentPhoto](https://core.telegram.org/bots/api/#inputstorycontentphoto) * [InputStoryContentVideo](https://core.telegram.org/bots/api/#inputstorycontentvideo)
 type InputStoryContent struct {
 	InputStoryContentPhoto *InputStoryContentPhoto
 	InputStoryContentVideo *InputStoryContentVideo
 }
 
-// Unmarshal JSON data into any of the pointers in the struct
+// InputStoryContentPhotoAsInputStoryContent is a convenience function that returns InputStoryContentPhoto wrapped in InputStoryContent
+func InputStoryContentPhotoAsInputStoryContent(v *InputStoryContentPhoto) InputStoryContent {
+	return InputStoryContent{
+		InputStoryContentPhoto: v,
+	}
+}
+
+// InputStoryContentVideoAsInputStoryContent is a convenience function that returns InputStoryContentVideo wrapped in InputStoryContent
+func InputStoryContentVideoAsInputStoryContent(v *InputStoryContentVideo) InputStoryContent {
+	return InputStoryContent{
+		InputStoryContentVideo: v,
+	}
+}
+
+
+// Unmarshal JSON data into one of the pointers in the struct
 func (dst *InputStoryContent) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into InputStoryContentPhoto
-	err = json.Unmarshal(data, &dst.InputStoryContentPhoto);
+	match := 0
+	// try to unmarshal data into InputStoryContentPhoto
+	err = newStrictDecoder(data).Decode(&dst.InputStoryContentPhoto)
 	if err == nil {
 		jsonInputStoryContentPhoto, _ := json.Marshal(dst.InputStoryContentPhoto)
 		if string(jsonInputStoryContentPhoto) == "{}" { // empty struct
 			dst.InputStoryContentPhoto = nil
 		} else {
-			return nil // data stored in dst.InputStoryContentPhoto, return on the first match
+			if err = validator.Validate(dst.InputStoryContentPhoto); err != nil {
+				dst.InputStoryContentPhoto = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.InputStoryContentPhoto = nil
 	}
 
-	// try to unmarshal JSON data into InputStoryContentVideo
-	err = json.Unmarshal(data, &dst.InputStoryContentVideo);
+	// try to unmarshal data into InputStoryContentVideo
+	err = newStrictDecoder(data).Decode(&dst.InputStoryContentVideo)
 	if err == nil {
 		jsonInputStoryContentVideo, _ := json.Marshal(dst.InputStoryContentVideo)
 		if string(jsonInputStoryContentVideo) == "{}" { // empty struct
 			dst.InputStoryContentVideo = nil
 		} else {
-			return nil // data stored in dst.InputStoryContentVideo, return on the first match
+			if err = validator.Validate(dst.InputStoryContentVideo); err != nil {
+				dst.InputStoryContentVideo = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.InputStoryContentVideo = nil
 	}
 
-	return fmt.Errorf("data failed to match schemas in anyOf(InputStoryContent)")
+	if match > 1 { // more than 1 match
+		// reset to nil
+		dst.InputStoryContentPhoto = nil
+		dst.InputStoryContentVideo = nil
+
+		return fmt.Errorf("data matches more than one schema in oneOf(InputStoryContent)")
+	} else if match == 1 {
+		return nil // exactly one match
+	} else { // no match
+		return fmt.Errorf("data failed to match schemas in oneOf(InputStoryContent)")
+	}
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON
@@ -98,9 +132,39 @@ func (src InputStoryContent) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.InputStoryContentVideo)
 	}
 
-	return nil, nil // no data in anyOf schemas
+	return nil, nil // no data in oneOf schemas
 }
 
+// Get the actual instance
+func (obj *InputStoryContent) GetActualInstance() (interface{}) {
+	if obj == nil {
+		return nil
+	}
+	if obj.InputStoryContentPhoto != nil {
+		return obj.InputStoryContentPhoto
+	}
+
+	if obj.InputStoryContentVideo != nil {
+		return obj.InputStoryContentVideo
+	}
+
+	// all schemas are nil
+	return nil
+}
+
+// Get the actual instance value
+func (obj InputStoryContent) GetActualInstanceValue() (interface{}) {
+	if obj.InputStoryContentPhoto != nil {
+		return *obj.InputStoryContentPhoto
+	}
+
+	if obj.InputStoryContentVideo != nil {
+		return *obj.InputStoryContentVideo
+	}
+
+	// all schemas are nil
+	return nil
+}
 
 type NullableInputStoryContent struct {
 	value *InputStoryContent

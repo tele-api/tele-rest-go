@@ -1,12 +1,12 @@
 /** 
  * Telegram Bot API - REST API Client
- * Auto-generated OpenAPI schema
+ * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
  *    * - **Version**: 9.0.0
- *    * - **Modified**: 2025-07-01T14:14:20.091913680Z[Etc/UTC]
+ *    * - **Modified**: 2025-07-01T14:36:13.209453861Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -47,10 +47,10 @@ package tele_rest
 import (
 	"encoding/json"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
-
-// MessageOrigin This object describes the origin of a message. It can be one of  * [MessageOriginUser](https://core.telegram.org/bots/api/#messageoriginuser) * [MessageOriginHiddenUser](https://core.telegram.org/bots/api/#messageoriginhiddenuser) * [MessageOriginChat](https://core.telegram.org/bots/api/#messageoriginchat) * [MessageOriginChannel](https://core.telegram.org/bots/api/#messageoriginchannel)
+// MessageOrigin - This object describes the origin of a message. It can be one of  * [MessageOriginUser](https://core.telegram.org/bots/api/#messageoriginuser) * [MessageOriginHiddenUser](https://core.telegram.org/bots/api/#messageoriginhiddenuser) * [MessageOriginChat](https://core.telegram.org/bots/api/#messageoriginchat) * [MessageOriginChannel](https://core.telegram.org/bots/api/#messageoriginchannel)
 type MessageOrigin struct {
 	MessageOriginChannel *MessageOriginChannel
 	MessageOriginChat *MessageOriginChat
@@ -58,62 +58,120 @@ type MessageOrigin struct {
 	MessageOriginUser *MessageOriginUser
 }
 
-// Unmarshal JSON data into any of the pointers in the struct
+// MessageOriginChannelAsMessageOrigin is a convenience function that returns MessageOriginChannel wrapped in MessageOrigin
+func MessageOriginChannelAsMessageOrigin(v *MessageOriginChannel) MessageOrigin {
+	return MessageOrigin{
+		MessageOriginChannel: v,
+	}
+}
+
+// MessageOriginChatAsMessageOrigin is a convenience function that returns MessageOriginChat wrapped in MessageOrigin
+func MessageOriginChatAsMessageOrigin(v *MessageOriginChat) MessageOrigin {
+	return MessageOrigin{
+		MessageOriginChat: v,
+	}
+}
+
+// MessageOriginHiddenUserAsMessageOrigin is a convenience function that returns MessageOriginHiddenUser wrapped in MessageOrigin
+func MessageOriginHiddenUserAsMessageOrigin(v *MessageOriginHiddenUser) MessageOrigin {
+	return MessageOrigin{
+		MessageOriginHiddenUser: v,
+	}
+}
+
+// MessageOriginUserAsMessageOrigin is a convenience function that returns MessageOriginUser wrapped in MessageOrigin
+func MessageOriginUserAsMessageOrigin(v *MessageOriginUser) MessageOrigin {
+	return MessageOrigin{
+		MessageOriginUser: v,
+	}
+}
+
+
+// Unmarshal JSON data into one of the pointers in the struct
 func (dst *MessageOrigin) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into MessageOriginChannel
-	err = json.Unmarshal(data, &dst.MessageOriginChannel);
+	match := 0
+	// try to unmarshal data into MessageOriginChannel
+	err = newStrictDecoder(data).Decode(&dst.MessageOriginChannel)
 	if err == nil {
 		jsonMessageOriginChannel, _ := json.Marshal(dst.MessageOriginChannel)
 		if string(jsonMessageOriginChannel) == "{}" { // empty struct
 			dst.MessageOriginChannel = nil
 		} else {
-			return nil // data stored in dst.MessageOriginChannel, return on the first match
+			if err = validator.Validate(dst.MessageOriginChannel); err != nil {
+				dst.MessageOriginChannel = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.MessageOriginChannel = nil
 	}
 
-	// try to unmarshal JSON data into MessageOriginChat
-	err = json.Unmarshal(data, &dst.MessageOriginChat);
+	// try to unmarshal data into MessageOriginChat
+	err = newStrictDecoder(data).Decode(&dst.MessageOriginChat)
 	if err == nil {
 		jsonMessageOriginChat, _ := json.Marshal(dst.MessageOriginChat)
 		if string(jsonMessageOriginChat) == "{}" { // empty struct
 			dst.MessageOriginChat = nil
 		} else {
-			return nil // data stored in dst.MessageOriginChat, return on the first match
+			if err = validator.Validate(dst.MessageOriginChat); err != nil {
+				dst.MessageOriginChat = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.MessageOriginChat = nil
 	}
 
-	// try to unmarshal JSON data into MessageOriginHiddenUser
-	err = json.Unmarshal(data, &dst.MessageOriginHiddenUser);
+	// try to unmarshal data into MessageOriginHiddenUser
+	err = newStrictDecoder(data).Decode(&dst.MessageOriginHiddenUser)
 	if err == nil {
 		jsonMessageOriginHiddenUser, _ := json.Marshal(dst.MessageOriginHiddenUser)
 		if string(jsonMessageOriginHiddenUser) == "{}" { // empty struct
 			dst.MessageOriginHiddenUser = nil
 		} else {
-			return nil // data stored in dst.MessageOriginHiddenUser, return on the first match
+			if err = validator.Validate(dst.MessageOriginHiddenUser); err != nil {
+				dst.MessageOriginHiddenUser = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.MessageOriginHiddenUser = nil
 	}
 
-	// try to unmarshal JSON data into MessageOriginUser
-	err = json.Unmarshal(data, &dst.MessageOriginUser);
+	// try to unmarshal data into MessageOriginUser
+	err = newStrictDecoder(data).Decode(&dst.MessageOriginUser)
 	if err == nil {
 		jsonMessageOriginUser, _ := json.Marshal(dst.MessageOriginUser)
 		if string(jsonMessageOriginUser) == "{}" { // empty struct
 			dst.MessageOriginUser = nil
 		} else {
-			return nil // data stored in dst.MessageOriginUser, return on the first match
+			if err = validator.Validate(dst.MessageOriginUser); err != nil {
+				dst.MessageOriginUser = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.MessageOriginUser = nil
 	}
 
-	return fmt.Errorf("data failed to match schemas in anyOf(MessageOrigin)")
+	if match > 1 { // more than 1 match
+		// reset to nil
+		dst.MessageOriginChannel = nil
+		dst.MessageOriginChat = nil
+		dst.MessageOriginHiddenUser = nil
+		dst.MessageOriginUser = nil
+
+		return fmt.Errorf("data matches more than one schema in oneOf(MessageOrigin)")
+	} else if match == 1 {
+		return nil // exactly one match
+	} else { // no match
+		return fmt.Errorf("data failed to match schemas in oneOf(MessageOrigin)")
+	}
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON
@@ -134,9 +192,55 @@ func (src MessageOrigin) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.MessageOriginUser)
 	}
 
-	return nil, nil // no data in anyOf schemas
+	return nil, nil // no data in oneOf schemas
 }
 
+// Get the actual instance
+func (obj *MessageOrigin) GetActualInstance() (interface{}) {
+	if obj == nil {
+		return nil
+	}
+	if obj.MessageOriginChannel != nil {
+		return obj.MessageOriginChannel
+	}
+
+	if obj.MessageOriginChat != nil {
+		return obj.MessageOriginChat
+	}
+
+	if obj.MessageOriginHiddenUser != nil {
+		return obj.MessageOriginHiddenUser
+	}
+
+	if obj.MessageOriginUser != nil {
+		return obj.MessageOriginUser
+	}
+
+	// all schemas are nil
+	return nil
+}
+
+// Get the actual instance value
+func (obj MessageOrigin) GetActualInstanceValue() (interface{}) {
+	if obj.MessageOriginChannel != nil {
+		return *obj.MessageOriginChannel
+	}
+
+	if obj.MessageOriginChat != nil {
+		return *obj.MessageOriginChat
+	}
+
+	if obj.MessageOriginHiddenUser != nil {
+		return *obj.MessageOriginHiddenUser
+	}
+
+	if obj.MessageOriginUser != nil {
+		return *obj.MessageOriginUser
+	}
+
+	// all schemas are nil
+	return nil
+}
 
 type NullableMessageOrigin struct {
 	value *MessageOrigin

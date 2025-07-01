@@ -1,12 +1,12 @@
 /** 
  * Telegram Bot API - REST API Client
- * Auto-generated OpenAPI schema
+ * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
  *    * - **Version**: 9.0.0
- *    * - **Modified**: 2025-07-01T14:14:20.091913680Z[Etc/UTC]
+ *    * - **Modified**: 2025-07-01T14:36:13.209453861Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -47,59 +47,105 @@ package tele_rest
 import (
 	"encoding/json"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
-
-// RevenueWithdrawalState This object describes the state of a revenue withdrawal operation. Currently, it can be one of  * [RevenueWithdrawalStatePending](https://core.telegram.org/bots/api/#revenuewithdrawalstatepending) * [RevenueWithdrawalStateSucceeded](https://core.telegram.org/bots/api/#revenuewithdrawalstatesucceeded) * [RevenueWithdrawalStateFailed](https://core.telegram.org/bots/api/#revenuewithdrawalstatefailed)
+// RevenueWithdrawalState - This object describes the state of a revenue withdrawal operation. Currently, it can be one of  * [RevenueWithdrawalStatePending](https://core.telegram.org/bots/api/#revenuewithdrawalstatepending) * [RevenueWithdrawalStateSucceeded](https://core.telegram.org/bots/api/#revenuewithdrawalstatesucceeded) * [RevenueWithdrawalStateFailed](https://core.telegram.org/bots/api/#revenuewithdrawalstatefailed)
 type RevenueWithdrawalState struct {
 	RevenueWithdrawalStateFailed *RevenueWithdrawalStateFailed
 	RevenueWithdrawalStatePending *RevenueWithdrawalStatePending
 	RevenueWithdrawalStateSucceeded *RevenueWithdrawalStateSucceeded
 }
 
-// Unmarshal JSON data into any of the pointers in the struct
+// RevenueWithdrawalStateFailedAsRevenueWithdrawalState is a convenience function that returns RevenueWithdrawalStateFailed wrapped in RevenueWithdrawalState
+func RevenueWithdrawalStateFailedAsRevenueWithdrawalState(v *RevenueWithdrawalStateFailed) RevenueWithdrawalState {
+	return RevenueWithdrawalState{
+		RevenueWithdrawalStateFailed: v,
+	}
+}
+
+// RevenueWithdrawalStatePendingAsRevenueWithdrawalState is a convenience function that returns RevenueWithdrawalStatePending wrapped in RevenueWithdrawalState
+func RevenueWithdrawalStatePendingAsRevenueWithdrawalState(v *RevenueWithdrawalStatePending) RevenueWithdrawalState {
+	return RevenueWithdrawalState{
+		RevenueWithdrawalStatePending: v,
+	}
+}
+
+// RevenueWithdrawalStateSucceededAsRevenueWithdrawalState is a convenience function that returns RevenueWithdrawalStateSucceeded wrapped in RevenueWithdrawalState
+func RevenueWithdrawalStateSucceededAsRevenueWithdrawalState(v *RevenueWithdrawalStateSucceeded) RevenueWithdrawalState {
+	return RevenueWithdrawalState{
+		RevenueWithdrawalStateSucceeded: v,
+	}
+}
+
+
+// Unmarshal JSON data into one of the pointers in the struct
 func (dst *RevenueWithdrawalState) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into RevenueWithdrawalStateFailed
-	err = json.Unmarshal(data, &dst.RevenueWithdrawalStateFailed);
+	match := 0
+	// try to unmarshal data into RevenueWithdrawalStateFailed
+	err = newStrictDecoder(data).Decode(&dst.RevenueWithdrawalStateFailed)
 	if err == nil {
 		jsonRevenueWithdrawalStateFailed, _ := json.Marshal(dst.RevenueWithdrawalStateFailed)
 		if string(jsonRevenueWithdrawalStateFailed) == "{}" { // empty struct
 			dst.RevenueWithdrawalStateFailed = nil
 		} else {
-			return nil // data stored in dst.RevenueWithdrawalStateFailed, return on the first match
+			if err = validator.Validate(dst.RevenueWithdrawalStateFailed); err != nil {
+				dst.RevenueWithdrawalStateFailed = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.RevenueWithdrawalStateFailed = nil
 	}
 
-	// try to unmarshal JSON data into RevenueWithdrawalStatePending
-	err = json.Unmarshal(data, &dst.RevenueWithdrawalStatePending);
+	// try to unmarshal data into RevenueWithdrawalStatePending
+	err = newStrictDecoder(data).Decode(&dst.RevenueWithdrawalStatePending)
 	if err == nil {
 		jsonRevenueWithdrawalStatePending, _ := json.Marshal(dst.RevenueWithdrawalStatePending)
 		if string(jsonRevenueWithdrawalStatePending) == "{}" { // empty struct
 			dst.RevenueWithdrawalStatePending = nil
 		} else {
-			return nil // data stored in dst.RevenueWithdrawalStatePending, return on the first match
+			if err = validator.Validate(dst.RevenueWithdrawalStatePending); err != nil {
+				dst.RevenueWithdrawalStatePending = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.RevenueWithdrawalStatePending = nil
 	}
 
-	// try to unmarshal JSON data into RevenueWithdrawalStateSucceeded
-	err = json.Unmarshal(data, &dst.RevenueWithdrawalStateSucceeded);
+	// try to unmarshal data into RevenueWithdrawalStateSucceeded
+	err = newStrictDecoder(data).Decode(&dst.RevenueWithdrawalStateSucceeded)
 	if err == nil {
 		jsonRevenueWithdrawalStateSucceeded, _ := json.Marshal(dst.RevenueWithdrawalStateSucceeded)
 		if string(jsonRevenueWithdrawalStateSucceeded) == "{}" { // empty struct
 			dst.RevenueWithdrawalStateSucceeded = nil
 		} else {
-			return nil // data stored in dst.RevenueWithdrawalStateSucceeded, return on the first match
+			if err = validator.Validate(dst.RevenueWithdrawalStateSucceeded); err != nil {
+				dst.RevenueWithdrawalStateSucceeded = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.RevenueWithdrawalStateSucceeded = nil
 	}
 
-	return fmt.Errorf("data failed to match schemas in anyOf(RevenueWithdrawalState)")
+	if match > 1 { // more than 1 match
+		// reset to nil
+		dst.RevenueWithdrawalStateFailed = nil
+		dst.RevenueWithdrawalStatePending = nil
+		dst.RevenueWithdrawalStateSucceeded = nil
+
+		return fmt.Errorf("data matches more than one schema in oneOf(RevenueWithdrawalState)")
+	} else if match == 1 {
+		return nil // exactly one match
+	} else { // no match
+		return fmt.Errorf("data failed to match schemas in oneOf(RevenueWithdrawalState)")
+	}
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON
@@ -116,9 +162,47 @@ func (src RevenueWithdrawalState) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.RevenueWithdrawalStateSucceeded)
 	}
 
-	return nil, nil // no data in anyOf schemas
+	return nil, nil // no data in oneOf schemas
 }
 
+// Get the actual instance
+func (obj *RevenueWithdrawalState) GetActualInstance() (interface{}) {
+	if obj == nil {
+		return nil
+	}
+	if obj.RevenueWithdrawalStateFailed != nil {
+		return obj.RevenueWithdrawalStateFailed
+	}
+
+	if obj.RevenueWithdrawalStatePending != nil {
+		return obj.RevenueWithdrawalStatePending
+	}
+
+	if obj.RevenueWithdrawalStateSucceeded != nil {
+		return obj.RevenueWithdrawalStateSucceeded
+	}
+
+	// all schemas are nil
+	return nil
+}
+
+// Get the actual instance value
+func (obj RevenueWithdrawalState) GetActualInstanceValue() (interface{}) {
+	if obj.RevenueWithdrawalStateFailed != nil {
+		return *obj.RevenueWithdrawalStateFailed
+	}
+
+	if obj.RevenueWithdrawalStatePending != nil {
+		return *obj.RevenueWithdrawalStatePending
+	}
+
+	if obj.RevenueWithdrawalStateSucceeded != nil {
+		return *obj.RevenueWithdrawalStateSucceeded
+	}
+
+	// all schemas are nil
+	return nil
+}
 
 type NullableRevenueWithdrawalState struct {
 	value *RevenueWithdrawalState

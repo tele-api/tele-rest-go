@@ -6,7 +6,7 @@
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
  *    * - **Version**: 9.0.0
- *    * - **Modified**: 2025-07-02T07:03:19.642213517Z[Etc/UTC]
+ *    * - **Modified**: 2025-07-02T09:17:05.586815301Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -58,7 +58,7 @@ type BusinessBotRights struct {
 	// *Optional*. True, if the bot can mark incoming private messages as read
 	CanReadMessages *bool `json:"can_read_messages,omitempty"`
 	// *Optional*. True, if the bot can delete messages sent by the bot
-	CanDeleteSentMessages *bool `json:"can_delete_sent_messages,omitempty"`
+	CanDeleteOutgoingMessages *bool `json:"can_delete_outgoing_messages,omitempty"`
 	// *Optional*. True, if the bot can delete all private messages in managed chats
 	CanDeleteAllMessages *bool `json:"can_delete_all_messages,omitempty"`
 	// *Optional*. True, if the bot can edit the first and last name of the business account
@@ -93,8 +93,8 @@ func NewBusinessBotRights() *BusinessBotRights {
 	this.CanReply = &canReply
 	var canReadMessages bool = true
 	this.CanReadMessages = &canReadMessages
-	var canDeleteSentMessages bool = true
-	this.CanDeleteSentMessages = &canDeleteSentMessages
+	var canDeleteOutgoingMessages bool = true
+	this.CanDeleteOutgoingMessages = &canDeleteOutgoingMessages
 	var canDeleteAllMessages bool = true
 	this.CanDeleteAllMessages = &canDeleteAllMessages
 	var canEditName bool = true
@@ -129,8 +129,8 @@ func NewBusinessBotRightsWithDefaults() *BusinessBotRights {
 	this.CanReply = &canReply
 	var canReadMessages bool = true
 	this.CanReadMessages = &canReadMessages
-	var canDeleteSentMessages bool = true
-	this.CanDeleteSentMessages = &canDeleteSentMessages
+	var canDeleteOutgoingMessages bool = true
+	this.CanDeleteOutgoingMessages = &canDeleteOutgoingMessages
 	var canDeleteAllMessages bool = true
 	this.CanDeleteAllMessages = &canDeleteAllMessages
 	var canEditName bool = true
@@ -222,36 +222,36 @@ func (o *BusinessBotRights) SetCanReadMessages(v bool) {
 }
 
 
-// GetCanDeleteSentMessages returns the CanDeleteSentMessages field value if set, zero value otherwise.
-func (o *BusinessBotRights) GetCanDeleteSentMessages() bool {
-	if o == nil || IsNil(o.CanDeleteSentMessages) {
+// GetCanDeleteOutgoingMessages returns the CanDeleteOutgoingMessages field value if set, zero value otherwise.
+func (o *BusinessBotRights) GetCanDeleteOutgoingMessages() bool {
+	if o == nil || IsNil(o.CanDeleteOutgoingMessages) {
 		var ret bool
 		return ret
 	}
-	return *o.CanDeleteSentMessages
+	return *o.CanDeleteOutgoingMessages
 }
 
-// GetCanDeleteSentMessagesOk returns a tuple with the CanDeleteSentMessages field value if set, nil otherwise
+// GetCanDeleteOutgoingMessagesOk returns a tuple with the CanDeleteOutgoingMessages field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BusinessBotRights) GetCanDeleteSentMessagesOk() (*bool, bool) {
-	if o == nil || IsNil(o.CanDeleteSentMessages) {
+func (o *BusinessBotRights) GetCanDeleteOutgoingMessagesOk() (*bool, bool) {
+	if o == nil || IsNil(o.CanDeleteOutgoingMessages) {
 		return nil, false
 	}
-	return o.CanDeleteSentMessages, true
+	return o.CanDeleteOutgoingMessages, true
 }
 
-// HasCanDeleteSentMessages returns a boolean if a field has been set.
-func (o *BusinessBotRights) HasCanDeleteSentMessages() bool {
-	if o != nil && !IsNil(o.CanDeleteSentMessages) {
+// HasCanDeleteOutgoingMessages returns a boolean if a field has been set.
+func (o *BusinessBotRights) HasCanDeleteOutgoingMessages() bool {
+	if o != nil && !IsNil(o.CanDeleteOutgoingMessages) {
 		return true
 	}
 
 	return false
 }
 
-// SetCanDeleteSentMessages gets a reference to the given bool and assigns it to the CanDeleteSentMessages field.
-func (o *BusinessBotRights) SetCanDeleteSentMessages(v bool) {
-	o.CanDeleteSentMessages = &v
+// SetCanDeleteOutgoingMessages gets a reference to the given bool and assigns it to the CanDeleteOutgoingMessages field.
+func (o *BusinessBotRights) SetCanDeleteOutgoingMessages(v bool) {
+	o.CanDeleteOutgoingMessages = &v
 }
 
 
@@ -634,8 +634,8 @@ func (o BusinessBotRights) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CanReadMessages) {
 		toSerialize["can_read_messages"] = o.CanReadMessages
 	}
-	if !IsNil(o.CanDeleteSentMessages) {
-		toSerialize["can_delete_sent_messages"] = o.CanDeleteSentMessages
+	if !IsNil(o.CanDeleteOutgoingMessages) {
+		toSerialize["can_delete_outgoing_messages"] = o.CanDeleteOutgoingMessages
 	}
 	if !IsNil(o.CanDeleteAllMessages) {
 		toSerialize["can_delete_all_messages"] = o.CanDeleteAllMessages

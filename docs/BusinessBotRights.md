@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CanReply** | Pointer to **bool** | *Optional*. True, if the bot can send and edit messages in the private chats that had incoming messages in the last 24 hours | [optional] [default to true]
 **CanReadMessages** | Pointer to **bool** | *Optional*. True, if the bot can mark incoming private messages as read | [optional] [default to true]
-**CanDeleteSentMessages** | Pointer to **bool** | *Optional*. True, if the bot can delete messages sent by the bot | [optional] [default to true]
+**CanDeleteOutgoingMessages** | Pointer to **bool** | *Optional*. True, if the bot can delete messages sent by the bot | [optional] [default to true]
 **CanDeleteAllMessages** | Pointer to **bool** | *Optional*. True, if the bot can delete all private messages in managed chats | [optional] [default to true]
 **CanEditName** | Pointer to **bool** | *Optional*. True, if the bot can edit the first and last name of the business account | [optional] [default to true]
 **CanEditBio** | Pointer to **bool** | *Optional*. True, if the bot can edit the bio of the business account | [optional] [default to true]
@@ -88,30 +88,30 @@ SetCanReadMessages sets CanReadMessages field to given value.
 
 HasCanReadMessages returns a boolean if a field has been set.
 
-### GetCanDeleteSentMessages
+### GetCanDeleteOutgoingMessages
 
-`func (o *BusinessBotRights) GetCanDeleteSentMessages() bool`
+`func (o *BusinessBotRights) GetCanDeleteOutgoingMessages() bool`
 
-GetCanDeleteSentMessages returns the CanDeleteSentMessages field if non-nil, zero value otherwise.
+GetCanDeleteOutgoingMessages returns the CanDeleteOutgoingMessages field if non-nil, zero value otherwise.
 
-### GetCanDeleteSentMessagesOk
+### GetCanDeleteOutgoingMessagesOk
 
-`func (o *BusinessBotRights) GetCanDeleteSentMessagesOk() (*bool, bool)`
+`func (o *BusinessBotRights) GetCanDeleteOutgoingMessagesOk() (*bool, bool)`
 
-GetCanDeleteSentMessagesOk returns a tuple with the CanDeleteSentMessages field if it's non-nil, zero value otherwise
+GetCanDeleteOutgoingMessagesOk returns a tuple with the CanDeleteOutgoingMessages field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCanDeleteSentMessages
+### SetCanDeleteOutgoingMessages
 
-`func (o *BusinessBotRights) SetCanDeleteSentMessages(v bool)`
+`func (o *BusinessBotRights) SetCanDeleteOutgoingMessages(v bool)`
 
-SetCanDeleteSentMessages sets CanDeleteSentMessages field to given value.
+SetCanDeleteOutgoingMessages sets CanDeleteOutgoingMessages field to given value.
 
-### HasCanDeleteSentMessages
+### HasCanDeleteOutgoingMessages
 
-`func (o *BusinessBotRights) HasCanDeleteSentMessages() bool`
+`func (o *BusinessBotRights) HasCanDeleteOutgoingMessages() bool`
 
-HasCanDeleteSentMessages returns a boolean if a field has been set.
+HasCanDeleteOutgoingMessages returns a boolean if a field has been set.
 
 ### GetCanDeleteAllMessages
 

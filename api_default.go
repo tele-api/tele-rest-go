@@ -6,7 +6,7 @@
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
  *    * - **Version**: 9.0.0
- *    * - **Modified**: 2025-07-01T14:36:13.209453861Z[Etc/UTC]
+ *    * - **Modified**: 2025-07-02T07:03:19.642213517Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -56,360 +56,360 @@ import (
 type DefaultAPI interface {
 
 	/*
-	AddStickerToSetPost Method for AddStickerToSetPost
+	PostAddStickerToSet addStickerToSet
 
 	Use this method to add a new sticker to a set created by the bot. Emoji sticker sets can have up to 200 stickers. Other sticker sets can have up to 120 stickers. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiAddStickerToSetPostRequest
+	@return ApiPostAddStickerToSetRequest
 	*/
-	AddStickerToSetPost(ctx context.Context) ApiAddStickerToSetPostRequest
+	PostAddStickerToSet(ctx context.Context) ApiPostAddStickerToSetRequest
 
-	// AddStickerToSetPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	AddStickerToSetPostExecute(r ApiAddStickerToSetPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostAddStickerToSetExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostAddStickerToSetExecute(r ApiPostAddStickerToSetRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	AnswerCallbackQueryPost Method for AnswerCallbackQueryPost
+	PostAnswerCallbackQuery answerCallbackQuery
 
 	Use this method to send answers to callback queries sent from [inline keyboards](https://core.telegram.org/bots/features#inline-keyboards). The answer will be displayed to the user as a notification at the top of the chat screen or as an alert. On success, *True* is returned.
 
 Alternatively, the user can be redirected to the specified Game URL. For this option to work, you must first create a game for your bot via [@BotFather](https://t.me/botfather) and accept the terms. Otherwise, you may use links like `t.me/your_bot?start=XXXX` that open your bot with a parameter.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiAnswerCallbackQueryPostRequest
+	@return ApiPostAnswerCallbackQueryRequest
 	*/
-	AnswerCallbackQueryPost(ctx context.Context) ApiAnswerCallbackQueryPostRequest
+	PostAnswerCallbackQuery(ctx context.Context) ApiPostAnswerCallbackQueryRequest
 
-	// AnswerCallbackQueryPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	AnswerCallbackQueryPostExecute(r ApiAnswerCallbackQueryPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostAnswerCallbackQueryExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostAnswerCallbackQueryExecute(r ApiPostAnswerCallbackQueryRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	AnswerInlineQueryPost Method for AnswerInlineQueryPost
+	PostAnswerInlineQuery answerInlineQuery
 
 	Use this method to send answers to an inline query. On success, *True* is returned.  
 No more than **50** results per query are allowed.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiAnswerInlineQueryPostRequest
+	@return ApiPostAnswerInlineQueryRequest
 	*/
-	AnswerInlineQueryPost(ctx context.Context) ApiAnswerInlineQueryPostRequest
+	PostAnswerInlineQuery(ctx context.Context) ApiPostAnswerInlineQueryRequest
 
-	// AnswerInlineQueryPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	AnswerInlineQueryPostExecute(r ApiAnswerInlineQueryPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostAnswerInlineQueryExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostAnswerInlineQueryExecute(r ApiPostAnswerInlineQueryRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	AnswerPreCheckoutQueryPost Method for AnswerPreCheckoutQueryPost
+	PostAnswerPreCheckoutQuery answerPreCheckoutQuery
 
 	Once the user has confirmed their payment and shipping details, the Bot API sends the final confirmation in the form of an [Update](https://core.telegram.org/bots/api/#update) with the field *pre\_checkout\_query*. Use this method to respond to such pre-checkout queries. On success, *True* is returned. **Note:** The Bot API must receive an answer within 10 seconds after the pre-checkout query was sent.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiAnswerPreCheckoutQueryPostRequest
+	@return ApiPostAnswerPreCheckoutQueryRequest
 	*/
-	AnswerPreCheckoutQueryPost(ctx context.Context) ApiAnswerPreCheckoutQueryPostRequest
+	PostAnswerPreCheckoutQuery(ctx context.Context) ApiPostAnswerPreCheckoutQueryRequest
 
-	// AnswerPreCheckoutQueryPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	AnswerPreCheckoutQueryPostExecute(r ApiAnswerPreCheckoutQueryPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostAnswerPreCheckoutQueryExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostAnswerPreCheckoutQueryExecute(r ApiPostAnswerPreCheckoutQueryRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	AnswerShippingQueryPost Method for AnswerShippingQueryPost
+	PostAnswerShippingQuery answerShippingQuery
 
 	If you sent an invoice requesting a shipping address and the parameter *is\_flexible* was specified, the Bot API will send an [Update](https://core.telegram.org/bots/api/#update) with a *shipping\_query* field to the bot. Use this method to reply to shipping queries. On success, *True* is returned.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiAnswerShippingQueryPostRequest
+	@return ApiPostAnswerShippingQueryRequest
 	*/
-	AnswerShippingQueryPost(ctx context.Context) ApiAnswerShippingQueryPostRequest
+	PostAnswerShippingQuery(ctx context.Context) ApiPostAnswerShippingQueryRequest
 
-	// AnswerShippingQueryPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	AnswerShippingQueryPostExecute(r ApiAnswerShippingQueryPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostAnswerShippingQueryExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostAnswerShippingQueryExecute(r ApiPostAnswerShippingQueryRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	AnswerWebAppQueryPost Method for AnswerWebAppQueryPost
+	PostAnswerWebAppQuery answerWebAppQuery
 
 	Use this method to set the result of an interaction with a [Web App](https://core.telegram.org/bots/webapps) and send a corresponding message on behalf of the user to the chat from which the query originated. On success, a [SentWebAppMessage](https://core.telegram.org/bots/api/#sentwebappmessage) object is returned.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiAnswerWebAppQueryPostRequest
+	@return ApiPostAnswerWebAppQueryRequest
 	*/
-	AnswerWebAppQueryPost(ctx context.Context) ApiAnswerWebAppQueryPostRequest
+	PostAnswerWebAppQuery(ctx context.Context) ApiPostAnswerWebAppQueryRequest
 
-	// AnswerWebAppQueryPostExecute executes the request
-	//  @return AnswerWebAppQueryPost200Response
-	AnswerWebAppQueryPostExecute(r ApiAnswerWebAppQueryPostRequest) (*AnswerWebAppQueryPost200Response, *http.Response, error)
+	// PostAnswerWebAppQueryExecute executes the request
+	//  @return PostAnswerWebAppQuery200Response
+	PostAnswerWebAppQueryExecute(r ApiPostAnswerWebAppQueryRequest) (*PostAnswerWebAppQuery200Response, *http.Response, error)
 
 	/*
-	ApproveChatJoinRequestPost Method for ApproveChatJoinRequestPost
+	PostApproveChatJoinRequest approveChatJoinRequest
 
 	Use this method to approve a chat join request. The bot must be an administrator in the chat for this to work and must have the *can\_invite\_users* administrator right. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiApproveChatJoinRequestPostRequest
+	@return ApiPostApproveChatJoinRequestRequest
 	*/
-	ApproveChatJoinRequestPost(ctx context.Context) ApiApproveChatJoinRequestPostRequest
+	PostApproveChatJoinRequest(ctx context.Context) ApiPostApproveChatJoinRequestRequest
 
-	// ApproveChatJoinRequestPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	ApproveChatJoinRequestPostExecute(r ApiApproveChatJoinRequestPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostApproveChatJoinRequestExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostApproveChatJoinRequestExecute(r ApiPostApproveChatJoinRequestRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	BanChatMemberPost Method for BanChatMemberPost
+	PostBanChatMember banChatMember
 
 	Use this method to ban a user in a group, a supergroup or a channel. In the case of supergroups and channels, the user will not be able to return to the chat on their own using invite links, etc., unless [unbanned](https://core.telegram.org/bots/api/#unbanchatmember) first. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiBanChatMemberPostRequest
+	@return ApiPostBanChatMemberRequest
 	*/
-	BanChatMemberPost(ctx context.Context) ApiBanChatMemberPostRequest
+	PostBanChatMember(ctx context.Context) ApiPostBanChatMemberRequest
 
-	// BanChatMemberPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	BanChatMemberPostExecute(r ApiBanChatMemberPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostBanChatMemberExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostBanChatMemberExecute(r ApiPostBanChatMemberRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	BanChatSenderChatPost Method for BanChatSenderChatPost
+	PostBanChatSenderChat banChatSenderChat
 
 	Use this method to ban a channel chat in a supergroup or a channel. Until the chat is [unbanned](https://core.telegram.org/bots/api/#unbanchatsenderchat), the owner of the banned chat won't be able to send messages on behalf of **any of their channels**. The bot must be an administrator in the supergroup or channel for this to work and must have the appropriate administrator rights. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiBanChatSenderChatPostRequest
+	@return ApiPostBanChatSenderChatRequest
 	*/
-	BanChatSenderChatPost(ctx context.Context) ApiBanChatSenderChatPostRequest
+	PostBanChatSenderChat(ctx context.Context) ApiPostBanChatSenderChatRequest
 
-	// BanChatSenderChatPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	BanChatSenderChatPostExecute(r ApiBanChatSenderChatPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostBanChatSenderChatExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostBanChatSenderChatExecute(r ApiPostBanChatSenderChatRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	CloseForumTopicPost Method for CloseForumTopicPost
-
-	Use this method to close an open topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the *can\_manage\_topics* administrator rights, unless it is the creator of the topic. Returns *True* on success.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiCloseForumTopicPostRequest
-	*/
-	CloseForumTopicPost(ctx context.Context) ApiCloseForumTopicPostRequest
-
-	// CloseForumTopicPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	CloseForumTopicPostExecute(r ApiCloseForumTopicPostRequest) (*SetWebhookPost200Response, *http.Response, error)
-
-	/*
-	CloseGeneralForumTopicPost Method for CloseGeneralForumTopicPost
-
-	Use this method to close an open 'General' topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the *can\_manage\_topics* administrator rights. Returns *True* on success.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiCloseGeneralForumTopicPostRequest
-	*/
-	CloseGeneralForumTopicPost(ctx context.Context) ApiCloseGeneralForumTopicPostRequest
-
-	// CloseGeneralForumTopicPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	CloseGeneralForumTopicPostExecute(r ApiCloseGeneralForumTopicPostRequest) (*SetWebhookPost200Response, *http.Response, error)
-
-	/*
-	ClosePost Method for ClosePost
+	PostClose close
 
 	Use this method to close the bot instance before moving it from one local server to another. You need to delete the webhook before calling this method to ensure that the bot isn't launched again after server restart. The method will return error 429 in the first 10 minutes after the bot is launched. Returns *True* on success. Requires no parameters.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiClosePostRequest
+	@return ApiPostCloseRequest
 	*/
-	ClosePost(ctx context.Context) ApiClosePostRequest
+	PostClose(ctx context.Context) ApiPostCloseRequest
 
-	// ClosePostExecute executes the request
-	//  @return SetWebhookPost200Response
-	ClosePostExecute(r ApiClosePostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostCloseExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostCloseExecute(r ApiPostCloseRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	ConvertGiftToStarsPost Method for ConvertGiftToStarsPost
+	PostCloseForumTopic closeForumTopic
+
+	Use this method to close an open topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the *can\_manage\_topics* administrator rights, unless it is the creator of the topic. Returns *True* on success.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostCloseForumTopicRequest
+	*/
+	PostCloseForumTopic(ctx context.Context) ApiPostCloseForumTopicRequest
+
+	// PostCloseForumTopicExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostCloseForumTopicExecute(r ApiPostCloseForumTopicRequest) (*PostSetWebhook200Response, *http.Response, error)
+
+	/*
+	PostCloseGeneralForumTopic closeGeneralForumTopic
+
+	Use this method to close an open 'General' topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the *can\_manage\_topics* administrator rights. Returns *True* on success.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostCloseGeneralForumTopicRequest
+	*/
+	PostCloseGeneralForumTopic(ctx context.Context) ApiPostCloseGeneralForumTopicRequest
+
+	// PostCloseGeneralForumTopicExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostCloseGeneralForumTopicExecute(r ApiPostCloseGeneralForumTopicRequest) (*PostSetWebhook200Response, *http.Response, error)
+
+	/*
+	PostConvertGiftToStars convertGiftToStars
 
 	Converts a given regular gift to Telegram Stars. Requires the *can\_convert\_gifts\_to\_stars* business bot right. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiConvertGiftToStarsPostRequest
+	@return ApiPostConvertGiftToStarsRequest
 	*/
-	ConvertGiftToStarsPost(ctx context.Context) ApiConvertGiftToStarsPostRequest
+	PostConvertGiftToStars(ctx context.Context) ApiPostConvertGiftToStarsRequest
 
-	// ConvertGiftToStarsPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	ConvertGiftToStarsPostExecute(r ApiConvertGiftToStarsPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostConvertGiftToStarsExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostConvertGiftToStarsExecute(r ApiPostConvertGiftToStarsRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	CopyMessagePost Method for CopyMessagePost
+	PostCopyMessage copyMessage
 
 	Use this method to copy messages of any kind. Service messages, paid media messages, giveaway messages, giveaway winners messages, and invoice messages can't be copied. A quiz [poll](https://core.telegram.org/bots/api/#poll) can be copied only if the value of the field *correct\_option\_id* is known to the bot. The method is analogous to the method [forwardMessage](https://core.telegram.org/bots/api/#forwardmessage), but the copied message doesn't have a link to the original message. Returns the [MessageId](https://core.telegram.org/bots/api/#messageid) of the sent message on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiCopyMessagePostRequest
+	@return ApiPostCopyMessageRequest
 	*/
-	CopyMessagePost(ctx context.Context) ApiCopyMessagePostRequest
+	PostCopyMessage(ctx context.Context) ApiPostCopyMessageRequest
 
-	// CopyMessagePostExecute executes the request
-	//  @return CopyMessagePost200Response
-	CopyMessagePostExecute(r ApiCopyMessagePostRequest) (*CopyMessagePost200Response, *http.Response, error)
+	// PostCopyMessageExecute executes the request
+	//  @return PostCopyMessage200Response
+	PostCopyMessageExecute(r ApiPostCopyMessageRequest) (*PostCopyMessage200Response, *http.Response, error)
 
 	/*
-	CopyMessagesPost Method for CopyMessagesPost
+	PostCopyMessages copyMessages
 
 	Use this method to copy messages of any kind. If some of the specified messages can't be found or copied, they are skipped. Service messages, paid media messages, giveaway messages, giveaway winners messages, and invoice messages can't be copied. A quiz [poll](https://core.telegram.org/bots/api/#poll) can be copied only if the value of the field *correct\_option\_id* is known to the bot. The method is analogous to the method [forwardMessages](https://core.telegram.org/bots/api/#forwardmessages), but the copied messages don't have a link to the original message. Album grouping is kept for copied messages. On success, an array of [MessageId](https://core.telegram.org/bots/api/#messageid) of the sent messages is returned.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiCopyMessagesPostRequest
+	@return ApiPostCopyMessagesRequest
 	*/
-	CopyMessagesPost(ctx context.Context) ApiCopyMessagesPostRequest
+	PostCopyMessages(ctx context.Context) ApiPostCopyMessagesRequest
 
-	// CopyMessagesPostExecute executes the request
-	//  @return ForwardMessagesPost200Response
-	CopyMessagesPostExecute(r ApiCopyMessagesPostRequest) (*ForwardMessagesPost200Response, *http.Response, error)
+	// PostCopyMessagesExecute executes the request
+	//  @return PostForwardMessages200Response
+	PostCopyMessagesExecute(r ApiPostCopyMessagesRequest) (*PostForwardMessages200Response, *http.Response, error)
 
 	/*
-	CreateChatInviteLinkPost Method for CreateChatInviteLinkPost
+	PostCreateChatInviteLink createChatInviteLink
 
 	Use this method to create an additional invite link for a chat. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. The link can be revoked using the method [revokeChatInviteLink](https://core.telegram.org/bots/api/#revokechatinvitelink). Returns the new invite link as [ChatInviteLink](https://core.telegram.org/bots/api/#chatinvitelink) object.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiCreateChatInviteLinkPostRequest
+	@return ApiPostCreateChatInviteLinkRequest
 	*/
-	CreateChatInviteLinkPost(ctx context.Context) ApiCreateChatInviteLinkPostRequest
+	PostCreateChatInviteLink(ctx context.Context) ApiPostCreateChatInviteLinkRequest
 
-	// CreateChatInviteLinkPostExecute executes the request
-	//  @return CreateChatInviteLinkPost200Response
-	CreateChatInviteLinkPostExecute(r ApiCreateChatInviteLinkPostRequest) (*CreateChatInviteLinkPost200Response, *http.Response, error)
+	// PostCreateChatInviteLinkExecute executes the request
+	//  @return PostCreateChatInviteLink200Response
+	PostCreateChatInviteLinkExecute(r ApiPostCreateChatInviteLinkRequest) (*PostCreateChatInviteLink200Response, *http.Response, error)
 
 	/*
-	CreateChatSubscriptionInviteLinkPost Method for CreateChatSubscriptionInviteLinkPost
+	PostCreateChatSubscriptionInviteLink createChatSubscriptionInviteLink
 
 	Use this method to create a [subscription invite link](https://telegram.org/blog/superchannels-star-reactions-subscriptions#star-subscriptions) for a channel chat. The bot must have the *can\_invite\_users* administrator rights. The link can be edited using the method [editChatSubscriptionInviteLink](https://core.telegram.org/bots/api/#editchatsubscriptioninvitelink) or revoked using the method [revokeChatInviteLink](https://core.telegram.org/bots/api/#revokechatinvitelink). Returns the new invite link as a [ChatInviteLink](https://core.telegram.org/bots/api/#chatinvitelink) object.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiCreateChatSubscriptionInviteLinkPostRequest
+	@return ApiPostCreateChatSubscriptionInviteLinkRequest
 	*/
-	CreateChatSubscriptionInviteLinkPost(ctx context.Context) ApiCreateChatSubscriptionInviteLinkPostRequest
+	PostCreateChatSubscriptionInviteLink(ctx context.Context) ApiPostCreateChatSubscriptionInviteLinkRequest
 
-	// CreateChatSubscriptionInviteLinkPostExecute executes the request
-	//  @return CreateChatInviteLinkPost200Response
-	CreateChatSubscriptionInviteLinkPostExecute(r ApiCreateChatSubscriptionInviteLinkPostRequest) (*CreateChatInviteLinkPost200Response, *http.Response, error)
+	// PostCreateChatSubscriptionInviteLinkExecute executes the request
+	//  @return PostCreateChatInviteLink200Response
+	PostCreateChatSubscriptionInviteLinkExecute(r ApiPostCreateChatSubscriptionInviteLinkRequest) (*PostCreateChatInviteLink200Response, *http.Response, error)
 
 	/*
-	CreateForumTopicPost Method for CreateForumTopicPost
+	PostCreateForumTopic createForumTopic
 
 	Use this method to create a topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the *can\_manage\_topics* administrator rights. Returns information about the created topic as a [ForumTopic](https://core.telegram.org/bots/api/#forumtopic) object.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiCreateForumTopicPostRequest
+	@return ApiPostCreateForumTopicRequest
 	*/
-	CreateForumTopicPost(ctx context.Context) ApiCreateForumTopicPostRequest
+	PostCreateForumTopic(ctx context.Context) ApiPostCreateForumTopicRequest
 
-	// CreateForumTopicPostExecute executes the request
-	//  @return CreateForumTopicPost200Response
-	CreateForumTopicPostExecute(r ApiCreateForumTopicPostRequest) (*CreateForumTopicPost200Response, *http.Response, error)
+	// PostCreateForumTopicExecute executes the request
+	//  @return PostCreateForumTopic200Response
+	PostCreateForumTopicExecute(r ApiPostCreateForumTopicRequest) (*PostCreateForumTopic200Response, *http.Response, error)
 
 	/*
-	CreateInvoiceLinkPost Method for CreateInvoiceLinkPost
+	PostCreateInvoiceLink createInvoiceLink
 
 	Use this method to create a link for an invoice. Returns the created invoice link as *String* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiCreateInvoiceLinkPostRequest
+	@return ApiPostCreateInvoiceLinkRequest
 	*/
-	CreateInvoiceLinkPost(ctx context.Context) ApiCreateInvoiceLinkPostRequest
+	PostCreateInvoiceLink(ctx context.Context) ApiPostCreateInvoiceLinkRequest
 
-	// CreateInvoiceLinkPostExecute executes the request
-	//  @return ExportChatInviteLinkPost200Response
-	CreateInvoiceLinkPostExecute(r ApiCreateInvoiceLinkPostRequest) (*ExportChatInviteLinkPost200Response, *http.Response, error)
+	// PostCreateInvoiceLinkExecute executes the request
+	//  @return PostExportChatInviteLink200Response
+	PostCreateInvoiceLinkExecute(r ApiPostCreateInvoiceLinkRequest) (*PostExportChatInviteLink200Response, *http.Response, error)
 
 	/*
-	CreateNewStickerSetPost Method for CreateNewStickerSetPost
+	PostCreateNewStickerSet createNewStickerSet
 
 	Use this method to create a new sticker set owned by a user. The bot will be able to edit the sticker set thus created. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiCreateNewStickerSetPostRequest
+	@return ApiPostCreateNewStickerSetRequest
 	*/
-	CreateNewStickerSetPost(ctx context.Context) ApiCreateNewStickerSetPostRequest
+	PostCreateNewStickerSet(ctx context.Context) ApiPostCreateNewStickerSetRequest
 
-	// CreateNewStickerSetPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	CreateNewStickerSetPostExecute(r ApiCreateNewStickerSetPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostCreateNewStickerSetExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostCreateNewStickerSetExecute(r ApiPostCreateNewStickerSetRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	DeclineChatJoinRequestPost Method for DeclineChatJoinRequestPost
+	PostDeclineChatJoinRequest declineChatJoinRequest
 
 	Use this method to decline a chat join request. The bot must be an administrator in the chat for this to work and must have the *can\_invite\_users* administrator right. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiDeclineChatJoinRequestPostRequest
+	@return ApiPostDeclineChatJoinRequestRequest
 	*/
-	DeclineChatJoinRequestPost(ctx context.Context) ApiDeclineChatJoinRequestPostRequest
+	PostDeclineChatJoinRequest(ctx context.Context) ApiPostDeclineChatJoinRequestRequest
 
-	// DeclineChatJoinRequestPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	DeclineChatJoinRequestPostExecute(r ApiDeclineChatJoinRequestPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostDeclineChatJoinRequestExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostDeclineChatJoinRequestExecute(r ApiPostDeclineChatJoinRequestRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	DeleteBusinessMessagesPost Method for DeleteBusinessMessagesPost
+	PostDeleteBusinessMessages deleteBusinessMessages
 
 	Delete messages on behalf of a business account. Requires the *can\_delete\_sent\_messages* business bot right to delete messages sent by the bot itself, or the *can\_delete\_all\_messages* business bot right to delete any message. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiDeleteBusinessMessagesPostRequest
+	@return ApiPostDeleteBusinessMessagesRequest
 	*/
-	DeleteBusinessMessagesPost(ctx context.Context) ApiDeleteBusinessMessagesPostRequest
+	PostDeleteBusinessMessages(ctx context.Context) ApiPostDeleteBusinessMessagesRequest
 
-	// DeleteBusinessMessagesPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	DeleteBusinessMessagesPostExecute(r ApiDeleteBusinessMessagesPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostDeleteBusinessMessagesExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostDeleteBusinessMessagesExecute(r ApiPostDeleteBusinessMessagesRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	DeleteChatPhotoPost Method for DeleteChatPhotoPost
+	PostDeleteChatPhoto deleteChatPhoto
 
 	Use this method to delete a chat photo. Photos can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiDeleteChatPhotoPostRequest
+	@return ApiPostDeleteChatPhotoRequest
 	*/
-	DeleteChatPhotoPost(ctx context.Context) ApiDeleteChatPhotoPostRequest
+	PostDeleteChatPhoto(ctx context.Context) ApiPostDeleteChatPhotoRequest
 
-	// DeleteChatPhotoPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	DeleteChatPhotoPostExecute(r ApiDeleteChatPhotoPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostDeleteChatPhotoExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostDeleteChatPhotoExecute(r ApiPostDeleteChatPhotoRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	DeleteChatStickerSetPost Method for DeleteChatStickerSetPost
+	PostDeleteChatStickerSet deleteChatStickerSet
 
 	Use this method to delete a group sticker set from a supergroup. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Use the field *can\_set\_sticker\_set* optionally returned in [getChat](https://core.telegram.org/bots/api/#getchat) requests to check if the bot can use this method. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiDeleteChatStickerSetPostRequest
+	@return ApiPostDeleteChatStickerSetRequest
 	*/
-	DeleteChatStickerSetPost(ctx context.Context) ApiDeleteChatStickerSetPostRequest
+	PostDeleteChatStickerSet(ctx context.Context) ApiPostDeleteChatStickerSetRequest
 
-	// DeleteChatStickerSetPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	DeleteChatStickerSetPostExecute(r ApiDeleteChatStickerSetPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostDeleteChatStickerSetExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostDeleteChatStickerSetExecute(r ApiPostDeleteChatStickerSetRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	DeleteForumTopicPost Method for DeleteForumTopicPost
+	PostDeleteForumTopic deleteForumTopic
 
 	Use this method to delete a forum topic along with all its messages in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the *can\_delete\_messages* administrator rights. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiDeleteForumTopicPostRequest
+	@return ApiPostDeleteForumTopicRequest
 	*/
-	DeleteForumTopicPost(ctx context.Context) ApiDeleteForumTopicPostRequest
+	PostDeleteForumTopic(ctx context.Context) ApiPostDeleteForumTopicRequest
 
-	// DeleteForumTopicPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	DeleteForumTopicPostExecute(r ApiDeleteForumTopicPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostDeleteForumTopicExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostDeleteForumTopicExecute(r ApiPostDeleteForumTopicRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	DeleteMessagePost Method for DeleteMessagePost
+	PostDeleteMessage deleteMessage
 
 	Use this method to delete a message, including service messages, with the following limitations:  
 \- A message can only be deleted if it was sent less than 48 hours ago.  
@@ -423,930 +423,930 @@ No more than **50** results per query are allowed.
 Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiDeleteMessagePostRequest
+	@return ApiPostDeleteMessageRequest
 	*/
-	DeleteMessagePost(ctx context.Context) ApiDeleteMessagePostRequest
+	PostDeleteMessage(ctx context.Context) ApiPostDeleteMessageRequest
 
-	// DeleteMessagePostExecute executes the request
-	//  @return SetWebhookPost200Response
-	DeleteMessagePostExecute(r ApiDeleteMessagePostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostDeleteMessageExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostDeleteMessageExecute(r ApiPostDeleteMessageRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	DeleteMessagesPost Method for DeleteMessagesPost
+	PostDeleteMessages deleteMessages
 
 	Use this method to delete multiple messages simultaneously. If some of the specified messages can't be found, they are skipped. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiDeleteMessagesPostRequest
+	@return ApiPostDeleteMessagesRequest
 	*/
-	DeleteMessagesPost(ctx context.Context) ApiDeleteMessagesPostRequest
+	PostDeleteMessages(ctx context.Context) ApiPostDeleteMessagesRequest
 
-	// DeleteMessagesPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	DeleteMessagesPostExecute(r ApiDeleteMessagesPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostDeleteMessagesExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostDeleteMessagesExecute(r ApiPostDeleteMessagesRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	DeleteMyCommandsPost Method for DeleteMyCommandsPost
+	PostDeleteMyCommands deleteMyCommands
 
 	Use this method to delete the list of the bot's commands for the given scope and user language. After deletion, [higher level commands](https://core.telegram.org/bots/api/#determining-list-of-commands) will be shown to affected users. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiDeleteMyCommandsPostRequest
+	@return ApiPostDeleteMyCommandsRequest
 	*/
-	DeleteMyCommandsPost(ctx context.Context) ApiDeleteMyCommandsPostRequest
+	PostDeleteMyCommands(ctx context.Context) ApiPostDeleteMyCommandsRequest
 
-	// DeleteMyCommandsPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	DeleteMyCommandsPostExecute(r ApiDeleteMyCommandsPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostDeleteMyCommandsExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostDeleteMyCommandsExecute(r ApiPostDeleteMyCommandsRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	DeleteStickerFromSetPost Method for DeleteStickerFromSetPost
+	PostDeleteStickerFromSet deleteStickerFromSet
 
 	Use this method to delete a sticker from a set created by the bot. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiDeleteStickerFromSetPostRequest
+	@return ApiPostDeleteStickerFromSetRequest
 	*/
-	DeleteStickerFromSetPost(ctx context.Context) ApiDeleteStickerFromSetPostRequest
+	PostDeleteStickerFromSet(ctx context.Context) ApiPostDeleteStickerFromSetRequest
 
-	// DeleteStickerFromSetPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	DeleteStickerFromSetPostExecute(r ApiDeleteStickerFromSetPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostDeleteStickerFromSetExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostDeleteStickerFromSetExecute(r ApiPostDeleteStickerFromSetRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	DeleteStickerSetPost Method for DeleteStickerSetPost
+	PostDeleteStickerSet deleteStickerSet
 
 	Use this method to delete a sticker set that was created by the bot. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiDeleteStickerSetPostRequest
+	@return ApiPostDeleteStickerSetRequest
 	*/
-	DeleteStickerSetPost(ctx context.Context) ApiDeleteStickerSetPostRequest
+	PostDeleteStickerSet(ctx context.Context) ApiPostDeleteStickerSetRequest
 
-	// DeleteStickerSetPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	DeleteStickerSetPostExecute(r ApiDeleteStickerSetPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostDeleteStickerSetExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostDeleteStickerSetExecute(r ApiPostDeleteStickerSetRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	DeleteStoryPost Method for DeleteStoryPost
+	PostDeleteStory deleteStory
 
 	Deletes a story previously posted by the bot on behalf of a managed business account. Requires the *can\_manage\_stories* business bot right. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiDeleteStoryPostRequest
+	@return ApiPostDeleteStoryRequest
 	*/
-	DeleteStoryPost(ctx context.Context) ApiDeleteStoryPostRequest
+	PostDeleteStory(ctx context.Context) ApiPostDeleteStoryRequest
 
-	// DeleteStoryPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	DeleteStoryPostExecute(r ApiDeleteStoryPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostDeleteStoryExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostDeleteStoryExecute(r ApiPostDeleteStoryRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	DeleteWebhookPost Method for DeleteWebhookPost
+	PostDeleteWebhook deleteWebhook
 
 	Use this method to remove webhook integration if you decide to switch back to [getUpdates](https://core.telegram.org/bots/api/#getupdates). Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiDeleteWebhookPostRequest
+	@return ApiPostDeleteWebhookRequest
 	*/
-	DeleteWebhookPost(ctx context.Context) ApiDeleteWebhookPostRequest
+	PostDeleteWebhook(ctx context.Context) ApiPostDeleteWebhookRequest
 
-	// DeleteWebhookPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	DeleteWebhookPostExecute(r ApiDeleteWebhookPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostDeleteWebhookExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostDeleteWebhookExecute(r ApiPostDeleteWebhookRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	EditChatInviteLinkPost Method for EditChatInviteLinkPost
+	PostEditChatInviteLink editChatInviteLink
 
 	Use this method to edit a non-primary invite link created by the bot. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns the edited invite link as a [ChatInviteLink](https://core.telegram.org/bots/api/#chatinvitelink) object.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiEditChatInviteLinkPostRequest
+	@return ApiPostEditChatInviteLinkRequest
 	*/
-	EditChatInviteLinkPost(ctx context.Context) ApiEditChatInviteLinkPostRequest
+	PostEditChatInviteLink(ctx context.Context) ApiPostEditChatInviteLinkRequest
 
-	// EditChatInviteLinkPostExecute executes the request
-	//  @return CreateChatInviteLinkPost200Response
-	EditChatInviteLinkPostExecute(r ApiEditChatInviteLinkPostRequest) (*CreateChatInviteLinkPost200Response, *http.Response, error)
+	// PostEditChatInviteLinkExecute executes the request
+	//  @return PostCreateChatInviteLink200Response
+	PostEditChatInviteLinkExecute(r ApiPostEditChatInviteLinkRequest) (*PostCreateChatInviteLink200Response, *http.Response, error)
 
 	/*
-	EditChatSubscriptionInviteLinkPost Method for EditChatSubscriptionInviteLinkPost
+	PostEditChatSubscriptionInviteLink editChatSubscriptionInviteLink
 
 	Use this method to edit a subscription invite link created by the bot. The bot must have the *can\_invite\_users* administrator rights. Returns the edited invite link as a [ChatInviteLink](https://core.telegram.org/bots/api/#chatinvitelink) object.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiEditChatSubscriptionInviteLinkPostRequest
+	@return ApiPostEditChatSubscriptionInviteLinkRequest
 	*/
-	EditChatSubscriptionInviteLinkPost(ctx context.Context) ApiEditChatSubscriptionInviteLinkPostRequest
+	PostEditChatSubscriptionInviteLink(ctx context.Context) ApiPostEditChatSubscriptionInviteLinkRequest
 
-	// EditChatSubscriptionInviteLinkPostExecute executes the request
-	//  @return CreateChatInviteLinkPost200Response
-	EditChatSubscriptionInviteLinkPostExecute(r ApiEditChatSubscriptionInviteLinkPostRequest) (*CreateChatInviteLinkPost200Response, *http.Response, error)
+	// PostEditChatSubscriptionInviteLinkExecute executes the request
+	//  @return PostCreateChatInviteLink200Response
+	PostEditChatSubscriptionInviteLinkExecute(r ApiPostEditChatSubscriptionInviteLinkRequest) (*PostCreateChatInviteLink200Response, *http.Response, error)
 
 	/*
-	EditForumTopicPost Method for EditForumTopicPost
+	PostEditForumTopic editForumTopic
 
 	Use this method to edit name and icon of a topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the *can\_manage\_topics* administrator rights, unless it is the creator of the topic. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiEditForumTopicPostRequest
+	@return ApiPostEditForumTopicRequest
 	*/
-	EditForumTopicPost(ctx context.Context) ApiEditForumTopicPostRequest
+	PostEditForumTopic(ctx context.Context) ApiPostEditForumTopicRequest
 
-	// EditForumTopicPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	EditForumTopicPostExecute(r ApiEditForumTopicPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostEditForumTopicExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostEditForumTopicExecute(r ApiPostEditForumTopicRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	EditGeneralForumTopicPost Method for EditGeneralForumTopicPost
+	PostEditGeneralForumTopic editGeneralForumTopic
 
 	Use this method to edit the name of the 'General' topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the *can\_manage\_topics* administrator rights. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiEditGeneralForumTopicPostRequest
+	@return ApiPostEditGeneralForumTopicRequest
 	*/
-	EditGeneralForumTopicPost(ctx context.Context) ApiEditGeneralForumTopicPostRequest
+	PostEditGeneralForumTopic(ctx context.Context) ApiPostEditGeneralForumTopicRequest
 
-	// EditGeneralForumTopicPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	EditGeneralForumTopicPostExecute(r ApiEditGeneralForumTopicPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostEditGeneralForumTopicExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostEditGeneralForumTopicExecute(r ApiPostEditGeneralForumTopicRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	EditMessageCaptionPost Method for EditMessageCaptionPost
+	PostEditMessageCaption editMessageCaption
 
 	Use this method to edit captions of messages. On success, if the edited message is not an inline message, the edited [Message](https://core.telegram.org/bots/api/#message) is returned, otherwise *True* is returned. Note that business messages that were not sent by the bot and do not contain an inline keyboard can only be edited within **48 hours** from the time they were sent.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiEditMessageCaptionPostRequest
+	@return ApiPostEditMessageCaptionRequest
 	*/
-	EditMessageCaptionPost(ctx context.Context) ApiEditMessageCaptionPostRequest
+	PostEditMessageCaption(ctx context.Context) ApiPostEditMessageCaptionRequest
 
-	// EditMessageCaptionPostExecute executes the request
-	//  @return EditMessageTextPost200Response
-	EditMessageCaptionPostExecute(r ApiEditMessageCaptionPostRequest) (*EditMessageTextPost200Response, *http.Response, error)
+	// PostEditMessageCaptionExecute executes the request
+	//  @return PostEditMessageText200Response
+	PostEditMessageCaptionExecute(r ApiPostEditMessageCaptionRequest) (*PostEditMessageText200Response, *http.Response, error)
 
 	/*
-	EditMessageLiveLocationPost Method for EditMessageLiveLocationPost
+	PostEditMessageLiveLocation editMessageLiveLocation
 
 	Use this method to edit live location messages. A location can be edited until its *live\_period* expires or editing is explicitly disabled by a call to [stopMessageLiveLocation](https://core.telegram.org/bots/api/#stopmessagelivelocation). On success, if the edited message is not an inline message, the edited [Message](https://core.telegram.org/bots/api/#message) is returned, otherwise *True* is returned.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiEditMessageLiveLocationPostRequest
+	@return ApiPostEditMessageLiveLocationRequest
 	*/
-	EditMessageLiveLocationPost(ctx context.Context) ApiEditMessageLiveLocationPostRequest
+	PostEditMessageLiveLocation(ctx context.Context) ApiPostEditMessageLiveLocationRequest
 
-	// EditMessageLiveLocationPostExecute executes the request
-	//  @return EditMessageTextPost200Response
-	EditMessageLiveLocationPostExecute(r ApiEditMessageLiveLocationPostRequest) (*EditMessageTextPost200Response, *http.Response, error)
+	// PostEditMessageLiveLocationExecute executes the request
+	//  @return PostEditMessageText200Response
+	PostEditMessageLiveLocationExecute(r ApiPostEditMessageLiveLocationRequest) (*PostEditMessageText200Response, *http.Response, error)
 
 	/*
-	EditMessageMediaPost Method for EditMessageMediaPost
+	PostEditMessageMedia editMessageMedia
 
 	Use this method to edit animation, audio, document, photo, or video messages, or to add media to text messages. If a message is part of a message album, then it can be edited only to an audio for audio albums, only to a document for document albums and to a photo or a video otherwise. When an inline message is edited, a new file can't be uploaded; use a previously uploaded file via its file\_id or specify a URL. On success, if the edited message is not an inline message, the edited [Message](https://core.telegram.org/bots/api/#message) is returned, otherwise *True* is returned. Note that business messages that were not sent by the bot and do not contain an inline keyboard can only be edited within **48 hours** from the time they were sent.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiEditMessageMediaPostRequest
+	@return ApiPostEditMessageMediaRequest
 	*/
-	EditMessageMediaPost(ctx context.Context) ApiEditMessageMediaPostRequest
+	PostEditMessageMedia(ctx context.Context) ApiPostEditMessageMediaRequest
 
-	// EditMessageMediaPostExecute executes the request
-	//  @return EditMessageTextPost200Response
-	EditMessageMediaPostExecute(r ApiEditMessageMediaPostRequest) (*EditMessageTextPost200Response, *http.Response, error)
+	// PostEditMessageMediaExecute executes the request
+	//  @return PostEditMessageText200Response
+	PostEditMessageMediaExecute(r ApiPostEditMessageMediaRequest) (*PostEditMessageText200Response, *http.Response, error)
 
 	/*
-	EditMessageReplyMarkupPost Method for EditMessageReplyMarkupPost
+	PostEditMessageReplyMarkup editMessageReplyMarkup
 
 	Use this method to edit only the reply markup of messages. On success, if the edited message is not an inline message, the edited [Message](https://core.telegram.org/bots/api/#message) is returned, otherwise *True* is returned. Note that business messages that were not sent by the bot and do not contain an inline keyboard can only be edited within **48 hours** from the time they were sent.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiEditMessageReplyMarkupPostRequest
+	@return ApiPostEditMessageReplyMarkupRequest
 	*/
-	EditMessageReplyMarkupPost(ctx context.Context) ApiEditMessageReplyMarkupPostRequest
+	PostEditMessageReplyMarkup(ctx context.Context) ApiPostEditMessageReplyMarkupRequest
 
-	// EditMessageReplyMarkupPostExecute executes the request
-	//  @return EditMessageTextPost200Response
-	EditMessageReplyMarkupPostExecute(r ApiEditMessageReplyMarkupPostRequest) (*EditMessageTextPost200Response, *http.Response, error)
+	// PostEditMessageReplyMarkupExecute executes the request
+	//  @return PostEditMessageText200Response
+	PostEditMessageReplyMarkupExecute(r ApiPostEditMessageReplyMarkupRequest) (*PostEditMessageText200Response, *http.Response, error)
 
 	/*
-	EditMessageTextPost Method for EditMessageTextPost
+	PostEditMessageText editMessageText
 
 	Use this method to edit text and [game](https://core.telegram.org/bots/api/#games) messages. On success, if the edited message is not an inline message, the edited [Message](https://core.telegram.org/bots/api/#message) is returned, otherwise *True* is returned. Note that business messages that were not sent by the bot and do not contain an inline keyboard can only be edited within **48 hours** from the time they were sent.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiEditMessageTextPostRequest
+	@return ApiPostEditMessageTextRequest
 	*/
-	EditMessageTextPost(ctx context.Context) ApiEditMessageTextPostRequest
+	PostEditMessageText(ctx context.Context) ApiPostEditMessageTextRequest
 
-	// EditMessageTextPostExecute executes the request
-	//  @return EditMessageTextPost200Response
-	EditMessageTextPostExecute(r ApiEditMessageTextPostRequest) (*EditMessageTextPost200Response, *http.Response, error)
+	// PostEditMessageTextExecute executes the request
+	//  @return PostEditMessageText200Response
+	PostEditMessageTextExecute(r ApiPostEditMessageTextRequest) (*PostEditMessageText200Response, *http.Response, error)
 
 	/*
-	EditStoryPost Method for EditStoryPost
+	PostEditStory editStory
 
 	Edits a story previously posted by the bot on behalf of a managed business account. Requires the *can\_manage\_stories* business bot right. Returns [Story](https://core.telegram.org/bots/api/#story) on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiEditStoryPostRequest
+	@return ApiPostEditStoryRequest
 	*/
-	EditStoryPost(ctx context.Context) ApiEditStoryPostRequest
+	PostEditStory(ctx context.Context) ApiPostEditStoryRequest
 
-	// EditStoryPostExecute executes the request
-	//  @return PostStoryPost200Response
-	EditStoryPostExecute(r ApiEditStoryPostRequest) (*PostStoryPost200Response, *http.Response, error)
+	// PostEditStoryExecute executes the request
+	//  @return PostPostStory200Response
+	PostEditStoryExecute(r ApiPostEditStoryRequest) (*PostPostStory200Response, *http.Response, error)
 
 	/*
-	EditUserStarSubscriptionPost Method for EditUserStarSubscriptionPost
+	PostEditUserStarSubscription editUserStarSubscription
 
 	Allows the bot to cancel or re-enable extension of a subscription paid in Telegram Stars. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiEditUserStarSubscriptionPostRequest
+	@return ApiPostEditUserStarSubscriptionRequest
 	*/
-	EditUserStarSubscriptionPost(ctx context.Context) ApiEditUserStarSubscriptionPostRequest
+	PostEditUserStarSubscription(ctx context.Context) ApiPostEditUserStarSubscriptionRequest
 
-	// EditUserStarSubscriptionPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	EditUserStarSubscriptionPostExecute(r ApiEditUserStarSubscriptionPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostEditUserStarSubscriptionExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostEditUserStarSubscriptionExecute(r ApiPostEditUserStarSubscriptionRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	ExportChatInviteLinkPost Method for ExportChatInviteLinkPost
+	PostExportChatInviteLink exportChatInviteLink
 
 	Use this method to generate a new primary invite link for a chat; any previously generated primary link is revoked. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns the new invite link as *String* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiExportChatInviteLinkPostRequest
+	@return ApiPostExportChatInviteLinkRequest
 	*/
-	ExportChatInviteLinkPost(ctx context.Context) ApiExportChatInviteLinkPostRequest
+	PostExportChatInviteLink(ctx context.Context) ApiPostExportChatInviteLinkRequest
 
-	// ExportChatInviteLinkPostExecute executes the request
-	//  @return ExportChatInviteLinkPost200Response
-	ExportChatInviteLinkPostExecute(r ApiExportChatInviteLinkPostRequest) (*ExportChatInviteLinkPost200Response, *http.Response, error)
+	// PostExportChatInviteLinkExecute executes the request
+	//  @return PostExportChatInviteLink200Response
+	PostExportChatInviteLinkExecute(r ApiPostExportChatInviteLinkRequest) (*PostExportChatInviteLink200Response, *http.Response, error)
 
 	/*
-	ForwardMessagePost Method for ForwardMessagePost
+	PostForwardMessage forwardMessage
 
 	Use this method to forward messages of any kind. Service messages and messages with protected content can't be forwarded. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiForwardMessagePostRequest
+	@return ApiPostForwardMessageRequest
 	*/
-	ForwardMessagePost(ctx context.Context) ApiForwardMessagePostRequest
+	PostForwardMessage(ctx context.Context) ApiPostForwardMessageRequest
 
-	// ForwardMessagePostExecute executes the request
-	//  @return SendMessagePost200Response
-	ForwardMessagePostExecute(r ApiForwardMessagePostRequest) (*SendMessagePost200Response, *http.Response, error)
+	// PostForwardMessageExecute executes the request
+	//  @return PostSendMessage200Response
+	PostForwardMessageExecute(r ApiPostForwardMessageRequest) (*PostSendMessage200Response, *http.Response, error)
 
 	/*
-	ForwardMessagesPost Method for ForwardMessagesPost
+	PostForwardMessages forwardMessages
 
 	Use this method to forward multiple messages of any kind. If some of the specified messages can't be found or forwarded, they are skipped. Service messages and messages with protected content can't be forwarded. Album grouping is kept for forwarded messages. On success, an array of [MessageId](https://core.telegram.org/bots/api/#messageid) of the sent messages is returned.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiForwardMessagesPostRequest
+	@return ApiPostForwardMessagesRequest
 	*/
-	ForwardMessagesPost(ctx context.Context) ApiForwardMessagesPostRequest
+	PostForwardMessages(ctx context.Context) ApiPostForwardMessagesRequest
 
-	// ForwardMessagesPostExecute executes the request
-	//  @return ForwardMessagesPost200Response
-	ForwardMessagesPostExecute(r ApiForwardMessagesPostRequest) (*ForwardMessagesPost200Response, *http.Response, error)
+	// PostForwardMessagesExecute executes the request
+	//  @return PostForwardMessages200Response
+	PostForwardMessagesExecute(r ApiPostForwardMessagesRequest) (*PostForwardMessages200Response, *http.Response, error)
 
 	/*
-	GetAvailableGiftsPost Method for GetAvailableGiftsPost
+	PostGetAvailableGifts getAvailableGifts
 
 	Returns the list of gifts that can be sent by the bot to users and channel chats. Requires no parameters. Returns a [Gifts](https://core.telegram.org/bots/api/#gifts) object.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetAvailableGiftsPostRequest
+	@return ApiPostGetAvailableGiftsRequest
 	*/
-	GetAvailableGiftsPost(ctx context.Context) ApiGetAvailableGiftsPostRequest
+	PostGetAvailableGifts(ctx context.Context) ApiPostGetAvailableGiftsRequest
 
-	// GetAvailableGiftsPostExecute executes the request
-	//  @return GetAvailableGiftsPost200Response
-	GetAvailableGiftsPostExecute(r ApiGetAvailableGiftsPostRequest) (*GetAvailableGiftsPost200Response, *http.Response, error)
+	// PostGetAvailableGiftsExecute executes the request
+	//  @return PostGetAvailableGifts200Response
+	PostGetAvailableGiftsExecute(r ApiPostGetAvailableGiftsRequest) (*PostGetAvailableGifts200Response, *http.Response, error)
 
 	/*
-	GetBusinessAccountGiftsPost Method for GetBusinessAccountGiftsPost
+	PostGetBusinessAccountGifts getBusinessAccountGifts
 
 	Returns the gifts received and owned by a managed business account. Requires the *can\_view\_gifts\_and\_stars* business bot right. Returns [OwnedGifts](https://core.telegram.org/bots/api/#ownedgifts) on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetBusinessAccountGiftsPostRequest
+	@return ApiPostGetBusinessAccountGiftsRequest
 	*/
-	GetBusinessAccountGiftsPost(ctx context.Context) ApiGetBusinessAccountGiftsPostRequest
+	PostGetBusinessAccountGifts(ctx context.Context) ApiPostGetBusinessAccountGiftsRequest
 
-	// GetBusinessAccountGiftsPostExecute executes the request
-	//  @return GetBusinessAccountGiftsPost200Response
-	GetBusinessAccountGiftsPostExecute(r ApiGetBusinessAccountGiftsPostRequest) (*GetBusinessAccountGiftsPost200Response, *http.Response, error)
+	// PostGetBusinessAccountGiftsExecute executes the request
+	//  @return PostGetBusinessAccountGifts200Response
+	PostGetBusinessAccountGiftsExecute(r ApiPostGetBusinessAccountGiftsRequest) (*PostGetBusinessAccountGifts200Response, *http.Response, error)
 
 	/*
-	GetBusinessAccountStarBalancePost Method for GetBusinessAccountStarBalancePost
+	PostGetBusinessAccountStarBalance getBusinessAccountStarBalance
 
 	Returns the amount of Telegram Stars owned by a managed business account. Requires the *can\_view\_gifts\_and\_stars* business bot right. Returns [StarAmount](https://core.telegram.org/bots/api/#staramount) on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetBusinessAccountStarBalancePostRequest
+	@return ApiPostGetBusinessAccountStarBalanceRequest
 	*/
-	GetBusinessAccountStarBalancePost(ctx context.Context) ApiGetBusinessAccountStarBalancePostRequest
+	PostGetBusinessAccountStarBalance(ctx context.Context) ApiPostGetBusinessAccountStarBalanceRequest
 
-	// GetBusinessAccountStarBalancePostExecute executes the request
-	//  @return GetBusinessAccountStarBalancePost200Response
-	GetBusinessAccountStarBalancePostExecute(r ApiGetBusinessAccountStarBalancePostRequest) (*GetBusinessAccountStarBalancePost200Response, *http.Response, error)
+	// PostGetBusinessAccountStarBalanceExecute executes the request
+	//  @return PostGetBusinessAccountStarBalance200Response
+	PostGetBusinessAccountStarBalanceExecute(r ApiPostGetBusinessAccountStarBalanceRequest) (*PostGetBusinessAccountStarBalance200Response, *http.Response, error)
 
 	/*
-	GetBusinessConnectionPost Method for GetBusinessConnectionPost
+	PostGetBusinessConnection getBusinessConnection
 
 	Use this method to get information about the connection of the bot with a business account. Returns a [BusinessConnection](https://core.telegram.org/bots/api/#businessconnection) object on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetBusinessConnectionPostRequest
+	@return ApiPostGetBusinessConnectionRequest
 	*/
-	GetBusinessConnectionPost(ctx context.Context) ApiGetBusinessConnectionPostRequest
+	PostGetBusinessConnection(ctx context.Context) ApiPostGetBusinessConnectionRequest
 
-	// GetBusinessConnectionPostExecute executes the request
-	//  @return GetBusinessConnectionPost200Response
-	GetBusinessConnectionPostExecute(r ApiGetBusinessConnectionPostRequest) (*GetBusinessConnectionPost200Response, *http.Response, error)
+	// PostGetBusinessConnectionExecute executes the request
+	//  @return PostGetBusinessConnection200Response
+	PostGetBusinessConnectionExecute(r ApiPostGetBusinessConnectionRequest) (*PostGetBusinessConnection200Response, *http.Response, error)
 
 	/*
-	GetChatAdministratorsPost Method for GetChatAdministratorsPost
-
-	Use this method to get a list of administrators in a chat, which aren't bots. Returns an Array of [ChatMember](https://core.telegram.org/bots/api/#chatmember) objects.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetChatAdministratorsPostRequest
-	*/
-	GetChatAdministratorsPost(ctx context.Context) ApiGetChatAdministratorsPostRequest
-
-	// GetChatAdministratorsPostExecute executes the request
-	//  @return GetChatAdministratorsPost200Response
-	GetChatAdministratorsPostExecute(r ApiGetChatAdministratorsPostRequest) (*GetChatAdministratorsPost200Response, *http.Response, error)
-
-	/*
-	GetChatMemberCountPost Method for GetChatMemberCountPost
-
-	Use this method to get the number of members in a chat. Returns *Int* on success.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetChatMemberCountPostRequest
-	*/
-	GetChatMemberCountPost(ctx context.Context) ApiGetChatMemberCountPostRequest
-
-	// GetChatMemberCountPostExecute executes the request
-	//  @return GetChatMemberCountPost200Response
-	GetChatMemberCountPostExecute(r ApiGetChatMemberCountPostRequest) (*GetChatMemberCountPost200Response, *http.Response, error)
-
-	/*
-	GetChatMemberPost Method for GetChatMemberPost
-
-	Use this method to get information about a member of a chat. The method is only guaranteed to work for other users if the bot is an administrator in the chat. Returns a [ChatMember](https://core.telegram.org/bots/api/#chatmember) object on success.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetChatMemberPostRequest
-	*/
-	GetChatMemberPost(ctx context.Context) ApiGetChatMemberPostRequest
-
-	// GetChatMemberPostExecute executes the request
-	//  @return GetChatMemberPost200Response
-	GetChatMemberPostExecute(r ApiGetChatMemberPostRequest) (*GetChatMemberPost200Response, *http.Response, error)
-
-	/*
-	GetChatMenuButtonPost Method for GetChatMenuButtonPost
-
-	Use this method to get the current value of the bot's menu button in a private chat, or the default menu button. Returns [MenuButton](https://core.telegram.org/bots/api/#menubutton) on success.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetChatMenuButtonPostRequest
-	*/
-	GetChatMenuButtonPost(ctx context.Context) ApiGetChatMenuButtonPostRequest
-
-	// GetChatMenuButtonPostExecute executes the request
-	//  @return GetChatMenuButtonPost200Response
-	GetChatMenuButtonPostExecute(r ApiGetChatMenuButtonPostRequest) (*GetChatMenuButtonPost200Response, *http.Response, error)
-
-	/*
-	GetChatPost Method for GetChatPost
+	PostGetChat getChat
 
 	Use this method to get up-to-date information about the chat. Returns a [ChatFullInfo](https://core.telegram.org/bots/api/#chatfullinfo) object on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetChatPostRequest
+	@return ApiPostGetChatRequest
 	*/
-	GetChatPost(ctx context.Context) ApiGetChatPostRequest
+	PostGetChat(ctx context.Context) ApiPostGetChatRequest
 
-	// GetChatPostExecute executes the request
-	//  @return GetChatPost200Response
-	GetChatPostExecute(r ApiGetChatPostRequest) (*GetChatPost200Response, *http.Response, error)
+	// PostGetChatExecute executes the request
+	//  @return PostGetChat200Response
+	PostGetChatExecute(r ApiPostGetChatRequest) (*PostGetChat200Response, *http.Response, error)
 
 	/*
-	GetCustomEmojiStickersPost Method for GetCustomEmojiStickersPost
+	PostGetChatAdministrators getChatAdministrators
+
+	Use this method to get a list of administrators in a chat, which aren't bots. Returns an Array of [ChatMember](https://core.telegram.org/bots/api/#chatmember) objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostGetChatAdministratorsRequest
+	*/
+	PostGetChatAdministrators(ctx context.Context) ApiPostGetChatAdministratorsRequest
+
+	// PostGetChatAdministratorsExecute executes the request
+	//  @return PostGetChatAdministrators200Response
+	PostGetChatAdministratorsExecute(r ApiPostGetChatAdministratorsRequest) (*PostGetChatAdministrators200Response, *http.Response, error)
+
+	/*
+	PostGetChatMember getChatMember
+
+	Use this method to get information about a member of a chat. The method is only guaranteed to work for other users if the bot is an administrator in the chat. Returns a [ChatMember](https://core.telegram.org/bots/api/#chatmember) object on success.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostGetChatMemberRequest
+	*/
+	PostGetChatMember(ctx context.Context) ApiPostGetChatMemberRequest
+
+	// PostGetChatMemberExecute executes the request
+	//  @return PostGetChatMember200Response
+	PostGetChatMemberExecute(r ApiPostGetChatMemberRequest) (*PostGetChatMember200Response, *http.Response, error)
+
+	/*
+	PostGetChatMemberCount getChatMemberCount
+
+	Use this method to get the number of members in a chat. Returns *Int* on success.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostGetChatMemberCountRequest
+	*/
+	PostGetChatMemberCount(ctx context.Context) ApiPostGetChatMemberCountRequest
+
+	// PostGetChatMemberCountExecute executes the request
+	//  @return PostGetChatMemberCount200Response
+	PostGetChatMemberCountExecute(r ApiPostGetChatMemberCountRequest) (*PostGetChatMemberCount200Response, *http.Response, error)
+
+	/*
+	PostGetChatMenuButton getChatMenuButton
+
+	Use this method to get the current value of the bot's menu button in a private chat, or the default menu button. Returns [MenuButton](https://core.telegram.org/bots/api/#menubutton) on success.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostGetChatMenuButtonRequest
+	*/
+	PostGetChatMenuButton(ctx context.Context) ApiPostGetChatMenuButtonRequest
+
+	// PostGetChatMenuButtonExecute executes the request
+	//  @return PostGetChatMenuButton200Response
+	PostGetChatMenuButtonExecute(r ApiPostGetChatMenuButtonRequest) (*PostGetChatMenuButton200Response, *http.Response, error)
+
+	/*
+	PostGetCustomEmojiStickers getCustomEmojiStickers
 
 	Use this method to get information about custom emoji stickers by their identifiers. Returns an Array of [Sticker](https://core.telegram.org/bots/api/#sticker) objects.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetCustomEmojiStickersPostRequest
+	@return ApiPostGetCustomEmojiStickersRequest
 	*/
-	GetCustomEmojiStickersPost(ctx context.Context) ApiGetCustomEmojiStickersPostRequest
+	PostGetCustomEmojiStickers(ctx context.Context) ApiPostGetCustomEmojiStickersRequest
 
-	// GetCustomEmojiStickersPostExecute executes the request
-	//  @return GetForumTopicIconStickersPost200Response
-	GetCustomEmojiStickersPostExecute(r ApiGetCustomEmojiStickersPostRequest) (*GetForumTopicIconStickersPost200Response, *http.Response, error)
+	// PostGetCustomEmojiStickersExecute executes the request
+	//  @return PostGetForumTopicIconStickers200Response
+	PostGetCustomEmojiStickersExecute(r ApiPostGetCustomEmojiStickersRequest) (*PostGetForumTopicIconStickers200Response, *http.Response, error)
 
 	/*
-	GetFilePost Method for GetFilePost
+	PostGetFile getFile
 
 	Use this method to get basic information about a file and prepare it for downloading. For the moment, bots can download files of up to 20MB in size. On success, a [File](https://core.telegram.org/bots/api/#file) object is returned. The file can then be downloaded via the link `https://api.telegram.org/file/bot<token>/<file_path>`, where `<file_path>` is taken from the response. It is guaranteed that the link will be valid for at least 1 hour. When the link expires, a new one can be requested by calling [getFile](https://core.telegram.org/bots/api/#getfile) again.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetFilePostRequest
+	@return ApiPostGetFileRequest
 	*/
-	GetFilePost(ctx context.Context) ApiGetFilePostRequest
+	PostGetFile(ctx context.Context) ApiPostGetFileRequest
 
-	// GetFilePostExecute executes the request
-	//  @return GetFilePost200Response
-	GetFilePostExecute(r ApiGetFilePostRequest) (*GetFilePost200Response, *http.Response, error)
+	// PostGetFileExecute executes the request
+	//  @return PostGetFile200Response
+	PostGetFileExecute(r ApiPostGetFileRequest) (*PostGetFile200Response, *http.Response, error)
 
 	/*
-	GetForumTopicIconStickersPost Method for GetForumTopicIconStickersPost
+	PostGetForumTopicIconStickers getForumTopicIconStickers
 
 	Use this method to get custom emoji stickers, which can be used as a forum topic icon by any user. Requires no parameters. Returns an Array of [Sticker](https://core.telegram.org/bots/api/#sticker) objects.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetForumTopicIconStickersPostRequest
+	@return ApiPostGetForumTopicIconStickersRequest
 	*/
-	GetForumTopicIconStickersPost(ctx context.Context) ApiGetForumTopicIconStickersPostRequest
+	PostGetForumTopicIconStickers(ctx context.Context) ApiPostGetForumTopicIconStickersRequest
 
-	// GetForumTopicIconStickersPostExecute executes the request
-	//  @return GetForumTopicIconStickersPost200Response
-	GetForumTopicIconStickersPostExecute(r ApiGetForumTopicIconStickersPostRequest) (*GetForumTopicIconStickersPost200Response, *http.Response, error)
+	// PostGetForumTopicIconStickersExecute executes the request
+	//  @return PostGetForumTopicIconStickers200Response
+	PostGetForumTopicIconStickersExecute(r ApiPostGetForumTopicIconStickersRequest) (*PostGetForumTopicIconStickers200Response, *http.Response, error)
 
 	/*
-	GetGameHighScoresPost Method for GetGameHighScoresPost
+	PostGetGameHighScores getGameHighScores
 
 	Use this method to get data for high score tables. Will return the score of the specified user and several of their neighbors in a game. Returns an Array of [GameHighScore](https://core.telegram.org/bots/api/#gamehighscore) objects.
 
 This method will currently return scores for the target user, plus two of their closest neighbors on each side. Will also return the top three users if the user and their neighbors are not among them. Please note that this behavior is subject to change.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetGameHighScoresPostRequest
+	@return ApiPostGetGameHighScoresRequest
 	*/
-	GetGameHighScoresPost(ctx context.Context) ApiGetGameHighScoresPostRequest
+	PostGetGameHighScores(ctx context.Context) ApiPostGetGameHighScoresRequest
 
-	// GetGameHighScoresPostExecute executes the request
-	//  @return GetGameHighScoresPost200Response
-	GetGameHighScoresPostExecute(r ApiGetGameHighScoresPostRequest) (*GetGameHighScoresPost200Response, *http.Response, error)
+	// PostGetGameHighScoresExecute executes the request
+	//  @return PostGetGameHighScores200Response
+	PostGetGameHighScoresExecute(r ApiPostGetGameHighScoresRequest) (*PostGetGameHighScores200Response, *http.Response, error)
 
 	/*
-	GetMePost Method for GetMePost
+	PostGetMe getMe
 
 	A simple method for testing your bot's authentication token. Requires no parameters. Returns basic information about the bot in form of a [User](https://core.telegram.org/bots/api/#user) object.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetMePostRequest
+	@return ApiPostGetMeRequest
 	*/
-	GetMePost(ctx context.Context) ApiGetMePostRequest
+	PostGetMe(ctx context.Context) ApiPostGetMeRequest
 
-	// GetMePostExecute executes the request
-	//  @return GetMePost200Response
-	GetMePostExecute(r ApiGetMePostRequest) (*GetMePost200Response, *http.Response, error)
+	// PostGetMeExecute executes the request
+	//  @return PostGetMe200Response
+	PostGetMeExecute(r ApiPostGetMeRequest) (*PostGetMe200Response, *http.Response, error)
 
 	/*
-	GetMyCommandsPost Method for GetMyCommandsPost
+	PostGetMyCommands getMyCommands
 
 	Use this method to get the current list of the bot's commands for the given scope and user language. Returns an Array of [BotCommand](https://core.telegram.org/bots/api/#botcommand) objects. If commands aren't set, an empty list is returned.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetMyCommandsPostRequest
+	@return ApiPostGetMyCommandsRequest
 	*/
-	GetMyCommandsPost(ctx context.Context) ApiGetMyCommandsPostRequest
+	PostGetMyCommands(ctx context.Context) ApiPostGetMyCommandsRequest
 
-	// GetMyCommandsPostExecute executes the request
-	//  @return GetMyCommandsPost200Response
-	GetMyCommandsPostExecute(r ApiGetMyCommandsPostRequest) (*GetMyCommandsPost200Response, *http.Response, error)
+	// PostGetMyCommandsExecute executes the request
+	//  @return PostGetMyCommands200Response
+	PostGetMyCommandsExecute(r ApiPostGetMyCommandsRequest) (*PostGetMyCommands200Response, *http.Response, error)
 
 	/*
-	GetMyDefaultAdministratorRightsPost Method for GetMyDefaultAdministratorRightsPost
+	PostGetMyDefaultAdministratorRights getMyDefaultAdministratorRights
 
 	Use this method to get the current default administrator rights of the bot. Returns [ChatAdministratorRights](https://core.telegram.org/bots/api/#chatadministratorrights) on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetMyDefaultAdministratorRightsPostRequest
+	@return ApiPostGetMyDefaultAdministratorRightsRequest
 	*/
-	GetMyDefaultAdministratorRightsPost(ctx context.Context) ApiGetMyDefaultAdministratorRightsPostRequest
+	PostGetMyDefaultAdministratorRights(ctx context.Context) ApiPostGetMyDefaultAdministratorRightsRequest
 
-	// GetMyDefaultAdministratorRightsPostExecute executes the request
-	//  @return GetMyDefaultAdministratorRightsPost200Response
-	GetMyDefaultAdministratorRightsPostExecute(r ApiGetMyDefaultAdministratorRightsPostRequest) (*GetMyDefaultAdministratorRightsPost200Response, *http.Response, error)
+	// PostGetMyDefaultAdministratorRightsExecute executes the request
+	//  @return PostGetMyDefaultAdministratorRights200Response
+	PostGetMyDefaultAdministratorRightsExecute(r ApiPostGetMyDefaultAdministratorRightsRequest) (*PostGetMyDefaultAdministratorRights200Response, *http.Response, error)
 
 	/*
-	GetMyDescriptionPost Method for GetMyDescriptionPost
+	PostGetMyDescription getMyDescription
 
 	Use this method to get the current bot description for the given user language. Returns [BotDescription](https://core.telegram.org/bots/api/#botdescription) on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetMyDescriptionPostRequest
+	@return ApiPostGetMyDescriptionRequest
 	*/
-	GetMyDescriptionPost(ctx context.Context) ApiGetMyDescriptionPostRequest
+	PostGetMyDescription(ctx context.Context) ApiPostGetMyDescriptionRequest
 
-	// GetMyDescriptionPostExecute executes the request
-	//  @return GetMyDescriptionPost200Response
-	GetMyDescriptionPostExecute(r ApiGetMyDescriptionPostRequest) (*GetMyDescriptionPost200Response, *http.Response, error)
+	// PostGetMyDescriptionExecute executes the request
+	//  @return PostGetMyDescription200Response
+	PostGetMyDescriptionExecute(r ApiPostGetMyDescriptionRequest) (*PostGetMyDescription200Response, *http.Response, error)
 
 	/*
-	GetMyNamePost Method for GetMyNamePost
+	PostGetMyName getMyName
 
 	Use this method to get the current bot name for the given user language. Returns [BotName](https://core.telegram.org/bots/api/#botname) on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetMyNamePostRequest
+	@return ApiPostGetMyNameRequest
 	*/
-	GetMyNamePost(ctx context.Context) ApiGetMyNamePostRequest
+	PostGetMyName(ctx context.Context) ApiPostGetMyNameRequest
 
-	// GetMyNamePostExecute executes the request
-	//  @return GetMyNamePost200Response
-	GetMyNamePostExecute(r ApiGetMyNamePostRequest) (*GetMyNamePost200Response, *http.Response, error)
+	// PostGetMyNameExecute executes the request
+	//  @return PostGetMyName200Response
+	PostGetMyNameExecute(r ApiPostGetMyNameRequest) (*PostGetMyName200Response, *http.Response, error)
 
 	/*
-	GetMyShortDescriptionPost Method for GetMyShortDescriptionPost
+	PostGetMyShortDescription getMyShortDescription
 
 	Use this method to get the current bot short description for the given user language. Returns [BotShortDescription](https://core.telegram.org/bots/api/#botshortdescription) on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetMyShortDescriptionPostRequest
+	@return ApiPostGetMyShortDescriptionRequest
 	*/
-	GetMyShortDescriptionPost(ctx context.Context) ApiGetMyShortDescriptionPostRequest
+	PostGetMyShortDescription(ctx context.Context) ApiPostGetMyShortDescriptionRequest
 
-	// GetMyShortDescriptionPostExecute executes the request
-	//  @return GetMyShortDescriptionPost200Response
-	GetMyShortDescriptionPostExecute(r ApiGetMyShortDescriptionPostRequest) (*GetMyShortDescriptionPost200Response, *http.Response, error)
+	// PostGetMyShortDescriptionExecute executes the request
+	//  @return PostGetMyShortDescription200Response
+	PostGetMyShortDescriptionExecute(r ApiPostGetMyShortDescriptionRequest) (*PostGetMyShortDescription200Response, *http.Response, error)
 
 	/*
-	GetStarTransactionsPost Method for GetStarTransactionsPost
+	PostGetStarTransactions getStarTransactions
 
 	Returns the bot's Telegram Star transactions in chronological order. On success, returns a [StarTransactions](https://core.telegram.org/bots/api/#startransactions) object.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetStarTransactionsPostRequest
+	@return ApiPostGetStarTransactionsRequest
 	*/
-	GetStarTransactionsPost(ctx context.Context) ApiGetStarTransactionsPostRequest
+	PostGetStarTransactions(ctx context.Context) ApiPostGetStarTransactionsRequest
 
-	// GetStarTransactionsPostExecute executes the request
-	//  @return GetStarTransactionsPost200Response
-	GetStarTransactionsPostExecute(r ApiGetStarTransactionsPostRequest) (*GetStarTransactionsPost200Response, *http.Response, error)
+	// PostGetStarTransactionsExecute executes the request
+	//  @return PostGetStarTransactions200Response
+	PostGetStarTransactionsExecute(r ApiPostGetStarTransactionsRequest) (*PostGetStarTransactions200Response, *http.Response, error)
 
 	/*
-	GetStickerSetPost Method for GetStickerSetPost
+	PostGetStickerSet getStickerSet
 
 	Use this method to get a sticker set. On success, a [StickerSet](https://core.telegram.org/bots/api/#stickerset) object is returned.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetStickerSetPostRequest
+	@return ApiPostGetStickerSetRequest
 	*/
-	GetStickerSetPost(ctx context.Context) ApiGetStickerSetPostRequest
+	PostGetStickerSet(ctx context.Context) ApiPostGetStickerSetRequest
 
-	// GetStickerSetPostExecute executes the request
-	//  @return GetStickerSetPost200Response
-	GetStickerSetPostExecute(r ApiGetStickerSetPostRequest) (*GetStickerSetPost200Response, *http.Response, error)
+	// PostGetStickerSetExecute executes the request
+	//  @return PostGetStickerSet200Response
+	PostGetStickerSetExecute(r ApiPostGetStickerSetRequest) (*PostGetStickerSet200Response, *http.Response, error)
 
 	/*
-	GetUpdatesPost Method for GetUpdatesPost
+	PostGetUpdates getUpdates
 
 	Use this method to receive incoming updates using long polling ([wiki](https://en.wikipedia.org/wiki/Push_technology#Long_polling)). Returns an Array of [Update](https://core.telegram.org/bots/api/#update) objects.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetUpdatesPostRequest
+	@return ApiPostGetUpdatesRequest
 	*/
-	GetUpdatesPost(ctx context.Context) ApiGetUpdatesPostRequest
+	PostGetUpdates(ctx context.Context) ApiPostGetUpdatesRequest
 
-	// GetUpdatesPostExecute executes the request
-	//  @return GetUpdatesPost200Response
-	GetUpdatesPostExecute(r ApiGetUpdatesPostRequest) (*GetUpdatesPost200Response, *http.Response, error)
+	// PostGetUpdatesExecute executes the request
+	//  @return PostGetUpdates200Response
+	PostGetUpdatesExecute(r ApiPostGetUpdatesRequest) (*PostGetUpdates200Response, *http.Response, error)
 
 	/*
-	GetUserChatBoostsPost Method for GetUserChatBoostsPost
+	PostGetUserChatBoosts getUserChatBoosts
 
 	Use this method to get the list of boosts added to a chat by a user. Requires administrator rights in the chat. Returns a [UserChatBoosts](https://core.telegram.org/bots/api/#userchatboosts) object.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetUserChatBoostsPostRequest
+	@return ApiPostGetUserChatBoostsRequest
 	*/
-	GetUserChatBoostsPost(ctx context.Context) ApiGetUserChatBoostsPostRequest
+	PostGetUserChatBoosts(ctx context.Context) ApiPostGetUserChatBoostsRequest
 
-	// GetUserChatBoostsPostExecute executes the request
-	//  @return GetUserChatBoostsPost200Response
-	GetUserChatBoostsPostExecute(r ApiGetUserChatBoostsPostRequest) (*GetUserChatBoostsPost200Response, *http.Response, error)
+	// PostGetUserChatBoostsExecute executes the request
+	//  @return PostGetUserChatBoosts200Response
+	PostGetUserChatBoostsExecute(r ApiPostGetUserChatBoostsRequest) (*PostGetUserChatBoosts200Response, *http.Response, error)
 
 	/*
-	GetUserProfilePhotosPost Method for GetUserProfilePhotosPost
+	PostGetUserProfilePhotos getUserProfilePhotos
 
 	Use this method to get a list of profile pictures for a user. Returns a [UserProfilePhotos](https://core.telegram.org/bots/api/#userprofilephotos) object.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetUserProfilePhotosPostRequest
+	@return ApiPostGetUserProfilePhotosRequest
 	*/
-	GetUserProfilePhotosPost(ctx context.Context) ApiGetUserProfilePhotosPostRequest
+	PostGetUserProfilePhotos(ctx context.Context) ApiPostGetUserProfilePhotosRequest
 
-	// GetUserProfilePhotosPostExecute executes the request
-	//  @return GetUserProfilePhotosPost200Response
-	GetUserProfilePhotosPostExecute(r ApiGetUserProfilePhotosPostRequest) (*GetUserProfilePhotosPost200Response, *http.Response, error)
+	// PostGetUserProfilePhotosExecute executes the request
+	//  @return PostGetUserProfilePhotos200Response
+	PostGetUserProfilePhotosExecute(r ApiPostGetUserProfilePhotosRequest) (*PostGetUserProfilePhotos200Response, *http.Response, error)
 
 	/*
-	GetWebhookInfoPost Method for GetWebhookInfoPost
+	PostGetWebhookInfo getWebhookInfo
 
 	Use this method to get current webhook status. Requires no parameters. On success, returns a [WebhookInfo](https://core.telegram.org/bots/api/#webhookinfo) object. If the bot is using [getUpdates](https://core.telegram.org/bots/api/#getupdates), will return an object with the *url* field empty.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetWebhookInfoPostRequest
+	@return ApiPostGetWebhookInfoRequest
 	*/
-	GetWebhookInfoPost(ctx context.Context) ApiGetWebhookInfoPostRequest
+	PostGetWebhookInfo(ctx context.Context) ApiPostGetWebhookInfoRequest
 
-	// GetWebhookInfoPostExecute executes the request
-	//  @return GetWebhookInfoPost200Response
-	GetWebhookInfoPostExecute(r ApiGetWebhookInfoPostRequest) (*GetWebhookInfoPost200Response, *http.Response, error)
+	// PostGetWebhookInfoExecute executes the request
+	//  @return PostGetWebhookInfo200Response
+	PostGetWebhookInfoExecute(r ApiPostGetWebhookInfoRequest) (*PostGetWebhookInfo200Response, *http.Response, error)
 
 	/*
-	GiftPremiumSubscriptionPost Method for GiftPremiumSubscriptionPost
+	PostGiftPremiumSubscription giftPremiumSubscription
 
 	Gifts a Telegram Premium subscription to the given user. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGiftPremiumSubscriptionPostRequest
+	@return ApiPostGiftPremiumSubscriptionRequest
 	*/
-	GiftPremiumSubscriptionPost(ctx context.Context) ApiGiftPremiumSubscriptionPostRequest
+	PostGiftPremiumSubscription(ctx context.Context) ApiPostGiftPremiumSubscriptionRequest
 
-	// GiftPremiumSubscriptionPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	GiftPremiumSubscriptionPostExecute(r ApiGiftPremiumSubscriptionPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostGiftPremiumSubscriptionExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostGiftPremiumSubscriptionExecute(r ApiPostGiftPremiumSubscriptionRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	HideGeneralForumTopicPost Method for HideGeneralForumTopicPost
+	PostHideGeneralForumTopic hideGeneralForumTopic
 
 	Use this method to hide the 'General' topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the *can\_manage\_topics* administrator rights. The topic will be automatically closed if it was open. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiHideGeneralForumTopicPostRequest
+	@return ApiPostHideGeneralForumTopicRequest
 	*/
-	HideGeneralForumTopicPost(ctx context.Context) ApiHideGeneralForumTopicPostRequest
+	PostHideGeneralForumTopic(ctx context.Context) ApiPostHideGeneralForumTopicRequest
 
-	// HideGeneralForumTopicPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	HideGeneralForumTopicPostExecute(r ApiHideGeneralForumTopicPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostHideGeneralForumTopicExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostHideGeneralForumTopicExecute(r ApiPostHideGeneralForumTopicRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	LeaveChatPost Method for LeaveChatPost
+	PostLeaveChat leaveChat
 
 	Use this method for your bot to leave a group, supergroup or channel. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiLeaveChatPostRequest
+	@return ApiPostLeaveChatRequest
 	*/
-	LeaveChatPost(ctx context.Context) ApiLeaveChatPostRequest
+	PostLeaveChat(ctx context.Context) ApiPostLeaveChatRequest
 
-	// LeaveChatPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	LeaveChatPostExecute(r ApiLeaveChatPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostLeaveChatExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostLeaveChatExecute(r ApiPostLeaveChatRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	LogOutPost Method for LogOutPost
+	PostLogOut logOut
 
 	Use this method to log out from the cloud Bot API server before launching the bot locally. You **must** log out the bot before running it locally, otherwise there is no guarantee that the bot will receive updates. After a successful call, you can immediately log in on a local server, but will not be able to log in back to the cloud Bot API server for 10 minutes. Returns *True* on success. Requires no parameters.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiLogOutPostRequest
+	@return ApiPostLogOutRequest
 	*/
-	LogOutPost(ctx context.Context) ApiLogOutPostRequest
+	PostLogOut(ctx context.Context) ApiPostLogOutRequest
 
-	// LogOutPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	LogOutPostExecute(r ApiLogOutPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostLogOutExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostLogOutExecute(r ApiPostLogOutRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	PinChatMessagePost Method for PinChatMessagePost
+	PostPinChatMessage pinChatMessage
 
 	Use this method to add a message to the list of pinned messages in a chat. If the chat is not a private chat, the bot must be an administrator in the chat for this to work and must have the 'can\_pin\_messages' administrator right in a supergroup or 'can\_edit\_messages' administrator right in a channel. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiPinChatMessagePostRequest
+	@return ApiPostPinChatMessageRequest
 	*/
-	PinChatMessagePost(ctx context.Context) ApiPinChatMessagePostRequest
+	PostPinChatMessage(ctx context.Context) ApiPostPinChatMessageRequest
 
-	// PinChatMessagePostExecute executes the request
-	//  @return SetWebhookPost200Response
-	PinChatMessagePostExecute(r ApiPinChatMessagePostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostPinChatMessageExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostPinChatMessageExecute(r ApiPostPinChatMessageRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	PostStoryPost Method for PostStoryPost
+	PostPostStory postStory
 
 	Posts a story on behalf of a managed business account. Requires the *can\_manage\_stories* business bot right. Returns [Story](https://core.telegram.org/bots/api/#story) on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiPostStoryPostRequest
+	@return ApiPostPostStoryRequest
 	*/
-	PostStoryPost(ctx context.Context) ApiPostStoryPostRequest
+	PostPostStory(ctx context.Context) ApiPostPostStoryRequest
 
-	// PostStoryPostExecute executes the request
-	//  @return PostStoryPost200Response
-	PostStoryPostExecute(r ApiPostStoryPostRequest) (*PostStoryPost200Response, *http.Response, error)
+	// PostPostStoryExecute executes the request
+	//  @return PostPostStory200Response
+	PostPostStoryExecute(r ApiPostPostStoryRequest) (*PostPostStory200Response, *http.Response, error)
 
 	/*
-	PromoteChatMemberPost Method for PromoteChatMemberPost
+	PostPromoteChatMember promoteChatMember
 
 	Use this method to promote or demote a user in a supergroup or a channel. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Pass *False* for all boolean parameters to demote a user. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiPromoteChatMemberPostRequest
+	@return ApiPostPromoteChatMemberRequest
 	*/
-	PromoteChatMemberPost(ctx context.Context) ApiPromoteChatMemberPostRequest
+	PostPromoteChatMember(ctx context.Context) ApiPostPromoteChatMemberRequest
 
-	// PromoteChatMemberPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	PromoteChatMemberPostExecute(r ApiPromoteChatMemberPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostPromoteChatMemberExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostPromoteChatMemberExecute(r ApiPostPromoteChatMemberRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	ReadBusinessMessagePost Method for ReadBusinessMessagePost
+	PostReadBusinessMessage readBusinessMessage
 
 	Marks incoming message as read on behalf of a business account. Requires the *can\_read\_messages* business bot right. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiReadBusinessMessagePostRequest
+	@return ApiPostReadBusinessMessageRequest
 	*/
-	ReadBusinessMessagePost(ctx context.Context) ApiReadBusinessMessagePostRequest
+	PostReadBusinessMessage(ctx context.Context) ApiPostReadBusinessMessageRequest
 
-	// ReadBusinessMessagePostExecute executes the request
-	//  @return SetWebhookPost200Response
-	ReadBusinessMessagePostExecute(r ApiReadBusinessMessagePostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostReadBusinessMessageExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostReadBusinessMessageExecute(r ApiPostReadBusinessMessageRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	RefundStarPaymentPost Method for RefundStarPaymentPost
+	PostRefundStarPayment refundStarPayment
 
 	Refunds a successful payment in [Telegram Stars](https://t.me/BotNews/90). Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiRefundStarPaymentPostRequest
+	@return ApiPostRefundStarPaymentRequest
 	*/
-	RefundStarPaymentPost(ctx context.Context) ApiRefundStarPaymentPostRequest
+	PostRefundStarPayment(ctx context.Context) ApiPostRefundStarPaymentRequest
 
-	// RefundStarPaymentPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	RefundStarPaymentPostExecute(r ApiRefundStarPaymentPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostRefundStarPaymentExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostRefundStarPaymentExecute(r ApiPostRefundStarPaymentRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	RemoveBusinessAccountProfilePhotoPost Method for RemoveBusinessAccountProfilePhotoPost
+	PostRemoveBusinessAccountProfilePhoto removeBusinessAccountProfilePhoto
 
 	Removes the current profile photo of a managed business account. Requires the *can\_edit\_profile\_photo* business bot right. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiRemoveBusinessAccountProfilePhotoPostRequest
+	@return ApiPostRemoveBusinessAccountProfilePhotoRequest
 	*/
-	RemoveBusinessAccountProfilePhotoPost(ctx context.Context) ApiRemoveBusinessAccountProfilePhotoPostRequest
+	PostRemoveBusinessAccountProfilePhoto(ctx context.Context) ApiPostRemoveBusinessAccountProfilePhotoRequest
 
-	// RemoveBusinessAccountProfilePhotoPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	RemoveBusinessAccountProfilePhotoPostExecute(r ApiRemoveBusinessAccountProfilePhotoPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostRemoveBusinessAccountProfilePhotoExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostRemoveBusinessAccountProfilePhotoExecute(r ApiPostRemoveBusinessAccountProfilePhotoRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	RemoveChatVerificationPost Method for RemoveChatVerificationPost
+	PostRemoveChatVerification removeChatVerification
 
 	Removes verification from a chat that is currently verified [on behalf of the organization](https://telegram.org/verify#third-party-verification) represented by the bot. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiRemoveChatVerificationPostRequest
+	@return ApiPostRemoveChatVerificationRequest
 	*/
-	RemoveChatVerificationPost(ctx context.Context) ApiRemoveChatVerificationPostRequest
+	PostRemoveChatVerification(ctx context.Context) ApiPostRemoveChatVerificationRequest
 
-	// RemoveChatVerificationPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	RemoveChatVerificationPostExecute(r ApiRemoveChatVerificationPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostRemoveChatVerificationExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostRemoveChatVerificationExecute(r ApiPostRemoveChatVerificationRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	RemoveUserVerificationPost Method for RemoveUserVerificationPost
+	PostRemoveUserVerification removeUserVerification
 
 	Removes verification from a user who is currently verified [on behalf of the organization](https://telegram.org/verify#third-party-verification) represented by the bot. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiRemoveUserVerificationPostRequest
+	@return ApiPostRemoveUserVerificationRequest
 	*/
-	RemoveUserVerificationPost(ctx context.Context) ApiRemoveUserVerificationPostRequest
+	PostRemoveUserVerification(ctx context.Context) ApiPostRemoveUserVerificationRequest
 
-	// RemoveUserVerificationPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	RemoveUserVerificationPostExecute(r ApiRemoveUserVerificationPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostRemoveUserVerificationExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostRemoveUserVerificationExecute(r ApiPostRemoveUserVerificationRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	ReopenForumTopicPost Method for ReopenForumTopicPost
+	PostReopenForumTopic reopenForumTopic
 
 	Use this method to reopen a closed topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the *can\_manage\_topics* administrator rights, unless it is the creator of the topic. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiReopenForumTopicPostRequest
+	@return ApiPostReopenForumTopicRequest
 	*/
-	ReopenForumTopicPost(ctx context.Context) ApiReopenForumTopicPostRequest
+	PostReopenForumTopic(ctx context.Context) ApiPostReopenForumTopicRequest
 
-	// ReopenForumTopicPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	ReopenForumTopicPostExecute(r ApiReopenForumTopicPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostReopenForumTopicExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostReopenForumTopicExecute(r ApiPostReopenForumTopicRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	ReopenGeneralForumTopicPost Method for ReopenGeneralForumTopicPost
+	PostReopenGeneralForumTopic reopenGeneralForumTopic
 
 	Use this method to reopen a closed 'General' topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the *can\_manage\_topics* administrator rights. The topic will be automatically unhidden if it was hidden. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiReopenGeneralForumTopicPostRequest
+	@return ApiPostReopenGeneralForumTopicRequest
 	*/
-	ReopenGeneralForumTopicPost(ctx context.Context) ApiReopenGeneralForumTopicPostRequest
+	PostReopenGeneralForumTopic(ctx context.Context) ApiPostReopenGeneralForumTopicRequest
 
-	// ReopenGeneralForumTopicPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	ReopenGeneralForumTopicPostExecute(r ApiReopenGeneralForumTopicPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostReopenGeneralForumTopicExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostReopenGeneralForumTopicExecute(r ApiPostReopenGeneralForumTopicRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	ReplaceStickerInSetPost Method for ReplaceStickerInSetPost
+	PostReplaceStickerInSet replaceStickerInSet
 
 	Use this method to replace an existing sticker in a sticker set with a new one. The method is equivalent to calling [deleteStickerFromSet](https://core.telegram.org/bots/api/#deletestickerfromset), then [addStickerToSet](https://core.telegram.org/bots/api/#addstickertoset), then [setStickerPositionInSet](https://core.telegram.org/bots/api/#setstickerpositioninset). Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiReplaceStickerInSetPostRequest
+	@return ApiPostReplaceStickerInSetRequest
 	*/
-	ReplaceStickerInSetPost(ctx context.Context) ApiReplaceStickerInSetPostRequest
+	PostReplaceStickerInSet(ctx context.Context) ApiPostReplaceStickerInSetRequest
 
-	// ReplaceStickerInSetPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	ReplaceStickerInSetPostExecute(r ApiReplaceStickerInSetPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostReplaceStickerInSetExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostReplaceStickerInSetExecute(r ApiPostReplaceStickerInSetRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	RestrictChatMemberPost Method for RestrictChatMemberPost
+	PostRestrictChatMember restrictChatMember
 
 	Use this method to restrict a user in a supergroup. The bot must be an administrator in the supergroup for this to work and must have the appropriate administrator rights. Pass *True* for all permissions to lift restrictions from a user. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiRestrictChatMemberPostRequest
+	@return ApiPostRestrictChatMemberRequest
 	*/
-	RestrictChatMemberPost(ctx context.Context) ApiRestrictChatMemberPostRequest
+	PostRestrictChatMember(ctx context.Context) ApiPostRestrictChatMemberRequest
 
-	// RestrictChatMemberPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	RestrictChatMemberPostExecute(r ApiRestrictChatMemberPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostRestrictChatMemberExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostRestrictChatMemberExecute(r ApiPostRestrictChatMemberRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	RevokeChatInviteLinkPost Method for RevokeChatInviteLinkPost
+	PostRevokeChatInviteLink revokeChatInviteLink
 
 	Use this method to revoke an invite link created by the bot. If the primary link is revoked, a new link is automatically generated. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns the revoked invite link as [ChatInviteLink](https://core.telegram.org/bots/api/#chatinvitelink) object.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiRevokeChatInviteLinkPostRequest
+	@return ApiPostRevokeChatInviteLinkRequest
 	*/
-	RevokeChatInviteLinkPost(ctx context.Context) ApiRevokeChatInviteLinkPostRequest
+	PostRevokeChatInviteLink(ctx context.Context) ApiPostRevokeChatInviteLinkRequest
 
-	// RevokeChatInviteLinkPostExecute executes the request
-	//  @return CreateChatInviteLinkPost200Response
-	RevokeChatInviteLinkPostExecute(r ApiRevokeChatInviteLinkPostRequest) (*CreateChatInviteLinkPost200Response, *http.Response, error)
+	// PostRevokeChatInviteLinkExecute executes the request
+	//  @return PostCreateChatInviteLink200Response
+	PostRevokeChatInviteLinkExecute(r ApiPostRevokeChatInviteLinkRequest) (*PostCreateChatInviteLink200Response, *http.Response, error)
 
 	/*
-	SavePreparedInlineMessagePost Method for SavePreparedInlineMessagePost
+	PostSavePreparedInlineMessage savePreparedInlineMessage
 
 	Stores a message that can be sent by a user of a Mini App. Returns a [PreparedInlineMessage](https://core.telegram.org/bots/api/#preparedinlinemessage) object.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSavePreparedInlineMessagePostRequest
+	@return ApiPostSavePreparedInlineMessageRequest
 	*/
-	SavePreparedInlineMessagePost(ctx context.Context) ApiSavePreparedInlineMessagePostRequest
+	PostSavePreparedInlineMessage(ctx context.Context) ApiPostSavePreparedInlineMessageRequest
 
-	// SavePreparedInlineMessagePostExecute executes the request
-	//  @return SavePreparedInlineMessagePost200Response
-	SavePreparedInlineMessagePostExecute(r ApiSavePreparedInlineMessagePostRequest) (*SavePreparedInlineMessagePost200Response, *http.Response, error)
+	// PostSavePreparedInlineMessageExecute executes the request
+	//  @return PostSavePreparedInlineMessage200Response
+	PostSavePreparedInlineMessageExecute(r ApiPostSavePreparedInlineMessageRequest) (*PostSavePreparedInlineMessage200Response, *http.Response, error)
 
 	/*
-	SendAnimationPost Method for SendAnimationPost
+	PostSendAnimation sendAnimation
 
 	Use this method to send animation files (GIF or H.264/MPEG-4 AVC video without sound). On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned. Bots can currently send animation files of up to 50 MB in size, this limit may be changed in the future.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSendAnimationPostRequest
+	@return ApiPostSendAnimationRequest
 	*/
-	SendAnimationPost(ctx context.Context) ApiSendAnimationPostRequest
+	PostSendAnimation(ctx context.Context) ApiPostSendAnimationRequest
 
-	// SendAnimationPostExecute executes the request
-	//  @return SendMessagePost200Response
-	SendAnimationPostExecute(r ApiSendAnimationPostRequest) (*SendMessagePost200Response, *http.Response, error)
+	// PostSendAnimationExecute executes the request
+	//  @return PostSendMessage200Response
+	PostSendAnimationExecute(r ApiPostSendAnimationRequest) (*PostSendMessage200Response, *http.Response, error)
 
 	/*
-	SendAudioPost Method for SendAudioPost
+	PostSendAudio sendAudio
 
 	Use this method to send audio files, if you want Telegram clients to display them in the music player. Your audio must be in the .MP3 or .M4A format. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned. Bots can currently send audio files of up to 50 MB in size, this limit may be changed in the future.
 
 For sending voice messages, use the [sendVoice](https://core.telegram.org/bots/api/#sendvoice) method instead.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSendAudioPostRequest
+	@return ApiPostSendAudioRequest
 	*/
-	SendAudioPost(ctx context.Context) ApiSendAudioPostRequest
+	PostSendAudio(ctx context.Context) ApiPostSendAudioRequest
 
-	// SendAudioPostExecute executes the request
-	//  @return SendMessagePost200Response
-	SendAudioPostExecute(r ApiSendAudioPostRequest) (*SendMessagePost200Response, *http.Response, error)
+	// PostSendAudioExecute executes the request
+	//  @return PostSendMessage200Response
+	PostSendAudioExecute(r ApiPostSendAudioRequest) (*PostSendMessage200Response, *http.Response, error)
 
 	/*
-	SendChatActionPost Method for SendChatActionPost
+	PostSendChatAction sendChatAction
 
 	Use this method when you need to tell the user that something is happening on the bot's side. The status is set for 5 seconds or less (when a message arrives from your bot, Telegram clients clear its typing status). Returns *True* on success.
 
@@ -1355,877 +1355,877 @@ Example: The [ImageBot](https://t.me/imagebot) needs some time to process a requ
 We only recommend using this method when a response from the bot will take a **noticeable** amount of time to arrive.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSendChatActionPostRequest
+	@return ApiPostSendChatActionRequest
 	*/
-	SendChatActionPost(ctx context.Context) ApiSendChatActionPostRequest
+	PostSendChatAction(ctx context.Context) ApiPostSendChatActionRequest
 
-	// SendChatActionPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	SendChatActionPostExecute(r ApiSendChatActionPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostSendChatActionExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostSendChatActionExecute(r ApiPostSendChatActionRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	SendContactPost Method for SendContactPost
+	PostSendContact sendContact
 
 	Use this method to send phone contacts. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSendContactPostRequest
+	@return ApiPostSendContactRequest
 	*/
-	SendContactPost(ctx context.Context) ApiSendContactPostRequest
+	PostSendContact(ctx context.Context) ApiPostSendContactRequest
 
-	// SendContactPostExecute executes the request
-	//  @return SendMessagePost200Response
-	SendContactPostExecute(r ApiSendContactPostRequest) (*SendMessagePost200Response, *http.Response, error)
+	// PostSendContactExecute executes the request
+	//  @return PostSendMessage200Response
+	PostSendContactExecute(r ApiPostSendContactRequest) (*PostSendMessage200Response, *http.Response, error)
 
 	/*
-	SendDicePost Method for SendDicePost
+	PostSendDice sendDice
 
 	Use this method to send an animated emoji that will display a random value. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSendDicePostRequest
+	@return ApiPostSendDiceRequest
 	*/
-	SendDicePost(ctx context.Context) ApiSendDicePostRequest
+	PostSendDice(ctx context.Context) ApiPostSendDiceRequest
 
-	// SendDicePostExecute executes the request
-	//  @return SendMessagePost200Response
-	SendDicePostExecute(r ApiSendDicePostRequest) (*SendMessagePost200Response, *http.Response, error)
+	// PostSendDiceExecute executes the request
+	//  @return PostSendMessage200Response
+	PostSendDiceExecute(r ApiPostSendDiceRequest) (*PostSendMessage200Response, *http.Response, error)
 
 	/*
-	SendDocumentPost Method for SendDocumentPost
+	PostSendDocument sendDocument
 
 	Use this method to send general files. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned. Bots can currently send files of any type of up to 50 MB in size, this limit may be changed in the future.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSendDocumentPostRequest
+	@return ApiPostSendDocumentRequest
 	*/
-	SendDocumentPost(ctx context.Context) ApiSendDocumentPostRequest
+	PostSendDocument(ctx context.Context) ApiPostSendDocumentRequest
 
-	// SendDocumentPostExecute executes the request
-	//  @return SendMessagePost200Response
-	SendDocumentPostExecute(r ApiSendDocumentPostRequest) (*SendMessagePost200Response, *http.Response, error)
+	// PostSendDocumentExecute executes the request
+	//  @return PostSendMessage200Response
+	PostSendDocumentExecute(r ApiPostSendDocumentRequest) (*PostSendMessage200Response, *http.Response, error)
 
 	/*
-	SendGamePost Method for SendGamePost
+	PostSendGame sendGame
 
 	Use this method to send a game. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSendGamePostRequest
+	@return ApiPostSendGameRequest
 	*/
-	SendGamePost(ctx context.Context) ApiSendGamePostRequest
+	PostSendGame(ctx context.Context) ApiPostSendGameRequest
 
-	// SendGamePostExecute executes the request
-	//  @return SendMessagePost200Response
-	SendGamePostExecute(r ApiSendGamePostRequest) (*SendMessagePost200Response, *http.Response, error)
+	// PostSendGameExecute executes the request
+	//  @return PostSendMessage200Response
+	PostSendGameExecute(r ApiPostSendGameRequest) (*PostSendMessage200Response, *http.Response, error)
 
 	/*
-	SendGiftPost Method for SendGiftPost
+	PostSendGift sendGift
 
 	Sends a gift to the given user or channel chat. The gift can't be converted to Telegram Stars by the receiver. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSendGiftPostRequest
+	@return ApiPostSendGiftRequest
 	*/
-	SendGiftPost(ctx context.Context) ApiSendGiftPostRequest
+	PostSendGift(ctx context.Context) ApiPostSendGiftRequest
 
-	// SendGiftPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	SendGiftPostExecute(r ApiSendGiftPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostSendGiftExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostSendGiftExecute(r ApiPostSendGiftRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	SendInvoicePost Method for SendInvoicePost
+	PostSendInvoice sendInvoice
 
 	Use this method to send invoices. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSendInvoicePostRequest
+	@return ApiPostSendInvoiceRequest
 	*/
-	SendInvoicePost(ctx context.Context) ApiSendInvoicePostRequest
+	PostSendInvoice(ctx context.Context) ApiPostSendInvoiceRequest
 
-	// SendInvoicePostExecute executes the request
-	//  @return SendMessagePost200Response
-	SendInvoicePostExecute(r ApiSendInvoicePostRequest) (*SendMessagePost200Response, *http.Response, error)
+	// PostSendInvoiceExecute executes the request
+	//  @return PostSendMessage200Response
+	PostSendInvoiceExecute(r ApiPostSendInvoiceRequest) (*PostSendMessage200Response, *http.Response, error)
 
 	/*
-	SendLocationPost Method for SendLocationPost
+	PostSendLocation sendLocation
 
 	Use this method to send point on the map. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSendLocationPostRequest
+	@return ApiPostSendLocationRequest
 	*/
-	SendLocationPost(ctx context.Context) ApiSendLocationPostRequest
+	PostSendLocation(ctx context.Context) ApiPostSendLocationRequest
 
-	// SendLocationPostExecute executes the request
-	//  @return SendMessagePost200Response
-	SendLocationPostExecute(r ApiSendLocationPostRequest) (*SendMessagePost200Response, *http.Response, error)
+	// PostSendLocationExecute executes the request
+	//  @return PostSendMessage200Response
+	PostSendLocationExecute(r ApiPostSendLocationRequest) (*PostSendMessage200Response, *http.Response, error)
 
 	/*
-	SendMediaGroupPost Method for SendMediaGroupPost
+	PostSendMediaGroup sendMediaGroup
 
 	Use this method to send a group of photos, videos, documents or audios as an album. Documents and audio files can be only grouped in an album with messages of the same type. On success, an array of [Messages](https://core.telegram.org/bots/api/#message) that were sent is returned.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSendMediaGroupPostRequest
+	@return ApiPostSendMediaGroupRequest
 	*/
-	SendMediaGroupPost(ctx context.Context) ApiSendMediaGroupPostRequest
+	PostSendMediaGroup(ctx context.Context) ApiPostSendMediaGroupRequest
 
-	// SendMediaGroupPostExecute executes the request
-	//  @return SendMediaGroupPost200Response
-	SendMediaGroupPostExecute(r ApiSendMediaGroupPostRequest) (*SendMediaGroupPost200Response, *http.Response, error)
+	// PostSendMediaGroupExecute executes the request
+	//  @return PostSendMediaGroup200Response
+	PostSendMediaGroupExecute(r ApiPostSendMediaGroupRequest) (*PostSendMediaGroup200Response, *http.Response, error)
 
 	/*
-	SendMessagePost Method for SendMessagePost
+	PostSendMessage sendMessage
 
 	Use this method to send text messages. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSendMessagePostRequest
+	@return ApiPostSendMessageRequest
 	*/
-	SendMessagePost(ctx context.Context) ApiSendMessagePostRequest
+	PostSendMessage(ctx context.Context) ApiPostSendMessageRequest
 
-	// SendMessagePostExecute executes the request
-	//  @return SendMessagePost200Response
-	SendMessagePostExecute(r ApiSendMessagePostRequest) (*SendMessagePost200Response, *http.Response, error)
+	// PostSendMessageExecute executes the request
+	//  @return PostSendMessage200Response
+	PostSendMessageExecute(r ApiPostSendMessageRequest) (*PostSendMessage200Response, *http.Response, error)
 
 	/*
-	SendPaidMediaPost Method for SendPaidMediaPost
+	PostSendPaidMedia sendPaidMedia
 
 	Use this method to send paid media. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSendPaidMediaPostRequest
+	@return ApiPostSendPaidMediaRequest
 	*/
-	SendPaidMediaPost(ctx context.Context) ApiSendPaidMediaPostRequest
+	PostSendPaidMedia(ctx context.Context) ApiPostSendPaidMediaRequest
 
-	// SendPaidMediaPostExecute executes the request
-	//  @return SendMessagePost200Response
-	SendPaidMediaPostExecute(r ApiSendPaidMediaPostRequest) (*SendMessagePost200Response, *http.Response, error)
+	// PostSendPaidMediaExecute executes the request
+	//  @return PostSendMessage200Response
+	PostSendPaidMediaExecute(r ApiPostSendPaidMediaRequest) (*PostSendMessage200Response, *http.Response, error)
 
 	/*
-	SendPhotoPost Method for SendPhotoPost
+	PostSendPhoto sendPhoto
 
 	Use this method to send photos. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSendPhotoPostRequest
+	@return ApiPostSendPhotoRequest
 	*/
-	SendPhotoPost(ctx context.Context) ApiSendPhotoPostRequest
+	PostSendPhoto(ctx context.Context) ApiPostSendPhotoRequest
 
-	// SendPhotoPostExecute executes the request
-	//  @return SendMessagePost200Response
-	SendPhotoPostExecute(r ApiSendPhotoPostRequest) (*SendMessagePost200Response, *http.Response, error)
+	// PostSendPhotoExecute executes the request
+	//  @return PostSendMessage200Response
+	PostSendPhotoExecute(r ApiPostSendPhotoRequest) (*PostSendMessage200Response, *http.Response, error)
 
 	/*
-	SendPollPost Method for SendPollPost
+	PostSendPoll sendPoll
 
 	Use this method to send a native poll. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSendPollPostRequest
+	@return ApiPostSendPollRequest
 	*/
-	SendPollPost(ctx context.Context) ApiSendPollPostRequest
+	PostSendPoll(ctx context.Context) ApiPostSendPollRequest
 
-	// SendPollPostExecute executes the request
-	//  @return SendMessagePost200Response
-	SendPollPostExecute(r ApiSendPollPostRequest) (*SendMessagePost200Response, *http.Response, error)
+	// PostSendPollExecute executes the request
+	//  @return PostSendMessage200Response
+	PostSendPollExecute(r ApiPostSendPollRequest) (*PostSendMessage200Response, *http.Response, error)
 
 	/*
-	SendStickerPost Method for SendStickerPost
+	PostSendSticker sendSticker
 
 	Use this method to send static .WEBP, [animated](https://telegram.org/blog/animated-stickers) .TGS, or [video](https://telegram.org/blog/video-stickers-better-reactions) .WEBM stickers. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSendStickerPostRequest
+	@return ApiPostSendStickerRequest
 	*/
-	SendStickerPost(ctx context.Context) ApiSendStickerPostRequest
+	PostSendSticker(ctx context.Context) ApiPostSendStickerRequest
 
-	// SendStickerPostExecute executes the request
-	//  @return SendMessagePost200Response
-	SendStickerPostExecute(r ApiSendStickerPostRequest) (*SendMessagePost200Response, *http.Response, error)
+	// PostSendStickerExecute executes the request
+	//  @return PostSendMessage200Response
+	PostSendStickerExecute(r ApiPostSendStickerRequest) (*PostSendMessage200Response, *http.Response, error)
 
 	/*
-	SendVenuePost Method for SendVenuePost
+	PostSendVenue sendVenue
 
 	Use this method to send information about a venue. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSendVenuePostRequest
+	@return ApiPostSendVenueRequest
 	*/
-	SendVenuePost(ctx context.Context) ApiSendVenuePostRequest
+	PostSendVenue(ctx context.Context) ApiPostSendVenueRequest
 
-	// SendVenuePostExecute executes the request
-	//  @return SendMessagePost200Response
-	SendVenuePostExecute(r ApiSendVenuePostRequest) (*SendMessagePost200Response, *http.Response, error)
+	// PostSendVenueExecute executes the request
+	//  @return PostSendMessage200Response
+	PostSendVenueExecute(r ApiPostSendVenueRequest) (*PostSendMessage200Response, *http.Response, error)
 
 	/*
-	SendVideoNotePost Method for SendVideoNotePost
-
-	As of [v.4.0](https://telegram.org/blog/video-messages-and-telescope), Telegram clients support rounded square MPEG4 videos of up to 1 minute long. Use this method to send video messages. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSendVideoNotePostRequest
-	*/
-	SendVideoNotePost(ctx context.Context) ApiSendVideoNotePostRequest
-
-	// SendVideoNotePostExecute executes the request
-	//  @return SendMessagePost200Response
-	SendVideoNotePostExecute(r ApiSendVideoNotePostRequest) (*SendMessagePost200Response, *http.Response, error)
-
-	/*
-	SendVideoPost Method for SendVideoPost
+	PostSendVideo sendVideo
 
 	Use this method to send video files, Telegram clients support MPEG4 videos (other formats may be sent as [Document](https://core.telegram.org/bots/api/#document)). On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned. Bots can currently send video files of up to 50 MB in size, this limit may be changed in the future.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSendVideoPostRequest
+	@return ApiPostSendVideoRequest
 	*/
-	SendVideoPost(ctx context.Context) ApiSendVideoPostRequest
+	PostSendVideo(ctx context.Context) ApiPostSendVideoRequest
 
-	// SendVideoPostExecute executes the request
-	//  @return SendMessagePost200Response
-	SendVideoPostExecute(r ApiSendVideoPostRequest) (*SendMessagePost200Response, *http.Response, error)
+	// PostSendVideoExecute executes the request
+	//  @return PostSendMessage200Response
+	PostSendVideoExecute(r ApiPostSendVideoRequest) (*PostSendMessage200Response, *http.Response, error)
 
 	/*
-	SendVoicePost Method for SendVoicePost
+	PostSendVideoNote sendVideoNote
+
+	As of [v.4.0](https://telegram.org/blog/video-messages-and-telescope), Telegram clients support rounded square MPEG4 videos of up to 1 minute long. Use this method to send video messages. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostSendVideoNoteRequest
+	*/
+	PostSendVideoNote(ctx context.Context) ApiPostSendVideoNoteRequest
+
+	// PostSendVideoNoteExecute executes the request
+	//  @return PostSendMessage200Response
+	PostSendVideoNoteExecute(r ApiPostSendVideoNoteRequest) (*PostSendMessage200Response, *http.Response, error)
+
+	/*
+	PostSendVoice sendVoice
 
 	Use this method to send audio files, if you want Telegram clients to display the file as a playable voice message. For this to work, your audio must be in an .OGG file encoded with OPUS, or in .MP3 format, or in .M4A format (other formats may be sent as [Audio](https://core.telegram.org/bots/api/#audio) or [Document](https://core.telegram.org/bots/api/#document)). On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned. Bots can currently send voice messages of up to 50 MB in size, this limit may be changed in the future.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSendVoicePostRequest
+	@return ApiPostSendVoiceRequest
 	*/
-	SendVoicePost(ctx context.Context) ApiSendVoicePostRequest
+	PostSendVoice(ctx context.Context) ApiPostSendVoiceRequest
 
-	// SendVoicePostExecute executes the request
-	//  @return SendMessagePost200Response
-	SendVoicePostExecute(r ApiSendVoicePostRequest) (*SendMessagePost200Response, *http.Response, error)
+	// PostSendVoiceExecute executes the request
+	//  @return PostSendMessage200Response
+	PostSendVoiceExecute(r ApiPostSendVoiceRequest) (*PostSendMessage200Response, *http.Response, error)
 
 	/*
-	SetBusinessAccountBioPost Method for SetBusinessAccountBioPost
+	PostSetBusinessAccountBio setBusinessAccountBio
 
 	Changes the bio of a managed business account. Requires the *can\_change\_bio* business bot right. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSetBusinessAccountBioPostRequest
+	@return ApiPostSetBusinessAccountBioRequest
 	*/
-	SetBusinessAccountBioPost(ctx context.Context) ApiSetBusinessAccountBioPostRequest
+	PostSetBusinessAccountBio(ctx context.Context) ApiPostSetBusinessAccountBioRequest
 
-	// SetBusinessAccountBioPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	SetBusinessAccountBioPostExecute(r ApiSetBusinessAccountBioPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostSetBusinessAccountBioExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostSetBusinessAccountBioExecute(r ApiPostSetBusinessAccountBioRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	SetBusinessAccountGiftSettingsPost Method for SetBusinessAccountGiftSettingsPost
+	PostSetBusinessAccountGiftSettings setBusinessAccountGiftSettings
 
 	Changes the privacy settings pertaining to incoming gifts in a managed business account. Requires the *can\_change\_gift\_settings* business bot right. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSetBusinessAccountGiftSettingsPostRequest
+	@return ApiPostSetBusinessAccountGiftSettingsRequest
 	*/
-	SetBusinessAccountGiftSettingsPost(ctx context.Context) ApiSetBusinessAccountGiftSettingsPostRequest
+	PostSetBusinessAccountGiftSettings(ctx context.Context) ApiPostSetBusinessAccountGiftSettingsRequest
 
-	// SetBusinessAccountGiftSettingsPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	SetBusinessAccountGiftSettingsPostExecute(r ApiSetBusinessAccountGiftSettingsPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostSetBusinessAccountGiftSettingsExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostSetBusinessAccountGiftSettingsExecute(r ApiPostSetBusinessAccountGiftSettingsRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	SetBusinessAccountNamePost Method for SetBusinessAccountNamePost
+	PostSetBusinessAccountName setBusinessAccountName
 
 	Changes the first and last name of a managed business account. Requires the *can\_change\_name* business bot right. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSetBusinessAccountNamePostRequest
+	@return ApiPostSetBusinessAccountNameRequest
 	*/
-	SetBusinessAccountNamePost(ctx context.Context) ApiSetBusinessAccountNamePostRequest
+	PostSetBusinessAccountName(ctx context.Context) ApiPostSetBusinessAccountNameRequest
 
-	// SetBusinessAccountNamePostExecute executes the request
-	//  @return SetWebhookPost200Response
-	SetBusinessAccountNamePostExecute(r ApiSetBusinessAccountNamePostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostSetBusinessAccountNameExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostSetBusinessAccountNameExecute(r ApiPostSetBusinessAccountNameRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	SetBusinessAccountProfilePhotoPost Method for SetBusinessAccountProfilePhotoPost
+	PostSetBusinessAccountProfilePhoto setBusinessAccountProfilePhoto
 
 	Changes the profile photo of a managed business account. Requires the *can\_edit\_profile\_photo* business bot right. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSetBusinessAccountProfilePhotoPostRequest
+	@return ApiPostSetBusinessAccountProfilePhotoRequest
 	*/
-	SetBusinessAccountProfilePhotoPost(ctx context.Context) ApiSetBusinessAccountProfilePhotoPostRequest
+	PostSetBusinessAccountProfilePhoto(ctx context.Context) ApiPostSetBusinessAccountProfilePhotoRequest
 
-	// SetBusinessAccountProfilePhotoPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	SetBusinessAccountProfilePhotoPostExecute(r ApiSetBusinessAccountProfilePhotoPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostSetBusinessAccountProfilePhotoExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostSetBusinessAccountProfilePhotoExecute(r ApiPostSetBusinessAccountProfilePhotoRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	SetBusinessAccountUsernamePost Method for SetBusinessAccountUsernamePost
+	PostSetBusinessAccountUsername setBusinessAccountUsername
 
 	Changes the username of a managed business account. Requires the *can\_change\_username* business bot right. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSetBusinessAccountUsernamePostRequest
+	@return ApiPostSetBusinessAccountUsernameRequest
 	*/
-	SetBusinessAccountUsernamePost(ctx context.Context) ApiSetBusinessAccountUsernamePostRequest
+	PostSetBusinessAccountUsername(ctx context.Context) ApiPostSetBusinessAccountUsernameRequest
 
-	// SetBusinessAccountUsernamePostExecute executes the request
-	//  @return SetWebhookPost200Response
-	SetBusinessAccountUsernamePostExecute(r ApiSetBusinessAccountUsernamePostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostSetBusinessAccountUsernameExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostSetBusinessAccountUsernameExecute(r ApiPostSetBusinessAccountUsernameRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	SetChatAdministratorCustomTitlePost Method for SetChatAdministratorCustomTitlePost
+	PostSetChatAdministratorCustomTitle setChatAdministratorCustomTitle
 
 	Use this method to set a custom title for an administrator in a supergroup promoted by the bot. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSetChatAdministratorCustomTitlePostRequest
+	@return ApiPostSetChatAdministratorCustomTitleRequest
 	*/
-	SetChatAdministratorCustomTitlePost(ctx context.Context) ApiSetChatAdministratorCustomTitlePostRequest
+	PostSetChatAdministratorCustomTitle(ctx context.Context) ApiPostSetChatAdministratorCustomTitleRequest
 
-	// SetChatAdministratorCustomTitlePostExecute executes the request
-	//  @return SetWebhookPost200Response
-	SetChatAdministratorCustomTitlePostExecute(r ApiSetChatAdministratorCustomTitlePostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostSetChatAdministratorCustomTitleExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostSetChatAdministratorCustomTitleExecute(r ApiPostSetChatAdministratorCustomTitleRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	SetChatDescriptionPost Method for SetChatDescriptionPost
+	PostSetChatDescription setChatDescription
 
 	Use this method to change the description of a group, a supergroup or a channel. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSetChatDescriptionPostRequest
+	@return ApiPostSetChatDescriptionRequest
 	*/
-	SetChatDescriptionPost(ctx context.Context) ApiSetChatDescriptionPostRequest
+	PostSetChatDescription(ctx context.Context) ApiPostSetChatDescriptionRequest
 
-	// SetChatDescriptionPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	SetChatDescriptionPostExecute(r ApiSetChatDescriptionPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostSetChatDescriptionExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostSetChatDescriptionExecute(r ApiPostSetChatDescriptionRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	SetChatMenuButtonPost Method for SetChatMenuButtonPost
+	PostSetChatMenuButton setChatMenuButton
 
 	Use this method to change the bot's menu button in a private chat, or the default menu button. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSetChatMenuButtonPostRequest
+	@return ApiPostSetChatMenuButtonRequest
 	*/
-	SetChatMenuButtonPost(ctx context.Context) ApiSetChatMenuButtonPostRequest
+	PostSetChatMenuButton(ctx context.Context) ApiPostSetChatMenuButtonRequest
 
-	// SetChatMenuButtonPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	SetChatMenuButtonPostExecute(r ApiSetChatMenuButtonPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostSetChatMenuButtonExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostSetChatMenuButtonExecute(r ApiPostSetChatMenuButtonRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	SetChatPermissionsPost Method for SetChatPermissionsPost
+	PostSetChatPermissions setChatPermissions
 
 	Use this method to set default chat permissions for all members. The bot must be an administrator in the group or a supergroup for this to work and must have the *can\_restrict\_members* administrator rights. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSetChatPermissionsPostRequest
+	@return ApiPostSetChatPermissionsRequest
 	*/
-	SetChatPermissionsPost(ctx context.Context) ApiSetChatPermissionsPostRequest
+	PostSetChatPermissions(ctx context.Context) ApiPostSetChatPermissionsRequest
 
-	// SetChatPermissionsPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	SetChatPermissionsPostExecute(r ApiSetChatPermissionsPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostSetChatPermissionsExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostSetChatPermissionsExecute(r ApiPostSetChatPermissionsRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	SetChatPhotoPost Method for SetChatPhotoPost
+	PostSetChatPhoto setChatPhoto
 
 	Use this method to set a new profile photo for the chat. Photos can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSetChatPhotoPostRequest
+	@return ApiPostSetChatPhotoRequest
 	*/
-	SetChatPhotoPost(ctx context.Context) ApiSetChatPhotoPostRequest
+	PostSetChatPhoto(ctx context.Context) ApiPostSetChatPhotoRequest
 
-	// SetChatPhotoPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	SetChatPhotoPostExecute(r ApiSetChatPhotoPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostSetChatPhotoExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostSetChatPhotoExecute(r ApiPostSetChatPhotoRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	SetChatStickerSetPost Method for SetChatStickerSetPost
+	PostSetChatStickerSet setChatStickerSet
 
 	Use this method to set a new group sticker set for a supergroup. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Use the field *can\_set\_sticker\_set* optionally returned in [getChat](https://core.telegram.org/bots/api/#getchat) requests to check if the bot can use this method. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSetChatStickerSetPostRequest
+	@return ApiPostSetChatStickerSetRequest
 	*/
-	SetChatStickerSetPost(ctx context.Context) ApiSetChatStickerSetPostRequest
+	PostSetChatStickerSet(ctx context.Context) ApiPostSetChatStickerSetRequest
 
-	// SetChatStickerSetPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	SetChatStickerSetPostExecute(r ApiSetChatStickerSetPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostSetChatStickerSetExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostSetChatStickerSetExecute(r ApiPostSetChatStickerSetRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	SetChatTitlePost Method for SetChatTitlePost
+	PostSetChatTitle setChatTitle
 
 	Use this method to change the title of a chat. Titles can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSetChatTitlePostRequest
+	@return ApiPostSetChatTitleRequest
 	*/
-	SetChatTitlePost(ctx context.Context) ApiSetChatTitlePostRequest
+	PostSetChatTitle(ctx context.Context) ApiPostSetChatTitleRequest
 
-	// SetChatTitlePostExecute executes the request
-	//  @return SetWebhookPost200Response
-	SetChatTitlePostExecute(r ApiSetChatTitlePostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostSetChatTitleExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostSetChatTitleExecute(r ApiPostSetChatTitleRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	SetCustomEmojiStickerSetThumbnailPost Method for SetCustomEmojiStickerSetThumbnailPost
+	PostSetCustomEmojiStickerSetThumbnail setCustomEmojiStickerSetThumbnail
 
 	Use this method to set the thumbnail of a custom emoji sticker set. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSetCustomEmojiStickerSetThumbnailPostRequest
+	@return ApiPostSetCustomEmojiStickerSetThumbnailRequest
 	*/
-	SetCustomEmojiStickerSetThumbnailPost(ctx context.Context) ApiSetCustomEmojiStickerSetThumbnailPostRequest
+	PostSetCustomEmojiStickerSetThumbnail(ctx context.Context) ApiPostSetCustomEmojiStickerSetThumbnailRequest
 
-	// SetCustomEmojiStickerSetThumbnailPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	SetCustomEmojiStickerSetThumbnailPostExecute(r ApiSetCustomEmojiStickerSetThumbnailPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostSetCustomEmojiStickerSetThumbnailExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostSetCustomEmojiStickerSetThumbnailExecute(r ApiPostSetCustomEmojiStickerSetThumbnailRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	SetGameScorePost Method for SetGameScorePost
+	PostSetGameScore setGameScore
 
 	Use this method to set the score of the specified user in a game message. On success, if the message is not an inline message, the [Message](https://core.telegram.org/bots/api/#message) is returned, otherwise *True* is returned. Returns an error, if the new score is not greater than the user's current score in the chat and *force* is *False*.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSetGameScorePostRequest
+	@return ApiPostSetGameScoreRequest
 	*/
-	SetGameScorePost(ctx context.Context) ApiSetGameScorePostRequest
+	PostSetGameScore(ctx context.Context) ApiPostSetGameScoreRequest
 
-	// SetGameScorePostExecute executes the request
-	//  @return EditMessageTextPost200Response
-	SetGameScorePostExecute(r ApiSetGameScorePostRequest) (*EditMessageTextPost200Response, *http.Response, error)
+	// PostSetGameScoreExecute executes the request
+	//  @return PostEditMessageText200Response
+	PostSetGameScoreExecute(r ApiPostSetGameScoreRequest) (*PostEditMessageText200Response, *http.Response, error)
 
 	/*
-	SetMessageReactionPost Method for SetMessageReactionPost
+	PostSetMessageReaction setMessageReaction
 
 	Use this method to change the chosen reactions on a message. Service messages of some types can't be reacted to. Automatically forwarded messages from a channel to its discussion group have the same available reactions as messages in the channel. Bots can't use paid reactions. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSetMessageReactionPostRequest
+	@return ApiPostSetMessageReactionRequest
 	*/
-	SetMessageReactionPost(ctx context.Context) ApiSetMessageReactionPostRequest
+	PostSetMessageReaction(ctx context.Context) ApiPostSetMessageReactionRequest
 
-	// SetMessageReactionPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	SetMessageReactionPostExecute(r ApiSetMessageReactionPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostSetMessageReactionExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostSetMessageReactionExecute(r ApiPostSetMessageReactionRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	SetMyCommandsPost Method for SetMyCommandsPost
+	PostSetMyCommands setMyCommands
 
 	Use this method to change the list of the bot's commands. See [this manual](https://core.telegram.org/bots/features#commands) for more details about bot commands. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSetMyCommandsPostRequest
+	@return ApiPostSetMyCommandsRequest
 	*/
-	SetMyCommandsPost(ctx context.Context) ApiSetMyCommandsPostRequest
+	PostSetMyCommands(ctx context.Context) ApiPostSetMyCommandsRequest
 
-	// SetMyCommandsPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	SetMyCommandsPostExecute(r ApiSetMyCommandsPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostSetMyCommandsExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostSetMyCommandsExecute(r ApiPostSetMyCommandsRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	SetMyDefaultAdministratorRightsPost Method for SetMyDefaultAdministratorRightsPost
+	PostSetMyDefaultAdministratorRights setMyDefaultAdministratorRights
 
 	Use this method to change the default administrator rights requested by the bot when it's added as an administrator to groups or channels. These rights will be suggested to users, but they are free to modify the list before adding the bot. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSetMyDefaultAdministratorRightsPostRequest
+	@return ApiPostSetMyDefaultAdministratorRightsRequest
 	*/
-	SetMyDefaultAdministratorRightsPost(ctx context.Context) ApiSetMyDefaultAdministratorRightsPostRequest
+	PostSetMyDefaultAdministratorRights(ctx context.Context) ApiPostSetMyDefaultAdministratorRightsRequest
 
-	// SetMyDefaultAdministratorRightsPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	SetMyDefaultAdministratorRightsPostExecute(r ApiSetMyDefaultAdministratorRightsPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostSetMyDefaultAdministratorRightsExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostSetMyDefaultAdministratorRightsExecute(r ApiPostSetMyDefaultAdministratorRightsRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	SetMyDescriptionPost Method for SetMyDescriptionPost
+	PostSetMyDescription setMyDescription
 
 	Use this method to change the bot's description, which is shown in the chat with the bot if the chat is empty. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSetMyDescriptionPostRequest
+	@return ApiPostSetMyDescriptionRequest
 	*/
-	SetMyDescriptionPost(ctx context.Context) ApiSetMyDescriptionPostRequest
+	PostSetMyDescription(ctx context.Context) ApiPostSetMyDescriptionRequest
 
-	// SetMyDescriptionPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	SetMyDescriptionPostExecute(r ApiSetMyDescriptionPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostSetMyDescriptionExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostSetMyDescriptionExecute(r ApiPostSetMyDescriptionRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	SetMyNamePost Method for SetMyNamePost
+	PostSetMyName setMyName
 
 	Use this method to change the bot's name. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSetMyNamePostRequest
+	@return ApiPostSetMyNameRequest
 	*/
-	SetMyNamePost(ctx context.Context) ApiSetMyNamePostRequest
+	PostSetMyName(ctx context.Context) ApiPostSetMyNameRequest
 
-	// SetMyNamePostExecute executes the request
-	//  @return SetWebhookPost200Response
-	SetMyNamePostExecute(r ApiSetMyNamePostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostSetMyNameExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostSetMyNameExecute(r ApiPostSetMyNameRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	SetMyShortDescriptionPost Method for SetMyShortDescriptionPost
+	PostSetMyShortDescription setMyShortDescription
 
 	Use this method to change the bot's short description, which is shown on the bot's profile page and is sent together with the link when users share the bot. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSetMyShortDescriptionPostRequest
+	@return ApiPostSetMyShortDescriptionRequest
 	*/
-	SetMyShortDescriptionPost(ctx context.Context) ApiSetMyShortDescriptionPostRequest
+	PostSetMyShortDescription(ctx context.Context) ApiPostSetMyShortDescriptionRequest
 
-	// SetMyShortDescriptionPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	SetMyShortDescriptionPostExecute(r ApiSetMyShortDescriptionPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostSetMyShortDescriptionExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostSetMyShortDescriptionExecute(r ApiPostSetMyShortDescriptionRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	SetPassportDataErrorsPost Method for SetPassportDataErrorsPost
+	PostSetPassportDataErrors setPassportDataErrors
 
 	Informs a user that some of the Telegram Passport elements they provided contains errors. The user will not be able to re-submit their Passport to you until the errors are fixed (the contents of the field for which you returned the error must change). Returns *True* on success.
 
 Use this if the data submitted by the user doesn't satisfy the standards your service requires for any reason. For example, if a birthday date seems invalid, a submitted document is blurry, a scan shows evidence of tampering, etc. Supply some details in the error message to make sure the user knows how to correct the issues.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSetPassportDataErrorsPostRequest
+	@return ApiPostSetPassportDataErrorsRequest
 	*/
-	SetPassportDataErrorsPost(ctx context.Context) ApiSetPassportDataErrorsPostRequest
+	PostSetPassportDataErrors(ctx context.Context) ApiPostSetPassportDataErrorsRequest
 
-	// SetPassportDataErrorsPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	SetPassportDataErrorsPostExecute(r ApiSetPassportDataErrorsPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostSetPassportDataErrorsExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostSetPassportDataErrorsExecute(r ApiPostSetPassportDataErrorsRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	SetStickerEmojiListPost Method for SetStickerEmojiListPost
+	PostSetStickerEmojiList setStickerEmojiList
 
 	Use this method to change the list of emoji assigned to a regular or custom emoji sticker. The sticker must belong to a sticker set created by the bot. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSetStickerEmojiListPostRequest
+	@return ApiPostSetStickerEmojiListRequest
 	*/
-	SetStickerEmojiListPost(ctx context.Context) ApiSetStickerEmojiListPostRequest
+	PostSetStickerEmojiList(ctx context.Context) ApiPostSetStickerEmojiListRequest
 
-	// SetStickerEmojiListPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	SetStickerEmojiListPostExecute(r ApiSetStickerEmojiListPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostSetStickerEmojiListExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostSetStickerEmojiListExecute(r ApiPostSetStickerEmojiListRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	SetStickerKeywordsPost Method for SetStickerKeywordsPost
+	PostSetStickerKeywords setStickerKeywords
 
 	Use this method to change search keywords assigned to a regular or custom emoji sticker. The sticker must belong to a sticker set created by the bot. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSetStickerKeywordsPostRequest
+	@return ApiPostSetStickerKeywordsRequest
 	*/
-	SetStickerKeywordsPost(ctx context.Context) ApiSetStickerKeywordsPostRequest
+	PostSetStickerKeywords(ctx context.Context) ApiPostSetStickerKeywordsRequest
 
-	// SetStickerKeywordsPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	SetStickerKeywordsPostExecute(r ApiSetStickerKeywordsPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostSetStickerKeywordsExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostSetStickerKeywordsExecute(r ApiPostSetStickerKeywordsRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	SetStickerMaskPositionPost Method for SetStickerMaskPositionPost
+	PostSetStickerMaskPosition setStickerMaskPosition
 
 	Use this method to change the [mask position](https://core.telegram.org/bots/api/#maskposition) of a mask sticker. The sticker must belong to a sticker set that was created by the bot. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSetStickerMaskPositionPostRequest
+	@return ApiPostSetStickerMaskPositionRequest
 	*/
-	SetStickerMaskPositionPost(ctx context.Context) ApiSetStickerMaskPositionPostRequest
+	PostSetStickerMaskPosition(ctx context.Context) ApiPostSetStickerMaskPositionRequest
 
-	// SetStickerMaskPositionPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	SetStickerMaskPositionPostExecute(r ApiSetStickerMaskPositionPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostSetStickerMaskPositionExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostSetStickerMaskPositionExecute(r ApiPostSetStickerMaskPositionRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	SetStickerPositionInSetPost Method for SetStickerPositionInSetPost
+	PostSetStickerPositionInSet setStickerPositionInSet
 
 	Use this method to move a sticker in a set created by the bot to a specific position. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSetStickerPositionInSetPostRequest
+	@return ApiPostSetStickerPositionInSetRequest
 	*/
-	SetStickerPositionInSetPost(ctx context.Context) ApiSetStickerPositionInSetPostRequest
+	PostSetStickerPositionInSet(ctx context.Context) ApiPostSetStickerPositionInSetRequest
 
-	// SetStickerPositionInSetPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	SetStickerPositionInSetPostExecute(r ApiSetStickerPositionInSetPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostSetStickerPositionInSetExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostSetStickerPositionInSetExecute(r ApiPostSetStickerPositionInSetRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	SetStickerSetThumbnailPost Method for SetStickerSetThumbnailPost
+	PostSetStickerSetThumbnail setStickerSetThumbnail
 
 	Use this method to set the thumbnail of a regular or mask sticker set. The format of the thumbnail file must match the format of the stickers in the set. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSetStickerSetThumbnailPostRequest
+	@return ApiPostSetStickerSetThumbnailRequest
 	*/
-	SetStickerSetThumbnailPost(ctx context.Context) ApiSetStickerSetThumbnailPostRequest
+	PostSetStickerSetThumbnail(ctx context.Context) ApiPostSetStickerSetThumbnailRequest
 
-	// SetStickerSetThumbnailPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	SetStickerSetThumbnailPostExecute(r ApiSetStickerSetThumbnailPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostSetStickerSetThumbnailExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostSetStickerSetThumbnailExecute(r ApiPostSetStickerSetThumbnailRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	SetStickerSetTitlePost Method for SetStickerSetTitlePost
+	PostSetStickerSetTitle setStickerSetTitle
 
 	Use this method to set the title of a created sticker set. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSetStickerSetTitlePostRequest
+	@return ApiPostSetStickerSetTitleRequest
 	*/
-	SetStickerSetTitlePost(ctx context.Context) ApiSetStickerSetTitlePostRequest
+	PostSetStickerSetTitle(ctx context.Context) ApiPostSetStickerSetTitleRequest
 
-	// SetStickerSetTitlePostExecute executes the request
-	//  @return SetWebhookPost200Response
-	SetStickerSetTitlePostExecute(r ApiSetStickerSetTitlePostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostSetStickerSetTitleExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostSetStickerSetTitleExecute(r ApiPostSetStickerSetTitleRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	SetUserEmojiStatusPost Method for SetUserEmojiStatusPost
+	PostSetUserEmojiStatus setUserEmojiStatus
 
 	Changes the emoji status for a given user that previously allowed the bot to manage their emoji status via the Mini App method [requestEmojiStatusAccess](https://core.telegram.org/bots/webapps#initializing-mini-apps). Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSetUserEmojiStatusPostRequest
+	@return ApiPostSetUserEmojiStatusRequest
 	*/
-	SetUserEmojiStatusPost(ctx context.Context) ApiSetUserEmojiStatusPostRequest
+	PostSetUserEmojiStatus(ctx context.Context) ApiPostSetUserEmojiStatusRequest
 
-	// SetUserEmojiStatusPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	SetUserEmojiStatusPostExecute(r ApiSetUserEmojiStatusPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostSetUserEmojiStatusExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostSetUserEmojiStatusExecute(r ApiPostSetUserEmojiStatusRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	SetWebhookPost Method for SetWebhookPost
+	PostSetWebhook setWebhook
 
 	Use this method to specify a URL and receive incoming updates via an outgoing webhook. Whenever there is an update for the bot, we will send an HTTPS POST request to the specified URL, containing a JSON-serialized [Update](https://core.telegram.org/bots/api/#update). In case of an unsuccessful request (a request with response [HTTP status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) different from `2XY`), we will repeat the request and give up after a reasonable amount of attempts. Returns *True* on success.
 
 If you'd like to make sure that the webhook was set by you, you can specify secret data in the parameter *secret\_token*. If specified, the request will contain a header “X-Telegram-Bot-Api-Secret-Token” with the secret token as content.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiSetWebhookPostRequest
+	@return ApiPostSetWebhookRequest
 	*/
-	SetWebhookPost(ctx context.Context) ApiSetWebhookPostRequest
+	PostSetWebhook(ctx context.Context) ApiPostSetWebhookRequest
 
-	// SetWebhookPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	SetWebhookPostExecute(r ApiSetWebhookPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostSetWebhookExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostSetWebhookExecute(r ApiPostSetWebhookRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	StopMessageLiveLocationPost Method for StopMessageLiveLocationPost
+	PostStopMessageLiveLocation stopMessageLiveLocation
 
 	Use this method to stop updating a live location message before *live\_period* expires. On success, if the message is not an inline message, the edited [Message](https://core.telegram.org/bots/api/#message) is returned, otherwise *True* is returned.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiStopMessageLiveLocationPostRequest
+	@return ApiPostStopMessageLiveLocationRequest
 	*/
-	StopMessageLiveLocationPost(ctx context.Context) ApiStopMessageLiveLocationPostRequest
+	PostStopMessageLiveLocation(ctx context.Context) ApiPostStopMessageLiveLocationRequest
 
-	// StopMessageLiveLocationPostExecute executes the request
-	//  @return EditMessageTextPost200Response
-	StopMessageLiveLocationPostExecute(r ApiStopMessageLiveLocationPostRequest) (*EditMessageTextPost200Response, *http.Response, error)
+	// PostStopMessageLiveLocationExecute executes the request
+	//  @return PostEditMessageText200Response
+	PostStopMessageLiveLocationExecute(r ApiPostStopMessageLiveLocationRequest) (*PostEditMessageText200Response, *http.Response, error)
 
 	/*
-	StopPollPost Method for StopPollPost
+	PostStopPoll stopPoll
 
 	Use this method to stop a poll which was sent by the bot. On success, the stopped [Poll](https://core.telegram.org/bots/api/#poll) is returned.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiStopPollPostRequest
+	@return ApiPostStopPollRequest
 	*/
-	StopPollPost(ctx context.Context) ApiStopPollPostRequest
+	PostStopPoll(ctx context.Context) ApiPostStopPollRequest
 
-	// StopPollPostExecute executes the request
-	//  @return StopPollPost200Response
-	StopPollPostExecute(r ApiStopPollPostRequest) (*StopPollPost200Response, *http.Response, error)
+	// PostStopPollExecute executes the request
+	//  @return PostStopPoll200Response
+	PostStopPollExecute(r ApiPostStopPollRequest) (*PostStopPoll200Response, *http.Response, error)
 
 	/*
-	TransferBusinessAccountStarsPost Method for TransferBusinessAccountStarsPost
+	PostTransferBusinessAccountStars transferBusinessAccountStars
 
 	Transfers Telegram Stars from the business account balance to the bot's balance. Requires the *can\_transfer\_stars* business bot right. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiTransferBusinessAccountStarsPostRequest
+	@return ApiPostTransferBusinessAccountStarsRequest
 	*/
-	TransferBusinessAccountStarsPost(ctx context.Context) ApiTransferBusinessAccountStarsPostRequest
+	PostTransferBusinessAccountStars(ctx context.Context) ApiPostTransferBusinessAccountStarsRequest
 
-	// TransferBusinessAccountStarsPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	TransferBusinessAccountStarsPostExecute(r ApiTransferBusinessAccountStarsPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostTransferBusinessAccountStarsExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostTransferBusinessAccountStarsExecute(r ApiPostTransferBusinessAccountStarsRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	TransferGiftPost Method for TransferGiftPost
+	PostTransferGift transferGift
 
 	Transfers an owned unique gift to another user. Requires the *can\_transfer\_and\_upgrade\_gifts* business bot right. Requires *can\_transfer\_stars* business bot right if the transfer is paid. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiTransferGiftPostRequest
+	@return ApiPostTransferGiftRequest
 	*/
-	TransferGiftPost(ctx context.Context) ApiTransferGiftPostRequest
+	PostTransferGift(ctx context.Context) ApiPostTransferGiftRequest
 
-	// TransferGiftPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	TransferGiftPostExecute(r ApiTransferGiftPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostTransferGiftExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostTransferGiftExecute(r ApiPostTransferGiftRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	UnbanChatMemberPost Method for UnbanChatMemberPost
+	PostUnbanChatMember unbanChatMember
 
 	Use this method to unban a previously banned user in a supergroup or channel. The user will **not** return to the group or channel automatically, but will be able to join via link, etc. The bot must be an administrator for this to work. By default, this method guarantees that after the call the user is not a member of the chat, but will be able to join it. So if the user is a member of the chat they will also be **removed** from the chat. If you don't want this, use the parameter *only\_if\_banned*. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiUnbanChatMemberPostRequest
+	@return ApiPostUnbanChatMemberRequest
 	*/
-	UnbanChatMemberPost(ctx context.Context) ApiUnbanChatMemberPostRequest
+	PostUnbanChatMember(ctx context.Context) ApiPostUnbanChatMemberRequest
 
-	// UnbanChatMemberPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	UnbanChatMemberPostExecute(r ApiUnbanChatMemberPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostUnbanChatMemberExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostUnbanChatMemberExecute(r ApiPostUnbanChatMemberRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	UnbanChatSenderChatPost Method for UnbanChatSenderChatPost
+	PostUnbanChatSenderChat unbanChatSenderChat
 
 	Use this method to unban a previously banned channel chat in a supergroup or channel. The bot must be an administrator for this to work and must have the appropriate administrator rights. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiUnbanChatSenderChatPostRequest
+	@return ApiPostUnbanChatSenderChatRequest
 	*/
-	UnbanChatSenderChatPost(ctx context.Context) ApiUnbanChatSenderChatPostRequest
+	PostUnbanChatSenderChat(ctx context.Context) ApiPostUnbanChatSenderChatRequest
 
-	// UnbanChatSenderChatPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	UnbanChatSenderChatPostExecute(r ApiUnbanChatSenderChatPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostUnbanChatSenderChatExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostUnbanChatSenderChatExecute(r ApiPostUnbanChatSenderChatRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	UnhideGeneralForumTopicPost Method for UnhideGeneralForumTopicPost
+	PostUnhideGeneralForumTopic unhideGeneralForumTopic
 
 	Use this method to unhide the 'General' topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the *can\_manage\_topics* administrator rights. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiUnhideGeneralForumTopicPostRequest
+	@return ApiPostUnhideGeneralForumTopicRequest
 	*/
-	UnhideGeneralForumTopicPost(ctx context.Context) ApiUnhideGeneralForumTopicPostRequest
+	PostUnhideGeneralForumTopic(ctx context.Context) ApiPostUnhideGeneralForumTopicRequest
 
-	// UnhideGeneralForumTopicPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	UnhideGeneralForumTopicPostExecute(r ApiUnhideGeneralForumTopicPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostUnhideGeneralForumTopicExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostUnhideGeneralForumTopicExecute(r ApiPostUnhideGeneralForumTopicRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	UnpinAllChatMessagesPost Method for UnpinAllChatMessagesPost
+	PostUnpinAllChatMessages unpinAllChatMessages
 
 	Use this method to clear the list of pinned messages in a chat. If the chat is not a private chat, the bot must be an administrator in the chat for this to work and must have the 'can\_pin\_messages' administrator right in a supergroup or 'can\_edit\_messages' administrator right in a channel. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiUnpinAllChatMessagesPostRequest
+	@return ApiPostUnpinAllChatMessagesRequest
 	*/
-	UnpinAllChatMessagesPost(ctx context.Context) ApiUnpinAllChatMessagesPostRequest
+	PostUnpinAllChatMessages(ctx context.Context) ApiPostUnpinAllChatMessagesRequest
 
-	// UnpinAllChatMessagesPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	UnpinAllChatMessagesPostExecute(r ApiUnpinAllChatMessagesPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostUnpinAllChatMessagesExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostUnpinAllChatMessagesExecute(r ApiPostUnpinAllChatMessagesRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	UnpinAllForumTopicMessagesPost Method for UnpinAllForumTopicMessagesPost
+	PostUnpinAllForumTopicMessages unpinAllForumTopicMessages
 
 	Use this method to clear the list of pinned messages in a forum topic. The bot must be an administrator in the chat for this to work and must have the *can\_pin\_messages* administrator right in the supergroup. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiUnpinAllForumTopicMessagesPostRequest
+	@return ApiPostUnpinAllForumTopicMessagesRequest
 	*/
-	UnpinAllForumTopicMessagesPost(ctx context.Context) ApiUnpinAllForumTopicMessagesPostRequest
+	PostUnpinAllForumTopicMessages(ctx context.Context) ApiPostUnpinAllForumTopicMessagesRequest
 
-	// UnpinAllForumTopicMessagesPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	UnpinAllForumTopicMessagesPostExecute(r ApiUnpinAllForumTopicMessagesPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostUnpinAllForumTopicMessagesExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostUnpinAllForumTopicMessagesExecute(r ApiPostUnpinAllForumTopicMessagesRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	UnpinAllGeneralForumTopicMessagesPost Method for UnpinAllGeneralForumTopicMessagesPost
+	PostUnpinAllGeneralForumTopicMessages unpinAllGeneralForumTopicMessages
 
 	Use this method to clear the list of pinned messages in a General forum topic. The bot must be an administrator in the chat for this to work and must have the *can\_pin\_messages* administrator right in the supergroup. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiUnpinAllGeneralForumTopicMessagesPostRequest
+	@return ApiPostUnpinAllGeneralForumTopicMessagesRequest
 	*/
-	UnpinAllGeneralForumTopicMessagesPost(ctx context.Context) ApiUnpinAllGeneralForumTopicMessagesPostRequest
+	PostUnpinAllGeneralForumTopicMessages(ctx context.Context) ApiPostUnpinAllGeneralForumTopicMessagesRequest
 
-	// UnpinAllGeneralForumTopicMessagesPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	UnpinAllGeneralForumTopicMessagesPostExecute(r ApiUnpinAllGeneralForumTopicMessagesPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostUnpinAllGeneralForumTopicMessagesExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostUnpinAllGeneralForumTopicMessagesExecute(r ApiPostUnpinAllGeneralForumTopicMessagesRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	UnpinChatMessagePost Method for UnpinChatMessagePost
+	PostUnpinChatMessage unpinChatMessage
 
 	Use this method to remove a message from the list of pinned messages in a chat. If the chat is not a private chat, the bot must be an administrator in the chat for this to work and must have the 'can\_pin\_messages' administrator right in a supergroup or 'can\_edit\_messages' administrator right in a channel. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiUnpinChatMessagePostRequest
+	@return ApiPostUnpinChatMessageRequest
 	*/
-	UnpinChatMessagePost(ctx context.Context) ApiUnpinChatMessagePostRequest
+	PostUnpinChatMessage(ctx context.Context) ApiPostUnpinChatMessageRequest
 
-	// UnpinChatMessagePostExecute executes the request
-	//  @return SetWebhookPost200Response
-	UnpinChatMessagePostExecute(r ApiUnpinChatMessagePostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostUnpinChatMessageExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostUnpinChatMessageExecute(r ApiPostUnpinChatMessageRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	UpgradeGiftPost Method for UpgradeGiftPost
+	PostUpgradeGift upgradeGift
 
 	Upgrades a given regular gift to a unique gift. Requires the *can\_transfer\_and\_upgrade\_gifts* business bot right. Additionally requires the *can\_transfer\_stars* business bot right if the upgrade is paid. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiUpgradeGiftPostRequest
+	@return ApiPostUpgradeGiftRequest
 	*/
-	UpgradeGiftPost(ctx context.Context) ApiUpgradeGiftPostRequest
+	PostUpgradeGift(ctx context.Context) ApiPostUpgradeGiftRequest
 
-	// UpgradeGiftPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	UpgradeGiftPostExecute(r ApiUpgradeGiftPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostUpgradeGiftExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostUpgradeGiftExecute(r ApiPostUpgradeGiftRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	UploadStickerFilePost Method for UploadStickerFilePost
+	PostUploadStickerFile uploadStickerFile
 
 	Use this method to upload a file with a sticker for later use in the [createNewStickerSet](https://core.telegram.org/bots/api/#createnewstickerset), [addStickerToSet](https://core.telegram.org/bots/api/#addstickertoset), or [replaceStickerInSet](https://core.telegram.org/bots/api/#replacestickerinset) methods (the file can be used multiple times). Returns the uploaded [File](https://core.telegram.org/bots/api/#file) on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiUploadStickerFilePostRequest
+	@return ApiPostUploadStickerFileRequest
 	*/
-	UploadStickerFilePost(ctx context.Context) ApiUploadStickerFilePostRequest
+	PostUploadStickerFile(ctx context.Context) ApiPostUploadStickerFileRequest
 
-	// UploadStickerFilePostExecute executes the request
-	//  @return GetFilePost200Response
-	UploadStickerFilePostExecute(r ApiUploadStickerFilePostRequest) (*GetFilePost200Response, *http.Response, error)
+	// PostUploadStickerFileExecute executes the request
+	//  @return PostGetFile200Response
+	PostUploadStickerFileExecute(r ApiPostUploadStickerFileRequest) (*PostGetFile200Response, *http.Response, error)
 
 	/*
-	VerifyChatPost Method for VerifyChatPost
+	PostVerifyChat verifyChat
 
 	Verifies a chat [on behalf of the organization](https://telegram.org/verify#third-party-verification) which is represented by the bot. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVerifyChatPostRequest
+	@return ApiPostVerifyChatRequest
 	*/
-	VerifyChatPost(ctx context.Context) ApiVerifyChatPostRequest
+	PostVerifyChat(ctx context.Context) ApiPostVerifyChatRequest
 
-	// VerifyChatPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	VerifyChatPostExecute(r ApiVerifyChatPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostVerifyChatExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostVerifyChatExecute(r ApiPostVerifyChatRequest) (*PostSetWebhook200Response, *http.Response, error)
 
 	/*
-	VerifyUserPost Method for VerifyUserPost
+	PostVerifyUser verifyUser
 
 	Verifies a user [on behalf of the organization](https://telegram.org/verify#third-party-verification) which is represented by the bot. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiVerifyUserPostRequest
+	@return ApiPostVerifyUserRequest
 	*/
-	VerifyUserPost(ctx context.Context) ApiVerifyUserPostRequest
+	PostVerifyUser(ctx context.Context) ApiPostVerifyUserRequest
 
-	// VerifyUserPostExecute executes the request
-	//  @return SetWebhookPost200Response
-	VerifyUserPostExecute(r ApiVerifyUserPostRequest) (*SetWebhookPost200Response, *http.Response, error)
+	// PostVerifyUserExecute executes the request
+	//  @return PostSetWebhook200Response
+	PostVerifyUserExecute(r ApiPostVerifyUserRequest) (*PostSetWebhook200Response, *http.Response, error)
 }
 
 // DefaultAPIService DefaultAPI service
 type DefaultAPIService service
 
-type ApiAddStickerToSetPostRequest struct {
+type ApiPostAddStickerToSetRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	userId *int32
@@ -2234,52 +2234,52 @@ type ApiAddStickerToSetPostRequest struct {
 }
 
 // User identifier of sticker set owner
-func (r ApiAddStickerToSetPostRequest) UserId(userId int32) ApiAddStickerToSetPostRequest {
+func (r ApiPostAddStickerToSetRequest) UserId(userId int32) ApiPostAddStickerToSetRequest {
 	r.userId = &userId
 	return r
 }
 
 // Sticker set name
-func (r ApiAddStickerToSetPostRequest) Name(name string) ApiAddStickerToSetPostRequest {
+func (r ApiPostAddStickerToSetRequest) Name(name string) ApiPostAddStickerToSetRequest {
 	r.name = &name
 	return r
 }
 
-func (r ApiAddStickerToSetPostRequest) Sticker(sticker InputSticker) ApiAddStickerToSetPostRequest {
+func (r ApiPostAddStickerToSetRequest) Sticker(sticker InputSticker) ApiPostAddStickerToSetRequest {
 	r.sticker = &sticker
 	return r
 }
 
-func (r ApiAddStickerToSetPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.AddStickerToSetPostExecute(r)
+func (r ApiPostAddStickerToSetRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostAddStickerToSetExecute(r)
 }
 
 /*
-AddStickerToSetPost Method for AddStickerToSetPost
+PostAddStickerToSet addStickerToSet
 
 Use this method to add a new sticker to a set created by the bot. Emoji sticker sets can have up to 200 stickers. Other sticker sets can have up to 120 stickers. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddStickerToSetPostRequest
+ @return ApiPostAddStickerToSetRequest
 */
-func (a *DefaultAPIService) AddStickerToSetPost(ctx context.Context) ApiAddStickerToSetPostRequest {
-	return ApiAddStickerToSetPostRequest{
+func (a *DefaultAPIService) PostAddStickerToSet(ctx context.Context) ApiPostAddStickerToSetRequest {
+	return ApiPostAddStickerToSetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) AddStickerToSetPostExecute(r ApiAddStickerToSetPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostAddStickerToSetExecute(r ApiPostAddStickerToSetRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.AddStickerToSetPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostAddStickerToSet")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2341,6 +2341,17 @@ func (a *DefaultAPIService) AddStickerToSetPostExecute(r ApiAddStickerToSetPostR
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -2364,7 +2375,7 @@ func (a *DefaultAPIService) AddStickerToSetPostExecute(r ApiAddStickerToSetPostR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiAnswerCallbackQueryPostRequest struct {
+type ApiPostAnswerCallbackQueryRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	callbackQueryId *string
@@ -2375,67 +2386,67 @@ type ApiAnswerCallbackQueryPostRequest struct {
 }
 
 // Unique identifier for the query to be answered
-func (r ApiAnswerCallbackQueryPostRequest) CallbackQueryId(callbackQueryId string) ApiAnswerCallbackQueryPostRequest {
+func (r ApiPostAnswerCallbackQueryRequest) CallbackQueryId(callbackQueryId string) ApiPostAnswerCallbackQueryRequest {
 	r.callbackQueryId = &callbackQueryId
 	return r
 }
 
 // Text of the notification. If not specified, nothing will be shown to the user, 0-200 characters
-func (r ApiAnswerCallbackQueryPostRequest) Text(text string) ApiAnswerCallbackQueryPostRequest {
+func (r ApiPostAnswerCallbackQueryRequest) Text(text string) ApiPostAnswerCallbackQueryRequest {
 	r.text = &text
 	return r
 }
 
 // If *True*, an alert will be shown by the client instead of a notification at the top of the chat screen. Defaults to *false*.
-func (r ApiAnswerCallbackQueryPostRequest) ShowAlert(showAlert bool) ApiAnswerCallbackQueryPostRequest {
+func (r ApiPostAnswerCallbackQueryRequest) ShowAlert(showAlert bool) ApiPostAnswerCallbackQueryRequest {
 	r.showAlert = &showAlert
 	return r
 }
 
 // URL that will be opened by the user&#39;s client. If you have created a [Game](https://core.telegram.org/bots/api/#game) and accepted the conditions via [@BotFather](https://t.me/botfather), specify the URL that opens your game - note that this will only work if the query comes from a [*callback\\\\_game*](https://core.telegram.org/bots/api/#inlinekeyboardbutton) button.    Otherwise, you may use links like &#x60;t.me/your_bot?start&#x3D;XXXX&#x60; that open your bot with a parameter.
-func (r ApiAnswerCallbackQueryPostRequest) Url(url string) ApiAnswerCallbackQueryPostRequest {
+func (r ApiPostAnswerCallbackQueryRequest) Url(url string) ApiPostAnswerCallbackQueryRequest {
 	r.url = &url
 	return r
 }
 
 // The maximum amount of time in seconds that the result of the callback query may be cached client-side. Telegram apps will support caching starting in version 3.14. Defaults to 0.
-func (r ApiAnswerCallbackQueryPostRequest) CacheTime(cacheTime int32) ApiAnswerCallbackQueryPostRequest {
+func (r ApiPostAnswerCallbackQueryRequest) CacheTime(cacheTime int32) ApiPostAnswerCallbackQueryRequest {
 	r.cacheTime = &cacheTime
 	return r
 }
 
-func (r ApiAnswerCallbackQueryPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.AnswerCallbackQueryPostExecute(r)
+func (r ApiPostAnswerCallbackQueryRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostAnswerCallbackQueryExecute(r)
 }
 
 /*
-AnswerCallbackQueryPost Method for AnswerCallbackQueryPost
+PostAnswerCallbackQuery answerCallbackQuery
 
 Use this method to send answers to callback queries sent from [inline keyboards](https://core.telegram.org/bots/features#inline-keyboards). The answer will be displayed to the user as a notification at the top of the chat screen or as an alert. On success, *True* is returned.
 
 Alternatively, the user can be redirected to the specified Game URL. For this option to work, you must first create a game for your bot via [@BotFather](https://t.me/botfather) and accept the terms. Otherwise, you may use links like `t.me/your_bot?start=XXXX` that open your bot with a parameter.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAnswerCallbackQueryPostRequest
+ @return ApiPostAnswerCallbackQueryRequest
 */
-func (a *DefaultAPIService) AnswerCallbackQueryPost(ctx context.Context) ApiAnswerCallbackQueryPostRequest {
-	return ApiAnswerCallbackQueryPostRequest{
+func (a *DefaultAPIService) PostAnswerCallbackQuery(ctx context.Context) ApiPostAnswerCallbackQueryRequest {
+	return ApiPostAnswerCallbackQueryRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) AnswerCallbackQueryPostExecute(r ApiAnswerCallbackQueryPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostAnswerCallbackQueryExecute(r ApiPostAnswerCallbackQueryRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.AnswerCallbackQueryPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostAnswerCallbackQuery")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2501,6 +2512,17 @@ func (a *DefaultAPIService) AnswerCallbackQueryPostExecute(r ApiAnswerCallbackQu
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -2524,7 +2546,7 @@ func (a *DefaultAPIService) AnswerCallbackQueryPostExecute(r ApiAnswerCallbackQu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiAnswerInlineQueryPostRequest struct {
+type ApiPostAnswerInlineQueryRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	inlineQueryId *string
@@ -2536,71 +2558,71 @@ type ApiAnswerInlineQueryPostRequest struct {
 }
 
 // Unique identifier for the answered query
-func (r ApiAnswerInlineQueryPostRequest) InlineQueryId(inlineQueryId string) ApiAnswerInlineQueryPostRequest {
+func (r ApiPostAnswerInlineQueryRequest) InlineQueryId(inlineQueryId string) ApiPostAnswerInlineQueryRequest {
 	r.inlineQueryId = &inlineQueryId
 	return r
 }
 
 // A JSON-serialized array of results for the inline query
-func (r ApiAnswerInlineQueryPostRequest) Results(results []InlineQueryResult) ApiAnswerInlineQueryPostRequest {
+func (r ApiPostAnswerInlineQueryRequest) Results(results []InlineQueryResult) ApiPostAnswerInlineQueryRequest {
 	r.results = &results
 	return r
 }
 
 // The maximum amount of time in seconds that the result of the inline query may be cached on the server. Defaults to 300.
-func (r ApiAnswerInlineQueryPostRequest) CacheTime(cacheTime int32) ApiAnswerInlineQueryPostRequest {
+func (r ApiPostAnswerInlineQueryRequest) CacheTime(cacheTime int32) ApiPostAnswerInlineQueryRequest {
 	r.cacheTime = &cacheTime
 	return r
 }
 
 // Pass *True* if results may be cached on the server side only for the user that sent the query. By default, results may be returned to any user who sends the same query.
-func (r ApiAnswerInlineQueryPostRequest) IsPersonal(isPersonal bool) ApiAnswerInlineQueryPostRequest {
+func (r ApiPostAnswerInlineQueryRequest) IsPersonal(isPersonal bool) ApiPostAnswerInlineQueryRequest {
 	r.isPersonal = &isPersonal
 	return r
 }
 
 // Pass the offset that a client should send in the next query with the same text to receive more results. Pass an empty string if there are no more results or if you don&#39;t support pagination. Offset length can&#39;t exceed 64 bytes.
-func (r ApiAnswerInlineQueryPostRequest) NextOffset(nextOffset string) ApiAnswerInlineQueryPostRequest {
+func (r ApiPostAnswerInlineQueryRequest) NextOffset(nextOffset string) ApiPostAnswerInlineQueryRequest {
 	r.nextOffset = &nextOffset
 	return r
 }
 
-func (r ApiAnswerInlineQueryPostRequest) Button(button InlineQueryResultsButton) ApiAnswerInlineQueryPostRequest {
+func (r ApiPostAnswerInlineQueryRequest) Button(button InlineQueryResultsButton) ApiPostAnswerInlineQueryRequest {
 	r.button = &button
 	return r
 }
 
-func (r ApiAnswerInlineQueryPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.AnswerInlineQueryPostExecute(r)
+func (r ApiPostAnswerInlineQueryRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostAnswerInlineQueryExecute(r)
 }
 
 /*
-AnswerInlineQueryPost Method for AnswerInlineQueryPost
+PostAnswerInlineQuery answerInlineQuery
 
 Use this method to send answers to an inline query. On success, *True* is returned.  
 No more than **50** results per query are allowed.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAnswerInlineQueryPostRequest
+ @return ApiPostAnswerInlineQueryRequest
 */
-func (a *DefaultAPIService) AnswerInlineQueryPost(ctx context.Context) ApiAnswerInlineQueryPostRequest {
-	return ApiAnswerInlineQueryPostRequest{
+func (a *DefaultAPIService) PostAnswerInlineQuery(ctx context.Context) ApiPostAnswerInlineQueryRequest {
+	return ApiPostAnswerInlineQueryRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) AnswerInlineQueryPostExecute(r ApiAnswerInlineQueryPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostAnswerInlineQueryExecute(r ApiPostAnswerInlineQueryRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.AnswerInlineQueryPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostAnswerInlineQuery")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2674,6 +2696,17 @@ func (a *DefaultAPIService) AnswerInlineQueryPostExecute(r ApiAnswerInlineQueryP
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -2697,7 +2730,7 @@ func (a *DefaultAPIService) AnswerInlineQueryPostExecute(r ApiAnswerInlineQueryP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiAnswerPreCheckoutQueryPostRequest struct {
+type ApiPostAnswerPreCheckoutQueryRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	preCheckoutQueryId *string
@@ -2706,53 +2739,53 @@ type ApiAnswerPreCheckoutQueryPostRequest struct {
 }
 
 // Unique identifier for the query to be answered
-func (r ApiAnswerPreCheckoutQueryPostRequest) PreCheckoutQueryId(preCheckoutQueryId string) ApiAnswerPreCheckoutQueryPostRequest {
+func (r ApiPostAnswerPreCheckoutQueryRequest) PreCheckoutQueryId(preCheckoutQueryId string) ApiPostAnswerPreCheckoutQueryRequest {
 	r.preCheckoutQueryId = &preCheckoutQueryId
 	return r
 }
 
 // Specify *True* if everything is alright (goods are available, etc.) and the bot is ready to proceed with the order. Use *False* if there are any problems.
-func (r ApiAnswerPreCheckoutQueryPostRequest) Ok(ok bool) ApiAnswerPreCheckoutQueryPostRequest {
+func (r ApiPostAnswerPreCheckoutQueryRequest) Ok(ok bool) ApiPostAnswerPreCheckoutQueryRequest {
 	r.ok = &ok
 	return r
 }
 
 // Required if *ok* is *False*. Error message in human readable form that explains the reason for failure to proceed with the checkout (e.g. \\\&quot;Sorry, somebody just bought the last of our amazing black T-shirts while you were busy filling out your payment details. Please choose a different color or garment!\\\&quot;). Telegram will display this message to the user.
-func (r ApiAnswerPreCheckoutQueryPostRequest) ErrorMessage(errorMessage string) ApiAnswerPreCheckoutQueryPostRequest {
+func (r ApiPostAnswerPreCheckoutQueryRequest) ErrorMessage(errorMessage string) ApiPostAnswerPreCheckoutQueryRequest {
 	r.errorMessage = &errorMessage
 	return r
 }
 
-func (r ApiAnswerPreCheckoutQueryPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.AnswerPreCheckoutQueryPostExecute(r)
+func (r ApiPostAnswerPreCheckoutQueryRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostAnswerPreCheckoutQueryExecute(r)
 }
 
 /*
-AnswerPreCheckoutQueryPost Method for AnswerPreCheckoutQueryPost
+PostAnswerPreCheckoutQuery answerPreCheckoutQuery
 
 Once the user has confirmed their payment and shipping details, the Bot API sends the final confirmation in the form of an [Update](https://core.telegram.org/bots/api/#update) with the field *pre\_checkout\_query*. Use this method to respond to such pre-checkout queries. On success, *True* is returned. **Note:** The Bot API must receive an answer within 10 seconds after the pre-checkout query was sent.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAnswerPreCheckoutQueryPostRequest
+ @return ApiPostAnswerPreCheckoutQueryRequest
 */
-func (a *DefaultAPIService) AnswerPreCheckoutQueryPost(ctx context.Context) ApiAnswerPreCheckoutQueryPostRequest {
-	return ApiAnswerPreCheckoutQueryPostRequest{
+func (a *DefaultAPIService) PostAnswerPreCheckoutQuery(ctx context.Context) ApiPostAnswerPreCheckoutQueryRequest {
+	return ApiPostAnswerPreCheckoutQueryRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) AnswerPreCheckoutQueryPostExecute(r ApiAnswerPreCheckoutQueryPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostAnswerPreCheckoutQueryExecute(r ApiPostAnswerPreCheckoutQueryRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.AnswerPreCheckoutQueryPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostAnswerPreCheckoutQuery")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2813,6 +2846,17 @@ func (a *DefaultAPIService) AnswerPreCheckoutQueryPostExecute(r ApiAnswerPreChec
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -2836,7 +2880,7 @@ func (a *DefaultAPIService) AnswerPreCheckoutQueryPostExecute(r ApiAnswerPreChec
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiAnswerShippingQueryPostRequest struct {
+type ApiPostAnswerShippingQueryRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	shippingQueryId *string
@@ -2846,59 +2890,59 @@ type ApiAnswerShippingQueryPostRequest struct {
 }
 
 // Unique identifier for the query to be answered
-func (r ApiAnswerShippingQueryPostRequest) ShippingQueryId(shippingQueryId string) ApiAnswerShippingQueryPostRequest {
+func (r ApiPostAnswerShippingQueryRequest) ShippingQueryId(shippingQueryId string) ApiPostAnswerShippingQueryRequest {
 	r.shippingQueryId = &shippingQueryId
 	return r
 }
 
 // Pass *True* if delivery to the specified address is possible and *False* if there are any problems (for example, if delivery to the specified address is not possible)
-func (r ApiAnswerShippingQueryPostRequest) Ok(ok bool) ApiAnswerShippingQueryPostRequest {
+func (r ApiPostAnswerShippingQueryRequest) Ok(ok bool) ApiPostAnswerShippingQueryRequest {
 	r.ok = &ok
 	return r
 }
 
 // Required if *ok* is *True*. A JSON-serialized array of available shipping options.
-func (r ApiAnswerShippingQueryPostRequest) ShippingOptions(shippingOptions []ShippingOption) ApiAnswerShippingQueryPostRequest {
+func (r ApiPostAnswerShippingQueryRequest) ShippingOptions(shippingOptions []ShippingOption) ApiPostAnswerShippingQueryRequest {
 	r.shippingOptions = &shippingOptions
 	return r
 }
 
 // Required if *ok* is *False*. Error message in human readable form that explains why it is impossible to complete the order (e.g. “Sorry, delivery to your desired address is unavailable”). Telegram will display this message to the user.
-func (r ApiAnswerShippingQueryPostRequest) ErrorMessage(errorMessage string) ApiAnswerShippingQueryPostRequest {
+func (r ApiPostAnswerShippingQueryRequest) ErrorMessage(errorMessage string) ApiPostAnswerShippingQueryRequest {
 	r.errorMessage = &errorMessage
 	return r
 }
 
-func (r ApiAnswerShippingQueryPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.AnswerShippingQueryPostExecute(r)
+func (r ApiPostAnswerShippingQueryRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostAnswerShippingQueryExecute(r)
 }
 
 /*
-AnswerShippingQueryPost Method for AnswerShippingQueryPost
+PostAnswerShippingQuery answerShippingQuery
 
 If you sent an invoice requesting a shipping address and the parameter *is\_flexible* was specified, the Bot API will send an [Update](https://core.telegram.org/bots/api/#update) with a *shipping\_query* field to the bot. Use this method to reply to shipping queries. On success, *True* is returned.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAnswerShippingQueryPostRequest
+ @return ApiPostAnswerShippingQueryRequest
 */
-func (a *DefaultAPIService) AnswerShippingQueryPost(ctx context.Context) ApiAnswerShippingQueryPostRequest {
-	return ApiAnswerShippingQueryPostRequest{
+func (a *DefaultAPIService) PostAnswerShippingQuery(ctx context.Context) ApiPostAnswerShippingQueryRequest {
+	return ApiPostAnswerShippingQueryRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) AnswerShippingQueryPostExecute(r ApiAnswerShippingQueryPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostAnswerShippingQueryExecute(r ApiPostAnswerShippingQueryRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.AnswerShippingQueryPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostAnswerShippingQuery")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2962,6 +3006,17 @@ func (a *DefaultAPIService) AnswerShippingQueryPostExecute(r ApiAnswerShippingQu
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -2985,7 +3040,7 @@ func (a *DefaultAPIService) AnswerShippingQueryPostExecute(r ApiAnswerShippingQu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiAnswerWebAppQueryPostRequest struct {
+type ApiPostAnswerWebAppQueryRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	webAppQueryId *string
@@ -2993,46 +3048,46 @@ type ApiAnswerWebAppQueryPostRequest struct {
 }
 
 // Unique identifier for the query to be answered
-func (r ApiAnswerWebAppQueryPostRequest) WebAppQueryId(webAppQueryId string) ApiAnswerWebAppQueryPostRequest {
+func (r ApiPostAnswerWebAppQueryRequest) WebAppQueryId(webAppQueryId string) ApiPostAnswerWebAppQueryRequest {
 	r.webAppQueryId = &webAppQueryId
 	return r
 }
 
-func (r ApiAnswerWebAppQueryPostRequest) Result(result InlineQueryResult) ApiAnswerWebAppQueryPostRequest {
+func (r ApiPostAnswerWebAppQueryRequest) Result(result InlineQueryResult) ApiPostAnswerWebAppQueryRequest {
 	r.result = &result
 	return r
 }
 
-func (r ApiAnswerWebAppQueryPostRequest) Execute() (*AnswerWebAppQueryPost200Response, *http.Response, error) {
-	return r.ApiService.AnswerWebAppQueryPostExecute(r)
+func (r ApiPostAnswerWebAppQueryRequest) Execute() (*PostAnswerWebAppQuery200Response, *http.Response, error) {
+	return r.ApiService.PostAnswerWebAppQueryExecute(r)
 }
 
 /*
-AnswerWebAppQueryPost Method for AnswerWebAppQueryPost
+PostAnswerWebAppQuery answerWebAppQuery
 
 Use this method to set the result of an interaction with a [Web App](https://core.telegram.org/bots/webapps) and send a corresponding message on behalf of the user to the chat from which the query originated. On success, a [SentWebAppMessage](https://core.telegram.org/bots/api/#sentwebappmessage) object is returned.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAnswerWebAppQueryPostRequest
+ @return ApiPostAnswerWebAppQueryRequest
 */
-func (a *DefaultAPIService) AnswerWebAppQueryPost(ctx context.Context) ApiAnswerWebAppQueryPostRequest {
-	return ApiAnswerWebAppQueryPostRequest{
+func (a *DefaultAPIService) PostAnswerWebAppQuery(ctx context.Context) ApiPostAnswerWebAppQueryRequest {
+	return ApiPostAnswerWebAppQueryRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AnswerWebAppQueryPost200Response
-func (a *DefaultAPIService) AnswerWebAppQueryPostExecute(r ApiAnswerWebAppQueryPostRequest) (*AnswerWebAppQueryPost200Response, *http.Response, error) {
+//  @return PostAnswerWebAppQuery200Response
+func (a *DefaultAPIService) PostAnswerWebAppQueryExecute(r ApiPostAnswerWebAppQueryRequest) (*PostAnswerWebAppQuery200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *AnswerWebAppQueryPost200Response
+		localVarReturnValue  *PostAnswerWebAppQuery200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.AnswerWebAppQueryPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostAnswerWebAppQuery")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3090,6 +3145,17 @@ func (a *DefaultAPIService) AnswerWebAppQueryPostExecute(r ApiAnswerWebAppQueryP
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -3113,54 +3179,54 @@ func (a *DefaultAPIService) AnswerWebAppQueryPostExecute(r ApiAnswerWebAppQueryP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiApproveChatJoinRequestPostRequest struct {
+type ApiPostApproveChatJoinRequestRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
+	chatId *PostSendMessageRequestChatId
 	userId *int32
 }
 
-func (r ApiApproveChatJoinRequestPostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiApproveChatJoinRequestPostRequest {
+func (r ApiPostApproveChatJoinRequestRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostApproveChatJoinRequestRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Unique identifier of the target user
-func (r ApiApproveChatJoinRequestPostRequest) UserId(userId int32) ApiApproveChatJoinRequestPostRequest {
+func (r ApiPostApproveChatJoinRequestRequest) UserId(userId int32) ApiPostApproveChatJoinRequestRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiApproveChatJoinRequestPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.ApproveChatJoinRequestPostExecute(r)
+func (r ApiPostApproveChatJoinRequestRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostApproveChatJoinRequestExecute(r)
 }
 
 /*
-ApproveChatJoinRequestPost Method for ApproveChatJoinRequestPost
+PostApproveChatJoinRequest approveChatJoinRequest
 
 Use this method to approve a chat join request. The bot must be an administrator in the chat for this to work and must have the *can\_invite\_users* administrator right. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiApproveChatJoinRequestPostRequest
+ @return ApiPostApproveChatJoinRequestRequest
 */
-func (a *DefaultAPIService) ApproveChatJoinRequestPost(ctx context.Context) ApiApproveChatJoinRequestPostRequest {
-	return ApiApproveChatJoinRequestPostRequest{
+func (a *DefaultAPIService) PostApproveChatJoinRequest(ctx context.Context) ApiPostApproveChatJoinRequestRequest {
+	return ApiPostApproveChatJoinRequestRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) ApproveChatJoinRequestPostExecute(r ApiApproveChatJoinRequestPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostApproveChatJoinRequestExecute(r ApiPostApproveChatJoinRequestRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.ApproveChatJoinRequestPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostApproveChatJoinRequest")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3218,6 +3284,17 @@ func (a *DefaultAPIService) ApproveChatJoinRequestPostExecute(r ApiApproveChatJo
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -3241,68 +3318,68 @@ func (a *DefaultAPIService) ApproveChatJoinRequestPostExecute(r ApiApproveChatJo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiBanChatMemberPostRequest struct {
+type ApiPostBanChatMemberRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *BanChatMemberPostRequestChatId
+	chatId *PostBanChatMemberRequestChatId
 	userId *int32
 	untilDate *int32
 	revokeMessages *bool
 }
 
-func (r ApiBanChatMemberPostRequest) ChatId(chatId BanChatMemberPostRequestChatId) ApiBanChatMemberPostRequest {
+func (r ApiPostBanChatMemberRequest) ChatId(chatId PostBanChatMemberRequestChatId) ApiPostBanChatMemberRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Unique identifier of the target user
-func (r ApiBanChatMemberPostRequest) UserId(userId int32) ApiBanChatMemberPostRequest {
+func (r ApiPostBanChatMemberRequest) UserId(userId int32) ApiPostBanChatMemberRequest {
 	r.userId = &userId
 	return r
 }
 
 // Date when the user will be unbanned; Unix time. If user is banned for more than 366 days or less than 30 seconds from the current time they are considered to be banned forever. Applied for supergroups and channels only.
-func (r ApiBanChatMemberPostRequest) UntilDate(untilDate int32) ApiBanChatMemberPostRequest {
+func (r ApiPostBanChatMemberRequest) UntilDate(untilDate int32) ApiPostBanChatMemberRequest {
 	r.untilDate = &untilDate
 	return r
 }
 
 // Pass *True* to delete all messages from the chat for the user that is being removed. If *False*, the user will be able to see messages in the group that were sent before the user was removed. Always *True* for supergroups and channels.
-func (r ApiBanChatMemberPostRequest) RevokeMessages(revokeMessages bool) ApiBanChatMemberPostRequest {
+func (r ApiPostBanChatMemberRequest) RevokeMessages(revokeMessages bool) ApiPostBanChatMemberRequest {
 	r.revokeMessages = &revokeMessages
 	return r
 }
 
-func (r ApiBanChatMemberPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.BanChatMemberPostExecute(r)
+func (r ApiPostBanChatMemberRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostBanChatMemberExecute(r)
 }
 
 /*
-BanChatMemberPost Method for BanChatMemberPost
+PostBanChatMember banChatMember
 
 Use this method to ban a user in a group, a supergroup or a channel. In the case of supergroups and channels, the user will not be able to return to the chat on their own using invite links, etc., unless [unbanned](https://core.telegram.org/bots/api/#unbanchatmember) first. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiBanChatMemberPostRequest
+ @return ApiPostBanChatMemberRequest
 */
-func (a *DefaultAPIService) BanChatMemberPost(ctx context.Context) ApiBanChatMemberPostRequest {
-	return ApiBanChatMemberPostRequest{
+func (a *DefaultAPIService) PostBanChatMember(ctx context.Context) ApiPostBanChatMemberRequest {
+	return ApiPostBanChatMemberRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) BanChatMemberPostExecute(r ApiBanChatMemberPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostBanChatMemberExecute(r ApiPostBanChatMemberRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.BanChatMemberPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostBanChatMember")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3366,6 +3443,17 @@ func (a *DefaultAPIService) BanChatMemberPostExecute(r ApiBanChatMemberPostReque
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -3389,54 +3477,54 @@ func (a *DefaultAPIService) BanChatMemberPostExecute(r ApiBanChatMemberPostReque
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiBanChatSenderChatPostRequest struct {
+type ApiPostBanChatSenderChatRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
+	chatId *PostSendMessageRequestChatId
 	senderChatId *int32
 }
 
-func (r ApiBanChatSenderChatPostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiBanChatSenderChatPostRequest {
+func (r ApiPostBanChatSenderChatRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostBanChatSenderChatRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Unique identifier of the target sender chat
-func (r ApiBanChatSenderChatPostRequest) SenderChatId(senderChatId int32) ApiBanChatSenderChatPostRequest {
+func (r ApiPostBanChatSenderChatRequest) SenderChatId(senderChatId int32) ApiPostBanChatSenderChatRequest {
 	r.senderChatId = &senderChatId
 	return r
 }
 
-func (r ApiBanChatSenderChatPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.BanChatSenderChatPostExecute(r)
+func (r ApiPostBanChatSenderChatRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostBanChatSenderChatExecute(r)
 }
 
 /*
-BanChatSenderChatPost Method for BanChatSenderChatPost
+PostBanChatSenderChat banChatSenderChat
 
 Use this method to ban a channel chat in a supergroup or a channel. Until the chat is [unbanned](https://core.telegram.org/bots/api/#unbanchatsenderchat), the owner of the banned chat won't be able to send messages on behalf of **any of their channels**. The bot must be an administrator in the supergroup or channel for this to work and must have the appropriate administrator rights. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiBanChatSenderChatPostRequest
+ @return ApiPostBanChatSenderChatRequest
 */
-func (a *DefaultAPIService) BanChatSenderChatPost(ctx context.Context) ApiBanChatSenderChatPostRequest {
-	return ApiBanChatSenderChatPostRequest{
+func (a *DefaultAPIService) PostBanChatSenderChat(ctx context.Context) ApiPostBanChatSenderChatRequest {
+	return ApiPostBanChatSenderChatRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) BanChatSenderChatPostExecute(r ApiBanChatSenderChatPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostBanChatSenderChatExecute(r ApiPostBanChatSenderChatRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.BanChatSenderChatPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostBanChatSenderChat")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3494,6 +3582,17 @@ func (a *DefaultAPIService) BanChatSenderChatPostExecute(r ApiBanChatSenderChatP
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -3517,54 +3616,172 @@ func (a *DefaultAPIService) BanChatSenderChatPostExecute(r ApiBanChatSenderChatP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiCloseForumTopicPostRequest struct {
+type ApiPostCloseRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *RestrictChatMemberPostRequestChatId
-	messageThreadId *int32
 }
 
-func (r ApiCloseForumTopicPostRequest) ChatId(chatId RestrictChatMemberPostRequestChatId) ApiCloseForumTopicPostRequest {
-	r.chatId = &chatId
-	return r
-}
-
-// Unique identifier for the target message thread of the forum topic
-func (r ApiCloseForumTopicPostRequest) MessageThreadId(messageThreadId int32) ApiCloseForumTopicPostRequest {
-	r.messageThreadId = &messageThreadId
-	return r
-}
-
-func (r ApiCloseForumTopicPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.CloseForumTopicPostExecute(r)
+func (r ApiPostCloseRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostCloseExecute(r)
 }
 
 /*
-CloseForumTopicPost Method for CloseForumTopicPost
+PostClose close
 
-Use this method to close an open topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the *can\_manage\_topics* administrator rights, unless it is the creator of the topic. Returns *True* on success.
+Use this method to close the bot instance before moving it from one local server to another. You need to delete the webhook before calling this method to ensure that the bot isn't launched again after server restart. The method will return error 429 in the first 10 minutes after the bot is launched. Returns *True* on success. Requires no parameters.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCloseForumTopicPostRequest
+ @return ApiPostCloseRequest
 */
-func (a *DefaultAPIService) CloseForumTopicPost(ctx context.Context) ApiCloseForumTopicPostRequest {
-	return ApiCloseForumTopicPostRequest{
+func (a *DefaultAPIService) PostClose(ctx context.Context) ApiPostCloseRequest {
+	return ApiPostCloseRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) CloseForumTopicPostExecute(r ApiCloseForumTopicPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostCloseExecute(r ApiPostCloseRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.CloseForumTopicPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostClose")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/close"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiPostCloseForumTopicRequest struct {
+	ctx context.Context
+	ApiService DefaultAPI
+	chatId *PostRestrictChatMemberRequestChatId
+	messageThreadId *int32
+}
+
+func (r ApiPostCloseForumTopicRequest) ChatId(chatId PostRestrictChatMemberRequestChatId) ApiPostCloseForumTopicRequest {
+	r.chatId = &chatId
+	return r
+}
+
+// Unique identifier for the target message thread of the forum topic
+func (r ApiPostCloseForumTopicRequest) MessageThreadId(messageThreadId int32) ApiPostCloseForumTopicRequest {
+	r.messageThreadId = &messageThreadId
+	return r
+}
+
+func (r ApiPostCloseForumTopicRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostCloseForumTopicExecute(r)
+}
+
+/*
+PostCloseForumTopic closeForumTopic
+
+Use this method to close an open topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the *can\_manage\_topics* administrator rights, unless it is the creator of the topic. Returns *True* on success.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPostCloseForumTopicRequest
+*/
+func (a *DefaultAPIService) PostCloseForumTopic(ctx context.Context) ApiPostCloseForumTopicRequest {
+	return ApiPostCloseForumTopicRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostCloseForumTopicExecute(r ApiPostCloseForumTopicRequest) (*PostSetWebhook200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PostSetWebhook200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostCloseForumTopic")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3622,6 +3839,17 @@ func (a *DefaultAPIService) CloseForumTopicPostExecute(r ApiCloseForumTopicPostR
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -3645,47 +3873,47 @@ func (a *DefaultAPIService) CloseForumTopicPostExecute(r ApiCloseForumTopicPostR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiCloseGeneralForumTopicPostRequest struct {
+type ApiPostCloseGeneralForumTopicRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *RestrictChatMemberPostRequestChatId
+	chatId *PostRestrictChatMemberRequestChatId
 }
 
-func (r ApiCloseGeneralForumTopicPostRequest) ChatId(chatId RestrictChatMemberPostRequestChatId) ApiCloseGeneralForumTopicPostRequest {
+func (r ApiPostCloseGeneralForumTopicRequest) ChatId(chatId PostRestrictChatMemberRequestChatId) ApiPostCloseGeneralForumTopicRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiCloseGeneralForumTopicPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.CloseGeneralForumTopicPostExecute(r)
+func (r ApiPostCloseGeneralForumTopicRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostCloseGeneralForumTopicExecute(r)
 }
 
 /*
-CloseGeneralForumTopicPost Method for CloseGeneralForumTopicPost
+PostCloseGeneralForumTopic closeGeneralForumTopic
 
 Use this method to close an open 'General' topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the *can\_manage\_topics* administrator rights. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCloseGeneralForumTopicPostRequest
+ @return ApiPostCloseGeneralForumTopicRequest
 */
-func (a *DefaultAPIService) CloseGeneralForumTopicPost(ctx context.Context) ApiCloseGeneralForumTopicPostRequest {
-	return ApiCloseGeneralForumTopicPostRequest{
+func (a *DefaultAPIService) PostCloseGeneralForumTopic(ctx context.Context) ApiPostCloseGeneralForumTopicRequest {
+	return ApiPostCloseGeneralForumTopicRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) CloseGeneralForumTopicPostExecute(r ApiCloseGeneralForumTopicPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostCloseGeneralForumTopicExecute(r ApiPostCloseGeneralForumTopicRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.CloseGeneralForumTopicPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostCloseGeneralForumTopic")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3739,6 +3967,7 @@ func (a *DefaultAPIService) CloseGeneralForumTopicPostExecute(r ApiCloseGeneralF
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -3747,104 +3976,7 @@ func (a *DefaultAPIService) CloseGeneralForumTopicPostExecute(r ApiCloseGeneralF
 			}
 					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiClosePostRequest struct {
-	ctx context.Context
-	ApiService DefaultAPI
-}
-
-func (r ApiClosePostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.ClosePostExecute(r)
-}
-
-/*
-ClosePost Method for ClosePost
-
-Use this method to close the bot instance before moving it from one local server to another. You need to delete the webhook before calling this method to ensure that the bot isn't launched again after server restart. The method will return error 429 in the first 10 minutes after the bot is launched. Returns *True* on success. Requires no parameters.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiClosePostRequest
-*/
-func (a *DefaultAPIService) ClosePost(ctx context.Context) ApiClosePostRequest {
-	return ApiClosePostRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) ClosePostExecute(r ApiClosePostRequest) (*SetWebhookPost200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.ClosePost")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/close"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
+			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
@@ -3869,7 +4001,7 @@ func (a *DefaultAPIService) ClosePostExecute(r ApiClosePostRequest) (*SetWebhook
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiConvertGiftToStarsPostRequest struct {
+type ApiPostConvertGiftToStarsRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	businessConnectionId *string
@@ -3877,47 +4009,47 @@ type ApiConvertGiftToStarsPostRequest struct {
 }
 
 // Unique identifier of the business connection
-func (r ApiConvertGiftToStarsPostRequest) BusinessConnectionId(businessConnectionId string) ApiConvertGiftToStarsPostRequest {
+func (r ApiPostConvertGiftToStarsRequest) BusinessConnectionId(businessConnectionId string) ApiPostConvertGiftToStarsRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
 // Unique identifier of the regular gift that should be converted to Telegram Stars
-func (r ApiConvertGiftToStarsPostRequest) OwnedGiftId(ownedGiftId string) ApiConvertGiftToStarsPostRequest {
+func (r ApiPostConvertGiftToStarsRequest) OwnedGiftId(ownedGiftId string) ApiPostConvertGiftToStarsRequest {
 	r.ownedGiftId = &ownedGiftId
 	return r
 }
 
-func (r ApiConvertGiftToStarsPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.ConvertGiftToStarsPostExecute(r)
+func (r ApiPostConvertGiftToStarsRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostConvertGiftToStarsExecute(r)
 }
 
 /*
-ConvertGiftToStarsPost Method for ConvertGiftToStarsPost
+PostConvertGiftToStars convertGiftToStars
 
 Converts a given regular gift to Telegram Stars. Requires the *can\_convert\_gifts\_to\_stars* business bot right. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiConvertGiftToStarsPostRequest
+ @return ApiPostConvertGiftToStarsRequest
 */
-func (a *DefaultAPIService) ConvertGiftToStarsPost(ctx context.Context) ApiConvertGiftToStarsPostRequest {
-	return ApiConvertGiftToStarsPostRequest{
+func (a *DefaultAPIService) PostConvertGiftToStars(ctx context.Context) ApiPostConvertGiftToStarsRequest {
+	return ApiPostConvertGiftToStarsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) ConvertGiftToStarsPostExecute(r ApiConvertGiftToStarsPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostConvertGiftToStarsExecute(r ApiPostConvertGiftToStarsRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.ConvertGiftToStarsPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostConvertGiftToStars")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3975,6 +4107,17 @@ func (a *DefaultAPIService) ConvertGiftToStarsPostExecute(r ApiConvertGiftToStar
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -3998,11 +4141,11 @@ func (a *DefaultAPIService) ConvertGiftToStarsPostExecute(r ApiConvertGiftToStar
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiCopyMessagePostRequest struct {
+type ApiPostCopyMessageRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
-	fromChatId *ForwardMessagePostRequestFromChatId
+	chatId *PostSendMessageRequestChatId
+	fromChatId *PostForwardMessageRequestFromChatId
 	messageId *int32
 	messageThreadId *int32
 	videoStartTimestamp *int32
@@ -4014,119 +4157,119 @@ type ApiCopyMessagePostRequest struct {
 	protectContent *bool
 	allowPaidBroadcast *bool
 	replyParameters *ReplyParameters
-	replyMarkup *SendMessagePostRequestReplyMarkup
+	replyMarkup *PostSendMessageRequestReplyMarkup
 }
 
-func (r ApiCopyMessagePostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiCopyMessagePostRequest {
+func (r ApiPostCopyMessageRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostCopyMessageRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiCopyMessagePostRequest) FromChatId(fromChatId ForwardMessagePostRequestFromChatId) ApiCopyMessagePostRequest {
+func (r ApiPostCopyMessageRequest) FromChatId(fromChatId PostForwardMessageRequestFromChatId) ApiPostCopyMessageRequest {
 	r.fromChatId = &fromChatId
 	return r
 }
 
 // Message identifier in the chat specified in *from\\\\_chat\\\\_id*
-func (r ApiCopyMessagePostRequest) MessageId(messageId int32) ApiCopyMessagePostRequest {
+func (r ApiPostCopyMessageRequest) MessageId(messageId int32) ApiPostCopyMessageRequest {
 	r.messageId = &messageId
 	return r
 }
 
 // Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-func (r ApiCopyMessagePostRequest) MessageThreadId(messageThreadId int32) ApiCopyMessagePostRequest {
+func (r ApiPostCopyMessageRequest) MessageThreadId(messageThreadId int32) ApiPostCopyMessageRequest {
 	r.messageThreadId = &messageThreadId
 	return r
 }
 
 // New start timestamp for the copied video in the message
-func (r ApiCopyMessagePostRequest) VideoStartTimestamp(videoStartTimestamp int32) ApiCopyMessagePostRequest {
+func (r ApiPostCopyMessageRequest) VideoStartTimestamp(videoStartTimestamp int32) ApiPostCopyMessageRequest {
 	r.videoStartTimestamp = &videoStartTimestamp
 	return r
 }
 
 // New caption for media, 0-1024 characters after entities parsing. If not specified, the original caption is kept
-func (r ApiCopyMessagePostRequest) Caption(caption string) ApiCopyMessagePostRequest {
+func (r ApiPostCopyMessageRequest) Caption(caption string) ApiPostCopyMessageRequest {
 	r.caption = &caption
 	return r
 }
 
 // Mode for parsing entities in the new caption. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details.
-func (r ApiCopyMessagePostRequest) ParseMode(parseMode string) ApiCopyMessagePostRequest {
+func (r ApiPostCopyMessageRequest) ParseMode(parseMode string) ApiPostCopyMessageRequest {
 	r.parseMode = &parseMode
 	return r
 }
 
 // A JSON-serialized list of special entities that appear in the new caption, which can be specified instead of *parse\\\\_mode*
-func (r ApiCopyMessagePostRequest) CaptionEntities(captionEntities []MessageEntity) ApiCopyMessagePostRequest {
+func (r ApiPostCopyMessageRequest) CaptionEntities(captionEntities []MessageEntity) ApiPostCopyMessageRequest {
 	r.captionEntities = &captionEntities
 	return r
 }
 
 // Pass *True*, if the caption must be shown above the message media. Ignored if a new caption isn&#39;t specified.
-func (r ApiCopyMessagePostRequest) ShowCaptionAboveMedia(showCaptionAboveMedia bool) ApiCopyMessagePostRequest {
+func (r ApiPostCopyMessageRequest) ShowCaptionAboveMedia(showCaptionAboveMedia bool) ApiPostCopyMessageRequest {
 	r.showCaptionAboveMedia = &showCaptionAboveMedia
 	return r
 }
 
 // Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.
-func (r ApiCopyMessagePostRequest) DisableNotification(disableNotification bool) ApiCopyMessagePostRequest {
+func (r ApiPostCopyMessageRequest) DisableNotification(disableNotification bool) ApiPostCopyMessageRequest {
 	r.disableNotification = &disableNotification
 	return r
 }
 
 // Protects the contents of the sent message from forwarding and saving
-func (r ApiCopyMessagePostRequest) ProtectContent(protectContent bool) ApiCopyMessagePostRequest {
+func (r ApiPostCopyMessageRequest) ProtectContent(protectContent bool) ApiPostCopyMessageRequest {
 	r.protectContent = &protectContent
 	return r
 }
 
 // Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance
-func (r ApiCopyMessagePostRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiCopyMessagePostRequest {
+func (r ApiPostCopyMessageRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiPostCopyMessageRequest {
 	r.allowPaidBroadcast = &allowPaidBroadcast
 	return r
 }
 
-func (r ApiCopyMessagePostRequest) ReplyParameters(replyParameters ReplyParameters) ApiCopyMessagePostRequest {
+func (r ApiPostCopyMessageRequest) ReplyParameters(replyParameters ReplyParameters) ApiPostCopyMessageRequest {
 	r.replyParameters = &replyParameters
 	return r
 }
 
-func (r ApiCopyMessagePostRequest) ReplyMarkup(replyMarkup SendMessagePostRequestReplyMarkup) ApiCopyMessagePostRequest {
+func (r ApiPostCopyMessageRequest) ReplyMarkup(replyMarkup PostSendMessageRequestReplyMarkup) ApiPostCopyMessageRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiCopyMessagePostRequest) Execute() (*CopyMessagePost200Response, *http.Response, error) {
-	return r.ApiService.CopyMessagePostExecute(r)
+func (r ApiPostCopyMessageRequest) Execute() (*PostCopyMessage200Response, *http.Response, error) {
+	return r.ApiService.PostCopyMessageExecute(r)
 }
 
 /*
-CopyMessagePost Method for CopyMessagePost
+PostCopyMessage copyMessage
 
 Use this method to copy messages of any kind. Service messages, paid media messages, giveaway messages, giveaway winners messages, and invoice messages can't be copied. A quiz [poll](https://core.telegram.org/bots/api/#poll) can be copied only if the value of the field *correct\_option\_id* is known to the bot. The method is analogous to the method [forwardMessage](https://core.telegram.org/bots/api/#forwardmessage), but the copied message doesn't have a link to the original message. Returns the [MessageId](https://core.telegram.org/bots/api/#messageid) of the sent message on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCopyMessagePostRequest
+ @return ApiPostCopyMessageRequest
 */
-func (a *DefaultAPIService) CopyMessagePost(ctx context.Context) ApiCopyMessagePostRequest {
-	return ApiCopyMessagePostRequest{
+func (a *DefaultAPIService) PostCopyMessage(ctx context.Context) ApiPostCopyMessageRequest {
+	return ApiPostCopyMessageRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return CopyMessagePost200Response
-func (a *DefaultAPIService) CopyMessagePostExecute(r ApiCopyMessagePostRequest) (*CopyMessagePost200Response, *http.Response, error) {
+//  @return PostCopyMessage200Response
+func (a *DefaultAPIService) PostCopyMessageExecute(r ApiPostCopyMessageRequest) (*PostCopyMessage200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *CopyMessagePost200Response
+		localVarReturnValue  *PostCopyMessage200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.CopyMessagePost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostCopyMessage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4229,6 +4372,17 @@ func (a *DefaultAPIService) CopyMessagePostExecute(r ApiCopyMessagePostRequest) 
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -4252,11 +4406,11 @@ func (a *DefaultAPIService) CopyMessagePostExecute(r ApiCopyMessagePostRequest) 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiCopyMessagesPostRequest struct {
+type ApiPostCopyMessagesRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
-	fromChatId *ForwardMessagesPostRequestFromChatId
+	chatId *PostSendMessageRequestChatId
+	fromChatId *PostForwardMessagesRequestFromChatId
 	messageIds *[]int32
 	messageThreadId *int32
 	disableNotification *bool
@@ -4264,76 +4418,76 @@ type ApiCopyMessagesPostRequest struct {
 	removeCaption *bool
 }
 
-func (r ApiCopyMessagesPostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiCopyMessagesPostRequest {
+func (r ApiPostCopyMessagesRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostCopyMessagesRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiCopyMessagesPostRequest) FromChatId(fromChatId ForwardMessagesPostRequestFromChatId) ApiCopyMessagesPostRequest {
+func (r ApiPostCopyMessagesRequest) FromChatId(fromChatId PostForwardMessagesRequestFromChatId) ApiPostCopyMessagesRequest {
 	r.fromChatId = &fromChatId
 	return r
 }
 
 // A JSON-serialized list of 1-100 identifiers of messages in the chat *from\\\\_chat\\\\_id* to copy. The identifiers must be specified in a strictly increasing order.
-func (r ApiCopyMessagesPostRequest) MessageIds(messageIds []int32) ApiCopyMessagesPostRequest {
+func (r ApiPostCopyMessagesRequest) MessageIds(messageIds []int32) ApiPostCopyMessagesRequest {
 	r.messageIds = &messageIds
 	return r
 }
 
 // Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-func (r ApiCopyMessagesPostRequest) MessageThreadId(messageThreadId int32) ApiCopyMessagesPostRequest {
+func (r ApiPostCopyMessagesRequest) MessageThreadId(messageThreadId int32) ApiPostCopyMessagesRequest {
 	r.messageThreadId = &messageThreadId
 	return r
 }
 
 // Sends the messages [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.
-func (r ApiCopyMessagesPostRequest) DisableNotification(disableNotification bool) ApiCopyMessagesPostRequest {
+func (r ApiPostCopyMessagesRequest) DisableNotification(disableNotification bool) ApiPostCopyMessagesRequest {
 	r.disableNotification = &disableNotification
 	return r
 }
 
 // Protects the contents of the sent messages from forwarding and saving
-func (r ApiCopyMessagesPostRequest) ProtectContent(protectContent bool) ApiCopyMessagesPostRequest {
+func (r ApiPostCopyMessagesRequest) ProtectContent(protectContent bool) ApiPostCopyMessagesRequest {
 	r.protectContent = &protectContent
 	return r
 }
 
 // Pass *True* to copy the messages without their captions
-func (r ApiCopyMessagesPostRequest) RemoveCaption(removeCaption bool) ApiCopyMessagesPostRequest {
+func (r ApiPostCopyMessagesRequest) RemoveCaption(removeCaption bool) ApiPostCopyMessagesRequest {
 	r.removeCaption = &removeCaption
 	return r
 }
 
-func (r ApiCopyMessagesPostRequest) Execute() (*ForwardMessagesPost200Response, *http.Response, error) {
-	return r.ApiService.CopyMessagesPostExecute(r)
+func (r ApiPostCopyMessagesRequest) Execute() (*PostForwardMessages200Response, *http.Response, error) {
+	return r.ApiService.PostCopyMessagesExecute(r)
 }
 
 /*
-CopyMessagesPost Method for CopyMessagesPost
+PostCopyMessages copyMessages
 
 Use this method to copy messages of any kind. If some of the specified messages can't be found or copied, they are skipped. Service messages, paid media messages, giveaway messages, giveaway winners messages, and invoice messages can't be copied. A quiz [poll](https://core.telegram.org/bots/api/#poll) can be copied only if the value of the field *correct\_option\_id* is known to the bot. The method is analogous to the method [forwardMessages](https://core.telegram.org/bots/api/#forwardmessages), but the copied messages don't have a link to the original message. Album grouping is kept for copied messages. On success, an array of [MessageId](https://core.telegram.org/bots/api/#messageid) of the sent messages is returned.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCopyMessagesPostRequest
+ @return ApiPostCopyMessagesRequest
 */
-func (a *DefaultAPIService) CopyMessagesPost(ctx context.Context) ApiCopyMessagesPostRequest {
-	return ApiCopyMessagesPostRequest{
+func (a *DefaultAPIService) PostCopyMessages(ctx context.Context) ApiPostCopyMessagesRequest {
+	return ApiPostCopyMessagesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ForwardMessagesPost200Response
-func (a *DefaultAPIService) CopyMessagesPostExecute(r ApiCopyMessagesPostRequest) (*ForwardMessagesPost200Response, *http.Response, error) {
+//  @return PostForwardMessages200Response
+func (a *DefaultAPIService) PostCopyMessagesExecute(r ApiPostCopyMessagesRequest) (*PostForwardMessages200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ForwardMessagesPost200Response
+		localVarReturnValue  *PostForwardMessages200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.CopyMessagesPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostCopyMessages")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4407,6 +4561,17 @@ func (a *DefaultAPIService) CopyMessagesPostExecute(r ApiCopyMessagesPostRequest
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -4430,75 +4595,75 @@ func (a *DefaultAPIService) CopyMessagesPostExecute(r ApiCopyMessagesPostRequest
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiCreateChatInviteLinkPostRequest struct {
+type ApiPostCreateChatInviteLinkRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
+	chatId *PostSendMessageRequestChatId
 	name *string
 	expireDate *int32
 	memberLimit *int32
 	createsJoinRequest *bool
 }
 
-func (r ApiCreateChatInviteLinkPostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiCreateChatInviteLinkPostRequest {
+func (r ApiPostCreateChatInviteLinkRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostCreateChatInviteLinkRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Invite link name; 0-32 characters
-func (r ApiCreateChatInviteLinkPostRequest) Name(name string) ApiCreateChatInviteLinkPostRequest {
+func (r ApiPostCreateChatInviteLinkRequest) Name(name string) ApiPostCreateChatInviteLinkRequest {
 	r.name = &name
 	return r
 }
 
 // Point in time (Unix timestamp) when the link will expire
-func (r ApiCreateChatInviteLinkPostRequest) ExpireDate(expireDate int32) ApiCreateChatInviteLinkPostRequest {
+func (r ApiPostCreateChatInviteLinkRequest) ExpireDate(expireDate int32) ApiPostCreateChatInviteLinkRequest {
 	r.expireDate = &expireDate
 	return r
 }
 
 // The maximum number of users that can be members of the chat simultaneously after joining the chat via this invite link; 1-99999
-func (r ApiCreateChatInviteLinkPostRequest) MemberLimit(memberLimit int32) ApiCreateChatInviteLinkPostRequest {
+func (r ApiPostCreateChatInviteLinkRequest) MemberLimit(memberLimit int32) ApiPostCreateChatInviteLinkRequest {
 	r.memberLimit = &memberLimit
 	return r
 }
 
 // *True*, if users joining the chat via the link need to be approved by chat administrators. If *True*, *member\\\\_limit* can&#39;t be specified
-func (r ApiCreateChatInviteLinkPostRequest) CreatesJoinRequest(createsJoinRequest bool) ApiCreateChatInviteLinkPostRequest {
+func (r ApiPostCreateChatInviteLinkRequest) CreatesJoinRequest(createsJoinRequest bool) ApiPostCreateChatInviteLinkRequest {
 	r.createsJoinRequest = &createsJoinRequest
 	return r
 }
 
-func (r ApiCreateChatInviteLinkPostRequest) Execute() (*CreateChatInviteLinkPost200Response, *http.Response, error) {
-	return r.ApiService.CreateChatInviteLinkPostExecute(r)
+func (r ApiPostCreateChatInviteLinkRequest) Execute() (*PostCreateChatInviteLink200Response, *http.Response, error) {
+	return r.ApiService.PostCreateChatInviteLinkExecute(r)
 }
 
 /*
-CreateChatInviteLinkPost Method for CreateChatInviteLinkPost
+PostCreateChatInviteLink createChatInviteLink
 
 Use this method to create an additional invite link for a chat. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. The link can be revoked using the method [revokeChatInviteLink](https://core.telegram.org/bots/api/#revokechatinvitelink). Returns the new invite link as [ChatInviteLink](https://core.telegram.org/bots/api/#chatinvitelink) object.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateChatInviteLinkPostRequest
+ @return ApiPostCreateChatInviteLinkRequest
 */
-func (a *DefaultAPIService) CreateChatInviteLinkPost(ctx context.Context) ApiCreateChatInviteLinkPostRequest {
-	return ApiCreateChatInviteLinkPostRequest{
+func (a *DefaultAPIService) PostCreateChatInviteLink(ctx context.Context) ApiPostCreateChatInviteLinkRequest {
+	return ApiPostCreateChatInviteLinkRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return CreateChatInviteLinkPost200Response
-func (a *DefaultAPIService) CreateChatInviteLinkPostExecute(r ApiCreateChatInviteLinkPostRequest) (*CreateChatInviteLinkPost200Response, *http.Response, error) {
+//  @return PostCreateChatInviteLink200Response
+func (a *DefaultAPIService) PostCreateChatInviteLinkExecute(r ApiPostCreateChatInviteLinkRequest) (*PostCreateChatInviteLink200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *CreateChatInviteLinkPost200Response
+		localVarReturnValue  *PostCreateChatInviteLink200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.CreateChatInviteLinkPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostCreateChatInviteLink")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4564,6 +4729,17 @@ func (a *DefaultAPIService) CreateChatInviteLinkPostExecute(r ApiCreateChatInvit
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -4587,68 +4763,68 @@ func (a *DefaultAPIService) CreateChatInviteLinkPostExecute(r ApiCreateChatInvit
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiCreateChatSubscriptionInviteLinkPostRequest struct {
+type ApiPostCreateChatSubscriptionInviteLinkRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *CreateChatSubscriptionInviteLinkPostRequestChatId
+	chatId *PostCreateChatSubscriptionInviteLinkRequestChatId
 	subscriptionPeriod *int32
 	subscriptionPrice *int32
 	name *string
 }
 
-func (r ApiCreateChatSubscriptionInviteLinkPostRequest) ChatId(chatId CreateChatSubscriptionInviteLinkPostRequestChatId) ApiCreateChatSubscriptionInviteLinkPostRequest {
+func (r ApiPostCreateChatSubscriptionInviteLinkRequest) ChatId(chatId PostCreateChatSubscriptionInviteLinkRequestChatId) ApiPostCreateChatSubscriptionInviteLinkRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // The number of seconds the subscription will be active for before the next payment. Currently, it must always be 2592000 (30 days).
-func (r ApiCreateChatSubscriptionInviteLinkPostRequest) SubscriptionPeriod(subscriptionPeriod int32) ApiCreateChatSubscriptionInviteLinkPostRequest {
+func (r ApiPostCreateChatSubscriptionInviteLinkRequest) SubscriptionPeriod(subscriptionPeriod int32) ApiPostCreateChatSubscriptionInviteLinkRequest {
 	r.subscriptionPeriod = &subscriptionPeriod
 	return r
 }
 
 // The amount of Telegram Stars a user must pay initially and after each subsequent subscription period to be a member of the chat; 1-10000
-func (r ApiCreateChatSubscriptionInviteLinkPostRequest) SubscriptionPrice(subscriptionPrice int32) ApiCreateChatSubscriptionInviteLinkPostRequest {
+func (r ApiPostCreateChatSubscriptionInviteLinkRequest) SubscriptionPrice(subscriptionPrice int32) ApiPostCreateChatSubscriptionInviteLinkRequest {
 	r.subscriptionPrice = &subscriptionPrice
 	return r
 }
 
 // Invite link name; 0-32 characters
-func (r ApiCreateChatSubscriptionInviteLinkPostRequest) Name(name string) ApiCreateChatSubscriptionInviteLinkPostRequest {
+func (r ApiPostCreateChatSubscriptionInviteLinkRequest) Name(name string) ApiPostCreateChatSubscriptionInviteLinkRequest {
 	r.name = &name
 	return r
 }
 
-func (r ApiCreateChatSubscriptionInviteLinkPostRequest) Execute() (*CreateChatInviteLinkPost200Response, *http.Response, error) {
-	return r.ApiService.CreateChatSubscriptionInviteLinkPostExecute(r)
+func (r ApiPostCreateChatSubscriptionInviteLinkRequest) Execute() (*PostCreateChatInviteLink200Response, *http.Response, error) {
+	return r.ApiService.PostCreateChatSubscriptionInviteLinkExecute(r)
 }
 
 /*
-CreateChatSubscriptionInviteLinkPost Method for CreateChatSubscriptionInviteLinkPost
+PostCreateChatSubscriptionInviteLink createChatSubscriptionInviteLink
 
 Use this method to create a [subscription invite link](https://telegram.org/blog/superchannels-star-reactions-subscriptions#star-subscriptions) for a channel chat. The bot must have the *can\_invite\_users* administrator rights. The link can be edited using the method [editChatSubscriptionInviteLink](https://core.telegram.org/bots/api/#editchatsubscriptioninvitelink) or revoked using the method [revokeChatInviteLink](https://core.telegram.org/bots/api/#revokechatinvitelink). Returns the new invite link as a [ChatInviteLink](https://core.telegram.org/bots/api/#chatinvitelink) object.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateChatSubscriptionInviteLinkPostRequest
+ @return ApiPostCreateChatSubscriptionInviteLinkRequest
 */
-func (a *DefaultAPIService) CreateChatSubscriptionInviteLinkPost(ctx context.Context) ApiCreateChatSubscriptionInviteLinkPostRequest {
-	return ApiCreateChatSubscriptionInviteLinkPostRequest{
+func (a *DefaultAPIService) PostCreateChatSubscriptionInviteLink(ctx context.Context) ApiPostCreateChatSubscriptionInviteLinkRequest {
+	return ApiPostCreateChatSubscriptionInviteLinkRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return CreateChatInviteLinkPost200Response
-func (a *DefaultAPIService) CreateChatSubscriptionInviteLinkPostExecute(r ApiCreateChatSubscriptionInviteLinkPostRequest) (*CreateChatInviteLinkPost200Response, *http.Response, error) {
+//  @return PostCreateChatInviteLink200Response
+func (a *DefaultAPIService) PostCreateChatSubscriptionInviteLinkExecute(r ApiPostCreateChatSubscriptionInviteLinkRequest) (*PostCreateChatInviteLink200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *CreateChatInviteLinkPost200Response
+		localVarReturnValue  *PostCreateChatInviteLink200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.CreateChatSubscriptionInviteLinkPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostCreateChatSubscriptionInviteLink")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4713,6 +4889,17 @@ func (a *DefaultAPIService) CreateChatSubscriptionInviteLinkPostExecute(r ApiCre
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -4736,68 +4923,68 @@ func (a *DefaultAPIService) CreateChatSubscriptionInviteLinkPostExecute(r ApiCre
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiCreateForumTopicPostRequest struct {
+type ApiPostCreateForumTopicRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *RestrictChatMemberPostRequestChatId
+	chatId *PostRestrictChatMemberRequestChatId
 	name *string
 	iconColor *int32
 	iconCustomEmojiId *string
 }
 
-func (r ApiCreateForumTopicPostRequest) ChatId(chatId RestrictChatMemberPostRequestChatId) ApiCreateForumTopicPostRequest {
+func (r ApiPostCreateForumTopicRequest) ChatId(chatId PostRestrictChatMemberRequestChatId) ApiPostCreateForumTopicRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Topic name, 1-128 characters
-func (r ApiCreateForumTopicPostRequest) Name(name string) ApiCreateForumTopicPostRequest {
+func (r ApiPostCreateForumTopicRequest) Name(name string) ApiPostCreateForumTopicRequest {
 	r.name = &name
 	return r
 }
 
 // Color of the topic icon in RGB format. Currently, must be one of 7322096 (0x6FB9F0), 16766590 (0xFFD67E), 13338331 (0xCB86DB), 9367192 (0x8EEE98), 16749490 (0xFF93B2), or 16478047 (0xFB6F5F)
-func (r ApiCreateForumTopicPostRequest) IconColor(iconColor int32) ApiCreateForumTopicPostRequest {
+func (r ApiPostCreateForumTopicRequest) IconColor(iconColor int32) ApiPostCreateForumTopicRequest {
 	r.iconColor = &iconColor
 	return r
 }
 
 // Unique identifier of the custom emoji shown as the topic icon. Use [getForumTopicIconStickers](https://core.telegram.org/bots/api/#getforumtopiciconstickers) to get all allowed custom emoji identifiers.
-func (r ApiCreateForumTopicPostRequest) IconCustomEmojiId(iconCustomEmojiId string) ApiCreateForumTopicPostRequest {
+func (r ApiPostCreateForumTopicRequest) IconCustomEmojiId(iconCustomEmojiId string) ApiPostCreateForumTopicRequest {
 	r.iconCustomEmojiId = &iconCustomEmojiId
 	return r
 }
 
-func (r ApiCreateForumTopicPostRequest) Execute() (*CreateForumTopicPost200Response, *http.Response, error) {
-	return r.ApiService.CreateForumTopicPostExecute(r)
+func (r ApiPostCreateForumTopicRequest) Execute() (*PostCreateForumTopic200Response, *http.Response, error) {
+	return r.ApiService.PostCreateForumTopicExecute(r)
 }
 
 /*
-CreateForumTopicPost Method for CreateForumTopicPost
+PostCreateForumTopic createForumTopic
 
 Use this method to create a topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the *can\_manage\_topics* administrator rights. Returns information about the created topic as a [ForumTopic](https://core.telegram.org/bots/api/#forumtopic) object.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateForumTopicPostRequest
+ @return ApiPostCreateForumTopicRequest
 */
-func (a *DefaultAPIService) CreateForumTopicPost(ctx context.Context) ApiCreateForumTopicPostRequest {
-	return ApiCreateForumTopicPostRequest{
+func (a *DefaultAPIService) PostCreateForumTopic(ctx context.Context) ApiPostCreateForumTopicRequest {
+	return ApiPostCreateForumTopicRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return CreateForumTopicPost200Response
-func (a *DefaultAPIService) CreateForumTopicPostExecute(r ApiCreateForumTopicPostRequest) (*CreateForumTopicPost200Response, *http.Response, error) {
+//  @return PostCreateForumTopic200Response
+func (a *DefaultAPIService) PostCreateForumTopicExecute(r ApiPostCreateForumTopicRequest) (*PostCreateForumTopic200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *CreateForumTopicPost200Response
+		localVarReturnValue  *PostCreateForumTopic200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.CreateForumTopicPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostCreateForumTopic")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4867,6 +5054,17 @@ func (a *DefaultAPIService) CreateForumTopicPostExecute(r ApiCreateForumTopicPos
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -4890,7 +5088,7 @@ func (a *DefaultAPIService) CreateForumTopicPostExecute(r ApiCreateForumTopicPos
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiCreateInvoiceLinkPostRequest struct {
+type ApiPostCreateInvoiceLinkRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	title *string
@@ -4918,167 +5116,167 @@ type ApiCreateInvoiceLinkPostRequest struct {
 }
 
 // Product name, 1-32 characters
-func (r ApiCreateInvoiceLinkPostRequest) Title(title string) ApiCreateInvoiceLinkPostRequest {
+func (r ApiPostCreateInvoiceLinkRequest) Title(title string) ApiPostCreateInvoiceLinkRequest {
 	r.title = &title
 	return r
 }
 
 // Product description, 1-255 characters
-func (r ApiCreateInvoiceLinkPostRequest) Description(description string) ApiCreateInvoiceLinkPostRequest {
+func (r ApiPostCreateInvoiceLinkRequest) Description(description string) ApiPostCreateInvoiceLinkRequest {
 	r.description = &description
 	return r
 }
 
 // Bot-defined invoice payload, 1-128 bytes. This will not be displayed to the user, use it for your internal processes.
-func (r ApiCreateInvoiceLinkPostRequest) Payload(payload string) ApiCreateInvoiceLinkPostRequest {
+func (r ApiPostCreateInvoiceLinkRequest) Payload(payload string) ApiPostCreateInvoiceLinkRequest {
 	r.payload = &payload
 	return r
 }
 
 // Three-letter ISO 4217 currency code, see [more on currencies](https://core.telegram.org/bots/payments#supported-currencies). Pass “XTR” for payments in [Telegram Stars](https://t.me/BotNews/90).
-func (r ApiCreateInvoiceLinkPostRequest) Currency(currency string) ApiCreateInvoiceLinkPostRequest {
+func (r ApiPostCreateInvoiceLinkRequest) Currency(currency string) ApiPostCreateInvoiceLinkRequest {
 	r.currency = &currency
 	return r
 }
 
 // Price breakdown, a JSON-serialized list of components (e.g. product price, tax, discount, delivery cost, delivery tax, bonus, etc.). Must contain exactly one item for payments in [Telegram Stars](https://t.me/BotNews/90).
-func (r ApiCreateInvoiceLinkPostRequest) Prices(prices []LabeledPrice) ApiCreateInvoiceLinkPostRequest {
+func (r ApiPostCreateInvoiceLinkRequest) Prices(prices []LabeledPrice) ApiPostCreateInvoiceLinkRequest {
 	r.prices = &prices
 	return r
 }
 
 // Unique identifier of the business connection on behalf of which the link will be created. For payments in [Telegram Stars](https://t.me/BotNews/90) only.
-func (r ApiCreateInvoiceLinkPostRequest) BusinessConnectionId(businessConnectionId string) ApiCreateInvoiceLinkPostRequest {
+func (r ApiPostCreateInvoiceLinkRequest) BusinessConnectionId(businessConnectionId string) ApiPostCreateInvoiceLinkRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
 // Payment provider token, obtained via [@BotFather](https://t.me/botfather). Pass an empty string for payments in [Telegram Stars](https://t.me/BotNews/90).
-func (r ApiCreateInvoiceLinkPostRequest) ProviderToken(providerToken string) ApiCreateInvoiceLinkPostRequest {
+func (r ApiPostCreateInvoiceLinkRequest) ProviderToken(providerToken string) ApiPostCreateInvoiceLinkRequest {
 	r.providerToken = &providerToken
 	return r
 }
 
 // The number of seconds the subscription will be active for before the next payment. The currency must be set to “XTR” (Telegram Stars) if the parameter is used. Currently, it must always be 2592000 (30 days) if specified. Any number of subscriptions can be active for a given bot at the same time, including multiple concurrent subscriptions from the same user. Subscription price must no exceed 10000 Telegram Stars.
-func (r ApiCreateInvoiceLinkPostRequest) SubscriptionPeriod(subscriptionPeriod int32) ApiCreateInvoiceLinkPostRequest {
+func (r ApiPostCreateInvoiceLinkRequest) SubscriptionPeriod(subscriptionPeriod int32) ApiPostCreateInvoiceLinkRequest {
 	r.subscriptionPeriod = &subscriptionPeriod
 	return r
 }
 
 // The maximum accepted amount for tips in the *smallest units* of the currency (integer, **not** float/double). For example, for a maximum tip of &#x60;US$ 1.45&#x60; pass &#x60;max_tip_amount &#x3D; 145&#x60;. See the *exp* parameter in [currencies.json](https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). Defaults to 0. Not supported for payments in [Telegram Stars](https://t.me/BotNews/90).
-func (r ApiCreateInvoiceLinkPostRequest) MaxTipAmount(maxTipAmount int32) ApiCreateInvoiceLinkPostRequest {
+func (r ApiPostCreateInvoiceLinkRequest) MaxTipAmount(maxTipAmount int32) ApiPostCreateInvoiceLinkRequest {
 	r.maxTipAmount = &maxTipAmount
 	return r
 }
 
 // A JSON-serialized array of suggested amounts of tips in the *smallest units* of the currency (integer, **not** float/double). At most 4 suggested tip amounts can be specified. The suggested tip amounts must be positive, passed in a strictly increased order and must not exceed *max\\\\_tip\\\\_amount*.
-func (r ApiCreateInvoiceLinkPostRequest) SuggestedTipAmounts(suggestedTipAmounts []int32) ApiCreateInvoiceLinkPostRequest {
+func (r ApiPostCreateInvoiceLinkRequest) SuggestedTipAmounts(suggestedTipAmounts []int32) ApiPostCreateInvoiceLinkRequest {
 	r.suggestedTipAmounts = &suggestedTipAmounts
 	return r
 }
 
 // JSON-serialized data about the invoice, which will be shared with the payment provider. A detailed description of required fields should be provided by the payment provider.
-func (r ApiCreateInvoiceLinkPostRequest) ProviderData(providerData string) ApiCreateInvoiceLinkPostRequest {
+func (r ApiPostCreateInvoiceLinkRequest) ProviderData(providerData string) ApiPostCreateInvoiceLinkRequest {
 	r.providerData = &providerData
 	return r
 }
 
 // URL of the product photo for the invoice. Can be a photo of the goods or a marketing image for a service.
-func (r ApiCreateInvoiceLinkPostRequest) PhotoUrl(photoUrl string) ApiCreateInvoiceLinkPostRequest {
+func (r ApiPostCreateInvoiceLinkRequest) PhotoUrl(photoUrl string) ApiPostCreateInvoiceLinkRequest {
 	r.photoUrl = &photoUrl
 	return r
 }
 
 // Photo size in bytes
-func (r ApiCreateInvoiceLinkPostRequest) PhotoSize(photoSize int32) ApiCreateInvoiceLinkPostRequest {
+func (r ApiPostCreateInvoiceLinkRequest) PhotoSize(photoSize int32) ApiPostCreateInvoiceLinkRequest {
 	r.photoSize = &photoSize
 	return r
 }
 
 // Photo width
-func (r ApiCreateInvoiceLinkPostRequest) PhotoWidth(photoWidth int32) ApiCreateInvoiceLinkPostRequest {
+func (r ApiPostCreateInvoiceLinkRequest) PhotoWidth(photoWidth int32) ApiPostCreateInvoiceLinkRequest {
 	r.photoWidth = &photoWidth
 	return r
 }
 
 // Photo height
-func (r ApiCreateInvoiceLinkPostRequest) PhotoHeight(photoHeight int32) ApiCreateInvoiceLinkPostRequest {
+func (r ApiPostCreateInvoiceLinkRequest) PhotoHeight(photoHeight int32) ApiPostCreateInvoiceLinkRequest {
 	r.photoHeight = &photoHeight
 	return r
 }
 
 // Pass *True* if you require the user&#39;s full name to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).
-func (r ApiCreateInvoiceLinkPostRequest) NeedName(needName bool) ApiCreateInvoiceLinkPostRequest {
+func (r ApiPostCreateInvoiceLinkRequest) NeedName(needName bool) ApiPostCreateInvoiceLinkRequest {
 	r.needName = &needName
 	return r
 }
 
 // Pass *True* if you require the user&#39;s phone number to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).
-func (r ApiCreateInvoiceLinkPostRequest) NeedPhoneNumber(needPhoneNumber bool) ApiCreateInvoiceLinkPostRequest {
+func (r ApiPostCreateInvoiceLinkRequest) NeedPhoneNumber(needPhoneNumber bool) ApiPostCreateInvoiceLinkRequest {
 	r.needPhoneNumber = &needPhoneNumber
 	return r
 }
 
 // Pass *True* if you require the user&#39;s email address to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).
-func (r ApiCreateInvoiceLinkPostRequest) NeedEmail(needEmail bool) ApiCreateInvoiceLinkPostRequest {
+func (r ApiPostCreateInvoiceLinkRequest) NeedEmail(needEmail bool) ApiPostCreateInvoiceLinkRequest {
 	r.needEmail = &needEmail
 	return r
 }
 
 // Pass *True* if you require the user&#39;s shipping address to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).
-func (r ApiCreateInvoiceLinkPostRequest) NeedShippingAddress(needShippingAddress bool) ApiCreateInvoiceLinkPostRequest {
+func (r ApiPostCreateInvoiceLinkRequest) NeedShippingAddress(needShippingAddress bool) ApiPostCreateInvoiceLinkRequest {
 	r.needShippingAddress = &needShippingAddress
 	return r
 }
 
 // Pass *True* if the user&#39;s phone number should be sent to the provider. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).
-func (r ApiCreateInvoiceLinkPostRequest) SendPhoneNumberToProvider(sendPhoneNumberToProvider bool) ApiCreateInvoiceLinkPostRequest {
+func (r ApiPostCreateInvoiceLinkRequest) SendPhoneNumberToProvider(sendPhoneNumberToProvider bool) ApiPostCreateInvoiceLinkRequest {
 	r.sendPhoneNumberToProvider = &sendPhoneNumberToProvider
 	return r
 }
 
 // Pass *True* if the user&#39;s email address should be sent to the provider. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).
-func (r ApiCreateInvoiceLinkPostRequest) SendEmailToProvider(sendEmailToProvider bool) ApiCreateInvoiceLinkPostRequest {
+func (r ApiPostCreateInvoiceLinkRequest) SendEmailToProvider(sendEmailToProvider bool) ApiPostCreateInvoiceLinkRequest {
 	r.sendEmailToProvider = &sendEmailToProvider
 	return r
 }
 
 // Pass *True* if the final price depends on the shipping method. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).
-func (r ApiCreateInvoiceLinkPostRequest) IsFlexible(isFlexible bool) ApiCreateInvoiceLinkPostRequest {
+func (r ApiPostCreateInvoiceLinkRequest) IsFlexible(isFlexible bool) ApiPostCreateInvoiceLinkRequest {
 	r.isFlexible = &isFlexible
 	return r
 }
 
-func (r ApiCreateInvoiceLinkPostRequest) Execute() (*ExportChatInviteLinkPost200Response, *http.Response, error) {
-	return r.ApiService.CreateInvoiceLinkPostExecute(r)
+func (r ApiPostCreateInvoiceLinkRequest) Execute() (*PostExportChatInviteLink200Response, *http.Response, error) {
+	return r.ApiService.PostCreateInvoiceLinkExecute(r)
 }
 
 /*
-CreateInvoiceLinkPost Method for CreateInvoiceLinkPost
+PostCreateInvoiceLink createInvoiceLink
 
 Use this method to create a link for an invoice. Returns the created invoice link as *String* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateInvoiceLinkPostRequest
+ @return ApiPostCreateInvoiceLinkRequest
 */
-func (a *DefaultAPIService) CreateInvoiceLinkPost(ctx context.Context) ApiCreateInvoiceLinkPostRequest {
-	return ApiCreateInvoiceLinkPostRequest{
+func (a *DefaultAPIService) PostCreateInvoiceLink(ctx context.Context) ApiPostCreateInvoiceLinkRequest {
+	return ApiPostCreateInvoiceLinkRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ExportChatInviteLinkPost200Response
-func (a *DefaultAPIService) CreateInvoiceLinkPostExecute(r ApiCreateInvoiceLinkPostRequest) (*ExportChatInviteLinkPost200Response, *http.Response, error) {
+//  @return PostExportChatInviteLink200Response
+func (a *DefaultAPIService) PostCreateInvoiceLinkExecute(r ApiPostCreateInvoiceLinkRequest) (*PostExportChatInviteLink200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ExportChatInviteLinkPost200Response
+		localVarReturnValue  *PostExportChatInviteLink200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.CreateInvoiceLinkPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostCreateInvoiceLink")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5211,6 +5409,17 @@ func (a *DefaultAPIService) CreateInvoiceLinkPostExecute(r ApiCreateInvoiceLinkP
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -5234,7 +5443,7 @@ func (a *DefaultAPIService) CreateInvoiceLinkPostExecute(r ApiCreateInvoiceLinkP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiCreateNewStickerSetPostRequest struct {
+type ApiPostCreateNewStickerSetRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	userId *int32
@@ -5246,71 +5455,71 @@ type ApiCreateNewStickerSetPostRequest struct {
 }
 
 // User identifier of created sticker set owner
-func (r ApiCreateNewStickerSetPostRequest) UserId(userId int32) ApiCreateNewStickerSetPostRequest {
+func (r ApiPostCreateNewStickerSetRequest) UserId(userId int32) ApiPostCreateNewStickerSetRequest {
 	r.userId = &userId
 	return r
 }
 
 // Short name of sticker set, to be used in &#x60;t.me/addstickers/&#x60; URLs (e.g., *animals*). Can contain only English letters, digits and underscores. Must begin with a letter, can&#39;t contain consecutive underscores and must end in &#x60;\\\&quot;_by_&lt;bot_username&gt;\\\&quot;&#x60;. &#x60;&lt;bot_username&gt;&#x60; is case insensitive. 1-64 characters.
-func (r ApiCreateNewStickerSetPostRequest) Name(name string) ApiCreateNewStickerSetPostRequest {
+func (r ApiPostCreateNewStickerSetRequest) Name(name string) ApiPostCreateNewStickerSetRequest {
 	r.name = &name
 	return r
 }
 
 // Sticker set title, 1-64 characters
-func (r ApiCreateNewStickerSetPostRequest) Title(title string) ApiCreateNewStickerSetPostRequest {
+func (r ApiPostCreateNewStickerSetRequest) Title(title string) ApiPostCreateNewStickerSetRequest {
 	r.title = &title
 	return r
 }
 
 // A JSON-serialized list of 1-50 initial stickers to be added to the sticker set
-func (r ApiCreateNewStickerSetPostRequest) Stickers(stickers []InputSticker) ApiCreateNewStickerSetPostRequest {
+func (r ApiPostCreateNewStickerSetRequest) Stickers(stickers []InputSticker) ApiPostCreateNewStickerSetRequest {
 	r.stickers = &stickers
 	return r
 }
 
 // Type of stickers in the set, pass “regular”, “mask”, or “custom\\\\_emoji”. By default, a regular sticker set is created.
-func (r ApiCreateNewStickerSetPostRequest) StickerType(stickerType string) ApiCreateNewStickerSetPostRequest {
+func (r ApiPostCreateNewStickerSetRequest) StickerType(stickerType string) ApiPostCreateNewStickerSetRequest {
 	r.stickerType = &stickerType
 	return r
 }
 
 // Pass *True* if stickers in the sticker set must be repainted to the color of text when used in messages, the accent color if used as emoji status, white on chat photos, or another appropriate color based on context; for custom emoji sticker sets only
-func (r ApiCreateNewStickerSetPostRequest) NeedsRepainting(needsRepainting bool) ApiCreateNewStickerSetPostRequest {
+func (r ApiPostCreateNewStickerSetRequest) NeedsRepainting(needsRepainting bool) ApiPostCreateNewStickerSetRequest {
 	r.needsRepainting = &needsRepainting
 	return r
 }
 
-func (r ApiCreateNewStickerSetPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.CreateNewStickerSetPostExecute(r)
+func (r ApiPostCreateNewStickerSetRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostCreateNewStickerSetExecute(r)
 }
 
 /*
-CreateNewStickerSetPost Method for CreateNewStickerSetPost
+PostCreateNewStickerSet createNewStickerSet
 
 Use this method to create a new sticker set owned by a user. The bot will be able to edit the sticker set thus created. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateNewStickerSetPostRequest
+ @return ApiPostCreateNewStickerSetRequest
 */
-func (a *DefaultAPIService) CreateNewStickerSetPost(ctx context.Context) ApiCreateNewStickerSetPostRequest {
-	return ApiCreateNewStickerSetPostRequest{
+func (a *DefaultAPIService) PostCreateNewStickerSet(ctx context.Context) ApiPostCreateNewStickerSetRequest {
+	return ApiPostCreateNewStickerSetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) CreateNewStickerSetPostExecute(r ApiCreateNewStickerSetPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostCreateNewStickerSetExecute(r ApiPostCreateNewStickerSetRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.CreateNewStickerSetPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostCreateNewStickerSet")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5394,6 +5603,17 @@ func (a *DefaultAPIService) CreateNewStickerSetPostExecute(r ApiCreateNewSticker
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -5417,54 +5637,54 @@ func (a *DefaultAPIService) CreateNewStickerSetPostExecute(r ApiCreateNewSticker
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiDeclineChatJoinRequestPostRequest struct {
+type ApiPostDeclineChatJoinRequestRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
+	chatId *PostSendMessageRequestChatId
 	userId *int32
 }
 
-func (r ApiDeclineChatJoinRequestPostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiDeclineChatJoinRequestPostRequest {
+func (r ApiPostDeclineChatJoinRequestRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostDeclineChatJoinRequestRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Unique identifier of the target user
-func (r ApiDeclineChatJoinRequestPostRequest) UserId(userId int32) ApiDeclineChatJoinRequestPostRequest {
+func (r ApiPostDeclineChatJoinRequestRequest) UserId(userId int32) ApiPostDeclineChatJoinRequestRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiDeclineChatJoinRequestPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.DeclineChatJoinRequestPostExecute(r)
+func (r ApiPostDeclineChatJoinRequestRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostDeclineChatJoinRequestExecute(r)
 }
 
 /*
-DeclineChatJoinRequestPost Method for DeclineChatJoinRequestPost
+PostDeclineChatJoinRequest declineChatJoinRequest
 
 Use this method to decline a chat join request. The bot must be an administrator in the chat for this to work and must have the *can\_invite\_users* administrator right. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeclineChatJoinRequestPostRequest
+ @return ApiPostDeclineChatJoinRequestRequest
 */
-func (a *DefaultAPIService) DeclineChatJoinRequestPost(ctx context.Context) ApiDeclineChatJoinRequestPostRequest {
-	return ApiDeclineChatJoinRequestPostRequest{
+func (a *DefaultAPIService) PostDeclineChatJoinRequest(ctx context.Context) ApiPostDeclineChatJoinRequestRequest {
+	return ApiPostDeclineChatJoinRequestRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) DeclineChatJoinRequestPostExecute(r ApiDeclineChatJoinRequestPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostDeclineChatJoinRequestExecute(r ApiPostDeclineChatJoinRequestRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.DeclineChatJoinRequestPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostDeclineChatJoinRequest")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5522,6 +5742,17 @@ func (a *DefaultAPIService) DeclineChatJoinRequestPostExecute(r ApiDeclineChatJo
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -5545,7 +5776,7 @@ func (a *DefaultAPIService) DeclineChatJoinRequestPostExecute(r ApiDeclineChatJo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiDeleteBusinessMessagesPostRequest struct {
+type ApiPostDeleteBusinessMessagesRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	businessConnectionId *string
@@ -5553,47 +5784,47 @@ type ApiDeleteBusinessMessagesPostRequest struct {
 }
 
 // Unique identifier of the business connection on behalf of which to delete the messages
-func (r ApiDeleteBusinessMessagesPostRequest) BusinessConnectionId(businessConnectionId string) ApiDeleteBusinessMessagesPostRequest {
+func (r ApiPostDeleteBusinessMessagesRequest) BusinessConnectionId(businessConnectionId string) ApiPostDeleteBusinessMessagesRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
 // A JSON-serialized list of 1-100 identifiers of messages to delete. All messages must be from the same chat. See [deleteMessage](https://core.telegram.org/bots/api/#deletemessage) for limitations on which messages can be deleted
-func (r ApiDeleteBusinessMessagesPostRequest) MessageIds(messageIds []int32) ApiDeleteBusinessMessagesPostRequest {
+func (r ApiPostDeleteBusinessMessagesRequest) MessageIds(messageIds []int32) ApiPostDeleteBusinessMessagesRequest {
 	r.messageIds = &messageIds
 	return r
 }
 
-func (r ApiDeleteBusinessMessagesPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.DeleteBusinessMessagesPostExecute(r)
+func (r ApiPostDeleteBusinessMessagesRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostDeleteBusinessMessagesExecute(r)
 }
 
 /*
-DeleteBusinessMessagesPost Method for DeleteBusinessMessagesPost
+PostDeleteBusinessMessages deleteBusinessMessages
 
 Delete messages on behalf of a business account. Requires the *can\_delete\_sent\_messages* business bot right to delete messages sent by the bot itself, or the *can\_delete\_all\_messages* business bot right to delete any message. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteBusinessMessagesPostRequest
+ @return ApiPostDeleteBusinessMessagesRequest
 */
-func (a *DefaultAPIService) DeleteBusinessMessagesPost(ctx context.Context) ApiDeleteBusinessMessagesPostRequest {
-	return ApiDeleteBusinessMessagesPostRequest{
+func (a *DefaultAPIService) PostDeleteBusinessMessages(ctx context.Context) ApiPostDeleteBusinessMessagesRequest {
+	return ApiPostDeleteBusinessMessagesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) DeleteBusinessMessagesPostExecute(r ApiDeleteBusinessMessagesPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostDeleteBusinessMessagesExecute(r ApiPostDeleteBusinessMessagesRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.DeleteBusinessMessagesPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostDeleteBusinessMessages")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5651,6 +5882,17 @@ func (a *DefaultAPIService) DeleteBusinessMessagesPostExecute(r ApiDeleteBusines
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -5674,47 +5916,47 @@ func (a *DefaultAPIService) DeleteBusinessMessagesPostExecute(r ApiDeleteBusines
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiDeleteChatPhotoPostRequest struct {
+type ApiPostDeleteChatPhotoRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
+	chatId *PostSendMessageRequestChatId
 }
 
-func (r ApiDeleteChatPhotoPostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiDeleteChatPhotoPostRequest {
+func (r ApiPostDeleteChatPhotoRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostDeleteChatPhotoRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiDeleteChatPhotoPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.DeleteChatPhotoPostExecute(r)
+func (r ApiPostDeleteChatPhotoRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostDeleteChatPhotoExecute(r)
 }
 
 /*
-DeleteChatPhotoPost Method for DeleteChatPhotoPost
+PostDeleteChatPhoto deleteChatPhoto
 
 Use this method to delete a chat photo. Photos can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteChatPhotoPostRequest
+ @return ApiPostDeleteChatPhotoRequest
 */
-func (a *DefaultAPIService) DeleteChatPhotoPost(ctx context.Context) ApiDeleteChatPhotoPostRequest {
-	return ApiDeleteChatPhotoPostRequest{
+func (a *DefaultAPIService) PostDeleteChatPhoto(ctx context.Context) ApiPostDeleteChatPhotoRequest {
+	return ApiPostDeleteChatPhotoRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) DeleteChatPhotoPostExecute(r ApiDeleteChatPhotoPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostDeleteChatPhotoExecute(r ApiPostDeleteChatPhotoRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.DeleteChatPhotoPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostDeleteChatPhoto")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5768,6 +6010,17 @@ func (a *DefaultAPIService) DeleteChatPhotoPostExecute(r ApiDeleteChatPhotoPostR
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -5791,47 +6044,47 @@ func (a *DefaultAPIService) DeleteChatPhotoPostExecute(r ApiDeleteChatPhotoPostR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiDeleteChatStickerSetPostRequest struct {
+type ApiPostDeleteChatStickerSetRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *RestrictChatMemberPostRequestChatId
+	chatId *PostRestrictChatMemberRequestChatId
 }
 
-func (r ApiDeleteChatStickerSetPostRequest) ChatId(chatId RestrictChatMemberPostRequestChatId) ApiDeleteChatStickerSetPostRequest {
+func (r ApiPostDeleteChatStickerSetRequest) ChatId(chatId PostRestrictChatMemberRequestChatId) ApiPostDeleteChatStickerSetRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiDeleteChatStickerSetPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.DeleteChatStickerSetPostExecute(r)
+func (r ApiPostDeleteChatStickerSetRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostDeleteChatStickerSetExecute(r)
 }
 
 /*
-DeleteChatStickerSetPost Method for DeleteChatStickerSetPost
+PostDeleteChatStickerSet deleteChatStickerSet
 
 Use this method to delete a group sticker set from a supergroup. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Use the field *can\_set\_sticker\_set* optionally returned in [getChat](https://core.telegram.org/bots/api/#getchat) requests to check if the bot can use this method. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteChatStickerSetPostRequest
+ @return ApiPostDeleteChatStickerSetRequest
 */
-func (a *DefaultAPIService) DeleteChatStickerSetPost(ctx context.Context) ApiDeleteChatStickerSetPostRequest {
-	return ApiDeleteChatStickerSetPostRequest{
+func (a *DefaultAPIService) PostDeleteChatStickerSet(ctx context.Context) ApiPostDeleteChatStickerSetRequest {
+	return ApiPostDeleteChatStickerSetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) DeleteChatStickerSetPostExecute(r ApiDeleteChatStickerSetPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostDeleteChatStickerSetExecute(r ApiPostDeleteChatStickerSetRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.DeleteChatStickerSetPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostDeleteChatStickerSet")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5885,6 +6138,17 @@ func (a *DefaultAPIService) DeleteChatStickerSetPostExecute(r ApiDeleteChatStick
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -5908,54 +6172,54 @@ func (a *DefaultAPIService) DeleteChatStickerSetPostExecute(r ApiDeleteChatStick
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiDeleteForumTopicPostRequest struct {
+type ApiPostDeleteForumTopicRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *RestrictChatMemberPostRequestChatId
+	chatId *PostRestrictChatMemberRequestChatId
 	messageThreadId *int32
 }
 
-func (r ApiDeleteForumTopicPostRequest) ChatId(chatId RestrictChatMemberPostRequestChatId) ApiDeleteForumTopicPostRequest {
+func (r ApiPostDeleteForumTopicRequest) ChatId(chatId PostRestrictChatMemberRequestChatId) ApiPostDeleteForumTopicRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Unique identifier for the target message thread of the forum topic
-func (r ApiDeleteForumTopicPostRequest) MessageThreadId(messageThreadId int32) ApiDeleteForumTopicPostRequest {
+func (r ApiPostDeleteForumTopicRequest) MessageThreadId(messageThreadId int32) ApiPostDeleteForumTopicRequest {
 	r.messageThreadId = &messageThreadId
 	return r
 }
 
-func (r ApiDeleteForumTopicPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.DeleteForumTopicPostExecute(r)
+func (r ApiPostDeleteForumTopicRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostDeleteForumTopicExecute(r)
 }
 
 /*
-DeleteForumTopicPost Method for DeleteForumTopicPost
+PostDeleteForumTopic deleteForumTopic
 
 Use this method to delete a forum topic along with all its messages in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the *can\_delete\_messages* administrator rights. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteForumTopicPostRequest
+ @return ApiPostDeleteForumTopicRequest
 */
-func (a *DefaultAPIService) DeleteForumTopicPost(ctx context.Context) ApiDeleteForumTopicPostRequest {
-	return ApiDeleteForumTopicPostRequest{
+func (a *DefaultAPIService) PostDeleteForumTopic(ctx context.Context) ApiPostDeleteForumTopicRequest {
+	return ApiPostDeleteForumTopicRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) DeleteForumTopicPostExecute(r ApiDeleteForumTopicPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostDeleteForumTopicExecute(r ApiPostDeleteForumTopicRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.DeleteForumTopicPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostDeleteForumTopic")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6013,6 +6277,17 @@ func (a *DefaultAPIService) DeleteForumTopicPostExecute(r ApiDeleteForumTopicPos
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -6036,30 +6311,30 @@ func (a *DefaultAPIService) DeleteForumTopicPostExecute(r ApiDeleteForumTopicPos
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiDeleteMessagePostRequest struct {
+type ApiPostDeleteMessageRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
+	chatId *PostSendMessageRequestChatId
 	messageId *int32
 }
 
-func (r ApiDeleteMessagePostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiDeleteMessagePostRequest {
+func (r ApiPostDeleteMessageRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostDeleteMessageRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Identifier of the message to delete
-func (r ApiDeleteMessagePostRequest) MessageId(messageId int32) ApiDeleteMessagePostRequest {
+func (r ApiPostDeleteMessageRequest) MessageId(messageId int32) ApiPostDeleteMessageRequest {
 	r.messageId = &messageId
 	return r
 }
 
-func (r ApiDeleteMessagePostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.DeleteMessagePostExecute(r)
+func (r ApiPostDeleteMessageRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostDeleteMessageExecute(r)
 }
 
 /*
-DeleteMessagePost Method for DeleteMessagePost
+PostDeleteMessage deleteMessage
 
 Use this method to delete a message, including service messages, with the following limitations:  
 \- A message can only be deleted if it was sent less than 48 hours ago.  
@@ -6073,26 +6348,26 @@ Use this method to delete a message, including service messages, with the follow
 Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteMessagePostRequest
+ @return ApiPostDeleteMessageRequest
 */
-func (a *DefaultAPIService) DeleteMessagePost(ctx context.Context) ApiDeleteMessagePostRequest {
-	return ApiDeleteMessagePostRequest{
+func (a *DefaultAPIService) PostDeleteMessage(ctx context.Context) ApiPostDeleteMessageRequest {
+	return ApiPostDeleteMessageRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) DeleteMessagePostExecute(r ApiDeleteMessagePostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostDeleteMessageExecute(r ApiPostDeleteMessageRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.DeleteMessagePost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostDeleteMessage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6150,6 +6425,17 @@ func (a *DefaultAPIService) DeleteMessagePostExecute(r ApiDeleteMessagePostReque
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -6173,54 +6459,54 @@ func (a *DefaultAPIService) DeleteMessagePostExecute(r ApiDeleteMessagePostReque
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiDeleteMessagesPostRequest struct {
+type ApiPostDeleteMessagesRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
+	chatId *PostSendMessageRequestChatId
 	messageIds *[]int32
 }
 
-func (r ApiDeleteMessagesPostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiDeleteMessagesPostRequest {
+func (r ApiPostDeleteMessagesRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostDeleteMessagesRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // A JSON-serialized list of 1-100 identifiers of messages to delete. See [deleteMessage](https://core.telegram.org/bots/api/#deletemessage) for limitations on which messages can be deleted
-func (r ApiDeleteMessagesPostRequest) MessageIds(messageIds []int32) ApiDeleteMessagesPostRequest {
+func (r ApiPostDeleteMessagesRequest) MessageIds(messageIds []int32) ApiPostDeleteMessagesRequest {
 	r.messageIds = &messageIds
 	return r
 }
 
-func (r ApiDeleteMessagesPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.DeleteMessagesPostExecute(r)
+func (r ApiPostDeleteMessagesRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostDeleteMessagesExecute(r)
 }
 
 /*
-DeleteMessagesPost Method for DeleteMessagesPost
+PostDeleteMessages deleteMessages
 
 Use this method to delete multiple messages simultaneously. If some of the specified messages can't be found, they are skipped. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteMessagesPostRequest
+ @return ApiPostDeleteMessagesRequest
 */
-func (a *DefaultAPIService) DeleteMessagesPost(ctx context.Context) ApiDeleteMessagesPostRequest {
-	return ApiDeleteMessagesPostRequest{
+func (a *DefaultAPIService) PostDeleteMessages(ctx context.Context) ApiPostDeleteMessagesRequest {
+	return ApiPostDeleteMessagesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) DeleteMessagesPostExecute(r ApiDeleteMessagesPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostDeleteMessagesExecute(r ApiPostDeleteMessagesRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.DeleteMessagesPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostDeleteMessages")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6278,6 +6564,17 @@ func (a *DefaultAPIService) DeleteMessagesPostExecute(r ApiDeleteMessagesPostReq
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -6301,54 +6598,54 @@ func (a *DefaultAPIService) DeleteMessagesPostExecute(r ApiDeleteMessagesPostReq
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiDeleteMyCommandsPostRequest struct {
+type ApiPostDeleteMyCommandsRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	scope *BotCommandScope
 	languageCode *string
 }
 
-func (r ApiDeleteMyCommandsPostRequest) Scope(scope BotCommandScope) ApiDeleteMyCommandsPostRequest {
+func (r ApiPostDeleteMyCommandsRequest) Scope(scope BotCommandScope) ApiPostDeleteMyCommandsRequest {
 	r.scope = &scope
 	return r
 }
 
 // A two-letter ISO 639-1 language code. If empty, commands will be applied to all users from the given scope, for whose language there are no dedicated commands
-func (r ApiDeleteMyCommandsPostRequest) LanguageCode(languageCode string) ApiDeleteMyCommandsPostRequest {
+func (r ApiPostDeleteMyCommandsRequest) LanguageCode(languageCode string) ApiPostDeleteMyCommandsRequest {
 	r.languageCode = &languageCode
 	return r
 }
 
-func (r ApiDeleteMyCommandsPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.DeleteMyCommandsPostExecute(r)
+func (r ApiPostDeleteMyCommandsRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostDeleteMyCommandsExecute(r)
 }
 
 /*
-DeleteMyCommandsPost Method for DeleteMyCommandsPost
+PostDeleteMyCommands deleteMyCommands
 
 Use this method to delete the list of the bot's commands for the given scope and user language. After deletion, [higher level commands](https://core.telegram.org/bots/api/#determining-list-of-commands) will be shown to affected users. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteMyCommandsPostRequest
+ @return ApiPostDeleteMyCommandsRequest
 */
-func (a *DefaultAPIService) DeleteMyCommandsPost(ctx context.Context) ApiDeleteMyCommandsPostRequest {
-	return ApiDeleteMyCommandsPostRequest{
+func (a *DefaultAPIService) PostDeleteMyCommands(ctx context.Context) ApiPostDeleteMyCommandsRequest {
+	return ApiPostDeleteMyCommandsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) DeleteMyCommandsPostExecute(r ApiDeleteMyCommandsPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostDeleteMyCommandsExecute(r ApiPostDeleteMyCommandsRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.DeleteMyCommandsPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostDeleteMyCommands")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6408,6 +6705,17 @@ func (a *DefaultAPIService) DeleteMyCommandsPostExecute(r ApiDeleteMyCommandsPos
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -6431,48 +6739,48 @@ func (a *DefaultAPIService) DeleteMyCommandsPostExecute(r ApiDeleteMyCommandsPos
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiDeleteStickerFromSetPostRequest struct {
+type ApiPostDeleteStickerFromSetRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	sticker *string
 }
 
 // File identifier of the sticker
-func (r ApiDeleteStickerFromSetPostRequest) Sticker(sticker string) ApiDeleteStickerFromSetPostRequest {
+func (r ApiPostDeleteStickerFromSetRequest) Sticker(sticker string) ApiPostDeleteStickerFromSetRequest {
 	r.sticker = &sticker
 	return r
 }
 
-func (r ApiDeleteStickerFromSetPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.DeleteStickerFromSetPostExecute(r)
+func (r ApiPostDeleteStickerFromSetRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostDeleteStickerFromSetExecute(r)
 }
 
 /*
-DeleteStickerFromSetPost Method for DeleteStickerFromSetPost
+PostDeleteStickerFromSet deleteStickerFromSet
 
 Use this method to delete a sticker from a set created by the bot. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteStickerFromSetPostRequest
+ @return ApiPostDeleteStickerFromSetRequest
 */
-func (a *DefaultAPIService) DeleteStickerFromSetPost(ctx context.Context) ApiDeleteStickerFromSetPostRequest {
-	return ApiDeleteStickerFromSetPostRequest{
+func (a *DefaultAPIService) PostDeleteStickerFromSet(ctx context.Context) ApiPostDeleteStickerFromSetRequest {
+	return ApiPostDeleteStickerFromSetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) DeleteStickerFromSetPostExecute(r ApiDeleteStickerFromSetPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostDeleteStickerFromSetExecute(r ApiPostDeleteStickerFromSetRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.DeleteStickerFromSetPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostDeleteStickerFromSet")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6526,6 +6834,17 @@ func (a *DefaultAPIService) DeleteStickerFromSetPostExecute(r ApiDeleteStickerFr
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -6549,48 +6868,48 @@ func (a *DefaultAPIService) DeleteStickerFromSetPostExecute(r ApiDeleteStickerFr
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiDeleteStickerSetPostRequest struct {
+type ApiPostDeleteStickerSetRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	name *string
 }
 
 // Sticker set name
-func (r ApiDeleteStickerSetPostRequest) Name(name string) ApiDeleteStickerSetPostRequest {
+func (r ApiPostDeleteStickerSetRequest) Name(name string) ApiPostDeleteStickerSetRequest {
 	r.name = &name
 	return r
 }
 
-func (r ApiDeleteStickerSetPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.DeleteStickerSetPostExecute(r)
+func (r ApiPostDeleteStickerSetRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostDeleteStickerSetExecute(r)
 }
 
 /*
-DeleteStickerSetPost Method for DeleteStickerSetPost
+PostDeleteStickerSet deleteStickerSet
 
 Use this method to delete a sticker set that was created by the bot. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteStickerSetPostRequest
+ @return ApiPostDeleteStickerSetRequest
 */
-func (a *DefaultAPIService) DeleteStickerSetPost(ctx context.Context) ApiDeleteStickerSetPostRequest {
-	return ApiDeleteStickerSetPostRequest{
+func (a *DefaultAPIService) PostDeleteStickerSet(ctx context.Context) ApiPostDeleteStickerSetRequest {
+	return ApiPostDeleteStickerSetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) DeleteStickerSetPostExecute(r ApiDeleteStickerSetPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostDeleteStickerSetExecute(r ApiPostDeleteStickerSetRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.DeleteStickerSetPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostDeleteStickerSet")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6644,6 +6963,17 @@ func (a *DefaultAPIService) DeleteStickerSetPostExecute(r ApiDeleteStickerSetPos
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -6667,7 +6997,7 @@ func (a *DefaultAPIService) DeleteStickerSetPostExecute(r ApiDeleteStickerSetPos
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiDeleteStoryPostRequest struct {
+type ApiPostDeleteStoryRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	businessConnectionId *string
@@ -6675,47 +7005,47 @@ type ApiDeleteStoryPostRequest struct {
 }
 
 // Unique identifier of the business connection
-func (r ApiDeleteStoryPostRequest) BusinessConnectionId(businessConnectionId string) ApiDeleteStoryPostRequest {
+func (r ApiPostDeleteStoryRequest) BusinessConnectionId(businessConnectionId string) ApiPostDeleteStoryRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
 // Unique identifier of the story to delete
-func (r ApiDeleteStoryPostRequest) StoryId(storyId int32) ApiDeleteStoryPostRequest {
+func (r ApiPostDeleteStoryRequest) StoryId(storyId int32) ApiPostDeleteStoryRequest {
 	r.storyId = &storyId
 	return r
 }
 
-func (r ApiDeleteStoryPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.DeleteStoryPostExecute(r)
+func (r ApiPostDeleteStoryRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostDeleteStoryExecute(r)
 }
 
 /*
-DeleteStoryPost Method for DeleteStoryPost
+PostDeleteStory deleteStory
 
 Deletes a story previously posted by the bot on behalf of a managed business account. Requires the *can\_manage\_stories* business bot right. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteStoryPostRequest
+ @return ApiPostDeleteStoryRequest
 */
-func (a *DefaultAPIService) DeleteStoryPost(ctx context.Context) ApiDeleteStoryPostRequest {
-	return ApiDeleteStoryPostRequest{
+func (a *DefaultAPIService) PostDeleteStory(ctx context.Context) ApiPostDeleteStoryRequest {
+	return ApiPostDeleteStoryRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) DeleteStoryPostExecute(r ApiDeleteStoryPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostDeleteStoryExecute(r ApiPostDeleteStoryRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.DeleteStoryPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostDeleteStory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6773,6 +7103,17 @@ func (a *DefaultAPIService) DeleteStoryPostExecute(r ApiDeleteStoryPostRequest) 
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -6796,48 +7137,48 @@ func (a *DefaultAPIService) DeleteStoryPostExecute(r ApiDeleteStoryPostRequest) 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiDeleteWebhookPostRequest struct {
+type ApiPostDeleteWebhookRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	dropPendingUpdates *bool
 }
 
 // Pass *True* to drop all pending updates
-func (r ApiDeleteWebhookPostRequest) DropPendingUpdates(dropPendingUpdates bool) ApiDeleteWebhookPostRequest {
+func (r ApiPostDeleteWebhookRequest) DropPendingUpdates(dropPendingUpdates bool) ApiPostDeleteWebhookRequest {
 	r.dropPendingUpdates = &dropPendingUpdates
 	return r
 }
 
-func (r ApiDeleteWebhookPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.DeleteWebhookPostExecute(r)
+func (r ApiPostDeleteWebhookRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostDeleteWebhookExecute(r)
 }
 
 /*
-DeleteWebhookPost Method for DeleteWebhookPost
+PostDeleteWebhook deleteWebhook
 
 Use this method to remove webhook integration if you decide to switch back to [getUpdates](https://core.telegram.org/bots/api/#getupdates). Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteWebhookPostRequest
+ @return ApiPostDeleteWebhookRequest
 */
-func (a *DefaultAPIService) DeleteWebhookPost(ctx context.Context) ApiDeleteWebhookPostRequest {
-	return ApiDeleteWebhookPostRequest{
+func (a *DefaultAPIService) PostDeleteWebhook(ctx context.Context) ApiPostDeleteWebhookRequest {
+	return ApiPostDeleteWebhookRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) DeleteWebhookPostExecute(r ApiDeleteWebhookPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostDeleteWebhookExecute(r ApiPostDeleteWebhookRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.DeleteWebhookPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostDeleteWebhook")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6890,6 +7231,17 @@ func (a *DefaultAPIService) DeleteWebhookPostExecute(r ApiDeleteWebhookPostReque
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -6913,10 +7265,10 @@ func (a *DefaultAPIService) DeleteWebhookPostExecute(r ApiDeleteWebhookPostReque
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiEditChatInviteLinkPostRequest struct {
+type ApiPostEditChatInviteLinkRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
+	chatId *PostSendMessageRequestChatId
 	inviteLink *string
 	name *string
 	expireDate *int32
@@ -6924,71 +7276,71 @@ type ApiEditChatInviteLinkPostRequest struct {
 	createsJoinRequest *bool
 }
 
-func (r ApiEditChatInviteLinkPostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiEditChatInviteLinkPostRequest {
+func (r ApiPostEditChatInviteLinkRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostEditChatInviteLinkRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // The invite link to edit
-func (r ApiEditChatInviteLinkPostRequest) InviteLink(inviteLink string) ApiEditChatInviteLinkPostRequest {
+func (r ApiPostEditChatInviteLinkRequest) InviteLink(inviteLink string) ApiPostEditChatInviteLinkRequest {
 	r.inviteLink = &inviteLink
 	return r
 }
 
 // Invite link name; 0-32 characters
-func (r ApiEditChatInviteLinkPostRequest) Name(name string) ApiEditChatInviteLinkPostRequest {
+func (r ApiPostEditChatInviteLinkRequest) Name(name string) ApiPostEditChatInviteLinkRequest {
 	r.name = &name
 	return r
 }
 
 // Point in time (Unix timestamp) when the link will expire
-func (r ApiEditChatInviteLinkPostRequest) ExpireDate(expireDate int32) ApiEditChatInviteLinkPostRequest {
+func (r ApiPostEditChatInviteLinkRequest) ExpireDate(expireDate int32) ApiPostEditChatInviteLinkRequest {
 	r.expireDate = &expireDate
 	return r
 }
 
 // The maximum number of users that can be members of the chat simultaneously after joining the chat via this invite link; 1-99999
-func (r ApiEditChatInviteLinkPostRequest) MemberLimit(memberLimit int32) ApiEditChatInviteLinkPostRequest {
+func (r ApiPostEditChatInviteLinkRequest) MemberLimit(memberLimit int32) ApiPostEditChatInviteLinkRequest {
 	r.memberLimit = &memberLimit
 	return r
 }
 
 // *True*, if users joining the chat via the link need to be approved by chat administrators. If *True*, *member\\\\_limit* can&#39;t be specified
-func (r ApiEditChatInviteLinkPostRequest) CreatesJoinRequest(createsJoinRequest bool) ApiEditChatInviteLinkPostRequest {
+func (r ApiPostEditChatInviteLinkRequest) CreatesJoinRequest(createsJoinRequest bool) ApiPostEditChatInviteLinkRequest {
 	r.createsJoinRequest = &createsJoinRequest
 	return r
 }
 
-func (r ApiEditChatInviteLinkPostRequest) Execute() (*CreateChatInviteLinkPost200Response, *http.Response, error) {
-	return r.ApiService.EditChatInviteLinkPostExecute(r)
+func (r ApiPostEditChatInviteLinkRequest) Execute() (*PostCreateChatInviteLink200Response, *http.Response, error) {
+	return r.ApiService.PostEditChatInviteLinkExecute(r)
 }
 
 /*
-EditChatInviteLinkPost Method for EditChatInviteLinkPost
+PostEditChatInviteLink editChatInviteLink
 
 Use this method to edit a non-primary invite link created by the bot. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns the edited invite link as a [ChatInviteLink](https://core.telegram.org/bots/api/#chatinvitelink) object.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiEditChatInviteLinkPostRequest
+ @return ApiPostEditChatInviteLinkRequest
 */
-func (a *DefaultAPIService) EditChatInviteLinkPost(ctx context.Context) ApiEditChatInviteLinkPostRequest {
-	return ApiEditChatInviteLinkPostRequest{
+func (a *DefaultAPIService) PostEditChatInviteLink(ctx context.Context) ApiPostEditChatInviteLinkRequest {
+	return ApiPostEditChatInviteLinkRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return CreateChatInviteLinkPost200Response
-func (a *DefaultAPIService) EditChatInviteLinkPostExecute(r ApiEditChatInviteLinkPostRequest) (*CreateChatInviteLinkPost200Response, *http.Response, error) {
+//  @return PostCreateChatInviteLink200Response
+func (a *DefaultAPIService) PostEditChatInviteLinkExecute(r ApiPostEditChatInviteLinkRequest) (*PostCreateChatInviteLink200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *CreateChatInviteLinkPost200Response
+		localVarReturnValue  *PostCreateChatInviteLink200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.EditChatInviteLinkPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostEditChatInviteLink")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7058,6 +7410,17 @@ func (a *DefaultAPIService) EditChatInviteLinkPostExecute(r ApiEditChatInviteLin
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -7081,61 +7444,61 @@ func (a *DefaultAPIService) EditChatInviteLinkPostExecute(r ApiEditChatInviteLin
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiEditChatSubscriptionInviteLinkPostRequest struct {
+type ApiPostEditChatSubscriptionInviteLinkRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
+	chatId *PostSendMessageRequestChatId
 	inviteLink *string
 	name *string
 }
 
-func (r ApiEditChatSubscriptionInviteLinkPostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiEditChatSubscriptionInviteLinkPostRequest {
+func (r ApiPostEditChatSubscriptionInviteLinkRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostEditChatSubscriptionInviteLinkRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // The invite link to edit
-func (r ApiEditChatSubscriptionInviteLinkPostRequest) InviteLink(inviteLink string) ApiEditChatSubscriptionInviteLinkPostRequest {
+func (r ApiPostEditChatSubscriptionInviteLinkRequest) InviteLink(inviteLink string) ApiPostEditChatSubscriptionInviteLinkRequest {
 	r.inviteLink = &inviteLink
 	return r
 }
 
 // Invite link name; 0-32 characters
-func (r ApiEditChatSubscriptionInviteLinkPostRequest) Name(name string) ApiEditChatSubscriptionInviteLinkPostRequest {
+func (r ApiPostEditChatSubscriptionInviteLinkRequest) Name(name string) ApiPostEditChatSubscriptionInviteLinkRequest {
 	r.name = &name
 	return r
 }
 
-func (r ApiEditChatSubscriptionInviteLinkPostRequest) Execute() (*CreateChatInviteLinkPost200Response, *http.Response, error) {
-	return r.ApiService.EditChatSubscriptionInviteLinkPostExecute(r)
+func (r ApiPostEditChatSubscriptionInviteLinkRequest) Execute() (*PostCreateChatInviteLink200Response, *http.Response, error) {
+	return r.ApiService.PostEditChatSubscriptionInviteLinkExecute(r)
 }
 
 /*
-EditChatSubscriptionInviteLinkPost Method for EditChatSubscriptionInviteLinkPost
+PostEditChatSubscriptionInviteLink editChatSubscriptionInviteLink
 
 Use this method to edit a subscription invite link created by the bot. The bot must have the *can\_invite\_users* administrator rights. Returns the edited invite link as a [ChatInviteLink](https://core.telegram.org/bots/api/#chatinvitelink) object.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiEditChatSubscriptionInviteLinkPostRequest
+ @return ApiPostEditChatSubscriptionInviteLinkRequest
 */
-func (a *DefaultAPIService) EditChatSubscriptionInviteLinkPost(ctx context.Context) ApiEditChatSubscriptionInviteLinkPostRequest {
-	return ApiEditChatSubscriptionInviteLinkPostRequest{
+func (a *DefaultAPIService) PostEditChatSubscriptionInviteLink(ctx context.Context) ApiPostEditChatSubscriptionInviteLinkRequest {
+	return ApiPostEditChatSubscriptionInviteLinkRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return CreateChatInviteLinkPost200Response
-func (a *DefaultAPIService) EditChatSubscriptionInviteLinkPostExecute(r ApiEditChatSubscriptionInviteLinkPostRequest) (*CreateChatInviteLinkPost200Response, *http.Response, error) {
+//  @return PostCreateChatInviteLink200Response
+func (a *DefaultAPIService) PostEditChatSubscriptionInviteLinkExecute(r ApiPostEditChatSubscriptionInviteLinkRequest) (*PostCreateChatInviteLink200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *CreateChatInviteLinkPost200Response
+		localVarReturnValue  *PostCreateChatInviteLink200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.EditChatSubscriptionInviteLinkPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostEditChatSubscriptionInviteLink")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7196,6 +7559,17 @@ func (a *DefaultAPIService) EditChatSubscriptionInviteLinkPostExecute(r ApiEditC
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -7219,68 +7593,68 @@ func (a *DefaultAPIService) EditChatSubscriptionInviteLinkPostExecute(r ApiEditC
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiEditForumTopicPostRequest struct {
+type ApiPostEditForumTopicRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *RestrictChatMemberPostRequestChatId
+	chatId *PostRestrictChatMemberRequestChatId
 	messageThreadId *int32
 	name *string
 	iconCustomEmojiId *string
 }
 
-func (r ApiEditForumTopicPostRequest) ChatId(chatId RestrictChatMemberPostRequestChatId) ApiEditForumTopicPostRequest {
+func (r ApiPostEditForumTopicRequest) ChatId(chatId PostRestrictChatMemberRequestChatId) ApiPostEditForumTopicRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Unique identifier for the target message thread of the forum topic
-func (r ApiEditForumTopicPostRequest) MessageThreadId(messageThreadId int32) ApiEditForumTopicPostRequest {
+func (r ApiPostEditForumTopicRequest) MessageThreadId(messageThreadId int32) ApiPostEditForumTopicRequest {
 	r.messageThreadId = &messageThreadId
 	return r
 }
 
 // New topic name, 0-128 characters. If not specified or empty, the current name of the topic will be kept
-func (r ApiEditForumTopicPostRequest) Name(name string) ApiEditForumTopicPostRequest {
+func (r ApiPostEditForumTopicRequest) Name(name string) ApiPostEditForumTopicRequest {
 	r.name = &name
 	return r
 }
 
 // New unique identifier of the custom emoji shown as the topic icon. Use [getForumTopicIconStickers](https://core.telegram.org/bots/api/#getforumtopiciconstickers) to get all allowed custom emoji identifiers. Pass an empty string to remove the icon. If not specified, the current icon will be kept
-func (r ApiEditForumTopicPostRequest) IconCustomEmojiId(iconCustomEmojiId string) ApiEditForumTopicPostRequest {
+func (r ApiPostEditForumTopicRequest) IconCustomEmojiId(iconCustomEmojiId string) ApiPostEditForumTopicRequest {
 	r.iconCustomEmojiId = &iconCustomEmojiId
 	return r
 }
 
-func (r ApiEditForumTopicPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.EditForumTopicPostExecute(r)
+func (r ApiPostEditForumTopicRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostEditForumTopicExecute(r)
 }
 
 /*
-EditForumTopicPost Method for EditForumTopicPost
+PostEditForumTopic editForumTopic
 
 Use this method to edit name and icon of a topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the *can\_manage\_topics* administrator rights, unless it is the creator of the topic. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiEditForumTopicPostRequest
+ @return ApiPostEditForumTopicRequest
 */
-func (a *DefaultAPIService) EditForumTopicPost(ctx context.Context) ApiEditForumTopicPostRequest {
-	return ApiEditForumTopicPostRequest{
+func (a *DefaultAPIService) PostEditForumTopic(ctx context.Context) ApiPostEditForumTopicRequest {
+	return ApiPostEditForumTopicRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) EditForumTopicPostExecute(r ApiEditForumTopicPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostEditForumTopicExecute(r ApiPostEditForumTopicRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.EditForumTopicPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostEditForumTopic")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7344,6 +7718,17 @@ func (a *DefaultAPIService) EditForumTopicPostExecute(r ApiEditForumTopicPostReq
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -7367,54 +7752,54 @@ func (a *DefaultAPIService) EditForumTopicPostExecute(r ApiEditForumTopicPostReq
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiEditGeneralForumTopicPostRequest struct {
+type ApiPostEditGeneralForumTopicRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *RestrictChatMemberPostRequestChatId
+	chatId *PostRestrictChatMemberRequestChatId
 	name *string
 }
 
-func (r ApiEditGeneralForumTopicPostRequest) ChatId(chatId RestrictChatMemberPostRequestChatId) ApiEditGeneralForumTopicPostRequest {
+func (r ApiPostEditGeneralForumTopicRequest) ChatId(chatId PostRestrictChatMemberRequestChatId) ApiPostEditGeneralForumTopicRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // New topic name, 1-128 characters
-func (r ApiEditGeneralForumTopicPostRequest) Name(name string) ApiEditGeneralForumTopicPostRequest {
+func (r ApiPostEditGeneralForumTopicRequest) Name(name string) ApiPostEditGeneralForumTopicRequest {
 	r.name = &name
 	return r
 }
 
-func (r ApiEditGeneralForumTopicPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.EditGeneralForumTopicPostExecute(r)
+func (r ApiPostEditGeneralForumTopicRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostEditGeneralForumTopicExecute(r)
 }
 
 /*
-EditGeneralForumTopicPost Method for EditGeneralForumTopicPost
+PostEditGeneralForumTopic editGeneralForumTopic
 
 Use this method to edit the name of the 'General' topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the *can\_manage\_topics* administrator rights. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiEditGeneralForumTopicPostRequest
+ @return ApiPostEditGeneralForumTopicRequest
 */
-func (a *DefaultAPIService) EditGeneralForumTopicPost(ctx context.Context) ApiEditGeneralForumTopicPostRequest {
-	return ApiEditGeneralForumTopicPostRequest{
+func (a *DefaultAPIService) PostEditGeneralForumTopic(ctx context.Context) ApiPostEditGeneralForumTopicRequest {
+	return ApiPostEditGeneralForumTopicRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) EditGeneralForumTopicPostExecute(r ApiEditGeneralForumTopicPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostEditGeneralForumTopicExecute(r ApiPostEditGeneralForumTopicRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.EditGeneralForumTopicPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostEditGeneralForumTopic")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7478,6 +7863,17 @@ func (a *DefaultAPIService) EditGeneralForumTopicPostExecute(r ApiEditGeneralFor
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -7501,11 +7897,11 @@ func (a *DefaultAPIService) EditGeneralForumTopicPostExecute(r ApiEditGeneralFor
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiEditMessageCaptionPostRequest struct {
+type ApiPostEditMessageCaptionRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	businessConnectionId *string
-	chatId *EditMessageTextPostRequestChatId
+	chatId *PostEditMessageTextRequestChatId
 	messageId *int32
 	inlineMessageId *string
 	caption *string
@@ -7516,87 +7912,87 @@ type ApiEditMessageCaptionPostRequest struct {
 }
 
 // Unique identifier of the business connection on behalf of which the message to be edited was sent
-func (r ApiEditMessageCaptionPostRequest) BusinessConnectionId(businessConnectionId string) ApiEditMessageCaptionPostRequest {
+func (r ApiPostEditMessageCaptionRequest) BusinessConnectionId(businessConnectionId string) ApiPostEditMessageCaptionRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
-func (r ApiEditMessageCaptionPostRequest) ChatId(chatId EditMessageTextPostRequestChatId) ApiEditMessageCaptionPostRequest {
+func (r ApiPostEditMessageCaptionRequest) ChatId(chatId PostEditMessageTextRequestChatId) ApiPostEditMessageCaptionRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Required if *inline\\\\_message\\\\_id* is not specified. Identifier of the message to edit
-func (r ApiEditMessageCaptionPostRequest) MessageId(messageId int32) ApiEditMessageCaptionPostRequest {
+func (r ApiPostEditMessageCaptionRequest) MessageId(messageId int32) ApiPostEditMessageCaptionRequest {
 	r.messageId = &messageId
 	return r
 }
 
 // Required if *chat\\\\_id* and *message\\\\_id* are not specified. Identifier of the inline message
-func (r ApiEditMessageCaptionPostRequest) InlineMessageId(inlineMessageId string) ApiEditMessageCaptionPostRequest {
+func (r ApiPostEditMessageCaptionRequest) InlineMessageId(inlineMessageId string) ApiPostEditMessageCaptionRequest {
 	r.inlineMessageId = &inlineMessageId
 	return r
 }
 
 // New caption of the message, 0-1024 characters after entities parsing
-func (r ApiEditMessageCaptionPostRequest) Caption(caption string) ApiEditMessageCaptionPostRequest {
+func (r ApiPostEditMessageCaptionRequest) Caption(caption string) ApiPostEditMessageCaptionRequest {
 	r.caption = &caption
 	return r
 }
 
 // Mode for parsing entities in the message caption. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details.
-func (r ApiEditMessageCaptionPostRequest) ParseMode(parseMode string) ApiEditMessageCaptionPostRequest {
+func (r ApiPostEditMessageCaptionRequest) ParseMode(parseMode string) ApiPostEditMessageCaptionRequest {
 	r.parseMode = &parseMode
 	return r
 }
 
 // A JSON-serialized list of special entities that appear in the caption, which can be specified instead of *parse\\\\_mode*
-func (r ApiEditMessageCaptionPostRequest) CaptionEntities(captionEntities []MessageEntity) ApiEditMessageCaptionPostRequest {
+func (r ApiPostEditMessageCaptionRequest) CaptionEntities(captionEntities []MessageEntity) ApiPostEditMessageCaptionRequest {
 	r.captionEntities = &captionEntities
 	return r
 }
 
 // Pass *True*, if the caption must be shown above the message media. Supported only for animation, photo and video messages.
-func (r ApiEditMessageCaptionPostRequest) ShowCaptionAboveMedia(showCaptionAboveMedia bool) ApiEditMessageCaptionPostRequest {
+func (r ApiPostEditMessageCaptionRequest) ShowCaptionAboveMedia(showCaptionAboveMedia bool) ApiPostEditMessageCaptionRequest {
 	r.showCaptionAboveMedia = &showCaptionAboveMedia
 	return r
 }
 
-func (r ApiEditMessageCaptionPostRequest) ReplyMarkup(replyMarkup InlineKeyboardMarkup) ApiEditMessageCaptionPostRequest {
+func (r ApiPostEditMessageCaptionRequest) ReplyMarkup(replyMarkup InlineKeyboardMarkup) ApiPostEditMessageCaptionRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiEditMessageCaptionPostRequest) Execute() (*EditMessageTextPost200Response, *http.Response, error) {
-	return r.ApiService.EditMessageCaptionPostExecute(r)
+func (r ApiPostEditMessageCaptionRequest) Execute() (*PostEditMessageText200Response, *http.Response, error) {
+	return r.ApiService.PostEditMessageCaptionExecute(r)
 }
 
 /*
-EditMessageCaptionPost Method for EditMessageCaptionPost
+PostEditMessageCaption editMessageCaption
 
 Use this method to edit captions of messages. On success, if the edited message is not an inline message, the edited [Message](https://core.telegram.org/bots/api/#message) is returned, otherwise *True* is returned. Note that business messages that were not sent by the bot and do not contain an inline keyboard can only be edited within **48 hours** from the time they were sent.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiEditMessageCaptionPostRequest
+ @return ApiPostEditMessageCaptionRequest
 */
-func (a *DefaultAPIService) EditMessageCaptionPost(ctx context.Context) ApiEditMessageCaptionPostRequest {
-	return ApiEditMessageCaptionPostRequest{
+func (a *DefaultAPIService) PostEditMessageCaption(ctx context.Context) ApiPostEditMessageCaptionRequest {
+	return ApiPostEditMessageCaptionRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return EditMessageTextPost200Response
-func (a *DefaultAPIService) EditMessageCaptionPostExecute(r ApiEditMessageCaptionPostRequest) (*EditMessageTextPost200Response, *http.Response, error) {
+//  @return PostEditMessageText200Response
+func (a *DefaultAPIService) PostEditMessageCaptionExecute(r ApiPostEditMessageCaptionRequest) (*PostEditMessageText200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *EditMessageTextPost200Response
+		localVarReturnValue  *PostEditMessageText200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.EditMessageCaptionPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostEditMessageCaption")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7681,6 +8077,17 @@ func (a *DefaultAPIService) EditMessageCaptionPostExecute(r ApiEditMessageCaptio
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -7704,13 +8111,13 @@ func (a *DefaultAPIService) EditMessageCaptionPostExecute(r ApiEditMessageCaptio
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiEditMessageLiveLocationPostRequest struct {
+type ApiPostEditMessageLiveLocationRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	latitude *float32
 	longitude *float32
 	businessConnectionId *string
-	chatId *EditMessageTextPostRequestChatId
+	chatId *PostEditMessageTextRequestChatId
 	messageId *int32
 	inlineMessageId *string
 	livePeriod *int32
@@ -7721,99 +8128,99 @@ type ApiEditMessageLiveLocationPostRequest struct {
 }
 
 // Latitude of new location
-func (r ApiEditMessageLiveLocationPostRequest) Latitude(latitude float32) ApiEditMessageLiveLocationPostRequest {
+func (r ApiPostEditMessageLiveLocationRequest) Latitude(latitude float32) ApiPostEditMessageLiveLocationRequest {
 	r.latitude = &latitude
 	return r
 }
 
 // Longitude of new location
-func (r ApiEditMessageLiveLocationPostRequest) Longitude(longitude float32) ApiEditMessageLiveLocationPostRequest {
+func (r ApiPostEditMessageLiveLocationRequest) Longitude(longitude float32) ApiPostEditMessageLiveLocationRequest {
 	r.longitude = &longitude
 	return r
 }
 
 // Unique identifier of the business connection on behalf of which the message to be edited was sent
-func (r ApiEditMessageLiveLocationPostRequest) BusinessConnectionId(businessConnectionId string) ApiEditMessageLiveLocationPostRequest {
+func (r ApiPostEditMessageLiveLocationRequest) BusinessConnectionId(businessConnectionId string) ApiPostEditMessageLiveLocationRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
-func (r ApiEditMessageLiveLocationPostRequest) ChatId(chatId EditMessageTextPostRequestChatId) ApiEditMessageLiveLocationPostRequest {
+func (r ApiPostEditMessageLiveLocationRequest) ChatId(chatId PostEditMessageTextRequestChatId) ApiPostEditMessageLiveLocationRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Required if *inline\\\\_message\\\\_id* is not specified. Identifier of the message to edit
-func (r ApiEditMessageLiveLocationPostRequest) MessageId(messageId int32) ApiEditMessageLiveLocationPostRequest {
+func (r ApiPostEditMessageLiveLocationRequest) MessageId(messageId int32) ApiPostEditMessageLiveLocationRequest {
 	r.messageId = &messageId
 	return r
 }
 
 // Required if *chat\\\\_id* and *message\\\\_id* are not specified. Identifier of the inline message
-func (r ApiEditMessageLiveLocationPostRequest) InlineMessageId(inlineMessageId string) ApiEditMessageLiveLocationPostRequest {
+func (r ApiPostEditMessageLiveLocationRequest) InlineMessageId(inlineMessageId string) ApiPostEditMessageLiveLocationRequest {
 	r.inlineMessageId = &inlineMessageId
 	return r
 }
 
 // New period in seconds during which the location can be updated, starting from the message send date. If 0x7FFFFFFF is specified, then the location can be updated forever. Otherwise, the new value must not exceed the current *live\\\\_period* by more than a day, and the live location expiration date must remain within the next 90 days. If not specified, then *live\\\\_period* remains unchanged
-func (r ApiEditMessageLiveLocationPostRequest) LivePeriod(livePeriod int32) ApiEditMessageLiveLocationPostRequest {
+func (r ApiPostEditMessageLiveLocationRequest) LivePeriod(livePeriod int32) ApiPostEditMessageLiveLocationRequest {
 	r.livePeriod = &livePeriod
 	return r
 }
 
 // The radius of uncertainty for the location, measured in meters; 0-1500
-func (r ApiEditMessageLiveLocationPostRequest) HorizontalAccuracy(horizontalAccuracy float32) ApiEditMessageLiveLocationPostRequest {
+func (r ApiPostEditMessageLiveLocationRequest) HorizontalAccuracy(horizontalAccuracy float32) ApiPostEditMessageLiveLocationRequest {
 	r.horizontalAccuracy = &horizontalAccuracy
 	return r
 }
 
 // Direction in which the user is moving, in degrees. Must be between 1 and 360 if specified.
-func (r ApiEditMessageLiveLocationPostRequest) Heading(heading int32) ApiEditMessageLiveLocationPostRequest {
+func (r ApiPostEditMessageLiveLocationRequest) Heading(heading int32) ApiPostEditMessageLiveLocationRequest {
 	r.heading = &heading
 	return r
 }
 
 // The maximum distance for proximity alerts about approaching another chat member, in meters. Must be between 1 and 100000 if specified.
-func (r ApiEditMessageLiveLocationPostRequest) ProximityAlertRadius(proximityAlertRadius int32) ApiEditMessageLiveLocationPostRequest {
+func (r ApiPostEditMessageLiveLocationRequest) ProximityAlertRadius(proximityAlertRadius int32) ApiPostEditMessageLiveLocationRequest {
 	r.proximityAlertRadius = &proximityAlertRadius
 	return r
 }
 
-func (r ApiEditMessageLiveLocationPostRequest) ReplyMarkup(replyMarkup InlineKeyboardMarkup) ApiEditMessageLiveLocationPostRequest {
+func (r ApiPostEditMessageLiveLocationRequest) ReplyMarkup(replyMarkup InlineKeyboardMarkup) ApiPostEditMessageLiveLocationRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiEditMessageLiveLocationPostRequest) Execute() (*EditMessageTextPost200Response, *http.Response, error) {
-	return r.ApiService.EditMessageLiveLocationPostExecute(r)
+func (r ApiPostEditMessageLiveLocationRequest) Execute() (*PostEditMessageText200Response, *http.Response, error) {
+	return r.ApiService.PostEditMessageLiveLocationExecute(r)
 }
 
 /*
-EditMessageLiveLocationPost Method for EditMessageLiveLocationPost
+PostEditMessageLiveLocation editMessageLiveLocation
 
 Use this method to edit live location messages. A location can be edited until its *live\_period* expires or editing is explicitly disabled by a call to [stopMessageLiveLocation](https://core.telegram.org/bots/api/#stopmessagelivelocation). On success, if the edited message is not an inline message, the edited [Message](https://core.telegram.org/bots/api/#message) is returned, otherwise *True* is returned.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiEditMessageLiveLocationPostRequest
+ @return ApiPostEditMessageLiveLocationRequest
 */
-func (a *DefaultAPIService) EditMessageLiveLocationPost(ctx context.Context) ApiEditMessageLiveLocationPostRequest {
-	return ApiEditMessageLiveLocationPostRequest{
+func (a *DefaultAPIService) PostEditMessageLiveLocation(ctx context.Context) ApiPostEditMessageLiveLocationRequest {
+	return ApiPostEditMessageLiveLocationRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return EditMessageTextPost200Response
-func (a *DefaultAPIService) EditMessageLiveLocationPostExecute(r ApiEditMessageLiveLocationPostRequest) (*EditMessageTextPost200Response, *http.Response, error) {
+//  @return PostEditMessageText200Response
+func (a *DefaultAPIService) PostEditMessageLiveLocationExecute(r ApiPostEditMessageLiveLocationRequest) (*PostEditMessageText200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *EditMessageTextPost200Response
+		localVarReturnValue  *PostEditMessageText200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.EditMessageLiveLocationPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostEditMessageLiveLocation")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7906,6 +8313,17 @@ func (a *DefaultAPIService) EditMessageLiveLocationPostExecute(r ApiEditMessageL
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -7929,80 +8347,80 @@ func (a *DefaultAPIService) EditMessageLiveLocationPostExecute(r ApiEditMessageL
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiEditMessageMediaPostRequest struct {
+type ApiPostEditMessageMediaRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	media *InputMedia
 	businessConnectionId *string
-	chatId *EditMessageTextPostRequestChatId
+	chatId *PostEditMessageTextRequestChatId
 	messageId *int32
 	inlineMessageId *string
 	replyMarkup *InlineKeyboardMarkup
 }
 
-func (r ApiEditMessageMediaPostRequest) Media(media InputMedia) ApiEditMessageMediaPostRequest {
+func (r ApiPostEditMessageMediaRequest) Media(media InputMedia) ApiPostEditMessageMediaRequest {
 	r.media = &media
 	return r
 }
 
 // Unique identifier of the business connection on behalf of which the message to be edited was sent
-func (r ApiEditMessageMediaPostRequest) BusinessConnectionId(businessConnectionId string) ApiEditMessageMediaPostRequest {
+func (r ApiPostEditMessageMediaRequest) BusinessConnectionId(businessConnectionId string) ApiPostEditMessageMediaRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
-func (r ApiEditMessageMediaPostRequest) ChatId(chatId EditMessageTextPostRequestChatId) ApiEditMessageMediaPostRequest {
+func (r ApiPostEditMessageMediaRequest) ChatId(chatId PostEditMessageTextRequestChatId) ApiPostEditMessageMediaRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Required if *inline\\\\_message\\\\_id* is not specified. Identifier of the message to edit
-func (r ApiEditMessageMediaPostRequest) MessageId(messageId int32) ApiEditMessageMediaPostRequest {
+func (r ApiPostEditMessageMediaRequest) MessageId(messageId int32) ApiPostEditMessageMediaRequest {
 	r.messageId = &messageId
 	return r
 }
 
 // Required if *chat\\\\_id* and *message\\\\_id* are not specified. Identifier of the inline message
-func (r ApiEditMessageMediaPostRequest) InlineMessageId(inlineMessageId string) ApiEditMessageMediaPostRequest {
+func (r ApiPostEditMessageMediaRequest) InlineMessageId(inlineMessageId string) ApiPostEditMessageMediaRequest {
 	r.inlineMessageId = &inlineMessageId
 	return r
 }
 
-func (r ApiEditMessageMediaPostRequest) ReplyMarkup(replyMarkup InlineKeyboardMarkup) ApiEditMessageMediaPostRequest {
+func (r ApiPostEditMessageMediaRequest) ReplyMarkup(replyMarkup InlineKeyboardMarkup) ApiPostEditMessageMediaRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiEditMessageMediaPostRequest) Execute() (*EditMessageTextPost200Response, *http.Response, error) {
-	return r.ApiService.EditMessageMediaPostExecute(r)
+func (r ApiPostEditMessageMediaRequest) Execute() (*PostEditMessageText200Response, *http.Response, error) {
+	return r.ApiService.PostEditMessageMediaExecute(r)
 }
 
 /*
-EditMessageMediaPost Method for EditMessageMediaPost
+PostEditMessageMedia editMessageMedia
 
 Use this method to edit animation, audio, document, photo, or video messages, or to add media to text messages. If a message is part of a message album, then it can be edited only to an audio for audio albums, only to a document for document albums and to a photo or a video otherwise. When an inline message is edited, a new file can't be uploaded; use a previously uploaded file via its file\_id or specify a URL. On success, if the edited message is not an inline message, the edited [Message](https://core.telegram.org/bots/api/#message) is returned, otherwise *True* is returned. Note that business messages that were not sent by the bot and do not contain an inline keyboard can only be edited within **48 hours** from the time they were sent.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiEditMessageMediaPostRequest
+ @return ApiPostEditMessageMediaRequest
 */
-func (a *DefaultAPIService) EditMessageMediaPost(ctx context.Context) ApiEditMessageMediaPostRequest {
-	return ApiEditMessageMediaPostRequest{
+func (a *DefaultAPIService) PostEditMessageMedia(ctx context.Context) ApiPostEditMessageMediaRequest {
+	return ApiPostEditMessageMediaRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return EditMessageTextPost200Response
-func (a *DefaultAPIService) EditMessageMediaPostExecute(r ApiEditMessageMediaPostRequest) (*EditMessageTextPost200Response, *http.Response, error) {
+//  @return PostEditMessageText200Response
+func (a *DefaultAPIService) PostEditMessageMediaExecute(r ApiPostEditMessageMediaRequest) (*PostEditMessageText200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *EditMessageTextPost200Response
+		localVarReturnValue  *PostEditMessageText200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.EditMessageMediaPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostEditMessageMedia")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8079,6 +8497,17 @@ func (a *DefaultAPIService) EditMessageMediaPostExecute(r ApiEditMessageMediaPos
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -8102,74 +8531,74 @@ func (a *DefaultAPIService) EditMessageMediaPostExecute(r ApiEditMessageMediaPos
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiEditMessageReplyMarkupPostRequest struct {
+type ApiPostEditMessageReplyMarkupRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	businessConnectionId *string
-	chatId *EditMessageTextPostRequestChatId
+	chatId *PostEditMessageTextRequestChatId
 	messageId *int32
 	inlineMessageId *string
 	replyMarkup *InlineKeyboardMarkup
 }
 
 // Unique identifier of the business connection on behalf of which the message to be edited was sent
-func (r ApiEditMessageReplyMarkupPostRequest) BusinessConnectionId(businessConnectionId string) ApiEditMessageReplyMarkupPostRequest {
+func (r ApiPostEditMessageReplyMarkupRequest) BusinessConnectionId(businessConnectionId string) ApiPostEditMessageReplyMarkupRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
-func (r ApiEditMessageReplyMarkupPostRequest) ChatId(chatId EditMessageTextPostRequestChatId) ApiEditMessageReplyMarkupPostRequest {
+func (r ApiPostEditMessageReplyMarkupRequest) ChatId(chatId PostEditMessageTextRequestChatId) ApiPostEditMessageReplyMarkupRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Required if *inline\\\\_message\\\\_id* is not specified. Identifier of the message to edit
-func (r ApiEditMessageReplyMarkupPostRequest) MessageId(messageId int32) ApiEditMessageReplyMarkupPostRequest {
+func (r ApiPostEditMessageReplyMarkupRequest) MessageId(messageId int32) ApiPostEditMessageReplyMarkupRequest {
 	r.messageId = &messageId
 	return r
 }
 
 // Required if *chat\\\\_id* and *message\\\\_id* are not specified. Identifier of the inline message
-func (r ApiEditMessageReplyMarkupPostRequest) InlineMessageId(inlineMessageId string) ApiEditMessageReplyMarkupPostRequest {
+func (r ApiPostEditMessageReplyMarkupRequest) InlineMessageId(inlineMessageId string) ApiPostEditMessageReplyMarkupRequest {
 	r.inlineMessageId = &inlineMessageId
 	return r
 }
 
-func (r ApiEditMessageReplyMarkupPostRequest) ReplyMarkup(replyMarkup InlineKeyboardMarkup) ApiEditMessageReplyMarkupPostRequest {
+func (r ApiPostEditMessageReplyMarkupRequest) ReplyMarkup(replyMarkup InlineKeyboardMarkup) ApiPostEditMessageReplyMarkupRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiEditMessageReplyMarkupPostRequest) Execute() (*EditMessageTextPost200Response, *http.Response, error) {
-	return r.ApiService.EditMessageReplyMarkupPostExecute(r)
+func (r ApiPostEditMessageReplyMarkupRequest) Execute() (*PostEditMessageText200Response, *http.Response, error) {
+	return r.ApiService.PostEditMessageReplyMarkupExecute(r)
 }
 
 /*
-EditMessageReplyMarkupPost Method for EditMessageReplyMarkupPost
+PostEditMessageReplyMarkup editMessageReplyMarkup
 
 Use this method to edit only the reply markup of messages. On success, if the edited message is not an inline message, the edited [Message](https://core.telegram.org/bots/api/#message) is returned, otherwise *True* is returned. Note that business messages that were not sent by the bot and do not contain an inline keyboard can only be edited within **48 hours** from the time they were sent.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiEditMessageReplyMarkupPostRequest
+ @return ApiPostEditMessageReplyMarkupRequest
 */
-func (a *DefaultAPIService) EditMessageReplyMarkupPost(ctx context.Context) ApiEditMessageReplyMarkupPostRequest {
-	return ApiEditMessageReplyMarkupPostRequest{
+func (a *DefaultAPIService) PostEditMessageReplyMarkup(ctx context.Context) ApiPostEditMessageReplyMarkupRequest {
+	return ApiPostEditMessageReplyMarkupRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return EditMessageTextPost200Response
-func (a *DefaultAPIService) EditMessageReplyMarkupPostExecute(r ApiEditMessageReplyMarkupPostRequest) (*EditMessageTextPost200Response, *http.Response, error) {
+//  @return PostEditMessageText200Response
+func (a *DefaultAPIService) PostEditMessageReplyMarkupExecute(r ApiPostEditMessageReplyMarkupRequest) (*PostEditMessageText200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *EditMessageTextPost200Response
+		localVarReturnValue  *PostEditMessageText200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.EditMessageReplyMarkupPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostEditMessageReplyMarkup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8242,6 +8671,17 @@ func (a *DefaultAPIService) EditMessageReplyMarkupPostExecute(r ApiEditMessageRe
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -8265,12 +8705,12 @@ func (a *DefaultAPIService) EditMessageReplyMarkupPostExecute(r ApiEditMessageRe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiEditMessageTextPostRequest struct {
+type ApiPostEditMessageTextRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	text *string
 	businessConnectionId *string
-	chatId *EditMessageTextPostRequestChatId
+	chatId *PostEditMessageTextRequestChatId
 	messageId *int32
 	inlineMessageId *string
 	parseMode *string
@@ -8280,86 +8720,86 @@ type ApiEditMessageTextPostRequest struct {
 }
 
 // New text of the message, 1-4096 characters after entities parsing
-func (r ApiEditMessageTextPostRequest) Text(text string) ApiEditMessageTextPostRequest {
+func (r ApiPostEditMessageTextRequest) Text(text string) ApiPostEditMessageTextRequest {
 	r.text = &text
 	return r
 }
 
 // Unique identifier of the business connection on behalf of which the message to be edited was sent
-func (r ApiEditMessageTextPostRequest) BusinessConnectionId(businessConnectionId string) ApiEditMessageTextPostRequest {
+func (r ApiPostEditMessageTextRequest) BusinessConnectionId(businessConnectionId string) ApiPostEditMessageTextRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
-func (r ApiEditMessageTextPostRequest) ChatId(chatId EditMessageTextPostRequestChatId) ApiEditMessageTextPostRequest {
+func (r ApiPostEditMessageTextRequest) ChatId(chatId PostEditMessageTextRequestChatId) ApiPostEditMessageTextRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Required if *inline\\\\_message\\\\_id* is not specified. Identifier of the message to edit
-func (r ApiEditMessageTextPostRequest) MessageId(messageId int32) ApiEditMessageTextPostRequest {
+func (r ApiPostEditMessageTextRequest) MessageId(messageId int32) ApiPostEditMessageTextRequest {
 	r.messageId = &messageId
 	return r
 }
 
 // Required if *chat\\\\_id* and *message\\\\_id* are not specified. Identifier of the inline message
-func (r ApiEditMessageTextPostRequest) InlineMessageId(inlineMessageId string) ApiEditMessageTextPostRequest {
+func (r ApiPostEditMessageTextRequest) InlineMessageId(inlineMessageId string) ApiPostEditMessageTextRequest {
 	r.inlineMessageId = &inlineMessageId
 	return r
 }
 
 // Mode for parsing entities in the message text. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details.
-func (r ApiEditMessageTextPostRequest) ParseMode(parseMode string) ApiEditMessageTextPostRequest {
+func (r ApiPostEditMessageTextRequest) ParseMode(parseMode string) ApiPostEditMessageTextRequest {
 	r.parseMode = &parseMode
 	return r
 }
 
 // A JSON-serialized list of special entities that appear in message text, which can be specified instead of *parse\\\\_mode*
-func (r ApiEditMessageTextPostRequest) Entities(entities []MessageEntity) ApiEditMessageTextPostRequest {
+func (r ApiPostEditMessageTextRequest) Entities(entities []MessageEntity) ApiPostEditMessageTextRequest {
 	r.entities = &entities
 	return r
 }
 
-func (r ApiEditMessageTextPostRequest) LinkPreviewOptions(linkPreviewOptions LinkPreviewOptions) ApiEditMessageTextPostRequest {
+func (r ApiPostEditMessageTextRequest) LinkPreviewOptions(linkPreviewOptions LinkPreviewOptions) ApiPostEditMessageTextRequest {
 	r.linkPreviewOptions = &linkPreviewOptions
 	return r
 }
 
-func (r ApiEditMessageTextPostRequest) ReplyMarkup(replyMarkup InlineKeyboardMarkup) ApiEditMessageTextPostRequest {
+func (r ApiPostEditMessageTextRequest) ReplyMarkup(replyMarkup InlineKeyboardMarkup) ApiPostEditMessageTextRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiEditMessageTextPostRequest) Execute() (*EditMessageTextPost200Response, *http.Response, error) {
-	return r.ApiService.EditMessageTextPostExecute(r)
+func (r ApiPostEditMessageTextRequest) Execute() (*PostEditMessageText200Response, *http.Response, error) {
+	return r.ApiService.PostEditMessageTextExecute(r)
 }
 
 /*
-EditMessageTextPost Method for EditMessageTextPost
+PostEditMessageText editMessageText
 
 Use this method to edit text and [game](https://core.telegram.org/bots/api/#games) messages. On success, if the edited message is not an inline message, the edited [Message](https://core.telegram.org/bots/api/#message) is returned, otherwise *True* is returned. Note that business messages that were not sent by the bot and do not contain an inline keyboard can only be edited within **48 hours** from the time they were sent.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiEditMessageTextPostRequest
+ @return ApiPostEditMessageTextRequest
 */
-func (a *DefaultAPIService) EditMessageTextPost(ctx context.Context) ApiEditMessageTextPostRequest {
-	return ApiEditMessageTextPostRequest{
+func (a *DefaultAPIService) PostEditMessageText(ctx context.Context) ApiPostEditMessageTextRequest {
+	return ApiPostEditMessageTextRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return EditMessageTextPost200Response
-func (a *DefaultAPIService) EditMessageTextPostExecute(r ApiEditMessageTextPostRequest) (*EditMessageTextPost200Response, *http.Response, error) {
+//  @return PostEditMessageText200Response
+func (a *DefaultAPIService) PostEditMessageTextExecute(r ApiPostEditMessageTextRequest) (*PostEditMessageText200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *EditMessageTextPost200Response
+		localVarReturnValue  *PostEditMessageText200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.EditMessageTextPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostEditMessageText")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8455,6 +8895,17 @@ func (a *DefaultAPIService) EditMessageTextPostExecute(r ApiEditMessageTextPostR
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -8478,7 +8929,7 @@ func (a *DefaultAPIService) EditMessageTextPostExecute(r ApiEditMessageTextPostR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiEditStoryPostRequest struct {
+type ApiPostEditStoryRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	businessConnectionId *string
@@ -8491,76 +8942,76 @@ type ApiEditStoryPostRequest struct {
 }
 
 // Unique identifier of the business connection
-func (r ApiEditStoryPostRequest) BusinessConnectionId(businessConnectionId string) ApiEditStoryPostRequest {
+func (r ApiPostEditStoryRequest) BusinessConnectionId(businessConnectionId string) ApiPostEditStoryRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
 // Unique identifier of the story to edit
-func (r ApiEditStoryPostRequest) StoryId(storyId int32) ApiEditStoryPostRequest {
+func (r ApiPostEditStoryRequest) StoryId(storyId int32) ApiPostEditStoryRequest {
 	r.storyId = &storyId
 	return r
 }
 
-func (r ApiEditStoryPostRequest) Content(content InputStoryContent) ApiEditStoryPostRequest {
+func (r ApiPostEditStoryRequest) Content(content InputStoryContent) ApiPostEditStoryRequest {
 	r.content = &content
 	return r
 }
 
 // Caption of the story, 0-2048 characters after entities parsing
-func (r ApiEditStoryPostRequest) Caption(caption string) ApiEditStoryPostRequest {
+func (r ApiPostEditStoryRequest) Caption(caption string) ApiPostEditStoryRequest {
 	r.caption = &caption
 	return r
 }
 
 // Mode for parsing entities in the story caption. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details.
-func (r ApiEditStoryPostRequest) ParseMode(parseMode string) ApiEditStoryPostRequest {
+func (r ApiPostEditStoryRequest) ParseMode(parseMode string) ApiPostEditStoryRequest {
 	r.parseMode = &parseMode
 	return r
 }
 
 // A JSON-serialized list of special entities that appear in the caption, which can be specified instead of *parse\\\\_mode*
-func (r ApiEditStoryPostRequest) CaptionEntities(captionEntities []MessageEntity) ApiEditStoryPostRequest {
+func (r ApiPostEditStoryRequest) CaptionEntities(captionEntities []MessageEntity) ApiPostEditStoryRequest {
 	r.captionEntities = &captionEntities
 	return r
 }
 
 // A JSON-serialized list of clickable areas to be shown on the story
-func (r ApiEditStoryPostRequest) Areas(areas []StoryArea) ApiEditStoryPostRequest {
+func (r ApiPostEditStoryRequest) Areas(areas []StoryArea) ApiPostEditStoryRequest {
 	r.areas = &areas
 	return r
 }
 
-func (r ApiEditStoryPostRequest) Execute() (*PostStoryPost200Response, *http.Response, error) {
-	return r.ApiService.EditStoryPostExecute(r)
+func (r ApiPostEditStoryRequest) Execute() (*PostPostStory200Response, *http.Response, error) {
+	return r.ApiService.PostEditStoryExecute(r)
 }
 
 /*
-EditStoryPost Method for EditStoryPost
+PostEditStory editStory
 
 Edits a story previously posted by the bot on behalf of a managed business account. Requires the *can\_manage\_stories* business bot right. Returns [Story](https://core.telegram.org/bots/api/#story) on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiEditStoryPostRequest
+ @return ApiPostEditStoryRequest
 */
-func (a *DefaultAPIService) EditStoryPost(ctx context.Context) ApiEditStoryPostRequest {
-	return ApiEditStoryPostRequest{
+func (a *DefaultAPIService) PostEditStory(ctx context.Context) ApiPostEditStoryRequest {
+	return ApiPostEditStoryRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PostStoryPost200Response
-func (a *DefaultAPIService) EditStoryPostExecute(r ApiEditStoryPostRequest) (*PostStoryPost200Response, *http.Response, error) {
+//  @return PostPostStory200Response
+func (a *DefaultAPIService) PostEditStoryExecute(r ApiPostEditStoryRequest) (*PostPostStory200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostStoryPost200Response
+		localVarReturnValue  *PostPostStory200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.EditStoryPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostEditStory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8634,6 +9085,17 @@ func (a *DefaultAPIService) EditStoryPostExecute(r ApiEditStoryPostRequest) (*Po
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -8657,7 +9119,7 @@ func (a *DefaultAPIService) EditStoryPostExecute(r ApiEditStoryPostRequest) (*Po
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiEditUserStarSubscriptionPostRequest struct {
+type ApiPostEditUserStarSubscriptionRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	userId *int32
@@ -8666,53 +9128,53 @@ type ApiEditUserStarSubscriptionPostRequest struct {
 }
 
 // Identifier of the user whose subscription will be edited
-func (r ApiEditUserStarSubscriptionPostRequest) UserId(userId int32) ApiEditUserStarSubscriptionPostRequest {
+func (r ApiPostEditUserStarSubscriptionRequest) UserId(userId int32) ApiPostEditUserStarSubscriptionRequest {
 	r.userId = &userId
 	return r
 }
 
 // Telegram payment identifier for the subscription
-func (r ApiEditUserStarSubscriptionPostRequest) TelegramPaymentChargeId(telegramPaymentChargeId string) ApiEditUserStarSubscriptionPostRequest {
+func (r ApiPostEditUserStarSubscriptionRequest) TelegramPaymentChargeId(telegramPaymentChargeId string) ApiPostEditUserStarSubscriptionRequest {
 	r.telegramPaymentChargeId = &telegramPaymentChargeId
 	return r
 }
 
 // Pass *True* to cancel extension of the user subscription; the subscription must be active up to the end of the current subscription period. Pass *False* to allow the user to re-enable a subscription that was previously canceled by the bot.
-func (r ApiEditUserStarSubscriptionPostRequest) IsCanceled(isCanceled bool) ApiEditUserStarSubscriptionPostRequest {
+func (r ApiPostEditUserStarSubscriptionRequest) IsCanceled(isCanceled bool) ApiPostEditUserStarSubscriptionRequest {
 	r.isCanceled = &isCanceled
 	return r
 }
 
-func (r ApiEditUserStarSubscriptionPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.EditUserStarSubscriptionPostExecute(r)
+func (r ApiPostEditUserStarSubscriptionRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostEditUserStarSubscriptionExecute(r)
 }
 
 /*
-EditUserStarSubscriptionPost Method for EditUserStarSubscriptionPost
+PostEditUserStarSubscription editUserStarSubscription
 
 Allows the bot to cancel or re-enable extension of a subscription paid in Telegram Stars. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiEditUserStarSubscriptionPostRequest
+ @return ApiPostEditUserStarSubscriptionRequest
 */
-func (a *DefaultAPIService) EditUserStarSubscriptionPost(ctx context.Context) ApiEditUserStarSubscriptionPostRequest {
-	return ApiEditUserStarSubscriptionPostRequest{
+func (a *DefaultAPIService) PostEditUserStarSubscription(ctx context.Context) ApiPostEditUserStarSubscriptionRequest {
+	return ApiPostEditUserStarSubscriptionRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) EditUserStarSubscriptionPostExecute(r ApiEditUserStarSubscriptionPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostEditUserStarSubscriptionExecute(r ApiPostEditUserStarSubscriptionRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.EditUserStarSubscriptionPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostEditUserStarSubscription")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8774,6 +9236,17 @@ func (a *DefaultAPIService) EditUserStarSubscriptionPostExecute(r ApiEditUserSta
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -8797,47 +9270,47 @@ func (a *DefaultAPIService) EditUserStarSubscriptionPostExecute(r ApiEditUserSta
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiExportChatInviteLinkPostRequest struct {
+type ApiPostExportChatInviteLinkRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
+	chatId *PostSendMessageRequestChatId
 }
 
-func (r ApiExportChatInviteLinkPostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiExportChatInviteLinkPostRequest {
+func (r ApiPostExportChatInviteLinkRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostExportChatInviteLinkRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiExportChatInviteLinkPostRequest) Execute() (*ExportChatInviteLinkPost200Response, *http.Response, error) {
-	return r.ApiService.ExportChatInviteLinkPostExecute(r)
+func (r ApiPostExportChatInviteLinkRequest) Execute() (*PostExportChatInviteLink200Response, *http.Response, error) {
+	return r.ApiService.PostExportChatInviteLinkExecute(r)
 }
 
 /*
-ExportChatInviteLinkPost Method for ExportChatInviteLinkPost
+PostExportChatInviteLink exportChatInviteLink
 
 Use this method to generate a new primary invite link for a chat; any previously generated primary link is revoked. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns the new invite link as *String* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExportChatInviteLinkPostRequest
+ @return ApiPostExportChatInviteLinkRequest
 */
-func (a *DefaultAPIService) ExportChatInviteLinkPost(ctx context.Context) ApiExportChatInviteLinkPostRequest {
-	return ApiExportChatInviteLinkPostRequest{
+func (a *DefaultAPIService) PostExportChatInviteLink(ctx context.Context) ApiPostExportChatInviteLinkRequest {
+	return ApiPostExportChatInviteLinkRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ExportChatInviteLinkPost200Response
-func (a *DefaultAPIService) ExportChatInviteLinkPostExecute(r ApiExportChatInviteLinkPostRequest) (*ExportChatInviteLinkPost200Response, *http.Response, error) {
+//  @return PostExportChatInviteLink200Response
+func (a *DefaultAPIService) PostExportChatInviteLinkExecute(r ApiPostExportChatInviteLinkRequest) (*PostExportChatInviteLink200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ExportChatInviteLinkPost200Response
+		localVarReturnValue  *PostExportChatInviteLink200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.ExportChatInviteLinkPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostExportChatInviteLink")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8891,6 +9364,17 @@ func (a *DefaultAPIService) ExportChatInviteLinkPostExecute(r ApiExportChatInvit
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -8914,11 +9398,11 @@ func (a *DefaultAPIService) ExportChatInviteLinkPostExecute(r ApiExportChatInvit
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiForwardMessagePostRequest struct {
+type ApiPostForwardMessageRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
-	fromChatId *ForwardMessagePostRequestFromChatId
+	chatId *PostSendMessageRequestChatId
+	fromChatId *PostForwardMessageRequestFromChatId
 	messageId *int32
 	messageThreadId *int32
 	videoStartTimestamp *int32
@@ -8926,76 +9410,76 @@ type ApiForwardMessagePostRequest struct {
 	protectContent *bool
 }
 
-func (r ApiForwardMessagePostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiForwardMessagePostRequest {
+func (r ApiPostForwardMessageRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostForwardMessageRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiForwardMessagePostRequest) FromChatId(fromChatId ForwardMessagePostRequestFromChatId) ApiForwardMessagePostRequest {
+func (r ApiPostForwardMessageRequest) FromChatId(fromChatId PostForwardMessageRequestFromChatId) ApiPostForwardMessageRequest {
 	r.fromChatId = &fromChatId
 	return r
 }
 
 // Message identifier in the chat specified in *from\\\\_chat\\\\_id*
-func (r ApiForwardMessagePostRequest) MessageId(messageId int32) ApiForwardMessagePostRequest {
+func (r ApiPostForwardMessageRequest) MessageId(messageId int32) ApiPostForwardMessageRequest {
 	r.messageId = &messageId
 	return r
 }
 
 // Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-func (r ApiForwardMessagePostRequest) MessageThreadId(messageThreadId int32) ApiForwardMessagePostRequest {
+func (r ApiPostForwardMessageRequest) MessageThreadId(messageThreadId int32) ApiPostForwardMessageRequest {
 	r.messageThreadId = &messageThreadId
 	return r
 }
 
 // New start timestamp for the forwarded video in the message
-func (r ApiForwardMessagePostRequest) VideoStartTimestamp(videoStartTimestamp int32) ApiForwardMessagePostRequest {
+func (r ApiPostForwardMessageRequest) VideoStartTimestamp(videoStartTimestamp int32) ApiPostForwardMessageRequest {
 	r.videoStartTimestamp = &videoStartTimestamp
 	return r
 }
 
 // Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.
-func (r ApiForwardMessagePostRequest) DisableNotification(disableNotification bool) ApiForwardMessagePostRequest {
+func (r ApiPostForwardMessageRequest) DisableNotification(disableNotification bool) ApiPostForwardMessageRequest {
 	r.disableNotification = &disableNotification
 	return r
 }
 
 // Protects the contents of the forwarded message from forwarding and saving
-func (r ApiForwardMessagePostRequest) ProtectContent(protectContent bool) ApiForwardMessagePostRequest {
+func (r ApiPostForwardMessageRequest) ProtectContent(protectContent bool) ApiPostForwardMessageRequest {
 	r.protectContent = &protectContent
 	return r
 }
 
-func (r ApiForwardMessagePostRequest) Execute() (*SendMessagePost200Response, *http.Response, error) {
-	return r.ApiService.ForwardMessagePostExecute(r)
+func (r ApiPostForwardMessageRequest) Execute() (*PostSendMessage200Response, *http.Response, error) {
+	return r.ApiService.PostForwardMessageExecute(r)
 }
 
 /*
-ForwardMessagePost Method for ForwardMessagePost
+PostForwardMessage forwardMessage
 
 Use this method to forward messages of any kind. Service messages and messages with protected content can't be forwarded. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiForwardMessagePostRequest
+ @return ApiPostForwardMessageRequest
 */
-func (a *DefaultAPIService) ForwardMessagePost(ctx context.Context) ApiForwardMessagePostRequest {
-	return ApiForwardMessagePostRequest{
+func (a *DefaultAPIService) PostForwardMessage(ctx context.Context) ApiPostForwardMessageRequest {
+	return ApiPostForwardMessageRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SendMessagePost200Response
-func (a *DefaultAPIService) ForwardMessagePostExecute(r ApiForwardMessagePostRequest) (*SendMessagePost200Response, *http.Response, error) {
+//  @return PostSendMessage200Response
+func (a *DefaultAPIService) PostForwardMessageExecute(r ApiPostForwardMessageRequest) (*PostSendMessage200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SendMessagePost200Response
+		localVarReturnValue  *PostSendMessage200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.ForwardMessagePost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostForwardMessage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9069,6 +9553,17 @@ func (a *DefaultAPIService) ForwardMessagePostExecute(r ApiForwardMessagePostReq
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -9092,81 +9587,81 @@ func (a *DefaultAPIService) ForwardMessagePostExecute(r ApiForwardMessagePostReq
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiForwardMessagesPostRequest struct {
+type ApiPostForwardMessagesRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
-	fromChatId *ForwardMessagesPostRequestFromChatId
+	chatId *PostSendMessageRequestChatId
+	fromChatId *PostForwardMessagesRequestFromChatId
 	messageIds *[]int32
 	messageThreadId *int32
 	disableNotification *bool
 	protectContent *bool
 }
 
-func (r ApiForwardMessagesPostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiForwardMessagesPostRequest {
+func (r ApiPostForwardMessagesRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostForwardMessagesRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiForwardMessagesPostRequest) FromChatId(fromChatId ForwardMessagesPostRequestFromChatId) ApiForwardMessagesPostRequest {
+func (r ApiPostForwardMessagesRequest) FromChatId(fromChatId PostForwardMessagesRequestFromChatId) ApiPostForwardMessagesRequest {
 	r.fromChatId = &fromChatId
 	return r
 }
 
 // A JSON-serialized list of 1-100 identifiers of messages in the chat *from\\\\_chat\\\\_id* to forward. The identifiers must be specified in a strictly increasing order.
-func (r ApiForwardMessagesPostRequest) MessageIds(messageIds []int32) ApiForwardMessagesPostRequest {
+func (r ApiPostForwardMessagesRequest) MessageIds(messageIds []int32) ApiPostForwardMessagesRequest {
 	r.messageIds = &messageIds
 	return r
 }
 
 // Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-func (r ApiForwardMessagesPostRequest) MessageThreadId(messageThreadId int32) ApiForwardMessagesPostRequest {
+func (r ApiPostForwardMessagesRequest) MessageThreadId(messageThreadId int32) ApiPostForwardMessagesRequest {
 	r.messageThreadId = &messageThreadId
 	return r
 }
 
 // Sends the messages [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.
-func (r ApiForwardMessagesPostRequest) DisableNotification(disableNotification bool) ApiForwardMessagesPostRequest {
+func (r ApiPostForwardMessagesRequest) DisableNotification(disableNotification bool) ApiPostForwardMessagesRequest {
 	r.disableNotification = &disableNotification
 	return r
 }
 
 // Protects the contents of the forwarded messages from forwarding and saving
-func (r ApiForwardMessagesPostRequest) ProtectContent(protectContent bool) ApiForwardMessagesPostRequest {
+func (r ApiPostForwardMessagesRequest) ProtectContent(protectContent bool) ApiPostForwardMessagesRequest {
 	r.protectContent = &protectContent
 	return r
 }
 
-func (r ApiForwardMessagesPostRequest) Execute() (*ForwardMessagesPost200Response, *http.Response, error) {
-	return r.ApiService.ForwardMessagesPostExecute(r)
+func (r ApiPostForwardMessagesRequest) Execute() (*PostForwardMessages200Response, *http.Response, error) {
+	return r.ApiService.PostForwardMessagesExecute(r)
 }
 
 /*
-ForwardMessagesPost Method for ForwardMessagesPost
+PostForwardMessages forwardMessages
 
 Use this method to forward multiple messages of any kind. If some of the specified messages can't be found or forwarded, they are skipped. Service messages and messages with protected content can't be forwarded. Album grouping is kept for forwarded messages. On success, an array of [MessageId](https://core.telegram.org/bots/api/#messageid) of the sent messages is returned.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiForwardMessagesPostRequest
+ @return ApiPostForwardMessagesRequest
 */
-func (a *DefaultAPIService) ForwardMessagesPost(ctx context.Context) ApiForwardMessagesPostRequest {
-	return ApiForwardMessagesPostRequest{
+func (a *DefaultAPIService) PostForwardMessages(ctx context.Context) ApiPostForwardMessagesRequest {
+	return ApiPostForwardMessagesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ForwardMessagesPost200Response
-func (a *DefaultAPIService) ForwardMessagesPostExecute(r ApiForwardMessagesPostRequest) (*ForwardMessagesPost200Response, *http.Response, error) {
+//  @return PostForwardMessages200Response
+func (a *DefaultAPIService) PostForwardMessagesExecute(r ApiPostForwardMessagesRequest) (*PostForwardMessages200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ForwardMessagesPost200Response
+		localVarReturnValue  *PostForwardMessages200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.ForwardMessagesPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostForwardMessages")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9237,6 +9732,17 @@ func (a *DefaultAPIService) ForwardMessagesPostExecute(r ApiForwardMessagesPostR
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -9260,41 +9766,41 @@ func (a *DefaultAPIService) ForwardMessagesPostExecute(r ApiForwardMessagesPostR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetAvailableGiftsPostRequest struct {
+type ApiPostGetAvailableGiftsRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 }
 
-func (r ApiGetAvailableGiftsPostRequest) Execute() (*GetAvailableGiftsPost200Response, *http.Response, error) {
-	return r.ApiService.GetAvailableGiftsPostExecute(r)
+func (r ApiPostGetAvailableGiftsRequest) Execute() (*PostGetAvailableGifts200Response, *http.Response, error) {
+	return r.ApiService.PostGetAvailableGiftsExecute(r)
 }
 
 /*
-GetAvailableGiftsPost Method for GetAvailableGiftsPost
+PostGetAvailableGifts getAvailableGifts
 
 Returns the list of gifts that can be sent by the bot to users and channel chats. Requires no parameters. Returns a [Gifts](https://core.telegram.org/bots/api/#gifts) object.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAvailableGiftsPostRequest
+ @return ApiPostGetAvailableGiftsRequest
 */
-func (a *DefaultAPIService) GetAvailableGiftsPost(ctx context.Context) ApiGetAvailableGiftsPostRequest {
-	return ApiGetAvailableGiftsPostRequest{
+func (a *DefaultAPIService) PostGetAvailableGifts(ctx context.Context) ApiPostGetAvailableGiftsRequest {
+	return ApiPostGetAvailableGiftsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetAvailableGiftsPost200Response
-func (a *DefaultAPIService) GetAvailableGiftsPostExecute(r ApiGetAvailableGiftsPostRequest) (*GetAvailableGiftsPost200Response, *http.Response, error) {
+//  @return PostGetAvailableGifts200Response
+func (a *DefaultAPIService) PostGetAvailableGiftsExecute(r ApiPostGetAvailableGiftsRequest) (*PostGetAvailableGifts200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetAvailableGiftsPost200Response
+		localVarReturnValue  *PostGetAvailableGifts200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetAvailableGiftsPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetAvailableGifts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9344,6 +9850,17 @@ func (a *DefaultAPIService) GetAvailableGiftsPostExecute(r ApiGetAvailableGiftsP
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -9367,7 +9884,7 @@ func (a *DefaultAPIService) GetAvailableGiftsPostExecute(r ApiGetAvailableGiftsP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetBusinessAccountGiftsPostRequest struct {
+type ApiPostGetBusinessAccountGiftsRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	businessConnectionId *string
@@ -9382,89 +9899,89 @@ type ApiGetBusinessAccountGiftsPostRequest struct {
 }
 
 // Unique identifier of the business connection
-func (r ApiGetBusinessAccountGiftsPostRequest) BusinessConnectionId(businessConnectionId string) ApiGetBusinessAccountGiftsPostRequest {
+func (r ApiPostGetBusinessAccountGiftsRequest) BusinessConnectionId(businessConnectionId string) ApiPostGetBusinessAccountGiftsRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
 // Pass True to exclude gifts that aren&#39;t saved to the account&#39;s profile page
-func (r ApiGetBusinessAccountGiftsPostRequest) ExcludeUnsaved(excludeUnsaved bool) ApiGetBusinessAccountGiftsPostRequest {
+func (r ApiPostGetBusinessAccountGiftsRequest) ExcludeUnsaved(excludeUnsaved bool) ApiPostGetBusinessAccountGiftsRequest {
 	r.excludeUnsaved = &excludeUnsaved
 	return r
 }
 
 // Pass True to exclude gifts that are saved to the account&#39;s profile page
-func (r ApiGetBusinessAccountGiftsPostRequest) ExcludeSaved(excludeSaved bool) ApiGetBusinessAccountGiftsPostRequest {
+func (r ApiPostGetBusinessAccountGiftsRequest) ExcludeSaved(excludeSaved bool) ApiPostGetBusinessAccountGiftsRequest {
 	r.excludeSaved = &excludeSaved
 	return r
 }
 
 // Pass True to exclude gifts that can be purchased an unlimited number of times
-func (r ApiGetBusinessAccountGiftsPostRequest) ExcludeUnlimited(excludeUnlimited bool) ApiGetBusinessAccountGiftsPostRequest {
+func (r ApiPostGetBusinessAccountGiftsRequest) ExcludeUnlimited(excludeUnlimited bool) ApiPostGetBusinessAccountGiftsRequest {
 	r.excludeUnlimited = &excludeUnlimited
 	return r
 }
 
 // Pass True to exclude gifts that can be purchased a limited number of times
-func (r ApiGetBusinessAccountGiftsPostRequest) ExcludeLimited(excludeLimited bool) ApiGetBusinessAccountGiftsPostRequest {
+func (r ApiPostGetBusinessAccountGiftsRequest) ExcludeLimited(excludeLimited bool) ApiPostGetBusinessAccountGiftsRequest {
 	r.excludeLimited = &excludeLimited
 	return r
 }
 
 // Pass True to exclude unique gifts
-func (r ApiGetBusinessAccountGiftsPostRequest) ExcludeUnique(excludeUnique bool) ApiGetBusinessAccountGiftsPostRequest {
+func (r ApiPostGetBusinessAccountGiftsRequest) ExcludeUnique(excludeUnique bool) ApiPostGetBusinessAccountGiftsRequest {
 	r.excludeUnique = &excludeUnique
 	return r
 }
 
 // Pass True to sort results by gift price instead of send date. Sorting is applied before pagination.
-func (r ApiGetBusinessAccountGiftsPostRequest) SortByPrice(sortByPrice bool) ApiGetBusinessAccountGiftsPostRequest {
+func (r ApiPostGetBusinessAccountGiftsRequest) SortByPrice(sortByPrice bool) ApiPostGetBusinessAccountGiftsRequest {
 	r.sortByPrice = &sortByPrice
 	return r
 }
 
 // Offset of the first entry to return as received from the previous request; use empty string to get the first chunk of results
-func (r ApiGetBusinessAccountGiftsPostRequest) Offset(offset string) ApiGetBusinessAccountGiftsPostRequest {
+func (r ApiPostGetBusinessAccountGiftsRequest) Offset(offset string) ApiPostGetBusinessAccountGiftsRequest {
 	r.offset = &offset
 	return r
 }
 
 // The maximum number of gifts to be returned; 1-100. Defaults to 100
-func (r ApiGetBusinessAccountGiftsPostRequest) Limit(limit int32) ApiGetBusinessAccountGiftsPostRequest {
+func (r ApiPostGetBusinessAccountGiftsRequest) Limit(limit int32) ApiPostGetBusinessAccountGiftsRequest {
 	r.limit = &limit
 	return r
 }
 
-func (r ApiGetBusinessAccountGiftsPostRequest) Execute() (*GetBusinessAccountGiftsPost200Response, *http.Response, error) {
-	return r.ApiService.GetBusinessAccountGiftsPostExecute(r)
+func (r ApiPostGetBusinessAccountGiftsRequest) Execute() (*PostGetBusinessAccountGifts200Response, *http.Response, error) {
+	return r.ApiService.PostGetBusinessAccountGiftsExecute(r)
 }
 
 /*
-GetBusinessAccountGiftsPost Method for GetBusinessAccountGiftsPost
+PostGetBusinessAccountGifts getBusinessAccountGifts
 
 Returns the gifts received and owned by a managed business account. Requires the *can\_view\_gifts\_and\_stars* business bot right. Returns [OwnedGifts](https://core.telegram.org/bots/api/#ownedgifts) on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetBusinessAccountGiftsPostRequest
+ @return ApiPostGetBusinessAccountGiftsRequest
 */
-func (a *DefaultAPIService) GetBusinessAccountGiftsPost(ctx context.Context) ApiGetBusinessAccountGiftsPostRequest {
-	return ApiGetBusinessAccountGiftsPostRequest{
+func (a *DefaultAPIService) PostGetBusinessAccountGifts(ctx context.Context) ApiPostGetBusinessAccountGiftsRequest {
+	return ApiPostGetBusinessAccountGiftsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetBusinessAccountGiftsPost200Response
-func (a *DefaultAPIService) GetBusinessAccountGiftsPostExecute(r ApiGetBusinessAccountGiftsPostRequest) (*GetBusinessAccountGiftsPost200Response, *http.Response, error) {
+//  @return PostGetBusinessAccountGifts200Response
+func (a *DefaultAPIService) PostGetBusinessAccountGiftsExecute(r ApiPostGetBusinessAccountGiftsRequest) (*PostGetBusinessAccountGifts200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetBusinessAccountGiftsPost200Response
+		localVarReturnValue  *PostGetBusinessAccountGifts200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetBusinessAccountGiftsPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetBusinessAccountGifts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9542,6 +10059,17 @@ func (a *DefaultAPIService) GetBusinessAccountGiftsPostExecute(r ApiGetBusinessA
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -9565,48 +10093,48 @@ func (a *DefaultAPIService) GetBusinessAccountGiftsPostExecute(r ApiGetBusinessA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetBusinessAccountStarBalancePostRequest struct {
+type ApiPostGetBusinessAccountStarBalanceRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	businessConnectionId *string
 }
 
 // Unique identifier of the business connection
-func (r ApiGetBusinessAccountStarBalancePostRequest) BusinessConnectionId(businessConnectionId string) ApiGetBusinessAccountStarBalancePostRequest {
+func (r ApiPostGetBusinessAccountStarBalanceRequest) BusinessConnectionId(businessConnectionId string) ApiPostGetBusinessAccountStarBalanceRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
-func (r ApiGetBusinessAccountStarBalancePostRequest) Execute() (*GetBusinessAccountStarBalancePost200Response, *http.Response, error) {
-	return r.ApiService.GetBusinessAccountStarBalancePostExecute(r)
+func (r ApiPostGetBusinessAccountStarBalanceRequest) Execute() (*PostGetBusinessAccountStarBalance200Response, *http.Response, error) {
+	return r.ApiService.PostGetBusinessAccountStarBalanceExecute(r)
 }
 
 /*
-GetBusinessAccountStarBalancePost Method for GetBusinessAccountStarBalancePost
+PostGetBusinessAccountStarBalance getBusinessAccountStarBalance
 
 Returns the amount of Telegram Stars owned by a managed business account. Requires the *can\_view\_gifts\_and\_stars* business bot right. Returns [StarAmount](https://core.telegram.org/bots/api/#staramount) on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetBusinessAccountStarBalancePostRequest
+ @return ApiPostGetBusinessAccountStarBalanceRequest
 */
-func (a *DefaultAPIService) GetBusinessAccountStarBalancePost(ctx context.Context) ApiGetBusinessAccountStarBalancePostRequest {
-	return ApiGetBusinessAccountStarBalancePostRequest{
+func (a *DefaultAPIService) PostGetBusinessAccountStarBalance(ctx context.Context) ApiPostGetBusinessAccountStarBalanceRequest {
+	return ApiPostGetBusinessAccountStarBalanceRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetBusinessAccountStarBalancePost200Response
-func (a *DefaultAPIService) GetBusinessAccountStarBalancePostExecute(r ApiGetBusinessAccountStarBalancePostRequest) (*GetBusinessAccountStarBalancePost200Response, *http.Response, error) {
+//  @return PostGetBusinessAccountStarBalance200Response
+func (a *DefaultAPIService) PostGetBusinessAccountStarBalanceExecute(r ApiPostGetBusinessAccountStarBalanceRequest) (*PostGetBusinessAccountStarBalance200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetBusinessAccountStarBalancePost200Response
+		localVarReturnValue  *PostGetBusinessAccountStarBalance200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetBusinessAccountStarBalancePost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetBusinessAccountStarBalance")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9660,6 +10188,17 @@ func (a *DefaultAPIService) GetBusinessAccountStarBalancePostExecute(r ApiGetBus
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -9683,48 +10222,48 @@ func (a *DefaultAPIService) GetBusinessAccountStarBalancePostExecute(r ApiGetBus
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetBusinessConnectionPostRequest struct {
+type ApiPostGetBusinessConnectionRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	businessConnectionId *string
 }
 
 // Unique identifier of the business connection
-func (r ApiGetBusinessConnectionPostRequest) BusinessConnectionId(businessConnectionId string) ApiGetBusinessConnectionPostRequest {
+func (r ApiPostGetBusinessConnectionRequest) BusinessConnectionId(businessConnectionId string) ApiPostGetBusinessConnectionRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
-func (r ApiGetBusinessConnectionPostRequest) Execute() (*GetBusinessConnectionPost200Response, *http.Response, error) {
-	return r.ApiService.GetBusinessConnectionPostExecute(r)
+func (r ApiPostGetBusinessConnectionRequest) Execute() (*PostGetBusinessConnection200Response, *http.Response, error) {
+	return r.ApiService.PostGetBusinessConnectionExecute(r)
 }
 
 /*
-GetBusinessConnectionPost Method for GetBusinessConnectionPost
+PostGetBusinessConnection getBusinessConnection
 
 Use this method to get information about the connection of the bot with a business account. Returns a [BusinessConnection](https://core.telegram.org/bots/api/#businessconnection) object on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetBusinessConnectionPostRequest
+ @return ApiPostGetBusinessConnectionRequest
 */
-func (a *DefaultAPIService) GetBusinessConnectionPost(ctx context.Context) ApiGetBusinessConnectionPostRequest {
-	return ApiGetBusinessConnectionPostRequest{
+func (a *DefaultAPIService) PostGetBusinessConnection(ctx context.Context) ApiPostGetBusinessConnectionRequest {
+	return ApiPostGetBusinessConnectionRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetBusinessConnectionPost200Response
-func (a *DefaultAPIService) GetBusinessConnectionPostExecute(r ApiGetBusinessConnectionPostRequest) (*GetBusinessConnectionPost200Response, *http.Response, error) {
+//  @return PostGetBusinessConnection200Response
+func (a *DefaultAPIService) PostGetBusinessConnectionExecute(r ApiPostGetBusinessConnectionRequest) (*PostGetBusinessConnection200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetBusinessConnectionPost200Response
+		localVarReturnValue  *PostGetBusinessConnection200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetBusinessConnectionPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetBusinessConnection")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9778,6 +10317,17 @@ func (a *DefaultAPIService) GetBusinessConnectionPostExecute(r ApiGetBusinessCon
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -9801,47 +10351,175 @@ func (a *DefaultAPIService) GetBusinessConnectionPostExecute(r ApiGetBusinessCon
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetChatAdministratorsPostRequest struct {
+type ApiPostGetChatRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *LeaveChatPostRequestChatId
+	chatId *PostLeaveChatRequestChatId
 }
 
-func (r ApiGetChatAdministratorsPostRequest) ChatId(chatId LeaveChatPostRequestChatId) ApiGetChatAdministratorsPostRequest {
+func (r ApiPostGetChatRequest) ChatId(chatId PostLeaveChatRequestChatId) ApiPostGetChatRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiGetChatAdministratorsPostRequest) Execute() (*GetChatAdministratorsPost200Response, *http.Response, error) {
-	return r.ApiService.GetChatAdministratorsPostExecute(r)
+func (r ApiPostGetChatRequest) Execute() (*PostGetChat200Response, *http.Response, error) {
+	return r.ApiService.PostGetChatExecute(r)
 }
 
 /*
-GetChatAdministratorsPost Method for GetChatAdministratorsPost
+PostGetChat getChat
 
-Use this method to get a list of administrators in a chat, which aren't bots. Returns an Array of [ChatMember](https://core.telegram.org/bots/api/#chatmember) objects.
+Use this method to get up-to-date information about the chat. Returns a [ChatFullInfo](https://core.telegram.org/bots/api/#chatfullinfo) object on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetChatAdministratorsPostRequest
+ @return ApiPostGetChatRequest
 */
-func (a *DefaultAPIService) GetChatAdministratorsPost(ctx context.Context) ApiGetChatAdministratorsPostRequest {
-	return ApiGetChatAdministratorsPostRequest{
+func (a *DefaultAPIService) PostGetChat(ctx context.Context) ApiPostGetChatRequest {
+	return ApiPostGetChatRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetChatAdministratorsPost200Response
-func (a *DefaultAPIService) GetChatAdministratorsPostExecute(r ApiGetChatAdministratorsPostRequest) (*GetChatAdministratorsPost200Response, *http.Response, error) {
+//  @return PostGetChat200Response
+func (a *DefaultAPIService) PostGetChatExecute(r ApiPostGetChatRequest) (*PostGetChat200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetChatAdministratorsPost200Response
+		localVarReturnValue  *PostGetChat200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetChatAdministratorsPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetChat")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/getChat"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.chatId == nil {
+		return localVarReturnValue, nil, reportError("chatId is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/x-www-form-urlencoded", "multipart/form-data", "application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	parameterAddToHeaderOrQuery(localVarFormParams, "chat_id", r.chatId, "", "")
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiPostGetChatAdministratorsRequest struct {
+	ctx context.Context
+	ApiService DefaultAPI
+	chatId *PostLeaveChatRequestChatId
+}
+
+func (r ApiPostGetChatAdministratorsRequest) ChatId(chatId PostLeaveChatRequestChatId) ApiPostGetChatAdministratorsRequest {
+	r.chatId = &chatId
+	return r
+}
+
+func (r ApiPostGetChatAdministratorsRequest) Execute() (*PostGetChatAdministrators200Response, *http.Response, error) {
+	return r.ApiService.PostGetChatAdministratorsExecute(r)
+}
+
+/*
+PostGetChatAdministrators getChatAdministrators
+
+Use this method to get a list of administrators in a chat, which aren't bots. Returns an Array of [ChatMember](https://core.telegram.org/bots/api/#chatmember) objects.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPostGetChatAdministratorsRequest
+*/
+func (a *DefaultAPIService) PostGetChatAdministrators(ctx context.Context) ApiPostGetChatAdministratorsRequest {
+	return ApiPostGetChatAdministratorsRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return PostGetChatAdministrators200Response
+func (a *DefaultAPIService) PostGetChatAdministratorsExecute(r ApiPostGetChatAdministratorsRequest) (*PostGetChatAdministrators200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PostGetChatAdministrators200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetChatAdministrators")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9895,6 +10573,7 @@ func (a *DefaultAPIService) GetChatAdministratorsPostExecute(r ApiGetChatAdminis
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -9903,114 +10582,7 @@ func (a *DefaultAPIService) GetChatAdministratorsPostExecute(r ApiGetChatAdminis
 			}
 					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiGetChatMemberCountPostRequest struct {
-	ctx context.Context
-	ApiService DefaultAPI
-	chatId *LeaveChatPostRequestChatId
-}
-
-func (r ApiGetChatMemberCountPostRequest) ChatId(chatId LeaveChatPostRequestChatId) ApiGetChatMemberCountPostRequest {
-	r.chatId = &chatId
-	return r
-}
-
-func (r ApiGetChatMemberCountPostRequest) Execute() (*GetChatMemberCountPost200Response, *http.Response, error) {
-	return r.ApiService.GetChatMemberCountPostExecute(r)
-}
-
-/*
-GetChatMemberCountPost Method for GetChatMemberCountPost
-
-Use this method to get the number of members in a chat. Returns *Int* on success.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetChatMemberCountPostRequest
-*/
-func (a *DefaultAPIService) GetChatMemberCountPost(ctx context.Context) ApiGetChatMemberCountPostRequest {
-	return ApiGetChatMemberCountPostRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return GetChatMemberCountPost200Response
-func (a *DefaultAPIService) GetChatMemberCountPostExecute(r ApiGetChatMemberCountPostRequest) (*GetChatMemberCountPost200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetChatMemberCountPost200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetChatMemberCountPost")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/getChatMemberCount"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.chatId == nil {
-		return localVarReturnValue, nil, reportError("chatId is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/x-www-form-urlencoded", "multipart/form-data", "application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	parameterAddToHeaderOrQuery(localVarFormParams, "chat_id", r.chatId, "", "")
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
+			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
@@ -10035,54 +10607,54 @@ func (a *DefaultAPIService) GetChatMemberCountPostExecute(r ApiGetChatMemberCoun
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetChatMemberPostRequest struct {
+type ApiPostGetChatMemberRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *LeaveChatPostRequestChatId
+	chatId *PostLeaveChatRequestChatId
 	userId *int32
 }
 
-func (r ApiGetChatMemberPostRequest) ChatId(chatId LeaveChatPostRequestChatId) ApiGetChatMemberPostRequest {
+func (r ApiPostGetChatMemberRequest) ChatId(chatId PostLeaveChatRequestChatId) ApiPostGetChatMemberRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Unique identifier of the target user
-func (r ApiGetChatMemberPostRequest) UserId(userId int32) ApiGetChatMemberPostRequest {
+func (r ApiPostGetChatMemberRequest) UserId(userId int32) ApiPostGetChatMemberRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiGetChatMemberPostRequest) Execute() (*GetChatMemberPost200Response, *http.Response, error) {
-	return r.ApiService.GetChatMemberPostExecute(r)
+func (r ApiPostGetChatMemberRequest) Execute() (*PostGetChatMember200Response, *http.Response, error) {
+	return r.ApiService.PostGetChatMemberExecute(r)
 }
 
 /*
-GetChatMemberPost Method for GetChatMemberPost
+PostGetChatMember getChatMember
 
 Use this method to get information about a member of a chat. The method is only guaranteed to work for other users if the bot is an administrator in the chat. Returns a [ChatMember](https://core.telegram.org/bots/api/#chatmember) object on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetChatMemberPostRequest
+ @return ApiPostGetChatMemberRequest
 */
-func (a *DefaultAPIService) GetChatMemberPost(ctx context.Context) ApiGetChatMemberPostRequest {
-	return ApiGetChatMemberPostRequest{
+func (a *DefaultAPIService) PostGetChatMember(ctx context.Context) ApiPostGetChatMemberRequest {
+	return ApiPostGetChatMemberRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetChatMemberPost200Response
-func (a *DefaultAPIService) GetChatMemberPostExecute(r ApiGetChatMemberPostRequest) (*GetChatMemberPost200Response, *http.Response, error) {
+//  @return PostGetChatMember200Response
+func (a *DefaultAPIService) PostGetChatMemberExecute(r ApiPostGetChatMemberRequest) (*PostGetChatMember200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetChatMemberPost200Response
+		localVarReturnValue  *PostGetChatMember200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetChatMemberPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetChatMember")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10140,6 +10712,17 @@ func (a *DefaultAPIService) GetChatMemberPostExecute(r ApiGetChatMemberPostReque
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -10163,48 +10746,176 @@ func (a *DefaultAPIService) GetChatMemberPostExecute(r ApiGetChatMemberPostReque
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetChatMenuButtonPostRequest struct {
+type ApiPostGetChatMemberCountRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *int32
+	chatId *PostLeaveChatRequestChatId
 }
 
-// Unique identifier for the target private chat. If not specified, default bot&#39;s menu button will be returned
-func (r ApiGetChatMenuButtonPostRequest) ChatId(chatId int32) ApiGetChatMenuButtonPostRequest {
+func (r ApiPostGetChatMemberCountRequest) ChatId(chatId PostLeaveChatRequestChatId) ApiPostGetChatMemberCountRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiGetChatMenuButtonPostRequest) Execute() (*GetChatMenuButtonPost200Response, *http.Response, error) {
-	return r.ApiService.GetChatMenuButtonPostExecute(r)
+func (r ApiPostGetChatMemberCountRequest) Execute() (*PostGetChatMemberCount200Response, *http.Response, error) {
+	return r.ApiService.PostGetChatMemberCountExecute(r)
 }
 
 /*
-GetChatMenuButtonPost Method for GetChatMenuButtonPost
+PostGetChatMemberCount getChatMemberCount
 
-Use this method to get the current value of the bot's menu button in a private chat, or the default menu button. Returns [MenuButton](https://core.telegram.org/bots/api/#menubutton) on success.
+Use this method to get the number of members in a chat. Returns *Int* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetChatMenuButtonPostRequest
+ @return ApiPostGetChatMemberCountRequest
 */
-func (a *DefaultAPIService) GetChatMenuButtonPost(ctx context.Context) ApiGetChatMenuButtonPostRequest {
-	return ApiGetChatMenuButtonPostRequest{
+func (a *DefaultAPIService) PostGetChatMemberCount(ctx context.Context) ApiPostGetChatMemberCountRequest {
+	return ApiPostGetChatMemberCountRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetChatMenuButtonPost200Response
-func (a *DefaultAPIService) GetChatMenuButtonPostExecute(r ApiGetChatMenuButtonPostRequest) (*GetChatMenuButtonPost200Response, *http.Response, error) {
+//  @return PostGetChatMemberCount200Response
+func (a *DefaultAPIService) PostGetChatMemberCountExecute(r ApiPostGetChatMemberCountRequest) (*PostGetChatMemberCount200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetChatMenuButtonPost200Response
+		localVarReturnValue  *PostGetChatMemberCount200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetChatMenuButtonPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetChatMemberCount")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/getChatMemberCount"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.chatId == nil {
+		return localVarReturnValue, nil, reportError("chatId is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/x-www-form-urlencoded", "multipart/form-data", "application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	parameterAddToHeaderOrQuery(localVarFormParams, "chat_id", r.chatId, "", "")
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiPostGetChatMenuButtonRequest struct {
+	ctx context.Context
+	ApiService DefaultAPI
+	chatId *int32
+}
+
+// Unique identifier for the target private chat. If not specified, default bot&#39;s menu button will be returned
+func (r ApiPostGetChatMenuButtonRequest) ChatId(chatId int32) ApiPostGetChatMenuButtonRequest {
+	r.chatId = &chatId
+	return r
+}
+
+func (r ApiPostGetChatMenuButtonRequest) Execute() (*PostGetChatMenuButton200Response, *http.Response, error) {
+	return r.ApiService.PostGetChatMenuButtonExecute(r)
+}
+
+/*
+PostGetChatMenuButton getChatMenuButton
+
+Use this method to get the current value of the bot's menu button in a private chat, or the default menu button. Returns [MenuButton](https://core.telegram.org/bots/api/#menubutton) on success.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPostGetChatMenuButtonRequest
+*/
+func (a *DefaultAPIService) PostGetChatMenuButton(ctx context.Context) ApiPostGetChatMenuButtonRequest {
+	return ApiPostGetChatMenuButtonRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return PostGetChatMenuButton200Response
+func (a *DefaultAPIService) PostGetChatMenuButtonExecute(r ApiPostGetChatMenuButtonRequest) (*PostGetChatMenuButton200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PostGetChatMenuButton200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetChatMenuButton")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10257,6 +10968,7 @@ func (a *DefaultAPIService) GetChatMenuButtonPostExecute(r ApiGetChatMenuButtonP
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -10265,114 +10977,7 @@ func (a *DefaultAPIService) GetChatMenuButtonPostExecute(r ApiGetChatMenuButtonP
 			}
 					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiGetChatPostRequest struct {
-	ctx context.Context
-	ApiService DefaultAPI
-	chatId *LeaveChatPostRequestChatId
-}
-
-func (r ApiGetChatPostRequest) ChatId(chatId LeaveChatPostRequestChatId) ApiGetChatPostRequest {
-	r.chatId = &chatId
-	return r
-}
-
-func (r ApiGetChatPostRequest) Execute() (*GetChatPost200Response, *http.Response, error) {
-	return r.ApiService.GetChatPostExecute(r)
-}
-
-/*
-GetChatPost Method for GetChatPost
-
-Use this method to get up-to-date information about the chat. Returns a [ChatFullInfo](https://core.telegram.org/bots/api/#chatfullinfo) object on success.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetChatPostRequest
-*/
-func (a *DefaultAPIService) GetChatPost(ctx context.Context) ApiGetChatPostRequest {
-	return ApiGetChatPostRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return GetChatPost200Response
-func (a *DefaultAPIService) GetChatPostExecute(r ApiGetChatPostRequest) (*GetChatPost200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetChatPost200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetChatPost")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/getChat"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.chatId == nil {
-		return localVarReturnValue, nil, reportError("chatId is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/x-www-form-urlencoded", "multipart/form-data", "application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	parameterAddToHeaderOrQuery(localVarFormParams, "chat_id", r.chatId, "", "")
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
+			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
@@ -10397,48 +11002,48 @@ func (a *DefaultAPIService) GetChatPostExecute(r ApiGetChatPostRequest) (*GetCha
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetCustomEmojiStickersPostRequest struct {
+type ApiPostGetCustomEmojiStickersRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	customEmojiIds *[]string
 }
 
 // A JSON-serialized list of custom emoji identifiers. At most 200 custom emoji identifiers can be specified.
-func (r ApiGetCustomEmojiStickersPostRequest) CustomEmojiIds(customEmojiIds []string) ApiGetCustomEmojiStickersPostRequest {
+func (r ApiPostGetCustomEmojiStickersRequest) CustomEmojiIds(customEmojiIds []string) ApiPostGetCustomEmojiStickersRequest {
 	r.customEmojiIds = &customEmojiIds
 	return r
 }
 
-func (r ApiGetCustomEmojiStickersPostRequest) Execute() (*GetForumTopicIconStickersPost200Response, *http.Response, error) {
-	return r.ApiService.GetCustomEmojiStickersPostExecute(r)
+func (r ApiPostGetCustomEmojiStickersRequest) Execute() (*PostGetForumTopicIconStickers200Response, *http.Response, error) {
+	return r.ApiService.PostGetCustomEmojiStickersExecute(r)
 }
 
 /*
-GetCustomEmojiStickersPost Method for GetCustomEmojiStickersPost
+PostGetCustomEmojiStickers getCustomEmojiStickers
 
 Use this method to get information about custom emoji stickers by their identifiers. Returns an Array of [Sticker](https://core.telegram.org/bots/api/#sticker) objects.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetCustomEmojiStickersPostRequest
+ @return ApiPostGetCustomEmojiStickersRequest
 */
-func (a *DefaultAPIService) GetCustomEmojiStickersPost(ctx context.Context) ApiGetCustomEmojiStickersPostRequest {
-	return ApiGetCustomEmojiStickersPostRequest{
+func (a *DefaultAPIService) PostGetCustomEmojiStickers(ctx context.Context) ApiPostGetCustomEmojiStickersRequest {
+	return ApiPostGetCustomEmojiStickersRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetForumTopicIconStickersPost200Response
-func (a *DefaultAPIService) GetCustomEmojiStickersPostExecute(r ApiGetCustomEmojiStickersPostRequest) (*GetForumTopicIconStickersPost200Response, *http.Response, error) {
+//  @return PostGetForumTopicIconStickers200Response
+func (a *DefaultAPIService) PostGetCustomEmojiStickersExecute(r ApiPostGetCustomEmojiStickersRequest) (*PostGetForumTopicIconStickers200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetForumTopicIconStickersPost200Response
+		localVarReturnValue  *PostGetForumTopicIconStickers200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetCustomEmojiStickersPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetCustomEmojiStickers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10492,6 +11097,17 @@ func (a *DefaultAPIService) GetCustomEmojiStickersPostExecute(r ApiGetCustomEmoj
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -10515,48 +11131,48 @@ func (a *DefaultAPIService) GetCustomEmojiStickersPostExecute(r ApiGetCustomEmoj
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetFilePostRequest struct {
+type ApiPostGetFileRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	fileId *string
 }
 
 // File identifier to get information about
-func (r ApiGetFilePostRequest) FileId(fileId string) ApiGetFilePostRequest {
+func (r ApiPostGetFileRequest) FileId(fileId string) ApiPostGetFileRequest {
 	r.fileId = &fileId
 	return r
 }
 
-func (r ApiGetFilePostRequest) Execute() (*GetFilePost200Response, *http.Response, error) {
-	return r.ApiService.GetFilePostExecute(r)
+func (r ApiPostGetFileRequest) Execute() (*PostGetFile200Response, *http.Response, error) {
+	return r.ApiService.PostGetFileExecute(r)
 }
 
 /*
-GetFilePost Method for GetFilePost
+PostGetFile getFile
 
 Use this method to get basic information about a file and prepare it for downloading. For the moment, bots can download files of up to 20MB in size. On success, a [File](https://core.telegram.org/bots/api/#file) object is returned. The file can then be downloaded via the link `https://api.telegram.org/file/bot<token>/<file_path>`, where `<file_path>` is taken from the response. It is guaranteed that the link will be valid for at least 1 hour. When the link expires, a new one can be requested by calling [getFile](https://core.telegram.org/bots/api/#getfile) again.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetFilePostRequest
+ @return ApiPostGetFileRequest
 */
-func (a *DefaultAPIService) GetFilePost(ctx context.Context) ApiGetFilePostRequest {
-	return ApiGetFilePostRequest{
+func (a *DefaultAPIService) PostGetFile(ctx context.Context) ApiPostGetFileRequest {
+	return ApiPostGetFileRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetFilePost200Response
-func (a *DefaultAPIService) GetFilePostExecute(r ApiGetFilePostRequest) (*GetFilePost200Response, *http.Response, error) {
+//  @return PostGetFile200Response
+func (a *DefaultAPIService) PostGetFileExecute(r ApiPostGetFileRequest) (*PostGetFile200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetFilePost200Response
+		localVarReturnValue  *PostGetFile200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetFilePost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetFile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10610,6 +11226,17 @@ func (a *DefaultAPIService) GetFilePostExecute(r ApiGetFilePostRequest) (*GetFil
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -10633,41 +11260,41 @@ func (a *DefaultAPIService) GetFilePostExecute(r ApiGetFilePostRequest) (*GetFil
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetForumTopicIconStickersPostRequest struct {
+type ApiPostGetForumTopicIconStickersRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 }
 
-func (r ApiGetForumTopicIconStickersPostRequest) Execute() (*GetForumTopicIconStickersPost200Response, *http.Response, error) {
-	return r.ApiService.GetForumTopicIconStickersPostExecute(r)
+func (r ApiPostGetForumTopicIconStickersRequest) Execute() (*PostGetForumTopicIconStickers200Response, *http.Response, error) {
+	return r.ApiService.PostGetForumTopicIconStickersExecute(r)
 }
 
 /*
-GetForumTopicIconStickersPost Method for GetForumTopicIconStickersPost
+PostGetForumTopicIconStickers getForumTopicIconStickers
 
 Use this method to get custom emoji stickers, which can be used as a forum topic icon by any user. Requires no parameters. Returns an Array of [Sticker](https://core.telegram.org/bots/api/#sticker) objects.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetForumTopicIconStickersPostRequest
+ @return ApiPostGetForumTopicIconStickersRequest
 */
-func (a *DefaultAPIService) GetForumTopicIconStickersPost(ctx context.Context) ApiGetForumTopicIconStickersPostRequest {
-	return ApiGetForumTopicIconStickersPostRequest{
+func (a *DefaultAPIService) PostGetForumTopicIconStickers(ctx context.Context) ApiPostGetForumTopicIconStickersRequest {
+	return ApiPostGetForumTopicIconStickersRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetForumTopicIconStickersPost200Response
-func (a *DefaultAPIService) GetForumTopicIconStickersPostExecute(r ApiGetForumTopicIconStickersPostRequest) (*GetForumTopicIconStickersPost200Response, *http.Response, error) {
+//  @return PostGetForumTopicIconStickers200Response
+func (a *DefaultAPIService) PostGetForumTopicIconStickersExecute(r ApiPostGetForumTopicIconStickersRequest) (*PostGetForumTopicIconStickers200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetForumTopicIconStickersPost200Response
+		localVarReturnValue  *PostGetForumTopicIconStickers200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetForumTopicIconStickersPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetForumTopicIconStickers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10717,6 +11344,17 @@ func (a *DefaultAPIService) GetForumTopicIconStickersPostExecute(r ApiGetForumTo
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -10740,7 +11378,7 @@ func (a *DefaultAPIService) GetForumTopicIconStickersPostExecute(r ApiGetForumTo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetGameHighScoresPostRequest struct {
+type ApiPostGetGameHighScoresRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	userId *int32
@@ -10750,61 +11388,61 @@ type ApiGetGameHighScoresPostRequest struct {
 }
 
 // Target user id
-func (r ApiGetGameHighScoresPostRequest) UserId(userId int32) ApiGetGameHighScoresPostRequest {
+func (r ApiPostGetGameHighScoresRequest) UserId(userId int32) ApiPostGetGameHighScoresRequest {
 	r.userId = &userId
 	return r
 }
 
 // Required if *inline\\\\_message\\\\_id* is not specified. Unique identifier for the target chat
-func (r ApiGetGameHighScoresPostRequest) ChatId(chatId int32) ApiGetGameHighScoresPostRequest {
+func (r ApiPostGetGameHighScoresRequest) ChatId(chatId int32) ApiPostGetGameHighScoresRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Required if *inline\\\\_message\\\\_id* is not specified. Identifier of the sent message
-func (r ApiGetGameHighScoresPostRequest) MessageId(messageId int32) ApiGetGameHighScoresPostRequest {
+func (r ApiPostGetGameHighScoresRequest) MessageId(messageId int32) ApiPostGetGameHighScoresRequest {
 	r.messageId = &messageId
 	return r
 }
 
 // Required if *chat\\\\_id* and *message\\\\_id* are not specified. Identifier of the inline message
-func (r ApiGetGameHighScoresPostRequest) InlineMessageId(inlineMessageId string) ApiGetGameHighScoresPostRequest {
+func (r ApiPostGetGameHighScoresRequest) InlineMessageId(inlineMessageId string) ApiPostGetGameHighScoresRequest {
 	r.inlineMessageId = &inlineMessageId
 	return r
 }
 
-func (r ApiGetGameHighScoresPostRequest) Execute() (*GetGameHighScoresPost200Response, *http.Response, error) {
-	return r.ApiService.GetGameHighScoresPostExecute(r)
+func (r ApiPostGetGameHighScoresRequest) Execute() (*PostGetGameHighScores200Response, *http.Response, error) {
+	return r.ApiService.PostGetGameHighScoresExecute(r)
 }
 
 /*
-GetGameHighScoresPost Method for GetGameHighScoresPost
+PostGetGameHighScores getGameHighScores
 
 Use this method to get data for high score tables. Will return the score of the specified user and several of their neighbors in a game. Returns an Array of [GameHighScore](https://core.telegram.org/bots/api/#gamehighscore) objects.
 
 This method will currently return scores for the target user, plus two of their closest neighbors on each side. Will also return the top three users if the user and their neighbors are not among them. Please note that this behavior is subject to change.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetGameHighScoresPostRequest
+ @return ApiPostGetGameHighScoresRequest
 */
-func (a *DefaultAPIService) GetGameHighScoresPost(ctx context.Context) ApiGetGameHighScoresPostRequest {
-	return ApiGetGameHighScoresPostRequest{
+func (a *DefaultAPIService) PostGetGameHighScores(ctx context.Context) ApiPostGetGameHighScoresRequest {
+	return ApiPostGetGameHighScoresRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetGameHighScoresPost200Response
-func (a *DefaultAPIService) GetGameHighScoresPostExecute(r ApiGetGameHighScoresPostRequest) (*GetGameHighScoresPost200Response, *http.Response, error) {
+//  @return PostGetGameHighScores200Response
+func (a *DefaultAPIService) PostGetGameHighScoresExecute(r ApiPostGetGameHighScoresRequest) (*PostGetGameHighScores200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetGameHighScoresPost200Response
+		localVarReturnValue  *PostGetGameHighScores200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetGameHighScoresPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetGameHighScores")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10867,6 +11505,17 @@ func (a *DefaultAPIService) GetGameHighScoresPostExecute(r ApiGetGameHighScoresP
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -10890,41 +11539,41 @@ func (a *DefaultAPIService) GetGameHighScoresPostExecute(r ApiGetGameHighScoresP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetMePostRequest struct {
+type ApiPostGetMeRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 }
 
-func (r ApiGetMePostRequest) Execute() (*GetMePost200Response, *http.Response, error) {
-	return r.ApiService.GetMePostExecute(r)
+func (r ApiPostGetMeRequest) Execute() (*PostGetMe200Response, *http.Response, error) {
+	return r.ApiService.PostGetMeExecute(r)
 }
 
 /*
-GetMePost Method for GetMePost
+PostGetMe getMe
 
 A simple method for testing your bot's authentication token. Requires no parameters. Returns basic information about the bot in form of a [User](https://core.telegram.org/bots/api/#user) object.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetMePostRequest
+ @return ApiPostGetMeRequest
 */
-func (a *DefaultAPIService) GetMePost(ctx context.Context) ApiGetMePostRequest {
-	return ApiGetMePostRequest{
+func (a *DefaultAPIService) PostGetMe(ctx context.Context) ApiPostGetMeRequest {
+	return ApiPostGetMeRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetMePost200Response
-func (a *DefaultAPIService) GetMePostExecute(r ApiGetMePostRequest) (*GetMePost200Response, *http.Response, error) {
+//  @return PostGetMe200Response
+func (a *DefaultAPIService) PostGetMeExecute(r ApiPostGetMeRequest) (*PostGetMe200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetMePost200Response
+		localVarReturnValue  *PostGetMe200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetMePost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetMe")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10974,6 +11623,17 @@ func (a *DefaultAPIService) GetMePostExecute(r ApiGetMePostRequest) (*GetMePost2
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -10997,54 +11657,54 @@ func (a *DefaultAPIService) GetMePostExecute(r ApiGetMePostRequest) (*GetMePost2
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetMyCommandsPostRequest struct {
+type ApiPostGetMyCommandsRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	scope *BotCommandScope
 	languageCode *string
 }
 
-func (r ApiGetMyCommandsPostRequest) Scope(scope BotCommandScope) ApiGetMyCommandsPostRequest {
+func (r ApiPostGetMyCommandsRequest) Scope(scope BotCommandScope) ApiPostGetMyCommandsRequest {
 	r.scope = &scope
 	return r
 }
 
 // A two-letter ISO 639-1 language code or an empty string
-func (r ApiGetMyCommandsPostRequest) LanguageCode(languageCode string) ApiGetMyCommandsPostRequest {
+func (r ApiPostGetMyCommandsRequest) LanguageCode(languageCode string) ApiPostGetMyCommandsRequest {
 	r.languageCode = &languageCode
 	return r
 }
 
-func (r ApiGetMyCommandsPostRequest) Execute() (*GetMyCommandsPost200Response, *http.Response, error) {
-	return r.ApiService.GetMyCommandsPostExecute(r)
+func (r ApiPostGetMyCommandsRequest) Execute() (*PostGetMyCommands200Response, *http.Response, error) {
+	return r.ApiService.PostGetMyCommandsExecute(r)
 }
 
 /*
-GetMyCommandsPost Method for GetMyCommandsPost
+PostGetMyCommands getMyCommands
 
 Use this method to get the current list of the bot's commands for the given scope and user language. Returns an Array of [BotCommand](https://core.telegram.org/bots/api/#botcommand) objects. If commands aren't set, an empty list is returned.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetMyCommandsPostRequest
+ @return ApiPostGetMyCommandsRequest
 */
-func (a *DefaultAPIService) GetMyCommandsPost(ctx context.Context) ApiGetMyCommandsPostRequest {
-	return ApiGetMyCommandsPostRequest{
+func (a *DefaultAPIService) PostGetMyCommands(ctx context.Context) ApiPostGetMyCommandsRequest {
+	return ApiPostGetMyCommandsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetMyCommandsPost200Response
-func (a *DefaultAPIService) GetMyCommandsPostExecute(r ApiGetMyCommandsPostRequest) (*GetMyCommandsPost200Response, *http.Response, error) {
+//  @return PostGetMyCommands200Response
+func (a *DefaultAPIService) PostGetMyCommandsExecute(r ApiPostGetMyCommandsRequest) (*PostGetMyCommands200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetMyCommandsPost200Response
+		localVarReturnValue  *PostGetMyCommands200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetMyCommandsPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetMyCommands")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11104,6 +11764,17 @@ func (a *DefaultAPIService) GetMyCommandsPostExecute(r ApiGetMyCommandsPostReque
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -11127,48 +11798,48 @@ func (a *DefaultAPIService) GetMyCommandsPostExecute(r ApiGetMyCommandsPostReque
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetMyDefaultAdministratorRightsPostRequest struct {
+type ApiPostGetMyDefaultAdministratorRightsRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	forChannels *bool
 }
 
 // Pass *True* to get default administrator rights of the bot in channels. Otherwise, default administrator rights of the bot for groups and supergroups will be returned.
-func (r ApiGetMyDefaultAdministratorRightsPostRequest) ForChannels(forChannels bool) ApiGetMyDefaultAdministratorRightsPostRequest {
+func (r ApiPostGetMyDefaultAdministratorRightsRequest) ForChannels(forChannels bool) ApiPostGetMyDefaultAdministratorRightsRequest {
 	r.forChannels = &forChannels
 	return r
 }
 
-func (r ApiGetMyDefaultAdministratorRightsPostRequest) Execute() (*GetMyDefaultAdministratorRightsPost200Response, *http.Response, error) {
-	return r.ApiService.GetMyDefaultAdministratorRightsPostExecute(r)
+func (r ApiPostGetMyDefaultAdministratorRightsRequest) Execute() (*PostGetMyDefaultAdministratorRights200Response, *http.Response, error) {
+	return r.ApiService.PostGetMyDefaultAdministratorRightsExecute(r)
 }
 
 /*
-GetMyDefaultAdministratorRightsPost Method for GetMyDefaultAdministratorRightsPost
+PostGetMyDefaultAdministratorRights getMyDefaultAdministratorRights
 
 Use this method to get the current default administrator rights of the bot. Returns [ChatAdministratorRights](https://core.telegram.org/bots/api/#chatadministratorrights) on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetMyDefaultAdministratorRightsPostRequest
+ @return ApiPostGetMyDefaultAdministratorRightsRequest
 */
-func (a *DefaultAPIService) GetMyDefaultAdministratorRightsPost(ctx context.Context) ApiGetMyDefaultAdministratorRightsPostRequest {
-	return ApiGetMyDefaultAdministratorRightsPostRequest{
+func (a *DefaultAPIService) PostGetMyDefaultAdministratorRights(ctx context.Context) ApiPostGetMyDefaultAdministratorRightsRequest {
+	return ApiPostGetMyDefaultAdministratorRightsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetMyDefaultAdministratorRightsPost200Response
-func (a *DefaultAPIService) GetMyDefaultAdministratorRightsPostExecute(r ApiGetMyDefaultAdministratorRightsPostRequest) (*GetMyDefaultAdministratorRightsPost200Response, *http.Response, error) {
+//  @return PostGetMyDefaultAdministratorRights200Response
+func (a *DefaultAPIService) PostGetMyDefaultAdministratorRightsExecute(r ApiPostGetMyDefaultAdministratorRightsRequest) (*PostGetMyDefaultAdministratorRights200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetMyDefaultAdministratorRightsPost200Response
+		localVarReturnValue  *PostGetMyDefaultAdministratorRights200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetMyDefaultAdministratorRightsPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetMyDefaultAdministratorRights")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11221,6 +11892,17 @@ func (a *DefaultAPIService) GetMyDefaultAdministratorRightsPostExecute(r ApiGetM
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -11244,48 +11926,48 @@ func (a *DefaultAPIService) GetMyDefaultAdministratorRightsPostExecute(r ApiGetM
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetMyDescriptionPostRequest struct {
+type ApiPostGetMyDescriptionRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	languageCode *string
 }
 
 // A two-letter ISO 639-1 language code or an empty string
-func (r ApiGetMyDescriptionPostRequest) LanguageCode(languageCode string) ApiGetMyDescriptionPostRequest {
+func (r ApiPostGetMyDescriptionRequest) LanguageCode(languageCode string) ApiPostGetMyDescriptionRequest {
 	r.languageCode = &languageCode
 	return r
 }
 
-func (r ApiGetMyDescriptionPostRequest) Execute() (*GetMyDescriptionPost200Response, *http.Response, error) {
-	return r.ApiService.GetMyDescriptionPostExecute(r)
+func (r ApiPostGetMyDescriptionRequest) Execute() (*PostGetMyDescription200Response, *http.Response, error) {
+	return r.ApiService.PostGetMyDescriptionExecute(r)
 }
 
 /*
-GetMyDescriptionPost Method for GetMyDescriptionPost
+PostGetMyDescription getMyDescription
 
 Use this method to get the current bot description for the given user language. Returns [BotDescription](https://core.telegram.org/bots/api/#botdescription) on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetMyDescriptionPostRequest
+ @return ApiPostGetMyDescriptionRequest
 */
-func (a *DefaultAPIService) GetMyDescriptionPost(ctx context.Context) ApiGetMyDescriptionPostRequest {
-	return ApiGetMyDescriptionPostRequest{
+func (a *DefaultAPIService) PostGetMyDescription(ctx context.Context) ApiPostGetMyDescriptionRequest {
+	return ApiPostGetMyDescriptionRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetMyDescriptionPost200Response
-func (a *DefaultAPIService) GetMyDescriptionPostExecute(r ApiGetMyDescriptionPostRequest) (*GetMyDescriptionPost200Response, *http.Response, error) {
+//  @return PostGetMyDescription200Response
+func (a *DefaultAPIService) PostGetMyDescriptionExecute(r ApiPostGetMyDescriptionRequest) (*PostGetMyDescription200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetMyDescriptionPost200Response
+		localVarReturnValue  *PostGetMyDescription200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetMyDescriptionPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetMyDescription")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11338,6 +12020,17 @@ func (a *DefaultAPIService) GetMyDescriptionPostExecute(r ApiGetMyDescriptionPos
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -11361,48 +12054,48 @@ func (a *DefaultAPIService) GetMyDescriptionPostExecute(r ApiGetMyDescriptionPos
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetMyNamePostRequest struct {
+type ApiPostGetMyNameRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	languageCode *string
 }
 
 // A two-letter ISO 639-1 language code or an empty string
-func (r ApiGetMyNamePostRequest) LanguageCode(languageCode string) ApiGetMyNamePostRequest {
+func (r ApiPostGetMyNameRequest) LanguageCode(languageCode string) ApiPostGetMyNameRequest {
 	r.languageCode = &languageCode
 	return r
 }
 
-func (r ApiGetMyNamePostRequest) Execute() (*GetMyNamePost200Response, *http.Response, error) {
-	return r.ApiService.GetMyNamePostExecute(r)
+func (r ApiPostGetMyNameRequest) Execute() (*PostGetMyName200Response, *http.Response, error) {
+	return r.ApiService.PostGetMyNameExecute(r)
 }
 
 /*
-GetMyNamePost Method for GetMyNamePost
+PostGetMyName getMyName
 
 Use this method to get the current bot name for the given user language. Returns [BotName](https://core.telegram.org/bots/api/#botname) on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetMyNamePostRequest
+ @return ApiPostGetMyNameRequest
 */
-func (a *DefaultAPIService) GetMyNamePost(ctx context.Context) ApiGetMyNamePostRequest {
-	return ApiGetMyNamePostRequest{
+func (a *DefaultAPIService) PostGetMyName(ctx context.Context) ApiPostGetMyNameRequest {
+	return ApiPostGetMyNameRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetMyNamePost200Response
-func (a *DefaultAPIService) GetMyNamePostExecute(r ApiGetMyNamePostRequest) (*GetMyNamePost200Response, *http.Response, error) {
+//  @return PostGetMyName200Response
+func (a *DefaultAPIService) PostGetMyNameExecute(r ApiPostGetMyNameRequest) (*PostGetMyName200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetMyNamePost200Response
+		localVarReturnValue  *PostGetMyName200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetMyNamePost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetMyName")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11455,6 +12148,17 @@ func (a *DefaultAPIService) GetMyNamePostExecute(r ApiGetMyNamePostRequest) (*Ge
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -11478,48 +12182,48 @@ func (a *DefaultAPIService) GetMyNamePostExecute(r ApiGetMyNamePostRequest) (*Ge
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetMyShortDescriptionPostRequest struct {
+type ApiPostGetMyShortDescriptionRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	languageCode *string
 }
 
 // A two-letter ISO 639-1 language code or an empty string
-func (r ApiGetMyShortDescriptionPostRequest) LanguageCode(languageCode string) ApiGetMyShortDescriptionPostRequest {
+func (r ApiPostGetMyShortDescriptionRequest) LanguageCode(languageCode string) ApiPostGetMyShortDescriptionRequest {
 	r.languageCode = &languageCode
 	return r
 }
 
-func (r ApiGetMyShortDescriptionPostRequest) Execute() (*GetMyShortDescriptionPost200Response, *http.Response, error) {
-	return r.ApiService.GetMyShortDescriptionPostExecute(r)
+func (r ApiPostGetMyShortDescriptionRequest) Execute() (*PostGetMyShortDescription200Response, *http.Response, error) {
+	return r.ApiService.PostGetMyShortDescriptionExecute(r)
 }
 
 /*
-GetMyShortDescriptionPost Method for GetMyShortDescriptionPost
+PostGetMyShortDescription getMyShortDescription
 
 Use this method to get the current bot short description for the given user language. Returns [BotShortDescription](https://core.telegram.org/bots/api/#botshortdescription) on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetMyShortDescriptionPostRequest
+ @return ApiPostGetMyShortDescriptionRequest
 */
-func (a *DefaultAPIService) GetMyShortDescriptionPost(ctx context.Context) ApiGetMyShortDescriptionPostRequest {
-	return ApiGetMyShortDescriptionPostRequest{
+func (a *DefaultAPIService) PostGetMyShortDescription(ctx context.Context) ApiPostGetMyShortDescriptionRequest {
+	return ApiPostGetMyShortDescriptionRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetMyShortDescriptionPost200Response
-func (a *DefaultAPIService) GetMyShortDescriptionPostExecute(r ApiGetMyShortDescriptionPostRequest) (*GetMyShortDescriptionPost200Response, *http.Response, error) {
+//  @return PostGetMyShortDescription200Response
+func (a *DefaultAPIService) PostGetMyShortDescriptionExecute(r ApiPostGetMyShortDescriptionRequest) (*PostGetMyShortDescription200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetMyShortDescriptionPost200Response
+		localVarReturnValue  *PostGetMyShortDescription200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetMyShortDescriptionPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetMyShortDescription")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11572,6 +12276,17 @@ func (a *DefaultAPIService) GetMyShortDescriptionPostExecute(r ApiGetMyShortDesc
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -11595,7 +12310,7 @@ func (a *DefaultAPIService) GetMyShortDescriptionPostExecute(r ApiGetMyShortDesc
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetStarTransactionsPostRequest struct {
+type ApiPostGetStarTransactionsRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	offset *int32
@@ -11603,47 +12318,47 @@ type ApiGetStarTransactionsPostRequest struct {
 }
 
 // Number of transactions to skip in the response
-func (r ApiGetStarTransactionsPostRequest) Offset(offset int32) ApiGetStarTransactionsPostRequest {
+func (r ApiPostGetStarTransactionsRequest) Offset(offset int32) ApiPostGetStarTransactionsRequest {
 	r.offset = &offset
 	return r
 }
 
 // The maximum number of transactions to be retrieved. Values between 1-100 are accepted. Defaults to 100.
-func (r ApiGetStarTransactionsPostRequest) Limit(limit int32) ApiGetStarTransactionsPostRequest {
+func (r ApiPostGetStarTransactionsRequest) Limit(limit int32) ApiPostGetStarTransactionsRequest {
 	r.limit = &limit
 	return r
 }
 
-func (r ApiGetStarTransactionsPostRequest) Execute() (*GetStarTransactionsPost200Response, *http.Response, error) {
-	return r.ApiService.GetStarTransactionsPostExecute(r)
+func (r ApiPostGetStarTransactionsRequest) Execute() (*PostGetStarTransactions200Response, *http.Response, error) {
+	return r.ApiService.PostGetStarTransactionsExecute(r)
 }
 
 /*
-GetStarTransactionsPost Method for GetStarTransactionsPost
+PostGetStarTransactions getStarTransactions
 
 Returns the bot's Telegram Star transactions in chronological order. On success, returns a [StarTransactions](https://core.telegram.org/bots/api/#startransactions) object.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetStarTransactionsPostRequest
+ @return ApiPostGetStarTransactionsRequest
 */
-func (a *DefaultAPIService) GetStarTransactionsPost(ctx context.Context) ApiGetStarTransactionsPostRequest {
-	return ApiGetStarTransactionsPostRequest{
+func (a *DefaultAPIService) PostGetStarTransactions(ctx context.Context) ApiPostGetStarTransactionsRequest {
+	return ApiPostGetStarTransactionsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetStarTransactionsPost200Response
-func (a *DefaultAPIService) GetStarTransactionsPostExecute(r ApiGetStarTransactionsPostRequest) (*GetStarTransactionsPost200Response, *http.Response, error) {
+//  @return PostGetStarTransactions200Response
+func (a *DefaultAPIService) PostGetStarTransactionsExecute(r ApiPostGetStarTransactionsRequest) (*PostGetStarTransactions200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetStarTransactionsPost200Response
+		localVarReturnValue  *PostGetStarTransactions200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetStarTransactionsPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetStarTransactions")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11699,6 +12414,17 @@ func (a *DefaultAPIService) GetStarTransactionsPostExecute(r ApiGetStarTransacti
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -11722,48 +12448,48 @@ func (a *DefaultAPIService) GetStarTransactionsPostExecute(r ApiGetStarTransacti
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetStickerSetPostRequest struct {
+type ApiPostGetStickerSetRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	name *string
 }
 
 // Name of the sticker set
-func (r ApiGetStickerSetPostRequest) Name(name string) ApiGetStickerSetPostRequest {
+func (r ApiPostGetStickerSetRequest) Name(name string) ApiPostGetStickerSetRequest {
 	r.name = &name
 	return r
 }
 
-func (r ApiGetStickerSetPostRequest) Execute() (*GetStickerSetPost200Response, *http.Response, error) {
-	return r.ApiService.GetStickerSetPostExecute(r)
+func (r ApiPostGetStickerSetRequest) Execute() (*PostGetStickerSet200Response, *http.Response, error) {
+	return r.ApiService.PostGetStickerSetExecute(r)
 }
 
 /*
-GetStickerSetPost Method for GetStickerSetPost
+PostGetStickerSet getStickerSet
 
 Use this method to get a sticker set. On success, a [StickerSet](https://core.telegram.org/bots/api/#stickerset) object is returned.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetStickerSetPostRequest
+ @return ApiPostGetStickerSetRequest
 */
-func (a *DefaultAPIService) GetStickerSetPost(ctx context.Context) ApiGetStickerSetPostRequest {
-	return ApiGetStickerSetPostRequest{
+func (a *DefaultAPIService) PostGetStickerSet(ctx context.Context) ApiPostGetStickerSetRequest {
+	return ApiPostGetStickerSetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetStickerSetPost200Response
-func (a *DefaultAPIService) GetStickerSetPostExecute(r ApiGetStickerSetPostRequest) (*GetStickerSetPost200Response, *http.Response, error) {
+//  @return PostGetStickerSet200Response
+func (a *DefaultAPIService) PostGetStickerSetExecute(r ApiPostGetStickerSetRequest) (*PostGetStickerSet200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetStickerSetPost200Response
+		localVarReturnValue  *PostGetStickerSet200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetStickerSetPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetStickerSet")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11817,6 +12543,17 @@ func (a *DefaultAPIService) GetStickerSetPostExecute(r ApiGetStickerSetPostReque
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -11840,7 +12577,7 @@ func (a *DefaultAPIService) GetStickerSetPostExecute(r ApiGetStickerSetPostReque
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetUpdatesPostRequest struct {
+type ApiPostGetUpdatesRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	offset *int32
@@ -11850,59 +12587,59 @@ type ApiGetUpdatesPostRequest struct {
 }
 
 // Identifier of the first update to be returned. Must be greater by one than the highest among the identifiers of previously received updates. By default, updates starting with the earliest unconfirmed update are returned. An update is considered confirmed as soon as [getUpdates](https://core.telegram.org/bots/api/#getupdates) is called with an *offset* higher than its *update\\\\_id*. The negative offset can be specified to retrieve updates starting from *-offset* update from the end of the updates queue. All previous updates will be forgotten.
-func (r ApiGetUpdatesPostRequest) Offset(offset int32) ApiGetUpdatesPostRequest {
+func (r ApiPostGetUpdatesRequest) Offset(offset int32) ApiPostGetUpdatesRequest {
 	r.offset = &offset
 	return r
 }
 
 // Limits the number of updates to be retrieved. Values between 1-100 are accepted. Defaults to 100.
-func (r ApiGetUpdatesPostRequest) Limit(limit int32) ApiGetUpdatesPostRequest {
+func (r ApiPostGetUpdatesRequest) Limit(limit int32) ApiPostGetUpdatesRequest {
 	r.limit = &limit
 	return r
 }
 
 // Timeout in seconds for long polling. Defaults to 0, i.e. usual short polling. Should be positive, short polling should be used for testing purposes only.
-func (r ApiGetUpdatesPostRequest) Timeout(timeout int32) ApiGetUpdatesPostRequest {
+func (r ApiPostGetUpdatesRequest) Timeout(timeout int32) ApiPostGetUpdatesRequest {
 	r.timeout = &timeout
 	return r
 }
 
 // A JSON-serialized list of the update types you want your bot to receive. For example, specify &#x60;[\\\&quot;message\\\&quot;, \\\&quot;edited_channel_post\\\&quot;, \\\&quot;callback_query\\\&quot;]&#x60; to only receive updates of these types. See [Update](https://core.telegram.org/bots/api/#update) for a complete list of available update types. Specify an empty list to receive all update types except *chat\\\\_member*, *message\\\\_reaction*, and *message\\\\_reaction\\\\_count* (default). If not specified, the previous setting will be used.    Please note that this parameter doesn&#39;t affect updates created before the call to getUpdates, so unwanted updates may be received for a short period of time.
-func (r ApiGetUpdatesPostRequest) AllowedUpdates(allowedUpdates []string) ApiGetUpdatesPostRequest {
+func (r ApiPostGetUpdatesRequest) AllowedUpdates(allowedUpdates []string) ApiPostGetUpdatesRequest {
 	r.allowedUpdates = &allowedUpdates
 	return r
 }
 
-func (r ApiGetUpdatesPostRequest) Execute() (*GetUpdatesPost200Response, *http.Response, error) {
-	return r.ApiService.GetUpdatesPostExecute(r)
+func (r ApiPostGetUpdatesRequest) Execute() (*PostGetUpdates200Response, *http.Response, error) {
+	return r.ApiService.PostGetUpdatesExecute(r)
 }
 
 /*
-GetUpdatesPost Method for GetUpdatesPost
+PostGetUpdates getUpdates
 
 Use this method to receive incoming updates using long polling ([wiki](https://en.wikipedia.org/wiki/Push_technology#Long_polling)). Returns an Array of [Update](https://core.telegram.org/bots/api/#update) objects.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetUpdatesPostRequest
+ @return ApiPostGetUpdatesRequest
 */
-func (a *DefaultAPIService) GetUpdatesPost(ctx context.Context) ApiGetUpdatesPostRequest {
-	return ApiGetUpdatesPostRequest{
+func (a *DefaultAPIService) PostGetUpdates(ctx context.Context) ApiPostGetUpdatesRequest {
+	return ApiPostGetUpdatesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetUpdatesPost200Response
-func (a *DefaultAPIService) GetUpdatesPostExecute(r ApiGetUpdatesPostRequest) (*GetUpdatesPost200Response, *http.Response, error) {
+//  @return PostGetUpdates200Response
+func (a *DefaultAPIService) PostGetUpdatesExecute(r ApiPostGetUpdatesRequest) (*PostGetUpdates200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetUpdatesPost200Response
+		localVarReturnValue  *PostGetUpdates200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetUpdatesPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetUpdates")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11964,6 +12701,17 @@ func (a *DefaultAPIService) GetUpdatesPostExecute(r ApiGetUpdatesPostRequest) (*
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -11987,54 +12735,54 @@ func (a *DefaultAPIService) GetUpdatesPostExecute(r ApiGetUpdatesPostRequest) (*
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetUserChatBoostsPostRequest struct {
+type ApiPostGetUserChatBoostsRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *GetUserChatBoostsPostRequestChatId
+	chatId *PostGetUserChatBoostsRequestChatId
 	userId *int32
 }
 
-func (r ApiGetUserChatBoostsPostRequest) ChatId(chatId GetUserChatBoostsPostRequestChatId) ApiGetUserChatBoostsPostRequest {
+func (r ApiPostGetUserChatBoostsRequest) ChatId(chatId PostGetUserChatBoostsRequestChatId) ApiPostGetUserChatBoostsRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Unique identifier of the target user
-func (r ApiGetUserChatBoostsPostRequest) UserId(userId int32) ApiGetUserChatBoostsPostRequest {
+func (r ApiPostGetUserChatBoostsRequest) UserId(userId int32) ApiPostGetUserChatBoostsRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiGetUserChatBoostsPostRequest) Execute() (*GetUserChatBoostsPost200Response, *http.Response, error) {
-	return r.ApiService.GetUserChatBoostsPostExecute(r)
+func (r ApiPostGetUserChatBoostsRequest) Execute() (*PostGetUserChatBoosts200Response, *http.Response, error) {
+	return r.ApiService.PostGetUserChatBoostsExecute(r)
 }
 
 /*
-GetUserChatBoostsPost Method for GetUserChatBoostsPost
+PostGetUserChatBoosts getUserChatBoosts
 
 Use this method to get the list of boosts added to a chat by a user. Requires administrator rights in the chat. Returns a [UserChatBoosts](https://core.telegram.org/bots/api/#userchatboosts) object.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetUserChatBoostsPostRequest
+ @return ApiPostGetUserChatBoostsRequest
 */
-func (a *DefaultAPIService) GetUserChatBoostsPost(ctx context.Context) ApiGetUserChatBoostsPostRequest {
-	return ApiGetUserChatBoostsPostRequest{
+func (a *DefaultAPIService) PostGetUserChatBoosts(ctx context.Context) ApiPostGetUserChatBoostsRequest {
+	return ApiPostGetUserChatBoostsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetUserChatBoostsPost200Response
-func (a *DefaultAPIService) GetUserChatBoostsPostExecute(r ApiGetUserChatBoostsPostRequest) (*GetUserChatBoostsPost200Response, *http.Response, error) {
+//  @return PostGetUserChatBoosts200Response
+func (a *DefaultAPIService) PostGetUserChatBoostsExecute(r ApiPostGetUserChatBoostsRequest) (*PostGetUserChatBoosts200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetUserChatBoostsPost200Response
+		localVarReturnValue  *PostGetUserChatBoosts200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetUserChatBoostsPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetUserChatBoosts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12092,6 +12840,17 @@ func (a *DefaultAPIService) GetUserChatBoostsPostExecute(r ApiGetUserChatBoostsP
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -12115,7 +12874,7 @@ func (a *DefaultAPIService) GetUserChatBoostsPostExecute(r ApiGetUserChatBoostsP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetUserProfilePhotosPostRequest struct {
+type ApiPostGetUserProfilePhotosRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	userId *int32
@@ -12124,53 +12883,53 @@ type ApiGetUserProfilePhotosPostRequest struct {
 }
 
 // Unique identifier of the target user
-func (r ApiGetUserProfilePhotosPostRequest) UserId(userId int32) ApiGetUserProfilePhotosPostRequest {
+func (r ApiPostGetUserProfilePhotosRequest) UserId(userId int32) ApiPostGetUserProfilePhotosRequest {
 	r.userId = &userId
 	return r
 }
 
 // Sequential number of the first photo to be returned. By default, all photos are returned.
-func (r ApiGetUserProfilePhotosPostRequest) Offset(offset int32) ApiGetUserProfilePhotosPostRequest {
+func (r ApiPostGetUserProfilePhotosRequest) Offset(offset int32) ApiPostGetUserProfilePhotosRequest {
 	r.offset = &offset
 	return r
 }
 
 // Limits the number of photos to be retrieved. Values between 1-100 are accepted. Defaults to 100.
-func (r ApiGetUserProfilePhotosPostRequest) Limit(limit int32) ApiGetUserProfilePhotosPostRequest {
+func (r ApiPostGetUserProfilePhotosRequest) Limit(limit int32) ApiPostGetUserProfilePhotosRequest {
 	r.limit = &limit
 	return r
 }
 
-func (r ApiGetUserProfilePhotosPostRequest) Execute() (*GetUserProfilePhotosPost200Response, *http.Response, error) {
-	return r.ApiService.GetUserProfilePhotosPostExecute(r)
+func (r ApiPostGetUserProfilePhotosRequest) Execute() (*PostGetUserProfilePhotos200Response, *http.Response, error) {
+	return r.ApiService.PostGetUserProfilePhotosExecute(r)
 }
 
 /*
-GetUserProfilePhotosPost Method for GetUserProfilePhotosPost
+PostGetUserProfilePhotos getUserProfilePhotos
 
 Use this method to get a list of profile pictures for a user. Returns a [UserProfilePhotos](https://core.telegram.org/bots/api/#userprofilephotos) object.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetUserProfilePhotosPostRequest
+ @return ApiPostGetUserProfilePhotosRequest
 */
-func (a *DefaultAPIService) GetUserProfilePhotosPost(ctx context.Context) ApiGetUserProfilePhotosPostRequest {
-	return ApiGetUserProfilePhotosPostRequest{
+func (a *DefaultAPIService) PostGetUserProfilePhotos(ctx context.Context) ApiPostGetUserProfilePhotosRequest {
+	return ApiPostGetUserProfilePhotosRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetUserProfilePhotosPost200Response
-func (a *DefaultAPIService) GetUserProfilePhotosPostExecute(r ApiGetUserProfilePhotosPostRequest) (*GetUserProfilePhotosPost200Response, *http.Response, error) {
+//  @return PostGetUserProfilePhotos200Response
+func (a *DefaultAPIService) PostGetUserProfilePhotosExecute(r ApiPostGetUserProfilePhotosRequest) (*PostGetUserProfilePhotos200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetUserProfilePhotosPost200Response
+		localVarReturnValue  *PostGetUserProfilePhotos200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetUserProfilePhotosPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetUserProfilePhotos")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12230,6 +12989,17 @@ func (a *DefaultAPIService) GetUserProfilePhotosPostExecute(r ApiGetUserProfileP
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -12253,41 +13023,41 @@ func (a *DefaultAPIService) GetUserProfilePhotosPostExecute(r ApiGetUserProfileP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetWebhookInfoPostRequest struct {
+type ApiPostGetWebhookInfoRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 }
 
-func (r ApiGetWebhookInfoPostRequest) Execute() (*GetWebhookInfoPost200Response, *http.Response, error) {
-	return r.ApiService.GetWebhookInfoPostExecute(r)
+func (r ApiPostGetWebhookInfoRequest) Execute() (*PostGetWebhookInfo200Response, *http.Response, error) {
+	return r.ApiService.PostGetWebhookInfoExecute(r)
 }
 
 /*
-GetWebhookInfoPost Method for GetWebhookInfoPost
+PostGetWebhookInfo getWebhookInfo
 
 Use this method to get current webhook status. Requires no parameters. On success, returns a [WebhookInfo](https://core.telegram.org/bots/api/#webhookinfo) object. If the bot is using [getUpdates](https://core.telegram.org/bots/api/#getupdates), will return an object with the *url* field empty.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetWebhookInfoPostRequest
+ @return ApiPostGetWebhookInfoRequest
 */
-func (a *DefaultAPIService) GetWebhookInfoPost(ctx context.Context) ApiGetWebhookInfoPostRequest {
-	return ApiGetWebhookInfoPostRequest{
+func (a *DefaultAPIService) PostGetWebhookInfo(ctx context.Context) ApiPostGetWebhookInfoRequest {
+	return ApiPostGetWebhookInfoRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetWebhookInfoPost200Response
-func (a *DefaultAPIService) GetWebhookInfoPostExecute(r ApiGetWebhookInfoPostRequest) (*GetWebhookInfoPost200Response, *http.Response, error) {
+//  @return PostGetWebhookInfo200Response
+func (a *DefaultAPIService) PostGetWebhookInfoExecute(r ApiPostGetWebhookInfoRequest) (*PostGetWebhookInfo200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetWebhookInfoPost200Response
+		localVarReturnValue  *PostGetWebhookInfo200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetWebhookInfoPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetWebhookInfo")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12337,6 +13107,17 @@ func (a *DefaultAPIService) GetWebhookInfoPostExecute(r ApiGetWebhookInfoPostReq
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -12360,7 +13141,7 @@ func (a *DefaultAPIService) GetWebhookInfoPostExecute(r ApiGetWebhookInfoPostReq
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGiftPremiumSubscriptionPostRequest struct {
+type ApiPostGiftPremiumSubscriptionRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	userId *int32
@@ -12372,71 +13153,71 @@ type ApiGiftPremiumSubscriptionPostRequest struct {
 }
 
 // Unique identifier of the target user who will receive a Telegram Premium subscription
-func (r ApiGiftPremiumSubscriptionPostRequest) UserId(userId int32) ApiGiftPremiumSubscriptionPostRequest {
+func (r ApiPostGiftPremiumSubscriptionRequest) UserId(userId int32) ApiPostGiftPremiumSubscriptionRequest {
 	r.userId = &userId
 	return r
 }
 
 // Number of months the Telegram Premium subscription will be active for the user; must be one of 3, 6, or 12
-func (r ApiGiftPremiumSubscriptionPostRequest) MonthCount(monthCount int32) ApiGiftPremiumSubscriptionPostRequest {
+func (r ApiPostGiftPremiumSubscriptionRequest) MonthCount(monthCount int32) ApiPostGiftPremiumSubscriptionRequest {
 	r.monthCount = &monthCount
 	return r
 }
 
 // Number of Telegram Stars to pay for the Telegram Premium subscription; must be 1000 for 3 months, 1500 for 6 months, and 2500 for 12 months
-func (r ApiGiftPremiumSubscriptionPostRequest) StarCount(starCount int32) ApiGiftPremiumSubscriptionPostRequest {
+func (r ApiPostGiftPremiumSubscriptionRequest) StarCount(starCount int32) ApiPostGiftPremiumSubscriptionRequest {
 	r.starCount = &starCount
 	return r
 }
 
 // Text that will be shown along with the service message about the subscription; 0-128 characters
-func (r ApiGiftPremiumSubscriptionPostRequest) Text(text string) ApiGiftPremiumSubscriptionPostRequest {
+func (r ApiPostGiftPremiumSubscriptionRequest) Text(text string) ApiPostGiftPremiumSubscriptionRequest {
 	r.text = &text
 	return r
 }
 
 // Mode for parsing entities in the text. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, and “custom\\\\_emoji” are ignored.
-func (r ApiGiftPremiumSubscriptionPostRequest) TextParseMode(textParseMode string) ApiGiftPremiumSubscriptionPostRequest {
+func (r ApiPostGiftPremiumSubscriptionRequest) TextParseMode(textParseMode string) ApiPostGiftPremiumSubscriptionRequest {
 	r.textParseMode = &textParseMode
 	return r
 }
 
 // A JSON-serialized list of special entities that appear in the gift text. It can be specified instead of *text\\\\_parse\\\\_mode*. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, and “custom\\\\_emoji” are ignored.
-func (r ApiGiftPremiumSubscriptionPostRequest) TextEntities(textEntities []MessageEntity) ApiGiftPremiumSubscriptionPostRequest {
+func (r ApiPostGiftPremiumSubscriptionRequest) TextEntities(textEntities []MessageEntity) ApiPostGiftPremiumSubscriptionRequest {
 	r.textEntities = &textEntities
 	return r
 }
 
-func (r ApiGiftPremiumSubscriptionPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.GiftPremiumSubscriptionPostExecute(r)
+func (r ApiPostGiftPremiumSubscriptionRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostGiftPremiumSubscriptionExecute(r)
 }
 
 /*
-GiftPremiumSubscriptionPost Method for GiftPremiumSubscriptionPost
+PostGiftPremiumSubscription giftPremiumSubscription
 
 Gifts a Telegram Premium subscription to the given user. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGiftPremiumSubscriptionPostRequest
+ @return ApiPostGiftPremiumSubscriptionRequest
 */
-func (a *DefaultAPIService) GiftPremiumSubscriptionPost(ctx context.Context) ApiGiftPremiumSubscriptionPostRequest {
-	return ApiGiftPremiumSubscriptionPostRequest{
+func (a *DefaultAPIService) PostGiftPremiumSubscription(ctx context.Context) ApiPostGiftPremiumSubscriptionRequest {
+	return ApiPostGiftPremiumSubscriptionRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) GiftPremiumSubscriptionPostExecute(r ApiGiftPremiumSubscriptionPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostGiftPremiumSubscriptionExecute(r ApiPostGiftPremiumSubscriptionRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GiftPremiumSubscriptionPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGiftPremiumSubscription")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12507,6 +13288,17 @@ func (a *DefaultAPIService) GiftPremiumSubscriptionPostExecute(r ApiGiftPremiumS
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -12530,47 +13322,47 @@ func (a *DefaultAPIService) GiftPremiumSubscriptionPostExecute(r ApiGiftPremiumS
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiHideGeneralForumTopicPostRequest struct {
+type ApiPostHideGeneralForumTopicRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *RestrictChatMemberPostRequestChatId
+	chatId *PostRestrictChatMemberRequestChatId
 }
 
-func (r ApiHideGeneralForumTopicPostRequest) ChatId(chatId RestrictChatMemberPostRequestChatId) ApiHideGeneralForumTopicPostRequest {
+func (r ApiPostHideGeneralForumTopicRequest) ChatId(chatId PostRestrictChatMemberRequestChatId) ApiPostHideGeneralForumTopicRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiHideGeneralForumTopicPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.HideGeneralForumTopicPostExecute(r)
+func (r ApiPostHideGeneralForumTopicRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostHideGeneralForumTopicExecute(r)
 }
 
 /*
-HideGeneralForumTopicPost Method for HideGeneralForumTopicPost
+PostHideGeneralForumTopic hideGeneralForumTopic
 
 Use this method to hide the 'General' topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the *can\_manage\_topics* administrator rights. The topic will be automatically closed if it was open. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiHideGeneralForumTopicPostRequest
+ @return ApiPostHideGeneralForumTopicRequest
 */
-func (a *DefaultAPIService) HideGeneralForumTopicPost(ctx context.Context) ApiHideGeneralForumTopicPostRequest {
-	return ApiHideGeneralForumTopicPostRequest{
+func (a *DefaultAPIService) PostHideGeneralForumTopic(ctx context.Context) ApiPostHideGeneralForumTopicRequest {
+	return ApiPostHideGeneralForumTopicRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) HideGeneralForumTopicPostExecute(r ApiHideGeneralForumTopicPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostHideGeneralForumTopicExecute(r ApiPostHideGeneralForumTopicRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.HideGeneralForumTopicPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostHideGeneralForumTopic")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12624,6 +13416,17 @@ func (a *DefaultAPIService) HideGeneralForumTopicPostExecute(r ApiHideGeneralFor
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -12647,47 +13450,47 @@ func (a *DefaultAPIService) HideGeneralForumTopicPostExecute(r ApiHideGeneralFor
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiLeaveChatPostRequest struct {
+type ApiPostLeaveChatRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *LeaveChatPostRequestChatId
+	chatId *PostLeaveChatRequestChatId
 }
 
-func (r ApiLeaveChatPostRequest) ChatId(chatId LeaveChatPostRequestChatId) ApiLeaveChatPostRequest {
+func (r ApiPostLeaveChatRequest) ChatId(chatId PostLeaveChatRequestChatId) ApiPostLeaveChatRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiLeaveChatPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.LeaveChatPostExecute(r)
+func (r ApiPostLeaveChatRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostLeaveChatExecute(r)
 }
 
 /*
-LeaveChatPost Method for LeaveChatPost
+PostLeaveChat leaveChat
 
 Use this method for your bot to leave a group, supergroup or channel. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiLeaveChatPostRequest
+ @return ApiPostLeaveChatRequest
 */
-func (a *DefaultAPIService) LeaveChatPost(ctx context.Context) ApiLeaveChatPostRequest {
-	return ApiLeaveChatPostRequest{
+func (a *DefaultAPIService) PostLeaveChat(ctx context.Context) ApiPostLeaveChatRequest {
+	return ApiPostLeaveChatRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) LeaveChatPostExecute(r ApiLeaveChatPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostLeaveChatExecute(r ApiPostLeaveChatRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.LeaveChatPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostLeaveChat")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12741,6 +13544,17 @@ func (a *DefaultAPIService) LeaveChatPostExecute(r ApiLeaveChatPostRequest) (*Se
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -12764,41 +13578,41 @@ func (a *DefaultAPIService) LeaveChatPostExecute(r ApiLeaveChatPostRequest) (*Se
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiLogOutPostRequest struct {
+type ApiPostLogOutRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 }
 
-func (r ApiLogOutPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.LogOutPostExecute(r)
+func (r ApiPostLogOutRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostLogOutExecute(r)
 }
 
 /*
-LogOutPost Method for LogOutPost
+PostLogOut logOut
 
 Use this method to log out from the cloud Bot API server before launching the bot locally. You **must** log out the bot before running it locally, otherwise there is no guarantee that the bot will receive updates. After a successful call, you can immediately log in on a local server, but will not be able to log in back to the cloud Bot API server for 10 minutes. Returns *True* on success. Requires no parameters.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiLogOutPostRequest
+ @return ApiPostLogOutRequest
 */
-func (a *DefaultAPIService) LogOutPost(ctx context.Context) ApiLogOutPostRequest {
-	return ApiLogOutPostRequest{
+func (a *DefaultAPIService) PostLogOut(ctx context.Context) ApiPostLogOutRequest {
+	return ApiPostLogOutRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) LogOutPostExecute(r ApiLogOutPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostLogOutExecute(r ApiPostLogOutRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.LogOutPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostLogOut")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12848,6 +13662,17 @@ func (a *DefaultAPIService) LogOutPostExecute(r ApiLogOutPostRequest) (*SetWebho
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -12871,68 +13696,68 @@ func (a *DefaultAPIService) LogOutPostExecute(r ApiLogOutPostRequest) (*SetWebho
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPinChatMessagePostRequest struct {
+type ApiPostPinChatMessageRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
+	chatId *PostSendMessageRequestChatId
 	messageId *int32
 	businessConnectionId *string
 	disableNotification *bool
 }
 
-func (r ApiPinChatMessagePostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiPinChatMessagePostRequest {
+func (r ApiPostPinChatMessageRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostPinChatMessageRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Identifier of a message to pin
-func (r ApiPinChatMessagePostRequest) MessageId(messageId int32) ApiPinChatMessagePostRequest {
+func (r ApiPostPinChatMessageRequest) MessageId(messageId int32) ApiPostPinChatMessageRequest {
 	r.messageId = &messageId
 	return r
 }
 
 // Unique identifier of the business connection on behalf of which the message will be pinned
-func (r ApiPinChatMessagePostRequest) BusinessConnectionId(businessConnectionId string) ApiPinChatMessagePostRequest {
+func (r ApiPostPinChatMessageRequest) BusinessConnectionId(businessConnectionId string) ApiPostPinChatMessageRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
 // Pass *True* if it is not necessary to send a notification to all chat members about the new pinned message. Notifications are always disabled in channels and private chats.
-func (r ApiPinChatMessagePostRequest) DisableNotification(disableNotification bool) ApiPinChatMessagePostRequest {
+func (r ApiPostPinChatMessageRequest) DisableNotification(disableNotification bool) ApiPostPinChatMessageRequest {
 	r.disableNotification = &disableNotification
 	return r
 }
 
-func (r ApiPinChatMessagePostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.PinChatMessagePostExecute(r)
+func (r ApiPostPinChatMessageRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostPinChatMessageExecute(r)
 }
 
 /*
-PinChatMessagePost Method for PinChatMessagePost
+PostPinChatMessage pinChatMessage
 
 Use this method to add a message to the list of pinned messages in a chat. If the chat is not a private chat, the bot must be an administrator in the chat for this to work and must have the 'can\_pin\_messages' administrator right in a supergroup or 'can\_edit\_messages' administrator right in a channel. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPinChatMessagePostRequest
+ @return ApiPostPinChatMessageRequest
 */
-func (a *DefaultAPIService) PinChatMessagePost(ctx context.Context) ApiPinChatMessagePostRequest {
-	return ApiPinChatMessagePostRequest{
+func (a *DefaultAPIService) PostPinChatMessage(ctx context.Context) ApiPostPinChatMessageRequest {
+	return ApiPostPinChatMessageRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) PinChatMessagePostExecute(r ApiPinChatMessagePostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostPinChatMessageExecute(r ApiPostPinChatMessageRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PinChatMessagePost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostPinChatMessage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12996,6 +13821,17 @@ func (a *DefaultAPIService) PinChatMessagePostExecute(r ApiPinChatMessagePostReq
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -13019,7 +13855,7 @@ func (a *DefaultAPIService) PinChatMessagePostExecute(r ApiPinChatMessagePostReq
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPostStoryPostRequest struct {
+type ApiPostPostStoryRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	businessConnectionId *string
@@ -13034,88 +13870,88 @@ type ApiPostStoryPostRequest struct {
 }
 
 // Unique identifier of the business connection
-func (r ApiPostStoryPostRequest) BusinessConnectionId(businessConnectionId string) ApiPostStoryPostRequest {
+func (r ApiPostPostStoryRequest) BusinessConnectionId(businessConnectionId string) ApiPostPostStoryRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
-func (r ApiPostStoryPostRequest) Content(content InputStoryContent) ApiPostStoryPostRequest {
+func (r ApiPostPostStoryRequest) Content(content InputStoryContent) ApiPostPostStoryRequest {
 	r.content = &content
 	return r
 }
 
 // Period after which the story is moved to the archive, in seconds; must be one of &#x60;6 * 3600&#x60;, &#x60;12 * 3600&#x60;, &#x60;86400&#x60;, or &#x60;2 * 86400&#x60;
-func (r ApiPostStoryPostRequest) ActivePeriod(activePeriod int32) ApiPostStoryPostRequest {
+func (r ApiPostPostStoryRequest) ActivePeriod(activePeriod int32) ApiPostPostStoryRequest {
 	r.activePeriod = &activePeriod
 	return r
 }
 
 // Caption of the story, 0-2048 characters after entities parsing
-func (r ApiPostStoryPostRequest) Caption(caption string) ApiPostStoryPostRequest {
+func (r ApiPostPostStoryRequest) Caption(caption string) ApiPostPostStoryRequest {
 	r.caption = &caption
 	return r
 }
 
 // Mode for parsing entities in the story caption. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details.
-func (r ApiPostStoryPostRequest) ParseMode(parseMode string) ApiPostStoryPostRequest {
+func (r ApiPostPostStoryRequest) ParseMode(parseMode string) ApiPostPostStoryRequest {
 	r.parseMode = &parseMode
 	return r
 }
 
 // A JSON-serialized list of special entities that appear in the caption, which can be specified instead of *parse\\\\_mode*
-func (r ApiPostStoryPostRequest) CaptionEntities(captionEntities []MessageEntity) ApiPostStoryPostRequest {
+func (r ApiPostPostStoryRequest) CaptionEntities(captionEntities []MessageEntity) ApiPostPostStoryRequest {
 	r.captionEntities = &captionEntities
 	return r
 }
 
 // A JSON-serialized list of clickable areas to be shown on the story
-func (r ApiPostStoryPostRequest) Areas(areas []StoryArea) ApiPostStoryPostRequest {
+func (r ApiPostPostStoryRequest) Areas(areas []StoryArea) ApiPostPostStoryRequest {
 	r.areas = &areas
 	return r
 }
 
 // Pass *True* to keep the story accessible after it expires
-func (r ApiPostStoryPostRequest) PostToChatPage(postToChatPage bool) ApiPostStoryPostRequest {
+func (r ApiPostPostStoryRequest) PostToChatPage(postToChatPage bool) ApiPostPostStoryRequest {
 	r.postToChatPage = &postToChatPage
 	return r
 }
 
 // Pass *True* if the content of the story must be protected from forwarding and screenshotting
-func (r ApiPostStoryPostRequest) ProtectContent(protectContent bool) ApiPostStoryPostRequest {
+func (r ApiPostPostStoryRequest) ProtectContent(protectContent bool) ApiPostPostStoryRequest {
 	r.protectContent = &protectContent
 	return r
 }
 
-func (r ApiPostStoryPostRequest) Execute() (*PostStoryPost200Response, *http.Response, error) {
-	return r.ApiService.PostStoryPostExecute(r)
+func (r ApiPostPostStoryRequest) Execute() (*PostPostStory200Response, *http.Response, error) {
+	return r.ApiService.PostPostStoryExecute(r)
 }
 
 /*
-PostStoryPost Method for PostStoryPost
+PostPostStory postStory
 
 Posts a story on behalf of a managed business account. Requires the *can\_manage\_stories* business bot right. Returns [Story](https://core.telegram.org/bots/api/#story) on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostStoryPostRequest
+ @return ApiPostPostStoryRequest
 */
-func (a *DefaultAPIService) PostStoryPost(ctx context.Context) ApiPostStoryPostRequest {
-	return ApiPostStoryPostRequest{
+func (a *DefaultAPIService) PostPostStory(ctx context.Context) ApiPostPostStoryRequest {
+	return ApiPostPostStoryRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PostStoryPost200Response
-func (a *DefaultAPIService) PostStoryPostExecute(r ApiPostStoryPostRequest) (*PostStoryPost200Response, *http.Response, error) {
+//  @return PostPostStory200Response
+func (a *DefaultAPIService) PostPostStoryExecute(r ApiPostPostStoryRequest) (*PostPostStory200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostStoryPost200Response
+		localVarReturnValue  *PostPostStory200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostStoryPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostPostStory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13195,6 +14031,17 @@ func (a *DefaultAPIService) PostStoryPostExecute(r ApiPostStoryPostRequest) (*Po
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -13218,10 +14065,10 @@ func (a *DefaultAPIService) PostStoryPostExecute(r ApiPostStoryPostRequest) (*Po
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPromoteChatMemberPostRequest struct {
+type ApiPostPromoteChatMemberRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
+	chatId *PostSendMessageRequestChatId
 	userId *int32
 	isAnonymous *bool
 	canManageChat *bool
@@ -13240,137 +14087,137 @@ type ApiPromoteChatMemberPostRequest struct {
 	canManageTopics *bool
 }
 
-func (r ApiPromoteChatMemberPostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiPromoteChatMemberPostRequest {
+func (r ApiPostPromoteChatMemberRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostPromoteChatMemberRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Unique identifier of the target user
-func (r ApiPromoteChatMemberPostRequest) UserId(userId int32) ApiPromoteChatMemberPostRequest {
+func (r ApiPostPromoteChatMemberRequest) UserId(userId int32) ApiPostPromoteChatMemberRequest {
 	r.userId = &userId
 	return r
 }
 
 // Pass *True* if the administrator&#39;s presence in the chat is hidden
-func (r ApiPromoteChatMemberPostRequest) IsAnonymous(isAnonymous bool) ApiPromoteChatMemberPostRequest {
+func (r ApiPostPromoteChatMemberRequest) IsAnonymous(isAnonymous bool) ApiPostPromoteChatMemberRequest {
 	r.isAnonymous = &isAnonymous
 	return r
 }
 
 // Pass *True* if the administrator can access the chat event log, get boost list, see hidden supergroup and channel members, report spam messages and ignore slow mode. Implied by any other administrator privilege.
-func (r ApiPromoteChatMemberPostRequest) CanManageChat(canManageChat bool) ApiPromoteChatMemberPostRequest {
+func (r ApiPostPromoteChatMemberRequest) CanManageChat(canManageChat bool) ApiPostPromoteChatMemberRequest {
 	r.canManageChat = &canManageChat
 	return r
 }
 
 // Pass *True* if the administrator can delete messages of other users
-func (r ApiPromoteChatMemberPostRequest) CanDeleteMessages(canDeleteMessages bool) ApiPromoteChatMemberPostRequest {
+func (r ApiPostPromoteChatMemberRequest) CanDeleteMessages(canDeleteMessages bool) ApiPostPromoteChatMemberRequest {
 	r.canDeleteMessages = &canDeleteMessages
 	return r
 }
 
 // Pass *True* if the administrator can manage video chats
-func (r ApiPromoteChatMemberPostRequest) CanManageVideoChats(canManageVideoChats bool) ApiPromoteChatMemberPostRequest {
+func (r ApiPostPromoteChatMemberRequest) CanManageVideoChats(canManageVideoChats bool) ApiPostPromoteChatMemberRequest {
 	r.canManageVideoChats = &canManageVideoChats
 	return r
 }
 
 // Pass *True* if the administrator can restrict, ban or unban chat members, or access supergroup statistics
-func (r ApiPromoteChatMemberPostRequest) CanRestrictMembers(canRestrictMembers bool) ApiPromoteChatMemberPostRequest {
+func (r ApiPostPromoteChatMemberRequest) CanRestrictMembers(canRestrictMembers bool) ApiPostPromoteChatMemberRequest {
 	r.canRestrictMembers = &canRestrictMembers
 	return r
 }
 
 // Pass *True* if the administrator can add new administrators with a subset of their own privileges or demote administrators that they have promoted, directly or indirectly (promoted by administrators that were appointed by him)
-func (r ApiPromoteChatMemberPostRequest) CanPromoteMembers(canPromoteMembers bool) ApiPromoteChatMemberPostRequest {
+func (r ApiPostPromoteChatMemberRequest) CanPromoteMembers(canPromoteMembers bool) ApiPostPromoteChatMemberRequest {
 	r.canPromoteMembers = &canPromoteMembers
 	return r
 }
 
 // Pass *True* if the administrator can change chat title, photo and other settings
-func (r ApiPromoteChatMemberPostRequest) CanChangeInfo(canChangeInfo bool) ApiPromoteChatMemberPostRequest {
+func (r ApiPostPromoteChatMemberRequest) CanChangeInfo(canChangeInfo bool) ApiPostPromoteChatMemberRequest {
 	r.canChangeInfo = &canChangeInfo
 	return r
 }
 
 // Pass *True* if the administrator can invite new users to the chat
-func (r ApiPromoteChatMemberPostRequest) CanInviteUsers(canInviteUsers bool) ApiPromoteChatMemberPostRequest {
+func (r ApiPostPromoteChatMemberRequest) CanInviteUsers(canInviteUsers bool) ApiPostPromoteChatMemberRequest {
 	r.canInviteUsers = &canInviteUsers
 	return r
 }
 
 // Pass *True* if the administrator can post stories to the chat
-func (r ApiPromoteChatMemberPostRequest) CanPostStories(canPostStories bool) ApiPromoteChatMemberPostRequest {
+func (r ApiPostPromoteChatMemberRequest) CanPostStories(canPostStories bool) ApiPostPromoteChatMemberRequest {
 	r.canPostStories = &canPostStories
 	return r
 }
 
 // Pass *True* if the administrator can edit stories posted by other users, post stories to the chat page, pin chat stories, and access the chat&#39;s story archive
-func (r ApiPromoteChatMemberPostRequest) CanEditStories(canEditStories bool) ApiPromoteChatMemberPostRequest {
+func (r ApiPostPromoteChatMemberRequest) CanEditStories(canEditStories bool) ApiPostPromoteChatMemberRequest {
 	r.canEditStories = &canEditStories
 	return r
 }
 
 // Pass *True* if the administrator can delete stories posted by other users
-func (r ApiPromoteChatMemberPostRequest) CanDeleteStories(canDeleteStories bool) ApiPromoteChatMemberPostRequest {
+func (r ApiPostPromoteChatMemberRequest) CanDeleteStories(canDeleteStories bool) ApiPostPromoteChatMemberRequest {
 	r.canDeleteStories = &canDeleteStories
 	return r
 }
 
 // Pass *True* if the administrator can post messages in the channel, or access channel statistics; for channels only
-func (r ApiPromoteChatMemberPostRequest) CanPostMessages(canPostMessages bool) ApiPromoteChatMemberPostRequest {
+func (r ApiPostPromoteChatMemberRequest) CanPostMessages(canPostMessages bool) ApiPostPromoteChatMemberRequest {
 	r.canPostMessages = &canPostMessages
 	return r
 }
 
 // Pass *True* if the administrator can edit messages of other users and can pin messages; for channels only
-func (r ApiPromoteChatMemberPostRequest) CanEditMessages(canEditMessages bool) ApiPromoteChatMemberPostRequest {
+func (r ApiPostPromoteChatMemberRequest) CanEditMessages(canEditMessages bool) ApiPostPromoteChatMemberRequest {
 	r.canEditMessages = &canEditMessages
 	return r
 }
 
 // Pass *True* if the administrator can pin messages; for supergroups only
-func (r ApiPromoteChatMemberPostRequest) CanPinMessages(canPinMessages bool) ApiPromoteChatMemberPostRequest {
+func (r ApiPostPromoteChatMemberRequest) CanPinMessages(canPinMessages bool) ApiPostPromoteChatMemberRequest {
 	r.canPinMessages = &canPinMessages
 	return r
 }
 
 // Pass *True* if the user is allowed to create, rename, close, and reopen forum topics; for supergroups only
-func (r ApiPromoteChatMemberPostRequest) CanManageTopics(canManageTopics bool) ApiPromoteChatMemberPostRequest {
+func (r ApiPostPromoteChatMemberRequest) CanManageTopics(canManageTopics bool) ApiPostPromoteChatMemberRequest {
 	r.canManageTopics = &canManageTopics
 	return r
 }
 
-func (r ApiPromoteChatMemberPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.PromoteChatMemberPostExecute(r)
+func (r ApiPostPromoteChatMemberRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostPromoteChatMemberExecute(r)
 }
 
 /*
-PromoteChatMemberPost Method for PromoteChatMemberPost
+PostPromoteChatMember promoteChatMember
 
 Use this method to promote or demote a user in a supergroup or a channel. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Pass *False* for all boolean parameters to demote a user. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPromoteChatMemberPostRequest
+ @return ApiPostPromoteChatMemberRequest
 */
-func (a *DefaultAPIService) PromoteChatMemberPost(ctx context.Context) ApiPromoteChatMemberPostRequest {
-	return ApiPromoteChatMemberPostRequest{
+func (a *DefaultAPIService) PostPromoteChatMember(ctx context.Context) ApiPostPromoteChatMemberRequest {
+	return ApiPostPromoteChatMemberRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) PromoteChatMemberPostExecute(r ApiPromoteChatMemberPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostPromoteChatMemberExecute(r ApiPostPromoteChatMemberRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PromoteChatMemberPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostPromoteChatMember")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13473,6 +14320,17 @@ func (a *DefaultAPIService) PromoteChatMemberPostExecute(r ApiPromoteChatMemberP
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -13496,7 +14354,7 @@ func (a *DefaultAPIService) PromoteChatMemberPostExecute(r ApiPromoteChatMemberP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiReadBusinessMessagePostRequest struct {
+type ApiPostReadBusinessMessageRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	businessConnectionId *string
@@ -13505,53 +14363,53 @@ type ApiReadBusinessMessagePostRequest struct {
 }
 
 // Unique identifier of the business connection on behalf of which to read the message
-func (r ApiReadBusinessMessagePostRequest) BusinessConnectionId(businessConnectionId string) ApiReadBusinessMessagePostRequest {
+func (r ApiPostReadBusinessMessageRequest) BusinessConnectionId(businessConnectionId string) ApiPostReadBusinessMessageRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
 // Unique identifier of the chat in which the message was received. The chat must have been active in the last 24 hours.
-func (r ApiReadBusinessMessagePostRequest) ChatId(chatId int32) ApiReadBusinessMessagePostRequest {
+func (r ApiPostReadBusinessMessageRequest) ChatId(chatId int32) ApiPostReadBusinessMessageRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Unique identifier of the message to mark as read
-func (r ApiReadBusinessMessagePostRequest) MessageId(messageId int32) ApiReadBusinessMessagePostRequest {
+func (r ApiPostReadBusinessMessageRequest) MessageId(messageId int32) ApiPostReadBusinessMessageRequest {
 	r.messageId = &messageId
 	return r
 }
 
-func (r ApiReadBusinessMessagePostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.ReadBusinessMessagePostExecute(r)
+func (r ApiPostReadBusinessMessageRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostReadBusinessMessageExecute(r)
 }
 
 /*
-ReadBusinessMessagePost Method for ReadBusinessMessagePost
+PostReadBusinessMessage readBusinessMessage
 
 Marks incoming message as read on behalf of a business account. Requires the *can\_read\_messages* business bot right. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiReadBusinessMessagePostRequest
+ @return ApiPostReadBusinessMessageRequest
 */
-func (a *DefaultAPIService) ReadBusinessMessagePost(ctx context.Context) ApiReadBusinessMessagePostRequest {
-	return ApiReadBusinessMessagePostRequest{
+func (a *DefaultAPIService) PostReadBusinessMessage(ctx context.Context) ApiPostReadBusinessMessageRequest {
+	return ApiPostReadBusinessMessageRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) ReadBusinessMessagePostExecute(r ApiReadBusinessMessagePostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostReadBusinessMessageExecute(r ApiPostReadBusinessMessageRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.ReadBusinessMessagePost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostReadBusinessMessage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13613,6 +14471,17 @@ func (a *DefaultAPIService) ReadBusinessMessagePostExecute(r ApiReadBusinessMess
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -13636,7 +14505,7 @@ func (a *DefaultAPIService) ReadBusinessMessagePostExecute(r ApiReadBusinessMess
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiRefundStarPaymentPostRequest struct {
+type ApiPostRefundStarPaymentRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	userId *int32
@@ -13644,47 +14513,47 @@ type ApiRefundStarPaymentPostRequest struct {
 }
 
 // Identifier of the user whose payment will be refunded
-func (r ApiRefundStarPaymentPostRequest) UserId(userId int32) ApiRefundStarPaymentPostRequest {
+func (r ApiPostRefundStarPaymentRequest) UserId(userId int32) ApiPostRefundStarPaymentRequest {
 	r.userId = &userId
 	return r
 }
 
 // Telegram payment identifier
-func (r ApiRefundStarPaymentPostRequest) TelegramPaymentChargeId(telegramPaymentChargeId string) ApiRefundStarPaymentPostRequest {
+func (r ApiPostRefundStarPaymentRequest) TelegramPaymentChargeId(telegramPaymentChargeId string) ApiPostRefundStarPaymentRequest {
 	r.telegramPaymentChargeId = &telegramPaymentChargeId
 	return r
 }
 
-func (r ApiRefundStarPaymentPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.RefundStarPaymentPostExecute(r)
+func (r ApiPostRefundStarPaymentRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostRefundStarPaymentExecute(r)
 }
 
 /*
-RefundStarPaymentPost Method for RefundStarPaymentPost
+PostRefundStarPayment refundStarPayment
 
 Refunds a successful payment in [Telegram Stars](https://t.me/BotNews/90). Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiRefundStarPaymentPostRequest
+ @return ApiPostRefundStarPaymentRequest
 */
-func (a *DefaultAPIService) RefundStarPaymentPost(ctx context.Context) ApiRefundStarPaymentPostRequest {
-	return ApiRefundStarPaymentPostRequest{
+func (a *DefaultAPIService) PostRefundStarPayment(ctx context.Context) ApiPostRefundStarPaymentRequest {
+	return ApiPostRefundStarPaymentRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) RefundStarPaymentPostExecute(r ApiRefundStarPaymentPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostRefundStarPaymentExecute(r ApiPostRefundStarPaymentRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.RefundStarPaymentPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostRefundStarPayment")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13742,6 +14611,17 @@ func (a *DefaultAPIService) RefundStarPaymentPostExecute(r ApiRefundStarPaymentP
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -13765,7 +14645,7 @@ func (a *DefaultAPIService) RefundStarPaymentPostExecute(r ApiRefundStarPaymentP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiRemoveBusinessAccountProfilePhotoPostRequest struct {
+type ApiPostRemoveBusinessAccountProfilePhotoRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	businessConnectionId *string
@@ -13773,47 +14653,47 @@ type ApiRemoveBusinessAccountProfilePhotoPostRequest struct {
 }
 
 // Unique identifier of the business connection
-func (r ApiRemoveBusinessAccountProfilePhotoPostRequest) BusinessConnectionId(businessConnectionId string) ApiRemoveBusinessAccountProfilePhotoPostRequest {
+func (r ApiPostRemoveBusinessAccountProfilePhotoRequest) BusinessConnectionId(businessConnectionId string) ApiPostRemoveBusinessAccountProfilePhotoRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
 // Pass True to remove the public photo, which is visible even if the main photo is hidden by the business account&#39;s privacy settings. After the main photo is removed, the previous profile photo (if present) becomes the main photo.
-func (r ApiRemoveBusinessAccountProfilePhotoPostRequest) IsPublic(isPublic bool) ApiRemoveBusinessAccountProfilePhotoPostRequest {
+func (r ApiPostRemoveBusinessAccountProfilePhotoRequest) IsPublic(isPublic bool) ApiPostRemoveBusinessAccountProfilePhotoRequest {
 	r.isPublic = &isPublic
 	return r
 }
 
-func (r ApiRemoveBusinessAccountProfilePhotoPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.RemoveBusinessAccountProfilePhotoPostExecute(r)
+func (r ApiPostRemoveBusinessAccountProfilePhotoRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostRemoveBusinessAccountProfilePhotoExecute(r)
 }
 
 /*
-RemoveBusinessAccountProfilePhotoPost Method for RemoveBusinessAccountProfilePhotoPost
+PostRemoveBusinessAccountProfilePhoto removeBusinessAccountProfilePhoto
 
 Removes the current profile photo of a managed business account. Requires the *can\_edit\_profile\_photo* business bot right. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiRemoveBusinessAccountProfilePhotoPostRequest
+ @return ApiPostRemoveBusinessAccountProfilePhotoRequest
 */
-func (a *DefaultAPIService) RemoveBusinessAccountProfilePhotoPost(ctx context.Context) ApiRemoveBusinessAccountProfilePhotoPostRequest {
-	return ApiRemoveBusinessAccountProfilePhotoPostRequest{
+func (a *DefaultAPIService) PostRemoveBusinessAccountProfilePhoto(ctx context.Context) ApiPostRemoveBusinessAccountProfilePhotoRequest {
+	return ApiPostRemoveBusinessAccountProfilePhotoRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) RemoveBusinessAccountProfilePhotoPostExecute(r ApiRemoveBusinessAccountProfilePhotoPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostRemoveBusinessAccountProfilePhotoExecute(r ApiPostRemoveBusinessAccountProfilePhotoRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.RemoveBusinessAccountProfilePhotoPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostRemoveBusinessAccountProfilePhoto")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13870,6 +14750,17 @@ func (a *DefaultAPIService) RemoveBusinessAccountProfilePhotoPostExecute(r ApiRe
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -13893,47 +14784,47 @@ func (a *DefaultAPIService) RemoveBusinessAccountProfilePhotoPostExecute(r ApiRe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiRemoveChatVerificationPostRequest struct {
+type ApiPostRemoveChatVerificationRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
+	chatId *PostSendMessageRequestChatId
 }
 
-func (r ApiRemoveChatVerificationPostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiRemoveChatVerificationPostRequest {
+func (r ApiPostRemoveChatVerificationRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostRemoveChatVerificationRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiRemoveChatVerificationPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.RemoveChatVerificationPostExecute(r)
+func (r ApiPostRemoveChatVerificationRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostRemoveChatVerificationExecute(r)
 }
 
 /*
-RemoveChatVerificationPost Method for RemoveChatVerificationPost
+PostRemoveChatVerification removeChatVerification
 
 Removes verification from a chat that is currently verified [on behalf of the organization](https://telegram.org/verify#third-party-verification) represented by the bot. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiRemoveChatVerificationPostRequest
+ @return ApiPostRemoveChatVerificationRequest
 */
-func (a *DefaultAPIService) RemoveChatVerificationPost(ctx context.Context) ApiRemoveChatVerificationPostRequest {
-	return ApiRemoveChatVerificationPostRequest{
+func (a *DefaultAPIService) PostRemoveChatVerification(ctx context.Context) ApiPostRemoveChatVerificationRequest {
+	return ApiPostRemoveChatVerificationRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) RemoveChatVerificationPostExecute(r ApiRemoveChatVerificationPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostRemoveChatVerificationExecute(r ApiPostRemoveChatVerificationRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.RemoveChatVerificationPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostRemoveChatVerification")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13987,6 +14878,17 @@ func (a *DefaultAPIService) RemoveChatVerificationPostExecute(r ApiRemoveChatVer
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -14010,48 +14912,48 @@ func (a *DefaultAPIService) RemoveChatVerificationPostExecute(r ApiRemoveChatVer
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiRemoveUserVerificationPostRequest struct {
+type ApiPostRemoveUserVerificationRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	userId *int32
 }
 
 // Unique identifier of the target user
-func (r ApiRemoveUserVerificationPostRequest) UserId(userId int32) ApiRemoveUserVerificationPostRequest {
+func (r ApiPostRemoveUserVerificationRequest) UserId(userId int32) ApiPostRemoveUserVerificationRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiRemoveUserVerificationPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.RemoveUserVerificationPostExecute(r)
+func (r ApiPostRemoveUserVerificationRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostRemoveUserVerificationExecute(r)
 }
 
 /*
-RemoveUserVerificationPost Method for RemoveUserVerificationPost
+PostRemoveUserVerification removeUserVerification
 
 Removes verification from a user who is currently verified [on behalf of the organization](https://telegram.org/verify#third-party-verification) represented by the bot. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiRemoveUserVerificationPostRequest
+ @return ApiPostRemoveUserVerificationRequest
 */
-func (a *DefaultAPIService) RemoveUserVerificationPost(ctx context.Context) ApiRemoveUserVerificationPostRequest {
-	return ApiRemoveUserVerificationPostRequest{
+func (a *DefaultAPIService) PostRemoveUserVerification(ctx context.Context) ApiPostRemoveUserVerificationRequest {
+	return ApiPostRemoveUserVerificationRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) RemoveUserVerificationPostExecute(r ApiRemoveUserVerificationPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostRemoveUserVerificationExecute(r ApiPostRemoveUserVerificationRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.RemoveUserVerificationPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostRemoveUserVerification")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -14105,6 +15007,17 @@ func (a *DefaultAPIService) RemoveUserVerificationPostExecute(r ApiRemoveUserVer
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -14128,54 +15041,54 @@ func (a *DefaultAPIService) RemoveUserVerificationPostExecute(r ApiRemoveUserVer
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiReopenForumTopicPostRequest struct {
+type ApiPostReopenForumTopicRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *RestrictChatMemberPostRequestChatId
+	chatId *PostRestrictChatMemberRequestChatId
 	messageThreadId *int32
 }
 
-func (r ApiReopenForumTopicPostRequest) ChatId(chatId RestrictChatMemberPostRequestChatId) ApiReopenForumTopicPostRequest {
+func (r ApiPostReopenForumTopicRequest) ChatId(chatId PostRestrictChatMemberRequestChatId) ApiPostReopenForumTopicRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Unique identifier for the target message thread of the forum topic
-func (r ApiReopenForumTopicPostRequest) MessageThreadId(messageThreadId int32) ApiReopenForumTopicPostRequest {
+func (r ApiPostReopenForumTopicRequest) MessageThreadId(messageThreadId int32) ApiPostReopenForumTopicRequest {
 	r.messageThreadId = &messageThreadId
 	return r
 }
 
-func (r ApiReopenForumTopicPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.ReopenForumTopicPostExecute(r)
+func (r ApiPostReopenForumTopicRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostReopenForumTopicExecute(r)
 }
 
 /*
-ReopenForumTopicPost Method for ReopenForumTopicPost
+PostReopenForumTopic reopenForumTopic
 
 Use this method to reopen a closed topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the *can\_manage\_topics* administrator rights, unless it is the creator of the topic. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiReopenForumTopicPostRequest
+ @return ApiPostReopenForumTopicRequest
 */
-func (a *DefaultAPIService) ReopenForumTopicPost(ctx context.Context) ApiReopenForumTopicPostRequest {
-	return ApiReopenForumTopicPostRequest{
+func (a *DefaultAPIService) PostReopenForumTopic(ctx context.Context) ApiPostReopenForumTopicRequest {
+	return ApiPostReopenForumTopicRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) ReopenForumTopicPostExecute(r ApiReopenForumTopicPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostReopenForumTopicExecute(r ApiPostReopenForumTopicRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.ReopenForumTopicPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostReopenForumTopic")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -14233,6 +15146,17 @@ func (a *DefaultAPIService) ReopenForumTopicPostExecute(r ApiReopenForumTopicPos
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -14256,47 +15180,47 @@ func (a *DefaultAPIService) ReopenForumTopicPostExecute(r ApiReopenForumTopicPos
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiReopenGeneralForumTopicPostRequest struct {
+type ApiPostReopenGeneralForumTopicRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *RestrictChatMemberPostRequestChatId
+	chatId *PostRestrictChatMemberRequestChatId
 }
 
-func (r ApiReopenGeneralForumTopicPostRequest) ChatId(chatId RestrictChatMemberPostRequestChatId) ApiReopenGeneralForumTopicPostRequest {
+func (r ApiPostReopenGeneralForumTopicRequest) ChatId(chatId PostRestrictChatMemberRequestChatId) ApiPostReopenGeneralForumTopicRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiReopenGeneralForumTopicPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.ReopenGeneralForumTopicPostExecute(r)
+func (r ApiPostReopenGeneralForumTopicRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostReopenGeneralForumTopicExecute(r)
 }
 
 /*
-ReopenGeneralForumTopicPost Method for ReopenGeneralForumTopicPost
+PostReopenGeneralForumTopic reopenGeneralForumTopic
 
 Use this method to reopen a closed 'General' topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the *can\_manage\_topics* administrator rights. The topic will be automatically unhidden if it was hidden. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiReopenGeneralForumTopicPostRequest
+ @return ApiPostReopenGeneralForumTopicRequest
 */
-func (a *DefaultAPIService) ReopenGeneralForumTopicPost(ctx context.Context) ApiReopenGeneralForumTopicPostRequest {
-	return ApiReopenGeneralForumTopicPostRequest{
+func (a *DefaultAPIService) PostReopenGeneralForumTopic(ctx context.Context) ApiPostReopenGeneralForumTopicRequest {
+	return ApiPostReopenGeneralForumTopicRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) ReopenGeneralForumTopicPostExecute(r ApiReopenGeneralForumTopicPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostReopenGeneralForumTopicExecute(r ApiPostReopenGeneralForumTopicRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.ReopenGeneralForumTopicPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostReopenGeneralForumTopic")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -14350,6 +15274,17 @@ func (a *DefaultAPIService) ReopenGeneralForumTopicPostExecute(r ApiReopenGenera
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -14373,7 +15308,7 @@ func (a *DefaultAPIService) ReopenGeneralForumTopicPostExecute(r ApiReopenGenera
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiReplaceStickerInSetPostRequest struct {
+type ApiPostReplaceStickerInSetRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	userId *int32
@@ -14383,58 +15318,58 @@ type ApiReplaceStickerInSetPostRequest struct {
 }
 
 // User identifier of the sticker set owner
-func (r ApiReplaceStickerInSetPostRequest) UserId(userId int32) ApiReplaceStickerInSetPostRequest {
+func (r ApiPostReplaceStickerInSetRequest) UserId(userId int32) ApiPostReplaceStickerInSetRequest {
 	r.userId = &userId
 	return r
 }
 
 // Sticker set name
-func (r ApiReplaceStickerInSetPostRequest) Name(name string) ApiReplaceStickerInSetPostRequest {
+func (r ApiPostReplaceStickerInSetRequest) Name(name string) ApiPostReplaceStickerInSetRequest {
 	r.name = &name
 	return r
 }
 
 // File identifier of the replaced sticker
-func (r ApiReplaceStickerInSetPostRequest) OldSticker(oldSticker string) ApiReplaceStickerInSetPostRequest {
+func (r ApiPostReplaceStickerInSetRequest) OldSticker(oldSticker string) ApiPostReplaceStickerInSetRequest {
 	r.oldSticker = &oldSticker
 	return r
 }
 
-func (r ApiReplaceStickerInSetPostRequest) Sticker(sticker InputSticker) ApiReplaceStickerInSetPostRequest {
+func (r ApiPostReplaceStickerInSetRequest) Sticker(sticker InputSticker) ApiPostReplaceStickerInSetRequest {
 	r.sticker = &sticker
 	return r
 }
 
-func (r ApiReplaceStickerInSetPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.ReplaceStickerInSetPostExecute(r)
+func (r ApiPostReplaceStickerInSetRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostReplaceStickerInSetExecute(r)
 }
 
 /*
-ReplaceStickerInSetPost Method for ReplaceStickerInSetPost
+PostReplaceStickerInSet replaceStickerInSet
 
 Use this method to replace an existing sticker in a sticker set with a new one. The method is equivalent to calling [deleteStickerFromSet](https://core.telegram.org/bots/api/#deletestickerfromset), then [addStickerToSet](https://core.telegram.org/bots/api/#addstickertoset), then [setStickerPositionInSet](https://core.telegram.org/bots/api/#setstickerpositioninset). Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiReplaceStickerInSetPostRequest
+ @return ApiPostReplaceStickerInSetRequest
 */
-func (a *DefaultAPIService) ReplaceStickerInSetPost(ctx context.Context) ApiReplaceStickerInSetPostRequest {
-	return ApiReplaceStickerInSetPostRequest{
+func (a *DefaultAPIService) PostReplaceStickerInSet(ctx context.Context) ApiPostReplaceStickerInSetRequest {
+	return ApiPostReplaceStickerInSetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) ReplaceStickerInSetPostExecute(r ApiReplaceStickerInSetPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostReplaceStickerInSetExecute(r ApiPostReplaceStickerInSetRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.ReplaceStickerInSetPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostReplaceStickerInSet")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -14500,6 +15435,17 @@ func (a *DefaultAPIService) ReplaceStickerInSetPostExecute(r ApiReplaceStickerIn
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -14523,74 +15469,74 @@ func (a *DefaultAPIService) ReplaceStickerInSetPostExecute(r ApiReplaceStickerIn
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiRestrictChatMemberPostRequest struct {
+type ApiPostRestrictChatMemberRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *RestrictChatMemberPostRequestChatId
+	chatId *PostRestrictChatMemberRequestChatId
 	userId *int32
 	permissions *ChatPermissions
 	useIndependentChatPermissions *bool
 	untilDate *int32
 }
 
-func (r ApiRestrictChatMemberPostRequest) ChatId(chatId RestrictChatMemberPostRequestChatId) ApiRestrictChatMemberPostRequest {
+func (r ApiPostRestrictChatMemberRequest) ChatId(chatId PostRestrictChatMemberRequestChatId) ApiPostRestrictChatMemberRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Unique identifier of the target user
-func (r ApiRestrictChatMemberPostRequest) UserId(userId int32) ApiRestrictChatMemberPostRequest {
+func (r ApiPostRestrictChatMemberRequest) UserId(userId int32) ApiPostRestrictChatMemberRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiRestrictChatMemberPostRequest) Permissions(permissions ChatPermissions) ApiRestrictChatMemberPostRequest {
+func (r ApiPostRestrictChatMemberRequest) Permissions(permissions ChatPermissions) ApiPostRestrictChatMemberRequest {
 	r.permissions = &permissions
 	return r
 }
 
 // Pass *True* if chat permissions are set independently. Otherwise, the *can\\\\_send\\\\_other\\\\_messages* and *can\\\\_add\\\\_web\\\\_page\\\\_previews* permissions will imply the *can\\\\_send\\\\_messages*, *can\\\\_send\\\\_audios*, *can\\\\_send\\\\_documents*, *can\\\\_send\\\\_photos*, *can\\\\_send\\\\_videos*, *can\\\\_send\\\\_video\\\\_notes*, and *can\\\\_send\\\\_voice\\\\_notes* permissions; the *can\\\\_send\\\\_polls* permission will imply the *can\\\\_send\\\\_messages* permission.
-func (r ApiRestrictChatMemberPostRequest) UseIndependentChatPermissions(useIndependentChatPermissions bool) ApiRestrictChatMemberPostRequest {
+func (r ApiPostRestrictChatMemberRequest) UseIndependentChatPermissions(useIndependentChatPermissions bool) ApiPostRestrictChatMemberRequest {
 	r.useIndependentChatPermissions = &useIndependentChatPermissions
 	return r
 }
 
 // Date when restrictions will be lifted for the user; Unix time. If user is restricted for more than 366 days or less than 30 seconds from the current time, they are considered to be restricted forever
-func (r ApiRestrictChatMemberPostRequest) UntilDate(untilDate int32) ApiRestrictChatMemberPostRequest {
+func (r ApiPostRestrictChatMemberRequest) UntilDate(untilDate int32) ApiPostRestrictChatMemberRequest {
 	r.untilDate = &untilDate
 	return r
 }
 
-func (r ApiRestrictChatMemberPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.RestrictChatMemberPostExecute(r)
+func (r ApiPostRestrictChatMemberRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostRestrictChatMemberExecute(r)
 }
 
 /*
-RestrictChatMemberPost Method for RestrictChatMemberPost
+PostRestrictChatMember restrictChatMember
 
 Use this method to restrict a user in a supergroup. The bot must be an administrator in the supergroup for this to work and must have the appropriate administrator rights. Pass *True* for all permissions to lift restrictions from a user. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiRestrictChatMemberPostRequest
+ @return ApiPostRestrictChatMemberRequest
 */
-func (a *DefaultAPIService) RestrictChatMemberPost(ctx context.Context) ApiRestrictChatMemberPostRequest {
-	return ApiRestrictChatMemberPostRequest{
+func (a *DefaultAPIService) PostRestrictChatMember(ctx context.Context) ApiPostRestrictChatMemberRequest {
+	return ApiPostRestrictChatMemberRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) RestrictChatMemberPostExecute(r ApiRestrictChatMemberPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostRestrictChatMemberExecute(r ApiPostRestrictChatMemberRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.RestrictChatMemberPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostRestrictChatMember")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -14658,6 +15604,17 @@ func (a *DefaultAPIService) RestrictChatMemberPostExecute(r ApiRestrictChatMembe
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -14681,54 +15638,54 @@ func (a *DefaultAPIService) RestrictChatMemberPostExecute(r ApiRestrictChatMembe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiRevokeChatInviteLinkPostRequest struct {
+type ApiPostRevokeChatInviteLinkRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *RevokeChatInviteLinkPostRequestChatId
+	chatId *PostRevokeChatInviteLinkRequestChatId
 	inviteLink *string
 }
 
-func (r ApiRevokeChatInviteLinkPostRequest) ChatId(chatId RevokeChatInviteLinkPostRequestChatId) ApiRevokeChatInviteLinkPostRequest {
+func (r ApiPostRevokeChatInviteLinkRequest) ChatId(chatId PostRevokeChatInviteLinkRequestChatId) ApiPostRevokeChatInviteLinkRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // The invite link to revoke
-func (r ApiRevokeChatInviteLinkPostRequest) InviteLink(inviteLink string) ApiRevokeChatInviteLinkPostRequest {
+func (r ApiPostRevokeChatInviteLinkRequest) InviteLink(inviteLink string) ApiPostRevokeChatInviteLinkRequest {
 	r.inviteLink = &inviteLink
 	return r
 }
 
-func (r ApiRevokeChatInviteLinkPostRequest) Execute() (*CreateChatInviteLinkPost200Response, *http.Response, error) {
-	return r.ApiService.RevokeChatInviteLinkPostExecute(r)
+func (r ApiPostRevokeChatInviteLinkRequest) Execute() (*PostCreateChatInviteLink200Response, *http.Response, error) {
+	return r.ApiService.PostRevokeChatInviteLinkExecute(r)
 }
 
 /*
-RevokeChatInviteLinkPost Method for RevokeChatInviteLinkPost
+PostRevokeChatInviteLink revokeChatInviteLink
 
 Use this method to revoke an invite link created by the bot. If the primary link is revoked, a new link is automatically generated. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns the revoked invite link as [ChatInviteLink](https://core.telegram.org/bots/api/#chatinvitelink) object.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiRevokeChatInviteLinkPostRequest
+ @return ApiPostRevokeChatInviteLinkRequest
 */
-func (a *DefaultAPIService) RevokeChatInviteLinkPost(ctx context.Context) ApiRevokeChatInviteLinkPostRequest {
-	return ApiRevokeChatInviteLinkPostRequest{
+func (a *DefaultAPIService) PostRevokeChatInviteLink(ctx context.Context) ApiPostRevokeChatInviteLinkRequest {
+	return ApiPostRevokeChatInviteLinkRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return CreateChatInviteLinkPost200Response
-func (a *DefaultAPIService) RevokeChatInviteLinkPostExecute(r ApiRevokeChatInviteLinkPostRequest) (*CreateChatInviteLinkPost200Response, *http.Response, error) {
+//  @return PostCreateChatInviteLink200Response
+func (a *DefaultAPIService) PostRevokeChatInviteLinkExecute(r ApiPostRevokeChatInviteLinkRequest) (*PostCreateChatInviteLink200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *CreateChatInviteLinkPost200Response
+		localVarReturnValue  *PostCreateChatInviteLink200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.RevokeChatInviteLinkPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostRevokeChatInviteLink")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -14786,6 +15743,17 @@ func (a *DefaultAPIService) RevokeChatInviteLinkPostExecute(r ApiRevokeChatInvit
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -14809,7 +15777,7 @@ func (a *DefaultAPIService) RevokeChatInviteLinkPostExecute(r ApiRevokeChatInvit
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSavePreparedInlineMessagePostRequest struct {
+type ApiPostSavePreparedInlineMessageRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	userId *int32
@@ -14821,70 +15789,70 @@ type ApiSavePreparedInlineMessagePostRequest struct {
 }
 
 // Unique identifier of the target user that can use the prepared message
-func (r ApiSavePreparedInlineMessagePostRequest) UserId(userId int32) ApiSavePreparedInlineMessagePostRequest {
+func (r ApiPostSavePreparedInlineMessageRequest) UserId(userId int32) ApiPostSavePreparedInlineMessageRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiSavePreparedInlineMessagePostRequest) Result(result InlineQueryResult) ApiSavePreparedInlineMessagePostRequest {
+func (r ApiPostSavePreparedInlineMessageRequest) Result(result InlineQueryResult) ApiPostSavePreparedInlineMessageRequest {
 	r.result = &result
 	return r
 }
 
 // Pass *True* if the message can be sent to private chats with users
-func (r ApiSavePreparedInlineMessagePostRequest) AllowUserChats(allowUserChats bool) ApiSavePreparedInlineMessagePostRequest {
+func (r ApiPostSavePreparedInlineMessageRequest) AllowUserChats(allowUserChats bool) ApiPostSavePreparedInlineMessageRequest {
 	r.allowUserChats = &allowUserChats
 	return r
 }
 
 // Pass *True* if the message can be sent to private chats with bots
-func (r ApiSavePreparedInlineMessagePostRequest) AllowBotChats(allowBotChats bool) ApiSavePreparedInlineMessagePostRequest {
+func (r ApiPostSavePreparedInlineMessageRequest) AllowBotChats(allowBotChats bool) ApiPostSavePreparedInlineMessageRequest {
 	r.allowBotChats = &allowBotChats
 	return r
 }
 
 // Pass *True* if the message can be sent to group and supergroup chats
-func (r ApiSavePreparedInlineMessagePostRequest) AllowGroupChats(allowGroupChats bool) ApiSavePreparedInlineMessagePostRequest {
+func (r ApiPostSavePreparedInlineMessageRequest) AllowGroupChats(allowGroupChats bool) ApiPostSavePreparedInlineMessageRequest {
 	r.allowGroupChats = &allowGroupChats
 	return r
 }
 
 // Pass *True* if the message can be sent to channel chats
-func (r ApiSavePreparedInlineMessagePostRequest) AllowChannelChats(allowChannelChats bool) ApiSavePreparedInlineMessagePostRequest {
+func (r ApiPostSavePreparedInlineMessageRequest) AllowChannelChats(allowChannelChats bool) ApiPostSavePreparedInlineMessageRequest {
 	r.allowChannelChats = &allowChannelChats
 	return r
 }
 
-func (r ApiSavePreparedInlineMessagePostRequest) Execute() (*SavePreparedInlineMessagePost200Response, *http.Response, error) {
-	return r.ApiService.SavePreparedInlineMessagePostExecute(r)
+func (r ApiPostSavePreparedInlineMessageRequest) Execute() (*PostSavePreparedInlineMessage200Response, *http.Response, error) {
+	return r.ApiService.PostSavePreparedInlineMessageExecute(r)
 }
 
 /*
-SavePreparedInlineMessagePost Method for SavePreparedInlineMessagePost
+PostSavePreparedInlineMessage savePreparedInlineMessage
 
 Stores a message that can be sent by a user of a Mini App. Returns a [PreparedInlineMessage](https://core.telegram.org/bots/api/#preparedinlinemessage) object.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSavePreparedInlineMessagePostRequest
+ @return ApiPostSavePreparedInlineMessageRequest
 */
-func (a *DefaultAPIService) SavePreparedInlineMessagePost(ctx context.Context) ApiSavePreparedInlineMessagePostRequest {
-	return ApiSavePreparedInlineMessagePostRequest{
+func (a *DefaultAPIService) PostSavePreparedInlineMessage(ctx context.Context) ApiPostSavePreparedInlineMessageRequest {
+	return ApiPostSavePreparedInlineMessageRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SavePreparedInlineMessagePost200Response
-func (a *DefaultAPIService) SavePreparedInlineMessagePostExecute(r ApiSavePreparedInlineMessagePostRequest) (*SavePreparedInlineMessagePost200Response, *http.Response, error) {
+//  @return PostSavePreparedInlineMessage200Response
+func (a *DefaultAPIService) PostSavePreparedInlineMessageExecute(r ApiPostSavePreparedInlineMessageRequest) (*PostSavePreparedInlineMessage200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SavePreparedInlineMessagePost200Response
+		localVarReturnValue  *PostSavePreparedInlineMessage200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SavePreparedInlineMessagePost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSavePreparedInlineMessage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -14954,6 +15922,17 @@ func (a *DefaultAPIService) SavePreparedInlineMessagePostExecute(r ApiSavePrepar
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -14977,17 +15956,17 @@ func (a *DefaultAPIService) SavePreparedInlineMessagePostExecute(r ApiSavePrepar
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSendAnimationPostRequest struct {
+type ApiPostSendAnimationRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
-	animation *SendAnimationPostRequestAnimation
+	chatId *PostSendMessageRequestChatId
+	animation *PostSendAnimationRequestAnimation
 	businessConnectionId *string
 	messageThreadId *int32
 	duration *int32
 	width *int32
 	height *int32
-	thumbnail *SendAudioPostRequestThumbnail
+	thumbnail *PostSendAudioRequestThumbnail
 	caption *string
 	parseMode *string
 	captionEntities *[]MessageEntity
@@ -14998,148 +15977,148 @@ type ApiSendAnimationPostRequest struct {
 	allowPaidBroadcast *bool
 	messageEffectId *string
 	replyParameters *ReplyParameters
-	replyMarkup *SendMessagePostRequestReplyMarkup
+	replyMarkup *PostSendMessageRequestReplyMarkup
 }
 
-func (r ApiSendAnimationPostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiSendAnimationPostRequest {
+func (r ApiPostSendAnimationRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSendAnimationRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiSendAnimationPostRequest) Animation(animation SendAnimationPostRequestAnimation) ApiSendAnimationPostRequest {
+func (r ApiPostSendAnimationRequest) Animation(animation PostSendAnimationRequestAnimation) ApiPostSendAnimationRequest {
 	r.animation = &animation
 	return r
 }
 
 // Unique identifier of the business connection on behalf of which the message will be sent
-func (r ApiSendAnimationPostRequest) BusinessConnectionId(businessConnectionId string) ApiSendAnimationPostRequest {
+func (r ApiPostSendAnimationRequest) BusinessConnectionId(businessConnectionId string) ApiPostSendAnimationRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
 // Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-func (r ApiSendAnimationPostRequest) MessageThreadId(messageThreadId int32) ApiSendAnimationPostRequest {
+func (r ApiPostSendAnimationRequest) MessageThreadId(messageThreadId int32) ApiPostSendAnimationRequest {
 	r.messageThreadId = &messageThreadId
 	return r
 }
 
 // Duration of sent animation in seconds
-func (r ApiSendAnimationPostRequest) Duration(duration int32) ApiSendAnimationPostRequest {
+func (r ApiPostSendAnimationRequest) Duration(duration int32) ApiPostSendAnimationRequest {
 	r.duration = &duration
 	return r
 }
 
 // Animation width
-func (r ApiSendAnimationPostRequest) Width(width int32) ApiSendAnimationPostRequest {
+func (r ApiPostSendAnimationRequest) Width(width int32) ApiPostSendAnimationRequest {
 	r.width = &width
 	return r
 }
 
 // Animation height
-func (r ApiSendAnimationPostRequest) Height(height int32) ApiSendAnimationPostRequest {
+func (r ApiPostSendAnimationRequest) Height(height int32) ApiPostSendAnimationRequest {
 	r.height = &height
 	return r
 }
 
-func (r ApiSendAnimationPostRequest) Thumbnail(thumbnail SendAudioPostRequestThumbnail) ApiSendAnimationPostRequest {
+func (r ApiPostSendAnimationRequest) Thumbnail(thumbnail PostSendAudioRequestThumbnail) ApiPostSendAnimationRequest {
 	r.thumbnail = &thumbnail
 	return r
 }
 
 // Animation caption (may also be used when resending animation by *file\\\\_id*), 0-1024 characters after entities parsing
-func (r ApiSendAnimationPostRequest) Caption(caption string) ApiSendAnimationPostRequest {
+func (r ApiPostSendAnimationRequest) Caption(caption string) ApiPostSendAnimationRequest {
 	r.caption = &caption
 	return r
 }
 
 // Mode for parsing entities in the animation caption. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details.
-func (r ApiSendAnimationPostRequest) ParseMode(parseMode string) ApiSendAnimationPostRequest {
+func (r ApiPostSendAnimationRequest) ParseMode(parseMode string) ApiPostSendAnimationRequest {
 	r.parseMode = &parseMode
 	return r
 }
 
 // A JSON-serialized list of special entities that appear in the caption, which can be specified instead of *parse\\\\_mode*
-func (r ApiSendAnimationPostRequest) CaptionEntities(captionEntities []MessageEntity) ApiSendAnimationPostRequest {
+func (r ApiPostSendAnimationRequest) CaptionEntities(captionEntities []MessageEntity) ApiPostSendAnimationRequest {
 	r.captionEntities = &captionEntities
 	return r
 }
 
 // Pass *True*, if the caption must be shown above the message media
-func (r ApiSendAnimationPostRequest) ShowCaptionAboveMedia(showCaptionAboveMedia bool) ApiSendAnimationPostRequest {
+func (r ApiPostSendAnimationRequest) ShowCaptionAboveMedia(showCaptionAboveMedia bool) ApiPostSendAnimationRequest {
 	r.showCaptionAboveMedia = &showCaptionAboveMedia
 	return r
 }
 
 // Pass *True* if the animation needs to be covered with a spoiler animation
-func (r ApiSendAnimationPostRequest) HasSpoiler(hasSpoiler bool) ApiSendAnimationPostRequest {
+func (r ApiPostSendAnimationRequest) HasSpoiler(hasSpoiler bool) ApiPostSendAnimationRequest {
 	r.hasSpoiler = &hasSpoiler
 	return r
 }
 
 // Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.
-func (r ApiSendAnimationPostRequest) DisableNotification(disableNotification bool) ApiSendAnimationPostRequest {
+func (r ApiPostSendAnimationRequest) DisableNotification(disableNotification bool) ApiPostSendAnimationRequest {
 	r.disableNotification = &disableNotification
 	return r
 }
 
 // Protects the contents of the sent message from forwarding and saving
-func (r ApiSendAnimationPostRequest) ProtectContent(protectContent bool) ApiSendAnimationPostRequest {
+func (r ApiPostSendAnimationRequest) ProtectContent(protectContent bool) ApiPostSendAnimationRequest {
 	r.protectContent = &protectContent
 	return r
 }
 
 // Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance
-func (r ApiSendAnimationPostRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiSendAnimationPostRequest {
+func (r ApiPostSendAnimationRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiPostSendAnimationRequest {
 	r.allowPaidBroadcast = &allowPaidBroadcast
 	return r
 }
 
 // Unique identifier of the message effect to be added to the message; for private chats only
-func (r ApiSendAnimationPostRequest) MessageEffectId(messageEffectId string) ApiSendAnimationPostRequest {
+func (r ApiPostSendAnimationRequest) MessageEffectId(messageEffectId string) ApiPostSendAnimationRequest {
 	r.messageEffectId = &messageEffectId
 	return r
 }
 
-func (r ApiSendAnimationPostRequest) ReplyParameters(replyParameters ReplyParameters) ApiSendAnimationPostRequest {
+func (r ApiPostSendAnimationRequest) ReplyParameters(replyParameters ReplyParameters) ApiPostSendAnimationRequest {
 	r.replyParameters = &replyParameters
 	return r
 }
 
-func (r ApiSendAnimationPostRequest) ReplyMarkup(replyMarkup SendMessagePostRequestReplyMarkup) ApiSendAnimationPostRequest {
+func (r ApiPostSendAnimationRequest) ReplyMarkup(replyMarkup PostSendMessageRequestReplyMarkup) ApiPostSendAnimationRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiSendAnimationPostRequest) Execute() (*SendMessagePost200Response, *http.Response, error) {
-	return r.ApiService.SendAnimationPostExecute(r)
+func (r ApiPostSendAnimationRequest) Execute() (*PostSendMessage200Response, *http.Response, error) {
+	return r.ApiService.PostSendAnimationExecute(r)
 }
 
 /*
-SendAnimationPost Method for SendAnimationPost
+PostSendAnimation sendAnimation
 
 Use this method to send animation files (GIF or H.264/MPEG-4 AVC video without sound). On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned. Bots can currently send animation files of up to 50 MB in size, this limit may be changed in the future.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSendAnimationPostRequest
+ @return ApiPostSendAnimationRequest
 */
-func (a *DefaultAPIService) SendAnimationPost(ctx context.Context) ApiSendAnimationPostRequest {
-	return ApiSendAnimationPostRequest{
+func (a *DefaultAPIService) PostSendAnimation(ctx context.Context) ApiPostSendAnimationRequest {
+	return ApiPostSendAnimationRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SendMessagePost200Response
-func (a *DefaultAPIService) SendAnimationPostExecute(r ApiSendAnimationPostRequest) (*SendMessagePost200Response, *http.Response, error) {
+//  @return PostSendMessage200Response
+func (a *DefaultAPIService) PostSendAnimationExecute(r ApiPostSendAnimationRequest) (*PostSendMessage200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SendMessagePost200Response
+		localVarReturnValue  *PostSendMessage200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SendAnimationPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendAnimation")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -15260,6 +16239,17 @@ func (a *DefaultAPIService) SendAnimationPostExecute(r ApiSendAnimationPostReque
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -15283,11 +16273,11 @@ func (a *DefaultAPIService) SendAnimationPostExecute(r ApiSendAnimationPostReque
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSendAudioPostRequest struct {
+type ApiPostSendAudioRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
-	audio *SendAudioPostRequestAudio
+	chatId *PostSendMessageRequestChatId
+	audio *PostSendAudioRequestAudio
 	businessConnectionId *string
 	messageThreadId *int32
 	caption *string
@@ -15296,144 +16286,144 @@ type ApiSendAudioPostRequest struct {
 	duration *int32
 	performer *string
 	title *string
-	thumbnail *SendAudioPostRequestThumbnail
+	thumbnail *PostSendAudioRequestThumbnail
 	disableNotification *bool
 	protectContent *bool
 	allowPaidBroadcast *bool
 	messageEffectId *string
 	replyParameters *ReplyParameters
-	replyMarkup *SendMessagePostRequestReplyMarkup
+	replyMarkup *PostSendMessageRequestReplyMarkup
 }
 
-func (r ApiSendAudioPostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiSendAudioPostRequest {
+func (r ApiPostSendAudioRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSendAudioRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiSendAudioPostRequest) Audio(audio SendAudioPostRequestAudio) ApiSendAudioPostRequest {
+func (r ApiPostSendAudioRequest) Audio(audio PostSendAudioRequestAudio) ApiPostSendAudioRequest {
 	r.audio = &audio
 	return r
 }
 
 // Unique identifier of the business connection on behalf of which the message will be sent
-func (r ApiSendAudioPostRequest) BusinessConnectionId(businessConnectionId string) ApiSendAudioPostRequest {
+func (r ApiPostSendAudioRequest) BusinessConnectionId(businessConnectionId string) ApiPostSendAudioRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
 // Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-func (r ApiSendAudioPostRequest) MessageThreadId(messageThreadId int32) ApiSendAudioPostRequest {
+func (r ApiPostSendAudioRequest) MessageThreadId(messageThreadId int32) ApiPostSendAudioRequest {
 	r.messageThreadId = &messageThreadId
 	return r
 }
 
 // Audio caption, 0-1024 characters after entities parsing
-func (r ApiSendAudioPostRequest) Caption(caption string) ApiSendAudioPostRequest {
+func (r ApiPostSendAudioRequest) Caption(caption string) ApiPostSendAudioRequest {
 	r.caption = &caption
 	return r
 }
 
 // Mode for parsing entities in the audio caption. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details.
-func (r ApiSendAudioPostRequest) ParseMode(parseMode string) ApiSendAudioPostRequest {
+func (r ApiPostSendAudioRequest) ParseMode(parseMode string) ApiPostSendAudioRequest {
 	r.parseMode = &parseMode
 	return r
 }
 
 // A JSON-serialized list of special entities that appear in the caption, which can be specified instead of *parse\\\\_mode*
-func (r ApiSendAudioPostRequest) CaptionEntities(captionEntities []MessageEntity) ApiSendAudioPostRequest {
+func (r ApiPostSendAudioRequest) CaptionEntities(captionEntities []MessageEntity) ApiPostSendAudioRequest {
 	r.captionEntities = &captionEntities
 	return r
 }
 
 // Duration of the audio in seconds
-func (r ApiSendAudioPostRequest) Duration(duration int32) ApiSendAudioPostRequest {
+func (r ApiPostSendAudioRequest) Duration(duration int32) ApiPostSendAudioRequest {
 	r.duration = &duration
 	return r
 }
 
 // Performer
-func (r ApiSendAudioPostRequest) Performer(performer string) ApiSendAudioPostRequest {
+func (r ApiPostSendAudioRequest) Performer(performer string) ApiPostSendAudioRequest {
 	r.performer = &performer
 	return r
 }
 
 // Track name
-func (r ApiSendAudioPostRequest) Title(title string) ApiSendAudioPostRequest {
+func (r ApiPostSendAudioRequest) Title(title string) ApiPostSendAudioRequest {
 	r.title = &title
 	return r
 }
 
-func (r ApiSendAudioPostRequest) Thumbnail(thumbnail SendAudioPostRequestThumbnail) ApiSendAudioPostRequest {
+func (r ApiPostSendAudioRequest) Thumbnail(thumbnail PostSendAudioRequestThumbnail) ApiPostSendAudioRequest {
 	r.thumbnail = &thumbnail
 	return r
 }
 
 // Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.
-func (r ApiSendAudioPostRequest) DisableNotification(disableNotification bool) ApiSendAudioPostRequest {
+func (r ApiPostSendAudioRequest) DisableNotification(disableNotification bool) ApiPostSendAudioRequest {
 	r.disableNotification = &disableNotification
 	return r
 }
 
 // Protects the contents of the sent message from forwarding and saving
-func (r ApiSendAudioPostRequest) ProtectContent(protectContent bool) ApiSendAudioPostRequest {
+func (r ApiPostSendAudioRequest) ProtectContent(protectContent bool) ApiPostSendAudioRequest {
 	r.protectContent = &protectContent
 	return r
 }
 
 // Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance
-func (r ApiSendAudioPostRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiSendAudioPostRequest {
+func (r ApiPostSendAudioRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiPostSendAudioRequest {
 	r.allowPaidBroadcast = &allowPaidBroadcast
 	return r
 }
 
 // Unique identifier of the message effect to be added to the message; for private chats only
-func (r ApiSendAudioPostRequest) MessageEffectId(messageEffectId string) ApiSendAudioPostRequest {
+func (r ApiPostSendAudioRequest) MessageEffectId(messageEffectId string) ApiPostSendAudioRequest {
 	r.messageEffectId = &messageEffectId
 	return r
 }
 
-func (r ApiSendAudioPostRequest) ReplyParameters(replyParameters ReplyParameters) ApiSendAudioPostRequest {
+func (r ApiPostSendAudioRequest) ReplyParameters(replyParameters ReplyParameters) ApiPostSendAudioRequest {
 	r.replyParameters = &replyParameters
 	return r
 }
 
-func (r ApiSendAudioPostRequest) ReplyMarkup(replyMarkup SendMessagePostRequestReplyMarkup) ApiSendAudioPostRequest {
+func (r ApiPostSendAudioRequest) ReplyMarkup(replyMarkup PostSendMessageRequestReplyMarkup) ApiPostSendAudioRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiSendAudioPostRequest) Execute() (*SendMessagePost200Response, *http.Response, error) {
-	return r.ApiService.SendAudioPostExecute(r)
+func (r ApiPostSendAudioRequest) Execute() (*PostSendMessage200Response, *http.Response, error) {
+	return r.ApiService.PostSendAudioExecute(r)
 }
 
 /*
-SendAudioPost Method for SendAudioPost
+PostSendAudio sendAudio
 
 Use this method to send audio files, if you want Telegram clients to display them in the music player. Your audio must be in the .MP3 or .M4A format. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned. Bots can currently send audio files of up to 50 MB in size, this limit may be changed in the future.
 
 For sending voice messages, use the [sendVoice](https://core.telegram.org/bots/api/#sendvoice) method instead.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSendAudioPostRequest
+ @return ApiPostSendAudioRequest
 */
-func (a *DefaultAPIService) SendAudioPost(ctx context.Context) ApiSendAudioPostRequest {
-	return ApiSendAudioPostRequest{
+func (a *DefaultAPIService) PostSendAudio(ctx context.Context) ApiPostSendAudioRequest {
+	return ApiPostSendAudioRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SendMessagePost200Response
-func (a *DefaultAPIService) SendAudioPostExecute(r ApiSendAudioPostRequest) (*SendMessagePost200Response, *http.Response, error) {
+//  @return PostSendMessage200Response
+func (a *DefaultAPIService) PostSendAudioExecute(r ApiPostSendAudioRequest) (*PostSendMessage200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SendMessagePost200Response
+		localVarReturnValue  *PostSendMessage200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SendAudioPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendAudio")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -15548,6 +16538,17 @@ func (a *DefaultAPIService) SendAudioPostExecute(r ApiSendAudioPostRequest) (*Se
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -15571,44 +16572,44 @@ func (a *DefaultAPIService) SendAudioPostExecute(r ApiSendAudioPostRequest) (*Se
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSendChatActionPostRequest struct {
+type ApiPostSendChatActionRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
+	chatId *PostSendMessageRequestChatId
 	action *string
 	businessConnectionId *string
 	messageThreadId *int32
 }
 
-func (r ApiSendChatActionPostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiSendChatActionPostRequest {
+func (r ApiPostSendChatActionRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSendChatActionRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Type of action to broadcast. Choose one, depending on what the user is about to receive: *typing* for [text messages](https://core.telegram.org/bots/api/#sendmessage), *upload\\\\_photo* for [photos](https://core.telegram.org/bots/api/#sendphoto), *record\\\\_video* or *upload\\\\_video* for [videos](https://core.telegram.org/bots/api/#sendvideo), *record\\\\_voice* or *upload\\\\_voice* for [voice notes](https://core.telegram.org/bots/api/#sendvoice), *upload\\\\_document* for [general files](https://core.telegram.org/bots/api/#senddocument), *choose\\\\_sticker* for [stickers](https://core.telegram.org/bots/api/#sendsticker), *find\\\\_location* for [location data](https://core.telegram.org/bots/api/#sendlocation), *record\\\\_video\\\\_note* or *upload\\\\_video\\\\_note* for [video notes](https://core.telegram.org/bots/api/#sendvideonote).
-func (r ApiSendChatActionPostRequest) Action(action string) ApiSendChatActionPostRequest {
+func (r ApiPostSendChatActionRequest) Action(action string) ApiPostSendChatActionRequest {
 	r.action = &action
 	return r
 }
 
 // Unique identifier of the business connection on behalf of which the action will be sent
-func (r ApiSendChatActionPostRequest) BusinessConnectionId(businessConnectionId string) ApiSendChatActionPostRequest {
+func (r ApiPostSendChatActionRequest) BusinessConnectionId(businessConnectionId string) ApiPostSendChatActionRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
 // Unique identifier for the target message thread; for supergroups only
-func (r ApiSendChatActionPostRequest) MessageThreadId(messageThreadId int32) ApiSendChatActionPostRequest {
+func (r ApiPostSendChatActionRequest) MessageThreadId(messageThreadId int32) ApiPostSendChatActionRequest {
 	r.messageThreadId = &messageThreadId
 	return r
 }
 
-func (r ApiSendChatActionPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.SendChatActionPostExecute(r)
+func (r ApiPostSendChatActionRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostSendChatActionExecute(r)
 }
 
 /*
-SendChatActionPost Method for SendChatActionPost
+PostSendChatAction sendChatAction
 
 Use this method when you need to tell the user that something is happening on the bot's side. The status is set for 5 seconds or less (when a message arrives from your bot, Telegram clients clear its typing status). Returns *True* on success.
 
@@ -15617,26 +16618,26 @@ Example: The [ImageBot](https://t.me/imagebot) needs some time to process a requ
 We only recommend using this method when a response from the bot will take a **noticeable** amount of time to arrive.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSendChatActionPostRequest
+ @return ApiPostSendChatActionRequest
 */
-func (a *DefaultAPIService) SendChatActionPost(ctx context.Context) ApiSendChatActionPostRequest {
-	return ApiSendChatActionPostRequest{
+func (a *DefaultAPIService) PostSendChatAction(ctx context.Context) ApiPostSendChatActionRequest {
+	return ApiPostSendChatActionRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) SendChatActionPostExecute(r ApiSendChatActionPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostSendChatActionExecute(r ApiPostSendChatActionRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SendChatActionPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendChatAction")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -15700,6 +16701,17 @@ func (a *DefaultAPIService) SendChatActionPostExecute(r ApiSendChatActionPostReq
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -15723,10 +16735,10 @@ func (a *DefaultAPIService) SendChatActionPostExecute(r ApiSendChatActionPostReq
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSendContactPostRequest struct {
+type ApiPostSendContactRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
+	chatId *PostSendMessageRequestChatId
 	phoneNumber *string
 	firstName *string
 	businessConnectionId *string
@@ -15738,114 +16750,114 @@ type ApiSendContactPostRequest struct {
 	allowPaidBroadcast *bool
 	messageEffectId *string
 	replyParameters *ReplyParameters
-	replyMarkup *SendMessagePostRequestReplyMarkup
+	replyMarkup *PostSendMessageRequestReplyMarkup
 }
 
-func (r ApiSendContactPostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiSendContactPostRequest {
+func (r ApiPostSendContactRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSendContactRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Contact&#39;s phone number
-func (r ApiSendContactPostRequest) PhoneNumber(phoneNumber string) ApiSendContactPostRequest {
+func (r ApiPostSendContactRequest) PhoneNumber(phoneNumber string) ApiPostSendContactRequest {
 	r.phoneNumber = &phoneNumber
 	return r
 }
 
 // Contact&#39;s first name
-func (r ApiSendContactPostRequest) FirstName(firstName string) ApiSendContactPostRequest {
+func (r ApiPostSendContactRequest) FirstName(firstName string) ApiPostSendContactRequest {
 	r.firstName = &firstName
 	return r
 }
 
 // Unique identifier of the business connection on behalf of which the message will be sent
-func (r ApiSendContactPostRequest) BusinessConnectionId(businessConnectionId string) ApiSendContactPostRequest {
+func (r ApiPostSendContactRequest) BusinessConnectionId(businessConnectionId string) ApiPostSendContactRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
 // Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-func (r ApiSendContactPostRequest) MessageThreadId(messageThreadId int32) ApiSendContactPostRequest {
+func (r ApiPostSendContactRequest) MessageThreadId(messageThreadId int32) ApiPostSendContactRequest {
 	r.messageThreadId = &messageThreadId
 	return r
 }
 
 // Contact&#39;s last name
-func (r ApiSendContactPostRequest) LastName(lastName string) ApiSendContactPostRequest {
+func (r ApiPostSendContactRequest) LastName(lastName string) ApiPostSendContactRequest {
 	r.lastName = &lastName
 	return r
 }
 
 // Additional data about the contact in the form of a [vCard](https://en.wikipedia.org/wiki/VCard), 0-2048 bytes
-func (r ApiSendContactPostRequest) Vcard(vcard string) ApiSendContactPostRequest {
+func (r ApiPostSendContactRequest) Vcard(vcard string) ApiPostSendContactRequest {
 	r.vcard = &vcard
 	return r
 }
 
 // Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.
-func (r ApiSendContactPostRequest) DisableNotification(disableNotification bool) ApiSendContactPostRequest {
+func (r ApiPostSendContactRequest) DisableNotification(disableNotification bool) ApiPostSendContactRequest {
 	r.disableNotification = &disableNotification
 	return r
 }
 
 // Protects the contents of the sent message from forwarding and saving
-func (r ApiSendContactPostRequest) ProtectContent(protectContent bool) ApiSendContactPostRequest {
+func (r ApiPostSendContactRequest) ProtectContent(protectContent bool) ApiPostSendContactRequest {
 	r.protectContent = &protectContent
 	return r
 }
 
 // Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance
-func (r ApiSendContactPostRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiSendContactPostRequest {
+func (r ApiPostSendContactRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiPostSendContactRequest {
 	r.allowPaidBroadcast = &allowPaidBroadcast
 	return r
 }
 
 // Unique identifier of the message effect to be added to the message; for private chats only
-func (r ApiSendContactPostRequest) MessageEffectId(messageEffectId string) ApiSendContactPostRequest {
+func (r ApiPostSendContactRequest) MessageEffectId(messageEffectId string) ApiPostSendContactRequest {
 	r.messageEffectId = &messageEffectId
 	return r
 }
 
-func (r ApiSendContactPostRequest) ReplyParameters(replyParameters ReplyParameters) ApiSendContactPostRequest {
+func (r ApiPostSendContactRequest) ReplyParameters(replyParameters ReplyParameters) ApiPostSendContactRequest {
 	r.replyParameters = &replyParameters
 	return r
 }
 
-func (r ApiSendContactPostRequest) ReplyMarkup(replyMarkup SendMessagePostRequestReplyMarkup) ApiSendContactPostRequest {
+func (r ApiPostSendContactRequest) ReplyMarkup(replyMarkup PostSendMessageRequestReplyMarkup) ApiPostSendContactRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiSendContactPostRequest) Execute() (*SendMessagePost200Response, *http.Response, error) {
-	return r.ApiService.SendContactPostExecute(r)
+func (r ApiPostSendContactRequest) Execute() (*PostSendMessage200Response, *http.Response, error) {
+	return r.ApiService.PostSendContactExecute(r)
 }
 
 /*
-SendContactPost Method for SendContactPost
+PostSendContact sendContact
 
 Use this method to send phone contacts. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSendContactPostRequest
+ @return ApiPostSendContactRequest
 */
-func (a *DefaultAPIService) SendContactPost(ctx context.Context) ApiSendContactPostRequest {
-	return ApiSendContactPostRequest{
+func (a *DefaultAPIService) PostSendContact(ctx context.Context) ApiPostSendContactRequest {
+	return ApiPostSendContactRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SendMessagePost200Response
-func (a *DefaultAPIService) SendContactPostExecute(r ApiSendContactPostRequest) (*SendMessagePost200Response, *http.Response, error) {
+//  @return PostSendMessage200Response
+func (a *DefaultAPIService) PostSendContactExecute(r ApiPostSendContactRequest) (*PostSendMessage200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SendMessagePost200Response
+		localVarReturnValue  *PostSendMessage200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SendContactPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendContact")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -15945,6 +16957,17 @@ func (a *DefaultAPIService) SendContactPostExecute(r ApiSendContactPostRequest) 
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -15968,10 +16991,10 @@ func (a *DefaultAPIService) SendContactPostExecute(r ApiSendContactPostRequest) 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSendDicePostRequest struct {
+type ApiPostSendDiceRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
+	chatId *PostSendMessageRequestChatId
 	businessConnectionId *string
 	messageThreadId *int32
 	emoji *string
@@ -15980,96 +17003,96 @@ type ApiSendDicePostRequest struct {
 	allowPaidBroadcast *bool
 	messageEffectId *string
 	replyParameters *ReplyParameters
-	replyMarkup *SendMessagePostRequestReplyMarkup
+	replyMarkup *PostSendMessageRequestReplyMarkup
 }
 
-func (r ApiSendDicePostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiSendDicePostRequest {
+func (r ApiPostSendDiceRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSendDiceRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Unique identifier of the business connection on behalf of which the message will be sent
-func (r ApiSendDicePostRequest) BusinessConnectionId(businessConnectionId string) ApiSendDicePostRequest {
+func (r ApiPostSendDiceRequest) BusinessConnectionId(businessConnectionId string) ApiPostSendDiceRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
 // Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-func (r ApiSendDicePostRequest) MessageThreadId(messageThreadId int32) ApiSendDicePostRequest {
+func (r ApiPostSendDiceRequest) MessageThreadId(messageThreadId int32) ApiPostSendDiceRequest {
 	r.messageThreadId = &messageThreadId
 	return r
 }
 
 // Emoji on which the dice throw animation is based. Currently, must be one of “🎲”, “🎯”, “🏀”, “⚽”, “🎳”, or “🎰”. Dice can have values 1-6 for “🎲”, “🎯” and “🎳”, values 1-5 for “🏀” and “⚽”, and values 1-64 for “🎰”. Defaults to “🎲”
-func (r ApiSendDicePostRequest) Emoji(emoji string) ApiSendDicePostRequest {
+func (r ApiPostSendDiceRequest) Emoji(emoji string) ApiPostSendDiceRequest {
 	r.emoji = &emoji
 	return r
 }
 
 // Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.
-func (r ApiSendDicePostRequest) DisableNotification(disableNotification bool) ApiSendDicePostRequest {
+func (r ApiPostSendDiceRequest) DisableNotification(disableNotification bool) ApiPostSendDiceRequest {
 	r.disableNotification = &disableNotification
 	return r
 }
 
 // Protects the contents of the sent message from forwarding
-func (r ApiSendDicePostRequest) ProtectContent(protectContent bool) ApiSendDicePostRequest {
+func (r ApiPostSendDiceRequest) ProtectContent(protectContent bool) ApiPostSendDiceRequest {
 	r.protectContent = &protectContent
 	return r
 }
 
 // Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance
-func (r ApiSendDicePostRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiSendDicePostRequest {
+func (r ApiPostSendDiceRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiPostSendDiceRequest {
 	r.allowPaidBroadcast = &allowPaidBroadcast
 	return r
 }
 
 // Unique identifier of the message effect to be added to the message; for private chats only
-func (r ApiSendDicePostRequest) MessageEffectId(messageEffectId string) ApiSendDicePostRequest {
+func (r ApiPostSendDiceRequest) MessageEffectId(messageEffectId string) ApiPostSendDiceRequest {
 	r.messageEffectId = &messageEffectId
 	return r
 }
 
-func (r ApiSendDicePostRequest) ReplyParameters(replyParameters ReplyParameters) ApiSendDicePostRequest {
+func (r ApiPostSendDiceRequest) ReplyParameters(replyParameters ReplyParameters) ApiPostSendDiceRequest {
 	r.replyParameters = &replyParameters
 	return r
 }
 
-func (r ApiSendDicePostRequest) ReplyMarkup(replyMarkup SendMessagePostRequestReplyMarkup) ApiSendDicePostRequest {
+func (r ApiPostSendDiceRequest) ReplyMarkup(replyMarkup PostSendMessageRequestReplyMarkup) ApiPostSendDiceRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiSendDicePostRequest) Execute() (*SendMessagePost200Response, *http.Response, error) {
-	return r.ApiService.SendDicePostExecute(r)
+func (r ApiPostSendDiceRequest) Execute() (*PostSendMessage200Response, *http.Response, error) {
+	return r.ApiService.PostSendDiceExecute(r)
 }
 
 /*
-SendDicePost Method for SendDicePost
+PostSendDice sendDice
 
 Use this method to send an animated emoji that will display a random value. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSendDicePostRequest
+ @return ApiPostSendDiceRequest
 */
-func (a *DefaultAPIService) SendDicePost(ctx context.Context) ApiSendDicePostRequest {
-	return ApiSendDicePostRequest{
+func (a *DefaultAPIService) PostSendDice(ctx context.Context) ApiPostSendDiceRequest {
+	return ApiPostSendDiceRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SendMessagePost200Response
-func (a *DefaultAPIService) SendDicePostExecute(r ApiSendDicePostRequest) (*SendMessagePost200Response, *http.Response, error) {
+//  @return PostSendMessage200Response
+func (a *DefaultAPIService) PostSendDiceExecute(r ApiPostSendDiceRequest) (*PostSendMessage200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SendMessagePost200Response
+		localVarReturnValue  *PostSendMessage200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SendDicePost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendDice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -16158,6 +17181,17 @@ func (a *DefaultAPIService) SendDicePostExecute(r ApiSendDicePostRequest) (*Send
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -16181,14 +17215,14 @@ func (a *DefaultAPIService) SendDicePostExecute(r ApiSendDicePostRequest) (*Send
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSendDocumentPostRequest struct {
+type ApiPostSendDocumentRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
-	document *SendDocumentPostRequestDocument
+	chatId *PostSendMessageRequestChatId
+	document *PostSendDocumentRequestDocument
 	businessConnectionId *string
 	messageThreadId *int32
-	thumbnail *SendAudioPostRequestThumbnail
+	thumbnail *PostSendAudioRequestThumbnail
 	caption *string
 	parseMode *string
 	captionEntities *[]MessageEntity
@@ -16198,124 +17232,124 @@ type ApiSendDocumentPostRequest struct {
 	allowPaidBroadcast *bool
 	messageEffectId *string
 	replyParameters *ReplyParameters
-	replyMarkup *SendMessagePostRequestReplyMarkup
+	replyMarkup *PostSendMessageRequestReplyMarkup
 }
 
-func (r ApiSendDocumentPostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiSendDocumentPostRequest {
+func (r ApiPostSendDocumentRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSendDocumentRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiSendDocumentPostRequest) Document(document SendDocumentPostRequestDocument) ApiSendDocumentPostRequest {
+func (r ApiPostSendDocumentRequest) Document(document PostSendDocumentRequestDocument) ApiPostSendDocumentRequest {
 	r.document = &document
 	return r
 }
 
 // Unique identifier of the business connection on behalf of which the message will be sent
-func (r ApiSendDocumentPostRequest) BusinessConnectionId(businessConnectionId string) ApiSendDocumentPostRequest {
+func (r ApiPostSendDocumentRequest) BusinessConnectionId(businessConnectionId string) ApiPostSendDocumentRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
 // Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-func (r ApiSendDocumentPostRequest) MessageThreadId(messageThreadId int32) ApiSendDocumentPostRequest {
+func (r ApiPostSendDocumentRequest) MessageThreadId(messageThreadId int32) ApiPostSendDocumentRequest {
 	r.messageThreadId = &messageThreadId
 	return r
 }
 
-func (r ApiSendDocumentPostRequest) Thumbnail(thumbnail SendAudioPostRequestThumbnail) ApiSendDocumentPostRequest {
+func (r ApiPostSendDocumentRequest) Thumbnail(thumbnail PostSendAudioRequestThumbnail) ApiPostSendDocumentRequest {
 	r.thumbnail = &thumbnail
 	return r
 }
 
 // Document caption (may also be used when resending documents by *file\\\\_id*), 0-1024 characters after entities parsing
-func (r ApiSendDocumentPostRequest) Caption(caption string) ApiSendDocumentPostRequest {
+func (r ApiPostSendDocumentRequest) Caption(caption string) ApiPostSendDocumentRequest {
 	r.caption = &caption
 	return r
 }
 
 // Mode for parsing entities in the document caption. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details.
-func (r ApiSendDocumentPostRequest) ParseMode(parseMode string) ApiSendDocumentPostRequest {
+func (r ApiPostSendDocumentRequest) ParseMode(parseMode string) ApiPostSendDocumentRequest {
 	r.parseMode = &parseMode
 	return r
 }
 
 // A JSON-serialized list of special entities that appear in the caption, which can be specified instead of *parse\\\\_mode*
-func (r ApiSendDocumentPostRequest) CaptionEntities(captionEntities []MessageEntity) ApiSendDocumentPostRequest {
+func (r ApiPostSendDocumentRequest) CaptionEntities(captionEntities []MessageEntity) ApiPostSendDocumentRequest {
 	r.captionEntities = &captionEntities
 	return r
 }
 
 // Disables automatic server-side content type detection for files uploaded using multipart/form-data
-func (r ApiSendDocumentPostRequest) DisableContentTypeDetection(disableContentTypeDetection bool) ApiSendDocumentPostRequest {
+func (r ApiPostSendDocumentRequest) DisableContentTypeDetection(disableContentTypeDetection bool) ApiPostSendDocumentRequest {
 	r.disableContentTypeDetection = &disableContentTypeDetection
 	return r
 }
 
 // Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.
-func (r ApiSendDocumentPostRequest) DisableNotification(disableNotification bool) ApiSendDocumentPostRequest {
+func (r ApiPostSendDocumentRequest) DisableNotification(disableNotification bool) ApiPostSendDocumentRequest {
 	r.disableNotification = &disableNotification
 	return r
 }
 
 // Protects the contents of the sent message from forwarding and saving
-func (r ApiSendDocumentPostRequest) ProtectContent(protectContent bool) ApiSendDocumentPostRequest {
+func (r ApiPostSendDocumentRequest) ProtectContent(protectContent bool) ApiPostSendDocumentRequest {
 	r.protectContent = &protectContent
 	return r
 }
 
 // Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance
-func (r ApiSendDocumentPostRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiSendDocumentPostRequest {
+func (r ApiPostSendDocumentRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiPostSendDocumentRequest {
 	r.allowPaidBroadcast = &allowPaidBroadcast
 	return r
 }
 
 // Unique identifier of the message effect to be added to the message; for private chats only
-func (r ApiSendDocumentPostRequest) MessageEffectId(messageEffectId string) ApiSendDocumentPostRequest {
+func (r ApiPostSendDocumentRequest) MessageEffectId(messageEffectId string) ApiPostSendDocumentRequest {
 	r.messageEffectId = &messageEffectId
 	return r
 }
 
-func (r ApiSendDocumentPostRequest) ReplyParameters(replyParameters ReplyParameters) ApiSendDocumentPostRequest {
+func (r ApiPostSendDocumentRequest) ReplyParameters(replyParameters ReplyParameters) ApiPostSendDocumentRequest {
 	r.replyParameters = &replyParameters
 	return r
 }
 
-func (r ApiSendDocumentPostRequest) ReplyMarkup(replyMarkup SendMessagePostRequestReplyMarkup) ApiSendDocumentPostRequest {
+func (r ApiPostSendDocumentRequest) ReplyMarkup(replyMarkup PostSendMessageRequestReplyMarkup) ApiPostSendDocumentRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiSendDocumentPostRequest) Execute() (*SendMessagePost200Response, *http.Response, error) {
-	return r.ApiService.SendDocumentPostExecute(r)
+func (r ApiPostSendDocumentRequest) Execute() (*PostSendMessage200Response, *http.Response, error) {
+	return r.ApiService.PostSendDocumentExecute(r)
 }
 
 /*
-SendDocumentPost Method for SendDocumentPost
+PostSendDocument sendDocument
 
 Use this method to send general files. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned. Bots can currently send files of any type of up to 50 MB in size, this limit may be changed in the future.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSendDocumentPostRequest
+ @return ApiPostSendDocumentRequest
 */
-func (a *DefaultAPIService) SendDocumentPost(ctx context.Context) ApiSendDocumentPostRequest {
-	return ApiSendDocumentPostRequest{
+func (a *DefaultAPIService) PostSendDocument(ctx context.Context) ApiPostSendDocumentRequest {
+	return ApiPostSendDocumentRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SendMessagePost200Response
-func (a *DefaultAPIService) SendDocumentPostExecute(r ApiSendDocumentPostRequest) (*SendMessagePost200Response, *http.Response, error) {
+//  @return PostSendMessage200Response
+func (a *DefaultAPIService) PostSendDocumentExecute(r ApiPostSendDocumentRequest) (*PostSendMessage200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SendMessagePost200Response
+		localVarReturnValue  *PostSendMessage200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SendDocumentPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendDocument")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -16424,6 +17458,17 @@ func (a *DefaultAPIService) SendDocumentPostExecute(r ApiSendDocumentPostRequest
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -16447,7 +17492,7 @@ func (a *DefaultAPIService) SendDocumentPostExecute(r ApiSendDocumentPostRequest
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSendGamePostRequest struct {
+type ApiPostSendGameRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	chatId *int32
@@ -16463,93 +17508,93 @@ type ApiSendGamePostRequest struct {
 }
 
 // Unique identifier for the target chat
-func (r ApiSendGamePostRequest) ChatId(chatId int32) ApiSendGamePostRequest {
+func (r ApiPostSendGameRequest) ChatId(chatId int32) ApiPostSendGameRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Short name of the game, serves as the unique identifier for the game. Set up your games via [@BotFather](https://t.me/botfather).
-func (r ApiSendGamePostRequest) GameShortName(gameShortName string) ApiSendGamePostRequest {
+func (r ApiPostSendGameRequest) GameShortName(gameShortName string) ApiPostSendGameRequest {
 	r.gameShortName = &gameShortName
 	return r
 }
 
 // Unique identifier of the business connection on behalf of which the message will be sent
-func (r ApiSendGamePostRequest) BusinessConnectionId(businessConnectionId string) ApiSendGamePostRequest {
+func (r ApiPostSendGameRequest) BusinessConnectionId(businessConnectionId string) ApiPostSendGameRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
 // Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-func (r ApiSendGamePostRequest) MessageThreadId(messageThreadId int32) ApiSendGamePostRequest {
+func (r ApiPostSendGameRequest) MessageThreadId(messageThreadId int32) ApiPostSendGameRequest {
 	r.messageThreadId = &messageThreadId
 	return r
 }
 
 // Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.
-func (r ApiSendGamePostRequest) DisableNotification(disableNotification bool) ApiSendGamePostRequest {
+func (r ApiPostSendGameRequest) DisableNotification(disableNotification bool) ApiPostSendGameRequest {
 	r.disableNotification = &disableNotification
 	return r
 }
 
 // Protects the contents of the sent message from forwarding and saving
-func (r ApiSendGamePostRequest) ProtectContent(protectContent bool) ApiSendGamePostRequest {
+func (r ApiPostSendGameRequest) ProtectContent(protectContent bool) ApiPostSendGameRequest {
 	r.protectContent = &protectContent
 	return r
 }
 
 // Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance
-func (r ApiSendGamePostRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiSendGamePostRequest {
+func (r ApiPostSendGameRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiPostSendGameRequest {
 	r.allowPaidBroadcast = &allowPaidBroadcast
 	return r
 }
 
 // Unique identifier of the message effect to be added to the message; for private chats only
-func (r ApiSendGamePostRequest) MessageEffectId(messageEffectId string) ApiSendGamePostRequest {
+func (r ApiPostSendGameRequest) MessageEffectId(messageEffectId string) ApiPostSendGameRequest {
 	r.messageEffectId = &messageEffectId
 	return r
 }
 
-func (r ApiSendGamePostRequest) ReplyParameters(replyParameters ReplyParameters) ApiSendGamePostRequest {
+func (r ApiPostSendGameRequest) ReplyParameters(replyParameters ReplyParameters) ApiPostSendGameRequest {
 	r.replyParameters = &replyParameters
 	return r
 }
 
-func (r ApiSendGamePostRequest) ReplyMarkup(replyMarkup InlineKeyboardMarkup) ApiSendGamePostRequest {
+func (r ApiPostSendGameRequest) ReplyMarkup(replyMarkup InlineKeyboardMarkup) ApiPostSendGameRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiSendGamePostRequest) Execute() (*SendMessagePost200Response, *http.Response, error) {
-	return r.ApiService.SendGamePostExecute(r)
+func (r ApiPostSendGameRequest) Execute() (*PostSendMessage200Response, *http.Response, error) {
+	return r.ApiService.PostSendGameExecute(r)
 }
 
 /*
-SendGamePost Method for SendGamePost
+PostSendGame sendGame
 
 Use this method to send a game. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSendGamePostRequest
+ @return ApiPostSendGameRequest
 */
-func (a *DefaultAPIService) SendGamePost(ctx context.Context) ApiSendGamePostRequest {
-	return ApiSendGamePostRequest{
+func (a *DefaultAPIService) PostSendGame(ctx context.Context) ApiPostSendGameRequest {
+	return ApiPostSendGameRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SendMessagePost200Response
-func (a *DefaultAPIService) SendGamePostExecute(r ApiSendGamePostRequest) (*SendMessagePost200Response, *http.Response, error) {
+//  @return PostSendMessage200Response
+func (a *DefaultAPIService) PostSendGameExecute(r ApiPostSendGameRequest) (*PostSendMessage200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SendMessagePost200Response
+		localVarReturnValue  *PostSendMessage200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SendGamePost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendGame")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -16639,6 +17684,17 @@ func (a *DefaultAPIService) SendGamePostExecute(r ApiSendGamePostRequest) (*Send
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -16662,12 +17718,12 @@ func (a *DefaultAPIService) SendGamePostExecute(r ApiSendGamePostRequest) (*Send
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSendGiftPostRequest struct {
+type ApiPostSendGiftRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	giftId *string
 	userId *int32
-	chatId *SendGiftPostRequestChatId
+	chatId *PostSendGiftRequestChatId
 	payForUpgrade *bool
 	text *string
 	textParseMode *string
@@ -16675,76 +17731,76 @@ type ApiSendGiftPostRequest struct {
 }
 
 // Identifier of the gift
-func (r ApiSendGiftPostRequest) GiftId(giftId string) ApiSendGiftPostRequest {
+func (r ApiPostSendGiftRequest) GiftId(giftId string) ApiPostSendGiftRequest {
 	r.giftId = &giftId
 	return r
 }
 
 // Required if *chat\\\\_id* is not specified. Unique identifier of the target user who will receive the gift.
-func (r ApiSendGiftPostRequest) UserId(userId int32) ApiSendGiftPostRequest {
+func (r ApiPostSendGiftRequest) UserId(userId int32) ApiPostSendGiftRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiSendGiftPostRequest) ChatId(chatId SendGiftPostRequestChatId) ApiSendGiftPostRequest {
+func (r ApiPostSendGiftRequest) ChatId(chatId PostSendGiftRequestChatId) ApiPostSendGiftRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Pass *True* to pay for the gift upgrade from the bot&#39;s balance, thereby making the upgrade free for the receiver
-func (r ApiSendGiftPostRequest) PayForUpgrade(payForUpgrade bool) ApiSendGiftPostRequest {
+func (r ApiPostSendGiftRequest) PayForUpgrade(payForUpgrade bool) ApiPostSendGiftRequest {
 	r.payForUpgrade = &payForUpgrade
 	return r
 }
 
 // Text that will be shown along with the gift; 0-128 characters
-func (r ApiSendGiftPostRequest) Text(text string) ApiSendGiftPostRequest {
+func (r ApiPostSendGiftRequest) Text(text string) ApiPostSendGiftRequest {
 	r.text = &text
 	return r
 }
 
 // Mode for parsing entities in the text. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, and “custom\\\\_emoji” are ignored.
-func (r ApiSendGiftPostRequest) TextParseMode(textParseMode string) ApiSendGiftPostRequest {
+func (r ApiPostSendGiftRequest) TextParseMode(textParseMode string) ApiPostSendGiftRequest {
 	r.textParseMode = &textParseMode
 	return r
 }
 
 // A JSON-serialized list of special entities that appear in the gift text. It can be specified instead of *text\\\\_parse\\\\_mode*. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, and “custom\\\\_emoji” are ignored.
-func (r ApiSendGiftPostRequest) TextEntities(textEntities []MessageEntity) ApiSendGiftPostRequest {
+func (r ApiPostSendGiftRequest) TextEntities(textEntities []MessageEntity) ApiPostSendGiftRequest {
 	r.textEntities = &textEntities
 	return r
 }
 
-func (r ApiSendGiftPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.SendGiftPostExecute(r)
+func (r ApiPostSendGiftRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostSendGiftExecute(r)
 }
 
 /*
-SendGiftPost Method for SendGiftPost
+PostSendGift sendGift
 
 Sends a gift to the given user or channel chat. The gift can't be converted to Telegram Stars by the receiver. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSendGiftPostRequest
+ @return ApiPostSendGiftRequest
 */
-func (a *DefaultAPIService) SendGiftPost(ctx context.Context) ApiSendGiftPostRequest {
-	return ApiSendGiftPostRequest{
+func (a *DefaultAPIService) PostSendGift(ctx context.Context) ApiPostSendGiftRequest {
+	return ApiPostSendGiftRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) SendGiftPostExecute(r ApiSendGiftPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostSendGiftExecute(r ApiPostSendGiftRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SendGiftPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendGift")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -16820,6 +17876,17 @@ func (a *DefaultAPIService) SendGiftPostExecute(r ApiSendGiftPostRequest) (*SetW
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -16843,10 +17910,10 @@ func (a *DefaultAPIService) SendGiftPostExecute(r ApiSendGiftPostRequest) (*SetW
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSendInvoicePostRequest struct {
+type ApiPostSendInvoiceRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
+	chatId *PostSendMessageRequestChatId
 	title *string
 	description *string
 	payload *string
@@ -16877,207 +17944,207 @@ type ApiSendInvoicePostRequest struct {
 	replyMarkup *InlineKeyboardMarkup
 }
 
-func (r ApiSendInvoicePostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiSendInvoicePostRequest {
+func (r ApiPostSendInvoiceRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSendInvoiceRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Product name, 1-32 characters
-func (r ApiSendInvoicePostRequest) Title(title string) ApiSendInvoicePostRequest {
+func (r ApiPostSendInvoiceRequest) Title(title string) ApiPostSendInvoiceRequest {
 	r.title = &title
 	return r
 }
 
 // Product description, 1-255 characters
-func (r ApiSendInvoicePostRequest) Description(description string) ApiSendInvoicePostRequest {
+func (r ApiPostSendInvoiceRequest) Description(description string) ApiPostSendInvoiceRequest {
 	r.description = &description
 	return r
 }
 
 // Bot-defined invoice payload, 1-128 bytes. This will not be displayed to the user, use it for your internal processes.
-func (r ApiSendInvoicePostRequest) Payload(payload string) ApiSendInvoicePostRequest {
+func (r ApiPostSendInvoiceRequest) Payload(payload string) ApiPostSendInvoiceRequest {
 	r.payload = &payload
 	return r
 }
 
 // Three-letter ISO 4217 currency code, see [more on currencies](https://core.telegram.org/bots/payments#supported-currencies). Pass “XTR” for payments in [Telegram Stars](https://t.me/BotNews/90).
-func (r ApiSendInvoicePostRequest) Currency(currency string) ApiSendInvoicePostRequest {
+func (r ApiPostSendInvoiceRequest) Currency(currency string) ApiPostSendInvoiceRequest {
 	r.currency = &currency
 	return r
 }
 
 // Price breakdown, a JSON-serialized list of components (e.g. product price, tax, discount, delivery cost, delivery tax, bonus, etc.). Must contain exactly one item for payments in [Telegram Stars](https://t.me/BotNews/90).
-func (r ApiSendInvoicePostRequest) Prices(prices []LabeledPrice) ApiSendInvoicePostRequest {
+func (r ApiPostSendInvoiceRequest) Prices(prices []LabeledPrice) ApiPostSendInvoiceRequest {
 	r.prices = &prices
 	return r
 }
 
 // Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-func (r ApiSendInvoicePostRequest) MessageThreadId(messageThreadId int32) ApiSendInvoicePostRequest {
+func (r ApiPostSendInvoiceRequest) MessageThreadId(messageThreadId int32) ApiPostSendInvoiceRequest {
 	r.messageThreadId = &messageThreadId
 	return r
 }
 
 // Payment provider token, obtained via [@BotFather](https://t.me/botfather). Pass an empty string for payments in [Telegram Stars](https://t.me/BotNews/90).
-func (r ApiSendInvoicePostRequest) ProviderToken(providerToken string) ApiSendInvoicePostRequest {
+func (r ApiPostSendInvoiceRequest) ProviderToken(providerToken string) ApiPostSendInvoiceRequest {
 	r.providerToken = &providerToken
 	return r
 }
 
 // The maximum accepted amount for tips in the *smallest units* of the currency (integer, **not** float/double). For example, for a maximum tip of &#x60;US$ 1.45&#x60; pass &#x60;max_tip_amount &#x3D; 145&#x60;. See the *exp* parameter in [currencies.json](https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). Defaults to 0. Not supported for payments in [Telegram Stars](https://t.me/BotNews/90).
-func (r ApiSendInvoicePostRequest) MaxTipAmount(maxTipAmount int32) ApiSendInvoicePostRequest {
+func (r ApiPostSendInvoiceRequest) MaxTipAmount(maxTipAmount int32) ApiPostSendInvoiceRequest {
 	r.maxTipAmount = &maxTipAmount
 	return r
 }
 
 // A JSON-serialized array of suggested amounts of tips in the *smallest units* of the currency (integer, **not** float/double). At most 4 suggested tip amounts can be specified. The suggested tip amounts must be positive, passed in a strictly increased order and must not exceed *max\\\\_tip\\\\_amount*.
-func (r ApiSendInvoicePostRequest) SuggestedTipAmounts(suggestedTipAmounts []int32) ApiSendInvoicePostRequest {
+func (r ApiPostSendInvoiceRequest) SuggestedTipAmounts(suggestedTipAmounts []int32) ApiPostSendInvoiceRequest {
 	r.suggestedTipAmounts = &suggestedTipAmounts
 	return r
 }
 
 // Unique deep-linking parameter. If left empty, **forwarded copies** of the sent message will have a *Pay* button, allowing multiple users to pay directly from the forwarded message, using the same invoice. If non-empty, forwarded copies of the sent message will have a *URL* button with a deep link to the bot (instead of a *Pay* button), with the value used as the start parameter
-func (r ApiSendInvoicePostRequest) StartParameter(startParameter string) ApiSendInvoicePostRequest {
+func (r ApiPostSendInvoiceRequest) StartParameter(startParameter string) ApiPostSendInvoiceRequest {
 	r.startParameter = &startParameter
 	return r
 }
 
 // JSON-serialized data about the invoice, which will be shared with the payment provider. A detailed description of required fields should be provided by the payment provider.
-func (r ApiSendInvoicePostRequest) ProviderData(providerData string) ApiSendInvoicePostRequest {
+func (r ApiPostSendInvoiceRequest) ProviderData(providerData string) ApiPostSendInvoiceRequest {
 	r.providerData = &providerData
 	return r
 }
 
 // URL of the product photo for the invoice. Can be a photo of the goods or a marketing image for a service. People like it better when they see what they are paying for.
-func (r ApiSendInvoicePostRequest) PhotoUrl(photoUrl string) ApiSendInvoicePostRequest {
+func (r ApiPostSendInvoiceRequest) PhotoUrl(photoUrl string) ApiPostSendInvoiceRequest {
 	r.photoUrl = &photoUrl
 	return r
 }
 
 // Photo size in bytes
-func (r ApiSendInvoicePostRequest) PhotoSize(photoSize int32) ApiSendInvoicePostRequest {
+func (r ApiPostSendInvoiceRequest) PhotoSize(photoSize int32) ApiPostSendInvoiceRequest {
 	r.photoSize = &photoSize
 	return r
 }
 
 // Photo width
-func (r ApiSendInvoicePostRequest) PhotoWidth(photoWidth int32) ApiSendInvoicePostRequest {
+func (r ApiPostSendInvoiceRequest) PhotoWidth(photoWidth int32) ApiPostSendInvoiceRequest {
 	r.photoWidth = &photoWidth
 	return r
 }
 
 // Photo height
-func (r ApiSendInvoicePostRequest) PhotoHeight(photoHeight int32) ApiSendInvoicePostRequest {
+func (r ApiPostSendInvoiceRequest) PhotoHeight(photoHeight int32) ApiPostSendInvoiceRequest {
 	r.photoHeight = &photoHeight
 	return r
 }
 
 // Pass *True* if you require the user&#39;s full name to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).
-func (r ApiSendInvoicePostRequest) NeedName(needName bool) ApiSendInvoicePostRequest {
+func (r ApiPostSendInvoiceRequest) NeedName(needName bool) ApiPostSendInvoiceRequest {
 	r.needName = &needName
 	return r
 }
 
 // Pass *True* if you require the user&#39;s phone number to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).
-func (r ApiSendInvoicePostRequest) NeedPhoneNumber(needPhoneNumber bool) ApiSendInvoicePostRequest {
+func (r ApiPostSendInvoiceRequest) NeedPhoneNumber(needPhoneNumber bool) ApiPostSendInvoiceRequest {
 	r.needPhoneNumber = &needPhoneNumber
 	return r
 }
 
 // Pass *True* if you require the user&#39;s email address to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).
-func (r ApiSendInvoicePostRequest) NeedEmail(needEmail bool) ApiSendInvoicePostRequest {
+func (r ApiPostSendInvoiceRequest) NeedEmail(needEmail bool) ApiPostSendInvoiceRequest {
 	r.needEmail = &needEmail
 	return r
 }
 
 // Pass *True* if you require the user&#39;s shipping address to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).
-func (r ApiSendInvoicePostRequest) NeedShippingAddress(needShippingAddress bool) ApiSendInvoicePostRequest {
+func (r ApiPostSendInvoiceRequest) NeedShippingAddress(needShippingAddress bool) ApiPostSendInvoiceRequest {
 	r.needShippingAddress = &needShippingAddress
 	return r
 }
 
 // Pass *True* if the user&#39;s phone number should be sent to the provider. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).
-func (r ApiSendInvoicePostRequest) SendPhoneNumberToProvider(sendPhoneNumberToProvider bool) ApiSendInvoicePostRequest {
+func (r ApiPostSendInvoiceRequest) SendPhoneNumberToProvider(sendPhoneNumberToProvider bool) ApiPostSendInvoiceRequest {
 	r.sendPhoneNumberToProvider = &sendPhoneNumberToProvider
 	return r
 }
 
 // Pass *True* if the user&#39;s email address should be sent to the provider. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).
-func (r ApiSendInvoicePostRequest) SendEmailToProvider(sendEmailToProvider bool) ApiSendInvoicePostRequest {
+func (r ApiPostSendInvoiceRequest) SendEmailToProvider(sendEmailToProvider bool) ApiPostSendInvoiceRequest {
 	r.sendEmailToProvider = &sendEmailToProvider
 	return r
 }
 
 // Pass *True* if the final price depends on the shipping method. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).
-func (r ApiSendInvoicePostRequest) IsFlexible(isFlexible bool) ApiSendInvoicePostRequest {
+func (r ApiPostSendInvoiceRequest) IsFlexible(isFlexible bool) ApiPostSendInvoiceRequest {
 	r.isFlexible = &isFlexible
 	return r
 }
 
 // Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.
-func (r ApiSendInvoicePostRequest) DisableNotification(disableNotification bool) ApiSendInvoicePostRequest {
+func (r ApiPostSendInvoiceRequest) DisableNotification(disableNotification bool) ApiPostSendInvoiceRequest {
 	r.disableNotification = &disableNotification
 	return r
 }
 
 // Protects the contents of the sent message from forwarding and saving
-func (r ApiSendInvoicePostRequest) ProtectContent(protectContent bool) ApiSendInvoicePostRequest {
+func (r ApiPostSendInvoiceRequest) ProtectContent(protectContent bool) ApiPostSendInvoiceRequest {
 	r.protectContent = &protectContent
 	return r
 }
 
 // Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance
-func (r ApiSendInvoicePostRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiSendInvoicePostRequest {
+func (r ApiPostSendInvoiceRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiPostSendInvoiceRequest {
 	r.allowPaidBroadcast = &allowPaidBroadcast
 	return r
 }
 
 // Unique identifier of the message effect to be added to the message; for private chats only
-func (r ApiSendInvoicePostRequest) MessageEffectId(messageEffectId string) ApiSendInvoicePostRequest {
+func (r ApiPostSendInvoiceRequest) MessageEffectId(messageEffectId string) ApiPostSendInvoiceRequest {
 	r.messageEffectId = &messageEffectId
 	return r
 }
 
-func (r ApiSendInvoicePostRequest) ReplyParameters(replyParameters ReplyParameters) ApiSendInvoicePostRequest {
+func (r ApiPostSendInvoiceRequest) ReplyParameters(replyParameters ReplyParameters) ApiPostSendInvoiceRequest {
 	r.replyParameters = &replyParameters
 	return r
 }
 
-func (r ApiSendInvoicePostRequest) ReplyMarkup(replyMarkup InlineKeyboardMarkup) ApiSendInvoicePostRequest {
+func (r ApiPostSendInvoiceRequest) ReplyMarkup(replyMarkup InlineKeyboardMarkup) ApiPostSendInvoiceRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiSendInvoicePostRequest) Execute() (*SendMessagePost200Response, *http.Response, error) {
-	return r.ApiService.SendInvoicePostExecute(r)
+func (r ApiPostSendInvoiceRequest) Execute() (*PostSendMessage200Response, *http.Response, error) {
+	return r.ApiService.PostSendInvoiceExecute(r)
 }
 
 /*
-SendInvoicePost Method for SendInvoicePost
+PostSendInvoice sendInvoice
 
 Use this method to send invoices. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSendInvoicePostRequest
+ @return ApiPostSendInvoiceRequest
 */
-func (a *DefaultAPIService) SendInvoicePost(ctx context.Context) ApiSendInvoicePostRequest {
-	return ApiSendInvoicePostRequest{
+func (a *DefaultAPIService) PostSendInvoice(ctx context.Context) ApiPostSendInvoiceRequest {
+	return ApiPostSendInvoiceRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SendMessagePost200Response
-func (a *DefaultAPIService) SendInvoicePostExecute(r ApiSendInvoicePostRequest) (*SendMessagePost200Response, *http.Response, error) {
+//  @return PostSendMessage200Response
+func (a *DefaultAPIService) PostSendInvoiceExecute(r ApiPostSendInvoiceRequest) (*PostSendMessage200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SendMessagePost200Response
+		localVarReturnValue  *PostSendMessage200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SendInvoicePost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendInvoice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -17240,6 +18307,17 @@ func (a *DefaultAPIService) SendInvoicePostExecute(r ApiSendInvoicePostRequest) 
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -17263,10 +18341,10 @@ func (a *DefaultAPIService) SendInvoicePostExecute(r ApiSendInvoicePostRequest) 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSendLocationPostRequest struct {
+type ApiPostSendLocationRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
+	chatId *PostSendMessageRequestChatId
 	latitude *float32
 	longitude *float32
 	businessConnectionId *string
@@ -17280,126 +18358,126 @@ type ApiSendLocationPostRequest struct {
 	allowPaidBroadcast *bool
 	messageEffectId *string
 	replyParameters *ReplyParameters
-	replyMarkup *SendMessagePostRequestReplyMarkup
+	replyMarkup *PostSendMessageRequestReplyMarkup
 }
 
-func (r ApiSendLocationPostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiSendLocationPostRequest {
+func (r ApiPostSendLocationRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSendLocationRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Latitude of the location
-func (r ApiSendLocationPostRequest) Latitude(latitude float32) ApiSendLocationPostRequest {
+func (r ApiPostSendLocationRequest) Latitude(latitude float32) ApiPostSendLocationRequest {
 	r.latitude = &latitude
 	return r
 }
 
 // Longitude of the location
-func (r ApiSendLocationPostRequest) Longitude(longitude float32) ApiSendLocationPostRequest {
+func (r ApiPostSendLocationRequest) Longitude(longitude float32) ApiPostSendLocationRequest {
 	r.longitude = &longitude
 	return r
 }
 
 // Unique identifier of the business connection on behalf of which the message will be sent
-func (r ApiSendLocationPostRequest) BusinessConnectionId(businessConnectionId string) ApiSendLocationPostRequest {
+func (r ApiPostSendLocationRequest) BusinessConnectionId(businessConnectionId string) ApiPostSendLocationRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
 // Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-func (r ApiSendLocationPostRequest) MessageThreadId(messageThreadId int32) ApiSendLocationPostRequest {
+func (r ApiPostSendLocationRequest) MessageThreadId(messageThreadId int32) ApiPostSendLocationRequest {
 	r.messageThreadId = &messageThreadId
 	return r
 }
 
 // The radius of uncertainty for the location, measured in meters; 0-1500
-func (r ApiSendLocationPostRequest) HorizontalAccuracy(horizontalAccuracy float32) ApiSendLocationPostRequest {
+func (r ApiPostSendLocationRequest) HorizontalAccuracy(horizontalAccuracy float32) ApiPostSendLocationRequest {
 	r.horizontalAccuracy = &horizontalAccuracy
 	return r
 }
 
 // Period in seconds during which the location will be updated (see [Live Locations](https://telegram.org/blog/live-locations), should be between 60 and 86400, or 0x7FFFFFFF for live locations that can be edited indefinitely.
-func (r ApiSendLocationPostRequest) LivePeriod(livePeriod int32) ApiSendLocationPostRequest {
+func (r ApiPostSendLocationRequest) LivePeriod(livePeriod int32) ApiPostSendLocationRequest {
 	r.livePeriod = &livePeriod
 	return r
 }
 
 // For live locations, a direction in which the user is moving, in degrees. Must be between 1 and 360 if specified.
-func (r ApiSendLocationPostRequest) Heading(heading int32) ApiSendLocationPostRequest {
+func (r ApiPostSendLocationRequest) Heading(heading int32) ApiPostSendLocationRequest {
 	r.heading = &heading
 	return r
 }
 
 // For live locations, a maximum distance for proximity alerts about approaching another chat member, in meters. Must be between 1 and 100000 if specified.
-func (r ApiSendLocationPostRequest) ProximityAlertRadius(proximityAlertRadius int32) ApiSendLocationPostRequest {
+func (r ApiPostSendLocationRequest) ProximityAlertRadius(proximityAlertRadius int32) ApiPostSendLocationRequest {
 	r.proximityAlertRadius = &proximityAlertRadius
 	return r
 }
 
 // Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.
-func (r ApiSendLocationPostRequest) DisableNotification(disableNotification bool) ApiSendLocationPostRequest {
+func (r ApiPostSendLocationRequest) DisableNotification(disableNotification bool) ApiPostSendLocationRequest {
 	r.disableNotification = &disableNotification
 	return r
 }
 
 // Protects the contents of the sent message from forwarding and saving
-func (r ApiSendLocationPostRequest) ProtectContent(protectContent bool) ApiSendLocationPostRequest {
+func (r ApiPostSendLocationRequest) ProtectContent(protectContent bool) ApiPostSendLocationRequest {
 	r.protectContent = &protectContent
 	return r
 }
 
 // Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance
-func (r ApiSendLocationPostRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiSendLocationPostRequest {
+func (r ApiPostSendLocationRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiPostSendLocationRequest {
 	r.allowPaidBroadcast = &allowPaidBroadcast
 	return r
 }
 
 // Unique identifier of the message effect to be added to the message; for private chats only
-func (r ApiSendLocationPostRequest) MessageEffectId(messageEffectId string) ApiSendLocationPostRequest {
+func (r ApiPostSendLocationRequest) MessageEffectId(messageEffectId string) ApiPostSendLocationRequest {
 	r.messageEffectId = &messageEffectId
 	return r
 }
 
-func (r ApiSendLocationPostRequest) ReplyParameters(replyParameters ReplyParameters) ApiSendLocationPostRequest {
+func (r ApiPostSendLocationRequest) ReplyParameters(replyParameters ReplyParameters) ApiPostSendLocationRequest {
 	r.replyParameters = &replyParameters
 	return r
 }
 
-func (r ApiSendLocationPostRequest) ReplyMarkup(replyMarkup SendMessagePostRequestReplyMarkup) ApiSendLocationPostRequest {
+func (r ApiPostSendLocationRequest) ReplyMarkup(replyMarkup PostSendMessageRequestReplyMarkup) ApiPostSendLocationRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiSendLocationPostRequest) Execute() (*SendMessagePost200Response, *http.Response, error) {
-	return r.ApiService.SendLocationPostExecute(r)
+func (r ApiPostSendLocationRequest) Execute() (*PostSendMessage200Response, *http.Response, error) {
+	return r.ApiService.PostSendLocationExecute(r)
 }
 
 /*
-SendLocationPost Method for SendLocationPost
+PostSendLocation sendLocation
 
 Use this method to send point on the map. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSendLocationPostRequest
+ @return ApiPostSendLocationRequest
 */
-func (a *DefaultAPIService) SendLocationPost(ctx context.Context) ApiSendLocationPostRequest {
-	return ApiSendLocationPostRequest{
+func (a *DefaultAPIService) PostSendLocation(ctx context.Context) ApiPostSendLocationRequest {
+	return ApiPostSendLocationRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SendMessagePost200Response
-func (a *DefaultAPIService) SendLocationPostExecute(r ApiSendLocationPostRequest) (*SendMessagePost200Response, *http.Response, error) {
+//  @return PostSendMessage200Response
+func (a *DefaultAPIService) PostSendLocationExecute(r ApiPostSendLocationRequest) (*PostSendMessage200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SendMessagePost200Response
+		localVarReturnValue  *PostSendMessage200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SendLocationPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendLocation")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -17505,6 +18583,17 @@ func (a *DefaultAPIService) SendLocationPostExecute(r ApiSendLocationPostRequest
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -17528,11 +18617,11 @@ func (a *DefaultAPIService) SendLocationPostExecute(r ApiSendLocationPostRequest
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSendMediaGroupPostRequest struct {
+type ApiPostSendMediaGroupRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
-	media *[]SendMediaGroupPostRequestMediaInner
+	chatId *PostSendMessageRequestChatId
+	media *[]PostSendMediaGroupRequestMediaInner
 	businessConnectionId *string
 	messageThreadId *int32
 	disableNotification *bool
@@ -17542,88 +18631,88 @@ type ApiSendMediaGroupPostRequest struct {
 	replyParameters *ReplyParameters
 }
 
-func (r ApiSendMediaGroupPostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiSendMediaGroupPostRequest {
+func (r ApiPostSendMediaGroupRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSendMediaGroupRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // A JSON-serialized array describing messages to be sent, must include 2-10 items
-func (r ApiSendMediaGroupPostRequest) Media(media []SendMediaGroupPostRequestMediaInner) ApiSendMediaGroupPostRequest {
+func (r ApiPostSendMediaGroupRequest) Media(media []PostSendMediaGroupRequestMediaInner) ApiPostSendMediaGroupRequest {
 	r.media = &media
 	return r
 }
 
 // Unique identifier of the business connection on behalf of which the message will be sent
-func (r ApiSendMediaGroupPostRequest) BusinessConnectionId(businessConnectionId string) ApiSendMediaGroupPostRequest {
+func (r ApiPostSendMediaGroupRequest) BusinessConnectionId(businessConnectionId string) ApiPostSendMediaGroupRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
 // Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-func (r ApiSendMediaGroupPostRequest) MessageThreadId(messageThreadId int32) ApiSendMediaGroupPostRequest {
+func (r ApiPostSendMediaGroupRequest) MessageThreadId(messageThreadId int32) ApiPostSendMediaGroupRequest {
 	r.messageThreadId = &messageThreadId
 	return r
 }
 
 // Sends messages [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.
-func (r ApiSendMediaGroupPostRequest) DisableNotification(disableNotification bool) ApiSendMediaGroupPostRequest {
+func (r ApiPostSendMediaGroupRequest) DisableNotification(disableNotification bool) ApiPostSendMediaGroupRequest {
 	r.disableNotification = &disableNotification
 	return r
 }
 
 // Protects the contents of the sent messages from forwarding and saving
-func (r ApiSendMediaGroupPostRequest) ProtectContent(protectContent bool) ApiSendMediaGroupPostRequest {
+func (r ApiPostSendMediaGroupRequest) ProtectContent(protectContent bool) ApiPostSendMediaGroupRequest {
 	r.protectContent = &protectContent
 	return r
 }
 
 // Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance
-func (r ApiSendMediaGroupPostRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiSendMediaGroupPostRequest {
+func (r ApiPostSendMediaGroupRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiPostSendMediaGroupRequest {
 	r.allowPaidBroadcast = &allowPaidBroadcast
 	return r
 }
 
 // Unique identifier of the message effect to be added to the message; for private chats only
-func (r ApiSendMediaGroupPostRequest) MessageEffectId(messageEffectId string) ApiSendMediaGroupPostRequest {
+func (r ApiPostSendMediaGroupRequest) MessageEffectId(messageEffectId string) ApiPostSendMediaGroupRequest {
 	r.messageEffectId = &messageEffectId
 	return r
 }
 
-func (r ApiSendMediaGroupPostRequest) ReplyParameters(replyParameters ReplyParameters) ApiSendMediaGroupPostRequest {
+func (r ApiPostSendMediaGroupRequest) ReplyParameters(replyParameters ReplyParameters) ApiPostSendMediaGroupRequest {
 	r.replyParameters = &replyParameters
 	return r
 }
 
-func (r ApiSendMediaGroupPostRequest) Execute() (*SendMediaGroupPost200Response, *http.Response, error) {
-	return r.ApiService.SendMediaGroupPostExecute(r)
+func (r ApiPostSendMediaGroupRequest) Execute() (*PostSendMediaGroup200Response, *http.Response, error) {
+	return r.ApiService.PostSendMediaGroupExecute(r)
 }
 
 /*
-SendMediaGroupPost Method for SendMediaGroupPost
+PostSendMediaGroup sendMediaGroup
 
 Use this method to send a group of photos, videos, documents or audios as an album. Documents and audio files can be only grouped in an album with messages of the same type. On success, an array of [Messages](https://core.telegram.org/bots/api/#message) that were sent is returned.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSendMediaGroupPostRequest
+ @return ApiPostSendMediaGroupRequest
 */
-func (a *DefaultAPIService) SendMediaGroupPost(ctx context.Context) ApiSendMediaGroupPostRequest {
-	return ApiSendMediaGroupPostRequest{
+func (a *DefaultAPIService) PostSendMediaGroup(ctx context.Context) ApiPostSendMediaGroupRequest {
+	return ApiPostSendMediaGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SendMediaGroupPost200Response
-func (a *DefaultAPIService) SendMediaGroupPostExecute(r ApiSendMediaGroupPostRequest) (*SendMediaGroupPost200Response, *http.Response, error) {
+//  @return PostSendMediaGroup200Response
+func (a *DefaultAPIService) PostSendMediaGroupExecute(r ApiPostSendMediaGroupRequest) (*PostSendMediaGroup200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SendMediaGroupPost200Response
+		localVarReturnValue  *PostSendMediaGroup200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SendMediaGroupPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendMediaGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -17706,6 +18795,17 @@ func (a *DefaultAPIService) SendMediaGroupPostExecute(r ApiSendMediaGroupPostReq
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -17729,10 +18829,10 @@ func (a *DefaultAPIService) SendMediaGroupPostExecute(r ApiSendMediaGroupPostReq
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSendMessagePostRequest struct {
+type ApiPostSendMessageRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
+	chatId *PostSendMessageRequestChatId
 	text *string
 	businessConnectionId *string
 	messageThreadId *int32
@@ -17744,113 +18844,113 @@ type ApiSendMessagePostRequest struct {
 	allowPaidBroadcast *bool
 	messageEffectId *string
 	replyParameters *ReplyParameters
-	replyMarkup *SendMessagePostRequestReplyMarkup
+	replyMarkup *PostSendMessageRequestReplyMarkup
 }
 
-func (r ApiSendMessagePostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiSendMessagePostRequest {
+func (r ApiPostSendMessageRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSendMessageRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Text of the message to be sent, 1-4096 characters after entities parsing
-func (r ApiSendMessagePostRequest) Text(text string) ApiSendMessagePostRequest {
+func (r ApiPostSendMessageRequest) Text(text string) ApiPostSendMessageRequest {
 	r.text = &text
 	return r
 }
 
 // Unique identifier of the business connection on behalf of which the message will be sent
-func (r ApiSendMessagePostRequest) BusinessConnectionId(businessConnectionId string) ApiSendMessagePostRequest {
+func (r ApiPostSendMessageRequest) BusinessConnectionId(businessConnectionId string) ApiPostSendMessageRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
 // Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-func (r ApiSendMessagePostRequest) MessageThreadId(messageThreadId int32) ApiSendMessagePostRequest {
+func (r ApiPostSendMessageRequest) MessageThreadId(messageThreadId int32) ApiPostSendMessageRequest {
 	r.messageThreadId = &messageThreadId
 	return r
 }
 
 // Mode for parsing entities in the message text. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details.
-func (r ApiSendMessagePostRequest) ParseMode(parseMode string) ApiSendMessagePostRequest {
+func (r ApiPostSendMessageRequest) ParseMode(parseMode string) ApiPostSendMessageRequest {
 	r.parseMode = &parseMode
 	return r
 }
 
 // A JSON-serialized list of special entities that appear in message text, which can be specified instead of *parse\\\\_mode*
-func (r ApiSendMessagePostRequest) Entities(entities []MessageEntity) ApiSendMessagePostRequest {
+func (r ApiPostSendMessageRequest) Entities(entities []MessageEntity) ApiPostSendMessageRequest {
 	r.entities = &entities
 	return r
 }
 
-func (r ApiSendMessagePostRequest) LinkPreviewOptions(linkPreviewOptions LinkPreviewOptions) ApiSendMessagePostRequest {
+func (r ApiPostSendMessageRequest) LinkPreviewOptions(linkPreviewOptions LinkPreviewOptions) ApiPostSendMessageRequest {
 	r.linkPreviewOptions = &linkPreviewOptions
 	return r
 }
 
 // Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.
-func (r ApiSendMessagePostRequest) DisableNotification(disableNotification bool) ApiSendMessagePostRequest {
+func (r ApiPostSendMessageRequest) DisableNotification(disableNotification bool) ApiPostSendMessageRequest {
 	r.disableNotification = &disableNotification
 	return r
 }
 
 // Protects the contents of the sent message from forwarding and saving
-func (r ApiSendMessagePostRequest) ProtectContent(protectContent bool) ApiSendMessagePostRequest {
+func (r ApiPostSendMessageRequest) ProtectContent(protectContent bool) ApiPostSendMessageRequest {
 	r.protectContent = &protectContent
 	return r
 }
 
 // Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance
-func (r ApiSendMessagePostRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiSendMessagePostRequest {
+func (r ApiPostSendMessageRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiPostSendMessageRequest {
 	r.allowPaidBroadcast = &allowPaidBroadcast
 	return r
 }
 
 // Unique identifier of the message effect to be added to the message; for private chats only
-func (r ApiSendMessagePostRequest) MessageEffectId(messageEffectId string) ApiSendMessagePostRequest {
+func (r ApiPostSendMessageRequest) MessageEffectId(messageEffectId string) ApiPostSendMessageRequest {
 	r.messageEffectId = &messageEffectId
 	return r
 }
 
-func (r ApiSendMessagePostRequest) ReplyParameters(replyParameters ReplyParameters) ApiSendMessagePostRequest {
+func (r ApiPostSendMessageRequest) ReplyParameters(replyParameters ReplyParameters) ApiPostSendMessageRequest {
 	r.replyParameters = &replyParameters
 	return r
 }
 
-func (r ApiSendMessagePostRequest) ReplyMarkup(replyMarkup SendMessagePostRequestReplyMarkup) ApiSendMessagePostRequest {
+func (r ApiPostSendMessageRequest) ReplyMarkup(replyMarkup PostSendMessageRequestReplyMarkup) ApiPostSendMessageRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiSendMessagePostRequest) Execute() (*SendMessagePost200Response, *http.Response, error) {
-	return r.ApiService.SendMessagePostExecute(r)
+func (r ApiPostSendMessageRequest) Execute() (*PostSendMessage200Response, *http.Response, error) {
+	return r.ApiService.PostSendMessageExecute(r)
 }
 
 /*
-SendMessagePost Method for SendMessagePost
+PostSendMessage sendMessage
 
 Use this method to send text messages. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSendMessagePostRequest
+ @return ApiPostSendMessageRequest
 */
-func (a *DefaultAPIService) SendMessagePost(ctx context.Context) ApiSendMessagePostRequest {
-	return ApiSendMessagePostRequest{
+func (a *DefaultAPIService) PostSendMessage(ctx context.Context) ApiPostSendMessageRequest {
+	return ApiPostSendMessageRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SendMessagePost200Response
-func (a *DefaultAPIService) SendMessagePostExecute(r ApiSendMessagePostRequest) (*SendMessagePost200Response, *http.Response, error) {
+//  @return PostSendMessage200Response
+func (a *DefaultAPIService) PostSendMessageExecute(r ApiPostSendMessageRequest) (*PostSendMessage200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SendMessagePost200Response
+		localVarReturnValue  *PostSendMessage200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SendMessagePost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendMessage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -17959,6 +19059,17 @@ func (a *DefaultAPIService) SendMessagePostExecute(r ApiSendMessagePostRequest) 
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -17982,10 +19093,10 @@ func (a *DefaultAPIService) SendMessagePostExecute(r ApiSendMessagePostRequest) 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSendPaidMediaPostRequest struct {
+type ApiPostSendPaidMediaRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendPaidMediaPostRequestChatId
+	chatId *PostSendPaidMediaRequestChatId
 	starCount *int32
 	media *[]InputPaidMedia
 	businessConnectionId *string
@@ -17998,120 +19109,120 @@ type ApiSendPaidMediaPostRequest struct {
 	protectContent *bool
 	allowPaidBroadcast *bool
 	replyParameters *ReplyParameters
-	replyMarkup *SendMessagePostRequestReplyMarkup
+	replyMarkup *PostSendMessageRequestReplyMarkup
 }
 
-func (r ApiSendPaidMediaPostRequest) ChatId(chatId SendPaidMediaPostRequestChatId) ApiSendPaidMediaPostRequest {
+func (r ApiPostSendPaidMediaRequest) ChatId(chatId PostSendPaidMediaRequestChatId) ApiPostSendPaidMediaRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // The number of Telegram Stars that must be paid to buy access to the media; 1-10000
-func (r ApiSendPaidMediaPostRequest) StarCount(starCount int32) ApiSendPaidMediaPostRequest {
+func (r ApiPostSendPaidMediaRequest) StarCount(starCount int32) ApiPostSendPaidMediaRequest {
 	r.starCount = &starCount
 	return r
 }
 
 // A JSON-serialized array describing the media to be sent; up to 10 items
-func (r ApiSendPaidMediaPostRequest) Media(media []InputPaidMedia) ApiSendPaidMediaPostRequest {
+func (r ApiPostSendPaidMediaRequest) Media(media []InputPaidMedia) ApiPostSendPaidMediaRequest {
 	r.media = &media
 	return r
 }
 
 // Unique identifier of the business connection on behalf of which the message will be sent
-func (r ApiSendPaidMediaPostRequest) BusinessConnectionId(businessConnectionId string) ApiSendPaidMediaPostRequest {
+func (r ApiPostSendPaidMediaRequest) BusinessConnectionId(businessConnectionId string) ApiPostSendPaidMediaRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
 // Bot-defined paid media payload, 0-128 bytes. This will not be displayed to the user, use it for your internal processes.
-func (r ApiSendPaidMediaPostRequest) Payload(payload string) ApiSendPaidMediaPostRequest {
+func (r ApiPostSendPaidMediaRequest) Payload(payload string) ApiPostSendPaidMediaRequest {
 	r.payload = &payload
 	return r
 }
 
 // Media caption, 0-1024 characters after entities parsing
-func (r ApiSendPaidMediaPostRequest) Caption(caption string) ApiSendPaidMediaPostRequest {
+func (r ApiPostSendPaidMediaRequest) Caption(caption string) ApiPostSendPaidMediaRequest {
 	r.caption = &caption
 	return r
 }
 
 // Mode for parsing entities in the media caption. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details.
-func (r ApiSendPaidMediaPostRequest) ParseMode(parseMode string) ApiSendPaidMediaPostRequest {
+func (r ApiPostSendPaidMediaRequest) ParseMode(parseMode string) ApiPostSendPaidMediaRequest {
 	r.parseMode = &parseMode
 	return r
 }
 
 // A JSON-serialized list of special entities that appear in the caption, which can be specified instead of *parse\\\\_mode*
-func (r ApiSendPaidMediaPostRequest) CaptionEntities(captionEntities []MessageEntity) ApiSendPaidMediaPostRequest {
+func (r ApiPostSendPaidMediaRequest) CaptionEntities(captionEntities []MessageEntity) ApiPostSendPaidMediaRequest {
 	r.captionEntities = &captionEntities
 	return r
 }
 
 // Pass *True*, if the caption must be shown above the message media
-func (r ApiSendPaidMediaPostRequest) ShowCaptionAboveMedia(showCaptionAboveMedia bool) ApiSendPaidMediaPostRequest {
+func (r ApiPostSendPaidMediaRequest) ShowCaptionAboveMedia(showCaptionAboveMedia bool) ApiPostSendPaidMediaRequest {
 	r.showCaptionAboveMedia = &showCaptionAboveMedia
 	return r
 }
 
 // Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.
-func (r ApiSendPaidMediaPostRequest) DisableNotification(disableNotification bool) ApiSendPaidMediaPostRequest {
+func (r ApiPostSendPaidMediaRequest) DisableNotification(disableNotification bool) ApiPostSendPaidMediaRequest {
 	r.disableNotification = &disableNotification
 	return r
 }
 
 // Protects the contents of the sent message from forwarding and saving
-func (r ApiSendPaidMediaPostRequest) ProtectContent(protectContent bool) ApiSendPaidMediaPostRequest {
+func (r ApiPostSendPaidMediaRequest) ProtectContent(protectContent bool) ApiPostSendPaidMediaRequest {
 	r.protectContent = &protectContent
 	return r
 }
 
 // Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance
-func (r ApiSendPaidMediaPostRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiSendPaidMediaPostRequest {
+func (r ApiPostSendPaidMediaRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiPostSendPaidMediaRequest {
 	r.allowPaidBroadcast = &allowPaidBroadcast
 	return r
 }
 
-func (r ApiSendPaidMediaPostRequest) ReplyParameters(replyParameters ReplyParameters) ApiSendPaidMediaPostRequest {
+func (r ApiPostSendPaidMediaRequest) ReplyParameters(replyParameters ReplyParameters) ApiPostSendPaidMediaRequest {
 	r.replyParameters = &replyParameters
 	return r
 }
 
-func (r ApiSendPaidMediaPostRequest) ReplyMarkup(replyMarkup SendMessagePostRequestReplyMarkup) ApiSendPaidMediaPostRequest {
+func (r ApiPostSendPaidMediaRequest) ReplyMarkup(replyMarkup PostSendMessageRequestReplyMarkup) ApiPostSendPaidMediaRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiSendPaidMediaPostRequest) Execute() (*SendMessagePost200Response, *http.Response, error) {
-	return r.ApiService.SendPaidMediaPostExecute(r)
+func (r ApiPostSendPaidMediaRequest) Execute() (*PostSendMessage200Response, *http.Response, error) {
+	return r.ApiService.PostSendPaidMediaExecute(r)
 }
 
 /*
-SendPaidMediaPost Method for SendPaidMediaPost
+PostSendPaidMedia sendPaidMedia
 
 Use this method to send paid media. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSendPaidMediaPostRequest
+ @return ApiPostSendPaidMediaRequest
 */
-func (a *DefaultAPIService) SendPaidMediaPost(ctx context.Context) ApiSendPaidMediaPostRequest {
-	return ApiSendPaidMediaPostRequest{
+func (a *DefaultAPIService) PostSendPaidMedia(ctx context.Context) ApiPostSendPaidMediaRequest {
+	return ApiPostSendPaidMediaRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SendMessagePost200Response
-func (a *DefaultAPIService) SendPaidMediaPostExecute(r ApiSendPaidMediaPostRequest) (*SendMessagePost200Response, *http.Response, error) {
+//  @return PostSendMessage200Response
+func (a *DefaultAPIService) PostSendPaidMediaExecute(r ApiPostSendPaidMediaRequest) (*PostSendMessage200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SendMessagePost200Response
+		localVarReturnValue  *PostSendMessage200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SendPaidMediaPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendPaidMedia")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -18214,6 +19325,17 @@ func (a *DefaultAPIService) SendPaidMediaPostExecute(r ApiSendPaidMediaPostReque
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -18237,11 +19359,11 @@ func (a *DefaultAPIService) SendPaidMediaPostExecute(r ApiSendPaidMediaPostReque
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSendPhotoPostRequest struct {
+type ApiPostSendPhotoRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
-	photo *SendPhotoPostRequestPhoto
+	chatId *PostSendMessageRequestChatId
+	photo *PostSendPhotoRequestPhoto
 	businessConnectionId *string
 	messageThreadId *int32
 	caption *string
@@ -18254,125 +19376,125 @@ type ApiSendPhotoPostRequest struct {
 	allowPaidBroadcast *bool
 	messageEffectId *string
 	replyParameters *ReplyParameters
-	replyMarkup *SendMessagePostRequestReplyMarkup
+	replyMarkup *PostSendMessageRequestReplyMarkup
 }
 
-func (r ApiSendPhotoPostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiSendPhotoPostRequest {
+func (r ApiPostSendPhotoRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSendPhotoRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiSendPhotoPostRequest) Photo(photo SendPhotoPostRequestPhoto) ApiSendPhotoPostRequest {
+func (r ApiPostSendPhotoRequest) Photo(photo PostSendPhotoRequestPhoto) ApiPostSendPhotoRequest {
 	r.photo = &photo
 	return r
 }
 
 // Unique identifier of the business connection on behalf of which the message will be sent
-func (r ApiSendPhotoPostRequest) BusinessConnectionId(businessConnectionId string) ApiSendPhotoPostRequest {
+func (r ApiPostSendPhotoRequest) BusinessConnectionId(businessConnectionId string) ApiPostSendPhotoRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
 // Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-func (r ApiSendPhotoPostRequest) MessageThreadId(messageThreadId int32) ApiSendPhotoPostRequest {
+func (r ApiPostSendPhotoRequest) MessageThreadId(messageThreadId int32) ApiPostSendPhotoRequest {
 	r.messageThreadId = &messageThreadId
 	return r
 }
 
 // Photo caption (may also be used when resending photos by *file\\\\_id*), 0-1024 characters after entities parsing
-func (r ApiSendPhotoPostRequest) Caption(caption string) ApiSendPhotoPostRequest {
+func (r ApiPostSendPhotoRequest) Caption(caption string) ApiPostSendPhotoRequest {
 	r.caption = &caption
 	return r
 }
 
 // Mode for parsing entities in the photo caption. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details.
-func (r ApiSendPhotoPostRequest) ParseMode(parseMode string) ApiSendPhotoPostRequest {
+func (r ApiPostSendPhotoRequest) ParseMode(parseMode string) ApiPostSendPhotoRequest {
 	r.parseMode = &parseMode
 	return r
 }
 
 // A JSON-serialized list of special entities that appear in the caption, which can be specified instead of *parse\\\\_mode*
-func (r ApiSendPhotoPostRequest) CaptionEntities(captionEntities []MessageEntity) ApiSendPhotoPostRequest {
+func (r ApiPostSendPhotoRequest) CaptionEntities(captionEntities []MessageEntity) ApiPostSendPhotoRequest {
 	r.captionEntities = &captionEntities
 	return r
 }
 
 // Pass *True*, if the caption must be shown above the message media
-func (r ApiSendPhotoPostRequest) ShowCaptionAboveMedia(showCaptionAboveMedia bool) ApiSendPhotoPostRequest {
+func (r ApiPostSendPhotoRequest) ShowCaptionAboveMedia(showCaptionAboveMedia bool) ApiPostSendPhotoRequest {
 	r.showCaptionAboveMedia = &showCaptionAboveMedia
 	return r
 }
 
 // Pass *True* if the photo needs to be covered with a spoiler animation
-func (r ApiSendPhotoPostRequest) HasSpoiler(hasSpoiler bool) ApiSendPhotoPostRequest {
+func (r ApiPostSendPhotoRequest) HasSpoiler(hasSpoiler bool) ApiPostSendPhotoRequest {
 	r.hasSpoiler = &hasSpoiler
 	return r
 }
 
 // Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.
-func (r ApiSendPhotoPostRequest) DisableNotification(disableNotification bool) ApiSendPhotoPostRequest {
+func (r ApiPostSendPhotoRequest) DisableNotification(disableNotification bool) ApiPostSendPhotoRequest {
 	r.disableNotification = &disableNotification
 	return r
 }
 
 // Protects the contents of the sent message from forwarding and saving
-func (r ApiSendPhotoPostRequest) ProtectContent(protectContent bool) ApiSendPhotoPostRequest {
+func (r ApiPostSendPhotoRequest) ProtectContent(protectContent bool) ApiPostSendPhotoRequest {
 	r.protectContent = &protectContent
 	return r
 }
 
 // Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance
-func (r ApiSendPhotoPostRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiSendPhotoPostRequest {
+func (r ApiPostSendPhotoRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiPostSendPhotoRequest {
 	r.allowPaidBroadcast = &allowPaidBroadcast
 	return r
 }
 
 // Unique identifier of the message effect to be added to the message; for private chats only
-func (r ApiSendPhotoPostRequest) MessageEffectId(messageEffectId string) ApiSendPhotoPostRequest {
+func (r ApiPostSendPhotoRequest) MessageEffectId(messageEffectId string) ApiPostSendPhotoRequest {
 	r.messageEffectId = &messageEffectId
 	return r
 }
 
-func (r ApiSendPhotoPostRequest) ReplyParameters(replyParameters ReplyParameters) ApiSendPhotoPostRequest {
+func (r ApiPostSendPhotoRequest) ReplyParameters(replyParameters ReplyParameters) ApiPostSendPhotoRequest {
 	r.replyParameters = &replyParameters
 	return r
 }
 
-func (r ApiSendPhotoPostRequest) ReplyMarkup(replyMarkup SendMessagePostRequestReplyMarkup) ApiSendPhotoPostRequest {
+func (r ApiPostSendPhotoRequest) ReplyMarkup(replyMarkup PostSendMessageRequestReplyMarkup) ApiPostSendPhotoRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiSendPhotoPostRequest) Execute() (*SendMessagePost200Response, *http.Response, error) {
-	return r.ApiService.SendPhotoPostExecute(r)
+func (r ApiPostSendPhotoRequest) Execute() (*PostSendMessage200Response, *http.Response, error) {
+	return r.ApiService.PostSendPhotoExecute(r)
 }
 
 /*
-SendPhotoPost Method for SendPhotoPost
+PostSendPhoto sendPhoto
 
 Use this method to send photos. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSendPhotoPostRequest
+ @return ApiPostSendPhotoRequest
 */
-func (a *DefaultAPIService) SendPhotoPost(ctx context.Context) ApiSendPhotoPostRequest {
-	return ApiSendPhotoPostRequest{
+func (a *DefaultAPIService) PostSendPhoto(ctx context.Context) ApiPostSendPhotoRequest {
+	return ApiPostSendPhotoRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SendMessagePost200Response
-func (a *DefaultAPIService) SendPhotoPostExecute(r ApiSendPhotoPostRequest) (*SendMessagePost200Response, *http.Response, error) {
+//  @return PostSendMessage200Response
+func (a *DefaultAPIService) PostSendPhotoExecute(r ApiPostSendPhotoRequest) (*PostSendMessage200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SendMessagePost200Response
+		localVarReturnValue  *PostSendMessage200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SendPhotoPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendPhoto")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -18477,6 +19599,17 @@ func (a *DefaultAPIService) SendPhotoPostExecute(r ApiSendPhotoPostRequest) (*Se
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -18500,10 +19633,10 @@ func (a *DefaultAPIService) SendPhotoPostExecute(r ApiSendPhotoPostRequest) (*Se
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSendPollPostRequest struct {
+type ApiPostSendPollRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
+	chatId *PostSendMessageRequestChatId
 	question *string
 	options *[]InputPollOption
 	businessConnectionId *string
@@ -18525,174 +19658,174 @@ type ApiSendPollPostRequest struct {
 	allowPaidBroadcast *bool
 	messageEffectId *string
 	replyParameters *ReplyParameters
-	replyMarkup *SendMessagePostRequestReplyMarkup
+	replyMarkup *PostSendMessageRequestReplyMarkup
 }
 
-func (r ApiSendPollPostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiSendPollPostRequest {
+func (r ApiPostSendPollRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSendPollRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Poll question, 1-300 characters
-func (r ApiSendPollPostRequest) Question(question string) ApiSendPollPostRequest {
+func (r ApiPostSendPollRequest) Question(question string) ApiPostSendPollRequest {
 	r.question = &question
 	return r
 }
 
 // A JSON-serialized list of 2-10 answer options
-func (r ApiSendPollPostRequest) Options(options []InputPollOption) ApiSendPollPostRequest {
+func (r ApiPostSendPollRequest) Options(options []InputPollOption) ApiPostSendPollRequest {
 	r.options = &options
 	return r
 }
 
 // Unique identifier of the business connection on behalf of which the message will be sent
-func (r ApiSendPollPostRequest) BusinessConnectionId(businessConnectionId string) ApiSendPollPostRequest {
+func (r ApiPostSendPollRequest) BusinessConnectionId(businessConnectionId string) ApiPostSendPollRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
 // Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-func (r ApiSendPollPostRequest) MessageThreadId(messageThreadId int32) ApiSendPollPostRequest {
+func (r ApiPostSendPollRequest) MessageThreadId(messageThreadId int32) ApiPostSendPollRequest {
 	r.messageThreadId = &messageThreadId
 	return r
 }
 
 // Mode for parsing entities in the question. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. Currently, only custom emoji entities are allowed
-func (r ApiSendPollPostRequest) QuestionParseMode(questionParseMode string) ApiSendPollPostRequest {
+func (r ApiPostSendPollRequest) QuestionParseMode(questionParseMode string) ApiPostSendPollRequest {
 	r.questionParseMode = &questionParseMode
 	return r
 }
 
 // A JSON-serialized list of special entities that appear in the poll question. It can be specified instead of *question\\\\_parse\\\\_mode*
-func (r ApiSendPollPostRequest) QuestionEntities(questionEntities []MessageEntity) ApiSendPollPostRequest {
+func (r ApiPostSendPollRequest) QuestionEntities(questionEntities []MessageEntity) ApiPostSendPollRequest {
 	r.questionEntities = &questionEntities
 	return r
 }
 
 // *True*, if the poll needs to be anonymous, defaults to *True*
-func (r ApiSendPollPostRequest) IsAnonymous(isAnonymous bool) ApiSendPollPostRequest {
+func (r ApiPostSendPollRequest) IsAnonymous(isAnonymous bool) ApiPostSendPollRequest {
 	r.isAnonymous = &isAnonymous
 	return r
 }
 
 // Poll type, “quiz” or “regular”, defaults to “regular”
-func (r ApiSendPollPostRequest) Type_(type_ string) ApiSendPollPostRequest {
+func (r ApiPostSendPollRequest) Type_(type_ string) ApiPostSendPollRequest {
 	r.type_ = &type_
 	return r
 }
 
 // *True*, if the poll allows multiple answers, ignored for polls in quiz mode, defaults to *False*
-func (r ApiSendPollPostRequest) AllowsMultipleAnswers(allowsMultipleAnswers bool) ApiSendPollPostRequest {
+func (r ApiPostSendPollRequest) AllowsMultipleAnswers(allowsMultipleAnswers bool) ApiPostSendPollRequest {
 	r.allowsMultipleAnswers = &allowsMultipleAnswers
 	return r
 }
 
 // 0-based identifier of the correct answer option, required for polls in quiz mode
-func (r ApiSendPollPostRequest) CorrectOptionId(correctOptionId int32) ApiSendPollPostRequest {
+func (r ApiPostSendPollRequest) CorrectOptionId(correctOptionId int32) ApiPostSendPollRequest {
 	r.correctOptionId = &correctOptionId
 	return r
 }
 
 // Text that is shown when a user chooses an incorrect answer or taps on the lamp icon in a quiz-style poll, 0-200 characters with at most 2 line feeds after entities parsing
-func (r ApiSendPollPostRequest) Explanation(explanation string) ApiSendPollPostRequest {
+func (r ApiPostSendPollRequest) Explanation(explanation string) ApiPostSendPollRequest {
 	r.explanation = &explanation
 	return r
 }
 
 // Mode for parsing entities in the explanation. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details.
-func (r ApiSendPollPostRequest) ExplanationParseMode(explanationParseMode string) ApiSendPollPostRequest {
+func (r ApiPostSendPollRequest) ExplanationParseMode(explanationParseMode string) ApiPostSendPollRequest {
 	r.explanationParseMode = &explanationParseMode
 	return r
 }
 
 // A JSON-serialized list of special entities that appear in the poll explanation. It can be specified instead of *explanation\\\\_parse\\\\_mode*
-func (r ApiSendPollPostRequest) ExplanationEntities(explanationEntities []MessageEntity) ApiSendPollPostRequest {
+func (r ApiPostSendPollRequest) ExplanationEntities(explanationEntities []MessageEntity) ApiPostSendPollRequest {
 	r.explanationEntities = &explanationEntities
 	return r
 }
 
 // Amount of time in seconds the poll will be active after creation, 5-600. Can&#39;t be used together with *close\\\\_date*.
-func (r ApiSendPollPostRequest) OpenPeriod(openPeriod int32) ApiSendPollPostRequest {
+func (r ApiPostSendPollRequest) OpenPeriod(openPeriod int32) ApiPostSendPollRequest {
 	r.openPeriod = &openPeriod
 	return r
 }
 
 // Point in time (Unix timestamp) when the poll will be automatically closed. Must be at least 5 and no more than 600 seconds in the future. Can&#39;t be used together with *open\\\\_period*.
-func (r ApiSendPollPostRequest) CloseDate(closeDate int32) ApiSendPollPostRequest {
+func (r ApiPostSendPollRequest) CloseDate(closeDate int32) ApiPostSendPollRequest {
 	r.closeDate = &closeDate
 	return r
 }
 
 // Pass *True* if the poll needs to be immediately closed. This can be useful for poll preview.
-func (r ApiSendPollPostRequest) IsClosed(isClosed bool) ApiSendPollPostRequest {
+func (r ApiPostSendPollRequest) IsClosed(isClosed bool) ApiPostSendPollRequest {
 	r.isClosed = &isClosed
 	return r
 }
 
 // Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.
-func (r ApiSendPollPostRequest) DisableNotification(disableNotification bool) ApiSendPollPostRequest {
+func (r ApiPostSendPollRequest) DisableNotification(disableNotification bool) ApiPostSendPollRequest {
 	r.disableNotification = &disableNotification
 	return r
 }
 
 // Protects the contents of the sent message from forwarding and saving
-func (r ApiSendPollPostRequest) ProtectContent(protectContent bool) ApiSendPollPostRequest {
+func (r ApiPostSendPollRequest) ProtectContent(protectContent bool) ApiPostSendPollRequest {
 	r.protectContent = &protectContent
 	return r
 }
 
 // Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance
-func (r ApiSendPollPostRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiSendPollPostRequest {
+func (r ApiPostSendPollRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiPostSendPollRequest {
 	r.allowPaidBroadcast = &allowPaidBroadcast
 	return r
 }
 
 // Unique identifier of the message effect to be added to the message; for private chats only
-func (r ApiSendPollPostRequest) MessageEffectId(messageEffectId string) ApiSendPollPostRequest {
+func (r ApiPostSendPollRequest) MessageEffectId(messageEffectId string) ApiPostSendPollRequest {
 	r.messageEffectId = &messageEffectId
 	return r
 }
 
-func (r ApiSendPollPostRequest) ReplyParameters(replyParameters ReplyParameters) ApiSendPollPostRequest {
+func (r ApiPostSendPollRequest) ReplyParameters(replyParameters ReplyParameters) ApiPostSendPollRequest {
 	r.replyParameters = &replyParameters
 	return r
 }
 
-func (r ApiSendPollPostRequest) ReplyMarkup(replyMarkup SendMessagePostRequestReplyMarkup) ApiSendPollPostRequest {
+func (r ApiPostSendPollRequest) ReplyMarkup(replyMarkup PostSendMessageRequestReplyMarkup) ApiPostSendPollRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiSendPollPostRequest) Execute() (*SendMessagePost200Response, *http.Response, error) {
-	return r.ApiService.SendPollPostExecute(r)
+func (r ApiPostSendPollRequest) Execute() (*PostSendMessage200Response, *http.Response, error) {
+	return r.ApiService.PostSendPollExecute(r)
 }
 
 /*
-SendPollPost Method for SendPollPost
+PostSendPoll sendPoll
 
 Use this method to send a native poll. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSendPollPostRequest
+ @return ApiPostSendPollRequest
 */
-func (a *DefaultAPIService) SendPollPost(ctx context.Context) ApiSendPollPostRequest {
-	return ApiSendPollPostRequest{
+func (a *DefaultAPIService) PostSendPoll(ctx context.Context) ApiPostSendPollRequest {
+	return ApiPostSendPollRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SendMessagePost200Response
-func (a *DefaultAPIService) SendPollPostExecute(r ApiSendPollPostRequest) (*SendMessagePost200Response, *http.Response, error) {
+//  @return PostSendMessage200Response
+func (a *DefaultAPIService) PostSendPollExecute(r ApiPostSendPollRequest) (*PostSendMessage200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SendMessagePost200Response
+		localVarReturnValue  *PostSendMessage200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SendPollPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendPoll")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -18828,6 +19961,17 @@ func (a *DefaultAPIService) SendPollPostExecute(r ApiSendPollPostRequest) (*Send
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -18851,11 +19995,11 @@ func (a *DefaultAPIService) SendPollPostExecute(r ApiSendPollPostRequest) (*Send
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSendStickerPostRequest struct {
+type ApiPostSendStickerRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
-	sticker *SendStickerPostRequestSticker
+	chatId *PostSendMessageRequestChatId
+	sticker *PostSendStickerRequestSticker
 	businessConnectionId *string
 	messageThreadId *int32
 	emoji *string
@@ -18864,101 +20008,101 @@ type ApiSendStickerPostRequest struct {
 	allowPaidBroadcast *bool
 	messageEffectId *string
 	replyParameters *ReplyParameters
-	replyMarkup *SendMessagePostRequestReplyMarkup
+	replyMarkup *PostSendMessageRequestReplyMarkup
 }
 
-func (r ApiSendStickerPostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiSendStickerPostRequest {
+func (r ApiPostSendStickerRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSendStickerRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiSendStickerPostRequest) Sticker(sticker SendStickerPostRequestSticker) ApiSendStickerPostRequest {
+func (r ApiPostSendStickerRequest) Sticker(sticker PostSendStickerRequestSticker) ApiPostSendStickerRequest {
 	r.sticker = &sticker
 	return r
 }
 
 // Unique identifier of the business connection on behalf of which the message will be sent
-func (r ApiSendStickerPostRequest) BusinessConnectionId(businessConnectionId string) ApiSendStickerPostRequest {
+func (r ApiPostSendStickerRequest) BusinessConnectionId(businessConnectionId string) ApiPostSendStickerRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
 // Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-func (r ApiSendStickerPostRequest) MessageThreadId(messageThreadId int32) ApiSendStickerPostRequest {
+func (r ApiPostSendStickerRequest) MessageThreadId(messageThreadId int32) ApiPostSendStickerRequest {
 	r.messageThreadId = &messageThreadId
 	return r
 }
 
 // Emoji associated with the sticker; only for just uploaded stickers
-func (r ApiSendStickerPostRequest) Emoji(emoji string) ApiSendStickerPostRequest {
+func (r ApiPostSendStickerRequest) Emoji(emoji string) ApiPostSendStickerRequest {
 	r.emoji = &emoji
 	return r
 }
 
 // Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.
-func (r ApiSendStickerPostRequest) DisableNotification(disableNotification bool) ApiSendStickerPostRequest {
+func (r ApiPostSendStickerRequest) DisableNotification(disableNotification bool) ApiPostSendStickerRequest {
 	r.disableNotification = &disableNotification
 	return r
 }
 
 // Protects the contents of the sent message from forwarding and saving
-func (r ApiSendStickerPostRequest) ProtectContent(protectContent bool) ApiSendStickerPostRequest {
+func (r ApiPostSendStickerRequest) ProtectContent(protectContent bool) ApiPostSendStickerRequest {
 	r.protectContent = &protectContent
 	return r
 }
 
 // Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance
-func (r ApiSendStickerPostRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiSendStickerPostRequest {
+func (r ApiPostSendStickerRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiPostSendStickerRequest {
 	r.allowPaidBroadcast = &allowPaidBroadcast
 	return r
 }
 
 // Unique identifier of the message effect to be added to the message; for private chats only
-func (r ApiSendStickerPostRequest) MessageEffectId(messageEffectId string) ApiSendStickerPostRequest {
+func (r ApiPostSendStickerRequest) MessageEffectId(messageEffectId string) ApiPostSendStickerRequest {
 	r.messageEffectId = &messageEffectId
 	return r
 }
 
-func (r ApiSendStickerPostRequest) ReplyParameters(replyParameters ReplyParameters) ApiSendStickerPostRequest {
+func (r ApiPostSendStickerRequest) ReplyParameters(replyParameters ReplyParameters) ApiPostSendStickerRequest {
 	r.replyParameters = &replyParameters
 	return r
 }
 
-func (r ApiSendStickerPostRequest) ReplyMarkup(replyMarkup SendMessagePostRequestReplyMarkup) ApiSendStickerPostRequest {
+func (r ApiPostSendStickerRequest) ReplyMarkup(replyMarkup PostSendMessageRequestReplyMarkup) ApiPostSendStickerRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiSendStickerPostRequest) Execute() (*SendMessagePost200Response, *http.Response, error) {
-	return r.ApiService.SendStickerPostExecute(r)
+func (r ApiPostSendStickerRequest) Execute() (*PostSendMessage200Response, *http.Response, error) {
+	return r.ApiService.PostSendStickerExecute(r)
 }
 
 /*
-SendStickerPost Method for SendStickerPost
+PostSendSticker sendSticker
 
 Use this method to send static .WEBP, [animated](https://telegram.org/blog/animated-stickers) .TGS, or [video](https://telegram.org/blog/video-stickers-better-reactions) .WEBM stickers. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSendStickerPostRequest
+ @return ApiPostSendStickerRequest
 */
-func (a *DefaultAPIService) SendStickerPost(ctx context.Context) ApiSendStickerPostRequest {
-	return ApiSendStickerPostRequest{
+func (a *DefaultAPIService) PostSendSticker(ctx context.Context) ApiPostSendStickerRequest {
+	return ApiPostSendStickerRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SendMessagePost200Response
-func (a *DefaultAPIService) SendStickerPostExecute(r ApiSendStickerPostRequest) (*SendMessagePost200Response, *http.Response, error) {
+//  @return PostSendMessage200Response
+func (a *DefaultAPIService) PostSendStickerExecute(r ApiPostSendStickerRequest) (*PostSendMessage200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SendMessagePost200Response
+		localVarReturnValue  *PostSendMessage200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SendStickerPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendSticker")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -19051,6 +20195,17 @@ func (a *DefaultAPIService) SendStickerPostExecute(r ApiSendStickerPostRequest) 
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -19074,10 +20229,10 @@ func (a *DefaultAPIService) SendStickerPostExecute(r ApiSendStickerPostRequest) 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSendVenuePostRequest struct {
+type ApiPostSendVenueRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
+	chatId *PostSendMessageRequestChatId
 	latitude *float32
 	longitude *float32
 	title *string
@@ -19093,138 +20248,138 @@ type ApiSendVenuePostRequest struct {
 	allowPaidBroadcast *bool
 	messageEffectId *string
 	replyParameters *ReplyParameters
-	replyMarkup *SendMessagePostRequestReplyMarkup
+	replyMarkup *PostSendMessageRequestReplyMarkup
 }
 
-func (r ApiSendVenuePostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiSendVenuePostRequest {
+func (r ApiPostSendVenueRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSendVenueRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Latitude of the venue
-func (r ApiSendVenuePostRequest) Latitude(latitude float32) ApiSendVenuePostRequest {
+func (r ApiPostSendVenueRequest) Latitude(latitude float32) ApiPostSendVenueRequest {
 	r.latitude = &latitude
 	return r
 }
 
 // Longitude of the venue
-func (r ApiSendVenuePostRequest) Longitude(longitude float32) ApiSendVenuePostRequest {
+func (r ApiPostSendVenueRequest) Longitude(longitude float32) ApiPostSendVenueRequest {
 	r.longitude = &longitude
 	return r
 }
 
 // Name of the venue
-func (r ApiSendVenuePostRequest) Title(title string) ApiSendVenuePostRequest {
+func (r ApiPostSendVenueRequest) Title(title string) ApiPostSendVenueRequest {
 	r.title = &title
 	return r
 }
 
 // Address of the venue
-func (r ApiSendVenuePostRequest) Address(address string) ApiSendVenuePostRequest {
+func (r ApiPostSendVenueRequest) Address(address string) ApiPostSendVenueRequest {
 	r.address = &address
 	return r
 }
 
 // Unique identifier of the business connection on behalf of which the message will be sent
-func (r ApiSendVenuePostRequest) BusinessConnectionId(businessConnectionId string) ApiSendVenuePostRequest {
+func (r ApiPostSendVenueRequest) BusinessConnectionId(businessConnectionId string) ApiPostSendVenueRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
 // Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-func (r ApiSendVenuePostRequest) MessageThreadId(messageThreadId int32) ApiSendVenuePostRequest {
+func (r ApiPostSendVenueRequest) MessageThreadId(messageThreadId int32) ApiPostSendVenueRequest {
 	r.messageThreadId = &messageThreadId
 	return r
 }
 
 // Foursquare identifier of the venue
-func (r ApiSendVenuePostRequest) FoursquareId(foursquareId string) ApiSendVenuePostRequest {
+func (r ApiPostSendVenueRequest) FoursquareId(foursquareId string) ApiPostSendVenueRequest {
 	r.foursquareId = &foursquareId
 	return r
 }
 
 // Foursquare type of the venue, if known. (For example, “arts\\\\_entertainment/default”, “arts\\\\_entertainment/aquarium” or “food/icecream”.)
-func (r ApiSendVenuePostRequest) FoursquareType(foursquareType string) ApiSendVenuePostRequest {
+func (r ApiPostSendVenueRequest) FoursquareType(foursquareType string) ApiPostSendVenueRequest {
 	r.foursquareType = &foursquareType
 	return r
 }
 
 // Google Places identifier of the venue
-func (r ApiSendVenuePostRequest) GooglePlaceId(googlePlaceId string) ApiSendVenuePostRequest {
+func (r ApiPostSendVenueRequest) GooglePlaceId(googlePlaceId string) ApiPostSendVenueRequest {
 	r.googlePlaceId = &googlePlaceId
 	return r
 }
 
 // Google Places type of the venue. (See [supported types](https://developers.google.com/places/web-service/supported_types).)
-func (r ApiSendVenuePostRequest) GooglePlaceType(googlePlaceType string) ApiSendVenuePostRequest {
+func (r ApiPostSendVenueRequest) GooglePlaceType(googlePlaceType string) ApiPostSendVenueRequest {
 	r.googlePlaceType = &googlePlaceType
 	return r
 }
 
 // Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.
-func (r ApiSendVenuePostRequest) DisableNotification(disableNotification bool) ApiSendVenuePostRequest {
+func (r ApiPostSendVenueRequest) DisableNotification(disableNotification bool) ApiPostSendVenueRequest {
 	r.disableNotification = &disableNotification
 	return r
 }
 
 // Protects the contents of the sent message from forwarding and saving
-func (r ApiSendVenuePostRequest) ProtectContent(protectContent bool) ApiSendVenuePostRequest {
+func (r ApiPostSendVenueRequest) ProtectContent(protectContent bool) ApiPostSendVenueRequest {
 	r.protectContent = &protectContent
 	return r
 }
 
 // Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance
-func (r ApiSendVenuePostRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiSendVenuePostRequest {
+func (r ApiPostSendVenueRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiPostSendVenueRequest {
 	r.allowPaidBroadcast = &allowPaidBroadcast
 	return r
 }
 
 // Unique identifier of the message effect to be added to the message; for private chats only
-func (r ApiSendVenuePostRequest) MessageEffectId(messageEffectId string) ApiSendVenuePostRequest {
+func (r ApiPostSendVenueRequest) MessageEffectId(messageEffectId string) ApiPostSendVenueRequest {
 	r.messageEffectId = &messageEffectId
 	return r
 }
 
-func (r ApiSendVenuePostRequest) ReplyParameters(replyParameters ReplyParameters) ApiSendVenuePostRequest {
+func (r ApiPostSendVenueRequest) ReplyParameters(replyParameters ReplyParameters) ApiPostSendVenueRequest {
 	r.replyParameters = &replyParameters
 	return r
 }
 
-func (r ApiSendVenuePostRequest) ReplyMarkup(replyMarkup SendMessagePostRequestReplyMarkup) ApiSendVenuePostRequest {
+func (r ApiPostSendVenueRequest) ReplyMarkup(replyMarkup PostSendMessageRequestReplyMarkup) ApiPostSendVenueRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiSendVenuePostRequest) Execute() (*SendMessagePost200Response, *http.Response, error) {
-	return r.ApiService.SendVenuePostExecute(r)
+func (r ApiPostSendVenueRequest) Execute() (*PostSendMessage200Response, *http.Response, error) {
+	return r.ApiService.PostSendVenueExecute(r)
 }
 
 /*
-SendVenuePost Method for SendVenuePost
+PostSendVenue sendVenue
 
 Use this method to send information about a venue. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSendVenuePostRequest
+ @return ApiPostSendVenueRequest
 */
-func (a *DefaultAPIService) SendVenuePost(ctx context.Context) ApiSendVenuePostRequest {
-	return ApiSendVenuePostRequest{
+func (a *DefaultAPIService) PostSendVenue(ctx context.Context) ApiPostSendVenueRequest {
+	return ApiPostSendVenueRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SendMessagePost200Response
-func (a *DefaultAPIService) SendVenuePostExecute(r ApiSendVenuePostRequest) (*SendMessagePost200Response, *http.Response, error) {
+//  @return PostSendMessage200Response
+func (a *DefaultAPIService) PostSendVenueExecute(r ApiPostSendVenueRequest) (*PostSendMessage200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SendMessagePost200Response
+		localVarReturnValue  *PostSendMessage200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SendVenuePost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendVenue")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -19338,6 +20493,7 @@ func (a *DefaultAPIService) SendVenuePostExecute(r ApiSendVenuePostRequest) (*Se
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -19346,243 +20502,7 @@ func (a *DefaultAPIService) SendVenuePostExecute(r ApiSendVenuePostRequest) (*Se
 			}
 					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
 					newErr.model = v
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiSendVideoNotePostRequest struct {
-	ctx context.Context
-	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
-	videoNote *SendVideoNotePostRequestVideoNote
-	businessConnectionId *string
-	messageThreadId *int32
-	duration *int32
-	length *int32
-	thumbnail *SendAudioPostRequestThumbnail
-	disableNotification *bool
-	protectContent *bool
-	allowPaidBroadcast *bool
-	messageEffectId *string
-	replyParameters *ReplyParameters
-	replyMarkup *SendMessagePostRequestReplyMarkup
-}
-
-func (r ApiSendVideoNotePostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiSendVideoNotePostRequest {
-	r.chatId = &chatId
-	return r
-}
-
-func (r ApiSendVideoNotePostRequest) VideoNote(videoNote SendVideoNotePostRequestVideoNote) ApiSendVideoNotePostRequest {
-	r.videoNote = &videoNote
-	return r
-}
-
-// Unique identifier of the business connection on behalf of which the message will be sent
-func (r ApiSendVideoNotePostRequest) BusinessConnectionId(businessConnectionId string) ApiSendVideoNotePostRequest {
-	r.businessConnectionId = &businessConnectionId
-	return r
-}
-
-// Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-func (r ApiSendVideoNotePostRequest) MessageThreadId(messageThreadId int32) ApiSendVideoNotePostRequest {
-	r.messageThreadId = &messageThreadId
-	return r
-}
-
-// Duration of sent video in seconds
-func (r ApiSendVideoNotePostRequest) Duration(duration int32) ApiSendVideoNotePostRequest {
-	r.duration = &duration
-	return r
-}
-
-// Video width and height, i.e. diameter of the video message
-func (r ApiSendVideoNotePostRequest) Length(length int32) ApiSendVideoNotePostRequest {
-	r.length = &length
-	return r
-}
-
-func (r ApiSendVideoNotePostRequest) Thumbnail(thumbnail SendAudioPostRequestThumbnail) ApiSendVideoNotePostRequest {
-	r.thumbnail = &thumbnail
-	return r
-}
-
-// Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.
-func (r ApiSendVideoNotePostRequest) DisableNotification(disableNotification bool) ApiSendVideoNotePostRequest {
-	r.disableNotification = &disableNotification
-	return r
-}
-
-// Protects the contents of the sent message from forwarding and saving
-func (r ApiSendVideoNotePostRequest) ProtectContent(protectContent bool) ApiSendVideoNotePostRequest {
-	r.protectContent = &protectContent
-	return r
-}
-
-// Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance
-func (r ApiSendVideoNotePostRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiSendVideoNotePostRequest {
-	r.allowPaidBroadcast = &allowPaidBroadcast
-	return r
-}
-
-// Unique identifier of the message effect to be added to the message; for private chats only
-func (r ApiSendVideoNotePostRequest) MessageEffectId(messageEffectId string) ApiSendVideoNotePostRequest {
-	r.messageEffectId = &messageEffectId
-	return r
-}
-
-func (r ApiSendVideoNotePostRequest) ReplyParameters(replyParameters ReplyParameters) ApiSendVideoNotePostRequest {
-	r.replyParameters = &replyParameters
-	return r
-}
-
-func (r ApiSendVideoNotePostRequest) ReplyMarkup(replyMarkup SendMessagePostRequestReplyMarkup) ApiSendVideoNotePostRequest {
-	r.replyMarkup = &replyMarkup
-	return r
-}
-
-func (r ApiSendVideoNotePostRequest) Execute() (*SendMessagePost200Response, *http.Response, error) {
-	return r.ApiService.SendVideoNotePostExecute(r)
-}
-
-/*
-SendVideoNotePost Method for SendVideoNotePost
-
-As of [v.4.0](https://telegram.org/blog/video-messages-and-telescope), Telegram clients support rounded square MPEG4 videos of up to 1 minute long. Use this method to send video messages. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSendVideoNotePostRequest
-*/
-func (a *DefaultAPIService) SendVideoNotePost(ctx context.Context) ApiSendVideoNotePostRequest {
-	return ApiSendVideoNotePostRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return SendMessagePost200Response
-func (a *DefaultAPIService) SendVideoNotePostExecute(r ApiSendVideoNotePostRequest) (*SendMessagePost200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SendMessagePost200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SendVideoNotePost")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sendVideoNote"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.chatId == nil {
-		return localVarReturnValue, nil, reportError("chatId is required and must be specified")
-	}
-	if r.videoNote == nil {
-		return localVarReturnValue, nil, reportError("videoNote is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"multipart/form-data"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.businessConnectionId != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "business_connection_id", r.businessConnectionId, "", "")
-	}
-	parameterAddToHeaderOrQuery(localVarFormParams, "chat_id", r.chatId, "", "")
-	if r.messageThreadId != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "message_thread_id", r.messageThreadId, "", "")
-	}
-	parameterAddToHeaderOrQuery(localVarFormParams, "video_note", r.videoNote, "", "")
-	if r.duration != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "duration", r.duration, "", "")
-	}
-	if r.length != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "length", r.length, "", "")
-	}
-	if r.thumbnail != nil {
-		paramJson, err := parameterToJson(*r.thumbnail)
-		if err != nil {
-			return localVarReturnValue, nil, err
-		}
-		localVarFormParams.Add("thumbnail", paramJson)
-	}
-	if r.disableNotification != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "disable_notification", r.disableNotification, "", "")
-	}
-	if r.protectContent != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "protect_content", r.protectContent, "", "")
-	}
-	if r.allowPaidBroadcast != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "allow_paid_broadcast", r.allowPaidBroadcast, "", "")
-	}
-	if r.messageEffectId != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "message_effect_id", r.messageEffectId, "", "")
-	}
-	if r.replyParameters != nil {
-		paramJson, err := parameterToJson(*r.replyParameters)
-		if err != nil {
-			return localVarReturnValue, nil, err
-		}
-		localVarFormParams.Add("reply_parameters", paramJson)
-	}
-	if r.replyMarkup != nil {
-		paramJson, err := parameterToJson(*r.replyMarkup)
-		if err != nil {
-			return localVarReturnValue, nil, err
-		}
-		localVarFormParams.Add("reply_markup", paramJson)
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
+			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
@@ -19607,18 +20527,18 @@ func (a *DefaultAPIService) SendVideoNotePostExecute(r ApiSendVideoNotePostReque
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSendVideoPostRequest struct {
+type ApiPostSendVideoRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
-	video *SendVideoPostRequestVideo
+	chatId *PostSendMessageRequestChatId
+	video *PostSendVideoRequestVideo
 	businessConnectionId *string
 	messageThreadId *int32
 	duration *int32
 	width *int32
 	height *int32
-	thumbnail *SendAudioPostRequestThumbnail
-	cover *SendVideoPostRequestCover
+	thumbnail *PostSendAudioRequestThumbnail
+	cover *PostSendVideoRequestCover
 	startTimestamp *int32
 	caption *string
 	parseMode *string
@@ -19631,165 +20551,165 @@ type ApiSendVideoPostRequest struct {
 	allowPaidBroadcast *bool
 	messageEffectId *string
 	replyParameters *ReplyParameters
-	replyMarkup *SendMessagePostRequestReplyMarkup
+	replyMarkup *PostSendMessageRequestReplyMarkup
 }
 
-func (r ApiSendVideoPostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiSendVideoPostRequest {
+func (r ApiPostSendVideoRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSendVideoRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiSendVideoPostRequest) Video(video SendVideoPostRequestVideo) ApiSendVideoPostRequest {
+func (r ApiPostSendVideoRequest) Video(video PostSendVideoRequestVideo) ApiPostSendVideoRequest {
 	r.video = &video
 	return r
 }
 
 // Unique identifier of the business connection on behalf of which the message will be sent
-func (r ApiSendVideoPostRequest) BusinessConnectionId(businessConnectionId string) ApiSendVideoPostRequest {
+func (r ApiPostSendVideoRequest) BusinessConnectionId(businessConnectionId string) ApiPostSendVideoRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
 // Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-func (r ApiSendVideoPostRequest) MessageThreadId(messageThreadId int32) ApiSendVideoPostRequest {
+func (r ApiPostSendVideoRequest) MessageThreadId(messageThreadId int32) ApiPostSendVideoRequest {
 	r.messageThreadId = &messageThreadId
 	return r
 }
 
 // Duration of sent video in seconds
-func (r ApiSendVideoPostRequest) Duration(duration int32) ApiSendVideoPostRequest {
+func (r ApiPostSendVideoRequest) Duration(duration int32) ApiPostSendVideoRequest {
 	r.duration = &duration
 	return r
 }
 
 // Video width
-func (r ApiSendVideoPostRequest) Width(width int32) ApiSendVideoPostRequest {
+func (r ApiPostSendVideoRequest) Width(width int32) ApiPostSendVideoRequest {
 	r.width = &width
 	return r
 }
 
 // Video height
-func (r ApiSendVideoPostRequest) Height(height int32) ApiSendVideoPostRequest {
+func (r ApiPostSendVideoRequest) Height(height int32) ApiPostSendVideoRequest {
 	r.height = &height
 	return r
 }
 
-func (r ApiSendVideoPostRequest) Thumbnail(thumbnail SendAudioPostRequestThumbnail) ApiSendVideoPostRequest {
+func (r ApiPostSendVideoRequest) Thumbnail(thumbnail PostSendAudioRequestThumbnail) ApiPostSendVideoRequest {
 	r.thumbnail = &thumbnail
 	return r
 }
 
-func (r ApiSendVideoPostRequest) Cover(cover SendVideoPostRequestCover) ApiSendVideoPostRequest {
+func (r ApiPostSendVideoRequest) Cover(cover PostSendVideoRequestCover) ApiPostSendVideoRequest {
 	r.cover = &cover
 	return r
 }
 
 // Start timestamp for the video in the message
-func (r ApiSendVideoPostRequest) StartTimestamp(startTimestamp int32) ApiSendVideoPostRequest {
+func (r ApiPostSendVideoRequest) StartTimestamp(startTimestamp int32) ApiPostSendVideoRequest {
 	r.startTimestamp = &startTimestamp
 	return r
 }
 
 // Video caption (may also be used when resending videos by *file\\\\_id*), 0-1024 characters after entities parsing
-func (r ApiSendVideoPostRequest) Caption(caption string) ApiSendVideoPostRequest {
+func (r ApiPostSendVideoRequest) Caption(caption string) ApiPostSendVideoRequest {
 	r.caption = &caption
 	return r
 }
 
 // Mode for parsing entities in the video caption. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details.
-func (r ApiSendVideoPostRequest) ParseMode(parseMode string) ApiSendVideoPostRequest {
+func (r ApiPostSendVideoRequest) ParseMode(parseMode string) ApiPostSendVideoRequest {
 	r.parseMode = &parseMode
 	return r
 }
 
 // A JSON-serialized list of special entities that appear in the caption, which can be specified instead of *parse\\\\_mode*
-func (r ApiSendVideoPostRequest) CaptionEntities(captionEntities []MessageEntity) ApiSendVideoPostRequest {
+func (r ApiPostSendVideoRequest) CaptionEntities(captionEntities []MessageEntity) ApiPostSendVideoRequest {
 	r.captionEntities = &captionEntities
 	return r
 }
 
 // Pass *True*, if the caption must be shown above the message media
-func (r ApiSendVideoPostRequest) ShowCaptionAboveMedia(showCaptionAboveMedia bool) ApiSendVideoPostRequest {
+func (r ApiPostSendVideoRequest) ShowCaptionAboveMedia(showCaptionAboveMedia bool) ApiPostSendVideoRequest {
 	r.showCaptionAboveMedia = &showCaptionAboveMedia
 	return r
 }
 
 // Pass *True* if the video needs to be covered with a spoiler animation
-func (r ApiSendVideoPostRequest) HasSpoiler(hasSpoiler bool) ApiSendVideoPostRequest {
+func (r ApiPostSendVideoRequest) HasSpoiler(hasSpoiler bool) ApiPostSendVideoRequest {
 	r.hasSpoiler = &hasSpoiler
 	return r
 }
 
 // Pass *True* if the uploaded video is suitable for streaming
-func (r ApiSendVideoPostRequest) SupportsStreaming(supportsStreaming bool) ApiSendVideoPostRequest {
+func (r ApiPostSendVideoRequest) SupportsStreaming(supportsStreaming bool) ApiPostSendVideoRequest {
 	r.supportsStreaming = &supportsStreaming
 	return r
 }
 
 // Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.
-func (r ApiSendVideoPostRequest) DisableNotification(disableNotification bool) ApiSendVideoPostRequest {
+func (r ApiPostSendVideoRequest) DisableNotification(disableNotification bool) ApiPostSendVideoRequest {
 	r.disableNotification = &disableNotification
 	return r
 }
 
 // Protects the contents of the sent message from forwarding and saving
-func (r ApiSendVideoPostRequest) ProtectContent(protectContent bool) ApiSendVideoPostRequest {
+func (r ApiPostSendVideoRequest) ProtectContent(protectContent bool) ApiPostSendVideoRequest {
 	r.protectContent = &protectContent
 	return r
 }
 
 // Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance
-func (r ApiSendVideoPostRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiSendVideoPostRequest {
+func (r ApiPostSendVideoRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiPostSendVideoRequest {
 	r.allowPaidBroadcast = &allowPaidBroadcast
 	return r
 }
 
 // Unique identifier of the message effect to be added to the message; for private chats only
-func (r ApiSendVideoPostRequest) MessageEffectId(messageEffectId string) ApiSendVideoPostRequest {
+func (r ApiPostSendVideoRequest) MessageEffectId(messageEffectId string) ApiPostSendVideoRequest {
 	r.messageEffectId = &messageEffectId
 	return r
 }
 
-func (r ApiSendVideoPostRequest) ReplyParameters(replyParameters ReplyParameters) ApiSendVideoPostRequest {
+func (r ApiPostSendVideoRequest) ReplyParameters(replyParameters ReplyParameters) ApiPostSendVideoRequest {
 	r.replyParameters = &replyParameters
 	return r
 }
 
-func (r ApiSendVideoPostRequest) ReplyMarkup(replyMarkup SendMessagePostRequestReplyMarkup) ApiSendVideoPostRequest {
+func (r ApiPostSendVideoRequest) ReplyMarkup(replyMarkup PostSendMessageRequestReplyMarkup) ApiPostSendVideoRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiSendVideoPostRequest) Execute() (*SendMessagePost200Response, *http.Response, error) {
-	return r.ApiService.SendVideoPostExecute(r)
+func (r ApiPostSendVideoRequest) Execute() (*PostSendMessage200Response, *http.Response, error) {
+	return r.ApiService.PostSendVideoExecute(r)
 }
 
 /*
-SendVideoPost Method for SendVideoPost
+PostSendVideo sendVideo
 
 Use this method to send video files, Telegram clients support MPEG4 videos (other formats may be sent as [Document](https://core.telegram.org/bots/api/#document)). On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned. Bots can currently send video files of up to 50 MB in size, this limit may be changed in the future.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSendVideoPostRequest
+ @return ApiPostSendVideoRequest
 */
-func (a *DefaultAPIService) SendVideoPost(ctx context.Context) ApiSendVideoPostRequest {
-	return ApiSendVideoPostRequest{
+func (a *DefaultAPIService) PostSendVideo(ctx context.Context) ApiPostSendVideoRequest {
+	return ApiPostSendVideoRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SendMessagePost200Response
-func (a *DefaultAPIService) SendVideoPostExecute(r ApiSendVideoPostRequest) (*SendMessagePost200Response, *http.Response, error) {
+//  @return PostSendMessage200Response
+func (a *DefaultAPIService) PostSendVideoExecute(r ApiPostSendVideoRequest) (*PostSendMessage200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SendMessagePost200Response
+		localVarReturnValue  *PostSendMessage200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SendVideoPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendVideo")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -19923,6 +20843,17 @@ func (a *DefaultAPIService) SendVideoPostExecute(r ApiSendVideoPostRequest) (*Se
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -19946,11 +20877,268 @@ func (a *DefaultAPIService) SendVideoPostExecute(r ApiSendVideoPostRequest) (*Se
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSendVoicePostRequest struct {
+type ApiPostSendVideoNoteRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
-	voice *SendVoicePostRequestVoice
+	chatId *PostSendMessageRequestChatId
+	videoNote *PostSendVideoNoteRequestVideoNote
+	businessConnectionId *string
+	messageThreadId *int32
+	duration *int32
+	length *int32
+	thumbnail *PostSendAudioRequestThumbnail
+	disableNotification *bool
+	protectContent *bool
+	allowPaidBroadcast *bool
+	messageEffectId *string
+	replyParameters *ReplyParameters
+	replyMarkup *PostSendMessageRequestReplyMarkup
+}
+
+func (r ApiPostSendVideoNoteRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSendVideoNoteRequest {
+	r.chatId = &chatId
+	return r
+}
+
+func (r ApiPostSendVideoNoteRequest) VideoNote(videoNote PostSendVideoNoteRequestVideoNote) ApiPostSendVideoNoteRequest {
+	r.videoNote = &videoNote
+	return r
+}
+
+// Unique identifier of the business connection on behalf of which the message will be sent
+func (r ApiPostSendVideoNoteRequest) BusinessConnectionId(businessConnectionId string) ApiPostSendVideoNoteRequest {
+	r.businessConnectionId = &businessConnectionId
+	return r
+}
+
+// Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
+func (r ApiPostSendVideoNoteRequest) MessageThreadId(messageThreadId int32) ApiPostSendVideoNoteRequest {
+	r.messageThreadId = &messageThreadId
+	return r
+}
+
+// Duration of sent video in seconds
+func (r ApiPostSendVideoNoteRequest) Duration(duration int32) ApiPostSendVideoNoteRequest {
+	r.duration = &duration
+	return r
+}
+
+// Video width and height, i.e. diameter of the video message
+func (r ApiPostSendVideoNoteRequest) Length(length int32) ApiPostSendVideoNoteRequest {
+	r.length = &length
+	return r
+}
+
+func (r ApiPostSendVideoNoteRequest) Thumbnail(thumbnail PostSendAudioRequestThumbnail) ApiPostSendVideoNoteRequest {
+	r.thumbnail = &thumbnail
+	return r
+}
+
+// Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.
+func (r ApiPostSendVideoNoteRequest) DisableNotification(disableNotification bool) ApiPostSendVideoNoteRequest {
+	r.disableNotification = &disableNotification
+	return r
+}
+
+// Protects the contents of the sent message from forwarding and saving
+func (r ApiPostSendVideoNoteRequest) ProtectContent(protectContent bool) ApiPostSendVideoNoteRequest {
+	r.protectContent = &protectContent
+	return r
+}
+
+// Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance
+func (r ApiPostSendVideoNoteRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiPostSendVideoNoteRequest {
+	r.allowPaidBroadcast = &allowPaidBroadcast
+	return r
+}
+
+// Unique identifier of the message effect to be added to the message; for private chats only
+func (r ApiPostSendVideoNoteRequest) MessageEffectId(messageEffectId string) ApiPostSendVideoNoteRequest {
+	r.messageEffectId = &messageEffectId
+	return r
+}
+
+func (r ApiPostSendVideoNoteRequest) ReplyParameters(replyParameters ReplyParameters) ApiPostSendVideoNoteRequest {
+	r.replyParameters = &replyParameters
+	return r
+}
+
+func (r ApiPostSendVideoNoteRequest) ReplyMarkup(replyMarkup PostSendMessageRequestReplyMarkup) ApiPostSendVideoNoteRequest {
+	r.replyMarkup = &replyMarkup
+	return r
+}
+
+func (r ApiPostSendVideoNoteRequest) Execute() (*PostSendMessage200Response, *http.Response, error) {
+	return r.ApiService.PostSendVideoNoteExecute(r)
+}
+
+/*
+PostSendVideoNote sendVideoNote
+
+As of [v.4.0](https://telegram.org/blog/video-messages-and-telescope), Telegram clients support rounded square MPEG4 videos of up to 1 minute long. Use this method to send video messages. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPostSendVideoNoteRequest
+*/
+func (a *DefaultAPIService) PostSendVideoNote(ctx context.Context) ApiPostSendVideoNoteRequest {
+	return ApiPostSendVideoNoteRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return PostSendMessage200Response
+func (a *DefaultAPIService) PostSendVideoNoteExecute(r ApiPostSendVideoNoteRequest) (*PostSendMessage200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PostSendMessage200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendVideoNote")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/sendVideoNote"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.chatId == nil {
+		return localVarReturnValue, nil, reportError("chatId is required and must be specified")
+	}
+	if r.videoNote == nil {
+		return localVarReturnValue, nil, reportError("videoNote is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"multipart/form-data"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.businessConnectionId != nil {
+		parameterAddToHeaderOrQuery(localVarFormParams, "business_connection_id", r.businessConnectionId, "", "")
+	}
+	parameterAddToHeaderOrQuery(localVarFormParams, "chat_id", r.chatId, "", "")
+	if r.messageThreadId != nil {
+		parameterAddToHeaderOrQuery(localVarFormParams, "message_thread_id", r.messageThreadId, "", "")
+	}
+	parameterAddToHeaderOrQuery(localVarFormParams, "video_note", r.videoNote, "", "")
+	if r.duration != nil {
+		parameterAddToHeaderOrQuery(localVarFormParams, "duration", r.duration, "", "")
+	}
+	if r.length != nil {
+		parameterAddToHeaderOrQuery(localVarFormParams, "length", r.length, "", "")
+	}
+	if r.thumbnail != nil {
+		paramJson, err := parameterToJson(*r.thumbnail)
+		if err != nil {
+			return localVarReturnValue, nil, err
+		}
+		localVarFormParams.Add("thumbnail", paramJson)
+	}
+	if r.disableNotification != nil {
+		parameterAddToHeaderOrQuery(localVarFormParams, "disable_notification", r.disableNotification, "", "")
+	}
+	if r.protectContent != nil {
+		parameterAddToHeaderOrQuery(localVarFormParams, "protect_content", r.protectContent, "", "")
+	}
+	if r.allowPaidBroadcast != nil {
+		parameterAddToHeaderOrQuery(localVarFormParams, "allow_paid_broadcast", r.allowPaidBroadcast, "", "")
+	}
+	if r.messageEffectId != nil {
+		parameterAddToHeaderOrQuery(localVarFormParams, "message_effect_id", r.messageEffectId, "", "")
+	}
+	if r.replyParameters != nil {
+		paramJson, err := parameterToJson(*r.replyParameters)
+		if err != nil {
+			return localVarReturnValue, nil, err
+		}
+		localVarFormParams.Add("reply_parameters", paramJson)
+	}
+	if r.replyMarkup != nil {
+		paramJson, err := parameterToJson(*r.replyMarkup)
+		if err != nil {
+			return localVarReturnValue, nil, err
+		}
+		localVarFormParams.Add("reply_markup", paramJson)
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiPostSendVoiceRequest struct {
+	ctx context.Context
+	ApiService DefaultAPI
+	chatId *PostSendMessageRequestChatId
+	voice *PostSendVoiceRequestVoice
 	businessConnectionId *string
 	messageThreadId *int32
 	caption *string
@@ -19962,119 +21150,119 @@ type ApiSendVoicePostRequest struct {
 	allowPaidBroadcast *bool
 	messageEffectId *string
 	replyParameters *ReplyParameters
-	replyMarkup *SendMessagePostRequestReplyMarkup
+	replyMarkup *PostSendMessageRequestReplyMarkup
 }
 
-func (r ApiSendVoicePostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiSendVoicePostRequest {
+func (r ApiPostSendVoiceRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSendVoiceRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiSendVoicePostRequest) Voice(voice SendVoicePostRequestVoice) ApiSendVoicePostRequest {
+func (r ApiPostSendVoiceRequest) Voice(voice PostSendVoiceRequestVoice) ApiPostSendVoiceRequest {
 	r.voice = &voice
 	return r
 }
 
 // Unique identifier of the business connection on behalf of which the message will be sent
-func (r ApiSendVoicePostRequest) BusinessConnectionId(businessConnectionId string) ApiSendVoicePostRequest {
+func (r ApiPostSendVoiceRequest) BusinessConnectionId(businessConnectionId string) ApiPostSendVoiceRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
 // Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-func (r ApiSendVoicePostRequest) MessageThreadId(messageThreadId int32) ApiSendVoicePostRequest {
+func (r ApiPostSendVoiceRequest) MessageThreadId(messageThreadId int32) ApiPostSendVoiceRequest {
 	r.messageThreadId = &messageThreadId
 	return r
 }
 
 // Voice message caption, 0-1024 characters after entities parsing
-func (r ApiSendVoicePostRequest) Caption(caption string) ApiSendVoicePostRequest {
+func (r ApiPostSendVoiceRequest) Caption(caption string) ApiPostSendVoiceRequest {
 	r.caption = &caption
 	return r
 }
 
 // Mode for parsing entities in the voice message caption. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details.
-func (r ApiSendVoicePostRequest) ParseMode(parseMode string) ApiSendVoicePostRequest {
+func (r ApiPostSendVoiceRequest) ParseMode(parseMode string) ApiPostSendVoiceRequest {
 	r.parseMode = &parseMode
 	return r
 }
 
 // A JSON-serialized list of special entities that appear in the caption, which can be specified instead of *parse\\\\_mode*
-func (r ApiSendVoicePostRequest) CaptionEntities(captionEntities []MessageEntity) ApiSendVoicePostRequest {
+func (r ApiPostSendVoiceRequest) CaptionEntities(captionEntities []MessageEntity) ApiPostSendVoiceRequest {
 	r.captionEntities = &captionEntities
 	return r
 }
 
 // Duration of the voice message in seconds
-func (r ApiSendVoicePostRequest) Duration(duration int32) ApiSendVoicePostRequest {
+func (r ApiPostSendVoiceRequest) Duration(duration int32) ApiPostSendVoiceRequest {
 	r.duration = &duration
 	return r
 }
 
 // Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.
-func (r ApiSendVoicePostRequest) DisableNotification(disableNotification bool) ApiSendVoicePostRequest {
+func (r ApiPostSendVoiceRequest) DisableNotification(disableNotification bool) ApiPostSendVoiceRequest {
 	r.disableNotification = &disableNotification
 	return r
 }
 
 // Protects the contents of the sent message from forwarding and saving
-func (r ApiSendVoicePostRequest) ProtectContent(protectContent bool) ApiSendVoicePostRequest {
+func (r ApiPostSendVoiceRequest) ProtectContent(protectContent bool) ApiPostSendVoiceRequest {
 	r.protectContent = &protectContent
 	return r
 }
 
 // Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance
-func (r ApiSendVoicePostRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiSendVoicePostRequest {
+func (r ApiPostSendVoiceRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiPostSendVoiceRequest {
 	r.allowPaidBroadcast = &allowPaidBroadcast
 	return r
 }
 
 // Unique identifier of the message effect to be added to the message; for private chats only
-func (r ApiSendVoicePostRequest) MessageEffectId(messageEffectId string) ApiSendVoicePostRequest {
+func (r ApiPostSendVoiceRequest) MessageEffectId(messageEffectId string) ApiPostSendVoiceRequest {
 	r.messageEffectId = &messageEffectId
 	return r
 }
 
-func (r ApiSendVoicePostRequest) ReplyParameters(replyParameters ReplyParameters) ApiSendVoicePostRequest {
+func (r ApiPostSendVoiceRequest) ReplyParameters(replyParameters ReplyParameters) ApiPostSendVoiceRequest {
 	r.replyParameters = &replyParameters
 	return r
 }
 
-func (r ApiSendVoicePostRequest) ReplyMarkup(replyMarkup SendMessagePostRequestReplyMarkup) ApiSendVoicePostRequest {
+func (r ApiPostSendVoiceRequest) ReplyMarkup(replyMarkup PostSendMessageRequestReplyMarkup) ApiPostSendVoiceRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiSendVoicePostRequest) Execute() (*SendMessagePost200Response, *http.Response, error) {
-	return r.ApiService.SendVoicePostExecute(r)
+func (r ApiPostSendVoiceRequest) Execute() (*PostSendMessage200Response, *http.Response, error) {
+	return r.ApiService.PostSendVoiceExecute(r)
 }
 
 /*
-SendVoicePost Method for SendVoicePost
+PostSendVoice sendVoice
 
 Use this method to send audio files, if you want Telegram clients to display the file as a playable voice message. For this to work, your audio must be in an .OGG file encoded with OPUS, or in .MP3 format, or in .M4A format (other formats may be sent as [Audio](https://core.telegram.org/bots/api/#audio) or [Document](https://core.telegram.org/bots/api/#document)). On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned. Bots can currently send voice messages of up to 50 MB in size, this limit may be changed in the future.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSendVoicePostRequest
+ @return ApiPostSendVoiceRequest
 */
-func (a *DefaultAPIService) SendVoicePost(ctx context.Context) ApiSendVoicePostRequest {
-	return ApiSendVoicePostRequest{
+func (a *DefaultAPIService) PostSendVoice(ctx context.Context) ApiPostSendVoiceRequest {
+	return ApiPostSendVoiceRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SendMessagePost200Response
-func (a *DefaultAPIService) SendVoicePostExecute(r ApiSendVoicePostRequest) (*SendMessagePost200Response, *http.Response, error) {
+//  @return PostSendMessage200Response
+func (a *DefaultAPIService) PostSendVoiceExecute(r ApiPostSendVoiceRequest) (*PostSendMessage200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SendMessagePost200Response
+		localVarReturnValue  *PostSendMessage200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SendVoicePost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendVoice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -20176,6 +21364,17 @@ func (a *DefaultAPIService) SendVoicePostExecute(r ApiSendVoicePostRequest) (*Se
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -20199,7 +21398,7 @@ func (a *DefaultAPIService) SendVoicePostExecute(r ApiSendVoicePostRequest) (*Se
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSetBusinessAccountBioPostRequest struct {
+type ApiPostSetBusinessAccountBioRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	businessConnectionId *string
@@ -20207,47 +21406,47 @@ type ApiSetBusinessAccountBioPostRequest struct {
 }
 
 // Unique identifier of the business connection
-func (r ApiSetBusinessAccountBioPostRequest) BusinessConnectionId(businessConnectionId string) ApiSetBusinessAccountBioPostRequest {
+func (r ApiPostSetBusinessAccountBioRequest) BusinessConnectionId(businessConnectionId string) ApiPostSetBusinessAccountBioRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
 // The new value of the bio for the business account; 0-140 characters
-func (r ApiSetBusinessAccountBioPostRequest) Bio(bio string) ApiSetBusinessAccountBioPostRequest {
+func (r ApiPostSetBusinessAccountBioRequest) Bio(bio string) ApiPostSetBusinessAccountBioRequest {
 	r.bio = &bio
 	return r
 }
 
-func (r ApiSetBusinessAccountBioPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.SetBusinessAccountBioPostExecute(r)
+func (r ApiPostSetBusinessAccountBioRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostSetBusinessAccountBioExecute(r)
 }
 
 /*
-SetBusinessAccountBioPost Method for SetBusinessAccountBioPost
+PostSetBusinessAccountBio setBusinessAccountBio
 
 Changes the bio of a managed business account. Requires the *can\_change\_bio* business bot right. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetBusinessAccountBioPostRequest
+ @return ApiPostSetBusinessAccountBioRequest
 */
-func (a *DefaultAPIService) SetBusinessAccountBioPost(ctx context.Context) ApiSetBusinessAccountBioPostRequest {
-	return ApiSetBusinessAccountBioPostRequest{
+func (a *DefaultAPIService) PostSetBusinessAccountBio(ctx context.Context) ApiPostSetBusinessAccountBioRequest {
+	return ApiPostSetBusinessAccountBioRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) SetBusinessAccountBioPostExecute(r ApiSetBusinessAccountBioPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostSetBusinessAccountBioExecute(r ApiPostSetBusinessAccountBioRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SetBusinessAccountBioPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetBusinessAccountBio")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -20304,6 +21503,17 @@ func (a *DefaultAPIService) SetBusinessAccountBioPostExecute(r ApiSetBusinessAcc
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -20327,7 +21537,7 @@ func (a *DefaultAPIService) SetBusinessAccountBioPostExecute(r ApiSetBusinessAcc
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSetBusinessAccountGiftSettingsPostRequest struct {
+type ApiPostSetBusinessAccountGiftSettingsRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	businessConnectionId *string
@@ -20336,52 +21546,52 @@ type ApiSetBusinessAccountGiftSettingsPostRequest struct {
 }
 
 // Unique identifier of the business connection
-func (r ApiSetBusinessAccountGiftSettingsPostRequest) BusinessConnectionId(businessConnectionId string) ApiSetBusinessAccountGiftSettingsPostRequest {
+func (r ApiPostSetBusinessAccountGiftSettingsRequest) BusinessConnectionId(businessConnectionId string) ApiPostSetBusinessAccountGiftSettingsRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
 // Pass True, if a button for sending a gift to the user or by the business account must always be shown in the input field
-func (r ApiSetBusinessAccountGiftSettingsPostRequest) ShowGiftButton(showGiftButton bool) ApiSetBusinessAccountGiftSettingsPostRequest {
+func (r ApiPostSetBusinessAccountGiftSettingsRequest) ShowGiftButton(showGiftButton bool) ApiPostSetBusinessAccountGiftSettingsRequest {
 	r.showGiftButton = &showGiftButton
 	return r
 }
 
-func (r ApiSetBusinessAccountGiftSettingsPostRequest) AcceptedGiftTypes(acceptedGiftTypes AcceptedGiftTypes) ApiSetBusinessAccountGiftSettingsPostRequest {
+func (r ApiPostSetBusinessAccountGiftSettingsRequest) AcceptedGiftTypes(acceptedGiftTypes AcceptedGiftTypes) ApiPostSetBusinessAccountGiftSettingsRequest {
 	r.acceptedGiftTypes = &acceptedGiftTypes
 	return r
 }
 
-func (r ApiSetBusinessAccountGiftSettingsPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.SetBusinessAccountGiftSettingsPostExecute(r)
+func (r ApiPostSetBusinessAccountGiftSettingsRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostSetBusinessAccountGiftSettingsExecute(r)
 }
 
 /*
-SetBusinessAccountGiftSettingsPost Method for SetBusinessAccountGiftSettingsPost
+PostSetBusinessAccountGiftSettings setBusinessAccountGiftSettings
 
 Changes the privacy settings pertaining to incoming gifts in a managed business account. Requires the *can\_change\_gift\_settings* business bot right. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetBusinessAccountGiftSettingsPostRequest
+ @return ApiPostSetBusinessAccountGiftSettingsRequest
 */
-func (a *DefaultAPIService) SetBusinessAccountGiftSettingsPost(ctx context.Context) ApiSetBusinessAccountGiftSettingsPostRequest {
-	return ApiSetBusinessAccountGiftSettingsPostRequest{
+func (a *DefaultAPIService) PostSetBusinessAccountGiftSettings(ctx context.Context) ApiPostSetBusinessAccountGiftSettingsRequest {
+	return ApiPostSetBusinessAccountGiftSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) SetBusinessAccountGiftSettingsPostExecute(r ApiSetBusinessAccountGiftSettingsPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostSetBusinessAccountGiftSettingsExecute(r ApiPostSetBusinessAccountGiftSettingsRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SetBusinessAccountGiftSettingsPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetBusinessAccountGiftSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -20443,6 +21653,17 @@ func (a *DefaultAPIService) SetBusinessAccountGiftSettingsPostExecute(r ApiSetBu
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -20466,7 +21687,7 @@ func (a *DefaultAPIService) SetBusinessAccountGiftSettingsPostExecute(r ApiSetBu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSetBusinessAccountNamePostRequest struct {
+type ApiPostSetBusinessAccountNameRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	businessConnectionId *string
@@ -20475,53 +21696,53 @@ type ApiSetBusinessAccountNamePostRequest struct {
 }
 
 // Unique identifier of the business connection
-func (r ApiSetBusinessAccountNamePostRequest) BusinessConnectionId(businessConnectionId string) ApiSetBusinessAccountNamePostRequest {
+func (r ApiPostSetBusinessAccountNameRequest) BusinessConnectionId(businessConnectionId string) ApiPostSetBusinessAccountNameRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
 // The new value of the first name for the business account; 1-64 characters
-func (r ApiSetBusinessAccountNamePostRequest) FirstName(firstName string) ApiSetBusinessAccountNamePostRequest {
+func (r ApiPostSetBusinessAccountNameRequest) FirstName(firstName string) ApiPostSetBusinessAccountNameRequest {
 	r.firstName = &firstName
 	return r
 }
 
 // The new value of the last name for the business account; 0-64 characters
-func (r ApiSetBusinessAccountNamePostRequest) LastName(lastName string) ApiSetBusinessAccountNamePostRequest {
+func (r ApiPostSetBusinessAccountNameRequest) LastName(lastName string) ApiPostSetBusinessAccountNameRequest {
 	r.lastName = &lastName
 	return r
 }
 
-func (r ApiSetBusinessAccountNamePostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.SetBusinessAccountNamePostExecute(r)
+func (r ApiPostSetBusinessAccountNameRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostSetBusinessAccountNameExecute(r)
 }
 
 /*
-SetBusinessAccountNamePost Method for SetBusinessAccountNamePost
+PostSetBusinessAccountName setBusinessAccountName
 
 Changes the first and last name of a managed business account. Requires the *can\_change\_name* business bot right. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetBusinessAccountNamePostRequest
+ @return ApiPostSetBusinessAccountNameRequest
 */
-func (a *DefaultAPIService) SetBusinessAccountNamePost(ctx context.Context) ApiSetBusinessAccountNamePostRequest {
-	return ApiSetBusinessAccountNamePostRequest{
+func (a *DefaultAPIService) PostSetBusinessAccountName(ctx context.Context) ApiPostSetBusinessAccountNameRequest {
+	return ApiPostSetBusinessAccountNameRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) SetBusinessAccountNamePostExecute(r ApiSetBusinessAccountNamePostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostSetBusinessAccountNameExecute(r ApiPostSetBusinessAccountNameRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SetBusinessAccountNamePost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetBusinessAccountName")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -20588,6 +21809,17 @@ func (a *DefaultAPIService) SetBusinessAccountNamePostExecute(r ApiSetBusinessAc
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -20611,7 +21843,7 @@ func (a *DefaultAPIService) SetBusinessAccountNamePostExecute(r ApiSetBusinessAc
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSetBusinessAccountProfilePhotoPostRequest struct {
+type ApiPostSetBusinessAccountProfilePhotoRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	businessConnectionId *string
@@ -20620,52 +21852,52 @@ type ApiSetBusinessAccountProfilePhotoPostRequest struct {
 }
 
 // Unique identifier of the business connection
-func (r ApiSetBusinessAccountProfilePhotoPostRequest) BusinessConnectionId(businessConnectionId string) ApiSetBusinessAccountProfilePhotoPostRequest {
+func (r ApiPostSetBusinessAccountProfilePhotoRequest) BusinessConnectionId(businessConnectionId string) ApiPostSetBusinessAccountProfilePhotoRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
-func (r ApiSetBusinessAccountProfilePhotoPostRequest) Photo(photo InputProfilePhoto) ApiSetBusinessAccountProfilePhotoPostRequest {
+func (r ApiPostSetBusinessAccountProfilePhotoRequest) Photo(photo InputProfilePhoto) ApiPostSetBusinessAccountProfilePhotoRequest {
 	r.photo = &photo
 	return r
 }
 
 // Pass True to set the public photo, which will be visible even if the main photo is hidden by the business account&#39;s privacy settings. An account can have only one public photo.
-func (r ApiSetBusinessAccountProfilePhotoPostRequest) IsPublic(isPublic bool) ApiSetBusinessAccountProfilePhotoPostRequest {
+func (r ApiPostSetBusinessAccountProfilePhotoRequest) IsPublic(isPublic bool) ApiPostSetBusinessAccountProfilePhotoRequest {
 	r.isPublic = &isPublic
 	return r
 }
 
-func (r ApiSetBusinessAccountProfilePhotoPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.SetBusinessAccountProfilePhotoPostExecute(r)
+func (r ApiPostSetBusinessAccountProfilePhotoRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostSetBusinessAccountProfilePhotoExecute(r)
 }
 
 /*
-SetBusinessAccountProfilePhotoPost Method for SetBusinessAccountProfilePhotoPost
+PostSetBusinessAccountProfilePhoto setBusinessAccountProfilePhoto
 
 Changes the profile photo of a managed business account. Requires the *can\_edit\_profile\_photo* business bot right. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetBusinessAccountProfilePhotoPostRequest
+ @return ApiPostSetBusinessAccountProfilePhotoRequest
 */
-func (a *DefaultAPIService) SetBusinessAccountProfilePhotoPost(ctx context.Context) ApiSetBusinessAccountProfilePhotoPostRequest {
-	return ApiSetBusinessAccountProfilePhotoPostRequest{
+func (a *DefaultAPIService) PostSetBusinessAccountProfilePhoto(ctx context.Context) ApiPostSetBusinessAccountProfilePhotoRequest {
+	return ApiPostSetBusinessAccountProfilePhotoRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) SetBusinessAccountProfilePhotoPostExecute(r ApiSetBusinessAccountProfilePhotoPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostSetBusinessAccountProfilePhotoExecute(r ApiPostSetBusinessAccountProfilePhotoRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SetBusinessAccountProfilePhotoPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetBusinessAccountProfilePhoto")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -20726,6 +21958,17 @@ func (a *DefaultAPIService) SetBusinessAccountProfilePhotoPostExecute(r ApiSetBu
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -20749,7 +21992,7 @@ func (a *DefaultAPIService) SetBusinessAccountProfilePhotoPostExecute(r ApiSetBu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSetBusinessAccountUsernamePostRequest struct {
+type ApiPostSetBusinessAccountUsernameRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	businessConnectionId *string
@@ -20757,47 +22000,47 @@ type ApiSetBusinessAccountUsernamePostRequest struct {
 }
 
 // Unique identifier of the business connection
-func (r ApiSetBusinessAccountUsernamePostRequest) BusinessConnectionId(businessConnectionId string) ApiSetBusinessAccountUsernamePostRequest {
+func (r ApiPostSetBusinessAccountUsernameRequest) BusinessConnectionId(businessConnectionId string) ApiPostSetBusinessAccountUsernameRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
 // The new value of the username for the business account; 0-32 characters
-func (r ApiSetBusinessAccountUsernamePostRequest) Username(username string) ApiSetBusinessAccountUsernamePostRequest {
+func (r ApiPostSetBusinessAccountUsernameRequest) Username(username string) ApiPostSetBusinessAccountUsernameRequest {
 	r.username = &username
 	return r
 }
 
-func (r ApiSetBusinessAccountUsernamePostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.SetBusinessAccountUsernamePostExecute(r)
+func (r ApiPostSetBusinessAccountUsernameRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostSetBusinessAccountUsernameExecute(r)
 }
 
 /*
-SetBusinessAccountUsernamePost Method for SetBusinessAccountUsernamePost
+PostSetBusinessAccountUsername setBusinessAccountUsername
 
 Changes the username of a managed business account. Requires the *can\_change\_username* business bot right. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetBusinessAccountUsernamePostRequest
+ @return ApiPostSetBusinessAccountUsernameRequest
 */
-func (a *DefaultAPIService) SetBusinessAccountUsernamePost(ctx context.Context) ApiSetBusinessAccountUsernamePostRequest {
-	return ApiSetBusinessAccountUsernamePostRequest{
+func (a *DefaultAPIService) PostSetBusinessAccountUsername(ctx context.Context) ApiPostSetBusinessAccountUsernameRequest {
+	return ApiPostSetBusinessAccountUsernameRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) SetBusinessAccountUsernamePostExecute(r ApiSetBusinessAccountUsernamePostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostSetBusinessAccountUsernameExecute(r ApiPostSetBusinessAccountUsernameRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SetBusinessAccountUsernamePost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetBusinessAccountUsername")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -20854,6 +22097,17 @@ func (a *DefaultAPIService) SetBusinessAccountUsernamePostExecute(r ApiSetBusine
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -20877,61 +22131,61 @@ func (a *DefaultAPIService) SetBusinessAccountUsernamePostExecute(r ApiSetBusine
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSetChatAdministratorCustomTitlePostRequest struct {
+type ApiPostSetChatAdministratorCustomTitleRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *RestrictChatMemberPostRequestChatId
+	chatId *PostRestrictChatMemberRequestChatId
 	userId *int32
 	customTitle *string
 }
 
-func (r ApiSetChatAdministratorCustomTitlePostRequest) ChatId(chatId RestrictChatMemberPostRequestChatId) ApiSetChatAdministratorCustomTitlePostRequest {
+func (r ApiPostSetChatAdministratorCustomTitleRequest) ChatId(chatId PostRestrictChatMemberRequestChatId) ApiPostSetChatAdministratorCustomTitleRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Unique identifier of the target user
-func (r ApiSetChatAdministratorCustomTitlePostRequest) UserId(userId int32) ApiSetChatAdministratorCustomTitlePostRequest {
+func (r ApiPostSetChatAdministratorCustomTitleRequest) UserId(userId int32) ApiPostSetChatAdministratorCustomTitleRequest {
 	r.userId = &userId
 	return r
 }
 
 // New custom title for the administrator; 0-16 characters, emoji are not allowed
-func (r ApiSetChatAdministratorCustomTitlePostRequest) CustomTitle(customTitle string) ApiSetChatAdministratorCustomTitlePostRequest {
+func (r ApiPostSetChatAdministratorCustomTitleRequest) CustomTitle(customTitle string) ApiPostSetChatAdministratorCustomTitleRequest {
 	r.customTitle = &customTitle
 	return r
 }
 
-func (r ApiSetChatAdministratorCustomTitlePostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.SetChatAdministratorCustomTitlePostExecute(r)
+func (r ApiPostSetChatAdministratorCustomTitleRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostSetChatAdministratorCustomTitleExecute(r)
 }
 
 /*
-SetChatAdministratorCustomTitlePost Method for SetChatAdministratorCustomTitlePost
+PostSetChatAdministratorCustomTitle setChatAdministratorCustomTitle
 
 Use this method to set a custom title for an administrator in a supergroup promoted by the bot. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetChatAdministratorCustomTitlePostRequest
+ @return ApiPostSetChatAdministratorCustomTitleRequest
 */
-func (a *DefaultAPIService) SetChatAdministratorCustomTitlePost(ctx context.Context) ApiSetChatAdministratorCustomTitlePostRequest {
-	return ApiSetChatAdministratorCustomTitlePostRequest{
+func (a *DefaultAPIService) PostSetChatAdministratorCustomTitle(ctx context.Context) ApiPostSetChatAdministratorCustomTitleRequest {
+	return ApiPostSetChatAdministratorCustomTitleRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) SetChatAdministratorCustomTitlePostExecute(r ApiSetChatAdministratorCustomTitlePostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostSetChatAdministratorCustomTitleExecute(r ApiPostSetChatAdministratorCustomTitleRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SetChatAdministratorCustomTitlePost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetChatAdministratorCustomTitle")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -20999,6 +22253,17 @@ func (a *DefaultAPIService) SetChatAdministratorCustomTitlePostExecute(r ApiSetC
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -21022,54 +22287,54 @@ func (a *DefaultAPIService) SetChatAdministratorCustomTitlePostExecute(r ApiSetC
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSetChatDescriptionPostRequest struct {
+type ApiPostSetChatDescriptionRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
+	chatId *PostSendMessageRequestChatId
 	description *string
 }
 
-func (r ApiSetChatDescriptionPostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiSetChatDescriptionPostRequest {
+func (r ApiPostSetChatDescriptionRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSetChatDescriptionRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // New chat description, 0-255 characters
-func (r ApiSetChatDescriptionPostRequest) Description(description string) ApiSetChatDescriptionPostRequest {
+func (r ApiPostSetChatDescriptionRequest) Description(description string) ApiPostSetChatDescriptionRequest {
 	r.description = &description
 	return r
 }
 
-func (r ApiSetChatDescriptionPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.SetChatDescriptionPostExecute(r)
+func (r ApiPostSetChatDescriptionRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostSetChatDescriptionExecute(r)
 }
 
 /*
-SetChatDescriptionPost Method for SetChatDescriptionPost
+PostSetChatDescription setChatDescription
 
 Use this method to change the description of a group, a supergroup or a channel. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetChatDescriptionPostRequest
+ @return ApiPostSetChatDescriptionRequest
 */
-func (a *DefaultAPIService) SetChatDescriptionPost(ctx context.Context) ApiSetChatDescriptionPostRequest {
-	return ApiSetChatDescriptionPostRequest{
+func (a *DefaultAPIService) PostSetChatDescription(ctx context.Context) ApiPostSetChatDescriptionRequest {
+	return ApiPostSetChatDescriptionRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) SetChatDescriptionPostExecute(r ApiSetChatDescriptionPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostSetChatDescriptionExecute(r ApiPostSetChatDescriptionRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SetChatDescriptionPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetChatDescription")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -21126,6 +22391,17 @@ func (a *DefaultAPIService) SetChatDescriptionPostExecute(r ApiSetChatDescriptio
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -21149,7 +22425,7 @@ func (a *DefaultAPIService) SetChatDescriptionPostExecute(r ApiSetChatDescriptio
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSetChatMenuButtonPostRequest struct {
+type ApiPostSetChatMenuButtonRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	chatId *int32
@@ -21157,46 +22433,46 @@ type ApiSetChatMenuButtonPostRequest struct {
 }
 
 // Unique identifier for the target private chat. If not specified, default bot&#39;s menu button will be changed
-func (r ApiSetChatMenuButtonPostRequest) ChatId(chatId int32) ApiSetChatMenuButtonPostRequest {
+func (r ApiPostSetChatMenuButtonRequest) ChatId(chatId int32) ApiPostSetChatMenuButtonRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiSetChatMenuButtonPostRequest) MenuButton(menuButton MenuButton) ApiSetChatMenuButtonPostRequest {
+func (r ApiPostSetChatMenuButtonRequest) MenuButton(menuButton MenuButton) ApiPostSetChatMenuButtonRequest {
 	r.menuButton = &menuButton
 	return r
 }
 
-func (r ApiSetChatMenuButtonPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.SetChatMenuButtonPostExecute(r)
+func (r ApiPostSetChatMenuButtonRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostSetChatMenuButtonExecute(r)
 }
 
 /*
-SetChatMenuButtonPost Method for SetChatMenuButtonPost
+PostSetChatMenuButton setChatMenuButton
 
 Use this method to change the bot's menu button in a private chat, or the default menu button. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetChatMenuButtonPostRequest
+ @return ApiPostSetChatMenuButtonRequest
 */
-func (a *DefaultAPIService) SetChatMenuButtonPost(ctx context.Context) ApiSetChatMenuButtonPostRequest {
-	return ApiSetChatMenuButtonPostRequest{
+func (a *DefaultAPIService) PostSetChatMenuButton(ctx context.Context) ApiPostSetChatMenuButtonRequest {
+	return ApiPostSetChatMenuButtonRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) SetChatMenuButtonPostExecute(r ApiSetChatMenuButtonPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostSetChatMenuButtonExecute(r ApiPostSetChatMenuButtonRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SetChatMenuButtonPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetChatMenuButton")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -21256,6 +22532,17 @@ func (a *DefaultAPIService) SetChatMenuButtonPostExecute(r ApiSetChatMenuButtonP
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -21279,60 +22566,60 @@ func (a *DefaultAPIService) SetChatMenuButtonPostExecute(r ApiSetChatMenuButtonP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSetChatPermissionsPostRequest struct {
+type ApiPostSetChatPermissionsRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *RestrictChatMemberPostRequestChatId
+	chatId *PostRestrictChatMemberRequestChatId
 	permissions *ChatPermissions
 	useIndependentChatPermissions *bool
 }
 
-func (r ApiSetChatPermissionsPostRequest) ChatId(chatId RestrictChatMemberPostRequestChatId) ApiSetChatPermissionsPostRequest {
+func (r ApiPostSetChatPermissionsRequest) ChatId(chatId PostRestrictChatMemberRequestChatId) ApiPostSetChatPermissionsRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiSetChatPermissionsPostRequest) Permissions(permissions ChatPermissions) ApiSetChatPermissionsPostRequest {
+func (r ApiPostSetChatPermissionsRequest) Permissions(permissions ChatPermissions) ApiPostSetChatPermissionsRequest {
 	r.permissions = &permissions
 	return r
 }
 
 // Pass *True* if chat permissions are set independently. Otherwise, the *can\\\\_send\\\\_other\\\\_messages* and *can\\\\_add\\\\_web\\\\_page\\\\_previews* permissions will imply the *can\\\\_send\\\\_messages*, *can\\\\_send\\\\_audios*, *can\\\\_send\\\\_documents*, *can\\\\_send\\\\_photos*, *can\\\\_send\\\\_videos*, *can\\\\_send\\\\_video\\\\_notes*, and *can\\\\_send\\\\_voice\\\\_notes* permissions; the *can\\\\_send\\\\_polls* permission will imply the *can\\\\_send\\\\_messages* permission.
-func (r ApiSetChatPermissionsPostRequest) UseIndependentChatPermissions(useIndependentChatPermissions bool) ApiSetChatPermissionsPostRequest {
+func (r ApiPostSetChatPermissionsRequest) UseIndependentChatPermissions(useIndependentChatPermissions bool) ApiPostSetChatPermissionsRequest {
 	r.useIndependentChatPermissions = &useIndependentChatPermissions
 	return r
 }
 
-func (r ApiSetChatPermissionsPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.SetChatPermissionsPostExecute(r)
+func (r ApiPostSetChatPermissionsRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostSetChatPermissionsExecute(r)
 }
 
 /*
-SetChatPermissionsPost Method for SetChatPermissionsPost
+PostSetChatPermissions setChatPermissions
 
 Use this method to set default chat permissions for all members. The bot must be an administrator in the group or a supergroup for this to work and must have the *can\_restrict\_members* administrator rights. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetChatPermissionsPostRequest
+ @return ApiPostSetChatPermissionsRequest
 */
-func (a *DefaultAPIService) SetChatPermissionsPost(ctx context.Context) ApiSetChatPermissionsPostRequest {
-	return ApiSetChatPermissionsPostRequest{
+func (a *DefaultAPIService) PostSetChatPermissions(ctx context.Context) ApiPostSetChatPermissionsRequest {
+	return ApiPostSetChatPermissionsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) SetChatPermissionsPostExecute(r ApiSetChatPermissionsPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostSetChatPermissionsExecute(r ApiPostSetChatPermissionsRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SetChatPermissionsPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetChatPermissions")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -21393,6 +22680,17 @@ func (a *DefaultAPIService) SetChatPermissionsPostExecute(r ApiSetChatPermission
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -21416,53 +22714,53 @@ func (a *DefaultAPIService) SetChatPermissionsPostExecute(r ApiSetChatPermission
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSetChatPhotoPostRequest struct {
+type ApiPostSetChatPhotoRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
+	chatId *PostSendMessageRequestChatId
 	photo *interface{}
 }
 
-func (r ApiSetChatPhotoPostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiSetChatPhotoPostRequest {
+func (r ApiPostSetChatPhotoRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSetChatPhotoRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiSetChatPhotoPostRequest) Photo(photo interface{}) ApiSetChatPhotoPostRequest {
+func (r ApiPostSetChatPhotoRequest) Photo(photo interface{}) ApiPostSetChatPhotoRequest {
 	r.photo = &photo
 	return r
 }
 
-func (r ApiSetChatPhotoPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.SetChatPhotoPostExecute(r)
+func (r ApiPostSetChatPhotoRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostSetChatPhotoExecute(r)
 }
 
 /*
-SetChatPhotoPost Method for SetChatPhotoPost
+PostSetChatPhoto setChatPhoto
 
 Use this method to set a new profile photo for the chat. Photos can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetChatPhotoPostRequest
+ @return ApiPostSetChatPhotoRequest
 */
-func (a *DefaultAPIService) SetChatPhotoPost(ctx context.Context) ApiSetChatPhotoPostRequest {
-	return ApiSetChatPhotoPostRequest{
+func (a *DefaultAPIService) PostSetChatPhoto(ctx context.Context) ApiPostSetChatPhotoRequest {
+	return ApiPostSetChatPhotoRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) SetChatPhotoPostExecute(r ApiSetChatPhotoPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostSetChatPhotoExecute(r ApiPostSetChatPhotoRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SetChatPhotoPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetChatPhoto")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -21520,6 +22818,17 @@ func (a *DefaultAPIService) SetChatPhotoPostExecute(r ApiSetChatPhotoPostRequest
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -21543,54 +22852,54 @@ func (a *DefaultAPIService) SetChatPhotoPostExecute(r ApiSetChatPhotoPostRequest
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSetChatStickerSetPostRequest struct {
+type ApiPostSetChatStickerSetRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *RestrictChatMemberPostRequestChatId
+	chatId *PostRestrictChatMemberRequestChatId
 	stickerSetName *string
 }
 
-func (r ApiSetChatStickerSetPostRequest) ChatId(chatId RestrictChatMemberPostRequestChatId) ApiSetChatStickerSetPostRequest {
+func (r ApiPostSetChatStickerSetRequest) ChatId(chatId PostRestrictChatMemberRequestChatId) ApiPostSetChatStickerSetRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Name of the sticker set to be set as the group sticker set
-func (r ApiSetChatStickerSetPostRequest) StickerSetName(stickerSetName string) ApiSetChatStickerSetPostRequest {
+func (r ApiPostSetChatStickerSetRequest) StickerSetName(stickerSetName string) ApiPostSetChatStickerSetRequest {
 	r.stickerSetName = &stickerSetName
 	return r
 }
 
-func (r ApiSetChatStickerSetPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.SetChatStickerSetPostExecute(r)
+func (r ApiPostSetChatStickerSetRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostSetChatStickerSetExecute(r)
 }
 
 /*
-SetChatStickerSetPost Method for SetChatStickerSetPost
+PostSetChatStickerSet setChatStickerSet
 
 Use this method to set a new group sticker set for a supergroup. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Use the field *can\_set\_sticker\_set* optionally returned in [getChat](https://core.telegram.org/bots/api/#getchat) requests to check if the bot can use this method. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetChatStickerSetPostRequest
+ @return ApiPostSetChatStickerSetRequest
 */
-func (a *DefaultAPIService) SetChatStickerSetPost(ctx context.Context) ApiSetChatStickerSetPostRequest {
-	return ApiSetChatStickerSetPostRequest{
+func (a *DefaultAPIService) PostSetChatStickerSet(ctx context.Context) ApiPostSetChatStickerSetRequest {
+	return ApiPostSetChatStickerSetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) SetChatStickerSetPostExecute(r ApiSetChatStickerSetPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostSetChatStickerSetExecute(r ApiPostSetChatStickerSetRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SetChatStickerSetPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetChatStickerSet")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -21648,6 +22957,17 @@ func (a *DefaultAPIService) SetChatStickerSetPostExecute(r ApiSetChatStickerSetP
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -21671,54 +22991,54 @@ func (a *DefaultAPIService) SetChatStickerSetPostExecute(r ApiSetChatStickerSetP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSetChatTitlePostRequest struct {
+type ApiPostSetChatTitleRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
+	chatId *PostSendMessageRequestChatId
 	title *string
 }
 
-func (r ApiSetChatTitlePostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiSetChatTitlePostRequest {
+func (r ApiPostSetChatTitleRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSetChatTitleRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // New chat title, 1-128 characters
-func (r ApiSetChatTitlePostRequest) Title(title string) ApiSetChatTitlePostRequest {
+func (r ApiPostSetChatTitleRequest) Title(title string) ApiPostSetChatTitleRequest {
 	r.title = &title
 	return r
 }
 
-func (r ApiSetChatTitlePostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.SetChatTitlePostExecute(r)
+func (r ApiPostSetChatTitleRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostSetChatTitleExecute(r)
 }
 
 /*
-SetChatTitlePost Method for SetChatTitlePost
+PostSetChatTitle setChatTitle
 
 Use this method to change the title of a chat. Titles can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetChatTitlePostRequest
+ @return ApiPostSetChatTitleRequest
 */
-func (a *DefaultAPIService) SetChatTitlePost(ctx context.Context) ApiSetChatTitlePostRequest {
-	return ApiSetChatTitlePostRequest{
+func (a *DefaultAPIService) PostSetChatTitle(ctx context.Context) ApiPostSetChatTitleRequest {
+	return ApiPostSetChatTitleRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) SetChatTitlePostExecute(r ApiSetChatTitlePostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostSetChatTitleExecute(r ApiPostSetChatTitleRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SetChatTitlePost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetChatTitle")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -21782,6 +23102,17 @@ func (a *DefaultAPIService) SetChatTitlePostExecute(r ApiSetChatTitlePostRequest
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -21805,7 +23136,7 @@ func (a *DefaultAPIService) SetChatTitlePostExecute(r ApiSetChatTitlePostRequest
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSetCustomEmojiStickerSetThumbnailPostRequest struct {
+type ApiPostSetCustomEmojiStickerSetThumbnailRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	name *string
@@ -21813,47 +23144,47 @@ type ApiSetCustomEmojiStickerSetThumbnailPostRequest struct {
 }
 
 // Sticker set name
-func (r ApiSetCustomEmojiStickerSetThumbnailPostRequest) Name(name string) ApiSetCustomEmojiStickerSetThumbnailPostRequest {
+func (r ApiPostSetCustomEmojiStickerSetThumbnailRequest) Name(name string) ApiPostSetCustomEmojiStickerSetThumbnailRequest {
 	r.name = &name
 	return r
 }
 
 // Custom emoji identifier of a sticker from the sticker set; pass an empty string to drop the thumbnail and use the first sticker as the thumbnail.
-func (r ApiSetCustomEmojiStickerSetThumbnailPostRequest) CustomEmojiId(customEmojiId string) ApiSetCustomEmojiStickerSetThumbnailPostRequest {
+func (r ApiPostSetCustomEmojiStickerSetThumbnailRequest) CustomEmojiId(customEmojiId string) ApiPostSetCustomEmojiStickerSetThumbnailRequest {
 	r.customEmojiId = &customEmojiId
 	return r
 }
 
-func (r ApiSetCustomEmojiStickerSetThumbnailPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.SetCustomEmojiStickerSetThumbnailPostExecute(r)
+func (r ApiPostSetCustomEmojiStickerSetThumbnailRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostSetCustomEmojiStickerSetThumbnailExecute(r)
 }
 
 /*
-SetCustomEmojiStickerSetThumbnailPost Method for SetCustomEmojiStickerSetThumbnailPost
+PostSetCustomEmojiStickerSetThumbnail setCustomEmojiStickerSetThumbnail
 
 Use this method to set the thumbnail of a custom emoji sticker set. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetCustomEmojiStickerSetThumbnailPostRequest
+ @return ApiPostSetCustomEmojiStickerSetThumbnailRequest
 */
-func (a *DefaultAPIService) SetCustomEmojiStickerSetThumbnailPost(ctx context.Context) ApiSetCustomEmojiStickerSetThumbnailPostRequest {
-	return ApiSetCustomEmojiStickerSetThumbnailPostRequest{
+func (a *DefaultAPIService) PostSetCustomEmojiStickerSetThumbnail(ctx context.Context) ApiPostSetCustomEmojiStickerSetThumbnailRequest {
+	return ApiPostSetCustomEmojiStickerSetThumbnailRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) SetCustomEmojiStickerSetThumbnailPostExecute(r ApiSetCustomEmojiStickerSetThumbnailPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostSetCustomEmojiStickerSetThumbnailExecute(r ApiPostSetCustomEmojiStickerSetThumbnailRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SetCustomEmojiStickerSetThumbnailPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetCustomEmojiStickerSetThumbnail")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -21910,6 +23241,17 @@ func (a *DefaultAPIService) SetCustomEmojiStickerSetThumbnailPostExecute(r ApiSe
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -21933,7 +23275,7 @@ func (a *DefaultAPIService) SetCustomEmojiStickerSetThumbnailPostExecute(r ApiSe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSetGameScorePostRequest struct {
+type ApiPostSetGameScoreRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	userId *int32
@@ -21946,77 +23288,77 @@ type ApiSetGameScorePostRequest struct {
 }
 
 // User identifier
-func (r ApiSetGameScorePostRequest) UserId(userId int32) ApiSetGameScorePostRequest {
+func (r ApiPostSetGameScoreRequest) UserId(userId int32) ApiPostSetGameScoreRequest {
 	r.userId = &userId
 	return r
 }
 
 // New score, must be non-negative
-func (r ApiSetGameScorePostRequest) Score(score int32) ApiSetGameScorePostRequest {
+func (r ApiPostSetGameScoreRequest) Score(score int32) ApiPostSetGameScoreRequest {
 	r.score = &score
 	return r
 }
 
 // Pass *True* if the high score is allowed to decrease. This can be useful when fixing mistakes or banning cheaters
-func (r ApiSetGameScorePostRequest) Force(force bool) ApiSetGameScorePostRequest {
+func (r ApiPostSetGameScoreRequest) Force(force bool) ApiPostSetGameScoreRequest {
 	r.force = &force
 	return r
 }
 
 // Pass *True* if the game message should not be automatically edited to include the current scoreboard
-func (r ApiSetGameScorePostRequest) DisableEditMessage(disableEditMessage bool) ApiSetGameScorePostRequest {
+func (r ApiPostSetGameScoreRequest) DisableEditMessage(disableEditMessage bool) ApiPostSetGameScoreRequest {
 	r.disableEditMessage = &disableEditMessage
 	return r
 }
 
 // Required if *inline\\\\_message\\\\_id* is not specified. Unique identifier for the target chat
-func (r ApiSetGameScorePostRequest) ChatId(chatId int32) ApiSetGameScorePostRequest {
+func (r ApiPostSetGameScoreRequest) ChatId(chatId int32) ApiPostSetGameScoreRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Required if *inline\\\\_message\\\\_id* is not specified. Identifier of the sent message
-func (r ApiSetGameScorePostRequest) MessageId(messageId int32) ApiSetGameScorePostRequest {
+func (r ApiPostSetGameScoreRequest) MessageId(messageId int32) ApiPostSetGameScoreRequest {
 	r.messageId = &messageId
 	return r
 }
 
 // Required if *chat\\\\_id* and *message\\\\_id* are not specified. Identifier of the inline message
-func (r ApiSetGameScorePostRequest) InlineMessageId(inlineMessageId string) ApiSetGameScorePostRequest {
+func (r ApiPostSetGameScoreRequest) InlineMessageId(inlineMessageId string) ApiPostSetGameScoreRequest {
 	r.inlineMessageId = &inlineMessageId
 	return r
 }
 
-func (r ApiSetGameScorePostRequest) Execute() (*EditMessageTextPost200Response, *http.Response, error) {
-	return r.ApiService.SetGameScorePostExecute(r)
+func (r ApiPostSetGameScoreRequest) Execute() (*PostEditMessageText200Response, *http.Response, error) {
+	return r.ApiService.PostSetGameScoreExecute(r)
 }
 
 /*
-SetGameScorePost Method for SetGameScorePost
+PostSetGameScore setGameScore
 
 Use this method to set the score of the specified user in a game message. On success, if the message is not an inline message, the [Message](https://core.telegram.org/bots/api/#message) is returned, otherwise *True* is returned. Returns an error, if the new score is not greater than the user's current score in the chat and *force* is *False*.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetGameScorePostRequest
+ @return ApiPostSetGameScoreRequest
 */
-func (a *DefaultAPIService) SetGameScorePost(ctx context.Context) ApiSetGameScorePostRequest {
-	return ApiSetGameScorePostRequest{
+func (a *DefaultAPIService) PostSetGameScore(ctx context.Context) ApiPostSetGameScoreRequest {
+	return ApiPostSetGameScoreRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return EditMessageTextPost200Response
-func (a *DefaultAPIService) SetGameScorePostExecute(r ApiSetGameScorePostRequest) (*EditMessageTextPost200Response, *http.Response, error) {
+//  @return PostEditMessageText200Response
+func (a *DefaultAPIService) PostSetGameScoreExecute(r ApiPostSetGameScoreRequest) (*PostEditMessageText200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *EditMessageTextPost200Response
+		localVarReturnValue  *PostEditMessageText200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SetGameScorePost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetGameScore")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -22089,6 +23431,17 @@ func (a *DefaultAPIService) SetGameScorePostExecute(r ApiSetGameScorePostRequest
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -22112,68 +23465,68 @@ func (a *DefaultAPIService) SetGameScorePostExecute(r ApiSetGameScorePostRequest
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSetMessageReactionPostRequest struct {
+type ApiPostSetMessageReactionRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
+	chatId *PostSendMessageRequestChatId
 	messageId *int32
 	reaction *[]ReactionType
 	isBig *bool
 }
 
-func (r ApiSetMessageReactionPostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiSetMessageReactionPostRequest {
+func (r ApiPostSetMessageReactionRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSetMessageReactionRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Identifier of the target message. If the message belongs to a media group, the reaction is set to the first non-deleted message in the group instead.
-func (r ApiSetMessageReactionPostRequest) MessageId(messageId int32) ApiSetMessageReactionPostRequest {
+func (r ApiPostSetMessageReactionRequest) MessageId(messageId int32) ApiPostSetMessageReactionRequest {
 	r.messageId = &messageId
 	return r
 }
 
 // A JSON-serialized list of reaction types to set on the message. Currently, as non-premium users, bots can set up to one reaction per message. A custom emoji reaction can be used if it is either already present on the message or explicitly allowed by chat administrators. Paid reactions can&#39;t be used by bots.
-func (r ApiSetMessageReactionPostRequest) Reaction(reaction []ReactionType) ApiSetMessageReactionPostRequest {
+func (r ApiPostSetMessageReactionRequest) Reaction(reaction []ReactionType) ApiPostSetMessageReactionRequest {
 	r.reaction = &reaction
 	return r
 }
 
 // Pass *True* to set the reaction with a big animation
-func (r ApiSetMessageReactionPostRequest) IsBig(isBig bool) ApiSetMessageReactionPostRequest {
+func (r ApiPostSetMessageReactionRequest) IsBig(isBig bool) ApiPostSetMessageReactionRequest {
 	r.isBig = &isBig
 	return r
 }
 
-func (r ApiSetMessageReactionPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.SetMessageReactionPostExecute(r)
+func (r ApiPostSetMessageReactionRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostSetMessageReactionExecute(r)
 }
 
 /*
-SetMessageReactionPost Method for SetMessageReactionPost
+PostSetMessageReaction setMessageReaction
 
 Use this method to change the chosen reactions on a message. Service messages of some types can't be reacted to. Automatically forwarded messages from a channel to its discussion group have the same available reactions as messages in the channel. Bots can't use paid reactions. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetMessageReactionPostRequest
+ @return ApiPostSetMessageReactionRequest
 */
-func (a *DefaultAPIService) SetMessageReactionPost(ctx context.Context) ApiSetMessageReactionPostRequest {
-	return ApiSetMessageReactionPostRequest{
+func (a *DefaultAPIService) PostSetMessageReaction(ctx context.Context) ApiPostSetMessageReactionRequest {
+	return ApiPostSetMessageReactionRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) SetMessageReactionPostExecute(r ApiSetMessageReactionPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostSetMessageReactionExecute(r ApiPostSetMessageReactionRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SetMessageReactionPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetMessageReaction")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -22237,6 +23590,17 @@ func (a *DefaultAPIService) SetMessageReactionPostExecute(r ApiSetMessageReactio
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -22260,7 +23624,7 @@ func (a *DefaultAPIService) SetMessageReactionPostExecute(r ApiSetMessageReactio
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSetMyCommandsPostRequest struct {
+type ApiPostSetMyCommandsRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	commands *[]BotCommand
@@ -22269,52 +23633,52 @@ type ApiSetMyCommandsPostRequest struct {
 }
 
 // A JSON-serialized list of bot commands to be set as the list of the bot&#39;s commands. At most 100 commands can be specified.
-func (r ApiSetMyCommandsPostRequest) Commands(commands []BotCommand) ApiSetMyCommandsPostRequest {
+func (r ApiPostSetMyCommandsRequest) Commands(commands []BotCommand) ApiPostSetMyCommandsRequest {
 	r.commands = &commands
 	return r
 }
 
-func (r ApiSetMyCommandsPostRequest) Scope(scope BotCommandScope) ApiSetMyCommandsPostRequest {
+func (r ApiPostSetMyCommandsRequest) Scope(scope BotCommandScope) ApiPostSetMyCommandsRequest {
 	r.scope = &scope
 	return r
 }
 
 // A two-letter ISO 639-1 language code. If empty, commands will be applied to all users from the given scope, for whose language there are no dedicated commands
-func (r ApiSetMyCommandsPostRequest) LanguageCode(languageCode string) ApiSetMyCommandsPostRequest {
+func (r ApiPostSetMyCommandsRequest) LanguageCode(languageCode string) ApiPostSetMyCommandsRequest {
 	r.languageCode = &languageCode
 	return r
 }
 
-func (r ApiSetMyCommandsPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.SetMyCommandsPostExecute(r)
+func (r ApiPostSetMyCommandsRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostSetMyCommandsExecute(r)
 }
 
 /*
-SetMyCommandsPost Method for SetMyCommandsPost
+PostSetMyCommands setMyCommands
 
 Use this method to change the list of the bot's commands. See [this manual](https://core.telegram.org/bots/features#commands) for more details about bot commands. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetMyCommandsPostRequest
+ @return ApiPostSetMyCommandsRequest
 */
-func (a *DefaultAPIService) SetMyCommandsPost(ctx context.Context) ApiSetMyCommandsPostRequest {
-	return ApiSetMyCommandsPostRequest{
+func (a *DefaultAPIService) PostSetMyCommands(ctx context.Context) ApiPostSetMyCommandsRequest {
+	return ApiPostSetMyCommandsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) SetMyCommandsPostExecute(r ApiSetMyCommandsPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostSetMyCommandsExecute(r ApiPostSetMyCommandsRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SetMyCommandsPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetMyCommands")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -22378,6 +23742,17 @@ func (a *DefaultAPIService) SetMyCommandsPostExecute(r ApiSetMyCommandsPostReque
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -22401,54 +23776,54 @@ func (a *DefaultAPIService) SetMyCommandsPostExecute(r ApiSetMyCommandsPostReque
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSetMyDefaultAdministratorRightsPostRequest struct {
+type ApiPostSetMyDefaultAdministratorRightsRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	rights *ChatAdministratorRights
 	forChannels *bool
 }
 
-func (r ApiSetMyDefaultAdministratorRightsPostRequest) Rights(rights ChatAdministratorRights) ApiSetMyDefaultAdministratorRightsPostRequest {
+func (r ApiPostSetMyDefaultAdministratorRightsRequest) Rights(rights ChatAdministratorRights) ApiPostSetMyDefaultAdministratorRightsRequest {
 	r.rights = &rights
 	return r
 }
 
 // Pass *True* to change the default administrator rights of the bot in channels. Otherwise, the default administrator rights of the bot for groups and supergroups will be changed.
-func (r ApiSetMyDefaultAdministratorRightsPostRequest) ForChannels(forChannels bool) ApiSetMyDefaultAdministratorRightsPostRequest {
+func (r ApiPostSetMyDefaultAdministratorRightsRequest) ForChannels(forChannels bool) ApiPostSetMyDefaultAdministratorRightsRequest {
 	r.forChannels = &forChannels
 	return r
 }
 
-func (r ApiSetMyDefaultAdministratorRightsPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.SetMyDefaultAdministratorRightsPostExecute(r)
+func (r ApiPostSetMyDefaultAdministratorRightsRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostSetMyDefaultAdministratorRightsExecute(r)
 }
 
 /*
-SetMyDefaultAdministratorRightsPost Method for SetMyDefaultAdministratorRightsPost
+PostSetMyDefaultAdministratorRights setMyDefaultAdministratorRights
 
 Use this method to change the default administrator rights requested by the bot when it's added as an administrator to groups or channels. These rights will be suggested to users, but they are free to modify the list before adding the bot. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetMyDefaultAdministratorRightsPostRequest
+ @return ApiPostSetMyDefaultAdministratorRightsRequest
 */
-func (a *DefaultAPIService) SetMyDefaultAdministratorRightsPost(ctx context.Context) ApiSetMyDefaultAdministratorRightsPostRequest {
-	return ApiSetMyDefaultAdministratorRightsPostRequest{
+func (a *DefaultAPIService) PostSetMyDefaultAdministratorRights(ctx context.Context) ApiPostSetMyDefaultAdministratorRightsRequest {
+	return ApiPostSetMyDefaultAdministratorRightsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) SetMyDefaultAdministratorRightsPostExecute(r ApiSetMyDefaultAdministratorRightsPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostSetMyDefaultAdministratorRightsExecute(r ApiPostSetMyDefaultAdministratorRightsRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SetMyDefaultAdministratorRightsPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetMyDefaultAdministratorRights")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -22508,6 +23883,17 @@ func (a *DefaultAPIService) SetMyDefaultAdministratorRightsPostExecute(r ApiSetM
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -22531,7 +23917,7 @@ func (a *DefaultAPIService) SetMyDefaultAdministratorRightsPostExecute(r ApiSetM
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSetMyDescriptionPostRequest struct {
+type ApiPostSetMyDescriptionRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	description *string
@@ -22539,47 +23925,47 @@ type ApiSetMyDescriptionPostRequest struct {
 }
 
 // New bot description; 0-512 characters. Pass an empty string to remove the dedicated description for the given language.
-func (r ApiSetMyDescriptionPostRequest) Description(description string) ApiSetMyDescriptionPostRequest {
+func (r ApiPostSetMyDescriptionRequest) Description(description string) ApiPostSetMyDescriptionRequest {
 	r.description = &description
 	return r
 }
 
 // A two-letter ISO 639-1 language code. If empty, the description will be applied to all users for whose language there is no dedicated description.
-func (r ApiSetMyDescriptionPostRequest) LanguageCode(languageCode string) ApiSetMyDescriptionPostRequest {
+func (r ApiPostSetMyDescriptionRequest) LanguageCode(languageCode string) ApiPostSetMyDescriptionRequest {
 	r.languageCode = &languageCode
 	return r
 }
 
-func (r ApiSetMyDescriptionPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.SetMyDescriptionPostExecute(r)
+func (r ApiPostSetMyDescriptionRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostSetMyDescriptionExecute(r)
 }
 
 /*
-SetMyDescriptionPost Method for SetMyDescriptionPost
+PostSetMyDescription setMyDescription
 
 Use this method to change the bot's description, which is shown in the chat with the bot if the chat is empty. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetMyDescriptionPostRequest
+ @return ApiPostSetMyDescriptionRequest
 */
-func (a *DefaultAPIService) SetMyDescriptionPost(ctx context.Context) ApiSetMyDescriptionPostRequest {
-	return ApiSetMyDescriptionPostRequest{
+func (a *DefaultAPIService) PostSetMyDescription(ctx context.Context) ApiPostSetMyDescriptionRequest {
+	return ApiPostSetMyDescriptionRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) SetMyDescriptionPostExecute(r ApiSetMyDescriptionPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostSetMyDescriptionExecute(r ApiPostSetMyDescriptionRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SetMyDescriptionPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetMyDescription")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -22635,6 +24021,17 @@ func (a *DefaultAPIService) SetMyDescriptionPostExecute(r ApiSetMyDescriptionPos
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -22658,7 +24055,7 @@ func (a *DefaultAPIService) SetMyDescriptionPostExecute(r ApiSetMyDescriptionPos
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSetMyNamePostRequest struct {
+type ApiPostSetMyNameRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	name *string
@@ -22666,47 +24063,47 @@ type ApiSetMyNamePostRequest struct {
 }
 
 // New bot name; 0-64 characters. Pass an empty string to remove the dedicated name for the given language.
-func (r ApiSetMyNamePostRequest) Name(name string) ApiSetMyNamePostRequest {
+func (r ApiPostSetMyNameRequest) Name(name string) ApiPostSetMyNameRequest {
 	r.name = &name
 	return r
 }
 
 // A two-letter ISO 639-1 language code. If empty, the name will be shown to all users for whose language there is no dedicated name.
-func (r ApiSetMyNamePostRequest) LanguageCode(languageCode string) ApiSetMyNamePostRequest {
+func (r ApiPostSetMyNameRequest) LanguageCode(languageCode string) ApiPostSetMyNameRequest {
 	r.languageCode = &languageCode
 	return r
 }
 
-func (r ApiSetMyNamePostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.SetMyNamePostExecute(r)
+func (r ApiPostSetMyNameRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostSetMyNameExecute(r)
 }
 
 /*
-SetMyNamePost Method for SetMyNamePost
+PostSetMyName setMyName
 
 Use this method to change the bot's name. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetMyNamePostRequest
+ @return ApiPostSetMyNameRequest
 */
-func (a *DefaultAPIService) SetMyNamePost(ctx context.Context) ApiSetMyNamePostRequest {
-	return ApiSetMyNamePostRequest{
+func (a *DefaultAPIService) PostSetMyName(ctx context.Context) ApiPostSetMyNameRequest {
+	return ApiPostSetMyNameRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) SetMyNamePostExecute(r ApiSetMyNamePostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostSetMyNameExecute(r ApiPostSetMyNameRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SetMyNamePost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetMyName")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -22762,6 +24159,17 @@ func (a *DefaultAPIService) SetMyNamePostExecute(r ApiSetMyNamePostRequest) (*Se
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -22785,7 +24193,7 @@ func (a *DefaultAPIService) SetMyNamePostExecute(r ApiSetMyNamePostRequest) (*Se
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSetMyShortDescriptionPostRequest struct {
+type ApiPostSetMyShortDescriptionRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	shortDescription *string
@@ -22793,47 +24201,47 @@ type ApiSetMyShortDescriptionPostRequest struct {
 }
 
 // New short description for the bot; 0-120 characters. Pass an empty string to remove the dedicated short description for the given language.
-func (r ApiSetMyShortDescriptionPostRequest) ShortDescription(shortDescription string) ApiSetMyShortDescriptionPostRequest {
+func (r ApiPostSetMyShortDescriptionRequest) ShortDescription(shortDescription string) ApiPostSetMyShortDescriptionRequest {
 	r.shortDescription = &shortDescription
 	return r
 }
 
 // A two-letter ISO 639-1 language code. If empty, the short description will be applied to all users for whose language there is no dedicated short description.
-func (r ApiSetMyShortDescriptionPostRequest) LanguageCode(languageCode string) ApiSetMyShortDescriptionPostRequest {
+func (r ApiPostSetMyShortDescriptionRequest) LanguageCode(languageCode string) ApiPostSetMyShortDescriptionRequest {
 	r.languageCode = &languageCode
 	return r
 }
 
-func (r ApiSetMyShortDescriptionPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.SetMyShortDescriptionPostExecute(r)
+func (r ApiPostSetMyShortDescriptionRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostSetMyShortDescriptionExecute(r)
 }
 
 /*
-SetMyShortDescriptionPost Method for SetMyShortDescriptionPost
+PostSetMyShortDescription setMyShortDescription
 
 Use this method to change the bot's short description, which is shown on the bot's profile page and is sent together with the link when users share the bot. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetMyShortDescriptionPostRequest
+ @return ApiPostSetMyShortDescriptionRequest
 */
-func (a *DefaultAPIService) SetMyShortDescriptionPost(ctx context.Context) ApiSetMyShortDescriptionPostRequest {
-	return ApiSetMyShortDescriptionPostRequest{
+func (a *DefaultAPIService) PostSetMyShortDescription(ctx context.Context) ApiPostSetMyShortDescriptionRequest {
+	return ApiPostSetMyShortDescriptionRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) SetMyShortDescriptionPostExecute(r ApiSetMyShortDescriptionPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostSetMyShortDescriptionExecute(r ApiPostSetMyShortDescriptionRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SetMyShortDescriptionPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetMyShortDescription")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -22889,6 +24297,17 @@ func (a *DefaultAPIService) SetMyShortDescriptionPostExecute(r ApiSetMyShortDesc
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -22912,7 +24331,7 @@ func (a *DefaultAPIService) SetMyShortDescriptionPostExecute(r ApiSetMyShortDesc
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSetPassportDataErrorsPostRequest struct {
+type ApiPostSetPassportDataErrorsRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	userId *int32
@@ -22920,49 +24339,49 @@ type ApiSetPassportDataErrorsPostRequest struct {
 }
 
 // User identifier
-func (r ApiSetPassportDataErrorsPostRequest) UserId(userId int32) ApiSetPassportDataErrorsPostRequest {
+func (r ApiPostSetPassportDataErrorsRequest) UserId(userId int32) ApiPostSetPassportDataErrorsRequest {
 	r.userId = &userId
 	return r
 }
 
 // A JSON-serialized array describing the errors
-func (r ApiSetPassportDataErrorsPostRequest) Errors(errors []PassportElementError) ApiSetPassportDataErrorsPostRequest {
+func (r ApiPostSetPassportDataErrorsRequest) Errors(errors []PassportElementError) ApiPostSetPassportDataErrorsRequest {
 	r.errors = &errors
 	return r
 }
 
-func (r ApiSetPassportDataErrorsPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.SetPassportDataErrorsPostExecute(r)
+func (r ApiPostSetPassportDataErrorsRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostSetPassportDataErrorsExecute(r)
 }
 
 /*
-SetPassportDataErrorsPost Method for SetPassportDataErrorsPost
+PostSetPassportDataErrors setPassportDataErrors
 
 Informs a user that some of the Telegram Passport elements they provided contains errors. The user will not be able to re-submit their Passport to you until the errors are fixed (the contents of the field for which you returned the error must change). Returns *True* on success.
 
 Use this if the data submitted by the user doesn't satisfy the standards your service requires for any reason. For example, if a birthday date seems invalid, a submitted document is blurry, a scan shows evidence of tampering, etc. Supply some details in the error message to make sure the user knows how to correct the issues.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetPassportDataErrorsPostRequest
+ @return ApiPostSetPassportDataErrorsRequest
 */
-func (a *DefaultAPIService) SetPassportDataErrorsPost(ctx context.Context) ApiSetPassportDataErrorsPostRequest {
-	return ApiSetPassportDataErrorsPostRequest{
+func (a *DefaultAPIService) PostSetPassportDataErrors(ctx context.Context) ApiPostSetPassportDataErrorsRequest {
+	return ApiPostSetPassportDataErrorsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) SetPassportDataErrorsPostExecute(r ApiSetPassportDataErrorsPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostSetPassportDataErrorsExecute(r ApiPostSetPassportDataErrorsRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SetPassportDataErrorsPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetPassportDataErrors")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -23020,6 +24439,17 @@ func (a *DefaultAPIService) SetPassportDataErrorsPostExecute(r ApiSetPassportDat
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -23043,7 +24473,7 @@ func (a *DefaultAPIService) SetPassportDataErrorsPostExecute(r ApiSetPassportDat
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSetStickerEmojiListPostRequest struct {
+type ApiPostSetStickerEmojiListRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	sticker *string
@@ -23051,47 +24481,47 @@ type ApiSetStickerEmojiListPostRequest struct {
 }
 
 // File identifier of the sticker
-func (r ApiSetStickerEmojiListPostRequest) Sticker(sticker string) ApiSetStickerEmojiListPostRequest {
+func (r ApiPostSetStickerEmojiListRequest) Sticker(sticker string) ApiPostSetStickerEmojiListRequest {
 	r.sticker = &sticker
 	return r
 }
 
 // A JSON-serialized list of 1-20 emoji associated with the sticker
-func (r ApiSetStickerEmojiListPostRequest) EmojiList(emojiList []string) ApiSetStickerEmojiListPostRequest {
+func (r ApiPostSetStickerEmojiListRequest) EmojiList(emojiList []string) ApiPostSetStickerEmojiListRequest {
 	r.emojiList = &emojiList
 	return r
 }
 
-func (r ApiSetStickerEmojiListPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.SetStickerEmojiListPostExecute(r)
+func (r ApiPostSetStickerEmojiListRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostSetStickerEmojiListExecute(r)
 }
 
 /*
-SetStickerEmojiListPost Method for SetStickerEmojiListPost
+PostSetStickerEmojiList setStickerEmojiList
 
 Use this method to change the list of emoji assigned to a regular or custom emoji sticker. The sticker must belong to a sticker set created by the bot. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetStickerEmojiListPostRequest
+ @return ApiPostSetStickerEmojiListRequest
 */
-func (a *DefaultAPIService) SetStickerEmojiListPost(ctx context.Context) ApiSetStickerEmojiListPostRequest {
-	return ApiSetStickerEmojiListPostRequest{
+func (a *DefaultAPIService) PostSetStickerEmojiList(ctx context.Context) ApiPostSetStickerEmojiListRequest {
+	return ApiPostSetStickerEmojiListRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) SetStickerEmojiListPostExecute(r ApiSetStickerEmojiListPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostSetStickerEmojiListExecute(r ApiPostSetStickerEmojiListRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SetStickerEmojiListPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetStickerEmojiList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -23149,6 +24579,17 @@ func (a *DefaultAPIService) SetStickerEmojiListPostExecute(r ApiSetStickerEmojiL
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -23172,7 +24613,7 @@ func (a *DefaultAPIService) SetStickerEmojiListPostExecute(r ApiSetStickerEmojiL
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSetStickerKeywordsPostRequest struct {
+type ApiPostSetStickerKeywordsRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	sticker *string
@@ -23180,47 +24621,47 @@ type ApiSetStickerKeywordsPostRequest struct {
 }
 
 // File identifier of the sticker
-func (r ApiSetStickerKeywordsPostRequest) Sticker(sticker string) ApiSetStickerKeywordsPostRequest {
+func (r ApiPostSetStickerKeywordsRequest) Sticker(sticker string) ApiPostSetStickerKeywordsRequest {
 	r.sticker = &sticker
 	return r
 }
 
 // A JSON-serialized list of 0-20 search keywords for the sticker with total length of up to 64 characters
-func (r ApiSetStickerKeywordsPostRequest) Keywords(keywords []string) ApiSetStickerKeywordsPostRequest {
+func (r ApiPostSetStickerKeywordsRequest) Keywords(keywords []string) ApiPostSetStickerKeywordsRequest {
 	r.keywords = &keywords
 	return r
 }
 
-func (r ApiSetStickerKeywordsPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.SetStickerKeywordsPostExecute(r)
+func (r ApiPostSetStickerKeywordsRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostSetStickerKeywordsExecute(r)
 }
 
 /*
-SetStickerKeywordsPost Method for SetStickerKeywordsPost
+PostSetStickerKeywords setStickerKeywords
 
 Use this method to change search keywords assigned to a regular or custom emoji sticker. The sticker must belong to a sticker set created by the bot. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetStickerKeywordsPostRequest
+ @return ApiPostSetStickerKeywordsRequest
 */
-func (a *DefaultAPIService) SetStickerKeywordsPost(ctx context.Context) ApiSetStickerKeywordsPostRequest {
-	return ApiSetStickerKeywordsPostRequest{
+func (a *DefaultAPIService) PostSetStickerKeywords(ctx context.Context) ApiPostSetStickerKeywordsRequest {
+	return ApiPostSetStickerKeywordsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) SetStickerKeywordsPostExecute(r ApiSetStickerKeywordsPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostSetStickerKeywordsExecute(r ApiPostSetStickerKeywordsRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SetStickerKeywordsPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetStickerKeywords")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -23277,6 +24718,17 @@ func (a *DefaultAPIService) SetStickerKeywordsPostExecute(r ApiSetStickerKeyword
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -23300,7 +24752,7 @@ func (a *DefaultAPIService) SetStickerKeywordsPostExecute(r ApiSetStickerKeyword
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSetStickerMaskPositionPostRequest struct {
+type ApiPostSetStickerMaskPositionRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	sticker *string
@@ -23308,46 +24760,46 @@ type ApiSetStickerMaskPositionPostRequest struct {
 }
 
 // File identifier of the sticker
-func (r ApiSetStickerMaskPositionPostRequest) Sticker(sticker string) ApiSetStickerMaskPositionPostRequest {
+func (r ApiPostSetStickerMaskPositionRequest) Sticker(sticker string) ApiPostSetStickerMaskPositionRequest {
 	r.sticker = &sticker
 	return r
 }
 
-func (r ApiSetStickerMaskPositionPostRequest) MaskPosition(maskPosition MaskPosition) ApiSetStickerMaskPositionPostRequest {
+func (r ApiPostSetStickerMaskPositionRequest) MaskPosition(maskPosition MaskPosition) ApiPostSetStickerMaskPositionRequest {
 	r.maskPosition = &maskPosition
 	return r
 }
 
-func (r ApiSetStickerMaskPositionPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.SetStickerMaskPositionPostExecute(r)
+func (r ApiPostSetStickerMaskPositionRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostSetStickerMaskPositionExecute(r)
 }
 
 /*
-SetStickerMaskPositionPost Method for SetStickerMaskPositionPost
+PostSetStickerMaskPosition setStickerMaskPosition
 
 Use this method to change the [mask position](https://core.telegram.org/bots/api/#maskposition) of a mask sticker. The sticker must belong to a sticker set that was created by the bot. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetStickerMaskPositionPostRequest
+ @return ApiPostSetStickerMaskPositionRequest
 */
-func (a *DefaultAPIService) SetStickerMaskPositionPost(ctx context.Context) ApiSetStickerMaskPositionPostRequest {
-	return ApiSetStickerMaskPositionPostRequest{
+func (a *DefaultAPIService) PostSetStickerMaskPosition(ctx context.Context) ApiPostSetStickerMaskPositionRequest {
+	return ApiPostSetStickerMaskPositionRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) SetStickerMaskPositionPostExecute(r ApiSetStickerMaskPositionPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostSetStickerMaskPositionExecute(r ApiPostSetStickerMaskPositionRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SetStickerMaskPositionPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetStickerMaskPosition")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -23408,6 +24860,17 @@ func (a *DefaultAPIService) SetStickerMaskPositionPostExecute(r ApiSetStickerMas
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -23431,7 +24894,7 @@ func (a *DefaultAPIService) SetStickerMaskPositionPostExecute(r ApiSetStickerMas
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSetStickerPositionInSetPostRequest struct {
+type ApiPostSetStickerPositionInSetRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	sticker *string
@@ -23439,47 +24902,47 @@ type ApiSetStickerPositionInSetPostRequest struct {
 }
 
 // File identifier of the sticker
-func (r ApiSetStickerPositionInSetPostRequest) Sticker(sticker string) ApiSetStickerPositionInSetPostRequest {
+func (r ApiPostSetStickerPositionInSetRequest) Sticker(sticker string) ApiPostSetStickerPositionInSetRequest {
 	r.sticker = &sticker
 	return r
 }
 
 // New sticker position in the set, zero-based
-func (r ApiSetStickerPositionInSetPostRequest) Position(position int32) ApiSetStickerPositionInSetPostRequest {
+func (r ApiPostSetStickerPositionInSetRequest) Position(position int32) ApiPostSetStickerPositionInSetRequest {
 	r.position = &position
 	return r
 }
 
-func (r ApiSetStickerPositionInSetPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.SetStickerPositionInSetPostExecute(r)
+func (r ApiPostSetStickerPositionInSetRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostSetStickerPositionInSetExecute(r)
 }
 
 /*
-SetStickerPositionInSetPost Method for SetStickerPositionInSetPost
+PostSetStickerPositionInSet setStickerPositionInSet
 
 Use this method to move a sticker in a set created by the bot to a specific position. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetStickerPositionInSetPostRequest
+ @return ApiPostSetStickerPositionInSetRequest
 */
-func (a *DefaultAPIService) SetStickerPositionInSetPost(ctx context.Context) ApiSetStickerPositionInSetPostRequest {
-	return ApiSetStickerPositionInSetPostRequest{
+func (a *DefaultAPIService) PostSetStickerPositionInSet(ctx context.Context) ApiPostSetStickerPositionInSetRequest {
+	return ApiPostSetStickerPositionInSetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) SetStickerPositionInSetPostExecute(r ApiSetStickerPositionInSetPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostSetStickerPositionInSetExecute(r ApiPostSetStickerPositionInSetRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SetStickerPositionInSetPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetStickerPositionInSet")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -23537,6 +25000,17 @@ func (a *DefaultAPIService) SetStickerPositionInSetPostExecute(r ApiSetStickerPo
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -23560,68 +25034,68 @@ func (a *DefaultAPIService) SetStickerPositionInSetPostExecute(r ApiSetStickerPo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSetStickerSetThumbnailPostRequest struct {
+type ApiPostSetStickerSetThumbnailRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	name *string
 	userId *int32
 	format *string
-	thumbnail *SetStickerSetThumbnailPostRequestThumbnail
+	thumbnail *PostSetStickerSetThumbnailRequestThumbnail
 }
 
 // Sticker set name
-func (r ApiSetStickerSetThumbnailPostRequest) Name(name string) ApiSetStickerSetThumbnailPostRequest {
+func (r ApiPostSetStickerSetThumbnailRequest) Name(name string) ApiPostSetStickerSetThumbnailRequest {
 	r.name = &name
 	return r
 }
 
 // User identifier of the sticker set owner
-func (r ApiSetStickerSetThumbnailPostRequest) UserId(userId int32) ApiSetStickerSetThumbnailPostRequest {
+func (r ApiPostSetStickerSetThumbnailRequest) UserId(userId int32) ApiPostSetStickerSetThumbnailRequest {
 	r.userId = &userId
 	return r
 }
 
 // Format of the thumbnail, must be one of “static” for a **.WEBP** or **.PNG** image, “animated” for a **.TGS** animation, or “video” for a **.WEBM** video
-func (r ApiSetStickerSetThumbnailPostRequest) Format(format string) ApiSetStickerSetThumbnailPostRequest {
+func (r ApiPostSetStickerSetThumbnailRequest) Format(format string) ApiPostSetStickerSetThumbnailRequest {
 	r.format = &format
 	return r
 }
 
-func (r ApiSetStickerSetThumbnailPostRequest) Thumbnail(thumbnail SetStickerSetThumbnailPostRequestThumbnail) ApiSetStickerSetThumbnailPostRequest {
+func (r ApiPostSetStickerSetThumbnailRequest) Thumbnail(thumbnail PostSetStickerSetThumbnailRequestThumbnail) ApiPostSetStickerSetThumbnailRequest {
 	r.thumbnail = &thumbnail
 	return r
 }
 
-func (r ApiSetStickerSetThumbnailPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.SetStickerSetThumbnailPostExecute(r)
+func (r ApiPostSetStickerSetThumbnailRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostSetStickerSetThumbnailExecute(r)
 }
 
 /*
-SetStickerSetThumbnailPost Method for SetStickerSetThumbnailPost
+PostSetStickerSetThumbnail setStickerSetThumbnail
 
 Use this method to set the thumbnail of a regular or mask sticker set. The format of the thumbnail file must match the format of the stickers in the set. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetStickerSetThumbnailPostRequest
+ @return ApiPostSetStickerSetThumbnailRequest
 */
-func (a *DefaultAPIService) SetStickerSetThumbnailPost(ctx context.Context) ApiSetStickerSetThumbnailPostRequest {
-	return ApiSetStickerSetThumbnailPostRequest{
+func (a *DefaultAPIService) PostSetStickerSetThumbnail(ctx context.Context) ApiPostSetStickerSetThumbnailRequest {
+	return ApiPostSetStickerSetThumbnailRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) SetStickerSetThumbnailPostExecute(r ApiSetStickerSetThumbnailPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostSetStickerSetThumbnailExecute(r ApiPostSetStickerSetThumbnailRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SetStickerSetThumbnailPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetStickerSetThumbnail")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -23690,6 +25164,17 @@ func (a *DefaultAPIService) SetStickerSetThumbnailPostExecute(r ApiSetStickerSet
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -23713,7 +25198,7 @@ func (a *DefaultAPIService) SetStickerSetThumbnailPostExecute(r ApiSetStickerSet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSetStickerSetTitlePostRequest struct {
+type ApiPostSetStickerSetTitleRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	name *string
@@ -23721,47 +25206,47 @@ type ApiSetStickerSetTitlePostRequest struct {
 }
 
 // Sticker set name
-func (r ApiSetStickerSetTitlePostRequest) Name(name string) ApiSetStickerSetTitlePostRequest {
+func (r ApiPostSetStickerSetTitleRequest) Name(name string) ApiPostSetStickerSetTitleRequest {
 	r.name = &name
 	return r
 }
 
 // Sticker set title, 1-64 characters
-func (r ApiSetStickerSetTitlePostRequest) Title(title string) ApiSetStickerSetTitlePostRequest {
+func (r ApiPostSetStickerSetTitleRequest) Title(title string) ApiPostSetStickerSetTitleRequest {
 	r.title = &title
 	return r
 }
 
-func (r ApiSetStickerSetTitlePostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.SetStickerSetTitlePostExecute(r)
+func (r ApiPostSetStickerSetTitleRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostSetStickerSetTitleExecute(r)
 }
 
 /*
-SetStickerSetTitlePost Method for SetStickerSetTitlePost
+PostSetStickerSetTitle setStickerSetTitle
 
 Use this method to set the title of a created sticker set. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetStickerSetTitlePostRequest
+ @return ApiPostSetStickerSetTitleRequest
 */
-func (a *DefaultAPIService) SetStickerSetTitlePost(ctx context.Context) ApiSetStickerSetTitlePostRequest {
-	return ApiSetStickerSetTitlePostRequest{
+func (a *DefaultAPIService) PostSetStickerSetTitle(ctx context.Context) ApiPostSetStickerSetTitleRequest {
+	return ApiPostSetStickerSetTitleRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) SetStickerSetTitlePostExecute(r ApiSetStickerSetTitlePostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostSetStickerSetTitleExecute(r ApiPostSetStickerSetTitleRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SetStickerSetTitlePost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetStickerSetTitle")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -23825,6 +25310,17 @@ func (a *DefaultAPIService) SetStickerSetTitlePostExecute(r ApiSetStickerSetTitl
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -23848,7 +25344,7 @@ func (a *DefaultAPIService) SetStickerSetTitlePostExecute(r ApiSetStickerSetTitl
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSetUserEmojiStatusPostRequest struct {
+type ApiPostSetUserEmojiStatusRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	userId *int32
@@ -23857,53 +25353,53 @@ type ApiSetUserEmojiStatusPostRequest struct {
 }
 
 // Unique identifier of the target user
-func (r ApiSetUserEmojiStatusPostRequest) UserId(userId int32) ApiSetUserEmojiStatusPostRequest {
+func (r ApiPostSetUserEmojiStatusRequest) UserId(userId int32) ApiPostSetUserEmojiStatusRequest {
 	r.userId = &userId
 	return r
 }
 
 // Custom emoji identifier of the emoji status to set. Pass an empty string to remove the status.
-func (r ApiSetUserEmojiStatusPostRequest) EmojiStatusCustomEmojiId(emojiStatusCustomEmojiId string) ApiSetUserEmojiStatusPostRequest {
+func (r ApiPostSetUserEmojiStatusRequest) EmojiStatusCustomEmojiId(emojiStatusCustomEmojiId string) ApiPostSetUserEmojiStatusRequest {
 	r.emojiStatusCustomEmojiId = &emojiStatusCustomEmojiId
 	return r
 }
 
 // Expiration date of the emoji status, if any
-func (r ApiSetUserEmojiStatusPostRequest) EmojiStatusExpirationDate(emojiStatusExpirationDate int32) ApiSetUserEmojiStatusPostRequest {
+func (r ApiPostSetUserEmojiStatusRequest) EmojiStatusExpirationDate(emojiStatusExpirationDate int32) ApiPostSetUserEmojiStatusRequest {
 	r.emojiStatusExpirationDate = &emojiStatusExpirationDate
 	return r
 }
 
-func (r ApiSetUserEmojiStatusPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.SetUserEmojiStatusPostExecute(r)
+func (r ApiPostSetUserEmojiStatusRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostSetUserEmojiStatusExecute(r)
 }
 
 /*
-SetUserEmojiStatusPost Method for SetUserEmojiStatusPost
+PostSetUserEmojiStatus setUserEmojiStatus
 
 Changes the emoji status for a given user that previously allowed the bot to manage their emoji status via the Mini App method [requestEmojiStatusAccess](https://core.telegram.org/bots/webapps#initializing-mini-apps). Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetUserEmojiStatusPostRequest
+ @return ApiPostSetUserEmojiStatusRequest
 */
-func (a *DefaultAPIService) SetUserEmojiStatusPost(ctx context.Context) ApiSetUserEmojiStatusPostRequest {
-	return ApiSetUserEmojiStatusPostRequest{
+func (a *DefaultAPIService) PostSetUserEmojiStatus(ctx context.Context) ApiPostSetUserEmojiStatusRequest {
+	return ApiPostSetUserEmojiStatusRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) SetUserEmojiStatusPostExecute(r ApiSetUserEmojiStatusPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostSetUserEmojiStatusExecute(r ApiPostSetUserEmojiStatusRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SetUserEmojiStatusPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetUserEmojiStatus")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -23963,6 +25459,17 @@ func (a *DefaultAPIService) SetUserEmojiStatusPostExecute(r ApiSetUserEmojiStatu
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -23986,7 +25493,7 @@ func (a *DefaultAPIService) SetUserEmojiStatusPostExecute(r ApiSetUserEmojiStatu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSetWebhookPostRequest struct {
+type ApiPostSetWebhookRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	url *string
@@ -23999,78 +25506,78 @@ type ApiSetWebhookPostRequest struct {
 }
 
 // HTTPS URL to send updates to. Use an empty string to remove webhook integration
-func (r ApiSetWebhookPostRequest) Url(url string) ApiSetWebhookPostRequest {
+func (r ApiPostSetWebhookRequest) Url(url string) ApiPostSetWebhookRequest {
 	r.url = &url
 	return r
 }
 
-func (r ApiSetWebhookPostRequest) Certificate(certificate interface{}) ApiSetWebhookPostRequest {
+func (r ApiPostSetWebhookRequest) Certificate(certificate interface{}) ApiPostSetWebhookRequest {
 	r.certificate = &certificate
 	return r
 }
 
 // The fixed IP address which will be used to send webhook requests instead of the IP address resolved through DNS
-func (r ApiSetWebhookPostRequest) IpAddress(ipAddress string) ApiSetWebhookPostRequest {
+func (r ApiPostSetWebhookRequest) IpAddress(ipAddress string) ApiPostSetWebhookRequest {
 	r.ipAddress = &ipAddress
 	return r
 }
 
 // The maximum allowed number of simultaneous HTTPS connections to the webhook for update delivery, 1-100. Defaults to *40*. Use lower values to limit the load on your bot&#39;s server, and higher values to increase your bot&#39;s throughput.
-func (r ApiSetWebhookPostRequest) MaxConnections(maxConnections int32) ApiSetWebhookPostRequest {
+func (r ApiPostSetWebhookRequest) MaxConnections(maxConnections int32) ApiPostSetWebhookRequest {
 	r.maxConnections = &maxConnections
 	return r
 }
 
 // A JSON-serialized list of the update types you want your bot to receive. For example, specify &#x60;[\\\&quot;message\\\&quot;, \\\&quot;edited_channel_post\\\&quot;, \\\&quot;callback_query\\\&quot;]&#x60; to only receive updates of these types. See [Update](https://core.telegram.org/bots/api/#update) for a complete list of available update types. Specify an empty list to receive all update types except *chat\\\\_member*, *message\\\\_reaction*, and *message\\\\_reaction\\\\_count* (default). If not specified, the previous setting will be used.   Please note that this parameter doesn&#39;t affect updates created before the call to the setWebhook, so unwanted updates may be received for a short period of time.
-func (r ApiSetWebhookPostRequest) AllowedUpdates(allowedUpdates []string) ApiSetWebhookPostRequest {
+func (r ApiPostSetWebhookRequest) AllowedUpdates(allowedUpdates []string) ApiPostSetWebhookRequest {
 	r.allowedUpdates = &allowedUpdates
 	return r
 }
 
 // Pass *True* to drop all pending updates
-func (r ApiSetWebhookPostRequest) DropPendingUpdates(dropPendingUpdates bool) ApiSetWebhookPostRequest {
+func (r ApiPostSetWebhookRequest) DropPendingUpdates(dropPendingUpdates bool) ApiPostSetWebhookRequest {
 	r.dropPendingUpdates = &dropPendingUpdates
 	return r
 }
 
 // A secret token to be sent in a header “X-Telegram-Bot-Api-Secret-Token” in every webhook request, 1-256 characters. Only characters &#x60;A-Z&#x60;, &#x60;a-z&#x60;, &#x60;0-9&#x60;, &#x60;_&#x60; and &#x60;-&#x60; are allowed. The header is useful to ensure that the request comes from a webhook set by you.
-func (r ApiSetWebhookPostRequest) SecretToken(secretToken string) ApiSetWebhookPostRequest {
+func (r ApiPostSetWebhookRequest) SecretToken(secretToken string) ApiPostSetWebhookRequest {
 	r.secretToken = &secretToken
 	return r
 }
 
-func (r ApiSetWebhookPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.SetWebhookPostExecute(r)
+func (r ApiPostSetWebhookRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostSetWebhookExecute(r)
 }
 
 /*
-SetWebhookPost Method for SetWebhookPost
+PostSetWebhook setWebhook
 
 Use this method to specify a URL and receive incoming updates via an outgoing webhook. Whenever there is an update for the bot, we will send an HTTPS POST request to the specified URL, containing a JSON-serialized [Update](https://core.telegram.org/bots/api/#update). In case of an unsuccessful request (a request with response [HTTP status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) different from `2XY`), we will repeat the request and give up after a reasonable amount of attempts. Returns *True* on success.
 
 If you'd like to make sure that the webhook was set by you, you can specify secret data in the parameter *secret\_token*. If specified, the request will contain a header “X-Telegram-Bot-Api-Secret-Token” with the secret token as content.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetWebhookPostRequest
+ @return ApiPostSetWebhookRequest
 */
-func (a *DefaultAPIService) SetWebhookPost(ctx context.Context) ApiSetWebhookPostRequest {
-	return ApiSetWebhookPostRequest{
+func (a *DefaultAPIService) PostSetWebhook(ctx context.Context) ApiPostSetWebhookRequest {
+	return ApiPostSetWebhookRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) SetWebhookPostExecute(r ApiSetWebhookPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostSetWebhookExecute(r ApiPostSetWebhookRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.SetWebhookPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetWebhook")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -24142,6 +25649,17 @@ func (a *DefaultAPIService) SetWebhookPostExecute(r ApiSetWebhookPostRequest) (*
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -24165,74 +25683,74 @@ func (a *DefaultAPIService) SetWebhookPostExecute(r ApiSetWebhookPostRequest) (*
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiStopMessageLiveLocationPostRequest struct {
+type ApiPostStopMessageLiveLocationRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	businessConnectionId *string
-	chatId *EditMessageTextPostRequestChatId
+	chatId *PostEditMessageTextRequestChatId
 	messageId *int32
 	inlineMessageId *string
 	replyMarkup *InlineKeyboardMarkup
 }
 
 // Unique identifier of the business connection on behalf of which the message to be edited was sent
-func (r ApiStopMessageLiveLocationPostRequest) BusinessConnectionId(businessConnectionId string) ApiStopMessageLiveLocationPostRequest {
+func (r ApiPostStopMessageLiveLocationRequest) BusinessConnectionId(businessConnectionId string) ApiPostStopMessageLiveLocationRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
-func (r ApiStopMessageLiveLocationPostRequest) ChatId(chatId EditMessageTextPostRequestChatId) ApiStopMessageLiveLocationPostRequest {
+func (r ApiPostStopMessageLiveLocationRequest) ChatId(chatId PostEditMessageTextRequestChatId) ApiPostStopMessageLiveLocationRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Required if *inline\\\\_message\\\\_id* is not specified. Identifier of the message with live location to stop
-func (r ApiStopMessageLiveLocationPostRequest) MessageId(messageId int32) ApiStopMessageLiveLocationPostRequest {
+func (r ApiPostStopMessageLiveLocationRequest) MessageId(messageId int32) ApiPostStopMessageLiveLocationRequest {
 	r.messageId = &messageId
 	return r
 }
 
 // Required if *chat\\\\_id* and *message\\\\_id* are not specified. Identifier of the inline message
-func (r ApiStopMessageLiveLocationPostRequest) InlineMessageId(inlineMessageId string) ApiStopMessageLiveLocationPostRequest {
+func (r ApiPostStopMessageLiveLocationRequest) InlineMessageId(inlineMessageId string) ApiPostStopMessageLiveLocationRequest {
 	r.inlineMessageId = &inlineMessageId
 	return r
 }
 
-func (r ApiStopMessageLiveLocationPostRequest) ReplyMarkup(replyMarkup InlineKeyboardMarkup) ApiStopMessageLiveLocationPostRequest {
+func (r ApiPostStopMessageLiveLocationRequest) ReplyMarkup(replyMarkup InlineKeyboardMarkup) ApiPostStopMessageLiveLocationRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiStopMessageLiveLocationPostRequest) Execute() (*EditMessageTextPost200Response, *http.Response, error) {
-	return r.ApiService.StopMessageLiveLocationPostExecute(r)
+func (r ApiPostStopMessageLiveLocationRequest) Execute() (*PostEditMessageText200Response, *http.Response, error) {
+	return r.ApiService.PostStopMessageLiveLocationExecute(r)
 }
 
 /*
-StopMessageLiveLocationPost Method for StopMessageLiveLocationPost
+PostStopMessageLiveLocation stopMessageLiveLocation
 
 Use this method to stop updating a live location message before *live\_period* expires. On success, if the message is not an inline message, the edited [Message](https://core.telegram.org/bots/api/#message) is returned, otherwise *True* is returned.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiStopMessageLiveLocationPostRequest
+ @return ApiPostStopMessageLiveLocationRequest
 */
-func (a *DefaultAPIService) StopMessageLiveLocationPost(ctx context.Context) ApiStopMessageLiveLocationPostRequest {
-	return ApiStopMessageLiveLocationPostRequest{
+func (a *DefaultAPIService) PostStopMessageLiveLocation(ctx context.Context) ApiPostStopMessageLiveLocationRequest {
+	return ApiPostStopMessageLiveLocationRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return EditMessageTextPost200Response
-func (a *DefaultAPIService) StopMessageLiveLocationPostExecute(r ApiStopMessageLiveLocationPostRequest) (*EditMessageTextPost200Response, *http.Response, error) {
+//  @return PostEditMessageText200Response
+func (a *DefaultAPIService) PostStopMessageLiveLocationExecute(r ApiPostStopMessageLiveLocationRequest) (*PostEditMessageText200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *EditMessageTextPost200Response
+		localVarReturnValue  *PostEditMessageText200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.StopMessageLiveLocationPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostStopMessageLiveLocation")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -24305,6 +25823,17 @@ func (a *DefaultAPIService) StopMessageLiveLocationPostExecute(r ApiStopMessageL
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -24328,67 +25857,67 @@ func (a *DefaultAPIService) StopMessageLiveLocationPostExecute(r ApiStopMessageL
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiStopPollPostRequest struct {
+type ApiPostStopPollRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
+	chatId *PostSendMessageRequestChatId
 	messageId *int32
 	businessConnectionId *string
 	replyMarkup *InlineKeyboardMarkup
 }
 
-func (r ApiStopPollPostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiStopPollPostRequest {
+func (r ApiPostStopPollRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostStopPollRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Identifier of the original message with the poll
-func (r ApiStopPollPostRequest) MessageId(messageId int32) ApiStopPollPostRequest {
+func (r ApiPostStopPollRequest) MessageId(messageId int32) ApiPostStopPollRequest {
 	r.messageId = &messageId
 	return r
 }
 
 // Unique identifier of the business connection on behalf of which the message to be edited was sent
-func (r ApiStopPollPostRequest) BusinessConnectionId(businessConnectionId string) ApiStopPollPostRequest {
+func (r ApiPostStopPollRequest) BusinessConnectionId(businessConnectionId string) ApiPostStopPollRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
-func (r ApiStopPollPostRequest) ReplyMarkup(replyMarkup InlineKeyboardMarkup) ApiStopPollPostRequest {
+func (r ApiPostStopPollRequest) ReplyMarkup(replyMarkup InlineKeyboardMarkup) ApiPostStopPollRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiStopPollPostRequest) Execute() (*StopPollPost200Response, *http.Response, error) {
-	return r.ApiService.StopPollPostExecute(r)
+func (r ApiPostStopPollRequest) Execute() (*PostStopPoll200Response, *http.Response, error) {
+	return r.ApiService.PostStopPollExecute(r)
 }
 
 /*
-StopPollPost Method for StopPollPost
+PostStopPoll stopPoll
 
 Use this method to stop a poll which was sent by the bot. On success, the stopped [Poll](https://core.telegram.org/bots/api/#poll) is returned.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiStopPollPostRequest
+ @return ApiPostStopPollRequest
 */
-func (a *DefaultAPIService) StopPollPost(ctx context.Context) ApiStopPollPostRequest {
-	return ApiStopPollPostRequest{
+func (a *DefaultAPIService) PostStopPoll(ctx context.Context) ApiPostStopPollRequest {
+	return ApiPostStopPollRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return StopPollPost200Response
-func (a *DefaultAPIService) StopPollPostExecute(r ApiStopPollPostRequest) (*StopPollPost200Response, *http.Response, error) {
+//  @return PostStopPoll200Response
+func (a *DefaultAPIService) PostStopPollExecute(r ApiPostStopPollRequest) (*PostStopPoll200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *StopPollPost200Response
+		localVarReturnValue  *PostStopPoll200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.StopPollPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostStopPoll")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -24456,6 +25985,17 @@ func (a *DefaultAPIService) StopPollPostExecute(r ApiStopPollPostRequest) (*Stop
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -24479,7 +26019,7 @@ func (a *DefaultAPIService) StopPollPostExecute(r ApiStopPollPostRequest) (*Stop
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiTransferBusinessAccountStarsPostRequest struct {
+type ApiPostTransferBusinessAccountStarsRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	businessConnectionId *string
@@ -24487,47 +26027,47 @@ type ApiTransferBusinessAccountStarsPostRequest struct {
 }
 
 // Unique identifier of the business connection
-func (r ApiTransferBusinessAccountStarsPostRequest) BusinessConnectionId(businessConnectionId string) ApiTransferBusinessAccountStarsPostRequest {
+func (r ApiPostTransferBusinessAccountStarsRequest) BusinessConnectionId(businessConnectionId string) ApiPostTransferBusinessAccountStarsRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
 // Number of Telegram Stars to transfer; 1-10000
-func (r ApiTransferBusinessAccountStarsPostRequest) StarCount(starCount int32) ApiTransferBusinessAccountStarsPostRequest {
+func (r ApiPostTransferBusinessAccountStarsRequest) StarCount(starCount int32) ApiPostTransferBusinessAccountStarsRequest {
 	r.starCount = &starCount
 	return r
 }
 
-func (r ApiTransferBusinessAccountStarsPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.TransferBusinessAccountStarsPostExecute(r)
+func (r ApiPostTransferBusinessAccountStarsRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostTransferBusinessAccountStarsExecute(r)
 }
 
 /*
-TransferBusinessAccountStarsPost Method for TransferBusinessAccountStarsPost
+PostTransferBusinessAccountStars transferBusinessAccountStars
 
 Transfers Telegram Stars from the business account balance to the bot's balance. Requires the *can\_transfer\_stars* business bot right. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTransferBusinessAccountStarsPostRequest
+ @return ApiPostTransferBusinessAccountStarsRequest
 */
-func (a *DefaultAPIService) TransferBusinessAccountStarsPost(ctx context.Context) ApiTransferBusinessAccountStarsPostRequest {
-	return ApiTransferBusinessAccountStarsPostRequest{
+func (a *DefaultAPIService) PostTransferBusinessAccountStars(ctx context.Context) ApiPostTransferBusinessAccountStarsRequest {
+	return ApiPostTransferBusinessAccountStarsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) TransferBusinessAccountStarsPostExecute(r ApiTransferBusinessAccountStarsPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostTransferBusinessAccountStarsExecute(r ApiPostTransferBusinessAccountStarsRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.TransferBusinessAccountStarsPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostTransferBusinessAccountStars")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -24585,6 +26125,17 @@ func (a *DefaultAPIService) TransferBusinessAccountStarsPostExecute(r ApiTransfe
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -24608,7 +26159,7 @@ func (a *DefaultAPIService) TransferBusinessAccountStarsPostExecute(r ApiTransfe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiTransferGiftPostRequest struct {
+type ApiPostTransferGiftRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	businessConnectionId *string
@@ -24618,59 +26169,59 @@ type ApiTransferGiftPostRequest struct {
 }
 
 // Unique identifier of the business connection
-func (r ApiTransferGiftPostRequest) BusinessConnectionId(businessConnectionId string) ApiTransferGiftPostRequest {
+func (r ApiPostTransferGiftRequest) BusinessConnectionId(businessConnectionId string) ApiPostTransferGiftRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
 // Unique identifier of the regular gift that should be transferred
-func (r ApiTransferGiftPostRequest) OwnedGiftId(ownedGiftId string) ApiTransferGiftPostRequest {
+func (r ApiPostTransferGiftRequest) OwnedGiftId(ownedGiftId string) ApiPostTransferGiftRequest {
 	r.ownedGiftId = &ownedGiftId
 	return r
 }
 
 // Unique identifier of the chat which will own the gift. The chat must be active in the last 24 hours.
-func (r ApiTransferGiftPostRequest) NewOwnerChatId(newOwnerChatId int32) ApiTransferGiftPostRequest {
+func (r ApiPostTransferGiftRequest) NewOwnerChatId(newOwnerChatId int32) ApiPostTransferGiftRequest {
 	r.newOwnerChatId = &newOwnerChatId
 	return r
 }
 
 // The amount of Telegram Stars that will be paid for the transfer from the business account balance. If positive, then the *can\\\\_transfer\\\\_stars* business bot right is required.
-func (r ApiTransferGiftPostRequest) StarCount(starCount int32) ApiTransferGiftPostRequest {
+func (r ApiPostTransferGiftRequest) StarCount(starCount int32) ApiPostTransferGiftRequest {
 	r.starCount = &starCount
 	return r
 }
 
-func (r ApiTransferGiftPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.TransferGiftPostExecute(r)
+func (r ApiPostTransferGiftRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostTransferGiftExecute(r)
 }
 
 /*
-TransferGiftPost Method for TransferGiftPost
+PostTransferGift transferGift
 
 Transfers an owned unique gift to another user. Requires the *can\_transfer\_and\_upgrade\_gifts* business bot right. Requires *can\_transfer\_stars* business bot right if the transfer is paid. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTransferGiftPostRequest
+ @return ApiPostTransferGiftRequest
 */
-func (a *DefaultAPIService) TransferGiftPost(ctx context.Context) ApiTransferGiftPostRequest {
-	return ApiTransferGiftPostRequest{
+func (a *DefaultAPIService) PostTransferGift(ctx context.Context) ApiPostTransferGiftRequest {
+	return ApiPostTransferGiftRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) TransferGiftPostExecute(r ApiTransferGiftPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostTransferGiftExecute(r ApiPostTransferGiftRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.TransferGiftPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostTransferGift")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -24735,6 +26286,17 @@ func (a *DefaultAPIService) TransferGiftPostExecute(r ApiTransferGiftPostRequest
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -24758,61 +26320,61 @@ func (a *DefaultAPIService) TransferGiftPostExecute(r ApiTransferGiftPostRequest
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiUnbanChatMemberPostRequest struct {
+type ApiPostUnbanChatMemberRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *BanChatMemberPostRequestChatId
+	chatId *PostBanChatMemberRequestChatId
 	userId *int32
 	onlyIfBanned *bool
 }
 
-func (r ApiUnbanChatMemberPostRequest) ChatId(chatId BanChatMemberPostRequestChatId) ApiUnbanChatMemberPostRequest {
+func (r ApiPostUnbanChatMemberRequest) ChatId(chatId PostBanChatMemberRequestChatId) ApiPostUnbanChatMemberRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Unique identifier of the target user
-func (r ApiUnbanChatMemberPostRequest) UserId(userId int32) ApiUnbanChatMemberPostRequest {
+func (r ApiPostUnbanChatMemberRequest) UserId(userId int32) ApiPostUnbanChatMemberRequest {
 	r.userId = &userId
 	return r
 }
 
 // Do nothing if the user is not banned
-func (r ApiUnbanChatMemberPostRequest) OnlyIfBanned(onlyIfBanned bool) ApiUnbanChatMemberPostRequest {
+func (r ApiPostUnbanChatMemberRequest) OnlyIfBanned(onlyIfBanned bool) ApiPostUnbanChatMemberRequest {
 	r.onlyIfBanned = &onlyIfBanned
 	return r
 }
 
-func (r ApiUnbanChatMemberPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.UnbanChatMemberPostExecute(r)
+func (r ApiPostUnbanChatMemberRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostUnbanChatMemberExecute(r)
 }
 
 /*
-UnbanChatMemberPost Method for UnbanChatMemberPost
+PostUnbanChatMember unbanChatMember
 
 Use this method to unban a previously banned user in a supergroup or channel. The user will **not** return to the group or channel automatically, but will be able to join via link, etc. The bot must be an administrator for this to work. By default, this method guarantees that after the call the user is not a member of the chat, but will be able to join it. So if the user is a member of the chat they will also be **removed** from the chat. If you don't want this, use the parameter *only\_if\_banned*. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUnbanChatMemberPostRequest
+ @return ApiPostUnbanChatMemberRequest
 */
-func (a *DefaultAPIService) UnbanChatMemberPost(ctx context.Context) ApiUnbanChatMemberPostRequest {
-	return ApiUnbanChatMemberPostRequest{
+func (a *DefaultAPIService) PostUnbanChatMember(ctx context.Context) ApiPostUnbanChatMemberRequest {
+	return ApiPostUnbanChatMemberRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) UnbanChatMemberPostExecute(r ApiUnbanChatMemberPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostUnbanChatMemberExecute(r ApiPostUnbanChatMemberRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.UnbanChatMemberPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostUnbanChatMember")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -24873,6 +26435,17 @@ func (a *DefaultAPIService) UnbanChatMemberPostExecute(r ApiUnbanChatMemberPostR
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -24896,54 +26469,54 @@ func (a *DefaultAPIService) UnbanChatMemberPostExecute(r ApiUnbanChatMemberPostR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiUnbanChatSenderChatPostRequest struct {
+type ApiPostUnbanChatSenderChatRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
+	chatId *PostSendMessageRequestChatId
 	senderChatId *int32
 }
 
-func (r ApiUnbanChatSenderChatPostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiUnbanChatSenderChatPostRequest {
+func (r ApiPostUnbanChatSenderChatRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostUnbanChatSenderChatRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Unique identifier of the target sender chat
-func (r ApiUnbanChatSenderChatPostRequest) SenderChatId(senderChatId int32) ApiUnbanChatSenderChatPostRequest {
+func (r ApiPostUnbanChatSenderChatRequest) SenderChatId(senderChatId int32) ApiPostUnbanChatSenderChatRequest {
 	r.senderChatId = &senderChatId
 	return r
 }
 
-func (r ApiUnbanChatSenderChatPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.UnbanChatSenderChatPostExecute(r)
+func (r ApiPostUnbanChatSenderChatRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostUnbanChatSenderChatExecute(r)
 }
 
 /*
-UnbanChatSenderChatPost Method for UnbanChatSenderChatPost
+PostUnbanChatSenderChat unbanChatSenderChat
 
 Use this method to unban a previously banned channel chat in a supergroup or channel. The bot must be an administrator for this to work and must have the appropriate administrator rights. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUnbanChatSenderChatPostRequest
+ @return ApiPostUnbanChatSenderChatRequest
 */
-func (a *DefaultAPIService) UnbanChatSenderChatPost(ctx context.Context) ApiUnbanChatSenderChatPostRequest {
-	return ApiUnbanChatSenderChatPostRequest{
+func (a *DefaultAPIService) PostUnbanChatSenderChat(ctx context.Context) ApiPostUnbanChatSenderChatRequest {
+	return ApiPostUnbanChatSenderChatRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) UnbanChatSenderChatPostExecute(r ApiUnbanChatSenderChatPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostUnbanChatSenderChatExecute(r ApiPostUnbanChatSenderChatRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.UnbanChatSenderChatPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostUnbanChatSenderChat")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -25001,6 +26574,17 @@ func (a *DefaultAPIService) UnbanChatSenderChatPostExecute(r ApiUnbanChatSenderC
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -25024,47 +26608,47 @@ func (a *DefaultAPIService) UnbanChatSenderChatPostExecute(r ApiUnbanChatSenderC
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiUnhideGeneralForumTopicPostRequest struct {
+type ApiPostUnhideGeneralForumTopicRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *RestrictChatMemberPostRequestChatId
+	chatId *PostRestrictChatMemberRequestChatId
 }
 
-func (r ApiUnhideGeneralForumTopicPostRequest) ChatId(chatId RestrictChatMemberPostRequestChatId) ApiUnhideGeneralForumTopicPostRequest {
+func (r ApiPostUnhideGeneralForumTopicRequest) ChatId(chatId PostRestrictChatMemberRequestChatId) ApiPostUnhideGeneralForumTopicRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiUnhideGeneralForumTopicPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.UnhideGeneralForumTopicPostExecute(r)
+func (r ApiPostUnhideGeneralForumTopicRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostUnhideGeneralForumTopicExecute(r)
 }
 
 /*
-UnhideGeneralForumTopicPost Method for UnhideGeneralForumTopicPost
+PostUnhideGeneralForumTopic unhideGeneralForumTopic
 
 Use this method to unhide the 'General' topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the *can\_manage\_topics* administrator rights. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUnhideGeneralForumTopicPostRequest
+ @return ApiPostUnhideGeneralForumTopicRequest
 */
-func (a *DefaultAPIService) UnhideGeneralForumTopicPost(ctx context.Context) ApiUnhideGeneralForumTopicPostRequest {
-	return ApiUnhideGeneralForumTopicPostRequest{
+func (a *DefaultAPIService) PostUnhideGeneralForumTopic(ctx context.Context) ApiPostUnhideGeneralForumTopicRequest {
+	return ApiPostUnhideGeneralForumTopicRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) UnhideGeneralForumTopicPostExecute(r ApiUnhideGeneralForumTopicPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostUnhideGeneralForumTopicExecute(r ApiPostUnhideGeneralForumTopicRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.UnhideGeneralForumTopicPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostUnhideGeneralForumTopic")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -25118,6 +26702,17 @@ func (a *DefaultAPIService) UnhideGeneralForumTopicPostExecute(r ApiUnhideGenera
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -25141,47 +26736,47 @@ func (a *DefaultAPIService) UnhideGeneralForumTopicPostExecute(r ApiUnhideGenera
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiUnpinAllChatMessagesPostRequest struct {
+type ApiPostUnpinAllChatMessagesRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
+	chatId *PostSendMessageRequestChatId
 }
 
-func (r ApiUnpinAllChatMessagesPostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiUnpinAllChatMessagesPostRequest {
+func (r ApiPostUnpinAllChatMessagesRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostUnpinAllChatMessagesRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiUnpinAllChatMessagesPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.UnpinAllChatMessagesPostExecute(r)
+func (r ApiPostUnpinAllChatMessagesRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostUnpinAllChatMessagesExecute(r)
 }
 
 /*
-UnpinAllChatMessagesPost Method for UnpinAllChatMessagesPost
+PostUnpinAllChatMessages unpinAllChatMessages
 
 Use this method to clear the list of pinned messages in a chat. If the chat is not a private chat, the bot must be an administrator in the chat for this to work and must have the 'can\_pin\_messages' administrator right in a supergroup or 'can\_edit\_messages' administrator right in a channel. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUnpinAllChatMessagesPostRequest
+ @return ApiPostUnpinAllChatMessagesRequest
 */
-func (a *DefaultAPIService) UnpinAllChatMessagesPost(ctx context.Context) ApiUnpinAllChatMessagesPostRequest {
-	return ApiUnpinAllChatMessagesPostRequest{
+func (a *DefaultAPIService) PostUnpinAllChatMessages(ctx context.Context) ApiPostUnpinAllChatMessagesRequest {
+	return ApiPostUnpinAllChatMessagesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) UnpinAllChatMessagesPostExecute(r ApiUnpinAllChatMessagesPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostUnpinAllChatMessagesExecute(r ApiPostUnpinAllChatMessagesRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.UnpinAllChatMessagesPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostUnpinAllChatMessages")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -25235,6 +26830,17 @@ func (a *DefaultAPIService) UnpinAllChatMessagesPostExecute(r ApiUnpinAllChatMes
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -25258,54 +26864,54 @@ func (a *DefaultAPIService) UnpinAllChatMessagesPostExecute(r ApiUnpinAllChatMes
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiUnpinAllForumTopicMessagesPostRequest struct {
+type ApiPostUnpinAllForumTopicMessagesRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *RestrictChatMemberPostRequestChatId
+	chatId *PostRestrictChatMemberRequestChatId
 	messageThreadId *int32
 }
 
-func (r ApiUnpinAllForumTopicMessagesPostRequest) ChatId(chatId RestrictChatMemberPostRequestChatId) ApiUnpinAllForumTopicMessagesPostRequest {
+func (r ApiPostUnpinAllForumTopicMessagesRequest) ChatId(chatId PostRestrictChatMemberRequestChatId) ApiPostUnpinAllForumTopicMessagesRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Unique identifier for the target message thread of the forum topic
-func (r ApiUnpinAllForumTopicMessagesPostRequest) MessageThreadId(messageThreadId int32) ApiUnpinAllForumTopicMessagesPostRequest {
+func (r ApiPostUnpinAllForumTopicMessagesRequest) MessageThreadId(messageThreadId int32) ApiPostUnpinAllForumTopicMessagesRequest {
 	r.messageThreadId = &messageThreadId
 	return r
 }
 
-func (r ApiUnpinAllForumTopicMessagesPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.UnpinAllForumTopicMessagesPostExecute(r)
+func (r ApiPostUnpinAllForumTopicMessagesRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostUnpinAllForumTopicMessagesExecute(r)
 }
 
 /*
-UnpinAllForumTopicMessagesPost Method for UnpinAllForumTopicMessagesPost
+PostUnpinAllForumTopicMessages unpinAllForumTopicMessages
 
 Use this method to clear the list of pinned messages in a forum topic. The bot must be an administrator in the chat for this to work and must have the *can\_pin\_messages* administrator right in the supergroup. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUnpinAllForumTopicMessagesPostRequest
+ @return ApiPostUnpinAllForumTopicMessagesRequest
 */
-func (a *DefaultAPIService) UnpinAllForumTopicMessagesPost(ctx context.Context) ApiUnpinAllForumTopicMessagesPostRequest {
-	return ApiUnpinAllForumTopicMessagesPostRequest{
+func (a *DefaultAPIService) PostUnpinAllForumTopicMessages(ctx context.Context) ApiPostUnpinAllForumTopicMessagesRequest {
+	return ApiPostUnpinAllForumTopicMessagesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) UnpinAllForumTopicMessagesPostExecute(r ApiUnpinAllForumTopicMessagesPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostUnpinAllForumTopicMessagesExecute(r ApiPostUnpinAllForumTopicMessagesRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.UnpinAllForumTopicMessagesPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostUnpinAllForumTopicMessages")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -25363,6 +26969,17 @@ func (a *DefaultAPIService) UnpinAllForumTopicMessagesPostExecute(r ApiUnpinAllF
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -25386,47 +27003,47 @@ func (a *DefaultAPIService) UnpinAllForumTopicMessagesPostExecute(r ApiUnpinAllF
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiUnpinAllGeneralForumTopicMessagesPostRequest struct {
+type ApiPostUnpinAllGeneralForumTopicMessagesRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *RestrictChatMemberPostRequestChatId
+	chatId *PostRestrictChatMemberRequestChatId
 }
 
-func (r ApiUnpinAllGeneralForumTopicMessagesPostRequest) ChatId(chatId RestrictChatMemberPostRequestChatId) ApiUnpinAllGeneralForumTopicMessagesPostRequest {
+func (r ApiPostUnpinAllGeneralForumTopicMessagesRequest) ChatId(chatId PostRestrictChatMemberRequestChatId) ApiPostUnpinAllGeneralForumTopicMessagesRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiUnpinAllGeneralForumTopicMessagesPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.UnpinAllGeneralForumTopicMessagesPostExecute(r)
+func (r ApiPostUnpinAllGeneralForumTopicMessagesRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostUnpinAllGeneralForumTopicMessagesExecute(r)
 }
 
 /*
-UnpinAllGeneralForumTopicMessagesPost Method for UnpinAllGeneralForumTopicMessagesPost
+PostUnpinAllGeneralForumTopicMessages unpinAllGeneralForumTopicMessages
 
 Use this method to clear the list of pinned messages in a General forum topic. The bot must be an administrator in the chat for this to work and must have the *can\_pin\_messages* administrator right in the supergroup. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUnpinAllGeneralForumTopicMessagesPostRequest
+ @return ApiPostUnpinAllGeneralForumTopicMessagesRequest
 */
-func (a *DefaultAPIService) UnpinAllGeneralForumTopicMessagesPost(ctx context.Context) ApiUnpinAllGeneralForumTopicMessagesPostRequest {
-	return ApiUnpinAllGeneralForumTopicMessagesPostRequest{
+func (a *DefaultAPIService) PostUnpinAllGeneralForumTopicMessages(ctx context.Context) ApiPostUnpinAllGeneralForumTopicMessagesRequest {
+	return ApiPostUnpinAllGeneralForumTopicMessagesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) UnpinAllGeneralForumTopicMessagesPostExecute(r ApiUnpinAllGeneralForumTopicMessagesPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostUnpinAllGeneralForumTopicMessagesExecute(r ApiPostUnpinAllGeneralForumTopicMessagesRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.UnpinAllGeneralForumTopicMessagesPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostUnpinAllGeneralForumTopicMessages")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -25480,6 +27097,17 @@ func (a *DefaultAPIService) UnpinAllGeneralForumTopicMessagesPostExecute(r ApiUn
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -25503,61 +27131,61 @@ func (a *DefaultAPIService) UnpinAllGeneralForumTopicMessagesPostExecute(r ApiUn
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiUnpinChatMessagePostRequest struct {
+type ApiPostUnpinChatMessageRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
+	chatId *PostSendMessageRequestChatId
 	businessConnectionId *string
 	messageId *int32
 }
 
-func (r ApiUnpinChatMessagePostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiUnpinChatMessagePostRequest {
+func (r ApiPostUnpinChatMessageRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostUnpinChatMessageRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Unique identifier of the business connection on behalf of which the message will be unpinned
-func (r ApiUnpinChatMessagePostRequest) BusinessConnectionId(businessConnectionId string) ApiUnpinChatMessagePostRequest {
+func (r ApiPostUnpinChatMessageRequest) BusinessConnectionId(businessConnectionId string) ApiPostUnpinChatMessageRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
 // Identifier of the message to unpin. Required if *business\\\\_connection\\\\_id* is specified. If not specified, the most recent pinned message (by sending date) will be unpinned.
-func (r ApiUnpinChatMessagePostRequest) MessageId(messageId int32) ApiUnpinChatMessagePostRequest {
+func (r ApiPostUnpinChatMessageRequest) MessageId(messageId int32) ApiPostUnpinChatMessageRequest {
 	r.messageId = &messageId
 	return r
 }
 
-func (r ApiUnpinChatMessagePostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.UnpinChatMessagePostExecute(r)
+func (r ApiPostUnpinChatMessageRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostUnpinChatMessageExecute(r)
 }
 
 /*
-UnpinChatMessagePost Method for UnpinChatMessagePost
+PostUnpinChatMessage unpinChatMessage
 
 Use this method to remove a message from the list of pinned messages in a chat. If the chat is not a private chat, the bot must be an administrator in the chat for this to work and must have the 'can\_pin\_messages' administrator right in a supergroup or 'can\_edit\_messages' administrator right in a channel. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUnpinChatMessagePostRequest
+ @return ApiPostUnpinChatMessageRequest
 */
-func (a *DefaultAPIService) UnpinChatMessagePost(ctx context.Context) ApiUnpinChatMessagePostRequest {
-	return ApiUnpinChatMessagePostRequest{
+func (a *DefaultAPIService) PostUnpinChatMessage(ctx context.Context) ApiPostUnpinChatMessageRequest {
+	return ApiPostUnpinChatMessageRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) UnpinChatMessagePostExecute(r ApiUnpinChatMessagePostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostUnpinChatMessageExecute(r ApiPostUnpinChatMessageRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.UnpinChatMessagePost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostUnpinChatMessage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -25617,6 +27245,17 @@ func (a *DefaultAPIService) UnpinChatMessagePostExecute(r ApiUnpinChatMessagePos
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -25640,7 +27279,7 @@ func (a *DefaultAPIService) UnpinChatMessagePostExecute(r ApiUnpinChatMessagePos
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiUpgradeGiftPostRequest struct {
+type ApiPostUpgradeGiftRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	businessConnectionId *string
@@ -25650,59 +27289,59 @@ type ApiUpgradeGiftPostRequest struct {
 }
 
 // Unique identifier of the business connection
-func (r ApiUpgradeGiftPostRequest) BusinessConnectionId(businessConnectionId string) ApiUpgradeGiftPostRequest {
+func (r ApiPostUpgradeGiftRequest) BusinessConnectionId(businessConnectionId string) ApiPostUpgradeGiftRequest {
 	r.businessConnectionId = &businessConnectionId
 	return r
 }
 
 // Unique identifier of the regular gift that should be upgraded to a unique one
-func (r ApiUpgradeGiftPostRequest) OwnedGiftId(ownedGiftId string) ApiUpgradeGiftPostRequest {
+func (r ApiPostUpgradeGiftRequest) OwnedGiftId(ownedGiftId string) ApiPostUpgradeGiftRequest {
 	r.ownedGiftId = &ownedGiftId
 	return r
 }
 
 // Pass True to keep the original gift text, sender and receiver in the upgraded gift
-func (r ApiUpgradeGiftPostRequest) KeepOriginalDetails(keepOriginalDetails bool) ApiUpgradeGiftPostRequest {
+func (r ApiPostUpgradeGiftRequest) KeepOriginalDetails(keepOriginalDetails bool) ApiPostUpgradeGiftRequest {
 	r.keepOriginalDetails = &keepOriginalDetails
 	return r
 }
 
 // The amount of Telegram Stars that will be paid for the upgrade from the business account balance. If &#x60;gift.prepaid_upgrade_star_count &gt; 0&#x60;, then pass 0, otherwise, the *can\\\\_transfer\\\\_stars* business bot right is required and &#x60;gift.upgrade_star_count&#x60; must be passed.
-func (r ApiUpgradeGiftPostRequest) StarCount(starCount int32) ApiUpgradeGiftPostRequest {
+func (r ApiPostUpgradeGiftRequest) StarCount(starCount int32) ApiPostUpgradeGiftRequest {
 	r.starCount = &starCount
 	return r
 }
 
-func (r ApiUpgradeGiftPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.UpgradeGiftPostExecute(r)
+func (r ApiPostUpgradeGiftRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostUpgradeGiftExecute(r)
 }
 
 /*
-UpgradeGiftPost Method for UpgradeGiftPost
+PostUpgradeGift upgradeGift
 
 Upgrades a given regular gift to a unique gift. Requires the *can\_transfer\_and\_upgrade\_gifts* business bot right. Additionally requires the *can\_transfer\_stars* business bot right if the upgrade is paid. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpgradeGiftPostRequest
+ @return ApiPostUpgradeGiftRequest
 */
-func (a *DefaultAPIService) UpgradeGiftPost(ctx context.Context) ApiUpgradeGiftPostRequest {
-	return ApiUpgradeGiftPostRequest{
+func (a *DefaultAPIService) PostUpgradeGift(ctx context.Context) ApiPostUpgradeGiftRequest {
+	return ApiPostUpgradeGiftRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) UpgradeGiftPostExecute(r ApiUpgradeGiftPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostUpgradeGiftExecute(r ApiPostUpgradeGiftRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.UpgradeGiftPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostUpgradeGift")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -25766,6 +27405,17 @@ func (a *DefaultAPIService) UpgradeGiftPostExecute(r ApiUpgradeGiftPostRequest) 
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -25789,7 +27439,7 @@ func (a *DefaultAPIService) UpgradeGiftPostExecute(r ApiUpgradeGiftPostRequest) 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiUploadStickerFilePostRequest struct {
+type ApiPostUploadStickerFileRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	userId *int32
@@ -25798,52 +27448,52 @@ type ApiUploadStickerFilePostRequest struct {
 }
 
 // User identifier of sticker file owner
-func (r ApiUploadStickerFilePostRequest) UserId(userId int32) ApiUploadStickerFilePostRequest {
+func (r ApiPostUploadStickerFileRequest) UserId(userId int32) ApiPostUploadStickerFileRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiUploadStickerFilePostRequest) Sticker(sticker interface{}) ApiUploadStickerFilePostRequest {
+func (r ApiPostUploadStickerFileRequest) Sticker(sticker interface{}) ApiPostUploadStickerFileRequest {
 	r.sticker = &sticker
 	return r
 }
 
 // Format of the sticker, must be one of “static”, “animated”, “video”
-func (r ApiUploadStickerFilePostRequest) StickerFormat(stickerFormat string) ApiUploadStickerFilePostRequest {
+func (r ApiPostUploadStickerFileRequest) StickerFormat(stickerFormat string) ApiPostUploadStickerFileRequest {
 	r.stickerFormat = &stickerFormat
 	return r
 }
 
-func (r ApiUploadStickerFilePostRequest) Execute() (*GetFilePost200Response, *http.Response, error) {
-	return r.ApiService.UploadStickerFilePostExecute(r)
+func (r ApiPostUploadStickerFileRequest) Execute() (*PostGetFile200Response, *http.Response, error) {
+	return r.ApiService.PostUploadStickerFileExecute(r)
 }
 
 /*
-UploadStickerFilePost Method for UploadStickerFilePost
+PostUploadStickerFile uploadStickerFile
 
 Use this method to upload a file with a sticker for later use in the [createNewStickerSet](https://core.telegram.org/bots/api/#createnewstickerset), [addStickerToSet](https://core.telegram.org/bots/api/#addstickertoset), or [replaceStickerInSet](https://core.telegram.org/bots/api/#replacestickerinset) methods (the file can be used multiple times). Returns the uploaded [File](https://core.telegram.org/bots/api/#file) on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUploadStickerFilePostRequest
+ @return ApiPostUploadStickerFileRequest
 */
-func (a *DefaultAPIService) UploadStickerFilePost(ctx context.Context) ApiUploadStickerFilePostRequest {
-	return ApiUploadStickerFilePostRequest{
+func (a *DefaultAPIService) PostUploadStickerFile(ctx context.Context) ApiPostUploadStickerFileRequest {
+	return ApiPostUploadStickerFileRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GetFilePost200Response
-func (a *DefaultAPIService) UploadStickerFilePostExecute(r ApiUploadStickerFilePostRequest) (*GetFilePost200Response, *http.Response, error) {
+//  @return PostGetFile200Response
+func (a *DefaultAPIService) PostUploadStickerFileExecute(r ApiPostUploadStickerFileRequest) (*PostGetFile200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetFilePost200Response
+		localVarReturnValue  *PostGetFile200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.UploadStickerFilePost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostUploadStickerFile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -25905,6 +27555,17 @@ func (a *DefaultAPIService) UploadStickerFilePostExecute(r ApiUploadStickerFileP
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -25928,54 +27589,54 @@ func (a *DefaultAPIService) UploadStickerFilePostExecute(r ApiUploadStickerFileP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiVerifyChatPostRequest struct {
+type ApiPostVerifyChatRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessagePostRequestChatId
+	chatId *PostSendMessageRequestChatId
 	customDescription *string
 }
 
-func (r ApiVerifyChatPostRequest) ChatId(chatId SendMessagePostRequestChatId) ApiVerifyChatPostRequest {
+func (r ApiPostVerifyChatRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostVerifyChatRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // Custom description for the verification; 0-70 characters. Must be empty if the organization isn&#39;t allowed to provide a custom verification description.
-func (r ApiVerifyChatPostRequest) CustomDescription(customDescription string) ApiVerifyChatPostRequest {
+func (r ApiPostVerifyChatRequest) CustomDescription(customDescription string) ApiPostVerifyChatRequest {
 	r.customDescription = &customDescription
 	return r
 }
 
-func (r ApiVerifyChatPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.VerifyChatPostExecute(r)
+func (r ApiPostVerifyChatRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostVerifyChatExecute(r)
 }
 
 /*
-VerifyChatPost Method for VerifyChatPost
+PostVerifyChat verifyChat
 
 Verifies a chat [on behalf of the organization](https://telegram.org/verify#third-party-verification) which is represented by the bot. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiVerifyChatPostRequest
+ @return ApiPostVerifyChatRequest
 */
-func (a *DefaultAPIService) VerifyChatPost(ctx context.Context) ApiVerifyChatPostRequest {
-	return ApiVerifyChatPostRequest{
+func (a *DefaultAPIService) PostVerifyChat(ctx context.Context) ApiPostVerifyChatRequest {
+	return ApiPostVerifyChatRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) VerifyChatPostExecute(r ApiVerifyChatPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostVerifyChatExecute(r ApiPostVerifyChatRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.VerifyChatPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostVerifyChat")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -26032,6 +27693,17 @@ func (a *DefaultAPIService) VerifyChatPostExecute(r ApiVerifyChatPostRequest) (*
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -26055,7 +27727,7 @@ func (a *DefaultAPIService) VerifyChatPostExecute(r ApiVerifyChatPostRequest) (*
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiVerifyUserPostRequest struct {
+type ApiPostVerifyUserRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	userId *int32
@@ -26063,47 +27735,47 @@ type ApiVerifyUserPostRequest struct {
 }
 
 // Unique identifier of the target user
-func (r ApiVerifyUserPostRequest) UserId(userId int32) ApiVerifyUserPostRequest {
+func (r ApiPostVerifyUserRequest) UserId(userId int32) ApiPostVerifyUserRequest {
 	r.userId = &userId
 	return r
 }
 
 // Custom description for the verification; 0-70 characters. Must be empty if the organization isn&#39;t allowed to provide a custom verification description.
-func (r ApiVerifyUserPostRequest) CustomDescription(customDescription string) ApiVerifyUserPostRequest {
+func (r ApiPostVerifyUserRequest) CustomDescription(customDescription string) ApiPostVerifyUserRequest {
 	r.customDescription = &customDescription
 	return r
 }
 
-func (r ApiVerifyUserPostRequest) Execute() (*SetWebhookPost200Response, *http.Response, error) {
-	return r.ApiService.VerifyUserPostExecute(r)
+func (r ApiPostVerifyUserRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+	return r.ApiService.PostVerifyUserExecute(r)
 }
 
 /*
-VerifyUserPost Method for VerifyUserPost
+PostVerifyUser verifyUser
 
 Verifies a user [on behalf of the organization](https://telegram.org/verify#third-party-verification) which is represented by the bot. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiVerifyUserPostRequest
+ @return ApiPostVerifyUserRequest
 */
-func (a *DefaultAPIService) VerifyUserPost(ctx context.Context) ApiVerifyUserPostRequest {
-	return ApiVerifyUserPostRequest{
+func (a *DefaultAPIService) PostVerifyUser(ctx context.Context) ApiPostVerifyUserRequest {
+	return ApiPostVerifyUserRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SetWebhookPost200Response
-func (a *DefaultAPIService) VerifyUserPostExecute(r ApiVerifyUserPostRequest) (*SetWebhookPost200Response, *http.Response, error) {
+//  @return PostSetWebhook200Response
+func (a *DefaultAPIService) PostVerifyUserExecute(r ApiPostVerifyUserRequest) (*PostSetWebhook200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SetWebhookPost200Response
+		localVarReturnValue  *PostSetWebhook200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.VerifyUserPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostVerifyUser")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -26159,6 +27831,17 @@ func (a *DefaultAPIService) VerifyUserPostExecute(r ApiVerifyUserPostRequest) (*
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))

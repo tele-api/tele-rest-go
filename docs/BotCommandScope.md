@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | Scope type, must be *chat\\_member* | [default to "chat_member"]
-**ChatId** | [**PostRestrictChatMemberRequestChatId**](PostRestrictChatMemberRequestChatId.md) |  | 
+**ChatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
 **UserId** | **int32** | Unique identifier of the target user | 
 
 ## Methods
 
 ### NewBotCommandScope
 
-`func NewBotCommandScope(type_ string, chatId PostRestrictChatMemberRequestChatId, userId int32, ) *BotCommandScope`
+`func NewBotCommandScope(type_ string, chatId BotCommandScopeChatChatId, userId int32, ) *BotCommandScope`
 
 NewBotCommandScope instantiates a new BotCommandScope object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetChatId
 
-`func (o *BotCommandScope) GetChatId() PostRestrictChatMemberRequestChatId`
+`func (o *BotCommandScope) GetChatId() BotCommandScopeChatChatId`
 
 GetChatId returns the ChatId field if non-nil, zero value otherwise.
 
 ### GetChatIdOk
 
-`func (o *BotCommandScope) GetChatIdOk() (*PostRestrictChatMemberRequestChatId, bool)`
+`func (o *BotCommandScope) GetChatIdOk() (*BotCommandScopeChatChatId, bool)`
 
 GetChatIdOk returns a tuple with the ChatId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChatId
 
-`func (o *BotCommandScope) SetChatId(v PostRestrictChatMemberRequestChatId)`
+`func (o *BotCommandScope) SetChatId(v BotCommandScopeChatChatId)`
 
 SetChatId sets ChatId field to given value.
 

@@ -6,7 +6,7 @@
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
  *    * - **Version**: 9.0.0
- *    * - **Modified**: 2025-07-01T14:36:13.209453861Z[Etc/UTC]
+ *    * - **Modified**: 2025-07-02T07:03:19.642213517Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -57,7 +57,7 @@ var _ MappedNullable = &BotCommandScopeChatMember{}
 type BotCommandScopeChatMember struct {
 	// Scope type, must be *chat\\_member*
 	Type string `json:"type"`
-	ChatId RestrictChatMemberPostRequestChatId `json:"chat_id"`
+	ChatId PostRestrictChatMemberRequestChatId `json:"chat_id"`
 	// Unique identifier of the target user
 	UserId int32 `json:"user_id"`
 }
@@ -68,7 +68,7 @@ type _BotCommandScopeChatMember BotCommandScopeChatMember
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBotCommandScopeChatMember(type_ string, chatId RestrictChatMemberPostRequestChatId, userId int32) *BotCommandScopeChatMember {
+func NewBotCommandScopeChatMember(type_ string, chatId PostRestrictChatMemberRequestChatId, userId int32) *BotCommandScopeChatMember {
 	this := BotCommandScopeChatMember{}
 	this.Type = type_
 	this.ChatId = chatId
@@ -111,9 +111,9 @@ func (o *BotCommandScopeChatMember) SetType(v string) {
 }
 
 // GetChatId returns the ChatId field value
-func (o *BotCommandScopeChatMember) GetChatId() RestrictChatMemberPostRequestChatId {
+func (o *BotCommandScopeChatMember) GetChatId() PostRestrictChatMemberRequestChatId {
 	if o == nil {
-		var ret RestrictChatMemberPostRequestChatId
+		var ret PostRestrictChatMemberRequestChatId
 		return ret
 	}
 
@@ -122,7 +122,7 @@ func (o *BotCommandScopeChatMember) GetChatId() RestrictChatMemberPostRequestCha
 
 // GetChatIdOk returns a tuple with the ChatId field value
 // and a boolean to check if the value has been set.
-func (o *BotCommandScopeChatMember) GetChatIdOk() (*RestrictChatMemberPostRequestChatId, bool) {
+func (o *BotCommandScopeChatMember) GetChatIdOk() (*PostRestrictChatMemberRequestChatId, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -130,7 +130,7 @@ func (o *BotCommandScopeChatMember) GetChatIdOk() (*RestrictChatMemberPostReques
 }
 
 // SetChatId sets field value
-func (o *BotCommandScopeChatMember) SetChatId(v RestrictChatMemberPostRequestChatId) {
+func (o *BotCommandScopeChatMember) SetChatId(v PostRestrictChatMemberRequestChatId) {
 	o.ChatId = v
 }
 

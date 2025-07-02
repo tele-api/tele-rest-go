@@ -22,11 +22,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test DefaultAPIService AddStickerToSetPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostAddStickerToSet", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.AddStickerToSetPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostAddStickerToSet(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -34,11 +34,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService AnswerCallbackQueryPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostAnswerCallbackQuery", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.AnswerCallbackQueryPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostAnswerCallbackQuery(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -46,11 +46,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService AnswerInlineQueryPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostAnswerInlineQuery", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.AnswerInlineQueryPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostAnswerInlineQuery(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -58,11 +58,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService AnswerPreCheckoutQueryPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostAnswerPreCheckoutQuery", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.AnswerPreCheckoutQueryPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostAnswerPreCheckoutQuery(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -70,11 +70,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService AnswerShippingQueryPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostAnswerShippingQuery", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.AnswerShippingQueryPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostAnswerShippingQuery(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -82,11 +82,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService AnswerWebAppQueryPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostAnswerWebAppQuery", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.AnswerWebAppQueryPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostAnswerWebAppQuery(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -94,11 +94,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService ApproveChatJoinRequestPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostApproveChatJoinRequest", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.ApproveChatJoinRequestPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostApproveChatJoinRequest(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -106,11 +106,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService BanChatMemberPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostBanChatMember", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.BanChatMemberPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostBanChatMember(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -118,11 +118,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService BanChatSenderChatPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostBanChatSenderChat", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.BanChatSenderChatPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostBanChatSenderChat(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -130,11 +130,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService CloseForumTopicPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostClose", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.CloseForumTopicPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostClose(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -142,11 +142,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService CloseGeneralForumTopicPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostCloseForumTopic", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.CloseGeneralForumTopicPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostCloseForumTopic(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -154,11 +154,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService ClosePost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostCloseGeneralForumTopic", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.ClosePost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostCloseGeneralForumTopic(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -166,11 +166,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService ConvertGiftToStarsPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostConvertGiftToStars", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.ConvertGiftToStarsPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostConvertGiftToStars(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -178,11 +178,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService CopyMessagePost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostCopyMessage", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.CopyMessagePost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostCopyMessage(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -190,11 +190,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService CopyMessagesPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostCopyMessages", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.CopyMessagesPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostCopyMessages(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -202,11 +202,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService CreateChatInviteLinkPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostCreateChatInviteLink", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.CreateChatInviteLinkPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostCreateChatInviteLink(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -214,11 +214,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService CreateChatSubscriptionInviteLinkPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostCreateChatSubscriptionInviteLink", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.CreateChatSubscriptionInviteLinkPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostCreateChatSubscriptionInviteLink(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -226,11 +226,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService CreateForumTopicPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostCreateForumTopic", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.CreateForumTopicPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostCreateForumTopic(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -238,11 +238,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService CreateInvoiceLinkPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostCreateInvoiceLink", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.CreateInvoiceLinkPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostCreateInvoiceLink(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -250,11 +250,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService CreateNewStickerSetPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostCreateNewStickerSet", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.CreateNewStickerSetPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostCreateNewStickerSet(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -262,11 +262,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService DeclineChatJoinRequestPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostDeclineChatJoinRequest", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.DeclineChatJoinRequestPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostDeclineChatJoinRequest(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -274,11 +274,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService DeleteBusinessMessagesPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostDeleteBusinessMessages", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.DeleteBusinessMessagesPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostDeleteBusinessMessages(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -286,11 +286,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService DeleteChatPhotoPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostDeleteChatPhoto", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.DeleteChatPhotoPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostDeleteChatPhoto(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -298,11 +298,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService DeleteChatStickerSetPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostDeleteChatStickerSet", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.DeleteChatStickerSetPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostDeleteChatStickerSet(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -310,11 +310,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService DeleteForumTopicPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostDeleteForumTopic", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.DeleteForumTopicPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostDeleteForumTopic(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -322,11 +322,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService DeleteMessagePost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostDeleteMessage", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.DeleteMessagePost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostDeleteMessage(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -334,11 +334,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService DeleteMessagesPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostDeleteMessages", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.DeleteMessagesPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostDeleteMessages(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -346,11 +346,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService DeleteMyCommandsPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostDeleteMyCommands", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.DeleteMyCommandsPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostDeleteMyCommands(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -358,11 +358,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService DeleteStickerFromSetPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostDeleteStickerFromSet", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.DeleteStickerFromSetPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostDeleteStickerFromSet(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -370,11 +370,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService DeleteStickerSetPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostDeleteStickerSet", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.DeleteStickerSetPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostDeleteStickerSet(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -382,11 +382,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService DeleteStoryPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostDeleteStory", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.DeleteStoryPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostDeleteStory(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -394,11 +394,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService DeleteWebhookPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostDeleteWebhook", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.DeleteWebhookPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostDeleteWebhook(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -406,11 +406,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService EditChatInviteLinkPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostEditChatInviteLink", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.EditChatInviteLinkPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostEditChatInviteLink(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -418,11 +418,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService EditChatSubscriptionInviteLinkPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostEditChatSubscriptionInviteLink", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.EditChatSubscriptionInviteLinkPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostEditChatSubscriptionInviteLink(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -430,11 +430,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService EditForumTopicPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostEditForumTopic", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.EditForumTopicPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostEditForumTopic(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -442,11 +442,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService EditGeneralForumTopicPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostEditGeneralForumTopic", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.EditGeneralForumTopicPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostEditGeneralForumTopic(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -454,11 +454,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService EditMessageCaptionPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostEditMessageCaption", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.EditMessageCaptionPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostEditMessageCaption(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -466,11 +466,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService EditMessageLiveLocationPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostEditMessageLiveLocation", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.EditMessageLiveLocationPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostEditMessageLiveLocation(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -478,11 +478,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService EditMessageMediaPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostEditMessageMedia", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.EditMessageMediaPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostEditMessageMedia(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -490,11 +490,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService EditMessageReplyMarkupPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostEditMessageReplyMarkup", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.EditMessageReplyMarkupPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostEditMessageReplyMarkup(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -502,11 +502,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService EditMessageTextPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostEditMessageText", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.EditMessageTextPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostEditMessageText(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -514,11 +514,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService EditStoryPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostEditStory", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.EditStoryPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostEditStory(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -526,11 +526,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService EditUserStarSubscriptionPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostEditUserStarSubscription", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.EditUserStarSubscriptionPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostEditUserStarSubscription(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -538,11 +538,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService ExportChatInviteLinkPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostExportChatInviteLink", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.ExportChatInviteLinkPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostExportChatInviteLink(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -550,11 +550,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService ForwardMessagePost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostForwardMessage", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.ForwardMessagePost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostForwardMessage(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -562,11 +562,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService ForwardMessagesPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostForwardMessages", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.ForwardMessagesPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostForwardMessages(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -574,11 +574,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService GetAvailableGiftsPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostGetAvailableGifts", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.GetAvailableGiftsPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostGetAvailableGifts(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -586,11 +586,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService GetBusinessAccountGiftsPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostGetBusinessAccountGifts", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.GetBusinessAccountGiftsPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostGetBusinessAccountGifts(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -598,11 +598,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService GetBusinessAccountStarBalancePost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostGetBusinessAccountStarBalance", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.GetBusinessAccountStarBalancePost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostGetBusinessAccountStarBalance(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -610,11 +610,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService GetBusinessConnectionPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostGetBusinessConnection", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.GetBusinessConnectionPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostGetBusinessConnection(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -622,11 +622,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService GetChatAdministratorsPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostGetChat", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.GetChatAdministratorsPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostGetChat(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -634,11 +634,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService GetChatMemberCountPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostGetChatAdministrators", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.GetChatMemberCountPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostGetChatAdministrators(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -646,11 +646,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService GetChatMemberPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostGetChatMember", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.GetChatMemberPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostGetChatMember(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -658,11 +658,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService GetChatMenuButtonPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostGetChatMemberCount", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.GetChatMenuButtonPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostGetChatMemberCount(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -670,11 +670,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService GetChatPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostGetChatMenuButton", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.GetChatPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostGetChatMenuButton(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -682,11 +682,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService GetCustomEmojiStickersPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostGetCustomEmojiStickers", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.GetCustomEmojiStickersPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostGetCustomEmojiStickers(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -694,11 +694,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService GetFilePost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostGetFile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.GetFilePost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostGetFile(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -706,11 +706,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService GetForumTopicIconStickersPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostGetForumTopicIconStickers", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.GetForumTopicIconStickersPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostGetForumTopicIconStickers(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -718,11 +718,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService GetGameHighScoresPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostGetGameHighScores", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.GetGameHighScoresPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostGetGameHighScores(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -730,11 +730,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService GetMePost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostGetMe", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.GetMePost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostGetMe(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -742,11 +742,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService GetMyCommandsPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostGetMyCommands", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.GetMyCommandsPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostGetMyCommands(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -754,11 +754,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService GetMyDefaultAdministratorRightsPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostGetMyDefaultAdministratorRights", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.GetMyDefaultAdministratorRightsPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostGetMyDefaultAdministratorRights(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -766,11 +766,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService GetMyDescriptionPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostGetMyDescription", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.GetMyDescriptionPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostGetMyDescription(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -778,11 +778,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService GetMyNamePost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostGetMyName", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.GetMyNamePost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostGetMyName(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -790,11 +790,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService GetMyShortDescriptionPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostGetMyShortDescription", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.GetMyShortDescriptionPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostGetMyShortDescription(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -802,11 +802,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService GetStarTransactionsPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostGetStarTransactions", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.GetStarTransactionsPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostGetStarTransactions(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -814,11 +814,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService GetStickerSetPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostGetStickerSet", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.GetStickerSetPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostGetStickerSet(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -826,11 +826,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService GetUpdatesPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostGetUpdates", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.GetUpdatesPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostGetUpdates(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -838,11 +838,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService GetUserChatBoostsPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostGetUserChatBoosts", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.GetUserChatBoostsPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostGetUserChatBoosts(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -850,11 +850,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService GetUserProfilePhotosPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostGetUserProfilePhotos", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.GetUserProfilePhotosPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostGetUserProfilePhotos(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -862,11 +862,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService GetWebhookInfoPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostGetWebhookInfo", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.GetWebhookInfoPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostGetWebhookInfo(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -874,11 +874,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService GiftPremiumSubscriptionPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostGiftPremiumSubscription", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.GiftPremiumSubscriptionPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostGiftPremiumSubscription(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -886,11 +886,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService HideGeneralForumTopicPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostHideGeneralForumTopic", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.HideGeneralForumTopicPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostHideGeneralForumTopic(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -898,11 +898,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService LeaveChatPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostLeaveChat", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.LeaveChatPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostLeaveChat(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -910,11 +910,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService LogOutPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostLogOut", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.LogOutPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostLogOut(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -922,11 +922,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService PinChatMessagePost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostPinChatMessage", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.PinChatMessagePost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostPinChatMessage(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -934,11 +934,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService PostStoryPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostPostStory", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.PostStoryPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostPostStory(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -946,11 +946,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService PromoteChatMemberPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostPromoteChatMember", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.PromoteChatMemberPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostPromoteChatMember(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -958,11 +958,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService ReadBusinessMessagePost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostReadBusinessMessage", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.ReadBusinessMessagePost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostReadBusinessMessage(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -970,11 +970,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService RefundStarPaymentPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostRefundStarPayment", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.RefundStarPaymentPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostRefundStarPayment(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -982,11 +982,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService RemoveBusinessAccountProfilePhotoPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostRemoveBusinessAccountProfilePhoto", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.RemoveBusinessAccountProfilePhotoPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostRemoveBusinessAccountProfilePhoto(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -994,11 +994,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService RemoveChatVerificationPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostRemoveChatVerification", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.RemoveChatVerificationPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostRemoveChatVerification(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1006,11 +1006,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService RemoveUserVerificationPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostRemoveUserVerification", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.RemoveUserVerificationPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostRemoveUserVerification(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1018,11 +1018,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService ReopenForumTopicPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostReopenForumTopic", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.ReopenForumTopicPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostReopenForumTopic(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1030,11 +1030,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService ReopenGeneralForumTopicPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostReopenGeneralForumTopic", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.ReopenGeneralForumTopicPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostReopenGeneralForumTopic(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1042,11 +1042,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService ReplaceStickerInSetPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostReplaceStickerInSet", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.ReplaceStickerInSetPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostReplaceStickerInSet(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1054,11 +1054,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService RestrictChatMemberPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostRestrictChatMember", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.RestrictChatMemberPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostRestrictChatMember(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1066,11 +1066,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService RevokeChatInviteLinkPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostRevokeChatInviteLink", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.RevokeChatInviteLinkPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostRevokeChatInviteLink(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1078,11 +1078,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SavePreparedInlineMessagePost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSavePreparedInlineMessage", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SavePreparedInlineMessagePost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSavePreparedInlineMessage(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1090,11 +1090,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SendAnimationPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSendAnimation", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SendAnimationPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSendAnimation(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1102,11 +1102,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SendAudioPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSendAudio", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SendAudioPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSendAudio(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1114,11 +1114,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SendChatActionPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSendChatAction", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SendChatActionPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSendChatAction(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1126,11 +1126,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SendContactPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSendContact", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SendContactPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSendContact(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1138,11 +1138,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SendDicePost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSendDice", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SendDicePost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSendDice(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1150,11 +1150,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SendDocumentPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSendDocument", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SendDocumentPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSendDocument(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1162,11 +1162,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SendGamePost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSendGame", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SendGamePost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSendGame(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1174,11 +1174,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SendGiftPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSendGift", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SendGiftPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSendGift(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1186,11 +1186,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SendInvoicePost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSendInvoice", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SendInvoicePost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSendInvoice(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1198,11 +1198,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SendLocationPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSendLocation", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SendLocationPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSendLocation(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1210,11 +1210,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SendMediaGroupPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSendMediaGroup", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SendMediaGroupPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSendMediaGroup(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1222,11 +1222,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SendMessagePost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSendMessage", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SendMessagePost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSendMessage(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1234,11 +1234,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SendPaidMediaPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSendPaidMedia", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SendPaidMediaPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSendPaidMedia(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1246,11 +1246,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SendPhotoPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSendPhoto", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SendPhotoPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSendPhoto(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1258,11 +1258,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SendPollPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSendPoll", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SendPollPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSendPoll(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1270,11 +1270,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SendStickerPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSendSticker", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SendStickerPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSendSticker(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1282,11 +1282,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SendVenuePost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSendVenue", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SendVenuePost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSendVenue(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1294,11 +1294,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SendVideoNotePost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSendVideo", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SendVideoNotePost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSendVideo(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1306,11 +1306,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SendVideoPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSendVideoNote", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SendVideoPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSendVideoNote(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1318,11 +1318,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SendVoicePost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSendVoice", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SendVoicePost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSendVoice(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1330,11 +1330,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SetBusinessAccountBioPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSetBusinessAccountBio", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SetBusinessAccountBioPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSetBusinessAccountBio(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1342,11 +1342,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SetBusinessAccountGiftSettingsPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSetBusinessAccountGiftSettings", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SetBusinessAccountGiftSettingsPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSetBusinessAccountGiftSettings(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1354,11 +1354,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SetBusinessAccountNamePost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSetBusinessAccountName", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SetBusinessAccountNamePost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSetBusinessAccountName(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1366,11 +1366,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SetBusinessAccountProfilePhotoPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSetBusinessAccountProfilePhoto", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SetBusinessAccountProfilePhotoPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSetBusinessAccountProfilePhoto(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1378,11 +1378,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SetBusinessAccountUsernamePost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSetBusinessAccountUsername", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SetBusinessAccountUsernamePost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSetBusinessAccountUsername(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1390,11 +1390,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SetChatAdministratorCustomTitlePost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSetChatAdministratorCustomTitle", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SetChatAdministratorCustomTitlePost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSetChatAdministratorCustomTitle(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1402,11 +1402,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SetChatDescriptionPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSetChatDescription", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SetChatDescriptionPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSetChatDescription(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1414,11 +1414,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SetChatMenuButtonPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSetChatMenuButton", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SetChatMenuButtonPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSetChatMenuButton(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1426,11 +1426,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SetChatPermissionsPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSetChatPermissions", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SetChatPermissionsPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSetChatPermissions(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1438,11 +1438,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SetChatPhotoPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSetChatPhoto", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SetChatPhotoPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSetChatPhoto(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1450,11 +1450,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SetChatStickerSetPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSetChatStickerSet", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SetChatStickerSetPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSetChatStickerSet(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1462,11 +1462,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SetChatTitlePost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSetChatTitle", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SetChatTitlePost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSetChatTitle(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1474,11 +1474,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SetCustomEmojiStickerSetThumbnailPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSetCustomEmojiStickerSetThumbnail", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SetCustomEmojiStickerSetThumbnailPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSetCustomEmojiStickerSetThumbnail(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1486,11 +1486,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SetGameScorePost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSetGameScore", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SetGameScorePost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSetGameScore(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1498,11 +1498,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SetMessageReactionPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSetMessageReaction", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SetMessageReactionPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSetMessageReaction(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1510,11 +1510,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SetMyCommandsPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSetMyCommands", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SetMyCommandsPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSetMyCommands(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1522,11 +1522,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SetMyDefaultAdministratorRightsPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSetMyDefaultAdministratorRights", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SetMyDefaultAdministratorRightsPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSetMyDefaultAdministratorRights(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1534,11 +1534,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SetMyDescriptionPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSetMyDescription", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SetMyDescriptionPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSetMyDescription(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1546,11 +1546,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SetMyNamePost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSetMyName", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SetMyNamePost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSetMyName(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1558,11 +1558,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SetMyShortDescriptionPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSetMyShortDescription", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SetMyShortDescriptionPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSetMyShortDescription(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1570,11 +1570,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SetPassportDataErrorsPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSetPassportDataErrors", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SetPassportDataErrorsPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSetPassportDataErrors(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1582,11 +1582,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SetStickerEmojiListPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSetStickerEmojiList", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SetStickerEmojiListPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSetStickerEmojiList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1594,11 +1594,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SetStickerKeywordsPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSetStickerKeywords", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SetStickerKeywordsPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSetStickerKeywords(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1606,11 +1606,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SetStickerMaskPositionPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSetStickerMaskPosition", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SetStickerMaskPositionPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSetStickerMaskPosition(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1618,11 +1618,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SetStickerPositionInSetPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSetStickerPositionInSet", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SetStickerPositionInSetPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSetStickerPositionInSet(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1630,11 +1630,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SetStickerSetThumbnailPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSetStickerSetThumbnail", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SetStickerSetThumbnailPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSetStickerSetThumbnail(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1642,11 +1642,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SetStickerSetTitlePost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSetStickerSetTitle", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SetStickerSetTitlePost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSetStickerSetTitle(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1654,11 +1654,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SetUserEmojiStatusPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSetUserEmojiStatus", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SetUserEmojiStatusPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSetUserEmojiStatus(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1666,11 +1666,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService SetWebhookPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostSetWebhook", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.SetWebhookPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostSetWebhook(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1678,11 +1678,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService StopMessageLiveLocationPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostStopMessageLiveLocation", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.StopMessageLiveLocationPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostStopMessageLiveLocation(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1690,11 +1690,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService StopPollPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostStopPoll", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.StopPollPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostStopPoll(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1702,11 +1702,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService TransferBusinessAccountStarsPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostTransferBusinessAccountStars", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.TransferBusinessAccountStarsPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostTransferBusinessAccountStars(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1714,11 +1714,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService TransferGiftPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostTransferGift", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.TransferGiftPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostTransferGift(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1726,11 +1726,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService UnbanChatMemberPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostUnbanChatMember", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.UnbanChatMemberPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostUnbanChatMember(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1738,11 +1738,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService UnbanChatSenderChatPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostUnbanChatSenderChat", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.UnbanChatSenderChatPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostUnbanChatSenderChat(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1750,11 +1750,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService UnhideGeneralForumTopicPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostUnhideGeneralForumTopic", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.UnhideGeneralForumTopicPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostUnhideGeneralForumTopic(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1762,11 +1762,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService UnpinAllChatMessagesPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostUnpinAllChatMessages", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.UnpinAllChatMessagesPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostUnpinAllChatMessages(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1774,11 +1774,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService UnpinAllForumTopicMessagesPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostUnpinAllForumTopicMessages", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.UnpinAllForumTopicMessagesPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostUnpinAllForumTopicMessages(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1786,11 +1786,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService UnpinAllGeneralForumTopicMessagesPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostUnpinAllGeneralForumTopicMessages", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.UnpinAllGeneralForumTopicMessagesPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostUnpinAllGeneralForumTopicMessages(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1798,11 +1798,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService UnpinChatMessagePost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostUnpinChatMessage", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.UnpinChatMessagePost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostUnpinChatMessage(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1810,11 +1810,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService UpgradeGiftPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostUpgradeGift", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.UpgradeGiftPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostUpgradeGift(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1822,11 +1822,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService UploadStickerFilePost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostUploadStickerFile", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.UploadStickerFilePost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostUploadStickerFile(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1834,11 +1834,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService VerifyChatPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostVerifyChat", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.VerifyChatPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostVerifyChat(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1846,11 +1846,11 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test DefaultAPIService VerifyUserPost", func(t *testing.T) {
+	t.Run("Test DefaultAPIService PostVerifyUser", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.DefaultAPI.VerifyUserPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.PostVerifyUser(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

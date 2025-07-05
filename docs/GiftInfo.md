@@ -8,10 +8,10 @@ Name | Type | Description | Notes
 **OwnedGiftId** | Pointer to **string** | *Optional*. Unique identifier of the received gift for the bot; only present for gifts received on behalf of business accounts | [optional] 
 **ConvertStarCount** | Pointer to **int32** | *Optional*. Number of Telegram Stars that can be claimed by the receiver by converting the gift; omitted if conversion to Telegram Stars is impossible | [optional] 
 **PrepaidUpgradeStarCount** | Pointer to **int32** | *Optional*. Number of Telegram Stars that were prepaid by the sender for the ability to upgrade the gift | [optional] 
-**CanBeUpgraded** | Pointer to **bool** | *Optional*. True, if the gift can be upgraded to a unique gift | [optional] [default to true]
+**CanBeUpgraded** | Pointer to **bool** | *Optional*. *True*, if the gift can be upgraded to a unique gift | [optional] [default to true]
 **Text** | Pointer to **string** | *Optional*. Text of the message that was added to the gift | [optional] 
 **Entities** | Pointer to [**[]MessageEntity**](MessageEntity.md) | *Optional*. Special entities that appear in the text | [optional] 
-**IsPrivate** | Pointer to **bool** | *Optional*. True, if the sender and gift text are shown only to the gift receiver; otherwise, everyone will be able to see them | [optional] [default to true]
+**IsPrivate** | Pointer to **bool** | *Optional*. *True*, if the sender and gift text are shown only to the gift receiver; otherwise, everyone will be able to see them | [optional] [default to true]
 
 ## Methods
 

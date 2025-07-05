@@ -5,8 +5,8 @@
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.0.0
- *    * - **Modified**: 2025-07-02T07:03:19.642213517Z[Etc/UTC]
+ *    * - **Version**: 9.1.0
+ *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -63,9 +63,9 @@ type SuccessfulPayment struct {
 	InvoicePayload string `json:"invoice_payload"`
 	// *Optional*. Expiration date of the subscription, in Unix time; for recurring payments only
 	SubscriptionExpirationDate *int32 `json:"subscription_expiration_date,omitempty"`
-	// *Optional*. True, if the payment is a recurring payment for a subscription
+	// *Optional*. *True*, if the payment is a recurring payment for a subscription
 	IsRecurring *bool `json:"is_recurring,omitempty"`
-	// *Optional*. True, if the payment is the first payment for a subscription
+	// *Optional*. *True*, if the payment is the first payment for a subscription
 	IsFirstRecurring *bool `json:"is_first_recurring,omitempty"`
 	// *Optional*. Identifier of the shipping option chosen by the user
 	ShippingOptionId *string `json:"shipping_option_id,omitempty"`

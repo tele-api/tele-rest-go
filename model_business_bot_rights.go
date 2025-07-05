@@ -5,8 +5,8 @@
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.0.0
- *    * - **Modified**: 2025-07-02T07:03:19.642213517Z[Etc/UTC]
+ *    * - **Version**: 9.1.0
+ *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -53,33 +53,33 @@ var _ MappedNullable = &BusinessBotRights{}
 
 // BusinessBotRights Represents the rights of a business bot.
 type BusinessBotRights struct {
-	// *Optional*. True, if the bot can send and edit messages in the private chats that had incoming messages in the last 24 hours
+	// *Optional*. *True*, if the bot can send and edit messages in the private chats that had incoming messages in the last 24 hours
 	CanReply *bool `json:"can_reply,omitempty"`
-	// *Optional*. True, if the bot can mark incoming private messages as read
+	// *Optional*. *True*, if the bot can mark incoming private messages as read
 	CanReadMessages *bool `json:"can_read_messages,omitempty"`
-	// *Optional*. True, if the bot can delete messages sent by the bot
+	// *Optional*. *True*, if the bot can delete messages sent by the bot
 	CanDeleteSentMessages *bool `json:"can_delete_sent_messages,omitempty"`
-	// *Optional*. True, if the bot can delete all private messages in managed chats
+	// *Optional*. *True*, if the bot can delete all private messages in managed chats
 	CanDeleteAllMessages *bool `json:"can_delete_all_messages,omitempty"`
-	// *Optional*. True, if the bot can edit the first and last name of the business account
+	// *Optional*. *True*, if the bot can edit the first and last name of the business account
 	CanEditName *bool `json:"can_edit_name,omitempty"`
-	// *Optional*. True, if the bot can edit the bio of the business account
+	// *Optional*. *True*, if the bot can edit the bio of the business account
 	CanEditBio *bool `json:"can_edit_bio,omitempty"`
-	// *Optional*. True, if the bot can edit the profile photo of the business account
+	// *Optional*. *True*, if the bot can edit the profile photo of the business account
 	CanEditProfilePhoto *bool `json:"can_edit_profile_photo,omitempty"`
-	// *Optional*. True, if the bot can edit the username of the business account
+	// *Optional*. *True*, if the bot can edit the username of the business account
 	CanEditUsername *bool `json:"can_edit_username,omitempty"`
-	// *Optional*. True, if the bot can change the privacy settings pertaining to gifts for the business account
+	// *Optional*. *True*, if the bot can change the privacy settings pertaining to gifts for the business account
 	CanChangeGiftSettings *bool `json:"can_change_gift_settings,omitempty"`
-	// *Optional*. True, if the bot can view gifts and the amount of Telegram Stars owned by the business account
+	// *Optional*. *True*, if the bot can view gifts and the amount of Telegram Stars owned by the business account
 	CanViewGiftsAndStars *bool `json:"can_view_gifts_and_stars,omitempty"`
-	// *Optional*. True, if the bot can convert regular gifts owned by the business account to Telegram Stars
+	// *Optional*. *True*, if the bot can convert regular gifts owned by the business account to Telegram Stars
 	CanConvertGiftsToStars *bool `json:"can_convert_gifts_to_stars,omitempty"`
-	// *Optional*. True, if the bot can transfer and upgrade gifts owned by the business account
+	// *Optional*. *True*, if the bot can transfer and upgrade gifts owned by the business account
 	CanTransferAndUpgradeGifts *bool `json:"can_transfer_and_upgrade_gifts,omitempty"`
-	// *Optional*. True, if the bot can transfer Telegram Stars received by the business account to its own account, or use them to upgrade and transfer gifts
+	// *Optional*. *True*, if the bot can transfer Telegram Stars received by the business account to its own account, or use them to upgrade and transfer gifts
 	CanTransferStars *bool `json:"can_transfer_stars,omitempty"`
-	// *Optional*. True, if the bot can post, edit and delete stories on behalf of the business account
+	// *Optional*. *True*, if the bot can post, edit and delete stories on behalf of the business account
 	CanManageStories *bool `json:"can_manage_stories,omitempty"`
 }
 

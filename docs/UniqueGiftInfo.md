@@ -5,9 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Gift** | [**UniqueGift**](UniqueGift.md) |  | 
-**Origin** | **string** | Origin of the gift. Currently, either “upgrade” or “transfer” | 
+**Origin** | **string** | Origin of the gift. Currently, either “upgrade” for gifts upgraded from regular gifts, “transfer” for gifts transferred from other users or channels, or “resale” for gifts bought from other users | 
+**LastResaleStarCount** | Pointer to **int32** | *Optional*. For gifts bought from other users, the price paid for the gift | [optional] 
 **OwnedGiftId** | Pointer to **string** | *Optional*. Unique identifier of the received gift for the bot; only present for gifts received on behalf of business accounts | [optional] 
 **TransferStarCount** | Pointer to **int32** | *Optional*. Number of Telegram Stars that must be paid to transfer the gift; omitted if the bot cannot transfer the gift | [optional] 
+**NextTransferDate** | Pointer to **int32** | *Optional*. Point in time (Unix timestamp) when the gift can be transferred. If it is in the past, then the gift can be transferred now | [optional] 
 
 ## Methods
 
@@ -68,6 +70,31 @@ and a boolean to check if the value has been set.
 SetOrigin sets Origin field to given value.
 
 
+### GetLastResaleStarCount
+
+`func (o *UniqueGiftInfo) GetLastResaleStarCount() int32`
+
+GetLastResaleStarCount returns the LastResaleStarCount field if non-nil, zero value otherwise.
+
+### GetLastResaleStarCountOk
+
+`func (o *UniqueGiftInfo) GetLastResaleStarCountOk() (*int32, bool)`
+
+GetLastResaleStarCountOk returns a tuple with the LastResaleStarCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastResaleStarCount
+
+`func (o *UniqueGiftInfo) SetLastResaleStarCount(v int32)`
+
+SetLastResaleStarCount sets LastResaleStarCount field to given value.
+
+### HasLastResaleStarCount
+
+`func (o *UniqueGiftInfo) HasLastResaleStarCount() bool`
+
+HasLastResaleStarCount returns a boolean if a field has been set.
+
 ### GetOwnedGiftId
 
 `func (o *UniqueGiftInfo) GetOwnedGiftId() string`
@@ -117,6 +144,31 @@ SetTransferStarCount sets TransferStarCount field to given value.
 `func (o *UniqueGiftInfo) HasTransferStarCount() bool`
 
 HasTransferStarCount returns a boolean if a field has been set.
+
+### GetNextTransferDate
+
+`func (o *UniqueGiftInfo) GetNextTransferDate() int32`
+
+GetNextTransferDate returns the NextTransferDate field if non-nil, zero value otherwise.
+
+### GetNextTransferDateOk
+
+`func (o *UniqueGiftInfo) GetNextTransferDateOk() (*int32, bool)`
+
+GetNextTransferDateOk returns a tuple with the NextTransferDate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNextTransferDate
+
+`func (o *UniqueGiftInfo) SetNextTransferDate(v int32)`
+
+SetNextTransferDate sets NextTransferDate field to given value.
+
+### HasNextTransferDate
+
+`func (o *UniqueGiftInfo) HasNextTransferDate() bool`
+
+HasNextTransferDate returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

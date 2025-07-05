@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **CanSendVideos** | **bool** | *True*, if the user is allowed to send videos | 
 **CanSendVideoNotes** | **bool** | *True*, if the user is allowed to send video notes | 
 **CanSendVoiceNotes** | **bool** | *True*, if the user is allowed to send voice notes | 
-**CanSendPolls** | **bool** | *True*, if the user is allowed to send polls | 
+**CanSendPolls** | **bool** | *True*, if the user is allowed to send polls and checklists | 
 **CanSendOtherMessages** | **bool** | *True*, if the user is allowed to send animations, games, stickers and use inline bots | 
 **CanAddWebPagePreviews** | **bool** | *True*, if the user is allowed to add web page previews to their messages | 
 **CanChangeInfo** | **bool** | *True*, if the user is allowed to change the chat title, photo and other settings | 

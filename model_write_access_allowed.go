@@ -5,8 +5,8 @@
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.0.0
- *    * - **Modified**: 2025-07-02T07:03:19.642213517Z[Etc/UTC]
+ *    * - **Version**: 9.1.0
+ *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -53,11 +53,11 @@ var _ MappedNullable = &WriteAccessAllowed{}
 
 // WriteAccessAllowed This object represents a service message about a user allowing a bot to write messages after adding it to the attachment menu, launching a Web App from a link, or accepting an explicit request from a Web App sent by the method [requestWriteAccess](https://core.telegram.org/bots/webapps#initializing-mini-apps).
 type WriteAccessAllowed struct {
-	// *Optional*. True, if the access was granted after the user accepted an explicit request from a Web App sent by the method [requestWriteAccess](https://core.telegram.org/bots/webapps#initializing-mini-apps)
+	// *Optional*. *True*, if the access was granted after the user accepted an explicit request from a Web App sent by the method [requestWriteAccess](https://core.telegram.org/bots/webapps#initializing-mini-apps)
 	FromRequest *bool `json:"from_request,omitempty"`
 	// *Optional*. Name of the Web App, if the access was granted when the Web App was launched from a link
 	WebAppName *string `json:"web_app_name,omitempty"`
-	// *Optional*. True, if the access was granted when the bot was added to the attachment or side menu
+	// *Optional*. *True*, if the access was granted when the bot was added to the attachment or side menu
 	FromAttachmentMenu *bool `json:"from_attachment_menu,omitempty"`
 }
 

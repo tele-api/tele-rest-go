@@ -5,8 +5,8 @@
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.0.0
- *    * - **Modified**: 2025-07-02T07:03:19.642213517Z[Etc/UTC]
+ *    * - **Version**: 9.1.0
+ *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -62,13 +62,13 @@ type GiftInfo struct {
 	ConvertStarCount *int32 `json:"convert_star_count,omitempty"`
 	// *Optional*. Number of Telegram Stars that were prepaid by the sender for the ability to upgrade the gift
 	PrepaidUpgradeStarCount *int32 `json:"prepaid_upgrade_star_count,omitempty"`
-	// *Optional*. True, if the gift can be upgraded to a unique gift
+	// *Optional*. *True*, if the gift can be upgraded to a unique gift
 	CanBeUpgraded *bool `json:"can_be_upgraded,omitempty"`
 	// *Optional*. Text of the message that was added to the gift
 	Text *string `json:"text,omitempty"`
 	// *Optional*. Special entities that appear in the text
 	Entities []MessageEntity `json:"entities,omitempty"`
-	// *Optional*. True, if the sender and gift text are shown only to the gift receiver; otherwise, everyone will be able to see them
+	// *Optional*. *True*, if the sender and gift text are shown only to the gift receiver; otherwise, everyone will be able to see them
 	IsPrivate *bool `json:"is_private,omitempty"`
 }
 

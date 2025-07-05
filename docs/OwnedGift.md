@@ -11,14 +11,15 @@ Name | Type | Description | Notes
 **SendDate** | **int32** | Date the gift was sent in Unix time | 
 **Text** | Pointer to **string** | *Optional*. Text of the message that was added to the gift | [optional] 
 **Entities** | Pointer to [**[]MessageEntity**](MessageEntity.md) | *Optional*. Special entities that appear in the text | [optional] 
-**IsPrivate** | Pointer to **bool** | *Optional*. True, if the sender and gift text are shown only to the gift receiver; otherwise, everyone will be able to see them | [optional] [default to true]
-**IsSaved** | Pointer to **bool** | *Optional*. True, if the gift is displayed on the account&#39;s profile page; for gifts received on behalf of business accounts only | [optional] [default to true]
-**CanBeUpgraded** | Pointer to **bool** | *Optional*. True, if the gift can be upgraded to a unique gift; for gifts received on behalf of business accounts only | [optional] [default to true]
-**WasRefunded** | Pointer to **bool** | *Optional*. True, if the gift was refunded and isn&#39;t available anymore | [optional] [default to true]
+**IsPrivate** | Pointer to **bool** | *Optional*. *True*, if the sender and gift text are shown only to the gift receiver; otherwise, everyone will be able to see them | [optional] [default to true]
+**IsSaved** | Pointer to **bool** | *Optional*. *True*, if the gift is displayed on the account&#39;s profile page; for gifts received on behalf of business accounts only | [optional] [default to true]
+**CanBeUpgraded** | Pointer to **bool** | *Optional*. *True*, if the gift can be upgraded to a unique gift; for gifts received on behalf of business accounts only | [optional] [default to true]
+**WasRefunded** | Pointer to **bool** | *Optional*. *True*, if the gift was refunded and isn&#39;t available anymore | [optional] [default to true]
 **ConvertStarCount** | Pointer to **int32** | *Optional*. Number of Telegram Stars that can be claimed by the receiver instead of the gift; omitted if the gift cannot be converted to Telegram Stars | [optional] 
 **PrepaidUpgradeStarCount** | Pointer to **int32** | *Optional*. Number of Telegram Stars that were paid by the sender for the ability to upgrade the gift | [optional] 
-**CanBeTransferred** | Pointer to **bool** | *Optional*. True, if the gift can be transferred to another owner; for gifts received on behalf of business accounts only | [optional] [default to true]
+**CanBeTransferred** | Pointer to **bool** | *Optional*. *True*, if the gift can be transferred to another owner; for gifts received on behalf of business accounts only | [optional] [default to true]
 **TransferStarCount** | Pointer to **int32** | *Optional*. Number of Telegram Stars that must be paid to transfer the gift; omitted if the bot cannot transfer the gift | [optional] 
+**NextTransferDate** | Pointer to **int32** | *Optional*. Point in time (Unix timestamp) when the gift can be transferred. If it is in the past, then the gift can be transferred now | [optional] 
 
 ## Methods
 
@@ -398,6 +399,31 @@ SetTransferStarCount sets TransferStarCount field to given value.
 `func (o *OwnedGift) HasTransferStarCount() bool`
 
 HasTransferStarCount returns a boolean if a field has been set.
+
+### GetNextTransferDate
+
+`func (o *OwnedGift) GetNextTransferDate() int32`
+
+GetNextTransferDate returns the NextTransferDate field if non-nil, zero value otherwise.
+
+### GetNextTransferDateOk
+
+`func (o *OwnedGift) GetNextTransferDateOk() (*int32, bool)`
+
+GetNextTransferDateOk returns a tuple with the NextTransferDate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNextTransferDate
+
+`func (o *OwnedGift) SetNextTransferDate(v int32)`
+
+SetNextTransferDate sets NextTransferDate field to given value.
+
+### HasNextTransferDate
+
+`func (o *OwnedGift) HasNextTransferDate() bool`
+
+HasNextTransferDate returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

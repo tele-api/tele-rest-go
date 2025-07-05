@@ -5,8 +5,8 @@
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.0.0
- *    * - **Modified**: 2025-07-02T07:03:19.642213517Z[Etc/UTC]
+ *    * - **Version**: 9.1.0
+ *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -62,9 +62,9 @@ type ChatMemberUpdated struct {
 	OldChatMember ChatMember `json:"old_chat_member"`
 	NewChatMember ChatMember `json:"new_chat_member"`
 	InviteLink *ChatInviteLink `json:"invite_link,omitempty"`
-	// *Optional*. True, if the user joined the chat after sending a direct join request without using an invite link and being approved by an administrator
+	// *Optional*. *True*, if the user joined the chat after sending a direct join request without using an invite link and being approved by an administrator
 	ViaJoinRequest *bool `json:"via_join_request,omitempty"`
-	// *Optional*. True, if the user joined the chat via a chat folder invite link
+	// *Optional*. *True*, if the user joined the chat via a chat folder invite link
 	ViaChatFolderInviteLink *bool `json:"via_chat_folder_invite_link,omitempty"`
 }
 

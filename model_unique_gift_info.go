@@ -5,8 +5,8 @@
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.0.0
- *    * - **Modified**: 2025-07-02T07:03:19.642213517Z[Etc/UTC]
+ *    * - **Version**: 9.1.0
+ *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -56,12 +56,16 @@ var _ MappedNullable = &UniqueGiftInfo{}
 // UniqueGiftInfo Describes a service message about a unique gift that was sent or received.
 type UniqueGiftInfo struct {
 	Gift UniqueGift `json:"gift"`
-	// Origin of the gift. Currently, either “upgrade” or “transfer”
+	// Origin of the gift. Currently, either “upgrade” for gifts upgraded from regular gifts, “transfer” for gifts transferred from other users or channels, or “resale” for gifts bought from other users
 	Origin string `json:"origin"`
+	// *Optional*. For gifts bought from other users, the price paid for the gift
+	LastResaleStarCount *int32 `json:"last_resale_star_count,omitempty"`
 	// *Optional*. Unique identifier of the received gift for the bot; only present for gifts received on behalf of business accounts
 	OwnedGiftId *string `json:"owned_gift_id,omitempty"`
 	// *Optional*. Number of Telegram Stars that must be paid to transfer the gift; omitted if the bot cannot transfer the gift
 	TransferStarCount *int32 `json:"transfer_star_count,omitempty"`
+	// *Optional*. Point in time (Unix timestamp) when the gift can be transferred. If it is in the past, then the gift can be transferred now
+	NextTransferDate *int32 `json:"next_transfer_date,omitempty"`
 }
 
 type _UniqueGiftInfo UniqueGiftInfo
@@ -133,6 +137,39 @@ func (o *UniqueGiftInfo) SetOrigin(v string) {
 	o.Origin = v
 }
 
+// GetLastResaleStarCount returns the LastResaleStarCount field value if set, zero value otherwise.
+func (o *UniqueGiftInfo) GetLastResaleStarCount() int32 {
+	if o == nil || IsNil(o.LastResaleStarCount) {
+		var ret int32
+		return ret
+	}
+	return *o.LastResaleStarCount
+}
+
+// GetLastResaleStarCountOk returns a tuple with the LastResaleStarCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UniqueGiftInfo) GetLastResaleStarCountOk() (*int32, bool) {
+	if o == nil || IsNil(o.LastResaleStarCount) {
+		return nil, false
+	}
+	return o.LastResaleStarCount, true
+}
+
+// HasLastResaleStarCount returns a boolean if a field has been set.
+func (o *UniqueGiftInfo) HasLastResaleStarCount() bool {
+	if o != nil && !IsNil(o.LastResaleStarCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetLastResaleStarCount gets a reference to the given int32 and assigns it to the LastResaleStarCount field.
+func (o *UniqueGiftInfo) SetLastResaleStarCount(v int32) {
+	o.LastResaleStarCount = &v
+}
+
+
 // GetOwnedGiftId returns the OwnedGiftId field value if set, zero value otherwise.
 func (o *UniqueGiftInfo) GetOwnedGiftId() string {
 	if o == nil || IsNil(o.OwnedGiftId) {
@@ -199,6 +236,39 @@ func (o *UniqueGiftInfo) SetTransferStarCount(v int32) {
 }
 
 
+// GetNextTransferDate returns the NextTransferDate field value if set, zero value otherwise.
+func (o *UniqueGiftInfo) GetNextTransferDate() int32 {
+	if o == nil || IsNil(o.NextTransferDate) {
+		var ret int32
+		return ret
+	}
+	return *o.NextTransferDate
+}
+
+// GetNextTransferDateOk returns a tuple with the NextTransferDate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UniqueGiftInfo) GetNextTransferDateOk() (*int32, bool) {
+	if o == nil || IsNil(o.NextTransferDate) {
+		return nil, false
+	}
+	return o.NextTransferDate, true
+}
+
+// HasNextTransferDate returns a boolean if a field has been set.
+func (o *UniqueGiftInfo) HasNextTransferDate() bool {
+	if o != nil && !IsNil(o.NextTransferDate) {
+		return true
+	}
+
+	return false
+}
+
+// SetNextTransferDate gets a reference to the given int32 and assigns it to the NextTransferDate field.
+func (o *UniqueGiftInfo) SetNextTransferDate(v int32) {
+	o.NextTransferDate = &v
+}
+
+
 func (o UniqueGiftInfo) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -211,11 +281,17 @@ func (o UniqueGiftInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["gift"] = o.Gift
 	toSerialize["origin"] = o.Origin
+	if !IsNil(o.LastResaleStarCount) {
+		toSerialize["last_resale_star_count"] = o.LastResaleStarCount
+	}
 	if !IsNil(o.OwnedGiftId) {
 		toSerialize["owned_gift_id"] = o.OwnedGiftId
 	}
 	if !IsNil(o.TransferStarCount) {
 		toSerialize["transfer_star_count"] = o.TransferStarCount
+	}
+	if !IsNil(o.NextTransferDate) {
+		toSerialize["next_transfer_date"] = o.NextTransferDate
 	}
 	return toSerialize, nil
 }

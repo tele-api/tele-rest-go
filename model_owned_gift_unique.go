@@ -5,8 +5,8 @@
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.0.0
- *    * - **Modified**: 2025-07-02T07:03:19.642213517Z[Etc/UTC]
+ *    * - **Version**: 9.1.0
+ *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -63,12 +63,14 @@ type OwnedGiftUnique struct {
 	SenderUser *User `json:"sender_user,omitempty"`
 	// Date the gift was sent in Unix time
 	SendDate int32 `json:"send_date"`
-	// *Optional*. True, if the gift is displayed on the account's profile page; for gifts received on behalf of business accounts only
+	// *Optional*. *True*, if the gift is displayed on the account's profile page; for gifts received on behalf of business accounts only
 	IsSaved *bool `json:"is_saved,omitempty"`
-	// *Optional*. True, if the gift can be transferred to another owner; for gifts received on behalf of business accounts only
+	// *Optional*. *True*, if the gift can be transferred to another owner; for gifts received on behalf of business accounts only
 	CanBeTransferred *bool `json:"can_be_transferred,omitempty"`
 	// *Optional*. Number of Telegram Stars that must be paid to transfer the gift; omitted if the bot cannot transfer the gift
 	TransferStarCount *int32 `json:"transfer_star_count,omitempty"`
+	// *Optional*. Point in time (Unix timestamp) when the gift can be transferred. If it is in the past, then the gift can be transferred now
+	NextTransferDate *int32 `json:"next_transfer_date,omitempty"`
 }
 
 type _OwnedGiftUnique OwnedGiftUnique
@@ -340,6 +342,39 @@ func (o *OwnedGiftUnique) SetTransferStarCount(v int32) {
 }
 
 
+// GetNextTransferDate returns the NextTransferDate field value if set, zero value otherwise.
+func (o *OwnedGiftUnique) GetNextTransferDate() int32 {
+	if o == nil || IsNil(o.NextTransferDate) {
+		var ret int32
+		return ret
+	}
+	return *o.NextTransferDate
+}
+
+// GetNextTransferDateOk returns a tuple with the NextTransferDate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OwnedGiftUnique) GetNextTransferDateOk() (*int32, bool) {
+	if o == nil || IsNil(o.NextTransferDate) {
+		return nil, false
+	}
+	return o.NextTransferDate, true
+}
+
+// HasNextTransferDate returns a boolean if a field has been set.
+func (o *OwnedGiftUnique) HasNextTransferDate() bool {
+	if o != nil && !IsNil(o.NextTransferDate) {
+		return true
+	}
+
+	return false
+}
+
+// SetNextTransferDate gets a reference to the given int32 and assigns it to the NextTransferDate field.
+func (o *OwnedGiftUnique) SetNextTransferDate(v int32) {
+	o.NextTransferDate = &v
+}
+
+
 func (o OwnedGiftUnique) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -367,6 +402,9 @@ func (o OwnedGiftUnique) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.TransferStarCount) {
 		toSerialize["transfer_star_count"] = o.TransferStarCount
+	}
+	if !IsNil(o.NextTransferDate) {
+		toSerialize["next_transfer_date"] = o.NextTransferDate
 	}
 	return toSerialize, nil
 }

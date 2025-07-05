@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **ViaBot** | Pointer to [**User**](User.md) |  | [optional] 
 **EditDate** | Pointer to **int32** | *Optional*. Date the message was last edited in Unix time | [optional] 
 **HasProtectedContent** | Pointer to **bool** | *Optional*. *True*, if the message can&#39;t be forwarded | [optional] [default to true]
-**IsFromOffline** | Pointer to **bool** | *Optional*. True, if the message was sent by an implicit action, for example, as an away or a greeting business message, or as a scheduled message | [optional] [default to true]
+**IsFromOffline** | Pointer to **bool** | *Optional*. *True*, if the message was sent by an implicit action, for example, as an away or a greeting business message, or as a scheduled message | [optional] [default to true]
 **MediaGroupId** | Pointer to **string** | *Optional*. The unique identifier of a media message group this message belongs to | [optional] 
 **AuthorSignature** | Pointer to **string** | *Optional*. Signature of the post author for messages in channels, or the custom title of an anonymous group administrator | [optional] 
 **PaidStarCount** | Pointer to **int32** | *Optional*. The number of Telegram Stars that were paid by the sender of the message to send it | [optional] 
@@ -43,8 +43,9 @@ Name | Type | Description | Notes
 **Voice** | Pointer to [**Voice**](Voice.md) |  | [optional] 
 **Caption** | Pointer to **string** | *Optional*. Caption for the animation, audio, document, paid media, photo, video or voice | [optional] 
 **CaptionEntities** | Pointer to [**[]MessageEntity**](MessageEntity.md) | *Optional*. For messages with a caption, special entities like usernames, URLs, bot commands, etc. that appear in the caption | [optional] 
-**ShowCaptionAboveMedia** | Pointer to **bool** | *Optional*. True, if the caption must be shown above the message media | [optional] [default to true]
+**ShowCaptionAboveMedia** | Pointer to **bool** | *Optional*. *True*, if the caption must be shown above the message media | [optional] [default to true]
 **HasMediaSpoiler** | Pointer to **bool** | *Optional*. *True*, if the message media is covered by a spoiler animation | [optional] [default to true]
+**Checklist** | Pointer to [**Checklist**](Checklist.md) |  | [optional] 
 **Contact** | Pointer to [**Contact**](Contact.md) |  | [optional] 
 **Dice** | Pointer to [**Dice**](Dice.md) |  | [optional] 
 **Game** | Pointer to [**Game**](Game.md) |  | [optional] 
@@ -76,6 +77,9 @@ Name | Type | Description | Notes
 **ProximityAlertTriggered** | Pointer to [**ProximityAlertTriggered**](ProximityAlertTriggered.md) |  | [optional] 
 **BoostAdded** | Pointer to [**ChatBoostAdded**](ChatBoostAdded.md) |  | [optional] 
 **ChatBackgroundSet** | Pointer to [**ChatBackground**](ChatBackground.md) |  | [optional] 
+**ChecklistTasksDone** | Pointer to [**ChecklistTasksDone**](ChecklistTasksDone.md) |  | [optional] 
+**ChecklistTasksAdded** | Pointer to [**ChecklistTasksAdded**](ChecklistTasksAdded.md) |  | [optional] 
+**DirectMessagePriceChanged** | Pointer to [**DirectMessagePriceChanged**](DirectMessagePriceChanged.md) |  | [optional] 
 **ForumTopicCreated** | Pointer to [**ForumTopicCreated**](ForumTopicCreated.md) |  | [optional] 
 **ForumTopicEdited** | Pointer to [**ForumTopicEdited**](ForumTopicEdited.md) |  | [optional] 
 **ForumTopicClosed** | Pointer to **interface{}** |  | [optional] 
@@ -1123,6 +1127,31 @@ SetHasMediaSpoiler sets HasMediaSpoiler field to given value.
 
 HasHasMediaSpoiler returns a boolean if a field has been set.
 
+### GetChecklist
+
+`func (o *MaybeInaccessibleMessage) GetChecklist() Checklist`
+
+GetChecklist returns the Checklist field if non-nil, zero value otherwise.
+
+### GetChecklistOk
+
+`func (o *MaybeInaccessibleMessage) GetChecklistOk() (*Checklist, bool)`
+
+GetChecklistOk returns a tuple with the Checklist field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChecklist
+
+`func (o *MaybeInaccessibleMessage) SetChecklist(v Checklist)`
+
+SetChecklist sets Checklist field to given value.
+
+### HasChecklist
+
+`func (o *MaybeInaccessibleMessage) HasChecklist() bool`
+
+HasChecklist returns a boolean if a field has been set.
+
 ### GetContact
 
 `func (o *MaybeInaccessibleMessage) GetContact() Contact`
@@ -1897,6 +1926,81 @@ SetChatBackgroundSet sets ChatBackgroundSet field to given value.
 `func (o *MaybeInaccessibleMessage) HasChatBackgroundSet() bool`
 
 HasChatBackgroundSet returns a boolean if a field has been set.
+
+### GetChecklistTasksDone
+
+`func (o *MaybeInaccessibleMessage) GetChecklistTasksDone() ChecklistTasksDone`
+
+GetChecklistTasksDone returns the ChecklistTasksDone field if non-nil, zero value otherwise.
+
+### GetChecklistTasksDoneOk
+
+`func (o *MaybeInaccessibleMessage) GetChecklistTasksDoneOk() (*ChecklistTasksDone, bool)`
+
+GetChecklistTasksDoneOk returns a tuple with the ChecklistTasksDone field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChecklistTasksDone
+
+`func (o *MaybeInaccessibleMessage) SetChecklistTasksDone(v ChecklistTasksDone)`
+
+SetChecklistTasksDone sets ChecklistTasksDone field to given value.
+
+### HasChecklistTasksDone
+
+`func (o *MaybeInaccessibleMessage) HasChecklistTasksDone() bool`
+
+HasChecklistTasksDone returns a boolean if a field has been set.
+
+### GetChecklistTasksAdded
+
+`func (o *MaybeInaccessibleMessage) GetChecklistTasksAdded() ChecklistTasksAdded`
+
+GetChecklistTasksAdded returns the ChecklistTasksAdded field if non-nil, zero value otherwise.
+
+### GetChecklistTasksAddedOk
+
+`func (o *MaybeInaccessibleMessage) GetChecklistTasksAddedOk() (*ChecklistTasksAdded, bool)`
+
+GetChecklistTasksAddedOk returns a tuple with the ChecklistTasksAdded field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChecklistTasksAdded
+
+`func (o *MaybeInaccessibleMessage) SetChecklistTasksAdded(v ChecklistTasksAdded)`
+
+SetChecklistTasksAdded sets ChecklistTasksAdded field to given value.
+
+### HasChecklistTasksAdded
+
+`func (o *MaybeInaccessibleMessage) HasChecklistTasksAdded() bool`
+
+HasChecklistTasksAdded returns a boolean if a field has been set.
+
+### GetDirectMessagePriceChanged
+
+`func (o *MaybeInaccessibleMessage) GetDirectMessagePriceChanged() DirectMessagePriceChanged`
+
+GetDirectMessagePriceChanged returns the DirectMessagePriceChanged field if non-nil, zero value otherwise.
+
+### GetDirectMessagePriceChangedOk
+
+`func (o *MaybeInaccessibleMessage) GetDirectMessagePriceChangedOk() (*DirectMessagePriceChanged, bool)`
+
+GetDirectMessagePriceChangedOk returns a tuple with the DirectMessagePriceChanged field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDirectMessagePriceChanged
+
+`func (o *MaybeInaccessibleMessage) SetDirectMessagePriceChanged(v DirectMessagePriceChanged)`
+
+SetDirectMessagePriceChanged sets DirectMessagePriceChanged field to given value.
+
+### HasDirectMessagePriceChanged
+
+`func (o *MaybeInaccessibleMessage) HasDirectMessagePriceChanged() bool`
+
+HasDirectMessagePriceChanged returns a boolean if a field has been set.
 
 ### GetForumTopicCreated
 

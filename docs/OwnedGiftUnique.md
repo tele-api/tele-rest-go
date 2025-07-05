@@ -9,9 +9,10 @@ Name | Type | Description | Notes
 **OwnedGiftId** | Pointer to **string** | *Optional*. Unique identifier of the received gift for the bot; for gifts received on behalf of business accounts only | [optional] 
 **SenderUser** | Pointer to [**User**](User.md) |  | [optional] 
 **SendDate** | **int32** | Date the gift was sent in Unix time | 
-**IsSaved** | Pointer to **bool** | *Optional*. True, if the gift is displayed on the account&#39;s profile page; for gifts received on behalf of business accounts only | [optional] [default to true]
-**CanBeTransferred** | Pointer to **bool** | *Optional*. True, if the gift can be transferred to another owner; for gifts received on behalf of business accounts only | [optional] [default to true]
+**IsSaved** | Pointer to **bool** | *Optional*. *True*, if the gift is displayed on the account&#39;s profile page; for gifts received on behalf of business accounts only | [optional] [default to true]
+**CanBeTransferred** | Pointer to **bool** | *Optional*. *True*, if the gift can be transferred to another owner; for gifts received on behalf of business accounts only | [optional] [default to true]
 **TransferStarCount** | Pointer to **int32** | *Optional*. Number of Telegram Stars that must be paid to transfer the gift; omitted if the bot cannot transfer the gift | [optional] 
+**NextTransferDate** | Pointer to **int32** | *Optional*. Point in time (Unix timestamp) when the gift can be transferred. If it is in the past, then the gift can be transferred now | [optional] 
 
 ## Methods
 
@@ -216,6 +217,31 @@ SetTransferStarCount sets TransferStarCount field to given value.
 `func (o *OwnedGiftUnique) HasTransferStarCount() bool`
 
 HasTransferStarCount returns a boolean if a field has been set.
+
+### GetNextTransferDate
+
+`func (o *OwnedGiftUnique) GetNextTransferDate() int32`
+
+GetNextTransferDate returns the NextTransferDate field if non-nil, zero value otherwise.
+
+### GetNextTransferDateOk
+
+`func (o *OwnedGiftUnique) GetNextTransferDateOk() (*int32, bool)`
+
+GetNextTransferDateOk returns a tuple with the NextTransferDate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNextTransferDate
+
+`func (o *OwnedGiftUnique) SetNextTransferDate(v int32)`
+
+SetNextTransferDate sets NextTransferDate field to given value.
+
+### HasNextTransferDate
+
+`func (o *OwnedGiftUnique) HasNextTransferDate() bool`
+
+HasNextTransferDate returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -5,8 +5,8 @@
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.0.0
- *    * - **Modified**: 2025-07-02T07:03:19.642213517Z[Etc/UTC]
+ *    * - **Version**: 9.1.0
+ *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -62,7 +62,7 @@ type ChatBoostSourceGiveaway struct {
 	User *User `json:"user,omitempty"`
 	// *Optional*. The number of Telegram Stars to be split between giveaway winners; for Telegram Star giveaways only
 	PrizeStarCount *int32 `json:"prize_star_count,omitempty"`
-	// *Optional*. True, if the giveaway was completed, but there was no user to win the prize
+	// *Optional*. *True*, if the giveaway was completed, but there was no user to win the prize
 	IsUnclaimed *bool `json:"is_unclaimed,omitempty"`
 }
 

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **User** | [**User**](User.md) |  | 
 **CanBeEdited** | **bool** | *True*, if the bot is allowed to edit administrator privileges of that user | 
 **IsAnonymous** | **bool** | *True*, if the user&#39;s presence in the chat is hidden | 
-**CanManageChat** | **bool** | *True*, if the administrator can access the chat event log, get boost list, see hidden supergroup and channel members, report spam messages and ignore slow mode. Implied by any other administrator privilege. | 
+**CanManageChat** | **bool** | *True*, if the administrator can access the chat event log, get boost list, see hidden supergroup and channel members, report spam messages, ignore slow mode, and send messages to the chat without paying Telegram Stars. Implied by any other administrator privilege. | 
 **CanDeleteMessages** | **bool** | *True*, if the administrator can delete messages of other users | 
 **CanManageVideoChats** | **bool** | *True*, if the administrator can manage video chats | 
 **CanRestrictMembers** | **bool** | *True*, if the administrator can restrict, ban or unban chat members, or access supergroup statistics | 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **CanPostStories** | **bool** | *True*, if the administrator can post stories to the chat | 
 **CanEditStories** | **bool** | *True*, if the administrator can edit stories posted by other users, post stories to the chat page, pin chat stories, and access the chat&#39;s story archive | 
 **CanDeleteStories** | **bool** | *True*, if the administrator can delete stories posted by other users | 
-**CanPostMessages** | Pointer to **bool** | *Optional*. *True*, if the administrator can post messages in the channel, or access channel statistics; for channels only | [optional] 
+**CanPostMessages** | Pointer to **bool** | *Optional*. *True*, if the administrator can post messages in the channel, approve suggested posts, or access channel statistics; for channels only | [optional] 
 **CanEditMessages** | Pointer to **bool** | *Optional*. *True*, if the administrator can edit messages of other users and can pin messages; for channels only | [optional] 
 **CanPinMessages** | Pointer to **bool** | *Optional*. *True*, if the user is allowed to pin messages; for groups and supergroups only | [optional] 
 **CanManageTopics** | Pointer to **bool** | *Optional*. *True*, if the user is allowed to create, rename, close, and reopen forum topics; for supergroups only | [optional] 

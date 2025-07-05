@@ -41,6 +41,7 @@ Method | HTTP request | Description
 [**PostEditForumTopic**](DefaultAPI.md#PostEditForumTopic) | **Post** /editForumTopic | editForumTopic
 [**PostEditGeneralForumTopic**](DefaultAPI.md#PostEditGeneralForumTopic) | **Post** /editGeneralForumTopic | editGeneralForumTopic
 [**PostEditMessageCaption**](DefaultAPI.md#PostEditMessageCaption) | **Post** /editMessageCaption | editMessageCaption
+[**PostEditMessageChecklist**](DefaultAPI.md#PostEditMessageChecklist) | **Post** /editMessageChecklist | editMessageChecklist
 [**PostEditMessageLiveLocation**](DefaultAPI.md#PostEditMessageLiveLocation) | **Post** /editMessageLiveLocation | editMessageLiveLocation
 [**PostEditMessageMedia**](DefaultAPI.md#PostEditMessageMedia) | **Post** /editMessageMedia | editMessageMedia
 [**PostEditMessageReplyMarkup**](DefaultAPI.md#PostEditMessageReplyMarkup) | **Post** /editMessageReplyMarkup | editMessageReplyMarkup
@@ -69,6 +70,7 @@ Method | HTTP request | Description
 [**PostGetMyDescription**](DefaultAPI.md#PostGetMyDescription) | **Post** /getMyDescription | getMyDescription
 [**PostGetMyName**](DefaultAPI.md#PostGetMyName) | **Post** /getMyName | getMyName
 [**PostGetMyShortDescription**](DefaultAPI.md#PostGetMyShortDescription) | **Post** /getMyShortDescription | getMyShortDescription
+[**PostGetMyStarBalance**](DefaultAPI.md#PostGetMyStarBalance) | **Post** /getMyStarBalance | getMyStarBalance
 [**PostGetStarTransactions**](DefaultAPI.md#PostGetStarTransactions) | **Post** /getStarTransactions | getStarTransactions
 [**PostGetStickerSet**](DefaultAPI.md#PostGetStickerSet) | **Post** /getStickerSet | getStickerSet
 [**PostGetUpdates**](DefaultAPI.md#PostGetUpdates) | **Post** /getUpdates | getUpdates
@@ -96,6 +98,7 @@ Method | HTTP request | Description
 [**PostSendAnimation**](DefaultAPI.md#PostSendAnimation) | **Post** /sendAnimation | sendAnimation
 [**PostSendAudio**](DefaultAPI.md#PostSendAudio) | **Post** /sendAudio | sendAudio
 [**PostSendChatAction**](DefaultAPI.md#PostSendChatAction) | **Post** /sendChatAction | sendChatAction
+[**PostSendChecklist**](DefaultAPI.md#PostSendChecklist) | **Post** /sendChecklist | sendChecklist
 [**PostSendContact**](DefaultAPI.md#PostSendContact) | **Post** /sendContact | sendContact
 [**PostSendDice**](DefaultAPI.md#PostSendDice) | **Post** /sendDice | sendDice
 [**PostSendDocument**](DefaultAPI.md#PostSendDocument) | **Post** /sendDocument | sendDocument
@@ -162,7 +165,7 @@ Method | HTTP request | Description
 
 ## PostAddStickerToSet
 
-> PostSetWebhook200Response PostAddStickerToSet(ctx).UserId(userId).Name(name).Sticker(sticker).Execute()
+> AddStickerToSetResponse PostAddStickerToSet(ctx).UserId(userId).Name(name).Sticker(sticker).Execute()
 
 addStickerToSet
 
@@ -192,7 +195,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostAddStickerToSet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostAddStickerToSet`: PostSetWebhook200Response
+	// response from `PostAddStickerToSet`: AddStickerToSetResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostAddStickerToSet`: %v\n", resp)
 }
 ```
@@ -214,7 +217,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**AddStickerToSetResponse**](AddStickerToSetResponse.md)
 
 ### Authorization
 
@@ -222,7 +225,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
+- **Content-Type**: multipart/form-data, application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -232,7 +235,7 @@ No authorization required
 
 ## PostAnswerCallbackQuery
 
-> PostSetWebhook200Response PostAnswerCallbackQuery(ctx).CallbackQueryId(callbackQueryId).Text(text).ShowAlert(showAlert).Url(url).CacheTime(cacheTime).Execute()
+> AnswerCallbackQueryResponse PostAnswerCallbackQuery(ctx).CallbackQueryId(callbackQueryId).Text(text).ShowAlert(showAlert).Url(url).CacheTime(cacheTime).Execute()
 
 answerCallbackQuery
 
@@ -264,7 +267,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostAnswerCallbackQuery``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostAnswerCallbackQuery`: PostSetWebhook200Response
+	// response from `PostAnswerCallbackQuery`: AnswerCallbackQueryResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostAnswerCallbackQuery`: %v\n", resp)
 }
 ```
@@ -288,7 +291,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**AnswerCallbackQueryResponse**](AnswerCallbackQueryResponse.md)
 
 ### Authorization
 
@@ -306,7 +309,7 @@ No authorization required
 
 ## PostAnswerInlineQuery
 
-> PostSetWebhook200Response PostAnswerInlineQuery(ctx).InlineQueryId(inlineQueryId).Results(results).CacheTime(cacheTime).IsPersonal(isPersonal).NextOffset(nextOffset).Button(button).Execute()
+> AnswerInlineQueryResponse PostAnswerInlineQuery(ctx).InlineQueryId(inlineQueryId).Results(results).CacheTime(cacheTime).IsPersonal(isPersonal).NextOffset(nextOffset).Button(button).Execute()
 
 answerInlineQuery
 
@@ -339,7 +342,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostAnswerInlineQuery``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostAnswerInlineQuery`: PostSetWebhook200Response
+	// response from `PostAnswerInlineQuery`: AnswerInlineQueryResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostAnswerInlineQuery`: %v\n", resp)
 }
 ```
@@ -364,7 +367,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**AnswerInlineQueryResponse**](AnswerInlineQueryResponse.md)
 
 ### Authorization
 
@@ -382,7 +385,7 @@ No authorization required
 
 ## PostAnswerPreCheckoutQuery
 
-> PostSetWebhook200Response PostAnswerPreCheckoutQuery(ctx).PreCheckoutQueryId(preCheckoutQueryId).Ok(ok).ErrorMessage(errorMessage).Execute()
+> AnswerPreCheckoutQueryResponse PostAnswerPreCheckoutQuery(ctx).PreCheckoutQueryId(preCheckoutQueryId).Ok(ok).ErrorMessage(errorMessage).Execute()
 
 answerPreCheckoutQuery
 
@@ -412,7 +415,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostAnswerPreCheckoutQuery``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostAnswerPreCheckoutQuery`: PostSetWebhook200Response
+	// response from `PostAnswerPreCheckoutQuery`: AnswerPreCheckoutQueryResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostAnswerPreCheckoutQuery`: %v\n", resp)
 }
 ```
@@ -434,7 +437,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**AnswerPreCheckoutQueryResponse**](AnswerPreCheckoutQueryResponse.md)
 
 ### Authorization
 
@@ -452,7 +455,7 @@ No authorization required
 
 ## PostAnswerShippingQuery
 
-> PostSetWebhook200Response PostAnswerShippingQuery(ctx).ShippingQueryId(shippingQueryId).Ok(ok).ShippingOptions(shippingOptions).ErrorMessage(errorMessage).Execute()
+> AnswerShippingQueryResponse PostAnswerShippingQuery(ctx).ShippingQueryId(shippingQueryId).Ok(ok).ShippingOptions(shippingOptions).ErrorMessage(errorMessage).Execute()
 
 answerShippingQuery
 
@@ -483,7 +486,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostAnswerShippingQuery``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostAnswerShippingQuery`: PostSetWebhook200Response
+	// response from `PostAnswerShippingQuery`: AnswerShippingQueryResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostAnswerShippingQuery`: %v\n", resp)
 }
 ```
@@ -506,7 +509,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**AnswerShippingQueryResponse**](AnswerShippingQueryResponse.md)
 
 ### Authorization
 
@@ -524,7 +527,7 @@ No authorization required
 
 ## PostAnswerWebAppQuery
 
-> PostAnswerWebAppQuery200Response PostAnswerWebAppQuery(ctx).WebAppQueryId(webAppQueryId).Result(result).Execute()
+> AnswerWebAppQueryResponse PostAnswerWebAppQuery(ctx).WebAppQueryId(webAppQueryId).Result(result).Execute()
 
 answerWebAppQuery
 
@@ -553,7 +556,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostAnswerWebAppQuery``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostAnswerWebAppQuery`: PostAnswerWebAppQuery200Response
+	// response from `PostAnswerWebAppQuery`: AnswerWebAppQueryResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostAnswerWebAppQuery`: %v\n", resp)
 }
 ```
@@ -574,7 +577,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostAnswerWebAppQuery200Response**](PostAnswerWebAppQuery200Response.md)
+[**AnswerWebAppQueryResponse**](AnswerWebAppQueryResponse.md)
 
 ### Authorization
 
@@ -592,7 +595,7 @@ No authorization required
 
 ## PostApproveChatJoinRequest
 
-> PostSetWebhook200Response PostApproveChatJoinRequest(ctx).ChatId(chatId).UserId(userId).Execute()
+> ApproveChatJoinRequestResponse PostApproveChatJoinRequest(ctx).ChatId(chatId).UserId(userId).Execute()
 
 approveChatJoinRequest
 
@@ -611,7 +614,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	userId := int32(56) // int32 | Unique identifier of the target user
 
 	configuration := openapiclient.NewConfiguration()
@@ -621,7 +624,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostApproveChatJoinRequest``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostApproveChatJoinRequest`: PostSetWebhook200Response
+	// response from `PostApproveChatJoinRequest`: ApproveChatJoinRequestResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostApproveChatJoinRequest`: %v\n", resp)
 }
 ```
@@ -637,12 +640,12 @@ Other parameters are passed through a pointer to a apiPostApproveChatJoinRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **userId** | **int32** | Unique identifier of the target user | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**ApproveChatJoinRequestResponse**](ApproveChatJoinRequestResponse.md)
 
 ### Authorization
 
@@ -660,7 +663,7 @@ No authorization required
 
 ## PostBanChatMember
 
-> PostSetWebhook200Response PostBanChatMember(ctx).ChatId(chatId).UserId(userId).UntilDate(untilDate).RevokeMessages(revokeMessages).Execute()
+> BanChatMemberResponse PostBanChatMember(ctx).ChatId(chatId).UserId(userId).UntilDate(untilDate).RevokeMessages(revokeMessages).Execute()
 
 banChatMember
 
@@ -679,7 +682,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_banChatMember_request_chat_id{Int32: new(int32)} // PostBanChatMemberRequestChatId | 
+	chatId := openapiclient.banChatMemberRequest_chat_id{Int32: new(int32)} // BanChatMemberRequestChatId | 
 	userId := int32(56) // int32 | Unique identifier of the target user
 	untilDate := int32(56) // int32 | Date when the user will be unbanned; Unix time. If user is banned for more than 366 days or less than 30 seconds from the current time they are considered to be banned forever. Applied for supergroups and channels only. (optional)
 	revokeMessages := true // bool | Pass *True* to delete all messages from the chat for the user that is being removed. If *False*, the user will be able to see messages in the group that were sent before the user was removed. Always *True* for supergroups and channels. (optional)
@@ -691,7 +694,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostBanChatMember``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostBanChatMember`: PostSetWebhook200Response
+	// response from `PostBanChatMember`: BanChatMemberResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostBanChatMember`: %v\n", resp)
 }
 ```
@@ -707,14 +710,14 @@ Other parameters are passed through a pointer to a apiPostBanChatMemberRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostBanChatMemberRequestChatId**](PostBanChatMemberRequestChatId.md) |  | 
+ **chatId** | [**BanChatMemberRequestChatId**](BanChatMemberRequestChatId.md) |  | 
  **userId** | **int32** | Unique identifier of the target user | 
  **untilDate** | **int32** | Date when the user will be unbanned; Unix time. If user is banned for more than 366 days or less than 30 seconds from the current time they are considered to be banned forever. Applied for supergroups and channels only. | 
  **revokeMessages** | **bool** | Pass *True* to delete all messages from the chat for the user that is being removed. If *False*, the user will be able to see messages in the group that were sent before the user was removed. Always *True* for supergroups and channels. | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**BanChatMemberResponse**](BanChatMemberResponse.md)
 
 ### Authorization
 
@@ -732,7 +735,7 @@ No authorization required
 
 ## PostBanChatSenderChat
 
-> PostSetWebhook200Response PostBanChatSenderChat(ctx).ChatId(chatId).SenderChatId(senderChatId).Execute()
+> BanChatSenderChatResponse PostBanChatSenderChat(ctx).ChatId(chatId).SenderChatId(senderChatId).Execute()
 
 banChatSenderChat
 
@@ -751,7 +754,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	senderChatId := int32(56) // int32 | Unique identifier of the target sender chat
 
 	configuration := openapiclient.NewConfiguration()
@@ -761,7 +764,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostBanChatSenderChat``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostBanChatSenderChat`: PostSetWebhook200Response
+	// response from `PostBanChatSenderChat`: BanChatSenderChatResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostBanChatSenderChat`: %v\n", resp)
 }
 ```
@@ -777,12 +780,12 @@ Other parameters are passed through a pointer to a apiPostBanChatSenderChatReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **senderChatId** | **int32** | Unique identifier of the target sender chat | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**BanChatSenderChatResponse**](BanChatSenderChatResponse.md)
 
 ### Authorization
 
@@ -800,7 +803,7 @@ No authorization required
 
 ## PostClose
 
-> PostSetWebhook200Response PostClose(ctx).Execute()
+> CloseResponse PostClose(ctx).Execute()
 
 close
 
@@ -827,7 +830,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostClose``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostClose`: PostSetWebhook200Response
+	// response from `PostClose`: CloseResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostClose`: %v\n", resp)
 }
 ```
@@ -843,7 +846,7 @@ Other parameters are passed through a pointer to a apiPostCloseRequest struct vi
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**CloseResponse**](CloseResponse.md)
 
 ### Authorization
 
@@ -861,7 +864,7 @@ No authorization required
 
 ## PostCloseForumTopic
 
-> PostSetWebhook200Response PostCloseForumTopic(ctx).ChatId(chatId).MessageThreadId(messageThreadId).Execute()
+> CloseForumTopicResponse PostCloseForumTopic(ctx).ChatId(chatId).MessageThreadId(messageThreadId).Execute()
 
 closeForumTopic
 
@@ -880,7 +883,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_restrictChatMember_request_chat_id{Int32: new(int32)} // PostRestrictChatMemberRequestChatId | 
+	chatId := openapiclient.BotCommandScopeChat_chat_id{Int32: new(int32)} // BotCommandScopeChatChatId | 
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread of the forum topic
 
 	configuration := openapiclient.NewConfiguration()
@@ -890,7 +893,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostCloseForumTopic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostCloseForumTopic`: PostSetWebhook200Response
+	// response from `PostCloseForumTopic`: CloseForumTopicResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostCloseForumTopic`: %v\n", resp)
 }
 ```
@@ -906,12 +909,12 @@ Other parameters are passed through a pointer to a apiPostCloseForumTopicRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostRestrictChatMemberRequestChatId**](PostRestrictChatMemberRequestChatId.md) |  | 
+ **chatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
  **messageThreadId** | **int32** | Unique identifier for the target message thread of the forum topic | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**CloseForumTopicResponse**](CloseForumTopicResponse.md)
 
 ### Authorization
 
@@ -929,7 +932,7 @@ No authorization required
 
 ## PostCloseGeneralForumTopic
 
-> PostSetWebhook200Response PostCloseGeneralForumTopic(ctx).ChatId(chatId).Execute()
+> CloseGeneralForumTopicResponse PostCloseGeneralForumTopic(ctx).ChatId(chatId).Execute()
 
 closeGeneralForumTopic
 
@@ -948,7 +951,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_restrictChatMember_request_chat_id{Int32: new(int32)} // PostRestrictChatMemberRequestChatId | 
+	chatId := openapiclient.BotCommandScopeChat_chat_id{Int32: new(int32)} // BotCommandScopeChatChatId | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -957,7 +960,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostCloseGeneralForumTopic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostCloseGeneralForumTopic`: PostSetWebhook200Response
+	// response from `PostCloseGeneralForumTopic`: CloseGeneralForumTopicResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostCloseGeneralForumTopic`: %v\n", resp)
 }
 ```
@@ -973,11 +976,11 @@ Other parameters are passed through a pointer to a apiPostCloseGeneralForumTopic
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostRestrictChatMemberRequestChatId**](PostRestrictChatMemberRequestChatId.md) |  | 
+ **chatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**CloseGeneralForumTopicResponse**](CloseGeneralForumTopicResponse.md)
 
 ### Authorization
 
@@ -995,7 +998,7 @@ No authorization required
 
 ## PostConvertGiftToStars
 
-> PostSetWebhook200Response PostConvertGiftToStars(ctx).BusinessConnectionId(businessConnectionId).OwnedGiftId(ownedGiftId).Execute()
+> ConvertGiftToStarsResponse PostConvertGiftToStars(ctx).BusinessConnectionId(businessConnectionId).OwnedGiftId(ownedGiftId).Execute()
 
 convertGiftToStars
 
@@ -1024,7 +1027,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostConvertGiftToStars``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostConvertGiftToStars`: PostSetWebhook200Response
+	// response from `PostConvertGiftToStars`: ConvertGiftToStarsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostConvertGiftToStars`: %v\n", resp)
 }
 ```
@@ -1045,7 +1048,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**ConvertGiftToStarsResponse**](ConvertGiftToStarsResponse.md)
 
 ### Authorization
 
@@ -1063,7 +1066,7 @@ No authorization required
 
 ## PostCopyMessage
 
-> PostCopyMessage200Response PostCopyMessage(ctx).ChatId(chatId).FromChatId(fromChatId).MessageId(messageId).MessageThreadId(messageThreadId).VideoStartTimestamp(videoStartTimestamp).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).ShowCaptionAboveMedia(showCaptionAboveMedia).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+> CopyMessageResponse PostCopyMessage(ctx).ChatId(chatId).FromChatId(fromChatId).MessageId(messageId).MessageThreadId(messageThreadId).VideoStartTimestamp(videoStartTimestamp).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).ShowCaptionAboveMedia(showCaptionAboveMedia).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 
 copyMessage
 
@@ -1082,8 +1085,8 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
-	fromChatId := openapiclient.post_forwardMessage_request_from_chat_id{Int32: new(int32)} // PostForwardMessageRequestFromChatId | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
+	fromChatId := openapiclient.forwardMessageRequest_from_chat_id{Int32: new(int32)} // ForwardMessageRequestFromChatId | 
 	messageId := int32(56) // int32 | Message identifier in the chat specified in *from\\\\_chat\\\\_id*
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
 	videoStartTimestamp := int32(56) // int32 | New start timestamp for the copied video in the message (optional)
@@ -1095,7 +1098,7 @@ func main() {
 	protectContent := true // bool | Protects the contents of the sent message from forwarding and saving (optional)
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
-	replyMarkup := openapiclient.post_sendMessage_request_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // PostSendMessageRequestReplyMarkup |  (optional)
+	replyMarkup := openapiclient.sendMessageRequest_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessageRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1104,7 +1107,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostCopyMessage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostCopyMessage`: PostCopyMessage200Response
+	// response from `PostCopyMessage`: CopyMessageResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostCopyMessage`: %v\n", resp)
 }
 ```
@@ -1120,8 +1123,8 @@ Other parameters are passed through a pointer to a apiPostCopyMessageRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
- **fromChatId** | [**PostForwardMessageRequestFromChatId**](PostForwardMessageRequestFromChatId.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
+ **fromChatId** | [**ForwardMessageRequestFromChatId**](ForwardMessageRequestFromChatId.md) |  | 
  **messageId** | **int32** | Message identifier in the chat specified in *from\\\\_chat\\\\_id* | 
  **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | 
  **videoStartTimestamp** | **int32** | New start timestamp for the copied video in the message | 
@@ -1133,11 +1136,11 @@ Name | Type | Description  | Notes
  **protectContent** | **bool** | Protects the contents of the sent message from forwarding and saving | 
  **allowPaidBroadcast** | **bool** | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance | 
  **replyParameters** | [**ReplyParameters**](ReplyParameters.md) |  | 
- **replyMarkup** | [**PostSendMessageRequestReplyMarkup**](PostSendMessageRequestReplyMarkup.md) |  | 
+ **replyMarkup** | [**SendMessageRequestReplyMarkup**](SendMessageRequestReplyMarkup.md) |  | 
 
 ### Return type
 
-[**PostCopyMessage200Response**](PostCopyMessage200Response.md)
+[**CopyMessageResponse**](CopyMessageResponse.md)
 
 ### Authorization
 
@@ -1155,7 +1158,7 @@ No authorization required
 
 ## PostCopyMessages
 
-> PostForwardMessages200Response PostCopyMessages(ctx).ChatId(chatId).FromChatId(fromChatId).MessageIds(messageIds).MessageThreadId(messageThreadId).DisableNotification(disableNotification).ProtectContent(protectContent).RemoveCaption(removeCaption).Execute()
+> CopyMessagesResponse PostCopyMessages(ctx).ChatId(chatId).FromChatId(fromChatId).MessageIds(messageIds).MessageThreadId(messageThreadId).DisableNotification(disableNotification).ProtectContent(protectContent).RemoveCaption(removeCaption).Execute()
 
 copyMessages
 
@@ -1174,8 +1177,8 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
-	fromChatId := openapiclient.post_forwardMessages_request_from_chat_id{Int32: new(int32)} // PostForwardMessagesRequestFromChatId | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
+	fromChatId := openapiclient.forwardMessagesRequest_from_chat_id{Int32: new(int32)} // ForwardMessagesRequestFromChatId | 
 	messageIds := []int32{int32(123)} // []int32 | A JSON-serialized list of 1-100 identifiers of messages in the chat *from\\\\_chat\\\\_id* to copy. The identifiers must be specified in a strictly increasing order.
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
 	disableNotification := true // bool | Sends the messages [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. (optional)
@@ -1189,7 +1192,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostCopyMessages``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostCopyMessages`: PostForwardMessages200Response
+	// response from `PostCopyMessages`: CopyMessagesResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostCopyMessages`: %v\n", resp)
 }
 ```
@@ -1205,8 +1208,8 @@ Other parameters are passed through a pointer to a apiPostCopyMessagesRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
- **fromChatId** | [**PostForwardMessagesRequestFromChatId**](PostForwardMessagesRequestFromChatId.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
+ **fromChatId** | [**ForwardMessagesRequestFromChatId**](ForwardMessagesRequestFromChatId.md) |  | 
  **messageIds** | **[]int32** | A JSON-serialized list of 1-100 identifiers of messages in the chat *from\\\\_chat\\\\_id* to copy. The identifiers must be specified in a strictly increasing order. | 
  **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | 
  **disableNotification** | **bool** | Sends the messages [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. | 
@@ -1215,7 +1218,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostForwardMessages200Response**](PostForwardMessages200Response.md)
+[**CopyMessagesResponse**](CopyMessagesResponse.md)
 
 ### Authorization
 
@@ -1233,7 +1236,7 @@ No authorization required
 
 ## PostCreateChatInviteLink
 
-> PostCreateChatInviteLink200Response PostCreateChatInviteLink(ctx).ChatId(chatId).Name(name).ExpireDate(expireDate).MemberLimit(memberLimit).CreatesJoinRequest(createsJoinRequest).Execute()
+> CreateChatInviteLinkResponse PostCreateChatInviteLink(ctx).ChatId(chatId).Name(name).ExpireDate(expireDate).MemberLimit(memberLimit).CreatesJoinRequest(createsJoinRequest).Execute()
 
 createChatInviteLink
 
@@ -1252,7 +1255,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	name := "name_example" // string | Invite link name; 0-32 characters (optional)
 	expireDate := int32(56) // int32 | Point in time (Unix timestamp) when the link will expire (optional)
 	memberLimit := int32(56) // int32 | The maximum number of users that can be members of the chat simultaneously after joining the chat via this invite link; 1-99999 (optional)
@@ -1265,7 +1268,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostCreateChatInviteLink``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostCreateChatInviteLink`: PostCreateChatInviteLink200Response
+	// response from `PostCreateChatInviteLink`: CreateChatInviteLinkResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostCreateChatInviteLink`: %v\n", resp)
 }
 ```
@@ -1281,7 +1284,7 @@ Other parameters are passed through a pointer to a apiPostCreateChatInviteLinkRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **name** | **string** | Invite link name; 0-32 characters | 
  **expireDate** | **int32** | Point in time (Unix timestamp) when the link will expire | 
  **memberLimit** | **int32** | The maximum number of users that can be members of the chat simultaneously after joining the chat via this invite link; 1-99999 | 
@@ -1289,7 +1292,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostCreateChatInviteLink200Response**](PostCreateChatInviteLink200Response.md)
+[**CreateChatInviteLinkResponse**](CreateChatInviteLinkResponse.md)
 
 ### Authorization
 
@@ -1307,7 +1310,7 @@ No authorization required
 
 ## PostCreateChatSubscriptionInviteLink
 
-> PostCreateChatInviteLink200Response PostCreateChatSubscriptionInviteLink(ctx).ChatId(chatId).SubscriptionPeriod(subscriptionPeriod).SubscriptionPrice(subscriptionPrice).Name(name).Execute()
+> CreateChatSubscriptionInviteLinkResponse PostCreateChatSubscriptionInviteLink(ctx).ChatId(chatId).SubscriptionPeriod(subscriptionPeriod).SubscriptionPrice(subscriptionPrice).Name(name).Execute()
 
 createChatSubscriptionInviteLink
 
@@ -1326,7 +1329,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_createChatSubscriptionInviteLink_request_chat_id{Int32: new(int32)} // PostCreateChatSubscriptionInviteLinkRequestChatId | 
+	chatId := openapiclient.createChatSubscriptionInviteLinkRequest_chat_id{Int32: new(int32)} // CreateChatSubscriptionInviteLinkRequestChatId | 
 	subscriptionPeriod := int32(56) // int32 | The number of seconds the subscription will be active for before the next payment. Currently, it must always be 2592000 (30 days).
 	subscriptionPrice := int32(56) // int32 | The amount of Telegram Stars a user must pay initially and after each subsequent subscription period to be a member of the chat; 1-10000
 	name := "name_example" // string | Invite link name; 0-32 characters (optional)
@@ -1338,7 +1341,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostCreateChatSubscriptionInviteLink``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostCreateChatSubscriptionInviteLink`: PostCreateChatInviteLink200Response
+	// response from `PostCreateChatSubscriptionInviteLink`: CreateChatSubscriptionInviteLinkResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostCreateChatSubscriptionInviteLink`: %v\n", resp)
 }
 ```
@@ -1354,14 +1357,14 @@ Other parameters are passed through a pointer to a apiPostCreateChatSubscription
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostCreateChatSubscriptionInviteLinkRequestChatId**](PostCreateChatSubscriptionInviteLinkRequestChatId.md) |  | 
+ **chatId** | [**CreateChatSubscriptionInviteLinkRequestChatId**](CreateChatSubscriptionInviteLinkRequestChatId.md) |  | 
  **subscriptionPeriod** | **int32** | The number of seconds the subscription will be active for before the next payment. Currently, it must always be 2592000 (30 days). | 
  **subscriptionPrice** | **int32** | The amount of Telegram Stars a user must pay initially and after each subsequent subscription period to be a member of the chat; 1-10000 | 
  **name** | **string** | Invite link name; 0-32 characters | 
 
 ### Return type
 
-[**PostCreateChatInviteLink200Response**](PostCreateChatInviteLink200Response.md)
+[**CreateChatSubscriptionInviteLinkResponse**](CreateChatSubscriptionInviteLinkResponse.md)
 
 ### Authorization
 
@@ -1379,7 +1382,7 @@ No authorization required
 
 ## PostCreateForumTopic
 
-> PostCreateForumTopic200Response PostCreateForumTopic(ctx).ChatId(chatId).Name(name).IconColor(iconColor).IconCustomEmojiId(iconCustomEmojiId).Execute()
+> CreateForumTopicResponse PostCreateForumTopic(ctx).ChatId(chatId).Name(name).IconColor(iconColor).IconCustomEmojiId(iconCustomEmojiId).Execute()
 
 createForumTopic
 
@@ -1398,7 +1401,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_restrictChatMember_request_chat_id{Int32: new(int32)} // PostRestrictChatMemberRequestChatId | 
+	chatId := openapiclient.BotCommandScopeChat_chat_id{Int32: new(int32)} // BotCommandScopeChatChatId | 
 	name := "name_example" // string | Topic name, 1-128 characters
 	iconColor := int32(56) // int32 | Color of the topic icon in RGB format. Currently, must be one of 7322096 (0x6FB9F0), 16766590 (0xFFD67E), 13338331 (0xCB86DB), 9367192 (0x8EEE98), 16749490 (0xFF93B2), or 16478047 (0xFB6F5F) (optional)
 	iconCustomEmojiId := "iconCustomEmojiId_example" // string | Unique identifier of the custom emoji shown as the topic icon. Use [getForumTopicIconStickers](https://core.telegram.org/bots/api/#getforumtopiciconstickers) to get all allowed custom emoji identifiers. (optional)
@@ -1410,7 +1413,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostCreateForumTopic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostCreateForumTopic`: PostCreateForumTopic200Response
+	// response from `PostCreateForumTopic`: CreateForumTopicResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostCreateForumTopic`: %v\n", resp)
 }
 ```
@@ -1426,14 +1429,14 @@ Other parameters are passed through a pointer to a apiPostCreateForumTopicReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostRestrictChatMemberRequestChatId**](PostRestrictChatMemberRequestChatId.md) |  | 
+ **chatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
  **name** | **string** | Topic name, 1-128 characters | 
  **iconColor** | **int32** | Color of the topic icon in RGB format. Currently, must be one of 7322096 (0x6FB9F0), 16766590 (0xFFD67E), 13338331 (0xCB86DB), 9367192 (0x8EEE98), 16749490 (0xFF93B2), or 16478047 (0xFB6F5F) | 
  **iconCustomEmojiId** | **string** | Unique identifier of the custom emoji shown as the topic icon. Use [getForumTopicIconStickers](https://core.telegram.org/bots/api/#getforumtopiciconstickers) to get all allowed custom emoji identifiers. | 
 
 ### Return type
 
-[**PostCreateForumTopic200Response**](PostCreateForumTopic200Response.md)
+[**CreateForumTopicResponse**](CreateForumTopicResponse.md)
 
 ### Authorization
 
@@ -1451,7 +1454,7 @@ No authorization required
 
 ## PostCreateInvoiceLink
 
-> PostExportChatInviteLink200Response PostCreateInvoiceLink(ctx).Title(title).Description(description).Payload(payload).Currency(currency).Prices(prices).BusinessConnectionId(businessConnectionId).ProviderToken(providerToken).SubscriptionPeriod(subscriptionPeriod).MaxTipAmount(maxTipAmount).SuggestedTipAmounts(suggestedTipAmounts).ProviderData(providerData).PhotoUrl(photoUrl).PhotoSize(photoSize).PhotoWidth(photoWidth).PhotoHeight(photoHeight).NeedName(needName).NeedPhoneNumber(needPhoneNumber).NeedEmail(needEmail).NeedShippingAddress(needShippingAddress).SendPhoneNumberToProvider(sendPhoneNumberToProvider).SendEmailToProvider(sendEmailToProvider).IsFlexible(isFlexible).Execute()
+> CreateInvoiceLinkResponse PostCreateInvoiceLink(ctx).Title(title).Description(description).Payload(payload).Currency(currency).Prices(prices).BusinessConnectionId(businessConnectionId).ProviderToken(providerToken).SubscriptionPeriod(subscriptionPeriod).MaxTipAmount(maxTipAmount).SuggestedTipAmounts(suggestedTipAmounts).ProviderData(providerData).PhotoUrl(photoUrl).PhotoSize(photoSize).PhotoWidth(photoWidth).PhotoHeight(photoHeight).NeedName(needName).NeedPhoneNumber(needPhoneNumber).NeedEmail(needEmail).NeedShippingAddress(needShippingAddress).SendPhoneNumberToProvider(sendPhoneNumberToProvider).SendEmailToProvider(sendEmailToProvider).IsFlexible(isFlexible).Execute()
 
 createInvoiceLink
 
@@ -1500,7 +1503,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostCreateInvoiceLink``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostCreateInvoiceLink`: PostExportChatInviteLink200Response
+	// response from `PostCreateInvoiceLink`: CreateInvoiceLinkResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostCreateInvoiceLink`: %v\n", resp)
 }
 ```
@@ -1541,7 +1544,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostExportChatInviteLink200Response**](PostExportChatInviteLink200Response.md)
+[**CreateInvoiceLinkResponse**](CreateInvoiceLinkResponse.md)
 
 ### Authorization
 
@@ -1559,7 +1562,7 @@ No authorization required
 
 ## PostCreateNewStickerSet
 
-> PostSetWebhook200Response PostCreateNewStickerSet(ctx).UserId(userId).Name(name).Title(title).Stickers(stickers).StickerType(stickerType).NeedsRepainting(needsRepainting).Execute()
+> CreateNewStickerSetResponse PostCreateNewStickerSet(ctx).UserId(userId).Name(name).Title(title).Stickers(stickers).StickerType(stickerType).NeedsRepainting(needsRepainting).Execute()
 
 createNewStickerSet
 
@@ -1592,7 +1595,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostCreateNewStickerSet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostCreateNewStickerSet`: PostSetWebhook200Response
+	// response from `PostCreateNewStickerSet`: CreateNewStickerSetResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostCreateNewStickerSet`: %v\n", resp)
 }
 ```
@@ -1617,7 +1620,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**CreateNewStickerSetResponse**](CreateNewStickerSetResponse.md)
 
 ### Authorization
 
@@ -1625,7 +1628,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
+- **Content-Type**: multipart/form-data, application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -1635,7 +1638,7 @@ No authorization required
 
 ## PostDeclineChatJoinRequest
 
-> PostSetWebhook200Response PostDeclineChatJoinRequest(ctx).ChatId(chatId).UserId(userId).Execute()
+> DeclineChatJoinRequestResponse PostDeclineChatJoinRequest(ctx).ChatId(chatId).UserId(userId).Execute()
 
 declineChatJoinRequest
 
@@ -1654,7 +1657,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	userId := int32(56) // int32 | Unique identifier of the target user
 
 	configuration := openapiclient.NewConfiguration()
@@ -1664,7 +1667,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostDeclineChatJoinRequest``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostDeclineChatJoinRequest`: PostSetWebhook200Response
+	// response from `PostDeclineChatJoinRequest`: DeclineChatJoinRequestResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostDeclineChatJoinRequest`: %v\n", resp)
 }
 ```
@@ -1680,12 +1683,12 @@ Other parameters are passed through a pointer to a apiPostDeclineChatJoinRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **userId** | **int32** | Unique identifier of the target user | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**DeclineChatJoinRequestResponse**](DeclineChatJoinRequestResponse.md)
 
 ### Authorization
 
@@ -1703,7 +1706,7 @@ No authorization required
 
 ## PostDeleteBusinessMessages
 
-> PostSetWebhook200Response PostDeleteBusinessMessages(ctx).BusinessConnectionId(businessConnectionId).MessageIds(messageIds).Execute()
+> DeleteBusinessMessagesResponse PostDeleteBusinessMessages(ctx).BusinessConnectionId(businessConnectionId).MessageIds(messageIds).Execute()
 
 deleteBusinessMessages
 
@@ -1732,7 +1735,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostDeleteBusinessMessages``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostDeleteBusinessMessages`: PostSetWebhook200Response
+	// response from `PostDeleteBusinessMessages`: DeleteBusinessMessagesResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostDeleteBusinessMessages`: %v\n", resp)
 }
 ```
@@ -1753,7 +1756,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**DeleteBusinessMessagesResponse**](DeleteBusinessMessagesResponse.md)
 
 ### Authorization
 
@@ -1771,7 +1774,7 @@ No authorization required
 
 ## PostDeleteChatPhoto
 
-> PostSetWebhook200Response PostDeleteChatPhoto(ctx).ChatId(chatId).Execute()
+> DeleteChatPhotoResponse PostDeleteChatPhoto(ctx).ChatId(chatId).Execute()
 
 deleteChatPhoto
 
@@ -1790,7 +1793,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1799,7 +1802,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostDeleteChatPhoto``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostDeleteChatPhoto`: PostSetWebhook200Response
+	// response from `PostDeleteChatPhoto`: DeleteChatPhotoResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostDeleteChatPhoto`: %v\n", resp)
 }
 ```
@@ -1815,11 +1818,11 @@ Other parameters are passed through a pointer to a apiPostDeleteChatPhotoRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**DeleteChatPhotoResponse**](DeleteChatPhotoResponse.md)
 
 ### Authorization
 
@@ -1837,7 +1840,7 @@ No authorization required
 
 ## PostDeleteChatStickerSet
 
-> PostSetWebhook200Response PostDeleteChatStickerSet(ctx).ChatId(chatId).Execute()
+> DeleteChatStickerSetResponse PostDeleteChatStickerSet(ctx).ChatId(chatId).Execute()
 
 deleteChatStickerSet
 
@@ -1856,7 +1859,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_restrictChatMember_request_chat_id{Int32: new(int32)} // PostRestrictChatMemberRequestChatId | 
+	chatId := openapiclient.BotCommandScopeChat_chat_id{Int32: new(int32)} // BotCommandScopeChatChatId | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1865,7 +1868,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostDeleteChatStickerSet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostDeleteChatStickerSet`: PostSetWebhook200Response
+	// response from `PostDeleteChatStickerSet`: DeleteChatStickerSetResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostDeleteChatStickerSet`: %v\n", resp)
 }
 ```
@@ -1881,11 +1884,11 @@ Other parameters are passed through a pointer to a apiPostDeleteChatStickerSetRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostRestrictChatMemberRequestChatId**](PostRestrictChatMemberRequestChatId.md) |  | 
+ **chatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**DeleteChatStickerSetResponse**](DeleteChatStickerSetResponse.md)
 
 ### Authorization
 
@@ -1903,7 +1906,7 @@ No authorization required
 
 ## PostDeleteForumTopic
 
-> PostSetWebhook200Response PostDeleteForumTopic(ctx).ChatId(chatId).MessageThreadId(messageThreadId).Execute()
+> DeleteForumTopicResponse PostDeleteForumTopic(ctx).ChatId(chatId).MessageThreadId(messageThreadId).Execute()
 
 deleteForumTopic
 
@@ -1922,7 +1925,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_restrictChatMember_request_chat_id{Int32: new(int32)} // PostRestrictChatMemberRequestChatId | 
+	chatId := openapiclient.BotCommandScopeChat_chat_id{Int32: new(int32)} // BotCommandScopeChatChatId | 
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread of the forum topic
 
 	configuration := openapiclient.NewConfiguration()
@@ -1932,7 +1935,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostDeleteForumTopic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostDeleteForumTopic`: PostSetWebhook200Response
+	// response from `PostDeleteForumTopic`: DeleteForumTopicResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostDeleteForumTopic`: %v\n", resp)
 }
 ```
@@ -1948,12 +1951,12 @@ Other parameters are passed through a pointer to a apiPostDeleteForumTopicReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostRestrictChatMemberRequestChatId**](PostRestrictChatMemberRequestChatId.md) |  | 
+ **chatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
  **messageThreadId** | **int32** | Unique identifier for the target message thread of the forum topic | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**DeleteForumTopicResponse**](DeleteForumTopicResponse.md)
 
 ### Authorization
 
@@ -1971,7 +1974,7 @@ No authorization required
 
 ## PostDeleteMessage
 
-> PostSetWebhook200Response PostDeleteMessage(ctx).ChatId(chatId).MessageId(messageId).Execute()
+> DeleteMessageResponse PostDeleteMessage(ctx).ChatId(chatId).MessageId(messageId).Execute()
 
 deleteMessage
 
@@ -1990,7 +1993,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	messageId := int32(56) // int32 | Identifier of the message to delete
 
 	configuration := openapiclient.NewConfiguration()
@@ -2000,7 +2003,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostDeleteMessage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostDeleteMessage`: PostSetWebhook200Response
+	// response from `PostDeleteMessage`: DeleteMessageResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostDeleteMessage`: %v\n", resp)
 }
 ```
@@ -2016,12 +2019,12 @@ Other parameters are passed through a pointer to a apiPostDeleteMessageRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **messageId** | **int32** | Identifier of the message to delete | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**DeleteMessageResponse**](DeleteMessageResponse.md)
 
 ### Authorization
 
@@ -2039,7 +2042,7 @@ No authorization required
 
 ## PostDeleteMessages
 
-> PostSetWebhook200Response PostDeleteMessages(ctx).ChatId(chatId).MessageIds(messageIds).Execute()
+> DeleteMessagesResponse PostDeleteMessages(ctx).ChatId(chatId).MessageIds(messageIds).Execute()
 
 deleteMessages
 
@@ -2058,7 +2061,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	messageIds := []int32{int32(123)} // []int32 | A JSON-serialized list of 1-100 identifiers of messages to delete. See [deleteMessage](https://core.telegram.org/bots/api/#deletemessage) for limitations on which messages can be deleted
 
 	configuration := openapiclient.NewConfiguration()
@@ -2068,7 +2071,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostDeleteMessages``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostDeleteMessages`: PostSetWebhook200Response
+	// response from `PostDeleteMessages`: DeleteMessagesResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostDeleteMessages`: %v\n", resp)
 }
 ```
@@ -2084,12 +2087,12 @@ Other parameters are passed through a pointer to a apiPostDeleteMessagesRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **messageIds** | **[]int32** | A JSON-serialized list of 1-100 identifiers of messages to delete. See [deleteMessage](https://core.telegram.org/bots/api/#deletemessage) for limitations on which messages can be deleted | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**DeleteMessagesResponse**](DeleteMessagesResponse.md)
 
 ### Authorization
 
@@ -2107,7 +2110,7 @@ No authorization required
 
 ## PostDeleteMyCommands
 
-> PostSetWebhook200Response PostDeleteMyCommands(ctx).Scope(scope).LanguageCode(languageCode).Execute()
+> DeleteMyCommandsResponse PostDeleteMyCommands(ctx).Scope(scope).LanguageCode(languageCode).Execute()
 
 deleteMyCommands
 
@@ -2136,7 +2139,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostDeleteMyCommands``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostDeleteMyCommands`: PostSetWebhook200Response
+	// response from `PostDeleteMyCommands`: DeleteMyCommandsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostDeleteMyCommands`: %v\n", resp)
 }
 ```
@@ -2157,7 +2160,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**DeleteMyCommandsResponse**](DeleteMyCommandsResponse.md)
 
 ### Authorization
 
@@ -2175,7 +2178,7 @@ No authorization required
 
 ## PostDeleteStickerFromSet
 
-> PostSetWebhook200Response PostDeleteStickerFromSet(ctx).Sticker(sticker).Execute()
+> DeleteStickerFromSetResponse PostDeleteStickerFromSet(ctx).Sticker(sticker).Execute()
 
 deleteStickerFromSet
 
@@ -2203,7 +2206,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostDeleteStickerFromSet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostDeleteStickerFromSet`: PostSetWebhook200Response
+	// response from `PostDeleteStickerFromSet`: DeleteStickerFromSetResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostDeleteStickerFromSet`: %v\n", resp)
 }
 ```
@@ -2223,7 +2226,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**DeleteStickerFromSetResponse**](DeleteStickerFromSetResponse.md)
 
 ### Authorization
 
@@ -2241,7 +2244,7 @@ No authorization required
 
 ## PostDeleteStickerSet
 
-> PostSetWebhook200Response PostDeleteStickerSet(ctx).Name(name).Execute()
+> DeleteStickerSetResponse PostDeleteStickerSet(ctx).Name(name).Execute()
 
 deleteStickerSet
 
@@ -2269,7 +2272,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostDeleteStickerSet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostDeleteStickerSet`: PostSetWebhook200Response
+	// response from `PostDeleteStickerSet`: DeleteStickerSetResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostDeleteStickerSet`: %v\n", resp)
 }
 ```
@@ -2289,7 +2292,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**DeleteStickerSetResponse**](DeleteStickerSetResponse.md)
 
 ### Authorization
 
@@ -2307,7 +2310,7 @@ No authorization required
 
 ## PostDeleteStory
 
-> PostSetWebhook200Response PostDeleteStory(ctx).BusinessConnectionId(businessConnectionId).StoryId(storyId).Execute()
+> DeleteStoryResponse PostDeleteStory(ctx).BusinessConnectionId(businessConnectionId).StoryId(storyId).Execute()
 
 deleteStory
 
@@ -2336,7 +2339,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostDeleteStory``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostDeleteStory`: PostSetWebhook200Response
+	// response from `PostDeleteStory`: DeleteStoryResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostDeleteStory`: %v\n", resp)
 }
 ```
@@ -2357,7 +2360,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**DeleteStoryResponse**](DeleteStoryResponse.md)
 
 ### Authorization
 
@@ -2375,7 +2378,7 @@ No authorization required
 
 ## PostDeleteWebhook
 
-> PostSetWebhook200Response PostDeleteWebhook(ctx).DropPendingUpdates(dropPendingUpdates).Execute()
+> DeleteWebhookResponse PostDeleteWebhook(ctx).DropPendingUpdates(dropPendingUpdates).Execute()
 
 deleteWebhook
 
@@ -2403,7 +2406,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostDeleteWebhook``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostDeleteWebhook`: PostSetWebhook200Response
+	// response from `PostDeleteWebhook`: DeleteWebhookResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostDeleteWebhook`: %v\n", resp)
 }
 ```
@@ -2423,7 +2426,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**DeleteWebhookResponse**](DeleteWebhookResponse.md)
 
 ### Authorization
 
@@ -2441,7 +2444,7 @@ No authorization required
 
 ## PostEditChatInviteLink
 
-> PostCreateChatInviteLink200Response PostEditChatInviteLink(ctx).ChatId(chatId).InviteLink(inviteLink).Name(name).ExpireDate(expireDate).MemberLimit(memberLimit).CreatesJoinRequest(createsJoinRequest).Execute()
+> EditChatInviteLinkResponse PostEditChatInviteLink(ctx).ChatId(chatId).InviteLink(inviteLink).Name(name).ExpireDate(expireDate).MemberLimit(memberLimit).CreatesJoinRequest(createsJoinRequest).Execute()
 
 editChatInviteLink
 
@@ -2460,7 +2463,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	inviteLink := "inviteLink_example" // string | The invite link to edit
 	name := "name_example" // string | Invite link name; 0-32 characters (optional)
 	expireDate := int32(56) // int32 | Point in time (Unix timestamp) when the link will expire (optional)
@@ -2474,7 +2477,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostEditChatInviteLink``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostEditChatInviteLink`: PostCreateChatInviteLink200Response
+	// response from `PostEditChatInviteLink`: EditChatInviteLinkResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostEditChatInviteLink`: %v\n", resp)
 }
 ```
@@ -2490,7 +2493,7 @@ Other parameters are passed through a pointer to a apiPostEditChatInviteLinkRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **inviteLink** | **string** | The invite link to edit | 
  **name** | **string** | Invite link name; 0-32 characters | 
  **expireDate** | **int32** | Point in time (Unix timestamp) when the link will expire | 
@@ -2499,7 +2502,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostCreateChatInviteLink200Response**](PostCreateChatInviteLink200Response.md)
+[**EditChatInviteLinkResponse**](EditChatInviteLinkResponse.md)
 
 ### Authorization
 
@@ -2517,7 +2520,7 @@ No authorization required
 
 ## PostEditChatSubscriptionInviteLink
 
-> PostCreateChatInviteLink200Response PostEditChatSubscriptionInviteLink(ctx).ChatId(chatId).InviteLink(inviteLink).Name(name).Execute()
+> EditChatSubscriptionInviteLinkResponse PostEditChatSubscriptionInviteLink(ctx).ChatId(chatId).InviteLink(inviteLink).Name(name).Execute()
 
 editChatSubscriptionInviteLink
 
@@ -2536,7 +2539,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	inviteLink := "inviteLink_example" // string | The invite link to edit
 	name := "name_example" // string | Invite link name; 0-32 characters (optional)
 
@@ -2547,7 +2550,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostEditChatSubscriptionInviteLink``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostEditChatSubscriptionInviteLink`: PostCreateChatInviteLink200Response
+	// response from `PostEditChatSubscriptionInviteLink`: EditChatSubscriptionInviteLinkResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostEditChatSubscriptionInviteLink`: %v\n", resp)
 }
 ```
@@ -2563,13 +2566,13 @@ Other parameters are passed through a pointer to a apiPostEditChatSubscriptionIn
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **inviteLink** | **string** | The invite link to edit | 
  **name** | **string** | Invite link name; 0-32 characters | 
 
 ### Return type
 
-[**PostCreateChatInviteLink200Response**](PostCreateChatInviteLink200Response.md)
+[**EditChatSubscriptionInviteLinkResponse**](EditChatSubscriptionInviteLinkResponse.md)
 
 ### Authorization
 
@@ -2587,7 +2590,7 @@ No authorization required
 
 ## PostEditForumTopic
 
-> PostSetWebhook200Response PostEditForumTopic(ctx).ChatId(chatId).MessageThreadId(messageThreadId).Name(name).IconCustomEmojiId(iconCustomEmojiId).Execute()
+> EditForumTopicResponse PostEditForumTopic(ctx).ChatId(chatId).MessageThreadId(messageThreadId).Name(name).IconCustomEmojiId(iconCustomEmojiId).Execute()
 
 editForumTopic
 
@@ -2606,7 +2609,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_restrictChatMember_request_chat_id{Int32: new(int32)} // PostRestrictChatMemberRequestChatId | 
+	chatId := openapiclient.BotCommandScopeChat_chat_id{Int32: new(int32)} // BotCommandScopeChatChatId | 
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread of the forum topic
 	name := "name_example" // string | New topic name, 0-128 characters. If not specified or empty, the current name of the topic will be kept (optional)
 	iconCustomEmojiId := "iconCustomEmojiId_example" // string | New unique identifier of the custom emoji shown as the topic icon. Use [getForumTopicIconStickers](https://core.telegram.org/bots/api/#getforumtopiciconstickers) to get all allowed custom emoji identifiers. Pass an empty string to remove the icon. If not specified, the current icon will be kept (optional)
@@ -2618,7 +2621,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostEditForumTopic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostEditForumTopic`: PostSetWebhook200Response
+	// response from `PostEditForumTopic`: EditForumTopicResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostEditForumTopic`: %v\n", resp)
 }
 ```
@@ -2634,14 +2637,14 @@ Other parameters are passed through a pointer to a apiPostEditForumTopicRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostRestrictChatMemberRequestChatId**](PostRestrictChatMemberRequestChatId.md) |  | 
+ **chatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
  **messageThreadId** | **int32** | Unique identifier for the target message thread of the forum topic | 
  **name** | **string** | New topic name, 0-128 characters. If not specified or empty, the current name of the topic will be kept | 
  **iconCustomEmojiId** | **string** | New unique identifier of the custom emoji shown as the topic icon. Use [getForumTopicIconStickers](https://core.telegram.org/bots/api/#getforumtopiciconstickers) to get all allowed custom emoji identifiers. Pass an empty string to remove the icon. If not specified, the current icon will be kept | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**EditForumTopicResponse**](EditForumTopicResponse.md)
 
 ### Authorization
 
@@ -2659,7 +2662,7 @@ No authorization required
 
 ## PostEditGeneralForumTopic
 
-> PostSetWebhook200Response PostEditGeneralForumTopic(ctx).ChatId(chatId).Name(name).Execute()
+> EditGeneralForumTopicResponse PostEditGeneralForumTopic(ctx).ChatId(chatId).Name(name).Execute()
 
 editGeneralForumTopic
 
@@ -2678,7 +2681,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_restrictChatMember_request_chat_id{Int32: new(int32)} // PostRestrictChatMemberRequestChatId | 
+	chatId := openapiclient.BotCommandScopeChat_chat_id{Int32: new(int32)} // BotCommandScopeChatChatId | 
 	name := "name_example" // string | New topic name, 1-128 characters
 
 	configuration := openapiclient.NewConfiguration()
@@ -2688,7 +2691,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostEditGeneralForumTopic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostEditGeneralForumTopic`: PostSetWebhook200Response
+	// response from `PostEditGeneralForumTopic`: EditGeneralForumTopicResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostEditGeneralForumTopic`: %v\n", resp)
 }
 ```
@@ -2704,12 +2707,12 @@ Other parameters are passed through a pointer to a apiPostEditGeneralForumTopicR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostRestrictChatMemberRequestChatId**](PostRestrictChatMemberRequestChatId.md) |  | 
+ **chatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
  **name** | **string** | New topic name, 1-128 characters | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**EditGeneralForumTopicResponse**](EditGeneralForumTopicResponse.md)
 
 ### Authorization
 
@@ -2727,7 +2730,7 @@ No authorization required
 
 ## PostEditMessageCaption
 
-> PostEditMessageText200Response PostEditMessageCaption(ctx).BusinessConnectionId(businessConnectionId).ChatId(chatId).MessageId(messageId).InlineMessageId(inlineMessageId).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).ShowCaptionAboveMedia(showCaptionAboveMedia).ReplyMarkup(replyMarkup).Execute()
+> EditMessageCaptionResponse PostEditMessageCaption(ctx).BusinessConnectionId(businessConnectionId).ChatId(chatId).MessageId(messageId).InlineMessageId(inlineMessageId).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).ShowCaptionAboveMedia(showCaptionAboveMedia).ReplyMarkup(replyMarkup).Execute()
 
 editMessageCaption
 
@@ -2747,7 +2750,7 @@ import (
 
 func main() {
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message to be edited was sent (optional)
-	chatId := openapiclient.post_editMessageText_request_chat_id{Int32: new(int32)} // PostEditMessageTextRequestChatId |  (optional)
+	chatId := openapiclient.editMessageTextRequest_chat_id{Int32: new(int32)} // EditMessageTextRequestChatId |  (optional)
 	messageId := int32(56) // int32 | Required if *inline\\\\_message\\\\_id* is not specified. Identifier of the message to edit (optional)
 	inlineMessageId := "inlineMessageId_example" // string | Required if *chat\\\\_id* and *message\\\\_id* are not specified. Identifier of the inline message (optional)
 	caption := "caption_example" // string | New caption of the message, 0-1024 characters after entities parsing (optional)
@@ -2763,7 +2766,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostEditMessageCaption``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostEditMessageCaption`: PostEditMessageText200Response
+	// response from `PostEditMessageCaption`: EditMessageCaptionResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostEditMessageCaption`: %v\n", resp)
 }
 ```
@@ -2780,7 +2783,7 @@ Other parameters are passed through a pointer to a apiPostEditMessageCaptionRequ
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message to be edited was sent | 
- **chatId** | [**PostEditMessageTextRequestChatId**](PostEditMessageTextRequestChatId.md) |  | 
+ **chatId** | [**EditMessageTextRequestChatId**](EditMessageTextRequestChatId.md) |  | 
  **messageId** | **int32** | Required if *inline\\\\_message\\\\_id* is not specified. Identifier of the message to edit | 
  **inlineMessageId** | **string** | Required if *chat\\\\_id* and *message\\\\_id* are not specified. Identifier of the inline message | 
  **caption** | **string** | New caption of the message, 0-1024 characters after entities parsing | 
@@ -2791,7 +2794,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostEditMessageText200Response**](PostEditMessageText200Response.md)
+[**EditMessageCaptionResponse**](EditMessageCaptionResponse.md)
 
 ### Authorization
 
@@ -2807,9 +2810,83 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## PostEditMessageChecklist
+
+> EditMessageChecklistResponse PostEditMessageChecklist(ctx).BusinessConnectionId(businessConnectionId).ChatId(chatId).MessageId(messageId).Checklist(checklist).ReplyMarkup(replyMarkup).Execute()
+
+editMessageChecklist
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/tele-api/tele-rest-go"
+)
+
+func main() {
+	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent
+	chatId := int32(56) // int32 | Unique identifier for the target chat
+	messageId := int32(56) // int32 | Unique identifier for the target message
+	checklist := *openapiclient.NewInputChecklist("Title_example", []openapiclient.InputChecklistTask{*openapiclient.NewInputChecklistTask(int32(123), "Text_example")}) // InputChecklist | 
+	replyMarkup := *openapiclient.NewInlineKeyboardMarkup([][]InlineKeyboardButton{[]openapiclient.InlineKeyboardButton{*openapiclient.NewInlineKeyboardButton("Text_example")}}) // InlineKeyboardMarkup |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DefaultAPI.PostEditMessageChecklist(context.Background()).BusinessConnectionId(businessConnectionId).ChatId(chatId).MessageId(messageId).Checklist(checklist).ReplyMarkup(replyMarkup).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostEditMessageChecklist``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PostEditMessageChecklist`: EditMessageChecklistResponse
+	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostEditMessageChecklist`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostEditMessageChecklistRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message will be sent | 
+ **chatId** | **int32** | Unique identifier for the target chat | 
+ **messageId** | **int32** | Unique identifier for the target message | 
+ **checklist** | [**InputChecklist**](InputChecklist.md) |  | 
+ **replyMarkup** | [**InlineKeyboardMarkup**](InlineKeyboardMarkup.md) |  | 
+
+### Return type
+
+[**EditMessageChecklistResponse**](EditMessageChecklistResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: multipart/form-data, application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## PostEditMessageLiveLocation
 
-> PostEditMessageText200Response PostEditMessageLiveLocation(ctx).Latitude(latitude).Longitude(longitude).BusinessConnectionId(businessConnectionId).ChatId(chatId).MessageId(messageId).InlineMessageId(inlineMessageId).LivePeriod(livePeriod).HorizontalAccuracy(horizontalAccuracy).Heading(heading).ProximityAlertRadius(proximityAlertRadius).ReplyMarkup(replyMarkup).Execute()
+> EditMessageLiveLocationResponse PostEditMessageLiveLocation(ctx).Latitude(latitude).Longitude(longitude).BusinessConnectionId(businessConnectionId).ChatId(chatId).MessageId(messageId).InlineMessageId(inlineMessageId).LivePeriod(livePeriod).HorizontalAccuracy(horizontalAccuracy).Heading(heading).ProximityAlertRadius(proximityAlertRadius).ReplyMarkup(replyMarkup).Execute()
 
 editMessageLiveLocation
 
@@ -2831,7 +2908,7 @@ func main() {
 	latitude := float32(8.14) // float32 | Latitude of new location
 	longitude := float32(8.14) // float32 | Longitude of new location
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message to be edited was sent (optional)
-	chatId := openapiclient.post_editMessageText_request_chat_id{Int32: new(int32)} // PostEditMessageTextRequestChatId |  (optional)
+	chatId := openapiclient.editMessageTextRequest_chat_id{Int32: new(int32)} // EditMessageTextRequestChatId |  (optional)
 	messageId := int32(56) // int32 | Required if *inline\\\\_message\\\\_id* is not specified. Identifier of the message to edit (optional)
 	inlineMessageId := "inlineMessageId_example" // string | Required if *chat\\\\_id* and *message\\\\_id* are not specified. Identifier of the inline message (optional)
 	livePeriod := int32(56) // int32 | New period in seconds during which the location can be updated, starting from the message send date. If 0x7FFFFFFF is specified, then the location can be updated forever. Otherwise, the new value must not exceed the current *live\\\\_period* by more than a day, and the live location expiration date must remain within the next 90 days. If not specified, then *live\\\\_period* remains unchanged (optional)
@@ -2847,7 +2924,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostEditMessageLiveLocation``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostEditMessageLiveLocation`: PostEditMessageText200Response
+	// response from `PostEditMessageLiveLocation`: EditMessageLiveLocationResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostEditMessageLiveLocation`: %v\n", resp)
 }
 ```
@@ -2866,7 +2943,7 @@ Name | Type | Description  | Notes
  **latitude** | **float32** | Latitude of new location | 
  **longitude** | **float32** | Longitude of new location | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message to be edited was sent | 
- **chatId** | [**PostEditMessageTextRequestChatId**](PostEditMessageTextRequestChatId.md) |  | 
+ **chatId** | [**EditMessageTextRequestChatId**](EditMessageTextRequestChatId.md) |  | 
  **messageId** | **int32** | Required if *inline\\\\_message\\\\_id* is not specified. Identifier of the message to edit | 
  **inlineMessageId** | **string** | Required if *chat\\\\_id* and *message\\\\_id* are not specified. Identifier of the inline message | 
  **livePeriod** | **int32** | New period in seconds during which the location can be updated, starting from the message send date. If 0x7FFFFFFF is specified, then the location can be updated forever. Otherwise, the new value must not exceed the current *live\\\\_period* by more than a day, and the live location expiration date must remain within the next 90 days. If not specified, then *live\\\\_period* remains unchanged | 
@@ -2877,7 +2954,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostEditMessageText200Response**](PostEditMessageText200Response.md)
+[**EditMessageLiveLocationResponse**](EditMessageLiveLocationResponse.md)
 
 ### Authorization
 
@@ -2895,7 +2972,7 @@ No authorization required
 
 ## PostEditMessageMedia
 
-> PostEditMessageText200Response PostEditMessageMedia(ctx).Media(media).BusinessConnectionId(businessConnectionId).ChatId(chatId).MessageId(messageId).InlineMessageId(inlineMessageId).ReplyMarkup(replyMarkup).Execute()
+> EditMessageMediaResponse PostEditMessageMedia(ctx).Media(media).BusinessConnectionId(businessConnectionId).ChatId(chatId).MessageId(messageId).InlineMessageId(inlineMessageId).ReplyMarkup(replyMarkup).Execute()
 
 editMessageMedia
 
@@ -2916,7 +2993,7 @@ import (
 func main() {
 	media := openapiclient.InputMedia{InputMediaAnimation: openapiclient.NewInputMediaAnimation("Type_example", "Media_example")} // InputMedia | 
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message to be edited was sent (optional)
-	chatId := openapiclient.post_editMessageText_request_chat_id{Int32: new(int32)} // PostEditMessageTextRequestChatId |  (optional)
+	chatId := openapiclient.editMessageTextRequest_chat_id{Int32: new(int32)} // EditMessageTextRequestChatId |  (optional)
 	messageId := int32(56) // int32 | Required if *inline\\\\_message\\\\_id* is not specified. Identifier of the message to edit (optional)
 	inlineMessageId := "inlineMessageId_example" // string | Required if *chat\\\\_id* and *message\\\\_id* are not specified. Identifier of the inline message (optional)
 	replyMarkup := *openapiclient.NewInlineKeyboardMarkup([][]InlineKeyboardButton{[]openapiclient.InlineKeyboardButton{*openapiclient.NewInlineKeyboardButton("Text_example")}}) // InlineKeyboardMarkup |  (optional)
@@ -2928,7 +3005,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostEditMessageMedia``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostEditMessageMedia`: PostEditMessageText200Response
+	// response from `PostEditMessageMedia`: EditMessageMediaResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostEditMessageMedia`: %v\n", resp)
 }
 ```
@@ -2946,14 +3023,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **media** | [**InputMedia**](InputMedia.md) |  | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message to be edited was sent | 
- **chatId** | [**PostEditMessageTextRequestChatId**](PostEditMessageTextRequestChatId.md) |  | 
+ **chatId** | [**EditMessageTextRequestChatId**](EditMessageTextRequestChatId.md) |  | 
  **messageId** | **int32** | Required if *inline\\\\_message\\\\_id* is not specified. Identifier of the message to edit | 
  **inlineMessageId** | **string** | Required if *chat\\\\_id* and *message\\\\_id* are not specified. Identifier of the inline message | 
  **replyMarkup** | [**InlineKeyboardMarkup**](InlineKeyboardMarkup.md) |  | 
 
 ### Return type
 
-[**PostEditMessageText200Response**](PostEditMessageText200Response.md)
+[**EditMessageMediaResponse**](EditMessageMediaResponse.md)
 
 ### Authorization
 
@@ -2961,7 +3038,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
+- **Content-Type**: multipart/form-data, application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -2971,7 +3048,7 @@ No authorization required
 
 ## PostEditMessageReplyMarkup
 
-> PostEditMessageText200Response PostEditMessageReplyMarkup(ctx).BusinessConnectionId(businessConnectionId).ChatId(chatId).MessageId(messageId).InlineMessageId(inlineMessageId).ReplyMarkup(replyMarkup).Execute()
+> EditMessageReplyMarkupResponse PostEditMessageReplyMarkup(ctx).BusinessConnectionId(businessConnectionId).ChatId(chatId).MessageId(messageId).InlineMessageId(inlineMessageId).ReplyMarkup(replyMarkup).Execute()
 
 editMessageReplyMarkup
 
@@ -2991,7 +3068,7 @@ import (
 
 func main() {
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message to be edited was sent (optional)
-	chatId := openapiclient.post_editMessageText_request_chat_id{Int32: new(int32)} // PostEditMessageTextRequestChatId |  (optional)
+	chatId := openapiclient.editMessageTextRequest_chat_id{Int32: new(int32)} // EditMessageTextRequestChatId |  (optional)
 	messageId := int32(56) // int32 | Required if *inline\\\\_message\\\\_id* is not specified. Identifier of the message to edit (optional)
 	inlineMessageId := "inlineMessageId_example" // string | Required if *chat\\\\_id* and *message\\\\_id* are not specified. Identifier of the inline message (optional)
 	replyMarkup := *openapiclient.NewInlineKeyboardMarkup([][]InlineKeyboardButton{[]openapiclient.InlineKeyboardButton{*openapiclient.NewInlineKeyboardButton("Text_example")}}) // InlineKeyboardMarkup |  (optional)
@@ -3003,7 +3080,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostEditMessageReplyMarkup``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostEditMessageReplyMarkup`: PostEditMessageText200Response
+	// response from `PostEditMessageReplyMarkup`: EditMessageReplyMarkupResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostEditMessageReplyMarkup`: %v\n", resp)
 }
 ```
@@ -3020,14 +3097,14 @@ Other parameters are passed through a pointer to a apiPostEditMessageReplyMarkup
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message to be edited was sent | 
- **chatId** | [**PostEditMessageTextRequestChatId**](PostEditMessageTextRequestChatId.md) |  | 
+ **chatId** | [**EditMessageTextRequestChatId**](EditMessageTextRequestChatId.md) |  | 
  **messageId** | **int32** | Required if *inline\\\\_message\\\\_id* is not specified. Identifier of the message to edit | 
  **inlineMessageId** | **string** | Required if *chat\\\\_id* and *message\\\\_id* are not specified. Identifier of the inline message | 
  **replyMarkup** | [**InlineKeyboardMarkup**](InlineKeyboardMarkup.md) |  | 
 
 ### Return type
 
-[**PostEditMessageText200Response**](PostEditMessageText200Response.md)
+[**EditMessageReplyMarkupResponse**](EditMessageReplyMarkupResponse.md)
 
 ### Authorization
 
@@ -3045,7 +3122,7 @@ No authorization required
 
 ## PostEditMessageText
 
-> PostEditMessageText200Response PostEditMessageText(ctx).Text(text).BusinessConnectionId(businessConnectionId).ChatId(chatId).MessageId(messageId).InlineMessageId(inlineMessageId).ParseMode(parseMode).Entities(entities).LinkPreviewOptions(linkPreviewOptions).ReplyMarkup(replyMarkup).Execute()
+> EditMessageTextResponse PostEditMessageText(ctx).Text(text).BusinessConnectionId(businessConnectionId).ChatId(chatId).MessageId(messageId).InlineMessageId(inlineMessageId).ParseMode(parseMode).Entities(entities).LinkPreviewOptions(linkPreviewOptions).ReplyMarkup(replyMarkup).Execute()
 
 editMessageText
 
@@ -3066,7 +3143,7 @@ import (
 func main() {
 	text := "text_example" // string | New text of the message, 1-4096 characters after entities parsing
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message to be edited was sent (optional)
-	chatId := openapiclient.post_editMessageText_request_chat_id{Int32: new(int32)} // PostEditMessageTextRequestChatId |  (optional)
+	chatId := openapiclient.editMessageTextRequest_chat_id{Int32: new(int32)} // EditMessageTextRequestChatId |  (optional)
 	messageId := int32(56) // int32 | Required if *inline\\\\_message\\\\_id* is not specified. Identifier of the message to edit (optional)
 	inlineMessageId := "inlineMessageId_example" // string | Required if *chat\\\\_id* and *message\\\\_id* are not specified. Identifier of the inline message (optional)
 	parseMode := "parseMode_example" // string | Mode for parsing entities in the message text. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. (optional)
@@ -3081,7 +3158,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostEditMessageText``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostEditMessageText`: PostEditMessageText200Response
+	// response from `PostEditMessageText`: EditMessageTextResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostEditMessageText`: %v\n", resp)
 }
 ```
@@ -3099,7 +3176,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **text** | **string** | New text of the message, 1-4096 characters after entities parsing | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message to be edited was sent | 
- **chatId** | [**PostEditMessageTextRequestChatId**](PostEditMessageTextRequestChatId.md) |  | 
+ **chatId** | [**EditMessageTextRequestChatId**](EditMessageTextRequestChatId.md) |  | 
  **messageId** | **int32** | Required if *inline\\\\_message\\\\_id* is not specified. Identifier of the message to edit | 
  **inlineMessageId** | **string** | Required if *chat\\\\_id* and *message\\\\_id* are not specified. Identifier of the inline message | 
  **parseMode** | **string** | Mode for parsing entities in the message text. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. | 
@@ -3109,7 +3186,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostEditMessageText200Response**](PostEditMessageText200Response.md)
+[**EditMessageTextResponse**](EditMessageTextResponse.md)
 
 ### Authorization
 
@@ -3127,7 +3204,7 @@ No authorization required
 
 ## PostEditStory
 
-> PostPostStory200Response PostEditStory(ctx).BusinessConnectionId(businessConnectionId).StoryId(storyId).Content(content).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).Areas(areas).Execute()
+> EditStoryResponse PostEditStory(ctx).BusinessConnectionId(businessConnectionId).StoryId(storyId).Content(content).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).Areas(areas).Execute()
 
 editStory
 
@@ -3161,7 +3238,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostEditStory``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostEditStory`: PostPostStory200Response
+	// response from `PostEditStory`: EditStoryResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostEditStory`: %v\n", resp)
 }
 ```
@@ -3187,7 +3264,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostPostStory200Response**](PostPostStory200Response.md)
+[**EditStoryResponse**](EditStoryResponse.md)
 
 ### Authorization
 
@@ -3195,7 +3272,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
+- **Content-Type**: multipart/form-data, application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -3205,7 +3282,7 @@ No authorization required
 
 ## PostEditUserStarSubscription
 
-> PostSetWebhook200Response PostEditUserStarSubscription(ctx).UserId(userId).TelegramPaymentChargeId(telegramPaymentChargeId).IsCanceled(isCanceled).Execute()
+> EditUserStarSubscriptionResponse PostEditUserStarSubscription(ctx).UserId(userId).TelegramPaymentChargeId(telegramPaymentChargeId).IsCanceled(isCanceled).Execute()
 
 editUserStarSubscription
 
@@ -3235,7 +3312,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostEditUserStarSubscription``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostEditUserStarSubscription`: PostSetWebhook200Response
+	// response from `PostEditUserStarSubscription`: EditUserStarSubscriptionResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostEditUserStarSubscription`: %v\n", resp)
 }
 ```
@@ -3257,7 +3334,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**EditUserStarSubscriptionResponse**](EditUserStarSubscriptionResponse.md)
 
 ### Authorization
 
@@ -3275,7 +3352,7 @@ No authorization required
 
 ## PostExportChatInviteLink
 
-> PostExportChatInviteLink200Response PostExportChatInviteLink(ctx).ChatId(chatId).Execute()
+> ExportChatInviteLinkResponse PostExportChatInviteLink(ctx).ChatId(chatId).Execute()
 
 exportChatInviteLink
 
@@ -3294,7 +3371,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3303,7 +3380,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostExportChatInviteLink``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostExportChatInviteLink`: PostExportChatInviteLink200Response
+	// response from `PostExportChatInviteLink`: ExportChatInviteLinkResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostExportChatInviteLink`: %v\n", resp)
 }
 ```
@@ -3319,11 +3396,11 @@ Other parameters are passed through a pointer to a apiPostExportChatInviteLinkRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
 
 ### Return type
 
-[**PostExportChatInviteLink200Response**](PostExportChatInviteLink200Response.md)
+[**ExportChatInviteLinkResponse**](ExportChatInviteLinkResponse.md)
 
 ### Authorization
 
@@ -3341,7 +3418,7 @@ No authorization required
 
 ## PostForwardMessage
 
-> PostSendMessage200Response PostForwardMessage(ctx).ChatId(chatId).FromChatId(fromChatId).MessageId(messageId).MessageThreadId(messageThreadId).VideoStartTimestamp(videoStartTimestamp).DisableNotification(disableNotification).ProtectContent(protectContent).Execute()
+> ForwardMessageResponse PostForwardMessage(ctx).ChatId(chatId).FromChatId(fromChatId).MessageId(messageId).MessageThreadId(messageThreadId).VideoStartTimestamp(videoStartTimestamp).DisableNotification(disableNotification).ProtectContent(protectContent).Execute()
 
 forwardMessage
 
@@ -3360,8 +3437,8 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
-	fromChatId := openapiclient.post_forwardMessage_request_from_chat_id{Int32: new(int32)} // PostForwardMessageRequestFromChatId | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
+	fromChatId := openapiclient.forwardMessageRequest_from_chat_id{Int32: new(int32)} // ForwardMessageRequestFromChatId | 
 	messageId := int32(56) // int32 | Message identifier in the chat specified in *from\\\\_chat\\\\_id*
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
 	videoStartTimestamp := int32(56) // int32 | New start timestamp for the forwarded video in the message (optional)
@@ -3375,7 +3452,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostForwardMessage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostForwardMessage`: PostSendMessage200Response
+	// response from `PostForwardMessage`: ForwardMessageResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostForwardMessage`: %v\n", resp)
 }
 ```
@@ -3391,8 +3468,8 @@ Other parameters are passed through a pointer to a apiPostForwardMessageRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
- **fromChatId** | [**PostForwardMessageRequestFromChatId**](PostForwardMessageRequestFromChatId.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
+ **fromChatId** | [**ForwardMessageRequestFromChatId**](ForwardMessageRequestFromChatId.md) |  | 
  **messageId** | **int32** | Message identifier in the chat specified in *from\\\\_chat\\\\_id* | 
  **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | 
  **videoStartTimestamp** | **int32** | New start timestamp for the forwarded video in the message | 
@@ -3401,7 +3478,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSendMessage200Response**](PostSendMessage200Response.md)
+[**ForwardMessageResponse**](ForwardMessageResponse.md)
 
 ### Authorization
 
@@ -3419,7 +3496,7 @@ No authorization required
 
 ## PostForwardMessages
 
-> PostForwardMessages200Response PostForwardMessages(ctx).ChatId(chatId).FromChatId(fromChatId).MessageIds(messageIds).MessageThreadId(messageThreadId).DisableNotification(disableNotification).ProtectContent(protectContent).Execute()
+> ForwardMessagesResponse PostForwardMessages(ctx).ChatId(chatId).FromChatId(fromChatId).MessageIds(messageIds).MessageThreadId(messageThreadId).DisableNotification(disableNotification).ProtectContent(protectContent).Execute()
 
 forwardMessages
 
@@ -3438,8 +3515,8 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
-	fromChatId := openapiclient.post_forwardMessages_request_from_chat_id{Int32: new(int32)} // PostForwardMessagesRequestFromChatId | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
+	fromChatId := openapiclient.forwardMessagesRequest_from_chat_id{Int32: new(int32)} // ForwardMessagesRequestFromChatId | 
 	messageIds := []int32{int32(123)} // []int32 | A JSON-serialized list of 1-100 identifiers of messages in the chat *from\\\\_chat\\\\_id* to forward. The identifiers must be specified in a strictly increasing order.
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
 	disableNotification := true // bool | Sends the messages [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. (optional)
@@ -3452,7 +3529,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostForwardMessages``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostForwardMessages`: PostForwardMessages200Response
+	// response from `PostForwardMessages`: ForwardMessagesResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostForwardMessages`: %v\n", resp)
 }
 ```
@@ -3468,8 +3545,8 @@ Other parameters are passed through a pointer to a apiPostForwardMessagesRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
- **fromChatId** | [**PostForwardMessagesRequestFromChatId**](PostForwardMessagesRequestFromChatId.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
+ **fromChatId** | [**ForwardMessagesRequestFromChatId**](ForwardMessagesRequestFromChatId.md) |  | 
  **messageIds** | **[]int32** | A JSON-serialized list of 1-100 identifiers of messages in the chat *from\\\\_chat\\\\_id* to forward. The identifiers must be specified in a strictly increasing order. | 
  **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | 
  **disableNotification** | **bool** | Sends the messages [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. | 
@@ -3477,7 +3554,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostForwardMessages200Response**](PostForwardMessages200Response.md)
+[**ForwardMessagesResponse**](ForwardMessagesResponse.md)
 
 ### Authorization
 
@@ -3495,7 +3572,7 @@ No authorization required
 
 ## PostGetAvailableGifts
 
-> PostGetAvailableGifts200Response PostGetAvailableGifts(ctx).Execute()
+> GetAvailableGiftsResponse PostGetAvailableGifts(ctx).Execute()
 
 getAvailableGifts
 
@@ -3522,7 +3599,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostGetAvailableGifts``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostGetAvailableGifts`: PostGetAvailableGifts200Response
+	// response from `PostGetAvailableGifts`: GetAvailableGiftsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostGetAvailableGifts`: %v\n", resp)
 }
 ```
@@ -3538,7 +3615,7 @@ Other parameters are passed through a pointer to a apiPostGetAvailableGiftsReque
 
 ### Return type
 
-[**PostGetAvailableGifts200Response**](PostGetAvailableGifts200Response.md)
+[**GetAvailableGiftsResponse**](GetAvailableGiftsResponse.md)
 
 ### Authorization
 
@@ -3556,7 +3633,7 @@ No authorization required
 
 ## PostGetBusinessAccountGifts
 
-> PostGetBusinessAccountGifts200Response PostGetBusinessAccountGifts(ctx).BusinessConnectionId(businessConnectionId).ExcludeUnsaved(excludeUnsaved).ExcludeSaved(excludeSaved).ExcludeUnlimited(excludeUnlimited).ExcludeLimited(excludeLimited).ExcludeUnique(excludeUnique).SortByPrice(sortByPrice).Offset(offset).Limit(limit).Execute()
+> GetBusinessAccountGiftsResponse PostGetBusinessAccountGifts(ctx).BusinessConnectionId(businessConnectionId).ExcludeUnsaved(excludeUnsaved).ExcludeSaved(excludeSaved).ExcludeUnlimited(excludeUnlimited).ExcludeLimited(excludeLimited).ExcludeUnique(excludeUnique).SortByPrice(sortByPrice).Offset(offset).Limit(limit).Execute()
 
 getBusinessAccountGifts
 
@@ -3576,12 +3653,12 @@ import (
 
 func main() {
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection
-	excludeUnsaved := true // bool | Pass True to exclude gifts that aren't saved to the account's profile page (optional)
-	excludeSaved := true // bool | Pass True to exclude gifts that are saved to the account's profile page (optional)
-	excludeUnlimited := true // bool | Pass True to exclude gifts that can be purchased an unlimited number of times (optional)
-	excludeLimited := true // bool | Pass True to exclude gifts that can be purchased a limited number of times (optional)
-	excludeUnique := true // bool | Pass True to exclude unique gifts (optional)
-	sortByPrice := true // bool | Pass True to sort results by gift price instead of send date. Sorting is applied before pagination. (optional)
+	excludeUnsaved := true // bool | Pass *True* to exclude gifts that aren't saved to the account's profile page (optional)
+	excludeSaved := true // bool | Pass *True* to exclude gifts that are saved to the account's profile page (optional)
+	excludeUnlimited := true // bool | Pass *True* to exclude gifts that can be purchased an unlimited number of times (optional)
+	excludeLimited := true // bool | Pass *True* to exclude gifts that can be purchased a limited number of times (optional)
+	excludeUnique := true // bool | Pass *True* to exclude unique gifts (optional)
+	sortByPrice := true // bool | Pass *True* to sort results by gift price instead of send date. Sorting is applied before pagination. (optional)
 	offset := "offset_example" // string | Offset of the first entry to return as received from the previous request; use empty string to get the first chunk of results (optional)
 	limit := int32(56) // int32 | The maximum number of gifts to be returned; 1-100. Defaults to 100 (optional) (default to 100)
 
@@ -3592,7 +3669,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostGetBusinessAccountGifts``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostGetBusinessAccountGifts`: PostGetBusinessAccountGifts200Response
+	// response from `PostGetBusinessAccountGifts`: GetBusinessAccountGiftsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostGetBusinessAccountGifts`: %v\n", resp)
 }
 ```
@@ -3609,18 +3686,18 @@ Other parameters are passed through a pointer to a apiPostGetBusinessAccountGift
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **businessConnectionId** | **string** | Unique identifier of the business connection | 
- **excludeUnsaved** | **bool** | Pass True to exclude gifts that aren&#39;t saved to the account&#39;s profile page | 
- **excludeSaved** | **bool** | Pass True to exclude gifts that are saved to the account&#39;s profile page | 
- **excludeUnlimited** | **bool** | Pass True to exclude gifts that can be purchased an unlimited number of times | 
- **excludeLimited** | **bool** | Pass True to exclude gifts that can be purchased a limited number of times | 
- **excludeUnique** | **bool** | Pass True to exclude unique gifts | 
- **sortByPrice** | **bool** | Pass True to sort results by gift price instead of send date. Sorting is applied before pagination. | 
+ **excludeUnsaved** | **bool** | Pass *True* to exclude gifts that aren&#39;t saved to the account&#39;s profile page | 
+ **excludeSaved** | **bool** | Pass *True* to exclude gifts that are saved to the account&#39;s profile page | 
+ **excludeUnlimited** | **bool** | Pass *True* to exclude gifts that can be purchased an unlimited number of times | 
+ **excludeLimited** | **bool** | Pass *True* to exclude gifts that can be purchased a limited number of times | 
+ **excludeUnique** | **bool** | Pass *True* to exclude unique gifts | 
+ **sortByPrice** | **bool** | Pass *True* to sort results by gift price instead of send date. Sorting is applied before pagination. | 
  **offset** | **string** | Offset of the first entry to return as received from the previous request; use empty string to get the first chunk of results | 
  **limit** | **int32** | The maximum number of gifts to be returned; 1-100. Defaults to 100 | [default to 100]
 
 ### Return type
 
-[**PostGetBusinessAccountGifts200Response**](PostGetBusinessAccountGifts200Response.md)
+[**GetBusinessAccountGiftsResponse**](GetBusinessAccountGiftsResponse.md)
 
 ### Authorization
 
@@ -3638,7 +3715,7 @@ No authorization required
 
 ## PostGetBusinessAccountStarBalance
 
-> PostGetBusinessAccountStarBalance200Response PostGetBusinessAccountStarBalance(ctx).BusinessConnectionId(businessConnectionId).Execute()
+> GetBusinessAccountStarBalanceResponse PostGetBusinessAccountStarBalance(ctx).BusinessConnectionId(businessConnectionId).Execute()
 
 getBusinessAccountStarBalance
 
@@ -3666,7 +3743,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostGetBusinessAccountStarBalance``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostGetBusinessAccountStarBalance`: PostGetBusinessAccountStarBalance200Response
+	// response from `PostGetBusinessAccountStarBalance`: GetBusinessAccountStarBalanceResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostGetBusinessAccountStarBalance`: %v\n", resp)
 }
 ```
@@ -3686,7 +3763,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostGetBusinessAccountStarBalance200Response**](PostGetBusinessAccountStarBalance200Response.md)
+[**GetBusinessAccountStarBalanceResponse**](GetBusinessAccountStarBalanceResponse.md)
 
 ### Authorization
 
@@ -3704,7 +3781,7 @@ No authorization required
 
 ## PostGetBusinessConnection
 
-> PostGetBusinessConnection200Response PostGetBusinessConnection(ctx).BusinessConnectionId(businessConnectionId).Execute()
+> GetBusinessConnectionResponse PostGetBusinessConnection(ctx).BusinessConnectionId(businessConnectionId).Execute()
 
 getBusinessConnection
 
@@ -3732,7 +3809,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostGetBusinessConnection``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostGetBusinessConnection`: PostGetBusinessConnection200Response
+	// response from `PostGetBusinessConnection`: GetBusinessConnectionResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostGetBusinessConnection`: %v\n", resp)
 }
 ```
@@ -3752,7 +3829,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostGetBusinessConnection200Response**](PostGetBusinessConnection200Response.md)
+[**GetBusinessConnectionResponse**](GetBusinessConnectionResponse.md)
 
 ### Authorization
 
@@ -3770,7 +3847,7 @@ No authorization required
 
 ## PostGetChat
 
-> PostGetChat200Response PostGetChat(ctx).ChatId(chatId).Execute()
+> GetChatResponse PostGetChat(ctx).ChatId(chatId).Execute()
 
 getChat
 
@@ -3789,7 +3866,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_leaveChat_request_chat_id{Int32: new(int32)} // PostLeaveChatRequestChatId | 
+	chatId := openapiclient.leaveChatRequest_chat_id{Int32: new(int32)} // LeaveChatRequestChatId | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3798,7 +3875,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostGetChat``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostGetChat`: PostGetChat200Response
+	// response from `PostGetChat`: GetChatResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostGetChat`: %v\n", resp)
 }
 ```
@@ -3814,11 +3891,11 @@ Other parameters are passed through a pointer to a apiPostGetChatRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostLeaveChatRequestChatId**](PostLeaveChatRequestChatId.md) |  | 
+ **chatId** | [**LeaveChatRequestChatId**](LeaveChatRequestChatId.md) |  | 
 
 ### Return type
 
-[**PostGetChat200Response**](PostGetChat200Response.md)
+[**GetChatResponse**](GetChatResponse.md)
 
 ### Authorization
 
@@ -3836,7 +3913,7 @@ No authorization required
 
 ## PostGetChatAdministrators
 
-> PostGetChatAdministrators200Response PostGetChatAdministrators(ctx).ChatId(chatId).Execute()
+> GetChatAdministratorsResponse PostGetChatAdministrators(ctx).ChatId(chatId).Execute()
 
 getChatAdministrators
 
@@ -3855,7 +3932,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_leaveChat_request_chat_id{Int32: new(int32)} // PostLeaveChatRequestChatId | 
+	chatId := openapiclient.leaveChatRequest_chat_id{Int32: new(int32)} // LeaveChatRequestChatId | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3864,7 +3941,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostGetChatAdministrators``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostGetChatAdministrators`: PostGetChatAdministrators200Response
+	// response from `PostGetChatAdministrators`: GetChatAdministratorsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostGetChatAdministrators`: %v\n", resp)
 }
 ```
@@ -3880,11 +3957,11 @@ Other parameters are passed through a pointer to a apiPostGetChatAdministratorsR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostLeaveChatRequestChatId**](PostLeaveChatRequestChatId.md) |  | 
+ **chatId** | [**LeaveChatRequestChatId**](LeaveChatRequestChatId.md) |  | 
 
 ### Return type
 
-[**PostGetChatAdministrators200Response**](PostGetChatAdministrators200Response.md)
+[**GetChatAdministratorsResponse**](GetChatAdministratorsResponse.md)
 
 ### Authorization
 
@@ -3902,7 +3979,7 @@ No authorization required
 
 ## PostGetChatMember
 
-> PostGetChatMember200Response PostGetChatMember(ctx).ChatId(chatId).UserId(userId).Execute()
+> GetChatMemberResponse PostGetChatMember(ctx).ChatId(chatId).UserId(userId).Execute()
 
 getChatMember
 
@@ -3921,7 +3998,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_leaveChat_request_chat_id{Int32: new(int32)} // PostLeaveChatRequestChatId | 
+	chatId := openapiclient.leaveChatRequest_chat_id{Int32: new(int32)} // LeaveChatRequestChatId | 
 	userId := int32(56) // int32 | Unique identifier of the target user
 
 	configuration := openapiclient.NewConfiguration()
@@ -3931,7 +4008,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostGetChatMember``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostGetChatMember`: PostGetChatMember200Response
+	// response from `PostGetChatMember`: GetChatMemberResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostGetChatMember`: %v\n", resp)
 }
 ```
@@ -3947,12 +4024,12 @@ Other parameters are passed through a pointer to a apiPostGetChatMemberRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostLeaveChatRequestChatId**](PostLeaveChatRequestChatId.md) |  | 
+ **chatId** | [**LeaveChatRequestChatId**](LeaveChatRequestChatId.md) |  | 
  **userId** | **int32** | Unique identifier of the target user | 
 
 ### Return type
 
-[**PostGetChatMember200Response**](PostGetChatMember200Response.md)
+[**GetChatMemberResponse**](GetChatMemberResponse.md)
 
 ### Authorization
 
@@ -3970,7 +4047,7 @@ No authorization required
 
 ## PostGetChatMemberCount
 
-> PostGetChatMemberCount200Response PostGetChatMemberCount(ctx).ChatId(chatId).Execute()
+> GetChatMemberCountResponse PostGetChatMemberCount(ctx).ChatId(chatId).Execute()
 
 getChatMemberCount
 
@@ -3989,7 +4066,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_leaveChat_request_chat_id{Int32: new(int32)} // PostLeaveChatRequestChatId | 
+	chatId := openapiclient.leaveChatRequest_chat_id{Int32: new(int32)} // LeaveChatRequestChatId | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3998,7 +4075,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostGetChatMemberCount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostGetChatMemberCount`: PostGetChatMemberCount200Response
+	// response from `PostGetChatMemberCount`: GetChatMemberCountResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostGetChatMemberCount`: %v\n", resp)
 }
 ```
@@ -4014,11 +4091,11 @@ Other parameters are passed through a pointer to a apiPostGetChatMemberCountRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostLeaveChatRequestChatId**](PostLeaveChatRequestChatId.md) |  | 
+ **chatId** | [**LeaveChatRequestChatId**](LeaveChatRequestChatId.md) |  | 
 
 ### Return type
 
-[**PostGetChatMemberCount200Response**](PostGetChatMemberCount200Response.md)
+[**GetChatMemberCountResponse**](GetChatMemberCountResponse.md)
 
 ### Authorization
 
@@ -4036,7 +4113,7 @@ No authorization required
 
 ## PostGetChatMenuButton
 
-> PostGetChatMenuButton200Response PostGetChatMenuButton(ctx).ChatId(chatId).Execute()
+> GetChatMenuButtonResponse PostGetChatMenuButton(ctx).ChatId(chatId).Execute()
 
 getChatMenuButton
 
@@ -4064,7 +4141,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostGetChatMenuButton``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostGetChatMenuButton`: PostGetChatMenuButton200Response
+	// response from `PostGetChatMenuButton`: GetChatMenuButtonResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostGetChatMenuButton`: %v\n", resp)
 }
 ```
@@ -4084,7 +4161,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostGetChatMenuButton200Response**](PostGetChatMenuButton200Response.md)
+[**GetChatMenuButtonResponse**](GetChatMenuButtonResponse.md)
 
 ### Authorization
 
@@ -4102,7 +4179,7 @@ No authorization required
 
 ## PostGetCustomEmojiStickers
 
-> PostGetForumTopicIconStickers200Response PostGetCustomEmojiStickers(ctx).CustomEmojiIds(customEmojiIds).Execute()
+> GetCustomEmojiStickersResponse PostGetCustomEmojiStickers(ctx).CustomEmojiIds(customEmojiIds).Execute()
 
 getCustomEmojiStickers
 
@@ -4130,7 +4207,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostGetCustomEmojiStickers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostGetCustomEmojiStickers`: PostGetForumTopicIconStickers200Response
+	// response from `PostGetCustomEmojiStickers`: GetCustomEmojiStickersResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostGetCustomEmojiStickers`: %v\n", resp)
 }
 ```
@@ -4150,7 +4227,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostGetForumTopicIconStickers200Response**](PostGetForumTopicIconStickers200Response.md)
+[**GetCustomEmojiStickersResponse**](GetCustomEmojiStickersResponse.md)
 
 ### Authorization
 
@@ -4168,7 +4245,7 @@ No authorization required
 
 ## PostGetFile
 
-> PostGetFile200Response PostGetFile(ctx).FileId(fileId).Execute()
+> GetFileResponse PostGetFile(ctx).FileId(fileId).Execute()
 
 getFile
 
@@ -4196,7 +4273,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostGetFile``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostGetFile`: PostGetFile200Response
+	// response from `PostGetFile`: GetFileResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostGetFile`: %v\n", resp)
 }
 ```
@@ -4216,7 +4293,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostGetFile200Response**](PostGetFile200Response.md)
+[**GetFileResponse**](GetFileResponse.md)
 
 ### Authorization
 
@@ -4234,7 +4311,7 @@ No authorization required
 
 ## PostGetForumTopicIconStickers
 
-> PostGetForumTopicIconStickers200Response PostGetForumTopicIconStickers(ctx).Execute()
+> GetForumTopicIconStickersResponse PostGetForumTopicIconStickers(ctx).Execute()
 
 getForumTopicIconStickers
 
@@ -4261,7 +4338,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostGetForumTopicIconStickers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostGetForumTopicIconStickers`: PostGetForumTopicIconStickers200Response
+	// response from `PostGetForumTopicIconStickers`: GetForumTopicIconStickersResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostGetForumTopicIconStickers`: %v\n", resp)
 }
 ```
@@ -4277,7 +4354,7 @@ Other parameters are passed through a pointer to a apiPostGetForumTopicIconStick
 
 ### Return type
 
-[**PostGetForumTopicIconStickers200Response**](PostGetForumTopicIconStickers200Response.md)
+[**GetForumTopicIconStickersResponse**](GetForumTopicIconStickersResponse.md)
 
 ### Authorization
 
@@ -4295,7 +4372,7 @@ No authorization required
 
 ## PostGetGameHighScores
 
-> PostGetGameHighScores200Response PostGetGameHighScores(ctx).UserId(userId).ChatId(chatId).MessageId(messageId).InlineMessageId(inlineMessageId).Execute()
+> GetGameHighScoresResponse PostGetGameHighScores(ctx).UserId(userId).ChatId(chatId).MessageId(messageId).InlineMessageId(inlineMessageId).Execute()
 
 getGameHighScores
 
@@ -4326,7 +4403,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostGetGameHighScores``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostGetGameHighScores`: PostGetGameHighScores200Response
+	// response from `PostGetGameHighScores`: GetGameHighScoresResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostGetGameHighScores`: %v\n", resp)
 }
 ```
@@ -4349,7 +4426,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostGetGameHighScores200Response**](PostGetGameHighScores200Response.md)
+[**GetGameHighScoresResponse**](GetGameHighScoresResponse.md)
 
 ### Authorization
 
@@ -4367,7 +4444,7 @@ No authorization required
 
 ## PostGetMe
 
-> PostGetMe200Response PostGetMe(ctx).Execute()
+> GetMeResponse PostGetMe(ctx).Execute()
 
 getMe
 
@@ -4394,7 +4471,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostGetMe``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostGetMe`: PostGetMe200Response
+	// response from `PostGetMe`: GetMeResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostGetMe`: %v\n", resp)
 }
 ```
@@ -4410,7 +4487,7 @@ Other parameters are passed through a pointer to a apiPostGetMeRequest struct vi
 
 ### Return type
 
-[**PostGetMe200Response**](PostGetMe200Response.md)
+[**GetMeResponse**](GetMeResponse.md)
 
 ### Authorization
 
@@ -4428,7 +4505,7 @@ No authorization required
 
 ## PostGetMyCommands
 
-> PostGetMyCommands200Response PostGetMyCommands(ctx).Scope(scope).LanguageCode(languageCode).Execute()
+> GetMyCommandsResponse PostGetMyCommands(ctx).Scope(scope).LanguageCode(languageCode).Execute()
 
 getMyCommands
 
@@ -4457,7 +4534,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostGetMyCommands``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostGetMyCommands`: PostGetMyCommands200Response
+	// response from `PostGetMyCommands`: GetMyCommandsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostGetMyCommands`: %v\n", resp)
 }
 ```
@@ -4478,7 +4555,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostGetMyCommands200Response**](PostGetMyCommands200Response.md)
+[**GetMyCommandsResponse**](GetMyCommandsResponse.md)
 
 ### Authorization
 
@@ -4496,7 +4573,7 @@ No authorization required
 
 ## PostGetMyDefaultAdministratorRights
 
-> PostGetMyDefaultAdministratorRights200Response PostGetMyDefaultAdministratorRights(ctx).ForChannels(forChannels).Execute()
+> GetMyDefaultAdministratorRightsResponse PostGetMyDefaultAdministratorRights(ctx).ForChannels(forChannels).Execute()
 
 getMyDefaultAdministratorRights
 
@@ -4524,7 +4601,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostGetMyDefaultAdministratorRights``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostGetMyDefaultAdministratorRights`: PostGetMyDefaultAdministratorRights200Response
+	// response from `PostGetMyDefaultAdministratorRights`: GetMyDefaultAdministratorRightsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostGetMyDefaultAdministratorRights`: %v\n", resp)
 }
 ```
@@ -4544,7 +4621,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostGetMyDefaultAdministratorRights200Response**](PostGetMyDefaultAdministratorRights200Response.md)
+[**GetMyDefaultAdministratorRightsResponse**](GetMyDefaultAdministratorRightsResponse.md)
 
 ### Authorization
 
@@ -4562,7 +4639,7 @@ No authorization required
 
 ## PostGetMyDescription
 
-> PostGetMyDescription200Response PostGetMyDescription(ctx).LanguageCode(languageCode).Execute()
+> GetMyDescriptionResponse PostGetMyDescription(ctx).LanguageCode(languageCode).Execute()
 
 getMyDescription
 
@@ -4590,7 +4667,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostGetMyDescription``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostGetMyDescription`: PostGetMyDescription200Response
+	// response from `PostGetMyDescription`: GetMyDescriptionResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostGetMyDescription`: %v\n", resp)
 }
 ```
@@ -4610,7 +4687,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostGetMyDescription200Response**](PostGetMyDescription200Response.md)
+[**GetMyDescriptionResponse**](GetMyDescriptionResponse.md)
 
 ### Authorization
 
@@ -4628,7 +4705,7 @@ No authorization required
 
 ## PostGetMyName
 
-> PostGetMyName200Response PostGetMyName(ctx).LanguageCode(languageCode).Execute()
+> GetMyNameResponse PostGetMyName(ctx).LanguageCode(languageCode).Execute()
 
 getMyName
 
@@ -4656,7 +4733,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostGetMyName``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostGetMyName`: PostGetMyName200Response
+	// response from `PostGetMyName`: GetMyNameResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostGetMyName`: %v\n", resp)
 }
 ```
@@ -4676,7 +4753,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostGetMyName200Response**](PostGetMyName200Response.md)
+[**GetMyNameResponse**](GetMyNameResponse.md)
 
 ### Authorization
 
@@ -4694,7 +4771,7 @@ No authorization required
 
 ## PostGetMyShortDescription
 
-> PostGetMyShortDescription200Response PostGetMyShortDescription(ctx).LanguageCode(languageCode).Execute()
+> GetMyShortDescriptionResponse PostGetMyShortDescription(ctx).LanguageCode(languageCode).Execute()
 
 getMyShortDescription
 
@@ -4722,7 +4799,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostGetMyShortDescription``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostGetMyShortDescription`: PostGetMyShortDescription200Response
+	// response from `PostGetMyShortDescription`: GetMyShortDescriptionResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostGetMyShortDescription`: %v\n", resp)
 }
 ```
@@ -4742,7 +4819,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostGetMyShortDescription200Response**](PostGetMyShortDescription200Response.md)
+[**GetMyShortDescriptionResponse**](GetMyShortDescriptionResponse.md)
 
 ### Authorization
 
@@ -4758,9 +4835,70 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## PostGetMyStarBalance
+
+> GetMyStarBalanceResponse PostGetMyStarBalance(ctx).Execute()
+
+getMyStarBalance
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/tele-api/tele-rest-go"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DefaultAPI.PostGetMyStarBalance(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostGetMyStarBalance``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PostGetMyStarBalance`: GetMyStarBalanceResponse
+	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostGetMyStarBalance`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostGetMyStarBalanceRequest struct via the builder pattern
+
+
+### Return type
+
+[**GetMyStarBalanceResponse**](GetMyStarBalanceResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## PostGetStarTransactions
 
-> PostGetStarTransactions200Response PostGetStarTransactions(ctx).Offset(offset).Limit(limit).Execute()
+> GetStarTransactionsResponse PostGetStarTransactions(ctx).Offset(offset).Limit(limit).Execute()
 
 getStarTransactions
 
@@ -4789,7 +4927,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostGetStarTransactions``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostGetStarTransactions`: PostGetStarTransactions200Response
+	// response from `PostGetStarTransactions`: GetStarTransactionsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostGetStarTransactions`: %v\n", resp)
 }
 ```
@@ -4810,7 +4948,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostGetStarTransactions200Response**](PostGetStarTransactions200Response.md)
+[**GetStarTransactionsResponse**](GetStarTransactionsResponse.md)
 
 ### Authorization
 
@@ -4828,7 +4966,7 @@ No authorization required
 
 ## PostGetStickerSet
 
-> PostGetStickerSet200Response PostGetStickerSet(ctx).Name(name).Execute()
+> GetStickerSetResponse PostGetStickerSet(ctx).Name(name).Execute()
 
 getStickerSet
 
@@ -4856,7 +4994,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostGetStickerSet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostGetStickerSet`: PostGetStickerSet200Response
+	// response from `PostGetStickerSet`: GetStickerSetResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostGetStickerSet`: %v\n", resp)
 }
 ```
@@ -4876,7 +5014,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostGetStickerSet200Response**](PostGetStickerSet200Response.md)
+[**GetStickerSetResponse**](GetStickerSetResponse.md)
 
 ### Authorization
 
@@ -4894,7 +5032,7 @@ No authorization required
 
 ## PostGetUpdates
 
-> PostGetUpdates200Response PostGetUpdates(ctx).Offset(offset).Limit(limit).Timeout(timeout).AllowedUpdates(allowedUpdates).Execute()
+> GetUpdatesResponse PostGetUpdates(ctx).Offset(offset).Limit(limit).Timeout(timeout).AllowedUpdates(allowedUpdates).Execute()
 
 getUpdates
 
@@ -4925,7 +5063,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostGetUpdates``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostGetUpdates`: PostGetUpdates200Response
+	// response from `PostGetUpdates`: GetUpdatesResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostGetUpdates`: %v\n", resp)
 }
 ```
@@ -4948,7 +5086,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostGetUpdates200Response**](PostGetUpdates200Response.md)
+[**GetUpdatesResponse**](GetUpdatesResponse.md)
 
 ### Authorization
 
@@ -4966,7 +5104,7 @@ No authorization required
 
 ## PostGetUserChatBoosts
 
-> PostGetUserChatBoosts200Response PostGetUserChatBoosts(ctx).ChatId(chatId).UserId(userId).Execute()
+> GetUserChatBoostsResponse PostGetUserChatBoosts(ctx).ChatId(chatId).UserId(userId).Execute()
 
 getUserChatBoosts
 
@@ -4985,7 +5123,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_getUserChatBoosts_request_chat_id{Int32: new(int32)} // PostGetUserChatBoostsRequestChatId | 
+	chatId := openapiclient.getUserChatBoostsRequest_chat_id{Int32: new(int32)} // GetUserChatBoostsRequestChatId | 
 	userId := int32(56) // int32 | Unique identifier of the target user
 
 	configuration := openapiclient.NewConfiguration()
@@ -4995,7 +5133,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostGetUserChatBoosts``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostGetUserChatBoosts`: PostGetUserChatBoosts200Response
+	// response from `PostGetUserChatBoosts`: GetUserChatBoostsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostGetUserChatBoosts`: %v\n", resp)
 }
 ```
@@ -5011,12 +5149,12 @@ Other parameters are passed through a pointer to a apiPostGetUserChatBoostsReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostGetUserChatBoostsRequestChatId**](PostGetUserChatBoostsRequestChatId.md) |  | 
+ **chatId** | [**GetUserChatBoostsRequestChatId**](GetUserChatBoostsRequestChatId.md) |  | 
  **userId** | **int32** | Unique identifier of the target user | 
 
 ### Return type
 
-[**PostGetUserChatBoosts200Response**](PostGetUserChatBoosts200Response.md)
+[**GetUserChatBoostsResponse**](GetUserChatBoostsResponse.md)
 
 ### Authorization
 
@@ -5034,7 +5172,7 @@ No authorization required
 
 ## PostGetUserProfilePhotos
 
-> PostGetUserProfilePhotos200Response PostGetUserProfilePhotos(ctx).UserId(userId).Offset(offset).Limit(limit).Execute()
+> GetUserProfilePhotosResponse PostGetUserProfilePhotos(ctx).UserId(userId).Offset(offset).Limit(limit).Execute()
 
 getUserProfilePhotos
 
@@ -5064,7 +5202,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostGetUserProfilePhotos``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostGetUserProfilePhotos`: PostGetUserProfilePhotos200Response
+	// response from `PostGetUserProfilePhotos`: GetUserProfilePhotosResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostGetUserProfilePhotos`: %v\n", resp)
 }
 ```
@@ -5086,7 +5224,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostGetUserProfilePhotos200Response**](PostGetUserProfilePhotos200Response.md)
+[**GetUserProfilePhotosResponse**](GetUserProfilePhotosResponse.md)
 
 ### Authorization
 
@@ -5104,7 +5242,7 @@ No authorization required
 
 ## PostGetWebhookInfo
 
-> PostGetWebhookInfo200Response PostGetWebhookInfo(ctx).Execute()
+> GetWebhookInfoResponse PostGetWebhookInfo(ctx).Execute()
 
 getWebhookInfo
 
@@ -5131,7 +5269,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostGetWebhookInfo``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostGetWebhookInfo`: PostGetWebhookInfo200Response
+	// response from `PostGetWebhookInfo`: GetWebhookInfoResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostGetWebhookInfo`: %v\n", resp)
 }
 ```
@@ -5147,7 +5285,7 @@ Other parameters are passed through a pointer to a apiPostGetWebhookInfoRequest 
 
 ### Return type
 
-[**PostGetWebhookInfo200Response**](PostGetWebhookInfo200Response.md)
+[**GetWebhookInfoResponse**](GetWebhookInfoResponse.md)
 
 ### Authorization
 
@@ -5165,7 +5303,7 @@ No authorization required
 
 ## PostGiftPremiumSubscription
 
-> PostSetWebhook200Response PostGiftPremiumSubscription(ctx).UserId(userId).MonthCount(monthCount).StarCount(starCount).Text(text).TextParseMode(textParseMode).TextEntities(textEntities).Execute()
+> GiftPremiumSubscriptionResponse PostGiftPremiumSubscription(ctx).UserId(userId).MonthCount(monthCount).StarCount(starCount).Text(text).TextParseMode(textParseMode).TextEntities(textEntities).Execute()
 
 giftPremiumSubscription
 
@@ -5198,7 +5336,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostGiftPremiumSubscription``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostGiftPremiumSubscription`: PostSetWebhook200Response
+	// response from `PostGiftPremiumSubscription`: GiftPremiumSubscriptionResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostGiftPremiumSubscription`: %v\n", resp)
 }
 ```
@@ -5223,7 +5361,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**GiftPremiumSubscriptionResponse**](GiftPremiumSubscriptionResponse.md)
 
 ### Authorization
 
@@ -5241,7 +5379,7 @@ No authorization required
 
 ## PostHideGeneralForumTopic
 
-> PostSetWebhook200Response PostHideGeneralForumTopic(ctx).ChatId(chatId).Execute()
+> HideGeneralForumTopicResponse PostHideGeneralForumTopic(ctx).ChatId(chatId).Execute()
 
 hideGeneralForumTopic
 
@@ -5260,7 +5398,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_restrictChatMember_request_chat_id{Int32: new(int32)} // PostRestrictChatMemberRequestChatId | 
+	chatId := openapiclient.BotCommandScopeChat_chat_id{Int32: new(int32)} // BotCommandScopeChatChatId | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5269,7 +5407,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostHideGeneralForumTopic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostHideGeneralForumTopic`: PostSetWebhook200Response
+	// response from `PostHideGeneralForumTopic`: HideGeneralForumTopicResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostHideGeneralForumTopic`: %v\n", resp)
 }
 ```
@@ -5285,11 +5423,11 @@ Other parameters are passed through a pointer to a apiPostHideGeneralForumTopicR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostRestrictChatMemberRequestChatId**](PostRestrictChatMemberRequestChatId.md) |  | 
+ **chatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**HideGeneralForumTopicResponse**](HideGeneralForumTopicResponse.md)
 
 ### Authorization
 
@@ -5307,7 +5445,7 @@ No authorization required
 
 ## PostLeaveChat
 
-> PostSetWebhook200Response PostLeaveChat(ctx).ChatId(chatId).Execute()
+> LeaveChatResponse PostLeaveChat(ctx).ChatId(chatId).Execute()
 
 leaveChat
 
@@ -5326,7 +5464,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_leaveChat_request_chat_id{Int32: new(int32)} // PostLeaveChatRequestChatId | 
+	chatId := openapiclient.leaveChatRequest_chat_id{Int32: new(int32)} // LeaveChatRequestChatId | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5335,7 +5473,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostLeaveChat``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostLeaveChat`: PostSetWebhook200Response
+	// response from `PostLeaveChat`: LeaveChatResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostLeaveChat`: %v\n", resp)
 }
 ```
@@ -5351,11 +5489,11 @@ Other parameters are passed through a pointer to a apiPostLeaveChatRequest struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostLeaveChatRequestChatId**](PostLeaveChatRequestChatId.md) |  | 
+ **chatId** | [**LeaveChatRequestChatId**](LeaveChatRequestChatId.md) |  | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**LeaveChatResponse**](LeaveChatResponse.md)
 
 ### Authorization
 
@@ -5373,7 +5511,7 @@ No authorization required
 
 ## PostLogOut
 
-> PostSetWebhook200Response PostLogOut(ctx).Execute()
+> LogOutResponse PostLogOut(ctx).Execute()
 
 logOut
 
@@ -5400,7 +5538,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostLogOut``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostLogOut`: PostSetWebhook200Response
+	// response from `PostLogOut`: LogOutResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostLogOut`: %v\n", resp)
 }
 ```
@@ -5416,7 +5554,7 @@ Other parameters are passed through a pointer to a apiPostLogOutRequest struct v
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**LogOutResponse**](LogOutResponse.md)
 
 ### Authorization
 
@@ -5434,7 +5572,7 @@ No authorization required
 
 ## PostPinChatMessage
 
-> PostSetWebhook200Response PostPinChatMessage(ctx).ChatId(chatId).MessageId(messageId).BusinessConnectionId(businessConnectionId).DisableNotification(disableNotification).Execute()
+> PinChatMessageResponse PostPinChatMessage(ctx).ChatId(chatId).MessageId(messageId).BusinessConnectionId(businessConnectionId).DisableNotification(disableNotification).Execute()
 
 pinChatMessage
 
@@ -5453,7 +5591,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	messageId := int32(56) // int32 | Identifier of a message to pin
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be pinned (optional)
 	disableNotification := true // bool | Pass *True* if it is not necessary to send a notification to all chat members about the new pinned message. Notifications are always disabled in channels and private chats. (optional)
@@ -5465,7 +5603,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostPinChatMessage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostPinChatMessage`: PostSetWebhook200Response
+	// response from `PostPinChatMessage`: PinChatMessageResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostPinChatMessage`: %v\n", resp)
 }
 ```
@@ -5481,14 +5619,14 @@ Other parameters are passed through a pointer to a apiPostPinChatMessageRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **messageId** | **int32** | Identifier of a message to pin | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message will be pinned | 
  **disableNotification** | **bool** | Pass *True* if it is not necessary to send a notification to all chat members about the new pinned message. Notifications are always disabled in channels and private chats. | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**PinChatMessageResponse**](PinChatMessageResponse.md)
 
 ### Authorization
 
@@ -5506,7 +5644,7 @@ No authorization required
 
 ## PostPostStory
 
-> PostPostStory200Response PostPostStory(ctx).BusinessConnectionId(businessConnectionId).Content(content).ActivePeriod(activePeriod).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).Areas(areas).PostToChatPage(postToChatPage).ProtectContent(protectContent).Execute()
+> PostStoryResponse PostPostStory(ctx).BusinessConnectionId(businessConnectionId).Content(content).ActivePeriod(activePeriod).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).Areas(areas).PostToChatPage(postToChatPage).ProtectContent(protectContent).Execute()
 
 postStory
 
@@ -5542,7 +5680,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostPostStory``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostPostStory`: PostPostStory200Response
+	// response from `PostPostStory`: PostStoryResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostPostStory`: %v\n", resp)
 }
 ```
@@ -5570,7 +5708,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostPostStory200Response**](PostPostStory200Response.md)
+[**PostStoryResponse**](PostStoryResponse.md)
 
 ### Authorization
 
@@ -5578,7 +5716,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
+- **Content-Type**: multipart/form-data, application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -5588,7 +5726,7 @@ No authorization required
 
 ## PostPromoteChatMember
 
-> PostSetWebhook200Response PostPromoteChatMember(ctx).ChatId(chatId).UserId(userId).IsAnonymous(isAnonymous).CanManageChat(canManageChat).CanDeleteMessages(canDeleteMessages).CanManageVideoChats(canManageVideoChats).CanRestrictMembers(canRestrictMembers).CanPromoteMembers(canPromoteMembers).CanChangeInfo(canChangeInfo).CanInviteUsers(canInviteUsers).CanPostStories(canPostStories).CanEditStories(canEditStories).CanDeleteStories(canDeleteStories).CanPostMessages(canPostMessages).CanEditMessages(canEditMessages).CanPinMessages(canPinMessages).CanManageTopics(canManageTopics).Execute()
+> PromoteChatMemberResponse PostPromoteChatMember(ctx).ChatId(chatId).UserId(userId).IsAnonymous(isAnonymous).CanManageChat(canManageChat).CanDeleteMessages(canDeleteMessages).CanManageVideoChats(canManageVideoChats).CanRestrictMembers(canRestrictMembers).CanPromoteMembers(canPromoteMembers).CanChangeInfo(canChangeInfo).CanInviteUsers(canInviteUsers).CanPostStories(canPostStories).CanEditStories(canEditStories).CanDeleteStories(canDeleteStories).CanPostMessages(canPostMessages).CanEditMessages(canEditMessages).CanPinMessages(canPinMessages).CanManageTopics(canManageTopics).Execute()
 
 promoteChatMember
 
@@ -5607,10 +5745,10 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	userId := int32(56) // int32 | Unique identifier of the target user
 	isAnonymous := true // bool | Pass *True* if the administrator's presence in the chat is hidden (optional)
-	canManageChat := true // bool | Pass *True* if the administrator can access the chat event log, get boost list, see hidden supergroup and channel members, report spam messages and ignore slow mode. Implied by any other administrator privilege. (optional)
+	canManageChat := true // bool | Pass *True* if the administrator can access the chat event log, get boost list, see hidden supergroup and channel members, report spam messages, ignore slow mode, and send messages to the chat without paying Telegram Stars. Implied by any other administrator privilege. (optional)
 	canDeleteMessages := true // bool | Pass *True* if the administrator can delete messages of other users (optional)
 	canManageVideoChats := true // bool | Pass *True* if the administrator can manage video chats (optional)
 	canRestrictMembers := true // bool | Pass *True* if the administrator can restrict, ban or unban chat members, or access supergroup statistics (optional)
@@ -5620,7 +5758,7 @@ func main() {
 	canPostStories := true // bool | Pass *True* if the administrator can post stories to the chat (optional)
 	canEditStories := true // bool | Pass *True* if the administrator can edit stories posted by other users, post stories to the chat page, pin chat stories, and access the chat's story archive (optional)
 	canDeleteStories := true // bool | Pass *True* if the administrator can delete stories posted by other users (optional)
-	canPostMessages := true // bool | Pass *True* if the administrator can post messages in the channel, or access channel statistics; for channels only (optional)
+	canPostMessages := true // bool | Pass *True* if the administrator can post messages in the channel, approve suggested posts, or access channel statistics; for channels only (optional)
 	canEditMessages := true // bool | Pass *True* if the administrator can edit messages of other users and can pin messages; for channels only (optional)
 	canPinMessages := true // bool | Pass *True* if the administrator can pin messages; for supergroups only (optional)
 	canManageTopics := true // bool | Pass *True* if the user is allowed to create, rename, close, and reopen forum topics; for supergroups only (optional)
@@ -5632,7 +5770,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostPromoteChatMember``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostPromoteChatMember`: PostSetWebhook200Response
+	// response from `PostPromoteChatMember`: PromoteChatMemberResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostPromoteChatMember`: %v\n", resp)
 }
 ```
@@ -5648,10 +5786,10 @@ Other parameters are passed through a pointer to a apiPostPromoteChatMemberReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **userId** | **int32** | Unique identifier of the target user | 
  **isAnonymous** | **bool** | Pass *True* if the administrator&#39;s presence in the chat is hidden | 
- **canManageChat** | **bool** | Pass *True* if the administrator can access the chat event log, get boost list, see hidden supergroup and channel members, report spam messages and ignore slow mode. Implied by any other administrator privilege. | 
+ **canManageChat** | **bool** | Pass *True* if the administrator can access the chat event log, get boost list, see hidden supergroup and channel members, report spam messages, ignore slow mode, and send messages to the chat without paying Telegram Stars. Implied by any other administrator privilege. | 
  **canDeleteMessages** | **bool** | Pass *True* if the administrator can delete messages of other users | 
  **canManageVideoChats** | **bool** | Pass *True* if the administrator can manage video chats | 
  **canRestrictMembers** | **bool** | Pass *True* if the administrator can restrict, ban or unban chat members, or access supergroup statistics | 
@@ -5661,14 +5799,14 @@ Name | Type | Description  | Notes
  **canPostStories** | **bool** | Pass *True* if the administrator can post stories to the chat | 
  **canEditStories** | **bool** | Pass *True* if the administrator can edit stories posted by other users, post stories to the chat page, pin chat stories, and access the chat&#39;s story archive | 
  **canDeleteStories** | **bool** | Pass *True* if the administrator can delete stories posted by other users | 
- **canPostMessages** | **bool** | Pass *True* if the administrator can post messages in the channel, or access channel statistics; for channels only | 
+ **canPostMessages** | **bool** | Pass *True* if the administrator can post messages in the channel, approve suggested posts, or access channel statistics; for channels only | 
  **canEditMessages** | **bool** | Pass *True* if the administrator can edit messages of other users and can pin messages; for channels only | 
  **canPinMessages** | **bool** | Pass *True* if the administrator can pin messages; for supergroups only | 
  **canManageTopics** | **bool** | Pass *True* if the user is allowed to create, rename, close, and reopen forum topics; for supergroups only | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**PromoteChatMemberResponse**](PromoteChatMemberResponse.md)
 
 ### Authorization
 
@@ -5686,7 +5824,7 @@ No authorization required
 
 ## PostReadBusinessMessage
 
-> PostSetWebhook200Response PostReadBusinessMessage(ctx).BusinessConnectionId(businessConnectionId).ChatId(chatId).MessageId(messageId).Execute()
+> ReadBusinessMessageResponse PostReadBusinessMessage(ctx).BusinessConnectionId(businessConnectionId).ChatId(chatId).MessageId(messageId).Execute()
 
 readBusinessMessage
 
@@ -5716,7 +5854,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostReadBusinessMessage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostReadBusinessMessage`: PostSetWebhook200Response
+	// response from `PostReadBusinessMessage`: ReadBusinessMessageResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostReadBusinessMessage`: %v\n", resp)
 }
 ```
@@ -5738,7 +5876,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**ReadBusinessMessageResponse**](ReadBusinessMessageResponse.md)
 
 ### Authorization
 
@@ -5756,7 +5894,7 @@ No authorization required
 
 ## PostRefundStarPayment
 
-> PostSetWebhook200Response PostRefundStarPayment(ctx).UserId(userId).TelegramPaymentChargeId(telegramPaymentChargeId).Execute()
+> RefundStarPaymentResponse PostRefundStarPayment(ctx).UserId(userId).TelegramPaymentChargeId(telegramPaymentChargeId).Execute()
 
 refundStarPayment
 
@@ -5785,7 +5923,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostRefundStarPayment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostRefundStarPayment`: PostSetWebhook200Response
+	// response from `PostRefundStarPayment`: RefundStarPaymentResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostRefundStarPayment`: %v\n", resp)
 }
 ```
@@ -5806,7 +5944,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**RefundStarPaymentResponse**](RefundStarPaymentResponse.md)
 
 ### Authorization
 
@@ -5824,7 +5962,7 @@ No authorization required
 
 ## PostRemoveBusinessAccountProfilePhoto
 
-> PostSetWebhook200Response PostRemoveBusinessAccountProfilePhoto(ctx).BusinessConnectionId(businessConnectionId).IsPublic(isPublic).Execute()
+> RemoveBusinessAccountProfilePhotoResponse PostRemoveBusinessAccountProfilePhoto(ctx).BusinessConnectionId(businessConnectionId).IsPublic(isPublic).Execute()
 
 removeBusinessAccountProfilePhoto
 
@@ -5844,7 +5982,7 @@ import (
 
 func main() {
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection
-	isPublic := true // bool | Pass True to remove the public photo, which is visible even if the main photo is hidden by the business account's privacy settings. After the main photo is removed, the previous profile photo (if present) becomes the main photo. (optional)
+	isPublic := true // bool | Pass *True* to remove the public photo, which is visible even if the main photo is hidden by the business account's privacy settings. After the main photo is removed, the previous profile photo (if present) becomes the main photo. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5853,7 +5991,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostRemoveBusinessAccountProfilePhoto``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostRemoveBusinessAccountProfilePhoto`: PostSetWebhook200Response
+	// response from `PostRemoveBusinessAccountProfilePhoto`: RemoveBusinessAccountProfilePhotoResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostRemoveBusinessAccountProfilePhoto`: %v\n", resp)
 }
 ```
@@ -5870,11 +6008,11 @@ Other parameters are passed through a pointer to a apiPostRemoveBusinessAccountP
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **businessConnectionId** | **string** | Unique identifier of the business connection | 
- **isPublic** | **bool** | Pass True to remove the public photo, which is visible even if the main photo is hidden by the business account&#39;s privacy settings. After the main photo is removed, the previous profile photo (if present) becomes the main photo. | 
+ **isPublic** | **bool** | Pass *True* to remove the public photo, which is visible even if the main photo is hidden by the business account&#39;s privacy settings. After the main photo is removed, the previous profile photo (if present) becomes the main photo. | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**RemoveBusinessAccountProfilePhotoResponse**](RemoveBusinessAccountProfilePhotoResponse.md)
 
 ### Authorization
 
@@ -5892,7 +6030,7 @@ No authorization required
 
 ## PostRemoveChatVerification
 
-> PostSetWebhook200Response PostRemoveChatVerification(ctx).ChatId(chatId).Execute()
+> RemoveChatVerificationResponse PostRemoveChatVerification(ctx).ChatId(chatId).Execute()
 
 removeChatVerification
 
@@ -5911,7 +6049,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5920,7 +6058,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostRemoveChatVerification``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostRemoveChatVerification`: PostSetWebhook200Response
+	// response from `PostRemoveChatVerification`: RemoveChatVerificationResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostRemoveChatVerification`: %v\n", resp)
 }
 ```
@@ -5936,11 +6074,11 @@ Other parameters are passed through a pointer to a apiPostRemoveChatVerification
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**RemoveChatVerificationResponse**](RemoveChatVerificationResponse.md)
 
 ### Authorization
 
@@ -5958,7 +6096,7 @@ No authorization required
 
 ## PostRemoveUserVerification
 
-> PostSetWebhook200Response PostRemoveUserVerification(ctx).UserId(userId).Execute()
+> RemoveUserVerificationResponse PostRemoveUserVerification(ctx).UserId(userId).Execute()
 
 removeUserVerification
 
@@ -5986,7 +6124,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostRemoveUserVerification``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostRemoveUserVerification`: PostSetWebhook200Response
+	// response from `PostRemoveUserVerification`: RemoveUserVerificationResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostRemoveUserVerification`: %v\n", resp)
 }
 ```
@@ -6006,7 +6144,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**RemoveUserVerificationResponse**](RemoveUserVerificationResponse.md)
 
 ### Authorization
 
@@ -6024,7 +6162,7 @@ No authorization required
 
 ## PostReopenForumTopic
 
-> PostSetWebhook200Response PostReopenForumTopic(ctx).ChatId(chatId).MessageThreadId(messageThreadId).Execute()
+> ReopenForumTopicResponse PostReopenForumTopic(ctx).ChatId(chatId).MessageThreadId(messageThreadId).Execute()
 
 reopenForumTopic
 
@@ -6043,7 +6181,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_restrictChatMember_request_chat_id{Int32: new(int32)} // PostRestrictChatMemberRequestChatId | 
+	chatId := openapiclient.BotCommandScopeChat_chat_id{Int32: new(int32)} // BotCommandScopeChatChatId | 
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread of the forum topic
 
 	configuration := openapiclient.NewConfiguration()
@@ -6053,7 +6191,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostReopenForumTopic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostReopenForumTopic`: PostSetWebhook200Response
+	// response from `PostReopenForumTopic`: ReopenForumTopicResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostReopenForumTopic`: %v\n", resp)
 }
 ```
@@ -6069,12 +6207,12 @@ Other parameters are passed through a pointer to a apiPostReopenForumTopicReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostRestrictChatMemberRequestChatId**](PostRestrictChatMemberRequestChatId.md) |  | 
+ **chatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
  **messageThreadId** | **int32** | Unique identifier for the target message thread of the forum topic | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**ReopenForumTopicResponse**](ReopenForumTopicResponse.md)
 
 ### Authorization
 
@@ -6092,7 +6230,7 @@ No authorization required
 
 ## PostReopenGeneralForumTopic
 
-> PostSetWebhook200Response PostReopenGeneralForumTopic(ctx).ChatId(chatId).Execute()
+> ReopenGeneralForumTopicResponse PostReopenGeneralForumTopic(ctx).ChatId(chatId).Execute()
 
 reopenGeneralForumTopic
 
@@ -6111,7 +6249,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_restrictChatMember_request_chat_id{Int32: new(int32)} // PostRestrictChatMemberRequestChatId | 
+	chatId := openapiclient.BotCommandScopeChat_chat_id{Int32: new(int32)} // BotCommandScopeChatChatId | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6120,7 +6258,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostReopenGeneralForumTopic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostReopenGeneralForumTopic`: PostSetWebhook200Response
+	// response from `PostReopenGeneralForumTopic`: ReopenGeneralForumTopicResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostReopenGeneralForumTopic`: %v\n", resp)
 }
 ```
@@ -6136,11 +6274,11 @@ Other parameters are passed through a pointer to a apiPostReopenGeneralForumTopi
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostRestrictChatMemberRequestChatId**](PostRestrictChatMemberRequestChatId.md) |  | 
+ **chatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**ReopenGeneralForumTopicResponse**](ReopenGeneralForumTopicResponse.md)
 
 ### Authorization
 
@@ -6158,7 +6296,7 @@ No authorization required
 
 ## PostReplaceStickerInSet
 
-> PostSetWebhook200Response PostReplaceStickerInSet(ctx).UserId(userId).Name(name).OldSticker(oldSticker).Sticker(sticker).Execute()
+> ReplaceStickerInSetResponse PostReplaceStickerInSet(ctx).UserId(userId).Name(name).OldSticker(oldSticker).Sticker(sticker).Execute()
 
 replaceStickerInSet
 
@@ -6189,7 +6327,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostReplaceStickerInSet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostReplaceStickerInSet`: PostSetWebhook200Response
+	// response from `PostReplaceStickerInSet`: ReplaceStickerInSetResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostReplaceStickerInSet`: %v\n", resp)
 }
 ```
@@ -6212,7 +6350,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**ReplaceStickerInSetResponse**](ReplaceStickerInSetResponse.md)
 
 ### Authorization
 
@@ -6220,7 +6358,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
+- **Content-Type**: multipart/form-data, application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -6230,7 +6368,7 @@ No authorization required
 
 ## PostRestrictChatMember
 
-> PostSetWebhook200Response PostRestrictChatMember(ctx).ChatId(chatId).UserId(userId).Permissions(permissions).UseIndependentChatPermissions(useIndependentChatPermissions).UntilDate(untilDate).Execute()
+> RestrictChatMemberResponse PostRestrictChatMember(ctx).ChatId(chatId).UserId(userId).Permissions(permissions).UseIndependentChatPermissions(useIndependentChatPermissions).UntilDate(untilDate).Execute()
 
 restrictChatMember
 
@@ -6249,7 +6387,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_restrictChatMember_request_chat_id{Int32: new(int32)} // PostRestrictChatMemberRequestChatId | 
+	chatId := openapiclient.BotCommandScopeChat_chat_id{Int32: new(int32)} // BotCommandScopeChatChatId | 
 	userId := int32(56) // int32 | Unique identifier of the target user
 	permissions := *openapiclient.NewChatPermissions() // ChatPermissions | 
 	useIndependentChatPermissions := true // bool | Pass *True* if chat permissions are set independently. Otherwise, the *can\\\\_send\\\\_other\\\\_messages* and *can\\\\_add\\\\_web\\\\_page\\\\_previews* permissions will imply the *can\\\\_send\\\\_messages*, *can\\\\_send\\\\_audios*, *can\\\\_send\\\\_documents*, *can\\\\_send\\\\_photos*, *can\\\\_send\\\\_videos*, *can\\\\_send\\\\_video\\\\_notes*, and *can\\\\_send\\\\_voice\\\\_notes* permissions; the *can\\\\_send\\\\_polls* permission will imply the *can\\\\_send\\\\_messages* permission. (optional)
@@ -6262,7 +6400,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostRestrictChatMember``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostRestrictChatMember`: PostSetWebhook200Response
+	// response from `PostRestrictChatMember`: RestrictChatMemberResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostRestrictChatMember`: %v\n", resp)
 }
 ```
@@ -6278,7 +6416,7 @@ Other parameters are passed through a pointer to a apiPostRestrictChatMemberRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostRestrictChatMemberRequestChatId**](PostRestrictChatMemberRequestChatId.md) |  | 
+ **chatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
  **userId** | **int32** | Unique identifier of the target user | 
  **permissions** | [**ChatPermissions**](ChatPermissions.md) |  | 
  **useIndependentChatPermissions** | **bool** | Pass *True* if chat permissions are set independently. Otherwise, the *can\\\\_send\\\\_other\\\\_messages* and *can\\\\_add\\\\_web\\\\_page\\\\_previews* permissions will imply the *can\\\\_send\\\\_messages*, *can\\\\_send\\\\_audios*, *can\\\\_send\\\\_documents*, *can\\\\_send\\\\_photos*, *can\\\\_send\\\\_videos*, *can\\\\_send\\\\_video\\\\_notes*, and *can\\\\_send\\\\_voice\\\\_notes* permissions; the *can\\\\_send\\\\_polls* permission will imply the *can\\\\_send\\\\_messages* permission. | 
@@ -6286,7 +6424,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**RestrictChatMemberResponse**](RestrictChatMemberResponse.md)
 
 ### Authorization
 
@@ -6304,7 +6442,7 @@ No authorization required
 
 ## PostRevokeChatInviteLink
 
-> PostCreateChatInviteLink200Response PostRevokeChatInviteLink(ctx).ChatId(chatId).InviteLink(inviteLink).Execute()
+> RevokeChatInviteLinkResponse PostRevokeChatInviteLink(ctx).ChatId(chatId).InviteLink(inviteLink).Execute()
 
 revokeChatInviteLink
 
@@ -6323,7 +6461,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_revokeChatInviteLink_request_chat_id{Int32: new(int32)} // PostRevokeChatInviteLinkRequestChatId | 
+	chatId := openapiclient.revokeChatInviteLinkRequest_chat_id{Int32: new(int32)} // RevokeChatInviteLinkRequestChatId | 
 	inviteLink := "inviteLink_example" // string | The invite link to revoke
 
 	configuration := openapiclient.NewConfiguration()
@@ -6333,7 +6471,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostRevokeChatInviteLink``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostRevokeChatInviteLink`: PostCreateChatInviteLink200Response
+	// response from `PostRevokeChatInviteLink`: RevokeChatInviteLinkResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostRevokeChatInviteLink`: %v\n", resp)
 }
 ```
@@ -6349,12 +6487,12 @@ Other parameters are passed through a pointer to a apiPostRevokeChatInviteLinkRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostRevokeChatInviteLinkRequestChatId**](PostRevokeChatInviteLinkRequestChatId.md) |  | 
+ **chatId** | [**RevokeChatInviteLinkRequestChatId**](RevokeChatInviteLinkRequestChatId.md) |  | 
  **inviteLink** | **string** | The invite link to revoke | 
 
 ### Return type
 
-[**PostCreateChatInviteLink200Response**](PostCreateChatInviteLink200Response.md)
+[**RevokeChatInviteLinkResponse**](RevokeChatInviteLinkResponse.md)
 
 ### Authorization
 
@@ -6372,7 +6510,7 @@ No authorization required
 
 ## PostSavePreparedInlineMessage
 
-> PostSavePreparedInlineMessage200Response PostSavePreparedInlineMessage(ctx).UserId(userId).Result(result).AllowUserChats(allowUserChats).AllowBotChats(allowBotChats).AllowGroupChats(allowGroupChats).AllowChannelChats(allowChannelChats).Execute()
+> SavePreparedInlineMessageResponse PostSavePreparedInlineMessage(ctx).UserId(userId).Result(result).AllowUserChats(allowUserChats).AllowBotChats(allowBotChats).AllowGroupChats(allowGroupChats).AllowChannelChats(allowChannelChats).Execute()
 
 savePreparedInlineMessage
 
@@ -6405,7 +6543,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSavePreparedInlineMessage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSavePreparedInlineMessage`: PostSavePreparedInlineMessage200Response
+	// response from `PostSavePreparedInlineMessage`: SavePreparedInlineMessageResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSavePreparedInlineMessage`: %v\n", resp)
 }
 ```
@@ -6430,7 +6568,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSavePreparedInlineMessage200Response**](PostSavePreparedInlineMessage200Response.md)
+[**SavePreparedInlineMessageResponse**](SavePreparedInlineMessageResponse.md)
 
 ### Authorization
 
@@ -6448,7 +6586,7 @@ No authorization required
 
 ## PostSendAnimation
 
-> PostSendMessage200Response PostSendAnimation(ctx).ChatId(chatId).Animation(animation).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).Duration(duration).Width(width).Height(height).Thumbnail(thumbnail).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).ShowCaptionAboveMedia(showCaptionAboveMedia).HasSpoiler(hasSpoiler).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+> SendAnimationResponse PostSendAnimation(ctx).ChatId(chatId).Animation(animation).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).Duration(duration).Width(width).Height(height).Thumbnail(thumbnail).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).ShowCaptionAboveMedia(showCaptionAboveMedia).HasSpoiler(hasSpoiler).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 
 sendAnimation
 
@@ -6467,14 +6605,14 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
-	animation := openapiclient.post_sendAnimation_request_animation{Any: new(interface{})} // PostSendAnimationRequestAnimation | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
+	animation := "animation_example" // string | 
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
 	duration := int32(56) // int32 | Duration of sent animation in seconds (optional)
 	width := int32(56) // int32 | Animation width (optional)
 	height := int32(56) // int32 | Animation height (optional)
-	thumbnail := openapiclient.post_sendAudio_request_thumbnail{Any: new(interface{})} // PostSendAudioRequestThumbnail |  (optional)
+	thumbnail := "thumbnail_example" // string |  (optional)
 	caption := "caption_example" // string | Animation caption (may also be used when resending animation by *file\\\\_id*), 0-1024 characters after entities parsing (optional)
 	parseMode := "parseMode_example" // string | Mode for parsing entities in the animation caption. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. (optional)
 	captionEntities := []openapiclient.MessageEntity{*openapiclient.NewMessageEntity("Type_example", int32(123), int32(123))} // []MessageEntity | A JSON-serialized list of special entities that appear in the caption, which can be specified instead of *parse\\\\_mode* (optional)
@@ -6485,7 +6623,7 @@ func main() {
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
-	replyMarkup := openapiclient.post_sendMessage_request_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // PostSendMessageRequestReplyMarkup |  (optional)
+	replyMarkup := openapiclient.sendMessageRequest_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessageRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6494,7 +6632,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSendAnimation``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSendAnimation`: PostSendMessage200Response
+	// response from `PostSendAnimation`: SendAnimationResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSendAnimation`: %v\n", resp)
 }
 ```
@@ -6510,14 +6648,14 @@ Other parameters are passed through a pointer to a apiPostSendAnimationRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
- **animation** | [**PostSendAnimationRequestAnimation**](PostSendAnimationRequestAnimation.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
+ **animation** | **string** |  | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message will be sent | 
  **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | 
  **duration** | **int32** | Duration of sent animation in seconds | 
  **width** | **int32** | Animation width | 
  **height** | **int32** | Animation height | 
- **thumbnail** | [**PostSendAudioRequestThumbnail**](PostSendAudioRequestThumbnail.md) |  | 
+ **thumbnail** | **string** |  | 
  **caption** | **string** | Animation caption (may also be used when resending animation by *file\\\\_id*), 0-1024 characters after entities parsing | 
  **parseMode** | **string** | Mode for parsing entities in the animation caption. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. | 
  **captionEntities** | [**[]MessageEntity**](MessageEntity.md) | A JSON-serialized list of special entities that appear in the caption, which can be specified instead of *parse\\\\_mode* | 
@@ -6528,11 +6666,11 @@ Name | Type | Description  | Notes
  **allowPaidBroadcast** | **bool** | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance | 
  **messageEffectId** | **string** | Unique identifier of the message effect to be added to the message; for private chats only | 
  **replyParameters** | [**ReplyParameters**](ReplyParameters.md) |  | 
- **replyMarkup** | [**PostSendMessageRequestReplyMarkup**](PostSendMessageRequestReplyMarkup.md) |  | 
+ **replyMarkup** | [**SendMessageRequestReplyMarkup**](SendMessageRequestReplyMarkup.md) |  | 
 
 ### Return type
 
-[**PostSendMessage200Response**](PostSendMessage200Response.md)
+[**SendAnimationResponse**](SendAnimationResponse.md)
 
 ### Authorization
 
@@ -6540,7 +6678,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
+- **Content-Type**: multipart/form-data, application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -6550,7 +6688,7 @@ No authorization required
 
 ## PostSendAudio
 
-> PostSendMessage200Response PostSendAudio(ctx).ChatId(chatId).Audio(audio).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).Duration(duration).Performer(performer).Title(title).Thumbnail(thumbnail).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+> SendAudioResponse PostSendAudio(ctx).ChatId(chatId).Audio(audio).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).Duration(duration).Performer(performer).Title(title).Thumbnail(thumbnail).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 
 sendAudio
 
@@ -6569,8 +6707,8 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
-	audio := openapiclient.post_sendAudio_request_audio{Any: new(interface{})} // PostSendAudioRequestAudio | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
+	audio := "audio_example" // string | 
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
 	caption := "caption_example" // string | Audio caption, 0-1024 characters after entities parsing (optional)
@@ -6579,13 +6717,13 @@ func main() {
 	duration := int32(56) // int32 | Duration of the audio in seconds (optional)
 	performer := "performer_example" // string | Performer (optional)
 	title := "title_example" // string | Track name (optional)
-	thumbnail := openapiclient.post_sendAudio_request_thumbnail{Any: new(interface{})} // PostSendAudioRequestThumbnail |  (optional)
+	thumbnail := "thumbnail_example" // string |  (optional)
 	disableNotification := true // bool | Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. (optional)
 	protectContent := true // bool | Protects the contents of the sent message from forwarding and saving (optional)
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
-	replyMarkup := openapiclient.post_sendMessage_request_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // PostSendMessageRequestReplyMarkup |  (optional)
+	replyMarkup := openapiclient.sendMessageRequest_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessageRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6594,7 +6732,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSendAudio``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSendAudio`: PostSendMessage200Response
+	// response from `PostSendAudio`: SendAudioResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSendAudio`: %v\n", resp)
 }
 ```
@@ -6610,8 +6748,8 @@ Other parameters are passed through a pointer to a apiPostSendAudioRequest struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
- **audio** | [**PostSendAudioRequestAudio**](PostSendAudioRequestAudio.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
+ **audio** | **string** |  | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message will be sent | 
  **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | 
  **caption** | **string** | Audio caption, 0-1024 characters after entities parsing | 
@@ -6620,17 +6758,17 @@ Name | Type | Description  | Notes
  **duration** | **int32** | Duration of the audio in seconds | 
  **performer** | **string** | Performer | 
  **title** | **string** | Track name | 
- **thumbnail** | [**PostSendAudioRequestThumbnail**](PostSendAudioRequestThumbnail.md) |  | 
+ **thumbnail** | **string** |  | 
  **disableNotification** | **bool** | Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. | 
  **protectContent** | **bool** | Protects the contents of the sent message from forwarding and saving | 
  **allowPaidBroadcast** | **bool** | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance | 
  **messageEffectId** | **string** | Unique identifier of the message effect to be added to the message; for private chats only | 
  **replyParameters** | [**ReplyParameters**](ReplyParameters.md) |  | 
- **replyMarkup** | [**PostSendMessageRequestReplyMarkup**](PostSendMessageRequestReplyMarkup.md) |  | 
+ **replyMarkup** | [**SendMessageRequestReplyMarkup**](SendMessageRequestReplyMarkup.md) |  | 
 
 ### Return type
 
-[**PostSendMessage200Response**](PostSendMessage200Response.md)
+[**SendAudioResponse**](SendAudioResponse.md)
 
 ### Authorization
 
@@ -6638,7 +6776,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
+- **Content-Type**: multipart/form-data, application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -6648,7 +6786,7 @@ No authorization required
 
 ## PostSendChatAction
 
-> PostSetWebhook200Response PostSendChatAction(ctx).ChatId(chatId).Action(action).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).Execute()
+> SendChatActionResponse PostSendChatAction(ctx).ChatId(chatId).Action(action).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).Execute()
 
 sendChatAction
 
@@ -6667,7 +6805,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	action := "action_example" // string | Type of action to broadcast. Choose one, depending on what the user is about to receive: *typing* for [text messages](https://core.telegram.org/bots/api/#sendmessage), *upload\\\\_photo* for [photos](https://core.telegram.org/bots/api/#sendphoto), *record\\\\_video* or *upload\\\\_video* for [videos](https://core.telegram.org/bots/api/#sendvideo), *record\\\\_voice* or *upload\\\\_voice* for [voice notes](https://core.telegram.org/bots/api/#sendvoice), *upload\\\\_document* for [general files](https://core.telegram.org/bots/api/#senddocument), *choose\\\\_sticker* for [stickers](https://core.telegram.org/bots/api/#sendsticker), *find\\\\_location* for [location data](https://core.telegram.org/bots/api/#sendlocation), *record\\\\_video\\\\_note* or *upload\\\\_video\\\\_note* for [video notes](https://core.telegram.org/bots/api/#sendvideonote).
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the action will be sent (optional)
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread; for supergroups only (optional)
@@ -6679,7 +6817,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSendChatAction``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSendChatAction`: PostSetWebhook200Response
+	// response from `PostSendChatAction`: SendChatActionResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSendChatAction`: %v\n", resp)
 }
 ```
@@ -6695,14 +6833,14 @@ Other parameters are passed through a pointer to a apiPostSendChatActionRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **action** | **string** | Type of action to broadcast. Choose one, depending on what the user is about to receive: *typing* for [text messages](https://core.telegram.org/bots/api/#sendmessage), *upload\\\\_photo* for [photos](https://core.telegram.org/bots/api/#sendphoto), *record\\\\_video* or *upload\\\\_video* for [videos](https://core.telegram.org/bots/api/#sendvideo), *record\\\\_voice* or *upload\\\\_voice* for [voice notes](https://core.telegram.org/bots/api/#sendvoice), *upload\\\\_document* for [general files](https://core.telegram.org/bots/api/#senddocument), *choose\\\\_sticker* for [stickers](https://core.telegram.org/bots/api/#sendsticker), *find\\\\_location* for [location data](https://core.telegram.org/bots/api/#sendlocation), *record\\\\_video\\\\_note* or *upload\\\\_video\\\\_note* for [video notes](https://core.telegram.org/bots/api/#sendvideonote). | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the action will be sent | 
  **messageThreadId** | **int32** | Unique identifier for the target message thread; for supergroups only | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**SendChatActionResponse**](SendChatActionResponse.md)
 
 ### Authorization
 
@@ -6718,9 +6856,89 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## PostSendChecklist
+
+> SendChecklistResponse PostSendChecklist(ctx).BusinessConnectionId(businessConnectionId).ChatId(chatId).Checklist(checklist).DisableNotification(disableNotification).ProtectContent(protectContent).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+
+sendChecklist
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/tele-api/tele-rest-go"
+)
+
+func main() {
+	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent
+	chatId := int32(56) // int32 | Unique identifier for the target chat
+	checklist := *openapiclient.NewInputChecklist("Title_example", []openapiclient.InputChecklistTask{*openapiclient.NewInputChecklistTask(int32(123), "Text_example")}) // InputChecklist | 
+	disableNotification := true // bool | Sends the message silently. Users will receive a notification with no sound. (optional)
+	protectContent := true // bool | Protects the contents of the sent message from forwarding and saving (optional)
+	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message (optional)
+	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
+	replyMarkup := *openapiclient.NewInlineKeyboardMarkup([][]InlineKeyboardButton{[]openapiclient.InlineKeyboardButton{*openapiclient.NewInlineKeyboardButton("Text_example")}}) // InlineKeyboardMarkup |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DefaultAPI.PostSendChecklist(context.Background()).BusinessConnectionId(businessConnectionId).ChatId(chatId).Checklist(checklist).DisableNotification(disableNotification).ProtectContent(protectContent).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSendChecklist``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PostSendChecklist`: SendChecklistResponse
+	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSendChecklist`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostSendChecklistRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message will be sent | 
+ **chatId** | **int32** | Unique identifier for the target chat | 
+ **checklist** | [**InputChecklist**](InputChecklist.md) |  | 
+ **disableNotification** | **bool** | Sends the message silently. Users will receive a notification with no sound. | 
+ **protectContent** | **bool** | Protects the contents of the sent message from forwarding and saving | 
+ **messageEffectId** | **string** | Unique identifier of the message effect to be added to the message | 
+ **replyParameters** | [**ReplyParameters**](ReplyParameters.md) |  | 
+ **replyMarkup** | [**InlineKeyboardMarkup**](InlineKeyboardMarkup.md) |  | 
+
+### Return type
+
+[**SendChecklistResponse**](SendChecklistResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: multipart/form-data, application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## PostSendContact
 
-> PostSendMessage200Response PostSendContact(ctx).ChatId(chatId).PhoneNumber(phoneNumber).FirstName(firstName).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).LastName(lastName).Vcard(vcard).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+> SendContactResponse PostSendContact(ctx).ChatId(chatId).PhoneNumber(phoneNumber).FirstName(firstName).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).LastName(lastName).Vcard(vcard).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 
 sendContact
 
@@ -6739,7 +6957,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	phoneNumber := "phoneNumber_example" // string | Contact's phone number
 	firstName := "firstName_example" // string | Contact's first name
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
@@ -6751,7 +6969,7 @@ func main() {
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
-	replyMarkup := openapiclient.post_sendMessage_request_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // PostSendMessageRequestReplyMarkup |  (optional)
+	replyMarkup := openapiclient.sendMessageRequest_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessageRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6760,7 +6978,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSendContact``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSendContact`: PostSendMessage200Response
+	// response from `PostSendContact`: SendContactResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSendContact`: %v\n", resp)
 }
 ```
@@ -6776,7 +6994,7 @@ Other parameters are passed through a pointer to a apiPostSendContactRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **phoneNumber** | **string** | Contact&#39;s phone number | 
  **firstName** | **string** | Contact&#39;s first name | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message will be sent | 
@@ -6788,11 +7006,11 @@ Name | Type | Description  | Notes
  **allowPaidBroadcast** | **bool** | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance | 
  **messageEffectId** | **string** | Unique identifier of the message effect to be added to the message; for private chats only | 
  **replyParameters** | [**ReplyParameters**](ReplyParameters.md) |  | 
- **replyMarkup** | [**PostSendMessageRequestReplyMarkup**](PostSendMessageRequestReplyMarkup.md) |  | 
+ **replyMarkup** | [**SendMessageRequestReplyMarkup**](SendMessageRequestReplyMarkup.md) |  | 
 
 ### Return type
 
-[**PostSendMessage200Response**](PostSendMessage200Response.md)
+[**SendContactResponse**](SendContactResponse.md)
 
 ### Authorization
 
@@ -6810,7 +7028,7 @@ No authorization required
 
 ## PostSendDice
 
-> PostSendMessage200Response PostSendDice(ctx).ChatId(chatId).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).Emoji(emoji).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+> SendDiceResponse PostSendDice(ctx).ChatId(chatId).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).Emoji(emoji).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 
 sendDice
 
@@ -6829,7 +7047,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
 	emoji := "emoji_example" // string | Emoji on which the dice throw animation is based. Currently, must be one of “🎲”, “🎯”, “🏀”, “⚽”, “🎳”, or “🎰”. Dice can have values 1-6 for “🎲”, “🎯” and “🎳”, values 1-5 for “🏀” and “⚽”, and values 1-64 for “🎰”. Defaults to “🎲” (optional) (default to "🎲")
@@ -6838,7 +7056,7 @@ func main() {
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
-	replyMarkup := openapiclient.post_sendMessage_request_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // PostSendMessageRequestReplyMarkup |  (optional)
+	replyMarkup := openapiclient.sendMessageRequest_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessageRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6847,7 +7065,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSendDice``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSendDice`: PostSendMessage200Response
+	// response from `PostSendDice`: SendDiceResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSendDice`: %v\n", resp)
 }
 ```
@@ -6863,7 +7081,7 @@ Other parameters are passed through a pointer to a apiPostSendDiceRequest struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message will be sent | 
  **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | 
  **emoji** | **string** | Emoji on which the dice throw animation is based. Currently, must be one of “🎲”, “🎯”, “🏀”, “⚽”, “🎳”, or “🎰”. Dice can have values 1-6 for “🎲”, “🎯” and “🎳”, values 1-5 for “🏀” and “⚽”, and values 1-64 for “🎰”. Defaults to “🎲” | [default to &quot;🎲&quot;]
@@ -6872,11 +7090,11 @@ Name | Type | Description  | Notes
  **allowPaidBroadcast** | **bool** | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance | 
  **messageEffectId** | **string** | Unique identifier of the message effect to be added to the message; for private chats only | 
  **replyParameters** | [**ReplyParameters**](ReplyParameters.md) |  | 
- **replyMarkup** | [**PostSendMessageRequestReplyMarkup**](PostSendMessageRequestReplyMarkup.md) |  | 
+ **replyMarkup** | [**SendMessageRequestReplyMarkup**](SendMessageRequestReplyMarkup.md) |  | 
 
 ### Return type
 
-[**PostSendMessage200Response**](PostSendMessage200Response.md)
+[**SendDiceResponse**](SendDiceResponse.md)
 
 ### Authorization
 
@@ -6894,7 +7112,7 @@ No authorization required
 
 ## PostSendDocument
 
-> PostSendMessage200Response PostSendDocument(ctx).ChatId(chatId).Document(document).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).Thumbnail(thumbnail).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).DisableContentTypeDetection(disableContentTypeDetection).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+> SendDocumentResponse PostSendDocument(ctx).ChatId(chatId).Document(document).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).Thumbnail(thumbnail).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).DisableContentTypeDetection(disableContentTypeDetection).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 
 sendDocument
 
@@ -6913,11 +7131,11 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
-	document := openapiclient.post_sendDocument_request_document{Any: new(interface{})} // PostSendDocumentRequestDocument | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
+	document := "document_example" // string | 
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
-	thumbnail := openapiclient.post_sendAudio_request_thumbnail{Any: new(interface{})} // PostSendAudioRequestThumbnail |  (optional)
+	thumbnail := "thumbnail_example" // string |  (optional)
 	caption := "caption_example" // string | Document caption (may also be used when resending documents by *file\\\\_id*), 0-1024 characters after entities parsing (optional)
 	parseMode := "parseMode_example" // string | Mode for parsing entities in the document caption. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. (optional)
 	captionEntities := []openapiclient.MessageEntity{*openapiclient.NewMessageEntity("Type_example", int32(123), int32(123))} // []MessageEntity | A JSON-serialized list of special entities that appear in the caption, which can be specified instead of *parse\\\\_mode* (optional)
@@ -6927,7 +7145,7 @@ func main() {
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
-	replyMarkup := openapiclient.post_sendMessage_request_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // PostSendMessageRequestReplyMarkup |  (optional)
+	replyMarkup := openapiclient.sendMessageRequest_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessageRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6936,7 +7154,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSendDocument``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSendDocument`: PostSendMessage200Response
+	// response from `PostSendDocument`: SendDocumentResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSendDocument`: %v\n", resp)
 }
 ```
@@ -6952,11 +7170,11 @@ Other parameters are passed through a pointer to a apiPostSendDocumentRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
- **document** | [**PostSendDocumentRequestDocument**](PostSendDocumentRequestDocument.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
+ **document** | **string** |  | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message will be sent | 
  **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | 
- **thumbnail** | [**PostSendAudioRequestThumbnail**](PostSendAudioRequestThumbnail.md) |  | 
+ **thumbnail** | **string** |  | 
  **caption** | **string** | Document caption (may also be used when resending documents by *file\\\\_id*), 0-1024 characters after entities parsing | 
  **parseMode** | **string** | Mode for parsing entities in the document caption. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. | 
  **captionEntities** | [**[]MessageEntity**](MessageEntity.md) | A JSON-serialized list of special entities that appear in the caption, which can be specified instead of *parse\\\\_mode* | 
@@ -6966,11 +7184,11 @@ Name | Type | Description  | Notes
  **allowPaidBroadcast** | **bool** | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance | 
  **messageEffectId** | **string** | Unique identifier of the message effect to be added to the message; for private chats only | 
  **replyParameters** | [**ReplyParameters**](ReplyParameters.md) |  | 
- **replyMarkup** | [**PostSendMessageRequestReplyMarkup**](PostSendMessageRequestReplyMarkup.md) |  | 
+ **replyMarkup** | [**SendMessageRequestReplyMarkup**](SendMessageRequestReplyMarkup.md) |  | 
 
 ### Return type
 
-[**PostSendMessage200Response**](PostSendMessage200Response.md)
+[**SendDocumentResponse**](SendDocumentResponse.md)
 
 ### Authorization
 
@@ -6978,7 +7196,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
+- **Content-Type**: multipart/form-data, application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -6988,7 +7206,7 @@ No authorization required
 
 ## PostSendGame
 
-> PostSendMessage200Response PostSendGame(ctx).ChatId(chatId).GameShortName(gameShortName).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+> SendGameResponse PostSendGame(ctx).ChatId(chatId).GameShortName(gameShortName).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 
 sendGame
 
@@ -7025,7 +7243,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSendGame``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSendGame`: PostSendMessage200Response
+	// response from `PostSendGame`: SendGameResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSendGame`: %v\n", resp)
 }
 ```
@@ -7054,7 +7272,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSendMessage200Response**](PostSendMessage200Response.md)
+[**SendGameResponse**](SendGameResponse.md)
 
 ### Authorization
 
@@ -7072,7 +7290,7 @@ No authorization required
 
 ## PostSendGift
 
-> PostSetWebhook200Response PostSendGift(ctx).GiftId(giftId).UserId(userId).ChatId(chatId).PayForUpgrade(payForUpgrade).Text(text).TextParseMode(textParseMode).TextEntities(textEntities).Execute()
+> SendGiftResponse PostSendGift(ctx).GiftId(giftId).UserId(userId).ChatId(chatId).PayForUpgrade(payForUpgrade).Text(text).TextParseMode(textParseMode).TextEntities(textEntities).Execute()
 
 sendGift
 
@@ -7093,7 +7311,7 @@ import (
 func main() {
 	giftId := "giftId_example" // string | Identifier of the gift
 	userId := int32(56) // int32 | Required if *chat\\\\_id* is not specified. Unique identifier of the target user who will receive the gift. (optional)
-	chatId := openapiclient.post_sendGift_request_chat_id{Int32: new(int32)} // PostSendGiftRequestChatId |  (optional)
+	chatId := openapiclient.sendGiftRequest_chat_id{Int32: new(int32)} // SendGiftRequestChatId |  (optional)
 	payForUpgrade := true // bool | Pass *True* to pay for the gift upgrade from the bot's balance, thereby making the upgrade free for the receiver (optional)
 	text := "text_example" // string | Text that will be shown along with the gift; 0-128 characters (optional)
 	textParseMode := "textParseMode_example" // string | Mode for parsing entities in the text. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, and “custom\\\\_emoji” are ignored. (optional)
@@ -7106,7 +7324,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSendGift``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSendGift`: PostSetWebhook200Response
+	// response from `PostSendGift`: SendGiftResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSendGift`: %v\n", resp)
 }
 ```
@@ -7124,7 +7342,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **giftId** | **string** | Identifier of the gift | 
  **userId** | **int32** | Required if *chat\\\\_id* is not specified. Unique identifier of the target user who will receive the gift. | 
- **chatId** | [**PostSendGiftRequestChatId**](PostSendGiftRequestChatId.md) |  | 
+ **chatId** | [**SendGiftRequestChatId**](SendGiftRequestChatId.md) |  | 
  **payForUpgrade** | **bool** | Pass *True* to pay for the gift upgrade from the bot&#39;s balance, thereby making the upgrade free for the receiver | 
  **text** | **string** | Text that will be shown along with the gift; 0-128 characters | 
  **textParseMode** | **string** | Mode for parsing entities in the text. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, and “custom\\\\_emoji” are ignored. | 
@@ -7132,7 +7350,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**SendGiftResponse**](SendGiftResponse.md)
 
 ### Authorization
 
@@ -7150,7 +7368,7 @@ No authorization required
 
 ## PostSendInvoice
 
-> PostSendMessage200Response PostSendInvoice(ctx).ChatId(chatId).Title(title).Description(description).Payload(payload).Currency(currency).Prices(prices).MessageThreadId(messageThreadId).ProviderToken(providerToken).MaxTipAmount(maxTipAmount).SuggestedTipAmounts(suggestedTipAmounts).StartParameter(startParameter).ProviderData(providerData).PhotoUrl(photoUrl).PhotoSize(photoSize).PhotoWidth(photoWidth).PhotoHeight(photoHeight).NeedName(needName).NeedPhoneNumber(needPhoneNumber).NeedEmail(needEmail).NeedShippingAddress(needShippingAddress).SendPhoneNumberToProvider(sendPhoneNumberToProvider).SendEmailToProvider(sendEmailToProvider).IsFlexible(isFlexible).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+> SendInvoiceResponse PostSendInvoice(ctx).ChatId(chatId).Title(title).Description(description).Payload(payload).Currency(currency).Prices(prices).MessageThreadId(messageThreadId).ProviderToken(providerToken).MaxTipAmount(maxTipAmount).SuggestedTipAmounts(suggestedTipAmounts).StartParameter(startParameter).ProviderData(providerData).PhotoUrl(photoUrl).PhotoSize(photoSize).PhotoWidth(photoWidth).PhotoHeight(photoHeight).NeedName(needName).NeedPhoneNumber(needPhoneNumber).NeedEmail(needEmail).NeedShippingAddress(needShippingAddress).SendPhoneNumberToProvider(sendPhoneNumberToProvider).SendEmailToProvider(sendEmailToProvider).IsFlexible(isFlexible).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 
 sendInvoice
 
@@ -7169,7 +7387,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	title := "title_example" // string | Product name, 1-32 characters
 	description := "description_example" // string | Product description, 1-255 characters
 	payload := "payload_example" // string | Bot-defined invoice payload, 1-128 bytes. This will not be displayed to the user, use it for your internal processes.
@@ -7206,7 +7424,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSendInvoice``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSendInvoice`: PostSendMessage200Response
+	// response from `PostSendInvoice`: SendInvoiceResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSendInvoice`: %v\n", resp)
 }
 ```
@@ -7222,7 +7440,7 @@ Other parameters are passed through a pointer to a apiPostSendInvoiceRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **title** | **string** | Product name, 1-32 characters | 
  **description** | **string** | Product description, 1-255 characters | 
  **payload** | **string** | Bot-defined invoice payload, 1-128 bytes. This will not be displayed to the user, use it for your internal processes. | 
@@ -7254,7 +7472,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSendMessage200Response**](PostSendMessage200Response.md)
+[**SendInvoiceResponse**](SendInvoiceResponse.md)
 
 ### Authorization
 
@@ -7272,7 +7490,7 @@ No authorization required
 
 ## PostSendLocation
 
-> PostSendMessage200Response PostSendLocation(ctx).ChatId(chatId).Latitude(latitude).Longitude(longitude).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).HorizontalAccuracy(horizontalAccuracy).LivePeriod(livePeriod).Heading(heading).ProximityAlertRadius(proximityAlertRadius).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+> SendLocationResponse PostSendLocation(ctx).ChatId(chatId).Latitude(latitude).Longitude(longitude).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).HorizontalAccuracy(horizontalAccuracy).LivePeriod(livePeriod).Heading(heading).ProximityAlertRadius(proximityAlertRadius).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 
 sendLocation
 
@@ -7291,7 +7509,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	latitude := float32(8.14) // float32 | Latitude of the location
 	longitude := float32(8.14) // float32 | Longitude of the location
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
@@ -7305,7 +7523,7 @@ func main() {
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
-	replyMarkup := openapiclient.post_sendMessage_request_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // PostSendMessageRequestReplyMarkup |  (optional)
+	replyMarkup := openapiclient.sendMessageRequest_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessageRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7314,7 +7532,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSendLocation``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSendLocation`: PostSendMessage200Response
+	// response from `PostSendLocation`: SendLocationResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSendLocation`: %v\n", resp)
 }
 ```
@@ -7330,7 +7548,7 @@ Other parameters are passed through a pointer to a apiPostSendLocationRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **latitude** | **float32** | Latitude of the location | 
  **longitude** | **float32** | Longitude of the location | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message will be sent | 
@@ -7344,11 +7562,11 @@ Name | Type | Description  | Notes
  **allowPaidBroadcast** | **bool** | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance | 
  **messageEffectId** | **string** | Unique identifier of the message effect to be added to the message; for private chats only | 
  **replyParameters** | [**ReplyParameters**](ReplyParameters.md) |  | 
- **replyMarkup** | [**PostSendMessageRequestReplyMarkup**](PostSendMessageRequestReplyMarkup.md) |  | 
+ **replyMarkup** | [**SendMessageRequestReplyMarkup**](SendMessageRequestReplyMarkup.md) |  | 
 
 ### Return type
 
-[**PostSendMessage200Response**](PostSendMessage200Response.md)
+[**SendLocationResponse**](SendLocationResponse.md)
 
 ### Authorization
 
@@ -7366,7 +7584,7 @@ No authorization required
 
 ## PostSendMediaGroup
 
-> PostSendMediaGroup200Response PostSendMediaGroup(ctx).ChatId(chatId).Media(media).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).Execute()
+> SendMediaGroupResponse PostSendMediaGroup(ctx).ChatId(chatId).Media(media).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).Execute()
 
 sendMediaGroup
 
@@ -7385,8 +7603,8 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
-	media := []openapiclient.PostSendMediaGroupRequestMediaInner{openapiclient.post_sendMediaGroup_request_media_inner{InputMediaAudio: openapiclient.NewInputMediaAudio("Type_example", "Media_example")}} // []PostSendMediaGroupRequestMediaInner | A JSON-serialized array describing messages to be sent, must include 2-10 items
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
+	media := []openapiclient.SendMediaGroupRequestMediaInner{openapiclient.sendMediaGroupRequest_media_inner{InputMediaAudio: openapiclient.NewInputMediaAudio("Type_example", "Media_example")}} // []SendMediaGroupRequestMediaInner | A JSON-serialized array describing messages to be sent, must include 2-10 items
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
 	disableNotification := true // bool | Sends messages [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. (optional)
@@ -7402,7 +7620,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSendMediaGroup``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSendMediaGroup`: PostSendMediaGroup200Response
+	// response from `PostSendMediaGroup`: SendMediaGroupResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSendMediaGroup`: %v\n", resp)
 }
 ```
@@ -7418,8 +7636,8 @@ Other parameters are passed through a pointer to a apiPostSendMediaGroupRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
- **media** | [**[]PostSendMediaGroupRequestMediaInner**](PostSendMediaGroupRequestMediaInner.md) | A JSON-serialized array describing messages to be sent, must include 2-10 items | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
+ **media** | [**[]SendMediaGroupRequestMediaInner**](SendMediaGroupRequestMediaInner.md) | A JSON-serialized array describing messages to be sent, must include 2-10 items | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message will be sent | 
  **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | 
  **disableNotification** | **bool** | Sends messages [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. | 
@@ -7430,7 +7648,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSendMediaGroup200Response**](PostSendMediaGroup200Response.md)
+[**SendMediaGroupResponse**](SendMediaGroupResponse.md)
 
 ### Authorization
 
@@ -7438,7 +7656,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
+- **Content-Type**: multipart/form-data, application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -7448,7 +7666,7 @@ No authorization required
 
 ## PostSendMessage
 
-> PostSendMessage200Response PostSendMessage(ctx).ChatId(chatId).Text(text).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).ParseMode(parseMode).Entities(entities).LinkPreviewOptions(linkPreviewOptions).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+> SendMessageResponse PostSendMessage(ctx).ChatId(chatId).Text(text).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).ParseMode(parseMode).Entities(entities).LinkPreviewOptions(linkPreviewOptions).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 
 sendMessage
 
@@ -7467,7 +7685,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	text := "text_example" // string | Text of the message to be sent, 1-4096 characters after entities parsing
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
@@ -7479,7 +7697,7 @@ func main() {
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
-	replyMarkup := openapiclient.post_sendMessage_request_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // PostSendMessageRequestReplyMarkup |  (optional)
+	replyMarkup := openapiclient.sendMessageRequest_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessageRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7488,7 +7706,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSendMessage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSendMessage`: PostSendMessage200Response
+	// response from `PostSendMessage`: SendMessageResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSendMessage`: %v\n", resp)
 }
 ```
@@ -7504,7 +7722,7 @@ Other parameters are passed through a pointer to a apiPostSendMessageRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **text** | **string** | Text of the message to be sent, 1-4096 characters after entities parsing | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message will be sent | 
  **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | 
@@ -7516,11 +7734,11 @@ Name | Type | Description  | Notes
  **allowPaidBroadcast** | **bool** | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance | 
  **messageEffectId** | **string** | Unique identifier of the message effect to be added to the message; for private chats only | 
  **replyParameters** | [**ReplyParameters**](ReplyParameters.md) |  | 
- **replyMarkup** | [**PostSendMessageRequestReplyMarkup**](PostSendMessageRequestReplyMarkup.md) |  | 
+ **replyMarkup** | [**SendMessageRequestReplyMarkup**](SendMessageRequestReplyMarkup.md) |  | 
 
 ### Return type
 
-[**PostSendMessage200Response**](PostSendMessage200Response.md)
+[**SendMessageResponse**](SendMessageResponse.md)
 
 ### Authorization
 
@@ -7538,7 +7756,7 @@ No authorization required
 
 ## PostSendPaidMedia
 
-> PostSendMessage200Response PostSendPaidMedia(ctx).ChatId(chatId).StarCount(starCount).Media(media).BusinessConnectionId(businessConnectionId).Payload(payload).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).ShowCaptionAboveMedia(showCaptionAboveMedia).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+> SendPaidMediaResponse PostSendPaidMedia(ctx).ChatId(chatId).StarCount(starCount).Media(media).BusinessConnectionId(businessConnectionId).Payload(payload).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).ShowCaptionAboveMedia(showCaptionAboveMedia).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 
 sendPaidMedia
 
@@ -7557,7 +7775,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendPaidMedia_request_chat_id{Int32: new(int32)} // PostSendPaidMediaRequestChatId | 
+	chatId := openapiclient.sendPaidMediaRequest_chat_id{Int32: new(int32)} // SendPaidMediaRequestChatId | 
 	starCount := int32(56) // int32 | The number of Telegram Stars that must be paid to buy access to the media; 1-10000
 	media := []openapiclient.InputPaidMedia{openapiclient.InputPaidMedia{InputPaidMediaPhoto: openapiclient.NewInputPaidMediaPhoto("Type_example", "Media_example")}} // []InputPaidMedia | A JSON-serialized array describing the media to be sent; up to 10 items
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
@@ -7570,7 +7788,7 @@ func main() {
 	protectContent := true // bool | Protects the contents of the sent message from forwarding and saving (optional)
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
-	replyMarkup := openapiclient.post_sendMessage_request_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // PostSendMessageRequestReplyMarkup |  (optional)
+	replyMarkup := openapiclient.sendMessageRequest_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessageRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7579,7 +7797,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSendPaidMedia``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSendPaidMedia`: PostSendMessage200Response
+	// response from `PostSendPaidMedia`: SendPaidMediaResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSendPaidMedia`: %v\n", resp)
 }
 ```
@@ -7595,7 +7813,7 @@ Other parameters are passed through a pointer to a apiPostSendPaidMediaRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendPaidMediaRequestChatId**](PostSendPaidMediaRequestChatId.md) |  | 
+ **chatId** | [**SendPaidMediaRequestChatId**](SendPaidMediaRequestChatId.md) |  | 
  **starCount** | **int32** | The number of Telegram Stars that must be paid to buy access to the media; 1-10000 | 
  **media** | [**[]InputPaidMedia**](InputPaidMedia.md) | A JSON-serialized array describing the media to be sent; up to 10 items | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message will be sent | 
@@ -7608,11 +7826,11 @@ Name | Type | Description  | Notes
  **protectContent** | **bool** | Protects the contents of the sent message from forwarding and saving | 
  **allowPaidBroadcast** | **bool** | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance | 
  **replyParameters** | [**ReplyParameters**](ReplyParameters.md) |  | 
- **replyMarkup** | [**PostSendMessageRequestReplyMarkup**](PostSendMessageRequestReplyMarkup.md) |  | 
+ **replyMarkup** | [**SendMessageRequestReplyMarkup**](SendMessageRequestReplyMarkup.md) |  | 
 
 ### Return type
 
-[**PostSendMessage200Response**](PostSendMessage200Response.md)
+[**SendPaidMediaResponse**](SendPaidMediaResponse.md)
 
 ### Authorization
 
@@ -7620,7 +7838,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
+- **Content-Type**: multipart/form-data, application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -7630,7 +7848,7 @@ No authorization required
 
 ## PostSendPhoto
 
-> PostSendMessage200Response PostSendPhoto(ctx).ChatId(chatId).Photo(photo).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).ShowCaptionAboveMedia(showCaptionAboveMedia).HasSpoiler(hasSpoiler).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+> SendPhotoResponse PostSendPhoto(ctx).ChatId(chatId).Photo(photo).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).ShowCaptionAboveMedia(showCaptionAboveMedia).HasSpoiler(hasSpoiler).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 
 sendPhoto
 
@@ -7649,8 +7867,8 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
-	photo := openapiclient.post_sendPhoto_request_photo{Any: new(interface{})} // PostSendPhotoRequestPhoto | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
+	photo := "photo_example" // string | 
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
 	caption := "caption_example" // string | Photo caption (may also be used when resending photos by *file\\\\_id*), 0-1024 characters after entities parsing (optional)
@@ -7663,7 +7881,7 @@ func main() {
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
-	replyMarkup := openapiclient.post_sendMessage_request_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // PostSendMessageRequestReplyMarkup |  (optional)
+	replyMarkup := openapiclient.sendMessageRequest_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessageRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7672,7 +7890,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSendPhoto``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSendPhoto`: PostSendMessage200Response
+	// response from `PostSendPhoto`: SendPhotoResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSendPhoto`: %v\n", resp)
 }
 ```
@@ -7688,8 +7906,8 @@ Other parameters are passed through a pointer to a apiPostSendPhotoRequest struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
- **photo** | [**PostSendPhotoRequestPhoto**](PostSendPhotoRequestPhoto.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
+ **photo** | **string** |  | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message will be sent | 
  **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | 
  **caption** | **string** | Photo caption (may also be used when resending photos by *file\\\\_id*), 0-1024 characters after entities parsing | 
@@ -7702,11 +7920,11 @@ Name | Type | Description  | Notes
  **allowPaidBroadcast** | **bool** | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance | 
  **messageEffectId** | **string** | Unique identifier of the message effect to be added to the message; for private chats only | 
  **replyParameters** | [**ReplyParameters**](ReplyParameters.md) |  | 
- **replyMarkup** | [**PostSendMessageRequestReplyMarkup**](PostSendMessageRequestReplyMarkup.md) |  | 
+ **replyMarkup** | [**SendMessageRequestReplyMarkup**](SendMessageRequestReplyMarkup.md) |  | 
 
 ### Return type
 
-[**PostSendMessage200Response**](PostSendMessage200Response.md)
+[**SendPhotoResponse**](SendPhotoResponse.md)
 
 ### Authorization
 
@@ -7714,7 +7932,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
+- **Content-Type**: multipart/form-data, application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -7724,7 +7942,7 @@ No authorization required
 
 ## PostSendPoll
 
-> PostSendMessage200Response PostSendPoll(ctx).ChatId(chatId).Question(question).Options(options).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).QuestionParseMode(questionParseMode).QuestionEntities(questionEntities).IsAnonymous(isAnonymous).Type_(type_).AllowsMultipleAnswers(allowsMultipleAnswers).CorrectOptionId(correctOptionId).Explanation(explanation).ExplanationParseMode(explanationParseMode).ExplanationEntities(explanationEntities).OpenPeriod(openPeriod).CloseDate(closeDate).IsClosed(isClosed).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+> SendPollResponse PostSendPoll(ctx).ChatId(chatId).Question(question).Options(options).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).QuestionParseMode(questionParseMode).QuestionEntities(questionEntities).IsAnonymous(isAnonymous).Type_(type_).AllowsMultipleAnswers(allowsMultipleAnswers).CorrectOptionId(correctOptionId).Explanation(explanation).ExplanationParseMode(explanationParseMode).ExplanationEntities(explanationEntities).OpenPeriod(openPeriod).CloseDate(closeDate).IsClosed(isClosed).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 
 sendPoll
 
@@ -7743,9 +7961,9 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	question := "question_example" // string | Poll question, 1-300 characters
-	options := []openapiclient.InputPollOption{*openapiclient.NewInputPollOption("Text_example")} // []InputPollOption | A JSON-serialized list of 2-10 answer options
+	options := []openapiclient.InputPollOption{*openapiclient.NewInputPollOption("Text_example")} // []InputPollOption | A JSON-serialized list of 2-12 answer options
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
 	questionParseMode := "questionParseMode_example" // string | Mode for parsing entities in the question. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. Currently, only custom emoji entities are allowed (optional)
@@ -7765,7 +7983,7 @@ func main() {
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
-	replyMarkup := openapiclient.post_sendMessage_request_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // PostSendMessageRequestReplyMarkup |  (optional)
+	replyMarkup := openapiclient.sendMessageRequest_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessageRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7774,7 +7992,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSendPoll``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSendPoll`: PostSendMessage200Response
+	// response from `PostSendPoll`: SendPollResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSendPoll`: %v\n", resp)
 }
 ```
@@ -7790,9 +8008,9 @@ Other parameters are passed through a pointer to a apiPostSendPollRequest struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **question** | **string** | Poll question, 1-300 characters | 
- **options** | [**[]InputPollOption**](InputPollOption.md) | A JSON-serialized list of 2-10 answer options | 
+ **options** | [**[]InputPollOption**](InputPollOption.md) | A JSON-serialized list of 2-12 answer options | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message will be sent | 
  **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | 
  **questionParseMode** | **string** | Mode for parsing entities in the question. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. Currently, only custom emoji entities are allowed | 
@@ -7812,11 +8030,11 @@ Name | Type | Description  | Notes
  **allowPaidBroadcast** | **bool** | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance | 
  **messageEffectId** | **string** | Unique identifier of the message effect to be added to the message; for private chats only | 
  **replyParameters** | [**ReplyParameters**](ReplyParameters.md) |  | 
- **replyMarkup** | [**PostSendMessageRequestReplyMarkup**](PostSendMessageRequestReplyMarkup.md) |  | 
+ **replyMarkup** | [**SendMessageRequestReplyMarkup**](SendMessageRequestReplyMarkup.md) |  | 
 
 ### Return type
 
-[**PostSendMessage200Response**](PostSendMessage200Response.md)
+[**SendPollResponse**](SendPollResponse.md)
 
 ### Authorization
 
@@ -7834,7 +8052,7 @@ No authorization required
 
 ## PostSendSticker
 
-> PostSendMessage200Response PostSendSticker(ctx).ChatId(chatId).Sticker(sticker).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).Emoji(emoji).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+> SendStickerResponse PostSendSticker(ctx).ChatId(chatId).Sticker(sticker).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).Emoji(emoji).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 
 sendSticker
 
@@ -7853,8 +8071,8 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
-	sticker := openapiclient.post_sendSticker_request_sticker{Any: new(interface{})} // PostSendStickerRequestSticker | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
+	sticker := "sticker_example" // string | 
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
 	emoji := "emoji_example" // string | Emoji associated with the sticker; only for just uploaded stickers (optional)
@@ -7863,7 +8081,7 @@ func main() {
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
-	replyMarkup := openapiclient.post_sendMessage_request_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // PostSendMessageRequestReplyMarkup |  (optional)
+	replyMarkup := openapiclient.sendMessageRequest_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessageRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7872,7 +8090,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSendSticker``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSendSticker`: PostSendMessage200Response
+	// response from `PostSendSticker`: SendStickerResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSendSticker`: %v\n", resp)
 }
 ```
@@ -7888,8 +8106,8 @@ Other parameters are passed through a pointer to a apiPostSendStickerRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
- **sticker** | [**PostSendStickerRequestSticker**](PostSendStickerRequestSticker.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
+ **sticker** | **string** |  | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message will be sent | 
  **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | 
  **emoji** | **string** | Emoji associated with the sticker; only for just uploaded stickers | 
@@ -7898,11 +8116,11 @@ Name | Type | Description  | Notes
  **allowPaidBroadcast** | **bool** | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance | 
  **messageEffectId** | **string** | Unique identifier of the message effect to be added to the message; for private chats only | 
  **replyParameters** | [**ReplyParameters**](ReplyParameters.md) |  | 
- **replyMarkup** | [**PostSendMessageRequestReplyMarkup**](PostSendMessageRequestReplyMarkup.md) |  | 
+ **replyMarkup** | [**SendMessageRequestReplyMarkup**](SendMessageRequestReplyMarkup.md) |  | 
 
 ### Return type
 
-[**PostSendMessage200Response**](PostSendMessage200Response.md)
+[**SendStickerResponse**](SendStickerResponse.md)
 
 ### Authorization
 
@@ -7910,7 +8128,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
+- **Content-Type**: multipart/form-data, application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -7920,7 +8138,7 @@ No authorization required
 
 ## PostSendVenue
 
-> PostSendMessage200Response PostSendVenue(ctx).ChatId(chatId).Latitude(latitude).Longitude(longitude).Title(title).Address(address).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).FoursquareId(foursquareId).FoursquareType(foursquareType).GooglePlaceId(googlePlaceId).GooglePlaceType(googlePlaceType).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+> SendVenueResponse PostSendVenue(ctx).ChatId(chatId).Latitude(latitude).Longitude(longitude).Title(title).Address(address).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).FoursquareId(foursquareId).FoursquareType(foursquareType).GooglePlaceId(googlePlaceId).GooglePlaceType(googlePlaceType).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 
 sendVenue
 
@@ -7939,7 +8157,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	latitude := float32(8.14) // float32 | Latitude of the venue
 	longitude := float32(8.14) // float32 | Longitude of the venue
 	title := "title_example" // string | Name of the venue
@@ -7955,7 +8173,7 @@ func main() {
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
-	replyMarkup := openapiclient.post_sendMessage_request_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // PostSendMessageRequestReplyMarkup |  (optional)
+	replyMarkup := openapiclient.sendMessageRequest_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessageRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7964,7 +8182,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSendVenue``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSendVenue`: PostSendMessage200Response
+	// response from `PostSendVenue`: SendVenueResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSendVenue`: %v\n", resp)
 }
 ```
@@ -7980,7 +8198,7 @@ Other parameters are passed through a pointer to a apiPostSendVenueRequest struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **latitude** | **float32** | Latitude of the venue | 
  **longitude** | **float32** | Longitude of the venue | 
  **title** | **string** | Name of the venue | 
@@ -7996,11 +8214,11 @@ Name | Type | Description  | Notes
  **allowPaidBroadcast** | **bool** | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance | 
  **messageEffectId** | **string** | Unique identifier of the message effect to be added to the message; for private chats only | 
  **replyParameters** | [**ReplyParameters**](ReplyParameters.md) |  | 
- **replyMarkup** | [**PostSendMessageRequestReplyMarkup**](PostSendMessageRequestReplyMarkup.md) |  | 
+ **replyMarkup** | [**SendMessageRequestReplyMarkup**](SendMessageRequestReplyMarkup.md) |  | 
 
 ### Return type
 
-[**PostSendMessage200Response**](PostSendMessage200Response.md)
+[**SendVenueResponse**](SendVenueResponse.md)
 
 ### Authorization
 
@@ -8018,7 +8236,7 @@ No authorization required
 
 ## PostSendVideo
 
-> PostSendMessage200Response PostSendVideo(ctx).ChatId(chatId).Video(video).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).Duration(duration).Width(width).Height(height).Thumbnail(thumbnail).Cover(cover).StartTimestamp(startTimestamp).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).ShowCaptionAboveMedia(showCaptionAboveMedia).HasSpoiler(hasSpoiler).SupportsStreaming(supportsStreaming).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+> SendVideoResponse PostSendVideo(ctx).ChatId(chatId).Video(video).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).Duration(duration).Width(width).Height(height).Thumbnail(thumbnail).Cover(cover).StartTimestamp(startTimestamp).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).ShowCaptionAboveMedia(showCaptionAboveMedia).HasSpoiler(hasSpoiler).SupportsStreaming(supportsStreaming).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 
 sendVideo
 
@@ -8037,15 +8255,15 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
-	video := openapiclient.post_sendVideo_request_video{Any: new(interface{})} // PostSendVideoRequestVideo | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
+	video := "video_example" // string | 
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
 	duration := int32(56) // int32 | Duration of sent video in seconds (optional)
 	width := int32(56) // int32 | Video width (optional)
 	height := int32(56) // int32 | Video height (optional)
-	thumbnail := openapiclient.post_sendAudio_request_thumbnail{Any: new(interface{})} // PostSendAudioRequestThumbnail |  (optional)
-	cover := openapiclient.post_sendVideo_request_cover{Any: new(interface{})} // PostSendVideoRequestCover |  (optional)
+	thumbnail := "thumbnail_example" // string |  (optional)
+	cover := "cover_example" // string |  (optional)
 	startTimestamp := int32(56) // int32 | Start timestamp for the video in the message (optional)
 	caption := "caption_example" // string | Video caption (may also be used when resending videos by *file\\\\_id*), 0-1024 characters after entities parsing (optional)
 	parseMode := "parseMode_example" // string | Mode for parsing entities in the video caption. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. (optional)
@@ -8058,7 +8276,7 @@ func main() {
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
-	replyMarkup := openapiclient.post_sendMessage_request_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // PostSendMessageRequestReplyMarkup |  (optional)
+	replyMarkup := openapiclient.sendMessageRequest_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessageRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8067,7 +8285,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSendVideo``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSendVideo`: PostSendMessage200Response
+	// response from `PostSendVideo`: SendVideoResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSendVideo`: %v\n", resp)
 }
 ```
@@ -8083,15 +8301,15 @@ Other parameters are passed through a pointer to a apiPostSendVideoRequest struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
- **video** | [**PostSendVideoRequestVideo**](PostSendVideoRequestVideo.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
+ **video** | **string** |  | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message will be sent | 
  **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | 
  **duration** | **int32** | Duration of sent video in seconds | 
  **width** | **int32** | Video width | 
  **height** | **int32** | Video height | 
- **thumbnail** | [**PostSendAudioRequestThumbnail**](PostSendAudioRequestThumbnail.md) |  | 
- **cover** | [**PostSendVideoRequestCover**](PostSendVideoRequestCover.md) |  | 
+ **thumbnail** | **string** |  | 
+ **cover** | **string** |  | 
  **startTimestamp** | **int32** | Start timestamp for the video in the message | 
  **caption** | **string** | Video caption (may also be used when resending videos by *file\\\\_id*), 0-1024 characters after entities parsing | 
  **parseMode** | **string** | Mode for parsing entities in the video caption. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. | 
@@ -8104,11 +8322,11 @@ Name | Type | Description  | Notes
  **allowPaidBroadcast** | **bool** | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance | 
  **messageEffectId** | **string** | Unique identifier of the message effect to be added to the message; for private chats only | 
  **replyParameters** | [**ReplyParameters**](ReplyParameters.md) |  | 
- **replyMarkup** | [**PostSendMessageRequestReplyMarkup**](PostSendMessageRequestReplyMarkup.md) |  | 
+ **replyMarkup** | [**SendMessageRequestReplyMarkup**](SendMessageRequestReplyMarkup.md) |  | 
 
 ### Return type
 
-[**PostSendMessage200Response**](PostSendMessage200Response.md)
+[**SendVideoResponse**](SendVideoResponse.md)
 
 ### Authorization
 
@@ -8116,7 +8334,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
+- **Content-Type**: multipart/form-data, application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -8126,7 +8344,7 @@ No authorization required
 
 ## PostSendVideoNote
 
-> PostSendMessage200Response PostSendVideoNote(ctx).ChatId(chatId).VideoNote(videoNote).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).Duration(duration).Length(length).Thumbnail(thumbnail).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+> SendVideoNoteResponse PostSendVideoNote(ctx).ChatId(chatId).VideoNote(videoNote).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).Duration(duration).Length(length).Thumbnail(thumbnail).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 
 sendVideoNote
 
@@ -8145,19 +8363,19 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
-	videoNote := openapiclient.post_sendVideoNote_request_video_note{Any: new(interface{})} // PostSendVideoNoteRequestVideoNote | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
+	videoNote := "videoNote_example" // string | 
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
 	duration := int32(56) // int32 | Duration of sent video in seconds (optional)
 	length := int32(56) // int32 | Video width and height, i.e. diameter of the video message (optional)
-	thumbnail := openapiclient.post_sendAudio_request_thumbnail{Any: new(interface{})} // PostSendAudioRequestThumbnail |  (optional)
+	thumbnail := "thumbnail_example" // string |  (optional)
 	disableNotification := true // bool | Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. (optional)
 	protectContent := true // bool | Protects the contents of the sent message from forwarding and saving (optional)
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
-	replyMarkup := openapiclient.post_sendMessage_request_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // PostSendMessageRequestReplyMarkup |  (optional)
+	replyMarkup := openapiclient.sendMessageRequest_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessageRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8166,7 +8384,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSendVideoNote``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSendVideoNote`: PostSendMessage200Response
+	// response from `PostSendVideoNote`: SendVideoNoteResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSendVideoNote`: %v\n", resp)
 }
 ```
@@ -8182,23 +8400,23 @@ Other parameters are passed through a pointer to a apiPostSendVideoNoteRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
- **videoNote** | [**PostSendVideoNoteRequestVideoNote**](PostSendVideoNoteRequestVideoNote.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
+ **videoNote** | **string** |  | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message will be sent | 
  **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | 
  **duration** | **int32** | Duration of sent video in seconds | 
  **length** | **int32** | Video width and height, i.e. diameter of the video message | 
- **thumbnail** | [**PostSendAudioRequestThumbnail**](PostSendAudioRequestThumbnail.md) |  | 
+ **thumbnail** | **string** |  | 
  **disableNotification** | **bool** | Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. | 
  **protectContent** | **bool** | Protects the contents of the sent message from forwarding and saving | 
  **allowPaidBroadcast** | **bool** | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance | 
  **messageEffectId** | **string** | Unique identifier of the message effect to be added to the message; for private chats only | 
  **replyParameters** | [**ReplyParameters**](ReplyParameters.md) |  | 
- **replyMarkup** | [**PostSendMessageRequestReplyMarkup**](PostSendMessageRequestReplyMarkup.md) |  | 
+ **replyMarkup** | [**SendMessageRequestReplyMarkup**](SendMessageRequestReplyMarkup.md) |  | 
 
 ### Return type
 
-[**PostSendMessage200Response**](PostSendMessage200Response.md)
+[**SendVideoNoteResponse**](SendVideoNoteResponse.md)
 
 ### Authorization
 
@@ -8206,7 +8424,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
+- **Content-Type**: multipart/form-data, application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -8216,7 +8434,7 @@ No authorization required
 
 ## PostSendVoice
 
-> PostSendMessage200Response PostSendVoice(ctx).ChatId(chatId).Voice(voice).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).Duration(duration).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+> SendVoiceResponse PostSendVoice(ctx).ChatId(chatId).Voice(voice).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).Duration(duration).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 
 sendVoice
 
@@ -8235,8 +8453,8 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
-	voice := openapiclient.post_sendVoice_request_voice{Any: new(interface{})} // PostSendVoiceRequestVoice | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
+	voice := "voice_example" // string | 
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
 	caption := "caption_example" // string | Voice message caption, 0-1024 characters after entities parsing (optional)
@@ -8248,7 +8466,7 @@ func main() {
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
-	replyMarkup := openapiclient.post_sendMessage_request_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // PostSendMessageRequestReplyMarkup |  (optional)
+	replyMarkup := openapiclient.sendMessageRequest_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessageRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8257,7 +8475,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSendVoice``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSendVoice`: PostSendMessage200Response
+	// response from `PostSendVoice`: SendVoiceResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSendVoice`: %v\n", resp)
 }
 ```
@@ -8273,8 +8491,8 @@ Other parameters are passed through a pointer to a apiPostSendVoiceRequest struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
- **voice** | [**PostSendVoiceRequestVoice**](PostSendVoiceRequestVoice.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
+ **voice** | **string** |  | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message will be sent | 
  **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | 
  **caption** | **string** | Voice message caption, 0-1024 characters after entities parsing | 
@@ -8286,11 +8504,11 @@ Name | Type | Description  | Notes
  **allowPaidBroadcast** | **bool** | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance | 
  **messageEffectId** | **string** | Unique identifier of the message effect to be added to the message; for private chats only | 
  **replyParameters** | [**ReplyParameters**](ReplyParameters.md) |  | 
- **replyMarkup** | [**PostSendMessageRequestReplyMarkup**](PostSendMessageRequestReplyMarkup.md) |  | 
+ **replyMarkup** | [**SendMessageRequestReplyMarkup**](SendMessageRequestReplyMarkup.md) |  | 
 
 ### Return type
 
-[**PostSendMessage200Response**](PostSendMessage200Response.md)
+[**SendVoiceResponse**](SendVoiceResponse.md)
 
 ### Authorization
 
@@ -8298,7 +8516,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
+- **Content-Type**: multipart/form-data, application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -8308,7 +8526,7 @@ No authorization required
 
 ## PostSetBusinessAccountBio
 
-> PostSetWebhook200Response PostSetBusinessAccountBio(ctx).BusinessConnectionId(businessConnectionId).Bio(bio).Execute()
+> SetBusinessAccountBioResponse PostSetBusinessAccountBio(ctx).BusinessConnectionId(businessConnectionId).Bio(bio).Execute()
 
 setBusinessAccountBio
 
@@ -8337,7 +8555,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSetBusinessAccountBio``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSetBusinessAccountBio`: PostSetWebhook200Response
+	// response from `PostSetBusinessAccountBio`: SetBusinessAccountBioResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSetBusinessAccountBio`: %v\n", resp)
 }
 ```
@@ -8358,7 +8576,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**SetBusinessAccountBioResponse**](SetBusinessAccountBioResponse.md)
 
 ### Authorization
 
@@ -8376,7 +8594,7 @@ No authorization required
 
 ## PostSetBusinessAccountGiftSettings
 
-> PostSetWebhook200Response PostSetBusinessAccountGiftSettings(ctx).BusinessConnectionId(businessConnectionId).ShowGiftButton(showGiftButton).AcceptedGiftTypes(acceptedGiftTypes).Execute()
+> SetBusinessAccountGiftSettingsResponse PostSetBusinessAccountGiftSettings(ctx).BusinessConnectionId(businessConnectionId).ShowGiftButton(showGiftButton).AcceptedGiftTypes(acceptedGiftTypes).Execute()
 
 setBusinessAccountGiftSettings
 
@@ -8396,7 +8614,7 @@ import (
 
 func main() {
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection
-	showGiftButton := true // bool | Pass True, if a button for sending a gift to the user or by the business account must always be shown in the input field
+	showGiftButton := true // bool | Pass *True*, if a button for sending a gift to the user or by the business account must always be shown in the input field
 	acceptedGiftTypes := *openapiclient.NewAcceptedGiftTypes(false, false, false, false) // AcceptedGiftTypes | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -8406,7 +8624,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSetBusinessAccountGiftSettings``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSetBusinessAccountGiftSettings`: PostSetWebhook200Response
+	// response from `PostSetBusinessAccountGiftSettings`: SetBusinessAccountGiftSettingsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSetBusinessAccountGiftSettings`: %v\n", resp)
 }
 ```
@@ -8423,12 +8641,12 @@ Other parameters are passed through a pointer to a apiPostSetBusinessAccountGift
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **businessConnectionId** | **string** | Unique identifier of the business connection | 
- **showGiftButton** | **bool** | Pass True, if a button for sending a gift to the user or by the business account must always be shown in the input field | 
+ **showGiftButton** | **bool** | Pass *True*, if a button for sending a gift to the user or by the business account must always be shown in the input field | 
  **acceptedGiftTypes** | [**AcceptedGiftTypes**](AcceptedGiftTypes.md) |  | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**SetBusinessAccountGiftSettingsResponse**](SetBusinessAccountGiftSettingsResponse.md)
 
 ### Authorization
 
@@ -8446,7 +8664,7 @@ No authorization required
 
 ## PostSetBusinessAccountName
 
-> PostSetWebhook200Response PostSetBusinessAccountName(ctx).BusinessConnectionId(businessConnectionId).FirstName(firstName).LastName(lastName).Execute()
+> SetBusinessAccountNameResponse PostSetBusinessAccountName(ctx).BusinessConnectionId(businessConnectionId).FirstName(firstName).LastName(lastName).Execute()
 
 setBusinessAccountName
 
@@ -8476,7 +8694,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSetBusinessAccountName``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSetBusinessAccountName`: PostSetWebhook200Response
+	// response from `PostSetBusinessAccountName`: SetBusinessAccountNameResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSetBusinessAccountName`: %v\n", resp)
 }
 ```
@@ -8498,7 +8716,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**SetBusinessAccountNameResponse**](SetBusinessAccountNameResponse.md)
 
 ### Authorization
 
@@ -8516,7 +8734,7 @@ No authorization required
 
 ## PostSetBusinessAccountProfilePhoto
 
-> PostSetWebhook200Response PostSetBusinessAccountProfilePhoto(ctx).BusinessConnectionId(businessConnectionId).Photo(photo).IsPublic(isPublic).Execute()
+> SetBusinessAccountProfilePhotoResponse PostSetBusinessAccountProfilePhoto(ctx).BusinessConnectionId(businessConnectionId).Photo(photo).IsPublic(isPublic).Execute()
 
 setBusinessAccountProfilePhoto
 
@@ -8537,7 +8755,7 @@ import (
 func main() {
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection
 	photo := openapiclient.InputProfilePhoto{InputProfilePhotoAnimated: openapiclient.NewInputProfilePhotoAnimated("Type_example", "Animation_example")} // InputProfilePhoto | 
-	isPublic := true // bool | Pass True to set the public photo, which will be visible even if the main photo is hidden by the business account's privacy settings. An account can have only one public photo. (optional)
+	isPublic := true // bool | Pass *True* to set the public photo, which will be visible even if the main photo is hidden by the business account's privacy settings. An account can have only one public photo. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8546,7 +8764,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSetBusinessAccountProfilePhoto``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSetBusinessAccountProfilePhoto`: PostSetWebhook200Response
+	// response from `PostSetBusinessAccountProfilePhoto`: SetBusinessAccountProfilePhotoResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSetBusinessAccountProfilePhoto`: %v\n", resp)
 }
 ```
@@ -8564,11 +8782,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **businessConnectionId** | **string** | Unique identifier of the business connection | 
  **photo** | [**InputProfilePhoto**](InputProfilePhoto.md) |  | 
- **isPublic** | **bool** | Pass True to set the public photo, which will be visible even if the main photo is hidden by the business account&#39;s privacy settings. An account can have only one public photo. | 
+ **isPublic** | **bool** | Pass *True* to set the public photo, which will be visible even if the main photo is hidden by the business account&#39;s privacy settings. An account can have only one public photo. | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**SetBusinessAccountProfilePhotoResponse**](SetBusinessAccountProfilePhotoResponse.md)
 
 ### Authorization
 
@@ -8576,7 +8794,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
+- **Content-Type**: multipart/form-data, application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -8586,7 +8804,7 @@ No authorization required
 
 ## PostSetBusinessAccountUsername
 
-> PostSetWebhook200Response PostSetBusinessAccountUsername(ctx).BusinessConnectionId(businessConnectionId).Username(username).Execute()
+> SetBusinessAccountUsernameResponse PostSetBusinessAccountUsername(ctx).BusinessConnectionId(businessConnectionId).Username(username).Execute()
 
 setBusinessAccountUsername
 
@@ -8615,7 +8833,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSetBusinessAccountUsername``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSetBusinessAccountUsername`: PostSetWebhook200Response
+	// response from `PostSetBusinessAccountUsername`: SetBusinessAccountUsernameResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSetBusinessAccountUsername`: %v\n", resp)
 }
 ```
@@ -8636,7 +8854,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**SetBusinessAccountUsernameResponse**](SetBusinessAccountUsernameResponse.md)
 
 ### Authorization
 
@@ -8654,7 +8872,7 @@ No authorization required
 
 ## PostSetChatAdministratorCustomTitle
 
-> PostSetWebhook200Response PostSetChatAdministratorCustomTitle(ctx).ChatId(chatId).UserId(userId).CustomTitle(customTitle).Execute()
+> SetChatAdministratorCustomTitleResponse PostSetChatAdministratorCustomTitle(ctx).ChatId(chatId).UserId(userId).CustomTitle(customTitle).Execute()
 
 setChatAdministratorCustomTitle
 
@@ -8673,7 +8891,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_restrictChatMember_request_chat_id{Int32: new(int32)} // PostRestrictChatMemberRequestChatId | 
+	chatId := openapiclient.BotCommandScopeChat_chat_id{Int32: new(int32)} // BotCommandScopeChatChatId | 
 	userId := int32(56) // int32 | Unique identifier of the target user
 	customTitle := "customTitle_example" // string | New custom title for the administrator; 0-16 characters, emoji are not allowed
 
@@ -8684,7 +8902,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSetChatAdministratorCustomTitle``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSetChatAdministratorCustomTitle`: PostSetWebhook200Response
+	// response from `PostSetChatAdministratorCustomTitle`: SetChatAdministratorCustomTitleResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSetChatAdministratorCustomTitle`: %v\n", resp)
 }
 ```
@@ -8700,13 +8918,13 @@ Other parameters are passed through a pointer to a apiPostSetChatAdministratorCu
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostRestrictChatMemberRequestChatId**](PostRestrictChatMemberRequestChatId.md) |  | 
+ **chatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
  **userId** | **int32** | Unique identifier of the target user | 
  **customTitle** | **string** | New custom title for the administrator; 0-16 characters, emoji are not allowed | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**SetChatAdministratorCustomTitleResponse**](SetChatAdministratorCustomTitleResponse.md)
 
 ### Authorization
 
@@ -8724,7 +8942,7 @@ No authorization required
 
 ## PostSetChatDescription
 
-> PostSetWebhook200Response PostSetChatDescription(ctx).ChatId(chatId).Description(description).Execute()
+> SetChatDescriptionResponse PostSetChatDescription(ctx).ChatId(chatId).Description(description).Execute()
 
 setChatDescription
 
@@ -8743,7 +8961,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	description := "description_example" // string | New chat description, 0-255 characters (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -8753,7 +8971,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSetChatDescription``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSetChatDescription`: PostSetWebhook200Response
+	// response from `PostSetChatDescription`: SetChatDescriptionResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSetChatDescription`: %v\n", resp)
 }
 ```
@@ -8769,12 +8987,12 @@ Other parameters are passed through a pointer to a apiPostSetChatDescriptionRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **description** | **string** | New chat description, 0-255 characters | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**SetChatDescriptionResponse**](SetChatDescriptionResponse.md)
 
 ### Authorization
 
@@ -8792,7 +9010,7 @@ No authorization required
 
 ## PostSetChatMenuButton
 
-> PostSetWebhook200Response PostSetChatMenuButton(ctx).ChatId(chatId).MenuButton(menuButton).Execute()
+> SetChatMenuButtonResponse PostSetChatMenuButton(ctx).ChatId(chatId).MenuButton(menuButton).Execute()
 
 setChatMenuButton
 
@@ -8821,7 +9039,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSetChatMenuButton``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSetChatMenuButton`: PostSetWebhook200Response
+	// response from `PostSetChatMenuButton`: SetChatMenuButtonResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSetChatMenuButton`: %v\n", resp)
 }
 ```
@@ -8842,7 +9060,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**SetChatMenuButtonResponse**](SetChatMenuButtonResponse.md)
 
 ### Authorization
 
@@ -8860,7 +9078,7 @@ No authorization required
 
 ## PostSetChatPermissions
 
-> PostSetWebhook200Response PostSetChatPermissions(ctx).ChatId(chatId).Permissions(permissions).UseIndependentChatPermissions(useIndependentChatPermissions).Execute()
+> SetChatPermissionsResponse PostSetChatPermissions(ctx).ChatId(chatId).Permissions(permissions).UseIndependentChatPermissions(useIndependentChatPermissions).Execute()
 
 setChatPermissions
 
@@ -8879,7 +9097,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_restrictChatMember_request_chat_id{Int32: new(int32)} // PostRestrictChatMemberRequestChatId | 
+	chatId := openapiclient.BotCommandScopeChat_chat_id{Int32: new(int32)} // BotCommandScopeChatChatId | 
 	permissions := *openapiclient.NewChatPermissions() // ChatPermissions | 
 	useIndependentChatPermissions := true // bool | Pass *True* if chat permissions are set independently. Otherwise, the *can\\\\_send\\\\_other\\\\_messages* and *can\\\\_add\\\\_web\\\\_page\\\\_previews* permissions will imply the *can\\\\_send\\\\_messages*, *can\\\\_send\\\\_audios*, *can\\\\_send\\\\_documents*, *can\\\\_send\\\\_photos*, *can\\\\_send\\\\_videos*, *can\\\\_send\\\\_video\\\\_notes*, and *can\\\\_send\\\\_voice\\\\_notes* permissions; the *can\\\\_send\\\\_polls* permission will imply the *can\\\\_send\\\\_messages* permission. (optional)
 
@@ -8890,7 +9108,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSetChatPermissions``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSetChatPermissions`: PostSetWebhook200Response
+	// response from `PostSetChatPermissions`: SetChatPermissionsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSetChatPermissions`: %v\n", resp)
 }
 ```
@@ -8906,13 +9124,13 @@ Other parameters are passed through a pointer to a apiPostSetChatPermissionsRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostRestrictChatMemberRequestChatId**](PostRestrictChatMemberRequestChatId.md) |  | 
+ **chatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
  **permissions** | [**ChatPermissions**](ChatPermissions.md) |  | 
  **useIndependentChatPermissions** | **bool** | Pass *True* if chat permissions are set independently. Otherwise, the *can\\\\_send\\\\_other\\\\_messages* and *can\\\\_add\\\\_web\\\\_page\\\\_previews* permissions will imply the *can\\\\_send\\\\_messages*, *can\\\\_send\\\\_audios*, *can\\\\_send\\\\_documents*, *can\\\\_send\\\\_photos*, *can\\\\_send\\\\_videos*, *can\\\\_send\\\\_video\\\\_notes*, and *can\\\\_send\\\\_voice\\\\_notes* permissions; the *can\\\\_send\\\\_polls* permission will imply the *can\\\\_send\\\\_messages* permission. | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**SetChatPermissionsResponse**](SetChatPermissionsResponse.md)
 
 ### Authorization
 
@@ -8930,7 +9148,7 @@ No authorization required
 
 ## PostSetChatPhoto
 
-> PostSetWebhook200Response PostSetChatPhoto(ctx).ChatId(chatId).Photo(photo).Execute()
+> SetChatPhotoResponse PostSetChatPhoto(ctx).ChatId(chatId).Photo(photo).Execute()
 
 setChatPhoto
 
@@ -8949,7 +9167,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	photo := TODO // interface{} | 
 
 	configuration := openapiclient.NewConfiguration()
@@ -8959,7 +9177,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSetChatPhoto``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSetChatPhoto`: PostSetWebhook200Response
+	// response from `PostSetChatPhoto`: SetChatPhotoResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSetChatPhoto`: %v\n", resp)
 }
 ```
@@ -8975,12 +9193,12 @@ Other parameters are passed through a pointer to a apiPostSetChatPhotoRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **photo** | [**interface{}**](interface{}.md) |  | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**SetChatPhotoResponse**](SetChatPhotoResponse.md)
 
 ### Authorization
 
@@ -8988,7 +9206,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
+- **Content-Type**: multipart/form-data, application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -8998,7 +9216,7 @@ No authorization required
 
 ## PostSetChatStickerSet
 
-> PostSetWebhook200Response PostSetChatStickerSet(ctx).ChatId(chatId).StickerSetName(stickerSetName).Execute()
+> SetChatStickerSetResponse PostSetChatStickerSet(ctx).ChatId(chatId).StickerSetName(stickerSetName).Execute()
 
 setChatStickerSet
 
@@ -9017,7 +9235,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_restrictChatMember_request_chat_id{Int32: new(int32)} // PostRestrictChatMemberRequestChatId | 
+	chatId := openapiclient.BotCommandScopeChat_chat_id{Int32: new(int32)} // BotCommandScopeChatChatId | 
 	stickerSetName := "stickerSetName_example" // string | Name of the sticker set to be set as the group sticker set
 
 	configuration := openapiclient.NewConfiguration()
@@ -9027,7 +9245,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSetChatStickerSet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSetChatStickerSet`: PostSetWebhook200Response
+	// response from `PostSetChatStickerSet`: SetChatStickerSetResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSetChatStickerSet`: %v\n", resp)
 }
 ```
@@ -9043,12 +9261,12 @@ Other parameters are passed through a pointer to a apiPostSetChatStickerSetReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostRestrictChatMemberRequestChatId**](PostRestrictChatMemberRequestChatId.md) |  | 
+ **chatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
  **stickerSetName** | **string** | Name of the sticker set to be set as the group sticker set | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**SetChatStickerSetResponse**](SetChatStickerSetResponse.md)
 
 ### Authorization
 
@@ -9066,7 +9284,7 @@ No authorization required
 
 ## PostSetChatTitle
 
-> PostSetWebhook200Response PostSetChatTitle(ctx).ChatId(chatId).Title(title).Execute()
+> SetChatTitleResponse PostSetChatTitle(ctx).ChatId(chatId).Title(title).Execute()
 
 setChatTitle
 
@@ -9085,7 +9303,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	title := "title_example" // string | New chat title, 1-128 characters
 
 	configuration := openapiclient.NewConfiguration()
@@ -9095,7 +9313,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSetChatTitle``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSetChatTitle`: PostSetWebhook200Response
+	// response from `PostSetChatTitle`: SetChatTitleResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSetChatTitle`: %v\n", resp)
 }
 ```
@@ -9111,12 +9329,12 @@ Other parameters are passed through a pointer to a apiPostSetChatTitleRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **title** | **string** | New chat title, 1-128 characters | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**SetChatTitleResponse**](SetChatTitleResponse.md)
 
 ### Authorization
 
@@ -9134,7 +9352,7 @@ No authorization required
 
 ## PostSetCustomEmojiStickerSetThumbnail
 
-> PostSetWebhook200Response PostSetCustomEmojiStickerSetThumbnail(ctx).Name(name).CustomEmojiId(customEmojiId).Execute()
+> SetCustomEmojiStickerSetThumbnailResponse PostSetCustomEmojiStickerSetThumbnail(ctx).Name(name).CustomEmojiId(customEmojiId).Execute()
 
 setCustomEmojiStickerSetThumbnail
 
@@ -9163,7 +9381,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSetCustomEmojiStickerSetThumbnail``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSetCustomEmojiStickerSetThumbnail`: PostSetWebhook200Response
+	// response from `PostSetCustomEmojiStickerSetThumbnail`: SetCustomEmojiStickerSetThumbnailResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSetCustomEmojiStickerSetThumbnail`: %v\n", resp)
 }
 ```
@@ -9184,7 +9402,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**SetCustomEmojiStickerSetThumbnailResponse**](SetCustomEmojiStickerSetThumbnailResponse.md)
 
 ### Authorization
 
@@ -9202,7 +9420,7 @@ No authorization required
 
 ## PostSetGameScore
 
-> PostEditMessageText200Response PostSetGameScore(ctx).UserId(userId).Score(score).Force(force).DisableEditMessage(disableEditMessage).ChatId(chatId).MessageId(messageId).InlineMessageId(inlineMessageId).Execute()
+> SetGameScoreResponse PostSetGameScore(ctx).UserId(userId).Score(score).Force(force).DisableEditMessage(disableEditMessage).ChatId(chatId).MessageId(messageId).InlineMessageId(inlineMessageId).Execute()
 
 setGameScore
 
@@ -9236,7 +9454,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSetGameScore``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSetGameScore`: PostEditMessageText200Response
+	// response from `PostSetGameScore`: SetGameScoreResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSetGameScore`: %v\n", resp)
 }
 ```
@@ -9262,7 +9480,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostEditMessageText200Response**](PostEditMessageText200Response.md)
+[**SetGameScoreResponse**](SetGameScoreResponse.md)
 
 ### Authorization
 
@@ -9280,7 +9498,7 @@ No authorization required
 
 ## PostSetMessageReaction
 
-> PostSetWebhook200Response PostSetMessageReaction(ctx).ChatId(chatId).MessageId(messageId).Reaction(reaction).IsBig(isBig).Execute()
+> SetMessageReactionResponse PostSetMessageReaction(ctx).ChatId(chatId).MessageId(messageId).Reaction(reaction).IsBig(isBig).Execute()
 
 setMessageReaction
 
@@ -9299,7 +9517,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	messageId := int32(56) // int32 | Identifier of the target message. If the message belongs to a media group, the reaction is set to the first non-deleted message in the group instead.
 	reaction := []openapiclient.ReactionType{openapiclient.ReactionType{ReactionTypeCustomEmoji: openapiclient.NewReactionTypeCustomEmoji("Type_example", "CustomEmojiId_example")}} // []ReactionType | A JSON-serialized list of reaction types to set on the message. Currently, as non-premium users, bots can set up to one reaction per message. A custom emoji reaction can be used if it is either already present on the message or explicitly allowed by chat administrators. Paid reactions can't be used by bots. (optional)
 	isBig := true // bool | Pass *True* to set the reaction with a big animation (optional)
@@ -9311,7 +9529,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSetMessageReaction``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSetMessageReaction`: PostSetWebhook200Response
+	// response from `PostSetMessageReaction`: SetMessageReactionResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSetMessageReaction`: %v\n", resp)
 }
 ```
@@ -9327,14 +9545,14 @@ Other parameters are passed through a pointer to a apiPostSetMessageReactionRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **messageId** | **int32** | Identifier of the target message. If the message belongs to a media group, the reaction is set to the first non-deleted message in the group instead. | 
  **reaction** | [**[]ReactionType**](ReactionType.md) | A JSON-serialized list of reaction types to set on the message. Currently, as non-premium users, bots can set up to one reaction per message. A custom emoji reaction can be used if it is either already present on the message or explicitly allowed by chat administrators. Paid reactions can&#39;t be used by bots. | 
  **isBig** | **bool** | Pass *True* to set the reaction with a big animation | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**SetMessageReactionResponse**](SetMessageReactionResponse.md)
 
 ### Authorization
 
@@ -9352,7 +9570,7 @@ No authorization required
 
 ## PostSetMyCommands
 
-> PostSetWebhook200Response PostSetMyCommands(ctx).Commands(commands).Scope(scope).LanguageCode(languageCode).Execute()
+> SetMyCommandsResponse PostSetMyCommands(ctx).Commands(commands).Scope(scope).LanguageCode(languageCode).Execute()
 
 setMyCommands
 
@@ -9382,7 +9600,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSetMyCommands``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSetMyCommands`: PostSetWebhook200Response
+	// response from `PostSetMyCommands`: SetMyCommandsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSetMyCommands`: %v\n", resp)
 }
 ```
@@ -9404,7 +9622,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**SetMyCommandsResponse**](SetMyCommandsResponse.md)
 
 ### Authorization
 
@@ -9422,7 +9640,7 @@ No authorization required
 
 ## PostSetMyDefaultAdministratorRights
 
-> PostSetWebhook200Response PostSetMyDefaultAdministratorRights(ctx).Rights(rights).ForChannels(forChannels).Execute()
+> SetMyDefaultAdministratorRightsResponse PostSetMyDefaultAdministratorRights(ctx).Rights(rights).ForChannels(forChannels).Execute()
 
 setMyDefaultAdministratorRights
 
@@ -9451,7 +9669,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSetMyDefaultAdministratorRights``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSetMyDefaultAdministratorRights`: PostSetWebhook200Response
+	// response from `PostSetMyDefaultAdministratorRights`: SetMyDefaultAdministratorRightsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSetMyDefaultAdministratorRights`: %v\n", resp)
 }
 ```
@@ -9472,7 +9690,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**SetMyDefaultAdministratorRightsResponse**](SetMyDefaultAdministratorRightsResponse.md)
 
 ### Authorization
 
@@ -9490,7 +9708,7 @@ No authorization required
 
 ## PostSetMyDescription
 
-> PostSetWebhook200Response PostSetMyDescription(ctx).Description(description).LanguageCode(languageCode).Execute()
+> SetMyDescriptionResponse PostSetMyDescription(ctx).Description(description).LanguageCode(languageCode).Execute()
 
 setMyDescription
 
@@ -9519,7 +9737,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSetMyDescription``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSetMyDescription`: PostSetWebhook200Response
+	// response from `PostSetMyDescription`: SetMyDescriptionResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSetMyDescription`: %v\n", resp)
 }
 ```
@@ -9540,7 +9758,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**SetMyDescriptionResponse**](SetMyDescriptionResponse.md)
 
 ### Authorization
 
@@ -9558,7 +9776,7 @@ No authorization required
 
 ## PostSetMyName
 
-> PostSetWebhook200Response PostSetMyName(ctx).Name(name).LanguageCode(languageCode).Execute()
+> SetMyNameResponse PostSetMyName(ctx).Name(name).LanguageCode(languageCode).Execute()
 
 setMyName
 
@@ -9587,7 +9805,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSetMyName``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSetMyName`: PostSetWebhook200Response
+	// response from `PostSetMyName`: SetMyNameResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSetMyName`: %v\n", resp)
 }
 ```
@@ -9608,7 +9826,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**SetMyNameResponse**](SetMyNameResponse.md)
 
 ### Authorization
 
@@ -9626,7 +9844,7 @@ No authorization required
 
 ## PostSetMyShortDescription
 
-> PostSetWebhook200Response PostSetMyShortDescription(ctx).ShortDescription(shortDescription).LanguageCode(languageCode).Execute()
+> SetMyShortDescriptionResponse PostSetMyShortDescription(ctx).ShortDescription(shortDescription).LanguageCode(languageCode).Execute()
 
 setMyShortDescription
 
@@ -9655,7 +9873,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSetMyShortDescription``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSetMyShortDescription`: PostSetWebhook200Response
+	// response from `PostSetMyShortDescription`: SetMyShortDescriptionResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSetMyShortDescription`: %v\n", resp)
 }
 ```
@@ -9676,7 +9894,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**SetMyShortDescriptionResponse**](SetMyShortDescriptionResponse.md)
 
 ### Authorization
 
@@ -9694,7 +9912,7 @@ No authorization required
 
 ## PostSetPassportDataErrors
 
-> PostSetWebhook200Response PostSetPassportDataErrors(ctx).UserId(userId).Errors(errors).Execute()
+> SetPassportDataErrorsResponse PostSetPassportDataErrors(ctx).UserId(userId).Errors(errors).Execute()
 
 setPassportDataErrors
 
@@ -9723,7 +9941,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSetPassportDataErrors``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSetPassportDataErrors`: PostSetWebhook200Response
+	// response from `PostSetPassportDataErrors`: SetPassportDataErrorsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSetPassportDataErrors`: %v\n", resp)
 }
 ```
@@ -9744,7 +9962,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**SetPassportDataErrorsResponse**](SetPassportDataErrorsResponse.md)
 
 ### Authorization
 
@@ -9762,7 +9980,7 @@ No authorization required
 
 ## PostSetStickerEmojiList
 
-> PostSetWebhook200Response PostSetStickerEmojiList(ctx).Sticker(sticker).EmojiList(emojiList).Execute()
+> SetStickerEmojiListResponse PostSetStickerEmojiList(ctx).Sticker(sticker).EmojiList(emojiList).Execute()
 
 setStickerEmojiList
 
@@ -9791,7 +10009,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSetStickerEmojiList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSetStickerEmojiList`: PostSetWebhook200Response
+	// response from `PostSetStickerEmojiList`: SetStickerEmojiListResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSetStickerEmojiList`: %v\n", resp)
 }
 ```
@@ -9812,7 +10030,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**SetStickerEmojiListResponse**](SetStickerEmojiListResponse.md)
 
 ### Authorization
 
@@ -9830,7 +10048,7 @@ No authorization required
 
 ## PostSetStickerKeywords
 
-> PostSetWebhook200Response PostSetStickerKeywords(ctx).Sticker(sticker).Keywords(keywords).Execute()
+> SetStickerKeywordsResponse PostSetStickerKeywords(ctx).Sticker(sticker).Keywords(keywords).Execute()
 
 setStickerKeywords
 
@@ -9859,7 +10077,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSetStickerKeywords``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSetStickerKeywords`: PostSetWebhook200Response
+	// response from `PostSetStickerKeywords`: SetStickerKeywordsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSetStickerKeywords`: %v\n", resp)
 }
 ```
@@ -9880,7 +10098,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**SetStickerKeywordsResponse**](SetStickerKeywordsResponse.md)
 
 ### Authorization
 
@@ -9898,7 +10116,7 @@ No authorization required
 
 ## PostSetStickerMaskPosition
 
-> PostSetWebhook200Response PostSetStickerMaskPosition(ctx).Sticker(sticker).MaskPosition(maskPosition).Execute()
+> SetStickerMaskPositionResponse PostSetStickerMaskPosition(ctx).Sticker(sticker).MaskPosition(maskPosition).Execute()
 
 setStickerMaskPosition
 
@@ -9927,7 +10145,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSetStickerMaskPosition``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSetStickerMaskPosition`: PostSetWebhook200Response
+	// response from `PostSetStickerMaskPosition`: SetStickerMaskPositionResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSetStickerMaskPosition`: %v\n", resp)
 }
 ```
@@ -9948,7 +10166,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**SetStickerMaskPositionResponse**](SetStickerMaskPositionResponse.md)
 
 ### Authorization
 
@@ -9966,7 +10184,7 @@ No authorization required
 
 ## PostSetStickerPositionInSet
 
-> PostSetWebhook200Response PostSetStickerPositionInSet(ctx).Sticker(sticker).Position(position).Execute()
+> SetStickerPositionInSetResponse PostSetStickerPositionInSet(ctx).Sticker(sticker).Position(position).Execute()
 
 setStickerPositionInSet
 
@@ -9995,7 +10213,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSetStickerPositionInSet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSetStickerPositionInSet`: PostSetWebhook200Response
+	// response from `PostSetStickerPositionInSet`: SetStickerPositionInSetResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSetStickerPositionInSet`: %v\n", resp)
 }
 ```
@@ -10016,7 +10234,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**SetStickerPositionInSetResponse**](SetStickerPositionInSetResponse.md)
 
 ### Authorization
 
@@ -10034,7 +10252,7 @@ No authorization required
 
 ## PostSetStickerSetThumbnail
 
-> PostSetWebhook200Response PostSetStickerSetThumbnail(ctx).Name(name).UserId(userId).Format(format).Thumbnail(thumbnail).Execute()
+> SetStickerSetThumbnailResponse PostSetStickerSetThumbnail(ctx).Name(name).UserId(userId).Format(format).Thumbnail(thumbnail).Execute()
 
 setStickerSetThumbnail
 
@@ -10056,7 +10274,7 @@ func main() {
 	name := "name_example" // string | Sticker set name
 	userId := int32(56) // int32 | User identifier of the sticker set owner
 	format := "format_example" // string | Format of the thumbnail, must be one of “static” for a **.WEBP** or **.PNG** image, “animated” for a **.TGS** animation, or “video” for a **.WEBM** video
-	thumbnail := openapiclient.post_setStickerSetThumbnail_request_thumbnail{Any: new(interface{})} // PostSetStickerSetThumbnailRequestThumbnail |  (optional)
+	thumbnail := "thumbnail_example" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10065,7 +10283,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSetStickerSetThumbnail``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSetStickerSetThumbnail`: PostSetWebhook200Response
+	// response from `PostSetStickerSetThumbnail`: SetStickerSetThumbnailResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSetStickerSetThumbnail`: %v\n", resp)
 }
 ```
@@ -10084,11 +10302,11 @@ Name | Type | Description  | Notes
  **name** | **string** | Sticker set name | 
  **userId** | **int32** | User identifier of the sticker set owner | 
  **format** | **string** | Format of the thumbnail, must be one of “static” for a **.WEBP** or **.PNG** image, “animated” for a **.TGS** animation, or “video” for a **.WEBM** video | 
- **thumbnail** | [**PostSetStickerSetThumbnailRequestThumbnail**](PostSetStickerSetThumbnailRequestThumbnail.md) |  | 
+ **thumbnail** | **string** |  | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**SetStickerSetThumbnailResponse**](SetStickerSetThumbnailResponse.md)
 
 ### Authorization
 
@@ -10096,7 +10314,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
+- **Content-Type**: multipart/form-data, application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -10106,7 +10324,7 @@ No authorization required
 
 ## PostSetStickerSetTitle
 
-> PostSetWebhook200Response PostSetStickerSetTitle(ctx).Name(name).Title(title).Execute()
+> SetStickerSetTitleResponse PostSetStickerSetTitle(ctx).Name(name).Title(title).Execute()
 
 setStickerSetTitle
 
@@ -10135,7 +10353,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSetStickerSetTitle``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSetStickerSetTitle`: PostSetWebhook200Response
+	// response from `PostSetStickerSetTitle`: SetStickerSetTitleResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSetStickerSetTitle`: %v\n", resp)
 }
 ```
@@ -10156,7 +10374,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**SetStickerSetTitleResponse**](SetStickerSetTitleResponse.md)
 
 ### Authorization
 
@@ -10174,7 +10392,7 @@ No authorization required
 
 ## PostSetUserEmojiStatus
 
-> PostSetWebhook200Response PostSetUserEmojiStatus(ctx).UserId(userId).EmojiStatusCustomEmojiId(emojiStatusCustomEmojiId).EmojiStatusExpirationDate(emojiStatusExpirationDate).Execute()
+> SetUserEmojiStatusResponse PostSetUserEmojiStatus(ctx).UserId(userId).EmojiStatusCustomEmojiId(emojiStatusCustomEmojiId).EmojiStatusExpirationDate(emojiStatusExpirationDate).Execute()
 
 setUserEmojiStatus
 
@@ -10204,7 +10422,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSetUserEmojiStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSetUserEmojiStatus`: PostSetWebhook200Response
+	// response from `PostSetUserEmojiStatus`: SetUserEmojiStatusResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSetUserEmojiStatus`: %v\n", resp)
 }
 ```
@@ -10226,7 +10444,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**SetUserEmojiStatusResponse**](SetUserEmojiStatusResponse.md)
 
 ### Authorization
 
@@ -10244,7 +10462,7 @@ No authorization required
 
 ## PostSetWebhook
 
-> PostSetWebhook200Response PostSetWebhook(ctx).Url(url).Certificate(certificate).IpAddress(ipAddress).MaxConnections(maxConnections).AllowedUpdates(allowedUpdates).DropPendingUpdates(dropPendingUpdates).SecretToken(secretToken).Execute()
+> SetWebhookResponse PostSetWebhook(ctx).Url(url).Certificate(certificate).IpAddress(ipAddress).MaxConnections(maxConnections).AllowedUpdates(allowedUpdates).DropPendingUpdates(dropPendingUpdates).SecretToken(secretToken).Execute()
 
 setWebhook
 
@@ -10278,7 +10496,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSetWebhook``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSetWebhook`: PostSetWebhook200Response
+	// response from `PostSetWebhook`: SetWebhookResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSetWebhook`: %v\n", resp)
 }
 ```
@@ -10304,7 +10522,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**SetWebhookResponse**](SetWebhookResponse.md)
 
 ### Authorization
 
@@ -10312,7 +10530,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
+- **Content-Type**: multipart/form-data, application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -10322,7 +10540,7 @@ No authorization required
 
 ## PostStopMessageLiveLocation
 
-> PostEditMessageText200Response PostStopMessageLiveLocation(ctx).BusinessConnectionId(businessConnectionId).ChatId(chatId).MessageId(messageId).InlineMessageId(inlineMessageId).ReplyMarkup(replyMarkup).Execute()
+> StopMessageLiveLocationResponse PostStopMessageLiveLocation(ctx).BusinessConnectionId(businessConnectionId).ChatId(chatId).MessageId(messageId).InlineMessageId(inlineMessageId).ReplyMarkup(replyMarkup).Execute()
 
 stopMessageLiveLocation
 
@@ -10342,7 +10560,7 @@ import (
 
 func main() {
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message to be edited was sent (optional)
-	chatId := openapiclient.post_editMessageText_request_chat_id{Int32: new(int32)} // PostEditMessageTextRequestChatId |  (optional)
+	chatId := openapiclient.editMessageTextRequest_chat_id{Int32: new(int32)} // EditMessageTextRequestChatId |  (optional)
 	messageId := int32(56) // int32 | Required if *inline\\\\_message\\\\_id* is not specified. Identifier of the message with live location to stop (optional)
 	inlineMessageId := "inlineMessageId_example" // string | Required if *chat\\\\_id* and *message\\\\_id* are not specified. Identifier of the inline message (optional)
 	replyMarkup := *openapiclient.NewInlineKeyboardMarkup([][]InlineKeyboardButton{[]openapiclient.InlineKeyboardButton{*openapiclient.NewInlineKeyboardButton("Text_example")}}) // InlineKeyboardMarkup |  (optional)
@@ -10354,7 +10572,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostStopMessageLiveLocation``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostStopMessageLiveLocation`: PostEditMessageText200Response
+	// response from `PostStopMessageLiveLocation`: StopMessageLiveLocationResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostStopMessageLiveLocation`: %v\n", resp)
 }
 ```
@@ -10371,14 +10589,14 @@ Other parameters are passed through a pointer to a apiPostStopMessageLiveLocatio
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message to be edited was sent | 
- **chatId** | [**PostEditMessageTextRequestChatId**](PostEditMessageTextRequestChatId.md) |  | 
+ **chatId** | [**EditMessageTextRequestChatId**](EditMessageTextRequestChatId.md) |  | 
  **messageId** | **int32** | Required if *inline\\\\_message\\\\_id* is not specified. Identifier of the message with live location to stop | 
  **inlineMessageId** | **string** | Required if *chat\\\\_id* and *message\\\\_id* are not specified. Identifier of the inline message | 
  **replyMarkup** | [**InlineKeyboardMarkup**](InlineKeyboardMarkup.md) |  | 
 
 ### Return type
 
-[**PostEditMessageText200Response**](PostEditMessageText200Response.md)
+[**StopMessageLiveLocationResponse**](StopMessageLiveLocationResponse.md)
 
 ### Authorization
 
@@ -10396,7 +10614,7 @@ No authorization required
 
 ## PostStopPoll
 
-> PostStopPoll200Response PostStopPoll(ctx).ChatId(chatId).MessageId(messageId).BusinessConnectionId(businessConnectionId).ReplyMarkup(replyMarkup).Execute()
+> StopPollResponse PostStopPoll(ctx).ChatId(chatId).MessageId(messageId).BusinessConnectionId(businessConnectionId).ReplyMarkup(replyMarkup).Execute()
 
 stopPoll
 
@@ -10415,7 +10633,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	messageId := int32(56) // int32 | Identifier of the original message with the poll
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message to be edited was sent (optional)
 	replyMarkup := *openapiclient.NewInlineKeyboardMarkup([][]InlineKeyboardButton{[]openapiclient.InlineKeyboardButton{*openapiclient.NewInlineKeyboardButton("Text_example")}}) // InlineKeyboardMarkup |  (optional)
@@ -10427,7 +10645,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostStopPoll``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostStopPoll`: PostStopPoll200Response
+	// response from `PostStopPoll`: StopPollResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostStopPoll`: %v\n", resp)
 }
 ```
@@ -10443,14 +10661,14 @@ Other parameters are passed through a pointer to a apiPostStopPollRequest struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **messageId** | **int32** | Identifier of the original message with the poll | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message to be edited was sent | 
  **replyMarkup** | [**InlineKeyboardMarkup**](InlineKeyboardMarkup.md) |  | 
 
 ### Return type
 
-[**PostStopPoll200Response**](PostStopPoll200Response.md)
+[**StopPollResponse**](StopPollResponse.md)
 
 ### Authorization
 
@@ -10468,7 +10686,7 @@ No authorization required
 
 ## PostTransferBusinessAccountStars
 
-> PostSetWebhook200Response PostTransferBusinessAccountStars(ctx).BusinessConnectionId(businessConnectionId).StarCount(starCount).Execute()
+> TransferBusinessAccountStarsResponse PostTransferBusinessAccountStars(ctx).BusinessConnectionId(businessConnectionId).StarCount(starCount).Execute()
 
 transferBusinessAccountStars
 
@@ -10497,7 +10715,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostTransferBusinessAccountStars``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostTransferBusinessAccountStars`: PostSetWebhook200Response
+	// response from `PostTransferBusinessAccountStars`: TransferBusinessAccountStarsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostTransferBusinessAccountStars`: %v\n", resp)
 }
 ```
@@ -10518,7 +10736,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**TransferBusinessAccountStarsResponse**](TransferBusinessAccountStarsResponse.md)
 
 ### Authorization
 
@@ -10536,7 +10754,7 @@ No authorization required
 
 ## PostTransferGift
 
-> PostSetWebhook200Response PostTransferGift(ctx).BusinessConnectionId(businessConnectionId).OwnedGiftId(ownedGiftId).NewOwnerChatId(newOwnerChatId).StarCount(starCount).Execute()
+> TransferGiftResponse PostTransferGift(ctx).BusinessConnectionId(businessConnectionId).OwnedGiftId(ownedGiftId).NewOwnerChatId(newOwnerChatId).StarCount(starCount).Execute()
 
 transferGift
 
@@ -10567,7 +10785,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostTransferGift``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostTransferGift`: PostSetWebhook200Response
+	// response from `PostTransferGift`: TransferGiftResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostTransferGift`: %v\n", resp)
 }
 ```
@@ -10590,7 +10808,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**TransferGiftResponse**](TransferGiftResponse.md)
 
 ### Authorization
 
@@ -10608,7 +10826,7 @@ No authorization required
 
 ## PostUnbanChatMember
 
-> PostSetWebhook200Response PostUnbanChatMember(ctx).ChatId(chatId).UserId(userId).OnlyIfBanned(onlyIfBanned).Execute()
+> UnbanChatMemberResponse PostUnbanChatMember(ctx).ChatId(chatId).UserId(userId).OnlyIfBanned(onlyIfBanned).Execute()
 
 unbanChatMember
 
@@ -10627,7 +10845,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_banChatMember_request_chat_id{Int32: new(int32)} // PostBanChatMemberRequestChatId | 
+	chatId := openapiclient.banChatMemberRequest_chat_id{Int32: new(int32)} // BanChatMemberRequestChatId | 
 	userId := int32(56) // int32 | Unique identifier of the target user
 	onlyIfBanned := true // bool | Do nothing if the user is not banned (optional)
 
@@ -10638,7 +10856,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostUnbanChatMember``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostUnbanChatMember`: PostSetWebhook200Response
+	// response from `PostUnbanChatMember`: UnbanChatMemberResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostUnbanChatMember`: %v\n", resp)
 }
 ```
@@ -10654,13 +10872,13 @@ Other parameters are passed through a pointer to a apiPostUnbanChatMemberRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostBanChatMemberRequestChatId**](PostBanChatMemberRequestChatId.md) |  | 
+ **chatId** | [**BanChatMemberRequestChatId**](BanChatMemberRequestChatId.md) |  | 
  **userId** | **int32** | Unique identifier of the target user | 
  **onlyIfBanned** | **bool** | Do nothing if the user is not banned | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**UnbanChatMemberResponse**](UnbanChatMemberResponse.md)
 
 ### Authorization
 
@@ -10678,7 +10896,7 @@ No authorization required
 
 ## PostUnbanChatSenderChat
 
-> PostSetWebhook200Response PostUnbanChatSenderChat(ctx).ChatId(chatId).SenderChatId(senderChatId).Execute()
+> UnbanChatSenderChatResponse PostUnbanChatSenderChat(ctx).ChatId(chatId).SenderChatId(senderChatId).Execute()
 
 unbanChatSenderChat
 
@@ -10697,7 +10915,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	senderChatId := int32(56) // int32 | Unique identifier of the target sender chat
 
 	configuration := openapiclient.NewConfiguration()
@@ -10707,7 +10925,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostUnbanChatSenderChat``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostUnbanChatSenderChat`: PostSetWebhook200Response
+	// response from `PostUnbanChatSenderChat`: UnbanChatSenderChatResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostUnbanChatSenderChat`: %v\n", resp)
 }
 ```
@@ -10723,12 +10941,12 @@ Other parameters are passed through a pointer to a apiPostUnbanChatSenderChatReq
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **senderChatId** | **int32** | Unique identifier of the target sender chat | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**UnbanChatSenderChatResponse**](UnbanChatSenderChatResponse.md)
 
 ### Authorization
 
@@ -10746,7 +10964,7 @@ No authorization required
 
 ## PostUnhideGeneralForumTopic
 
-> PostSetWebhook200Response PostUnhideGeneralForumTopic(ctx).ChatId(chatId).Execute()
+> UnhideGeneralForumTopicResponse PostUnhideGeneralForumTopic(ctx).ChatId(chatId).Execute()
 
 unhideGeneralForumTopic
 
@@ -10765,7 +10983,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_restrictChatMember_request_chat_id{Int32: new(int32)} // PostRestrictChatMemberRequestChatId | 
+	chatId := openapiclient.BotCommandScopeChat_chat_id{Int32: new(int32)} // BotCommandScopeChatChatId | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10774,7 +10992,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostUnhideGeneralForumTopic``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostUnhideGeneralForumTopic`: PostSetWebhook200Response
+	// response from `PostUnhideGeneralForumTopic`: UnhideGeneralForumTopicResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostUnhideGeneralForumTopic`: %v\n", resp)
 }
 ```
@@ -10790,11 +11008,11 @@ Other parameters are passed through a pointer to a apiPostUnhideGeneralForumTopi
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostRestrictChatMemberRequestChatId**](PostRestrictChatMemberRequestChatId.md) |  | 
+ **chatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**UnhideGeneralForumTopicResponse**](UnhideGeneralForumTopicResponse.md)
 
 ### Authorization
 
@@ -10812,7 +11030,7 @@ No authorization required
 
 ## PostUnpinAllChatMessages
 
-> PostSetWebhook200Response PostUnpinAllChatMessages(ctx).ChatId(chatId).Execute()
+> UnpinAllChatMessagesResponse PostUnpinAllChatMessages(ctx).ChatId(chatId).Execute()
 
 unpinAllChatMessages
 
@@ -10831,7 +11049,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10840,7 +11058,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostUnpinAllChatMessages``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostUnpinAllChatMessages`: PostSetWebhook200Response
+	// response from `PostUnpinAllChatMessages`: UnpinAllChatMessagesResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostUnpinAllChatMessages`: %v\n", resp)
 }
 ```
@@ -10856,11 +11074,11 @@ Other parameters are passed through a pointer to a apiPostUnpinAllChatMessagesRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**UnpinAllChatMessagesResponse**](UnpinAllChatMessagesResponse.md)
 
 ### Authorization
 
@@ -10878,7 +11096,7 @@ No authorization required
 
 ## PostUnpinAllForumTopicMessages
 
-> PostSetWebhook200Response PostUnpinAllForumTopicMessages(ctx).ChatId(chatId).MessageThreadId(messageThreadId).Execute()
+> UnpinAllForumTopicMessagesResponse PostUnpinAllForumTopicMessages(ctx).ChatId(chatId).MessageThreadId(messageThreadId).Execute()
 
 unpinAllForumTopicMessages
 
@@ -10897,7 +11115,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_restrictChatMember_request_chat_id{Int32: new(int32)} // PostRestrictChatMemberRequestChatId | 
+	chatId := openapiclient.BotCommandScopeChat_chat_id{Int32: new(int32)} // BotCommandScopeChatChatId | 
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread of the forum topic
 
 	configuration := openapiclient.NewConfiguration()
@@ -10907,7 +11125,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostUnpinAllForumTopicMessages``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostUnpinAllForumTopicMessages`: PostSetWebhook200Response
+	// response from `PostUnpinAllForumTopicMessages`: UnpinAllForumTopicMessagesResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostUnpinAllForumTopicMessages`: %v\n", resp)
 }
 ```
@@ -10923,12 +11141,12 @@ Other parameters are passed through a pointer to a apiPostUnpinAllForumTopicMess
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostRestrictChatMemberRequestChatId**](PostRestrictChatMemberRequestChatId.md) |  | 
+ **chatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
  **messageThreadId** | **int32** | Unique identifier for the target message thread of the forum topic | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**UnpinAllForumTopicMessagesResponse**](UnpinAllForumTopicMessagesResponse.md)
 
 ### Authorization
 
@@ -10946,7 +11164,7 @@ No authorization required
 
 ## PostUnpinAllGeneralForumTopicMessages
 
-> PostSetWebhook200Response PostUnpinAllGeneralForumTopicMessages(ctx).ChatId(chatId).Execute()
+> UnpinAllGeneralForumTopicMessagesResponse PostUnpinAllGeneralForumTopicMessages(ctx).ChatId(chatId).Execute()
 
 unpinAllGeneralForumTopicMessages
 
@@ -10965,7 +11183,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_restrictChatMember_request_chat_id{Int32: new(int32)} // PostRestrictChatMemberRequestChatId | 
+	chatId := openapiclient.BotCommandScopeChat_chat_id{Int32: new(int32)} // BotCommandScopeChatChatId | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10974,7 +11192,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostUnpinAllGeneralForumTopicMessages``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostUnpinAllGeneralForumTopicMessages`: PostSetWebhook200Response
+	// response from `PostUnpinAllGeneralForumTopicMessages`: UnpinAllGeneralForumTopicMessagesResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostUnpinAllGeneralForumTopicMessages`: %v\n", resp)
 }
 ```
@@ -10990,11 +11208,11 @@ Other parameters are passed through a pointer to a apiPostUnpinAllGeneralForumTo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostRestrictChatMemberRequestChatId**](PostRestrictChatMemberRequestChatId.md) |  | 
+ **chatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**UnpinAllGeneralForumTopicMessagesResponse**](UnpinAllGeneralForumTopicMessagesResponse.md)
 
 ### Authorization
 
@@ -11012,7 +11230,7 @@ No authorization required
 
 ## PostUnpinChatMessage
 
-> PostSetWebhook200Response PostUnpinChatMessage(ctx).ChatId(chatId).BusinessConnectionId(businessConnectionId).MessageId(messageId).Execute()
+> UnpinChatMessageResponse PostUnpinChatMessage(ctx).ChatId(chatId).BusinessConnectionId(businessConnectionId).MessageId(messageId).Execute()
 
 unpinChatMessage
 
@@ -11031,7 +11249,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be unpinned (optional)
 	messageId := int32(56) // int32 | Identifier of the message to unpin. Required if *business\\\\_connection\\\\_id* is specified. If not specified, the most recent pinned message (by sending date) will be unpinned. (optional)
 
@@ -11042,7 +11260,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostUnpinChatMessage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostUnpinChatMessage`: PostSetWebhook200Response
+	// response from `PostUnpinChatMessage`: UnpinChatMessageResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostUnpinChatMessage`: %v\n", resp)
 }
 ```
@@ -11058,13 +11276,13 @@ Other parameters are passed through a pointer to a apiPostUnpinChatMessageReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message will be unpinned | 
  **messageId** | **int32** | Identifier of the message to unpin. Required if *business\\\\_connection\\\\_id* is specified. If not specified, the most recent pinned message (by sending date) will be unpinned. | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**UnpinChatMessageResponse**](UnpinChatMessageResponse.md)
 
 ### Authorization
 
@@ -11082,7 +11300,7 @@ No authorization required
 
 ## PostUpgradeGift
 
-> PostSetWebhook200Response PostUpgradeGift(ctx).BusinessConnectionId(businessConnectionId).OwnedGiftId(ownedGiftId).KeepOriginalDetails(keepOriginalDetails).StarCount(starCount).Execute()
+> UpgradeGiftResponse PostUpgradeGift(ctx).BusinessConnectionId(businessConnectionId).OwnedGiftId(ownedGiftId).KeepOriginalDetails(keepOriginalDetails).StarCount(starCount).Execute()
 
 upgradeGift
 
@@ -11103,7 +11321,7 @@ import (
 func main() {
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection
 	ownedGiftId := "ownedGiftId_example" // string | Unique identifier of the regular gift that should be upgraded to a unique one
-	keepOriginalDetails := true // bool | Pass True to keep the original gift text, sender and receiver in the upgraded gift (optional)
+	keepOriginalDetails := true // bool | Pass *True* to keep the original gift text, sender and receiver in the upgraded gift (optional)
 	starCount := int32(56) // int32 | The amount of Telegram Stars that will be paid for the upgrade from the business account balance. If `gift.prepaid_upgrade_star_count > 0`, then pass 0, otherwise, the *can\\\\_transfer\\\\_stars* business bot right is required and `gift.upgrade_star_count` must be passed. (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -11113,7 +11331,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostUpgradeGift``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostUpgradeGift`: PostSetWebhook200Response
+	// response from `PostUpgradeGift`: UpgradeGiftResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostUpgradeGift`: %v\n", resp)
 }
 ```
@@ -11131,12 +11349,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **businessConnectionId** | **string** | Unique identifier of the business connection | 
  **ownedGiftId** | **string** | Unique identifier of the regular gift that should be upgraded to a unique one | 
- **keepOriginalDetails** | **bool** | Pass True to keep the original gift text, sender and receiver in the upgraded gift | 
+ **keepOriginalDetails** | **bool** | Pass *True* to keep the original gift text, sender and receiver in the upgraded gift | 
  **starCount** | **int32** | The amount of Telegram Stars that will be paid for the upgrade from the business account balance. If &#x60;gift.prepaid_upgrade_star_count &gt; 0&#x60;, then pass 0, otherwise, the *can\\\\_transfer\\\\_stars* business bot right is required and &#x60;gift.upgrade_star_count&#x60; must be passed. | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**UpgradeGiftResponse**](UpgradeGiftResponse.md)
 
 ### Authorization
 
@@ -11154,7 +11372,7 @@ No authorization required
 
 ## PostUploadStickerFile
 
-> PostGetFile200Response PostUploadStickerFile(ctx).UserId(userId).Sticker(sticker).StickerFormat(stickerFormat).Execute()
+> UploadStickerFileResponse PostUploadStickerFile(ctx).UserId(userId).Sticker(sticker).StickerFormat(stickerFormat).Execute()
 
 uploadStickerFile
 
@@ -11184,7 +11402,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostUploadStickerFile``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostUploadStickerFile`: PostGetFile200Response
+	// response from `PostUploadStickerFile`: UploadStickerFileResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostUploadStickerFile`: %v\n", resp)
 }
 ```
@@ -11206,7 +11424,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostGetFile200Response**](PostGetFile200Response.md)
+[**UploadStickerFileResponse**](UploadStickerFileResponse.md)
 
 ### Authorization
 
@@ -11214,7 +11432,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: multipart/form-data
+- **Content-Type**: multipart/form-data, application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -11224,7 +11442,7 @@ No authorization required
 
 ## PostVerifyChat
 
-> PostSetWebhook200Response PostVerifyChat(ctx).ChatId(chatId).CustomDescription(customDescription).Execute()
+> VerifyChatResponse PostVerifyChat(ctx).ChatId(chatId).CustomDescription(customDescription).Execute()
 
 verifyChat
 
@@ -11243,7 +11461,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.post_sendMessage_request_chat_id{Int32: new(int32)} // PostSendMessageRequestChatId | 
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	customDescription := "customDescription_example" // string | Custom description for the verification; 0-70 characters. Must be empty if the organization isn't allowed to provide a custom verification description. (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -11253,7 +11471,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostVerifyChat``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostVerifyChat`: PostSetWebhook200Response
+	// response from `PostVerifyChat`: VerifyChatResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostVerifyChat`: %v\n", resp)
 }
 ```
@@ -11269,12 +11487,12 @@ Other parameters are passed through a pointer to a apiPostVerifyChatRequest stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**PostSendMessageRequestChatId**](PostSendMessageRequestChatId.md) |  | 
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **customDescription** | **string** | Custom description for the verification; 0-70 characters. Must be empty if the organization isn&#39;t allowed to provide a custom verification description. | 
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**VerifyChatResponse**](VerifyChatResponse.md)
 
 ### Authorization
 
@@ -11292,7 +11510,7 @@ No authorization required
 
 ## PostVerifyUser
 
-> PostSetWebhook200Response PostVerifyUser(ctx).UserId(userId).CustomDescription(customDescription).Execute()
+> VerifyUserResponse PostVerifyUser(ctx).UserId(userId).CustomDescription(customDescription).Execute()
 
 verifyUser
 
@@ -11321,7 +11539,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostVerifyUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostVerifyUser`: PostSetWebhook200Response
+	// response from `PostVerifyUser`: VerifyUserResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostVerifyUser`: %v\n", resp)
 }
 ```
@@ -11342,7 +11560,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PostSetWebhook200Response**](PostSetWebhook200Response.md)
+[**VerifyUserResponse**](VerifyUserResponse.md)
 
 ### Authorization
 

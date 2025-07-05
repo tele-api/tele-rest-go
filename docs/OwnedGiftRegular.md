@@ -11,10 +11,10 @@ Name | Type | Description | Notes
 **SendDate** | **int32** | Date the gift was sent in Unix time | 
 **Text** | Pointer to **string** | *Optional*. Text of the message that was added to the gift | [optional] 
 **Entities** | Pointer to [**[]MessageEntity**](MessageEntity.md) | *Optional*. Special entities that appear in the text | [optional] 
-**IsPrivate** | Pointer to **bool** | *Optional*. True, if the sender and gift text are shown only to the gift receiver; otherwise, everyone will be able to see them | [optional] [default to true]
-**IsSaved** | Pointer to **bool** | *Optional*. True, if the gift is displayed on the account&#39;s profile page; for gifts received on behalf of business accounts only | [optional] [default to true]
-**CanBeUpgraded** | Pointer to **bool** | *Optional*. True, if the gift can be upgraded to a unique gift; for gifts received on behalf of business accounts only | [optional] [default to true]
-**WasRefunded** | Pointer to **bool** | *Optional*. True, if the gift was refunded and isn&#39;t available anymore | [optional] [default to true]
+**IsPrivate** | Pointer to **bool** | *Optional*. *True*, if the sender and gift text are shown only to the gift receiver; otherwise, everyone will be able to see them | [optional] [default to true]
+**IsSaved** | Pointer to **bool** | *Optional*. *True*, if the gift is displayed on the account&#39;s profile page; for gifts received on behalf of business accounts only | [optional] [default to true]
+**CanBeUpgraded** | Pointer to **bool** | *Optional*. *True*, if the gift can be upgraded to a unique gift; for gifts received on behalf of business accounts only | [optional] [default to true]
+**WasRefunded** | Pointer to **bool** | *Optional*. *True*, if the gift was refunded and isn&#39;t available anymore | [optional] [default to true]
 **ConvertStarCount** | Pointer to **int32** | *Optional*. Number of Telegram Stars that can be claimed by the receiver instead of the gift; omitted if the gift cannot be converted to Telegram Stars | [optional] 
 **PrepaidUpgradeStarCount** | Pointer to **int32** | *Optional*. Number of Telegram Stars that were paid by the sender for the ability to upgrade the gift | [optional] 
 

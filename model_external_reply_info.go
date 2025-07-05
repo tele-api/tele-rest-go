@@ -5,8 +5,8 @@
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.0.0
- *    * - **Modified**: 2025-07-02T07:03:19.642213517Z[Etc/UTC]
+ *    * - **Version**: 9.1.0
+ *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -73,6 +73,7 @@ type ExternalReplyInfo struct {
 	Voice *Voice `json:"voice,omitempty"`
 	// *Optional*. *True*, if the message media is covered by a spoiler animation
 	HasMediaSpoiler *bool `json:"has_media_spoiler,omitempty"`
+	Checklist *Checklist `json:"checklist,omitempty"`
 	Contact *Contact `json:"contact,omitempty"`
 	Dice *Dice `json:"dice,omitempty"`
 	Game *Game `json:"game,omitempty"`
@@ -594,6 +595,39 @@ func (o *ExternalReplyInfo) SetHasMediaSpoiler(v bool) {
 }
 
 
+// GetChecklist returns the Checklist field value if set, zero value otherwise.
+func (o *ExternalReplyInfo) GetChecklist() Checklist {
+	if o == nil || IsNil(o.Checklist) {
+		var ret Checklist
+		return ret
+	}
+	return *o.Checklist
+}
+
+// GetChecklistOk returns a tuple with the Checklist field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ExternalReplyInfo) GetChecklistOk() (*Checklist, bool) {
+	if o == nil || IsNil(o.Checklist) {
+		return nil, false
+	}
+	return o.Checklist, true
+}
+
+// HasChecklist returns a boolean if a field has been set.
+func (o *ExternalReplyInfo) HasChecklist() bool {
+	if o != nil && !IsNil(o.Checklist) {
+		return true
+	}
+
+	return false
+}
+
+// SetChecklist gets a reference to the given Checklist and assigns it to the Checklist field.
+func (o *ExternalReplyInfo) SetChecklist(v Checklist) {
+	o.Checklist = &v
+}
+
+
 // GetContact returns the Contact field value if set, zero value otherwise.
 func (o *ExternalReplyInfo) GetContact() Contact {
 	if o == nil || IsNil(o.Contact) {
@@ -943,6 +977,9 @@ func (o ExternalReplyInfo) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.HasMediaSpoiler) {
 		toSerialize["has_media_spoiler"] = o.HasMediaSpoiler
+	}
+	if !IsNil(o.Checklist) {
+		toSerialize["checklist"] = o.Checklist
 	}
 	if !IsNil(o.Contact) {
 		toSerialize["contact"] = o.Contact

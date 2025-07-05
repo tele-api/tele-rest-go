@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Query** | Pointer to **string** | *Optional*. The default inline query to be inserted in the input field. If left empty, only the bot&#39;s username will be inserted | [optional] 
-**AllowUserChats** | Pointer to **bool** | *Optional*. True, if private chats with users can be chosen | [optional] 
-**AllowBotChats** | Pointer to **bool** | *Optional*. True, if private chats with bots can be chosen | [optional] 
-**AllowGroupChats** | Pointer to **bool** | *Optional*. True, if group and supergroup chats can be chosen | [optional] 
-**AllowChannelChats** | Pointer to **bool** | *Optional*. True, if channel chats can be chosen | [optional] 
+**AllowUserChats** | Pointer to **bool** | *Optional*. *True*, if private chats with users can be chosen | [optional] 
+**AllowBotChats** | Pointer to **bool** | *Optional*. *True*, if private chats with bots can be chosen | [optional] 
+**AllowGroupChats** | Pointer to **bool** | *Optional*. *True*, if group and supergroup chats can be chosen | [optional] 
+**AllowChannelChats** | Pointer to **bool** | *Optional*. *True*, if channel chats can be chosen | [optional] 
 
 ## Methods
 

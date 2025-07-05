@@ -5,8 +5,8 @@
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.0.0
- *    * - **Modified**: 2025-07-02T07:03:19.642213517Z[Etc/UTC]
+ *    * - **Version**: 9.1.0
+ *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -62,7 +62,7 @@ type ChatMemberAdministrator struct {
 	CanBeEdited bool `json:"can_be_edited"`
 	// *True*, if the user's presence in the chat is hidden
 	IsAnonymous bool `json:"is_anonymous"`
-	// *True*, if the administrator can access the chat event log, get boost list, see hidden supergroup and channel members, report spam messages and ignore slow mode. Implied by any other administrator privilege.
+	// *True*, if the administrator can access the chat event log, get boost list, see hidden supergroup and channel members, report spam messages, ignore slow mode, and send messages to the chat without paying Telegram Stars. Implied by any other administrator privilege.
 	CanManageChat bool `json:"can_manage_chat"`
 	// *True*, if the administrator can delete messages of other users
 	CanDeleteMessages bool `json:"can_delete_messages"`
@@ -82,7 +82,7 @@ type ChatMemberAdministrator struct {
 	CanEditStories bool `json:"can_edit_stories"`
 	// *True*, if the administrator can delete stories posted by other users
 	CanDeleteStories bool `json:"can_delete_stories"`
-	// *Optional*. *True*, if the administrator can post messages in the channel, or access channel statistics; for channels only
+	// *Optional*. *True*, if the administrator can post messages in the channel, approve suggested posts, or access channel statistics; for channels only
 	CanPostMessages *bool `json:"can_post_messages,omitempty"`
 	// *Optional*. *True*, if the administrator can edit messages of other users and can pin messages; for channels only
 	CanEditMessages *bool `json:"can_edit_messages,omitempty"`

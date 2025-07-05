@@ -5,8 +5,8 @@
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.0.0
- *    * - **Modified**: 2025-07-02T07:03:19.642213517Z[Etc/UTC]
+ *    * - **Version**: 9.1.0
+ *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -67,13 +67,13 @@ type OwnedGiftRegular struct {
 	Text *string `json:"text,omitempty"`
 	// *Optional*. Special entities that appear in the text
 	Entities []MessageEntity `json:"entities,omitempty"`
-	// *Optional*. True, if the sender and gift text are shown only to the gift receiver; otherwise, everyone will be able to see them
+	// *Optional*. *True*, if the sender and gift text are shown only to the gift receiver; otherwise, everyone will be able to see them
 	IsPrivate *bool `json:"is_private,omitempty"`
-	// *Optional*. True, if the gift is displayed on the account's profile page; for gifts received on behalf of business accounts only
+	// *Optional*. *True*, if the gift is displayed on the account's profile page; for gifts received on behalf of business accounts only
 	IsSaved *bool `json:"is_saved,omitempty"`
-	// *Optional*. True, if the gift can be upgraded to a unique gift; for gifts received on behalf of business accounts only
+	// *Optional*. *True*, if the gift can be upgraded to a unique gift; for gifts received on behalf of business accounts only
 	CanBeUpgraded *bool `json:"can_be_upgraded,omitempty"`
-	// *Optional*. True, if the gift was refunded and isn't available anymore
+	// *Optional*. *True*, if the gift was refunded and isn't available anymore
 	WasRefunded *bool `json:"was_refunded,omitempty"`
 	// *Optional*. Number of Telegram Stars that can be claimed by the receiver instead of the gift; omitted if the gift cannot be converted to Telegram Stars
 	ConvertStarCount *int32 `json:"convert_star_count,omitempty"`

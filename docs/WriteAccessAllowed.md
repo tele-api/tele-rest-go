@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**FromRequest** | Pointer to **bool** | *Optional*. True, if the access was granted after the user accepted an explicit request from a Web App sent by the method [requestWriteAccess](https://core.telegram.org/bots/webapps#initializing-mini-apps) | [optional] 
+**FromRequest** | Pointer to **bool** | *Optional*. *True*, if the access was granted after the user accepted an explicit request from a Web App sent by the method [requestWriteAccess](https://core.telegram.org/bots/webapps#initializing-mini-apps) | [optional] 
 **WebAppName** | Pointer to **string** | *Optional*. Name of the Web App, if the access was granted when the Web App was launched from a link | [optional] 
-**FromAttachmentMenu** | Pointer to **bool** | *Optional*. True, if the access was granted when the bot was added to the attachment or side menu | [optional] 
+**FromAttachmentMenu** | Pointer to **bool** | *Optional*. *True*, if the access was granted when the bot was added to the attachment or side menu | [optional] 
 
 ## Methods
 

@@ -5,8 +5,8 @@
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.0.0
- *    * - **Modified**: 2025-07-02T07:03:19.642213517Z[Etc/UTC]
+ *    * - **Version**: 9.1.0
+ *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -55,13 +55,13 @@ var _ MappedNullable = &AcceptedGiftTypes{}
 
 // AcceptedGiftTypes This object describes the types of gifts that can be gifted to a user or a chat.
 type AcceptedGiftTypes struct {
-	// True, if unlimited regular gifts are accepted
+	// *True*, if unlimited regular gifts are accepted
 	UnlimitedGifts bool `json:"unlimited_gifts"`
-	// True, if limited regular gifts are accepted
+	// *True*, if limited regular gifts are accepted
 	LimitedGifts bool `json:"limited_gifts"`
-	// True, if unique gifts or gifts that can be upgraded to unique for free are accepted
+	// *True*, if unique gifts or gifts that can be upgraded to unique for free are accepted
 	UniqueGifts bool `json:"unique_gifts"`
-	// True, if a Telegram Premium subscription is accepted
+	// *True*, if a Telegram Premium subscription is accepted
 	PremiumSubscription bool `json:"premium_subscription"`
 }
 

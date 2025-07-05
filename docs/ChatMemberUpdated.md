@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **OldChatMember** | [**ChatMember**](ChatMember.md) |  | 
 **NewChatMember** | [**ChatMember**](ChatMember.md) |  | 
 **InviteLink** | Pointer to [**ChatInviteLink**](ChatInviteLink.md) |  | [optional] 
-**ViaJoinRequest** | Pointer to **bool** | *Optional*. True, if the user joined the chat after sending a direct join request without using an invite link and being approved by an administrator | [optional] 
-**ViaChatFolderInviteLink** | Pointer to **bool** | *Optional*. True, if the user joined the chat via a chat folder invite link | [optional] 
+**ViaJoinRequest** | Pointer to **bool** | *Optional*. *True*, if the user joined the chat after sending a direct join request without using an invite link and being approved by an administrator | [optional] 
+**ViaChatFolderInviteLink** | Pointer to **bool** | *Optional*. *True*, if the user joined the chat via a chat folder invite link | [optional] 
 
 ## Methods
 

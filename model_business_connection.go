@@ -5,8 +5,8 @@
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.0.0
- *    * - **Modified**: 2025-07-02T07:03:19.642213517Z[Etc/UTC]
+ *    * - **Version**: 9.1.0
+ *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -63,7 +63,7 @@ type BusinessConnection struct {
 	// Date the connection was established in Unix time
 	Date int32 `json:"date"`
 	Rights *BusinessBotRights `json:"rights,omitempty"`
-	// True, if the connection is active
+	// *True*, if the connection is active
 	IsEnabled bool `json:"is_enabled"`
 }
 

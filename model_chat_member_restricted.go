@@ -5,8 +5,8 @@
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.0.0
- *    * - **Modified**: 2025-07-02T07:03:19.642213517Z[Etc/UTC]
+ *    * - **Version**: 9.1.0
+ *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -74,7 +74,7 @@ type ChatMemberRestricted struct {
 	CanSendVideoNotes bool `json:"can_send_video_notes"`
 	// *True*, if the user is allowed to send voice notes
 	CanSendVoiceNotes bool `json:"can_send_voice_notes"`
-	// *True*, if the user is allowed to send polls
+	// *True*, if the user is allowed to send polls and checklists
 	CanSendPolls bool `json:"can_send_polls"`
 	// *True*, if the user is allowed to send animations, games, stickers and use inline bots
 	CanSendOtherMessages bool `json:"can_send_other_messages"`

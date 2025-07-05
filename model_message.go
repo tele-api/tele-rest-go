@@ -5,8 +5,8 @@
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.0.0
- *    * - **Modified**: 2025-07-02T07:03:19.642213517Z[Etc/UTC]
+ *    * - **Version**: 9.1.0
+ *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -83,7 +83,7 @@ type Message struct {
 	EditDate *int32 `json:"edit_date,omitempty"`
 	// *Optional*. *True*, if the message can't be forwarded
 	HasProtectedContent *bool `json:"has_protected_content,omitempty"`
-	// *Optional*. True, if the message was sent by an implicit action, for example, as an away or a greeting business message, or as a scheduled message
+	// *Optional*. *True*, if the message was sent by an implicit action, for example, as an away or a greeting business message, or as a scheduled message
 	IsFromOffline *bool `json:"is_from_offline,omitempty"`
 	// *Optional*. The unique identifier of a media message group this message belongs to
 	MediaGroupId *string `json:"media_group_id,omitempty"`
@@ -113,10 +113,11 @@ type Message struct {
 	Caption *string `json:"caption,omitempty"`
 	// *Optional*. For messages with a caption, special entities like usernames, URLs, bot commands, etc. that appear in the caption
 	CaptionEntities []MessageEntity `json:"caption_entities,omitempty"`
-	// *Optional*. True, if the caption must be shown above the message media
+	// *Optional*. *True*, if the caption must be shown above the message media
 	ShowCaptionAboveMedia *bool `json:"show_caption_above_media,omitempty"`
 	// *Optional*. *True*, if the message media is covered by a spoiler animation
 	HasMediaSpoiler *bool `json:"has_media_spoiler,omitempty"`
+	Checklist *Checklist `json:"checklist,omitempty"`
 	Contact *Contact `json:"contact,omitempty"`
 	Dice *Dice `json:"dice,omitempty"`
 	Game *Game `json:"game,omitempty"`
@@ -158,6 +159,9 @@ type Message struct {
 	ProximityAlertTriggered *ProximityAlertTriggered `json:"proximity_alert_triggered,omitempty"`
 	BoostAdded *ChatBoostAdded `json:"boost_added,omitempty"`
 	ChatBackgroundSet *ChatBackground `json:"chat_background_set,omitempty"`
+	ChecklistTasksDone *ChecklistTasksDone `json:"checklist_tasks_done,omitempty"`
+	ChecklistTasksAdded *ChecklistTasksAdded `json:"checklist_tasks_added,omitempty"`
+	DirectMessagePriceChanged *DirectMessagePriceChanged `json:"direct_message_price_changed,omitempty"`
 	ForumTopicCreated *ForumTopicCreated `json:"forum_topic_created,omitempty"`
 	ForumTopicEdited *ForumTopicEdited `json:"forum_topic_edited,omitempty"`
 	ForumTopicClosed interface{} `json:"forum_topic_closed,omitempty"`
@@ -1565,6 +1569,39 @@ func (o *Message) SetHasMediaSpoiler(v bool) {
 }
 
 
+// GetChecklist returns the Checklist field value if set, zero value otherwise.
+func (o *Message) GetChecklist() Checklist {
+	if o == nil || IsNil(o.Checklist) {
+		var ret Checklist
+		return ret
+	}
+	return *o.Checklist
+}
+
+// GetChecklistOk returns a tuple with the Checklist field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Message) GetChecklistOk() (*Checklist, bool) {
+	if o == nil || IsNil(o.Checklist) {
+		return nil, false
+	}
+	return o.Checklist, true
+}
+
+// HasChecklist returns a boolean if a field has been set.
+func (o *Message) HasChecklist() bool {
+	if o != nil && !IsNil(o.Checklist) {
+		return true
+	}
+
+	return false
+}
+
+// SetChecklist gets a reference to the given Checklist and assigns it to the Checklist field.
+func (o *Message) SetChecklist(v Checklist) {
+	o.Checklist = &v
+}
+
+
 // GetContact returns the Contact field value if set, zero value otherwise.
 func (o *Message) GetContact() Contact {
 	if o == nil || IsNil(o.Contact) {
@@ -2588,6 +2625,105 @@ func (o *Message) SetChatBackgroundSet(v ChatBackground) {
 }
 
 
+// GetChecklistTasksDone returns the ChecklistTasksDone field value if set, zero value otherwise.
+func (o *Message) GetChecklistTasksDone() ChecklistTasksDone {
+	if o == nil || IsNil(o.ChecklistTasksDone) {
+		var ret ChecklistTasksDone
+		return ret
+	}
+	return *o.ChecklistTasksDone
+}
+
+// GetChecklistTasksDoneOk returns a tuple with the ChecklistTasksDone field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Message) GetChecklistTasksDoneOk() (*ChecklistTasksDone, bool) {
+	if o == nil || IsNil(o.ChecklistTasksDone) {
+		return nil, false
+	}
+	return o.ChecklistTasksDone, true
+}
+
+// HasChecklistTasksDone returns a boolean if a field has been set.
+func (o *Message) HasChecklistTasksDone() bool {
+	if o != nil && !IsNil(o.ChecklistTasksDone) {
+		return true
+	}
+
+	return false
+}
+
+// SetChecklistTasksDone gets a reference to the given ChecklistTasksDone and assigns it to the ChecklistTasksDone field.
+func (o *Message) SetChecklistTasksDone(v ChecklistTasksDone) {
+	o.ChecklistTasksDone = &v
+}
+
+
+// GetChecklistTasksAdded returns the ChecklistTasksAdded field value if set, zero value otherwise.
+func (o *Message) GetChecklistTasksAdded() ChecklistTasksAdded {
+	if o == nil || IsNil(o.ChecklistTasksAdded) {
+		var ret ChecklistTasksAdded
+		return ret
+	}
+	return *o.ChecklistTasksAdded
+}
+
+// GetChecklistTasksAddedOk returns a tuple with the ChecklistTasksAdded field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Message) GetChecklistTasksAddedOk() (*ChecklistTasksAdded, bool) {
+	if o == nil || IsNil(o.ChecklistTasksAdded) {
+		return nil, false
+	}
+	return o.ChecklistTasksAdded, true
+}
+
+// HasChecklistTasksAdded returns a boolean if a field has been set.
+func (o *Message) HasChecklistTasksAdded() bool {
+	if o != nil && !IsNil(o.ChecklistTasksAdded) {
+		return true
+	}
+
+	return false
+}
+
+// SetChecklistTasksAdded gets a reference to the given ChecklistTasksAdded and assigns it to the ChecklistTasksAdded field.
+func (o *Message) SetChecklistTasksAdded(v ChecklistTasksAdded) {
+	o.ChecklistTasksAdded = &v
+}
+
+
+// GetDirectMessagePriceChanged returns the DirectMessagePriceChanged field value if set, zero value otherwise.
+func (o *Message) GetDirectMessagePriceChanged() DirectMessagePriceChanged {
+	if o == nil || IsNil(o.DirectMessagePriceChanged) {
+		var ret DirectMessagePriceChanged
+		return ret
+	}
+	return *o.DirectMessagePriceChanged
+}
+
+// GetDirectMessagePriceChangedOk returns a tuple with the DirectMessagePriceChanged field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Message) GetDirectMessagePriceChangedOk() (*DirectMessagePriceChanged, bool) {
+	if o == nil || IsNil(o.DirectMessagePriceChanged) {
+		return nil, false
+	}
+	return o.DirectMessagePriceChanged, true
+}
+
+// HasDirectMessagePriceChanged returns a boolean if a field has been set.
+func (o *Message) HasDirectMessagePriceChanged() bool {
+	if o != nil && !IsNil(o.DirectMessagePriceChanged) {
+		return true
+	}
+
+	return false
+}
+
+// SetDirectMessagePriceChanged gets a reference to the given DirectMessagePriceChanged and assigns it to the DirectMessagePriceChanged field.
+func (o *Message) SetDirectMessagePriceChanged(v DirectMessagePriceChanged) {
+	o.DirectMessagePriceChanged = &v
+}
+
+
 // GetForumTopicCreated returns the ForumTopicCreated field value if set, zero value otherwise.
 func (o *Message) GetForumTopicCreated() ForumTopicCreated {
 	if o == nil || IsNil(o.ForumTopicCreated) {
@@ -3281,6 +3417,9 @@ func (o Message) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.HasMediaSpoiler) {
 		toSerialize["has_media_spoiler"] = o.HasMediaSpoiler
 	}
+	if !IsNil(o.Checklist) {
+		toSerialize["checklist"] = o.Checklist
+	}
 	if !IsNil(o.Contact) {
 		toSerialize["contact"] = o.Contact
 	}
@@ -3373,6 +3512,15 @@ func (o Message) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ChatBackgroundSet) {
 		toSerialize["chat_background_set"] = o.ChatBackgroundSet
+	}
+	if !IsNil(o.ChecklistTasksDone) {
+		toSerialize["checklist_tasks_done"] = o.ChecklistTasksDone
+	}
+	if !IsNil(o.ChecklistTasksAdded) {
+		toSerialize["checklist_tasks_added"] = o.ChecklistTasksAdded
+	}
+	if !IsNil(o.DirectMessagePriceChanged) {
+		toSerialize["direct_message_price_changed"] = o.DirectMessagePriceChanged
 	}
 	if !IsNil(o.ForumTopicCreated) {
 		toSerialize["forum_topic_created"] = o.ForumTopicCreated

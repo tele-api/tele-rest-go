@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **CanSendVideos** | Pointer to **bool** | *Optional*. *True*, if the user is allowed to send videos | [optional] 
 **CanSendVideoNotes** | Pointer to **bool** | *Optional*. *True*, if the user is allowed to send video notes | [optional] 
 **CanSendVoiceNotes** | Pointer to **bool** | *Optional*. *True*, if the user is allowed to send voice notes | [optional] 
-**CanSendPolls** | Pointer to **bool** | *Optional*. *True*, if the user is allowed to send polls | [optional] 
+**CanSendPolls** | Pointer to **bool** | *Optional*. *True*, if the user is allowed to send polls and checklists | [optional] 
 **CanSendOtherMessages** | Pointer to **bool** | *Optional*. *True*, if the user is allowed to send animations, games, stickers and use inline bots | [optional] 
 **CanAddWebPagePreviews** | Pointer to **bool** | *Optional*. *True*, if the user is allowed to add web page previews to their messages | [optional] 
 **CanChangeInfo** | Pointer to **bool** | *Optional*. *True*, if the user is allowed to change the chat title, photo and other settings. Ignored in public supergroups | [optional] 

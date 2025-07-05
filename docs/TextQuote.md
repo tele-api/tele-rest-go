@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Text** | **string** | Text of the quoted part of a message that is replied to by the given message | 
 **Entities** | Pointer to [**[]MessageEntity**](MessageEntity.md) | *Optional*. Special entities that appear in the quote. Currently, only *bold*, *italic*, *underline*, *strikethrough*, *spoiler*, and *custom\\_emoji* entities are kept in quotes. | [optional] 
 **Position** | **int32** | Approximate quote position in the original message in UTF-16 code units as specified by the sender | 
-**IsManual** | Pointer to **bool** | *Optional*. True, if the quote was chosen manually by the message sender. Otherwise, the quote was added automatically by the server. | [optional] [default to true]
+**IsManual** | Pointer to **bool** | *Optional*. *True*, if the quote was chosen manually by the message sender. Otherwise, the quote was added automatically by the server. | [optional] [default to true]
 
 ## Methods
 

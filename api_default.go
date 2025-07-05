@@ -5,8 +5,8 @@
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.0.0
- *    * - **Modified**: 2025-07-02T07:03:19.642213517Z[Etc/UTC]
+ *    * - **Version**: 9.1.0
+ *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -66,8 +66,8 @@ type DefaultAPI interface {
 	PostAddStickerToSet(ctx context.Context) ApiPostAddStickerToSetRequest
 
 	// PostAddStickerToSetExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostAddStickerToSetExecute(r ApiPostAddStickerToSetRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return AddStickerToSetResponse
+	PostAddStickerToSetExecute(r ApiPostAddStickerToSetRequest) (*AddStickerToSetResponse, *http.Response, error)
 
 	/*
 	PostAnswerCallbackQuery answerCallbackQuery
@@ -82,8 +82,8 @@ Alternatively, the user can be redirected to the specified Game URL. For this op
 	PostAnswerCallbackQuery(ctx context.Context) ApiPostAnswerCallbackQueryRequest
 
 	// PostAnswerCallbackQueryExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostAnswerCallbackQueryExecute(r ApiPostAnswerCallbackQueryRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return AnswerCallbackQueryResponse
+	PostAnswerCallbackQueryExecute(r ApiPostAnswerCallbackQueryRequest) (*AnswerCallbackQueryResponse, *http.Response, error)
 
 	/*
 	PostAnswerInlineQuery answerInlineQuery
@@ -97,8 +97,8 @@ No more than **50** results per query are allowed.
 	PostAnswerInlineQuery(ctx context.Context) ApiPostAnswerInlineQueryRequest
 
 	// PostAnswerInlineQueryExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostAnswerInlineQueryExecute(r ApiPostAnswerInlineQueryRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return AnswerInlineQueryResponse
+	PostAnswerInlineQueryExecute(r ApiPostAnswerInlineQueryRequest) (*AnswerInlineQueryResponse, *http.Response, error)
 
 	/*
 	PostAnswerPreCheckoutQuery answerPreCheckoutQuery
@@ -111,8 +111,8 @@ No more than **50** results per query are allowed.
 	PostAnswerPreCheckoutQuery(ctx context.Context) ApiPostAnswerPreCheckoutQueryRequest
 
 	// PostAnswerPreCheckoutQueryExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostAnswerPreCheckoutQueryExecute(r ApiPostAnswerPreCheckoutQueryRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return AnswerPreCheckoutQueryResponse
+	PostAnswerPreCheckoutQueryExecute(r ApiPostAnswerPreCheckoutQueryRequest) (*AnswerPreCheckoutQueryResponse, *http.Response, error)
 
 	/*
 	PostAnswerShippingQuery answerShippingQuery
@@ -125,8 +125,8 @@ No more than **50** results per query are allowed.
 	PostAnswerShippingQuery(ctx context.Context) ApiPostAnswerShippingQueryRequest
 
 	// PostAnswerShippingQueryExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostAnswerShippingQueryExecute(r ApiPostAnswerShippingQueryRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return AnswerShippingQueryResponse
+	PostAnswerShippingQueryExecute(r ApiPostAnswerShippingQueryRequest) (*AnswerShippingQueryResponse, *http.Response, error)
 
 	/*
 	PostAnswerWebAppQuery answerWebAppQuery
@@ -139,8 +139,8 @@ No more than **50** results per query are allowed.
 	PostAnswerWebAppQuery(ctx context.Context) ApiPostAnswerWebAppQueryRequest
 
 	// PostAnswerWebAppQueryExecute executes the request
-	//  @return PostAnswerWebAppQuery200Response
-	PostAnswerWebAppQueryExecute(r ApiPostAnswerWebAppQueryRequest) (*PostAnswerWebAppQuery200Response, *http.Response, error)
+	//  @return AnswerWebAppQueryResponse
+	PostAnswerWebAppQueryExecute(r ApiPostAnswerWebAppQueryRequest) (*AnswerWebAppQueryResponse, *http.Response, error)
 
 	/*
 	PostApproveChatJoinRequest approveChatJoinRequest
@@ -153,8 +153,8 @@ No more than **50** results per query are allowed.
 	PostApproveChatJoinRequest(ctx context.Context) ApiPostApproveChatJoinRequestRequest
 
 	// PostApproveChatJoinRequestExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostApproveChatJoinRequestExecute(r ApiPostApproveChatJoinRequestRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return ApproveChatJoinRequestResponse
+	PostApproveChatJoinRequestExecute(r ApiPostApproveChatJoinRequestRequest) (*ApproveChatJoinRequestResponse, *http.Response, error)
 
 	/*
 	PostBanChatMember banChatMember
@@ -167,8 +167,8 @@ No more than **50** results per query are allowed.
 	PostBanChatMember(ctx context.Context) ApiPostBanChatMemberRequest
 
 	// PostBanChatMemberExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostBanChatMemberExecute(r ApiPostBanChatMemberRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return BanChatMemberResponse
+	PostBanChatMemberExecute(r ApiPostBanChatMemberRequest) (*BanChatMemberResponse, *http.Response, error)
 
 	/*
 	PostBanChatSenderChat banChatSenderChat
@@ -181,8 +181,8 @@ No more than **50** results per query are allowed.
 	PostBanChatSenderChat(ctx context.Context) ApiPostBanChatSenderChatRequest
 
 	// PostBanChatSenderChatExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostBanChatSenderChatExecute(r ApiPostBanChatSenderChatRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return BanChatSenderChatResponse
+	PostBanChatSenderChatExecute(r ApiPostBanChatSenderChatRequest) (*BanChatSenderChatResponse, *http.Response, error)
 
 	/*
 	PostClose close
@@ -195,8 +195,8 @@ No more than **50** results per query are allowed.
 	PostClose(ctx context.Context) ApiPostCloseRequest
 
 	// PostCloseExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostCloseExecute(r ApiPostCloseRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return CloseResponse
+	PostCloseExecute(r ApiPostCloseRequest) (*CloseResponse, *http.Response, error)
 
 	/*
 	PostCloseForumTopic closeForumTopic
@@ -209,8 +209,8 @@ No more than **50** results per query are allowed.
 	PostCloseForumTopic(ctx context.Context) ApiPostCloseForumTopicRequest
 
 	// PostCloseForumTopicExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostCloseForumTopicExecute(r ApiPostCloseForumTopicRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return CloseForumTopicResponse
+	PostCloseForumTopicExecute(r ApiPostCloseForumTopicRequest) (*CloseForumTopicResponse, *http.Response, error)
 
 	/*
 	PostCloseGeneralForumTopic closeGeneralForumTopic
@@ -223,8 +223,8 @@ No more than **50** results per query are allowed.
 	PostCloseGeneralForumTopic(ctx context.Context) ApiPostCloseGeneralForumTopicRequest
 
 	// PostCloseGeneralForumTopicExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostCloseGeneralForumTopicExecute(r ApiPostCloseGeneralForumTopicRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return CloseGeneralForumTopicResponse
+	PostCloseGeneralForumTopicExecute(r ApiPostCloseGeneralForumTopicRequest) (*CloseGeneralForumTopicResponse, *http.Response, error)
 
 	/*
 	PostConvertGiftToStars convertGiftToStars
@@ -237,8 +237,8 @@ No more than **50** results per query are allowed.
 	PostConvertGiftToStars(ctx context.Context) ApiPostConvertGiftToStarsRequest
 
 	// PostConvertGiftToStarsExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostConvertGiftToStarsExecute(r ApiPostConvertGiftToStarsRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return ConvertGiftToStarsResponse
+	PostConvertGiftToStarsExecute(r ApiPostConvertGiftToStarsRequest) (*ConvertGiftToStarsResponse, *http.Response, error)
 
 	/*
 	PostCopyMessage copyMessage
@@ -251,8 +251,8 @@ No more than **50** results per query are allowed.
 	PostCopyMessage(ctx context.Context) ApiPostCopyMessageRequest
 
 	// PostCopyMessageExecute executes the request
-	//  @return PostCopyMessage200Response
-	PostCopyMessageExecute(r ApiPostCopyMessageRequest) (*PostCopyMessage200Response, *http.Response, error)
+	//  @return CopyMessageResponse
+	PostCopyMessageExecute(r ApiPostCopyMessageRequest) (*CopyMessageResponse, *http.Response, error)
 
 	/*
 	PostCopyMessages copyMessages
@@ -265,8 +265,8 @@ No more than **50** results per query are allowed.
 	PostCopyMessages(ctx context.Context) ApiPostCopyMessagesRequest
 
 	// PostCopyMessagesExecute executes the request
-	//  @return PostForwardMessages200Response
-	PostCopyMessagesExecute(r ApiPostCopyMessagesRequest) (*PostForwardMessages200Response, *http.Response, error)
+	//  @return CopyMessagesResponse
+	PostCopyMessagesExecute(r ApiPostCopyMessagesRequest) (*CopyMessagesResponse, *http.Response, error)
 
 	/*
 	PostCreateChatInviteLink createChatInviteLink
@@ -279,8 +279,8 @@ No more than **50** results per query are allowed.
 	PostCreateChatInviteLink(ctx context.Context) ApiPostCreateChatInviteLinkRequest
 
 	// PostCreateChatInviteLinkExecute executes the request
-	//  @return PostCreateChatInviteLink200Response
-	PostCreateChatInviteLinkExecute(r ApiPostCreateChatInviteLinkRequest) (*PostCreateChatInviteLink200Response, *http.Response, error)
+	//  @return CreateChatInviteLinkResponse
+	PostCreateChatInviteLinkExecute(r ApiPostCreateChatInviteLinkRequest) (*CreateChatInviteLinkResponse, *http.Response, error)
 
 	/*
 	PostCreateChatSubscriptionInviteLink createChatSubscriptionInviteLink
@@ -293,8 +293,8 @@ No more than **50** results per query are allowed.
 	PostCreateChatSubscriptionInviteLink(ctx context.Context) ApiPostCreateChatSubscriptionInviteLinkRequest
 
 	// PostCreateChatSubscriptionInviteLinkExecute executes the request
-	//  @return PostCreateChatInviteLink200Response
-	PostCreateChatSubscriptionInviteLinkExecute(r ApiPostCreateChatSubscriptionInviteLinkRequest) (*PostCreateChatInviteLink200Response, *http.Response, error)
+	//  @return CreateChatSubscriptionInviteLinkResponse
+	PostCreateChatSubscriptionInviteLinkExecute(r ApiPostCreateChatSubscriptionInviteLinkRequest) (*CreateChatSubscriptionInviteLinkResponse, *http.Response, error)
 
 	/*
 	PostCreateForumTopic createForumTopic
@@ -307,8 +307,8 @@ No more than **50** results per query are allowed.
 	PostCreateForumTopic(ctx context.Context) ApiPostCreateForumTopicRequest
 
 	// PostCreateForumTopicExecute executes the request
-	//  @return PostCreateForumTopic200Response
-	PostCreateForumTopicExecute(r ApiPostCreateForumTopicRequest) (*PostCreateForumTopic200Response, *http.Response, error)
+	//  @return CreateForumTopicResponse
+	PostCreateForumTopicExecute(r ApiPostCreateForumTopicRequest) (*CreateForumTopicResponse, *http.Response, error)
 
 	/*
 	PostCreateInvoiceLink createInvoiceLink
@@ -321,8 +321,8 @@ No more than **50** results per query are allowed.
 	PostCreateInvoiceLink(ctx context.Context) ApiPostCreateInvoiceLinkRequest
 
 	// PostCreateInvoiceLinkExecute executes the request
-	//  @return PostExportChatInviteLink200Response
-	PostCreateInvoiceLinkExecute(r ApiPostCreateInvoiceLinkRequest) (*PostExportChatInviteLink200Response, *http.Response, error)
+	//  @return CreateInvoiceLinkResponse
+	PostCreateInvoiceLinkExecute(r ApiPostCreateInvoiceLinkRequest) (*CreateInvoiceLinkResponse, *http.Response, error)
 
 	/*
 	PostCreateNewStickerSet createNewStickerSet
@@ -335,8 +335,8 @@ No more than **50** results per query are allowed.
 	PostCreateNewStickerSet(ctx context.Context) ApiPostCreateNewStickerSetRequest
 
 	// PostCreateNewStickerSetExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostCreateNewStickerSetExecute(r ApiPostCreateNewStickerSetRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return CreateNewStickerSetResponse
+	PostCreateNewStickerSetExecute(r ApiPostCreateNewStickerSetRequest) (*CreateNewStickerSetResponse, *http.Response, error)
 
 	/*
 	PostDeclineChatJoinRequest declineChatJoinRequest
@@ -349,8 +349,8 @@ No more than **50** results per query are allowed.
 	PostDeclineChatJoinRequest(ctx context.Context) ApiPostDeclineChatJoinRequestRequest
 
 	// PostDeclineChatJoinRequestExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostDeclineChatJoinRequestExecute(r ApiPostDeclineChatJoinRequestRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return DeclineChatJoinRequestResponse
+	PostDeclineChatJoinRequestExecute(r ApiPostDeclineChatJoinRequestRequest) (*DeclineChatJoinRequestResponse, *http.Response, error)
 
 	/*
 	PostDeleteBusinessMessages deleteBusinessMessages
@@ -363,8 +363,8 @@ No more than **50** results per query are allowed.
 	PostDeleteBusinessMessages(ctx context.Context) ApiPostDeleteBusinessMessagesRequest
 
 	// PostDeleteBusinessMessagesExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostDeleteBusinessMessagesExecute(r ApiPostDeleteBusinessMessagesRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return DeleteBusinessMessagesResponse
+	PostDeleteBusinessMessagesExecute(r ApiPostDeleteBusinessMessagesRequest) (*DeleteBusinessMessagesResponse, *http.Response, error)
 
 	/*
 	PostDeleteChatPhoto deleteChatPhoto
@@ -377,8 +377,8 @@ No more than **50** results per query are allowed.
 	PostDeleteChatPhoto(ctx context.Context) ApiPostDeleteChatPhotoRequest
 
 	// PostDeleteChatPhotoExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostDeleteChatPhotoExecute(r ApiPostDeleteChatPhotoRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return DeleteChatPhotoResponse
+	PostDeleteChatPhotoExecute(r ApiPostDeleteChatPhotoRequest) (*DeleteChatPhotoResponse, *http.Response, error)
 
 	/*
 	PostDeleteChatStickerSet deleteChatStickerSet
@@ -391,8 +391,8 @@ No more than **50** results per query are allowed.
 	PostDeleteChatStickerSet(ctx context.Context) ApiPostDeleteChatStickerSetRequest
 
 	// PostDeleteChatStickerSetExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostDeleteChatStickerSetExecute(r ApiPostDeleteChatStickerSetRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return DeleteChatStickerSetResponse
+	PostDeleteChatStickerSetExecute(r ApiPostDeleteChatStickerSetRequest) (*DeleteChatStickerSetResponse, *http.Response, error)
 
 	/*
 	PostDeleteForumTopic deleteForumTopic
@@ -405,8 +405,8 @@ No more than **50** results per query are allowed.
 	PostDeleteForumTopic(ctx context.Context) ApiPostDeleteForumTopicRequest
 
 	// PostDeleteForumTopicExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostDeleteForumTopicExecute(r ApiPostDeleteForumTopicRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return DeleteForumTopicResponse
+	PostDeleteForumTopicExecute(r ApiPostDeleteForumTopicRequest) (*DeleteForumTopicResponse, *http.Response, error)
 
 	/*
 	PostDeleteMessage deleteMessage
@@ -428,8 +428,8 @@ Returns *True* on success.
 	PostDeleteMessage(ctx context.Context) ApiPostDeleteMessageRequest
 
 	// PostDeleteMessageExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostDeleteMessageExecute(r ApiPostDeleteMessageRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return DeleteMessageResponse
+	PostDeleteMessageExecute(r ApiPostDeleteMessageRequest) (*DeleteMessageResponse, *http.Response, error)
 
 	/*
 	PostDeleteMessages deleteMessages
@@ -442,8 +442,8 @@ Returns *True* on success.
 	PostDeleteMessages(ctx context.Context) ApiPostDeleteMessagesRequest
 
 	// PostDeleteMessagesExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostDeleteMessagesExecute(r ApiPostDeleteMessagesRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return DeleteMessagesResponse
+	PostDeleteMessagesExecute(r ApiPostDeleteMessagesRequest) (*DeleteMessagesResponse, *http.Response, error)
 
 	/*
 	PostDeleteMyCommands deleteMyCommands
@@ -456,8 +456,8 @@ Returns *True* on success.
 	PostDeleteMyCommands(ctx context.Context) ApiPostDeleteMyCommandsRequest
 
 	// PostDeleteMyCommandsExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostDeleteMyCommandsExecute(r ApiPostDeleteMyCommandsRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return DeleteMyCommandsResponse
+	PostDeleteMyCommandsExecute(r ApiPostDeleteMyCommandsRequest) (*DeleteMyCommandsResponse, *http.Response, error)
 
 	/*
 	PostDeleteStickerFromSet deleteStickerFromSet
@@ -470,8 +470,8 @@ Returns *True* on success.
 	PostDeleteStickerFromSet(ctx context.Context) ApiPostDeleteStickerFromSetRequest
 
 	// PostDeleteStickerFromSetExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostDeleteStickerFromSetExecute(r ApiPostDeleteStickerFromSetRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return DeleteStickerFromSetResponse
+	PostDeleteStickerFromSetExecute(r ApiPostDeleteStickerFromSetRequest) (*DeleteStickerFromSetResponse, *http.Response, error)
 
 	/*
 	PostDeleteStickerSet deleteStickerSet
@@ -484,8 +484,8 @@ Returns *True* on success.
 	PostDeleteStickerSet(ctx context.Context) ApiPostDeleteStickerSetRequest
 
 	// PostDeleteStickerSetExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostDeleteStickerSetExecute(r ApiPostDeleteStickerSetRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return DeleteStickerSetResponse
+	PostDeleteStickerSetExecute(r ApiPostDeleteStickerSetRequest) (*DeleteStickerSetResponse, *http.Response, error)
 
 	/*
 	PostDeleteStory deleteStory
@@ -498,8 +498,8 @@ Returns *True* on success.
 	PostDeleteStory(ctx context.Context) ApiPostDeleteStoryRequest
 
 	// PostDeleteStoryExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostDeleteStoryExecute(r ApiPostDeleteStoryRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return DeleteStoryResponse
+	PostDeleteStoryExecute(r ApiPostDeleteStoryRequest) (*DeleteStoryResponse, *http.Response, error)
 
 	/*
 	PostDeleteWebhook deleteWebhook
@@ -512,8 +512,8 @@ Returns *True* on success.
 	PostDeleteWebhook(ctx context.Context) ApiPostDeleteWebhookRequest
 
 	// PostDeleteWebhookExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostDeleteWebhookExecute(r ApiPostDeleteWebhookRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return DeleteWebhookResponse
+	PostDeleteWebhookExecute(r ApiPostDeleteWebhookRequest) (*DeleteWebhookResponse, *http.Response, error)
 
 	/*
 	PostEditChatInviteLink editChatInviteLink
@@ -526,8 +526,8 @@ Returns *True* on success.
 	PostEditChatInviteLink(ctx context.Context) ApiPostEditChatInviteLinkRequest
 
 	// PostEditChatInviteLinkExecute executes the request
-	//  @return PostCreateChatInviteLink200Response
-	PostEditChatInviteLinkExecute(r ApiPostEditChatInviteLinkRequest) (*PostCreateChatInviteLink200Response, *http.Response, error)
+	//  @return EditChatInviteLinkResponse
+	PostEditChatInviteLinkExecute(r ApiPostEditChatInviteLinkRequest) (*EditChatInviteLinkResponse, *http.Response, error)
 
 	/*
 	PostEditChatSubscriptionInviteLink editChatSubscriptionInviteLink
@@ -540,8 +540,8 @@ Returns *True* on success.
 	PostEditChatSubscriptionInviteLink(ctx context.Context) ApiPostEditChatSubscriptionInviteLinkRequest
 
 	// PostEditChatSubscriptionInviteLinkExecute executes the request
-	//  @return PostCreateChatInviteLink200Response
-	PostEditChatSubscriptionInviteLinkExecute(r ApiPostEditChatSubscriptionInviteLinkRequest) (*PostCreateChatInviteLink200Response, *http.Response, error)
+	//  @return EditChatSubscriptionInviteLinkResponse
+	PostEditChatSubscriptionInviteLinkExecute(r ApiPostEditChatSubscriptionInviteLinkRequest) (*EditChatSubscriptionInviteLinkResponse, *http.Response, error)
 
 	/*
 	PostEditForumTopic editForumTopic
@@ -554,8 +554,8 @@ Returns *True* on success.
 	PostEditForumTopic(ctx context.Context) ApiPostEditForumTopicRequest
 
 	// PostEditForumTopicExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostEditForumTopicExecute(r ApiPostEditForumTopicRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return EditForumTopicResponse
+	PostEditForumTopicExecute(r ApiPostEditForumTopicRequest) (*EditForumTopicResponse, *http.Response, error)
 
 	/*
 	PostEditGeneralForumTopic editGeneralForumTopic
@@ -568,8 +568,8 @@ Returns *True* on success.
 	PostEditGeneralForumTopic(ctx context.Context) ApiPostEditGeneralForumTopicRequest
 
 	// PostEditGeneralForumTopicExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostEditGeneralForumTopicExecute(r ApiPostEditGeneralForumTopicRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return EditGeneralForumTopicResponse
+	PostEditGeneralForumTopicExecute(r ApiPostEditGeneralForumTopicRequest) (*EditGeneralForumTopicResponse, *http.Response, error)
 
 	/*
 	PostEditMessageCaption editMessageCaption
@@ -582,8 +582,22 @@ Returns *True* on success.
 	PostEditMessageCaption(ctx context.Context) ApiPostEditMessageCaptionRequest
 
 	// PostEditMessageCaptionExecute executes the request
-	//  @return PostEditMessageText200Response
-	PostEditMessageCaptionExecute(r ApiPostEditMessageCaptionRequest) (*PostEditMessageText200Response, *http.Response, error)
+	//  @return EditMessageCaptionResponse
+	PostEditMessageCaptionExecute(r ApiPostEditMessageCaptionRequest) (*EditMessageCaptionResponse, *http.Response, error)
+
+	/*
+	PostEditMessageChecklist editMessageChecklist
+
+	Use this method to edit a checklist on behalf of a connected business account. On success, the edited [Message](https://core.telegram.org/bots/api/#message) is returned.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostEditMessageChecklistRequest
+	*/
+	PostEditMessageChecklist(ctx context.Context) ApiPostEditMessageChecklistRequest
+
+	// PostEditMessageChecklistExecute executes the request
+	//  @return EditMessageChecklistResponse
+	PostEditMessageChecklistExecute(r ApiPostEditMessageChecklistRequest) (*EditMessageChecklistResponse, *http.Response, error)
 
 	/*
 	PostEditMessageLiveLocation editMessageLiveLocation
@@ -596,8 +610,8 @@ Returns *True* on success.
 	PostEditMessageLiveLocation(ctx context.Context) ApiPostEditMessageLiveLocationRequest
 
 	// PostEditMessageLiveLocationExecute executes the request
-	//  @return PostEditMessageText200Response
-	PostEditMessageLiveLocationExecute(r ApiPostEditMessageLiveLocationRequest) (*PostEditMessageText200Response, *http.Response, error)
+	//  @return EditMessageLiveLocationResponse
+	PostEditMessageLiveLocationExecute(r ApiPostEditMessageLiveLocationRequest) (*EditMessageLiveLocationResponse, *http.Response, error)
 
 	/*
 	PostEditMessageMedia editMessageMedia
@@ -610,8 +624,8 @@ Returns *True* on success.
 	PostEditMessageMedia(ctx context.Context) ApiPostEditMessageMediaRequest
 
 	// PostEditMessageMediaExecute executes the request
-	//  @return PostEditMessageText200Response
-	PostEditMessageMediaExecute(r ApiPostEditMessageMediaRequest) (*PostEditMessageText200Response, *http.Response, error)
+	//  @return EditMessageMediaResponse
+	PostEditMessageMediaExecute(r ApiPostEditMessageMediaRequest) (*EditMessageMediaResponse, *http.Response, error)
 
 	/*
 	PostEditMessageReplyMarkup editMessageReplyMarkup
@@ -624,8 +638,8 @@ Returns *True* on success.
 	PostEditMessageReplyMarkup(ctx context.Context) ApiPostEditMessageReplyMarkupRequest
 
 	// PostEditMessageReplyMarkupExecute executes the request
-	//  @return PostEditMessageText200Response
-	PostEditMessageReplyMarkupExecute(r ApiPostEditMessageReplyMarkupRequest) (*PostEditMessageText200Response, *http.Response, error)
+	//  @return EditMessageReplyMarkupResponse
+	PostEditMessageReplyMarkupExecute(r ApiPostEditMessageReplyMarkupRequest) (*EditMessageReplyMarkupResponse, *http.Response, error)
 
 	/*
 	PostEditMessageText editMessageText
@@ -638,8 +652,8 @@ Returns *True* on success.
 	PostEditMessageText(ctx context.Context) ApiPostEditMessageTextRequest
 
 	// PostEditMessageTextExecute executes the request
-	//  @return PostEditMessageText200Response
-	PostEditMessageTextExecute(r ApiPostEditMessageTextRequest) (*PostEditMessageText200Response, *http.Response, error)
+	//  @return EditMessageTextResponse
+	PostEditMessageTextExecute(r ApiPostEditMessageTextRequest) (*EditMessageTextResponse, *http.Response, error)
 
 	/*
 	PostEditStory editStory
@@ -652,8 +666,8 @@ Returns *True* on success.
 	PostEditStory(ctx context.Context) ApiPostEditStoryRequest
 
 	// PostEditStoryExecute executes the request
-	//  @return PostPostStory200Response
-	PostEditStoryExecute(r ApiPostEditStoryRequest) (*PostPostStory200Response, *http.Response, error)
+	//  @return EditStoryResponse
+	PostEditStoryExecute(r ApiPostEditStoryRequest) (*EditStoryResponse, *http.Response, error)
 
 	/*
 	PostEditUserStarSubscription editUserStarSubscription
@@ -666,8 +680,8 @@ Returns *True* on success.
 	PostEditUserStarSubscription(ctx context.Context) ApiPostEditUserStarSubscriptionRequest
 
 	// PostEditUserStarSubscriptionExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostEditUserStarSubscriptionExecute(r ApiPostEditUserStarSubscriptionRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return EditUserStarSubscriptionResponse
+	PostEditUserStarSubscriptionExecute(r ApiPostEditUserStarSubscriptionRequest) (*EditUserStarSubscriptionResponse, *http.Response, error)
 
 	/*
 	PostExportChatInviteLink exportChatInviteLink
@@ -680,8 +694,8 @@ Returns *True* on success.
 	PostExportChatInviteLink(ctx context.Context) ApiPostExportChatInviteLinkRequest
 
 	// PostExportChatInviteLinkExecute executes the request
-	//  @return PostExportChatInviteLink200Response
-	PostExportChatInviteLinkExecute(r ApiPostExportChatInviteLinkRequest) (*PostExportChatInviteLink200Response, *http.Response, error)
+	//  @return ExportChatInviteLinkResponse
+	PostExportChatInviteLinkExecute(r ApiPostExportChatInviteLinkRequest) (*ExportChatInviteLinkResponse, *http.Response, error)
 
 	/*
 	PostForwardMessage forwardMessage
@@ -694,8 +708,8 @@ Returns *True* on success.
 	PostForwardMessage(ctx context.Context) ApiPostForwardMessageRequest
 
 	// PostForwardMessageExecute executes the request
-	//  @return PostSendMessage200Response
-	PostForwardMessageExecute(r ApiPostForwardMessageRequest) (*PostSendMessage200Response, *http.Response, error)
+	//  @return ForwardMessageResponse
+	PostForwardMessageExecute(r ApiPostForwardMessageRequest) (*ForwardMessageResponse, *http.Response, error)
 
 	/*
 	PostForwardMessages forwardMessages
@@ -708,8 +722,8 @@ Returns *True* on success.
 	PostForwardMessages(ctx context.Context) ApiPostForwardMessagesRequest
 
 	// PostForwardMessagesExecute executes the request
-	//  @return PostForwardMessages200Response
-	PostForwardMessagesExecute(r ApiPostForwardMessagesRequest) (*PostForwardMessages200Response, *http.Response, error)
+	//  @return ForwardMessagesResponse
+	PostForwardMessagesExecute(r ApiPostForwardMessagesRequest) (*ForwardMessagesResponse, *http.Response, error)
 
 	/*
 	PostGetAvailableGifts getAvailableGifts
@@ -722,8 +736,8 @@ Returns *True* on success.
 	PostGetAvailableGifts(ctx context.Context) ApiPostGetAvailableGiftsRequest
 
 	// PostGetAvailableGiftsExecute executes the request
-	//  @return PostGetAvailableGifts200Response
-	PostGetAvailableGiftsExecute(r ApiPostGetAvailableGiftsRequest) (*PostGetAvailableGifts200Response, *http.Response, error)
+	//  @return GetAvailableGiftsResponse
+	PostGetAvailableGiftsExecute(r ApiPostGetAvailableGiftsRequest) (*GetAvailableGiftsResponse, *http.Response, error)
 
 	/*
 	PostGetBusinessAccountGifts getBusinessAccountGifts
@@ -736,8 +750,8 @@ Returns *True* on success.
 	PostGetBusinessAccountGifts(ctx context.Context) ApiPostGetBusinessAccountGiftsRequest
 
 	// PostGetBusinessAccountGiftsExecute executes the request
-	//  @return PostGetBusinessAccountGifts200Response
-	PostGetBusinessAccountGiftsExecute(r ApiPostGetBusinessAccountGiftsRequest) (*PostGetBusinessAccountGifts200Response, *http.Response, error)
+	//  @return GetBusinessAccountGiftsResponse
+	PostGetBusinessAccountGiftsExecute(r ApiPostGetBusinessAccountGiftsRequest) (*GetBusinessAccountGiftsResponse, *http.Response, error)
 
 	/*
 	PostGetBusinessAccountStarBalance getBusinessAccountStarBalance
@@ -750,8 +764,8 @@ Returns *True* on success.
 	PostGetBusinessAccountStarBalance(ctx context.Context) ApiPostGetBusinessAccountStarBalanceRequest
 
 	// PostGetBusinessAccountStarBalanceExecute executes the request
-	//  @return PostGetBusinessAccountStarBalance200Response
-	PostGetBusinessAccountStarBalanceExecute(r ApiPostGetBusinessAccountStarBalanceRequest) (*PostGetBusinessAccountStarBalance200Response, *http.Response, error)
+	//  @return GetBusinessAccountStarBalanceResponse
+	PostGetBusinessAccountStarBalanceExecute(r ApiPostGetBusinessAccountStarBalanceRequest) (*GetBusinessAccountStarBalanceResponse, *http.Response, error)
 
 	/*
 	PostGetBusinessConnection getBusinessConnection
@@ -764,8 +778,8 @@ Returns *True* on success.
 	PostGetBusinessConnection(ctx context.Context) ApiPostGetBusinessConnectionRequest
 
 	// PostGetBusinessConnectionExecute executes the request
-	//  @return PostGetBusinessConnection200Response
-	PostGetBusinessConnectionExecute(r ApiPostGetBusinessConnectionRequest) (*PostGetBusinessConnection200Response, *http.Response, error)
+	//  @return GetBusinessConnectionResponse
+	PostGetBusinessConnectionExecute(r ApiPostGetBusinessConnectionRequest) (*GetBusinessConnectionResponse, *http.Response, error)
 
 	/*
 	PostGetChat getChat
@@ -778,8 +792,8 @@ Returns *True* on success.
 	PostGetChat(ctx context.Context) ApiPostGetChatRequest
 
 	// PostGetChatExecute executes the request
-	//  @return PostGetChat200Response
-	PostGetChatExecute(r ApiPostGetChatRequest) (*PostGetChat200Response, *http.Response, error)
+	//  @return GetChatResponse
+	PostGetChatExecute(r ApiPostGetChatRequest) (*GetChatResponse, *http.Response, error)
 
 	/*
 	PostGetChatAdministrators getChatAdministrators
@@ -792,8 +806,8 @@ Returns *True* on success.
 	PostGetChatAdministrators(ctx context.Context) ApiPostGetChatAdministratorsRequest
 
 	// PostGetChatAdministratorsExecute executes the request
-	//  @return PostGetChatAdministrators200Response
-	PostGetChatAdministratorsExecute(r ApiPostGetChatAdministratorsRequest) (*PostGetChatAdministrators200Response, *http.Response, error)
+	//  @return GetChatAdministratorsResponse
+	PostGetChatAdministratorsExecute(r ApiPostGetChatAdministratorsRequest) (*GetChatAdministratorsResponse, *http.Response, error)
 
 	/*
 	PostGetChatMember getChatMember
@@ -806,8 +820,8 @@ Returns *True* on success.
 	PostGetChatMember(ctx context.Context) ApiPostGetChatMemberRequest
 
 	// PostGetChatMemberExecute executes the request
-	//  @return PostGetChatMember200Response
-	PostGetChatMemberExecute(r ApiPostGetChatMemberRequest) (*PostGetChatMember200Response, *http.Response, error)
+	//  @return GetChatMemberResponse
+	PostGetChatMemberExecute(r ApiPostGetChatMemberRequest) (*GetChatMemberResponse, *http.Response, error)
 
 	/*
 	PostGetChatMemberCount getChatMemberCount
@@ -820,8 +834,8 @@ Returns *True* on success.
 	PostGetChatMemberCount(ctx context.Context) ApiPostGetChatMemberCountRequest
 
 	// PostGetChatMemberCountExecute executes the request
-	//  @return PostGetChatMemberCount200Response
-	PostGetChatMemberCountExecute(r ApiPostGetChatMemberCountRequest) (*PostGetChatMemberCount200Response, *http.Response, error)
+	//  @return GetChatMemberCountResponse
+	PostGetChatMemberCountExecute(r ApiPostGetChatMemberCountRequest) (*GetChatMemberCountResponse, *http.Response, error)
 
 	/*
 	PostGetChatMenuButton getChatMenuButton
@@ -834,8 +848,8 @@ Returns *True* on success.
 	PostGetChatMenuButton(ctx context.Context) ApiPostGetChatMenuButtonRequest
 
 	// PostGetChatMenuButtonExecute executes the request
-	//  @return PostGetChatMenuButton200Response
-	PostGetChatMenuButtonExecute(r ApiPostGetChatMenuButtonRequest) (*PostGetChatMenuButton200Response, *http.Response, error)
+	//  @return GetChatMenuButtonResponse
+	PostGetChatMenuButtonExecute(r ApiPostGetChatMenuButtonRequest) (*GetChatMenuButtonResponse, *http.Response, error)
 
 	/*
 	PostGetCustomEmojiStickers getCustomEmojiStickers
@@ -848,8 +862,8 @@ Returns *True* on success.
 	PostGetCustomEmojiStickers(ctx context.Context) ApiPostGetCustomEmojiStickersRequest
 
 	// PostGetCustomEmojiStickersExecute executes the request
-	//  @return PostGetForumTopicIconStickers200Response
-	PostGetCustomEmojiStickersExecute(r ApiPostGetCustomEmojiStickersRequest) (*PostGetForumTopicIconStickers200Response, *http.Response, error)
+	//  @return GetCustomEmojiStickersResponse
+	PostGetCustomEmojiStickersExecute(r ApiPostGetCustomEmojiStickersRequest) (*GetCustomEmojiStickersResponse, *http.Response, error)
 
 	/*
 	PostGetFile getFile
@@ -862,8 +876,8 @@ Returns *True* on success.
 	PostGetFile(ctx context.Context) ApiPostGetFileRequest
 
 	// PostGetFileExecute executes the request
-	//  @return PostGetFile200Response
-	PostGetFileExecute(r ApiPostGetFileRequest) (*PostGetFile200Response, *http.Response, error)
+	//  @return GetFileResponse
+	PostGetFileExecute(r ApiPostGetFileRequest) (*GetFileResponse, *http.Response, error)
 
 	/*
 	PostGetForumTopicIconStickers getForumTopicIconStickers
@@ -876,8 +890,8 @@ Returns *True* on success.
 	PostGetForumTopicIconStickers(ctx context.Context) ApiPostGetForumTopicIconStickersRequest
 
 	// PostGetForumTopicIconStickersExecute executes the request
-	//  @return PostGetForumTopicIconStickers200Response
-	PostGetForumTopicIconStickersExecute(r ApiPostGetForumTopicIconStickersRequest) (*PostGetForumTopicIconStickers200Response, *http.Response, error)
+	//  @return GetForumTopicIconStickersResponse
+	PostGetForumTopicIconStickersExecute(r ApiPostGetForumTopicIconStickersRequest) (*GetForumTopicIconStickersResponse, *http.Response, error)
 
 	/*
 	PostGetGameHighScores getGameHighScores
@@ -892,8 +906,8 @@ This method will currently return scores for the target user, plus two of their 
 	PostGetGameHighScores(ctx context.Context) ApiPostGetGameHighScoresRequest
 
 	// PostGetGameHighScoresExecute executes the request
-	//  @return PostGetGameHighScores200Response
-	PostGetGameHighScoresExecute(r ApiPostGetGameHighScoresRequest) (*PostGetGameHighScores200Response, *http.Response, error)
+	//  @return GetGameHighScoresResponse
+	PostGetGameHighScoresExecute(r ApiPostGetGameHighScoresRequest) (*GetGameHighScoresResponse, *http.Response, error)
 
 	/*
 	PostGetMe getMe
@@ -906,8 +920,8 @@ This method will currently return scores for the target user, plus two of their 
 	PostGetMe(ctx context.Context) ApiPostGetMeRequest
 
 	// PostGetMeExecute executes the request
-	//  @return PostGetMe200Response
-	PostGetMeExecute(r ApiPostGetMeRequest) (*PostGetMe200Response, *http.Response, error)
+	//  @return GetMeResponse
+	PostGetMeExecute(r ApiPostGetMeRequest) (*GetMeResponse, *http.Response, error)
 
 	/*
 	PostGetMyCommands getMyCommands
@@ -920,8 +934,8 @@ This method will currently return scores for the target user, plus two of their 
 	PostGetMyCommands(ctx context.Context) ApiPostGetMyCommandsRequest
 
 	// PostGetMyCommandsExecute executes the request
-	//  @return PostGetMyCommands200Response
-	PostGetMyCommandsExecute(r ApiPostGetMyCommandsRequest) (*PostGetMyCommands200Response, *http.Response, error)
+	//  @return GetMyCommandsResponse
+	PostGetMyCommandsExecute(r ApiPostGetMyCommandsRequest) (*GetMyCommandsResponse, *http.Response, error)
 
 	/*
 	PostGetMyDefaultAdministratorRights getMyDefaultAdministratorRights
@@ -934,8 +948,8 @@ This method will currently return scores for the target user, plus two of their 
 	PostGetMyDefaultAdministratorRights(ctx context.Context) ApiPostGetMyDefaultAdministratorRightsRequest
 
 	// PostGetMyDefaultAdministratorRightsExecute executes the request
-	//  @return PostGetMyDefaultAdministratorRights200Response
-	PostGetMyDefaultAdministratorRightsExecute(r ApiPostGetMyDefaultAdministratorRightsRequest) (*PostGetMyDefaultAdministratorRights200Response, *http.Response, error)
+	//  @return GetMyDefaultAdministratorRightsResponse
+	PostGetMyDefaultAdministratorRightsExecute(r ApiPostGetMyDefaultAdministratorRightsRequest) (*GetMyDefaultAdministratorRightsResponse, *http.Response, error)
 
 	/*
 	PostGetMyDescription getMyDescription
@@ -948,8 +962,8 @@ This method will currently return scores for the target user, plus two of their 
 	PostGetMyDescription(ctx context.Context) ApiPostGetMyDescriptionRequest
 
 	// PostGetMyDescriptionExecute executes the request
-	//  @return PostGetMyDescription200Response
-	PostGetMyDescriptionExecute(r ApiPostGetMyDescriptionRequest) (*PostGetMyDescription200Response, *http.Response, error)
+	//  @return GetMyDescriptionResponse
+	PostGetMyDescriptionExecute(r ApiPostGetMyDescriptionRequest) (*GetMyDescriptionResponse, *http.Response, error)
 
 	/*
 	PostGetMyName getMyName
@@ -962,8 +976,8 @@ This method will currently return scores for the target user, plus two of their 
 	PostGetMyName(ctx context.Context) ApiPostGetMyNameRequest
 
 	// PostGetMyNameExecute executes the request
-	//  @return PostGetMyName200Response
-	PostGetMyNameExecute(r ApiPostGetMyNameRequest) (*PostGetMyName200Response, *http.Response, error)
+	//  @return GetMyNameResponse
+	PostGetMyNameExecute(r ApiPostGetMyNameRequest) (*GetMyNameResponse, *http.Response, error)
 
 	/*
 	PostGetMyShortDescription getMyShortDescription
@@ -976,8 +990,22 @@ This method will currently return scores for the target user, plus two of their 
 	PostGetMyShortDescription(ctx context.Context) ApiPostGetMyShortDescriptionRequest
 
 	// PostGetMyShortDescriptionExecute executes the request
-	//  @return PostGetMyShortDescription200Response
-	PostGetMyShortDescriptionExecute(r ApiPostGetMyShortDescriptionRequest) (*PostGetMyShortDescription200Response, *http.Response, error)
+	//  @return GetMyShortDescriptionResponse
+	PostGetMyShortDescriptionExecute(r ApiPostGetMyShortDescriptionRequest) (*GetMyShortDescriptionResponse, *http.Response, error)
+
+	/*
+	PostGetMyStarBalance getMyStarBalance
+
+	A method to get the current Telegram Stars balance of the bot. Requires no parameters. On success, returns a [StarAmount](https://core.telegram.org/bots/api/#staramount) object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostGetMyStarBalanceRequest
+	*/
+	PostGetMyStarBalance(ctx context.Context) ApiPostGetMyStarBalanceRequest
+
+	// PostGetMyStarBalanceExecute executes the request
+	//  @return GetMyStarBalanceResponse
+	PostGetMyStarBalanceExecute(r ApiPostGetMyStarBalanceRequest) (*GetMyStarBalanceResponse, *http.Response, error)
 
 	/*
 	PostGetStarTransactions getStarTransactions
@@ -990,8 +1018,8 @@ This method will currently return scores for the target user, plus two of their 
 	PostGetStarTransactions(ctx context.Context) ApiPostGetStarTransactionsRequest
 
 	// PostGetStarTransactionsExecute executes the request
-	//  @return PostGetStarTransactions200Response
-	PostGetStarTransactionsExecute(r ApiPostGetStarTransactionsRequest) (*PostGetStarTransactions200Response, *http.Response, error)
+	//  @return GetStarTransactionsResponse
+	PostGetStarTransactionsExecute(r ApiPostGetStarTransactionsRequest) (*GetStarTransactionsResponse, *http.Response, error)
 
 	/*
 	PostGetStickerSet getStickerSet
@@ -1004,8 +1032,8 @@ This method will currently return scores for the target user, plus two of their 
 	PostGetStickerSet(ctx context.Context) ApiPostGetStickerSetRequest
 
 	// PostGetStickerSetExecute executes the request
-	//  @return PostGetStickerSet200Response
-	PostGetStickerSetExecute(r ApiPostGetStickerSetRequest) (*PostGetStickerSet200Response, *http.Response, error)
+	//  @return GetStickerSetResponse
+	PostGetStickerSetExecute(r ApiPostGetStickerSetRequest) (*GetStickerSetResponse, *http.Response, error)
 
 	/*
 	PostGetUpdates getUpdates
@@ -1018,8 +1046,8 @@ This method will currently return scores for the target user, plus two of their 
 	PostGetUpdates(ctx context.Context) ApiPostGetUpdatesRequest
 
 	// PostGetUpdatesExecute executes the request
-	//  @return PostGetUpdates200Response
-	PostGetUpdatesExecute(r ApiPostGetUpdatesRequest) (*PostGetUpdates200Response, *http.Response, error)
+	//  @return GetUpdatesResponse
+	PostGetUpdatesExecute(r ApiPostGetUpdatesRequest) (*GetUpdatesResponse, *http.Response, error)
 
 	/*
 	PostGetUserChatBoosts getUserChatBoosts
@@ -1032,8 +1060,8 @@ This method will currently return scores for the target user, plus two of their 
 	PostGetUserChatBoosts(ctx context.Context) ApiPostGetUserChatBoostsRequest
 
 	// PostGetUserChatBoostsExecute executes the request
-	//  @return PostGetUserChatBoosts200Response
-	PostGetUserChatBoostsExecute(r ApiPostGetUserChatBoostsRequest) (*PostGetUserChatBoosts200Response, *http.Response, error)
+	//  @return GetUserChatBoostsResponse
+	PostGetUserChatBoostsExecute(r ApiPostGetUserChatBoostsRequest) (*GetUserChatBoostsResponse, *http.Response, error)
 
 	/*
 	PostGetUserProfilePhotos getUserProfilePhotos
@@ -1046,8 +1074,8 @@ This method will currently return scores for the target user, plus two of their 
 	PostGetUserProfilePhotos(ctx context.Context) ApiPostGetUserProfilePhotosRequest
 
 	// PostGetUserProfilePhotosExecute executes the request
-	//  @return PostGetUserProfilePhotos200Response
-	PostGetUserProfilePhotosExecute(r ApiPostGetUserProfilePhotosRequest) (*PostGetUserProfilePhotos200Response, *http.Response, error)
+	//  @return GetUserProfilePhotosResponse
+	PostGetUserProfilePhotosExecute(r ApiPostGetUserProfilePhotosRequest) (*GetUserProfilePhotosResponse, *http.Response, error)
 
 	/*
 	PostGetWebhookInfo getWebhookInfo
@@ -1060,8 +1088,8 @@ This method will currently return scores for the target user, plus two of their 
 	PostGetWebhookInfo(ctx context.Context) ApiPostGetWebhookInfoRequest
 
 	// PostGetWebhookInfoExecute executes the request
-	//  @return PostGetWebhookInfo200Response
-	PostGetWebhookInfoExecute(r ApiPostGetWebhookInfoRequest) (*PostGetWebhookInfo200Response, *http.Response, error)
+	//  @return GetWebhookInfoResponse
+	PostGetWebhookInfoExecute(r ApiPostGetWebhookInfoRequest) (*GetWebhookInfoResponse, *http.Response, error)
 
 	/*
 	PostGiftPremiumSubscription giftPremiumSubscription
@@ -1074,8 +1102,8 @@ This method will currently return scores for the target user, plus two of their 
 	PostGiftPremiumSubscription(ctx context.Context) ApiPostGiftPremiumSubscriptionRequest
 
 	// PostGiftPremiumSubscriptionExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostGiftPremiumSubscriptionExecute(r ApiPostGiftPremiumSubscriptionRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return GiftPremiumSubscriptionResponse
+	PostGiftPremiumSubscriptionExecute(r ApiPostGiftPremiumSubscriptionRequest) (*GiftPremiumSubscriptionResponse, *http.Response, error)
 
 	/*
 	PostHideGeneralForumTopic hideGeneralForumTopic
@@ -1088,8 +1116,8 @@ This method will currently return scores for the target user, plus two of their 
 	PostHideGeneralForumTopic(ctx context.Context) ApiPostHideGeneralForumTopicRequest
 
 	// PostHideGeneralForumTopicExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostHideGeneralForumTopicExecute(r ApiPostHideGeneralForumTopicRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return HideGeneralForumTopicResponse
+	PostHideGeneralForumTopicExecute(r ApiPostHideGeneralForumTopicRequest) (*HideGeneralForumTopicResponse, *http.Response, error)
 
 	/*
 	PostLeaveChat leaveChat
@@ -1102,8 +1130,8 @@ This method will currently return scores for the target user, plus two of their 
 	PostLeaveChat(ctx context.Context) ApiPostLeaveChatRequest
 
 	// PostLeaveChatExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostLeaveChatExecute(r ApiPostLeaveChatRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return LeaveChatResponse
+	PostLeaveChatExecute(r ApiPostLeaveChatRequest) (*LeaveChatResponse, *http.Response, error)
 
 	/*
 	PostLogOut logOut
@@ -1116,8 +1144,8 @@ This method will currently return scores for the target user, plus two of their 
 	PostLogOut(ctx context.Context) ApiPostLogOutRequest
 
 	// PostLogOutExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostLogOutExecute(r ApiPostLogOutRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return LogOutResponse
+	PostLogOutExecute(r ApiPostLogOutRequest) (*LogOutResponse, *http.Response, error)
 
 	/*
 	PostPinChatMessage pinChatMessage
@@ -1130,8 +1158,8 @@ This method will currently return scores for the target user, plus two of their 
 	PostPinChatMessage(ctx context.Context) ApiPostPinChatMessageRequest
 
 	// PostPinChatMessageExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostPinChatMessageExecute(r ApiPostPinChatMessageRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return PinChatMessageResponse
+	PostPinChatMessageExecute(r ApiPostPinChatMessageRequest) (*PinChatMessageResponse, *http.Response, error)
 
 	/*
 	PostPostStory postStory
@@ -1144,8 +1172,8 @@ This method will currently return scores for the target user, plus two of their 
 	PostPostStory(ctx context.Context) ApiPostPostStoryRequest
 
 	// PostPostStoryExecute executes the request
-	//  @return PostPostStory200Response
-	PostPostStoryExecute(r ApiPostPostStoryRequest) (*PostPostStory200Response, *http.Response, error)
+	//  @return PostStoryResponse
+	PostPostStoryExecute(r ApiPostPostStoryRequest) (*PostStoryResponse, *http.Response, error)
 
 	/*
 	PostPromoteChatMember promoteChatMember
@@ -1158,8 +1186,8 @@ This method will currently return scores for the target user, plus two of their 
 	PostPromoteChatMember(ctx context.Context) ApiPostPromoteChatMemberRequest
 
 	// PostPromoteChatMemberExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostPromoteChatMemberExecute(r ApiPostPromoteChatMemberRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return PromoteChatMemberResponse
+	PostPromoteChatMemberExecute(r ApiPostPromoteChatMemberRequest) (*PromoteChatMemberResponse, *http.Response, error)
 
 	/*
 	PostReadBusinessMessage readBusinessMessage
@@ -1172,8 +1200,8 @@ This method will currently return scores for the target user, plus two of their 
 	PostReadBusinessMessage(ctx context.Context) ApiPostReadBusinessMessageRequest
 
 	// PostReadBusinessMessageExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostReadBusinessMessageExecute(r ApiPostReadBusinessMessageRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return ReadBusinessMessageResponse
+	PostReadBusinessMessageExecute(r ApiPostReadBusinessMessageRequest) (*ReadBusinessMessageResponse, *http.Response, error)
 
 	/*
 	PostRefundStarPayment refundStarPayment
@@ -1186,8 +1214,8 @@ This method will currently return scores for the target user, plus two of their 
 	PostRefundStarPayment(ctx context.Context) ApiPostRefundStarPaymentRequest
 
 	// PostRefundStarPaymentExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostRefundStarPaymentExecute(r ApiPostRefundStarPaymentRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return RefundStarPaymentResponse
+	PostRefundStarPaymentExecute(r ApiPostRefundStarPaymentRequest) (*RefundStarPaymentResponse, *http.Response, error)
 
 	/*
 	PostRemoveBusinessAccountProfilePhoto removeBusinessAccountProfilePhoto
@@ -1200,8 +1228,8 @@ This method will currently return scores for the target user, plus two of their 
 	PostRemoveBusinessAccountProfilePhoto(ctx context.Context) ApiPostRemoveBusinessAccountProfilePhotoRequest
 
 	// PostRemoveBusinessAccountProfilePhotoExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostRemoveBusinessAccountProfilePhotoExecute(r ApiPostRemoveBusinessAccountProfilePhotoRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return RemoveBusinessAccountProfilePhotoResponse
+	PostRemoveBusinessAccountProfilePhotoExecute(r ApiPostRemoveBusinessAccountProfilePhotoRequest) (*RemoveBusinessAccountProfilePhotoResponse, *http.Response, error)
 
 	/*
 	PostRemoveChatVerification removeChatVerification
@@ -1214,8 +1242,8 @@ This method will currently return scores for the target user, plus two of their 
 	PostRemoveChatVerification(ctx context.Context) ApiPostRemoveChatVerificationRequest
 
 	// PostRemoveChatVerificationExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostRemoveChatVerificationExecute(r ApiPostRemoveChatVerificationRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return RemoveChatVerificationResponse
+	PostRemoveChatVerificationExecute(r ApiPostRemoveChatVerificationRequest) (*RemoveChatVerificationResponse, *http.Response, error)
 
 	/*
 	PostRemoveUserVerification removeUserVerification
@@ -1228,8 +1256,8 @@ This method will currently return scores for the target user, plus two of their 
 	PostRemoveUserVerification(ctx context.Context) ApiPostRemoveUserVerificationRequest
 
 	// PostRemoveUserVerificationExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostRemoveUserVerificationExecute(r ApiPostRemoveUserVerificationRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return RemoveUserVerificationResponse
+	PostRemoveUserVerificationExecute(r ApiPostRemoveUserVerificationRequest) (*RemoveUserVerificationResponse, *http.Response, error)
 
 	/*
 	PostReopenForumTopic reopenForumTopic
@@ -1242,8 +1270,8 @@ This method will currently return scores for the target user, plus two of their 
 	PostReopenForumTopic(ctx context.Context) ApiPostReopenForumTopicRequest
 
 	// PostReopenForumTopicExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostReopenForumTopicExecute(r ApiPostReopenForumTopicRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return ReopenForumTopicResponse
+	PostReopenForumTopicExecute(r ApiPostReopenForumTopicRequest) (*ReopenForumTopicResponse, *http.Response, error)
 
 	/*
 	PostReopenGeneralForumTopic reopenGeneralForumTopic
@@ -1256,8 +1284,8 @@ This method will currently return scores for the target user, plus two of their 
 	PostReopenGeneralForumTopic(ctx context.Context) ApiPostReopenGeneralForumTopicRequest
 
 	// PostReopenGeneralForumTopicExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostReopenGeneralForumTopicExecute(r ApiPostReopenGeneralForumTopicRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return ReopenGeneralForumTopicResponse
+	PostReopenGeneralForumTopicExecute(r ApiPostReopenGeneralForumTopicRequest) (*ReopenGeneralForumTopicResponse, *http.Response, error)
 
 	/*
 	PostReplaceStickerInSet replaceStickerInSet
@@ -1270,8 +1298,8 @@ This method will currently return scores for the target user, plus two of their 
 	PostReplaceStickerInSet(ctx context.Context) ApiPostReplaceStickerInSetRequest
 
 	// PostReplaceStickerInSetExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostReplaceStickerInSetExecute(r ApiPostReplaceStickerInSetRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return ReplaceStickerInSetResponse
+	PostReplaceStickerInSetExecute(r ApiPostReplaceStickerInSetRequest) (*ReplaceStickerInSetResponse, *http.Response, error)
 
 	/*
 	PostRestrictChatMember restrictChatMember
@@ -1284,8 +1312,8 @@ This method will currently return scores for the target user, plus two of their 
 	PostRestrictChatMember(ctx context.Context) ApiPostRestrictChatMemberRequest
 
 	// PostRestrictChatMemberExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostRestrictChatMemberExecute(r ApiPostRestrictChatMemberRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return RestrictChatMemberResponse
+	PostRestrictChatMemberExecute(r ApiPostRestrictChatMemberRequest) (*RestrictChatMemberResponse, *http.Response, error)
 
 	/*
 	PostRevokeChatInviteLink revokeChatInviteLink
@@ -1298,8 +1326,8 @@ This method will currently return scores for the target user, plus two of their 
 	PostRevokeChatInviteLink(ctx context.Context) ApiPostRevokeChatInviteLinkRequest
 
 	// PostRevokeChatInviteLinkExecute executes the request
-	//  @return PostCreateChatInviteLink200Response
-	PostRevokeChatInviteLinkExecute(r ApiPostRevokeChatInviteLinkRequest) (*PostCreateChatInviteLink200Response, *http.Response, error)
+	//  @return RevokeChatInviteLinkResponse
+	PostRevokeChatInviteLinkExecute(r ApiPostRevokeChatInviteLinkRequest) (*RevokeChatInviteLinkResponse, *http.Response, error)
 
 	/*
 	PostSavePreparedInlineMessage savePreparedInlineMessage
@@ -1312,8 +1340,8 @@ This method will currently return scores for the target user, plus two of their 
 	PostSavePreparedInlineMessage(ctx context.Context) ApiPostSavePreparedInlineMessageRequest
 
 	// PostSavePreparedInlineMessageExecute executes the request
-	//  @return PostSavePreparedInlineMessage200Response
-	PostSavePreparedInlineMessageExecute(r ApiPostSavePreparedInlineMessageRequest) (*PostSavePreparedInlineMessage200Response, *http.Response, error)
+	//  @return SavePreparedInlineMessageResponse
+	PostSavePreparedInlineMessageExecute(r ApiPostSavePreparedInlineMessageRequest) (*SavePreparedInlineMessageResponse, *http.Response, error)
 
 	/*
 	PostSendAnimation sendAnimation
@@ -1326,8 +1354,8 @@ This method will currently return scores for the target user, plus two of their 
 	PostSendAnimation(ctx context.Context) ApiPostSendAnimationRequest
 
 	// PostSendAnimationExecute executes the request
-	//  @return PostSendMessage200Response
-	PostSendAnimationExecute(r ApiPostSendAnimationRequest) (*PostSendMessage200Response, *http.Response, error)
+	//  @return SendAnimationResponse
+	PostSendAnimationExecute(r ApiPostSendAnimationRequest) (*SendAnimationResponse, *http.Response, error)
 
 	/*
 	PostSendAudio sendAudio
@@ -1342,8 +1370,8 @@ For sending voice messages, use the [sendVoice](https://core.telegram.org/bots/a
 	PostSendAudio(ctx context.Context) ApiPostSendAudioRequest
 
 	// PostSendAudioExecute executes the request
-	//  @return PostSendMessage200Response
-	PostSendAudioExecute(r ApiPostSendAudioRequest) (*PostSendMessage200Response, *http.Response, error)
+	//  @return SendAudioResponse
+	PostSendAudioExecute(r ApiPostSendAudioRequest) (*SendAudioResponse, *http.Response, error)
 
 	/*
 	PostSendChatAction sendChatAction
@@ -1360,8 +1388,22 @@ We only recommend using this method when a response from the bot will take a **n
 	PostSendChatAction(ctx context.Context) ApiPostSendChatActionRequest
 
 	// PostSendChatActionExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostSendChatActionExecute(r ApiPostSendChatActionRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return SendChatActionResponse
+	PostSendChatActionExecute(r ApiPostSendChatActionRequest) (*SendChatActionResponse, *http.Response, error)
+
+	/*
+	PostSendChecklist sendChecklist
+
+	Use this method to send a checklist on behalf of a connected business account. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostSendChecklistRequest
+	*/
+	PostSendChecklist(ctx context.Context) ApiPostSendChecklistRequest
+
+	// PostSendChecklistExecute executes the request
+	//  @return SendChecklistResponse
+	PostSendChecklistExecute(r ApiPostSendChecklistRequest) (*SendChecklistResponse, *http.Response, error)
 
 	/*
 	PostSendContact sendContact
@@ -1374,8 +1416,8 @@ We only recommend using this method when a response from the bot will take a **n
 	PostSendContact(ctx context.Context) ApiPostSendContactRequest
 
 	// PostSendContactExecute executes the request
-	//  @return PostSendMessage200Response
-	PostSendContactExecute(r ApiPostSendContactRequest) (*PostSendMessage200Response, *http.Response, error)
+	//  @return SendContactResponse
+	PostSendContactExecute(r ApiPostSendContactRequest) (*SendContactResponse, *http.Response, error)
 
 	/*
 	PostSendDice sendDice
@@ -1388,8 +1430,8 @@ We only recommend using this method when a response from the bot will take a **n
 	PostSendDice(ctx context.Context) ApiPostSendDiceRequest
 
 	// PostSendDiceExecute executes the request
-	//  @return PostSendMessage200Response
-	PostSendDiceExecute(r ApiPostSendDiceRequest) (*PostSendMessage200Response, *http.Response, error)
+	//  @return SendDiceResponse
+	PostSendDiceExecute(r ApiPostSendDiceRequest) (*SendDiceResponse, *http.Response, error)
 
 	/*
 	PostSendDocument sendDocument
@@ -1402,8 +1444,8 @@ We only recommend using this method when a response from the bot will take a **n
 	PostSendDocument(ctx context.Context) ApiPostSendDocumentRequest
 
 	// PostSendDocumentExecute executes the request
-	//  @return PostSendMessage200Response
-	PostSendDocumentExecute(r ApiPostSendDocumentRequest) (*PostSendMessage200Response, *http.Response, error)
+	//  @return SendDocumentResponse
+	PostSendDocumentExecute(r ApiPostSendDocumentRequest) (*SendDocumentResponse, *http.Response, error)
 
 	/*
 	PostSendGame sendGame
@@ -1416,8 +1458,8 @@ We only recommend using this method when a response from the bot will take a **n
 	PostSendGame(ctx context.Context) ApiPostSendGameRequest
 
 	// PostSendGameExecute executes the request
-	//  @return PostSendMessage200Response
-	PostSendGameExecute(r ApiPostSendGameRequest) (*PostSendMessage200Response, *http.Response, error)
+	//  @return SendGameResponse
+	PostSendGameExecute(r ApiPostSendGameRequest) (*SendGameResponse, *http.Response, error)
 
 	/*
 	PostSendGift sendGift
@@ -1430,8 +1472,8 @@ We only recommend using this method when a response from the bot will take a **n
 	PostSendGift(ctx context.Context) ApiPostSendGiftRequest
 
 	// PostSendGiftExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostSendGiftExecute(r ApiPostSendGiftRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return SendGiftResponse
+	PostSendGiftExecute(r ApiPostSendGiftRequest) (*SendGiftResponse, *http.Response, error)
 
 	/*
 	PostSendInvoice sendInvoice
@@ -1444,8 +1486,8 @@ We only recommend using this method when a response from the bot will take a **n
 	PostSendInvoice(ctx context.Context) ApiPostSendInvoiceRequest
 
 	// PostSendInvoiceExecute executes the request
-	//  @return PostSendMessage200Response
-	PostSendInvoiceExecute(r ApiPostSendInvoiceRequest) (*PostSendMessage200Response, *http.Response, error)
+	//  @return SendInvoiceResponse
+	PostSendInvoiceExecute(r ApiPostSendInvoiceRequest) (*SendInvoiceResponse, *http.Response, error)
 
 	/*
 	PostSendLocation sendLocation
@@ -1458,8 +1500,8 @@ We only recommend using this method when a response from the bot will take a **n
 	PostSendLocation(ctx context.Context) ApiPostSendLocationRequest
 
 	// PostSendLocationExecute executes the request
-	//  @return PostSendMessage200Response
-	PostSendLocationExecute(r ApiPostSendLocationRequest) (*PostSendMessage200Response, *http.Response, error)
+	//  @return SendLocationResponse
+	PostSendLocationExecute(r ApiPostSendLocationRequest) (*SendLocationResponse, *http.Response, error)
 
 	/*
 	PostSendMediaGroup sendMediaGroup
@@ -1472,8 +1514,8 @@ We only recommend using this method when a response from the bot will take a **n
 	PostSendMediaGroup(ctx context.Context) ApiPostSendMediaGroupRequest
 
 	// PostSendMediaGroupExecute executes the request
-	//  @return PostSendMediaGroup200Response
-	PostSendMediaGroupExecute(r ApiPostSendMediaGroupRequest) (*PostSendMediaGroup200Response, *http.Response, error)
+	//  @return SendMediaGroupResponse
+	PostSendMediaGroupExecute(r ApiPostSendMediaGroupRequest) (*SendMediaGroupResponse, *http.Response, error)
 
 	/*
 	PostSendMessage sendMessage
@@ -1486,8 +1528,8 @@ We only recommend using this method when a response from the bot will take a **n
 	PostSendMessage(ctx context.Context) ApiPostSendMessageRequest
 
 	// PostSendMessageExecute executes the request
-	//  @return PostSendMessage200Response
-	PostSendMessageExecute(r ApiPostSendMessageRequest) (*PostSendMessage200Response, *http.Response, error)
+	//  @return SendMessageResponse
+	PostSendMessageExecute(r ApiPostSendMessageRequest) (*SendMessageResponse, *http.Response, error)
 
 	/*
 	PostSendPaidMedia sendPaidMedia
@@ -1500,8 +1542,8 @@ We only recommend using this method when a response from the bot will take a **n
 	PostSendPaidMedia(ctx context.Context) ApiPostSendPaidMediaRequest
 
 	// PostSendPaidMediaExecute executes the request
-	//  @return PostSendMessage200Response
-	PostSendPaidMediaExecute(r ApiPostSendPaidMediaRequest) (*PostSendMessage200Response, *http.Response, error)
+	//  @return SendPaidMediaResponse
+	PostSendPaidMediaExecute(r ApiPostSendPaidMediaRequest) (*SendPaidMediaResponse, *http.Response, error)
 
 	/*
 	PostSendPhoto sendPhoto
@@ -1514,8 +1556,8 @@ We only recommend using this method when a response from the bot will take a **n
 	PostSendPhoto(ctx context.Context) ApiPostSendPhotoRequest
 
 	// PostSendPhotoExecute executes the request
-	//  @return PostSendMessage200Response
-	PostSendPhotoExecute(r ApiPostSendPhotoRequest) (*PostSendMessage200Response, *http.Response, error)
+	//  @return SendPhotoResponse
+	PostSendPhotoExecute(r ApiPostSendPhotoRequest) (*SendPhotoResponse, *http.Response, error)
 
 	/*
 	PostSendPoll sendPoll
@@ -1528,8 +1570,8 @@ We only recommend using this method when a response from the bot will take a **n
 	PostSendPoll(ctx context.Context) ApiPostSendPollRequest
 
 	// PostSendPollExecute executes the request
-	//  @return PostSendMessage200Response
-	PostSendPollExecute(r ApiPostSendPollRequest) (*PostSendMessage200Response, *http.Response, error)
+	//  @return SendPollResponse
+	PostSendPollExecute(r ApiPostSendPollRequest) (*SendPollResponse, *http.Response, error)
 
 	/*
 	PostSendSticker sendSticker
@@ -1542,8 +1584,8 @@ We only recommend using this method when a response from the bot will take a **n
 	PostSendSticker(ctx context.Context) ApiPostSendStickerRequest
 
 	// PostSendStickerExecute executes the request
-	//  @return PostSendMessage200Response
-	PostSendStickerExecute(r ApiPostSendStickerRequest) (*PostSendMessage200Response, *http.Response, error)
+	//  @return SendStickerResponse
+	PostSendStickerExecute(r ApiPostSendStickerRequest) (*SendStickerResponse, *http.Response, error)
 
 	/*
 	PostSendVenue sendVenue
@@ -1556,8 +1598,8 @@ We only recommend using this method when a response from the bot will take a **n
 	PostSendVenue(ctx context.Context) ApiPostSendVenueRequest
 
 	// PostSendVenueExecute executes the request
-	//  @return PostSendMessage200Response
-	PostSendVenueExecute(r ApiPostSendVenueRequest) (*PostSendMessage200Response, *http.Response, error)
+	//  @return SendVenueResponse
+	PostSendVenueExecute(r ApiPostSendVenueRequest) (*SendVenueResponse, *http.Response, error)
 
 	/*
 	PostSendVideo sendVideo
@@ -1570,8 +1612,8 @@ We only recommend using this method when a response from the bot will take a **n
 	PostSendVideo(ctx context.Context) ApiPostSendVideoRequest
 
 	// PostSendVideoExecute executes the request
-	//  @return PostSendMessage200Response
-	PostSendVideoExecute(r ApiPostSendVideoRequest) (*PostSendMessage200Response, *http.Response, error)
+	//  @return SendVideoResponse
+	PostSendVideoExecute(r ApiPostSendVideoRequest) (*SendVideoResponse, *http.Response, error)
 
 	/*
 	PostSendVideoNote sendVideoNote
@@ -1584,8 +1626,8 @@ We only recommend using this method when a response from the bot will take a **n
 	PostSendVideoNote(ctx context.Context) ApiPostSendVideoNoteRequest
 
 	// PostSendVideoNoteExecute executes the request
-	//  @return PostSendMessage200Response
-	PostSendVideoNoteExecute(r ApiPostSendVideoNoteRequest) (*PostSendMessage200Response, *http.Response, error)
+	//  @return SendVideoNoteResponse
+	PostSendVideoNoteExecute(r ApiPostSendVideoNoteRequest) (*SendVideoNoteResponse, *http.Response, error)
 
 	/*
 	PostSendVoice sendVoice
@@ -1598,8 +1640,8 @@ We only recommend using this method when a response from the bot will take a **n
 	PostSendVoice(ctx context.Context) ApiPostSendVoiceRequest
 
 	// PostSendVoiceExecute executes the request
-	//  @return PostSendMessage200Response
-	PostSendVoiceExecute(r ApiPostSendVoiceRequest) (*PostSendMessage200Response, *http.Response, error)
+	//  @return SendVoiceResponse
+	PostSendVoiceExecute(r ApiPostSendVoiceRequest) (*SendVoiceResponse, *http.Response, error)
 
 	/*
 	PostSetBusinessAccountBio setBusinessAccountBio
@@ -1612,8 +1654,8 @@ We only recommend using this method when a response from the bot will take a **n
 	PostSetBusinessAccountBio(ctx context.Context) ApiPostSetBusinessAccountBioRequest
 
 	// PostSetBusinessAccountBioExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostSetBusinessAccountBioExecute(r ApiPostSetBusinessAccountBioRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return SetBusinessAccountBioResponse
+	PostSetBusinessAccountBioExecute(r ApiPostSetBusinessAccountBioRequest) (*SetBusinessAccountBioResponse, *http.Response, error)
 
 	/*
 	PostSetBusinessAccountGiftSettings setBusinessAccountGiftSettings
@@ -1626,8 +1668,8 @@ We only recommend using this method when a response from the bot will take a **n
 	PostSetBusinessAccountGiftSettings(ctx context.Context) ApiPostSetBusinessAccountGiftSettingsRequest
 
 	// PostSetBusinessAccountGiftSettingsExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostSetBusinessAccountGiftSettingsExecute(r ApiPostSetBusinessAccountGiftSettingsRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return SetBusinessAccountGiftSettingsResponse
+	PostSetBusinessAccountGiftSettingsExecute(r ApiPostSetBusinessAccountGiftSettingsRequest) (*SetBusinessAccountGiftSettingsResponse, *http.Response, error)
 
 	/*
 	PostSetBusinessAccountName setBusinessAccountName
@@ -1640,8 +1682,8 @@ We only recommend using this method when a response from the bot will take a **n
 	PostSetBusinessAccountName(ctx context.Context) ApiPostSetBusinessAccountNameRequest
 
 	// PostSetBusinessAccountNameExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostSetBusinessAccountNameExecute(r ApiPostSetBusinessAccountNameRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return SetBusinessAccountNameResponse
+	PostSetBusinessAccountNameExecute(r ApiPostSetBusinessAccountNameRequest) (*SetBusinessAccountNameResponse, *http.Response, error)
 
 	/*
 	PostSetBusinessAccountProfilePhoto setBusinessAccountProfilePhoto
@@ -1654,8 +1696,8 @@ We only recommend using this method when a response from the bot will take a **n
 	PostSetBusinessAccountProfilePhoto(ctx context.Context) ApiPostSetBusinessAccountProfilePhotoRequest
 
 	// PostSetBusinessAccountProfilePhotoExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostSetBusinessAccountProfilePhotoExecute(r ApiPostSetBusinessAccountProfilePhotoRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return SetBusinessAccountProfilePhotoResponse
+	PostSetBusinessAccountProfilePhotoExecute(r ApiPostSetBusinessAccountProfilePhotoRequest) (*SetBusinessAccountProfilePhotoResponse, *http.Response, error)
 
 	/*
 	PostSetBusinessAccountUsername setBusinessAccountUsername
@@ -1668,8 +1710,8 @@ We only recommend using this method when a response from the bot will take a **n
 	PostSetBusinessAccountUsername(ctx context.Context) ApiPostSetBusinessAccountUsernameRequest
 
 	// PostSetBusinessAccountUsernameExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostSetBusinessAccountUsernameExecute(r ApiPostSetBusinessAccountUsernameRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return SetBusinessAccountUsernameResponse
+	PostSetBusinessAccountUsernameExecute(r ApiPostSetBusinessAccountUsernameRequest) (*SetBusinessAccountUsernameResponse, *http.Response, error)
 
 	/*
 	PostSetChatAdministratorCustomTitle setChatAdministratorCustomTitle
@@ -1682,8 +1724,8 @@ We only recommend using this method when a response from the bot will take a **n
 	PostSetChatAdministratorCustomTitle(ctx context.Context) ApiPostSetChatAdministratorCustomTitleRequest
 
 	// PostSetChatAdministratorCustomTitleExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostSetChatAdministratorCustomTitleExecute(r ApiPostSetChatAdministratorCustomTitleRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return SetChatAdministratorCustomTitleResponse
+	PostSetChatAdministratorCustomTitleExecute(r ApiPostSetChatAdministratorCustomTitleRequest) (*SetChatAdministratorCustomTitleResponse, *http.Response, error)
 
 	/*
 	PostSetChatDescription setChatDescription
@@ -1696,8 +1738,8 @@ We only recommend using this method when a response from the bot will take a **n
 	PostSetChatDescription(ctx context.Context) ApiPostSetChatDescriptionRequest
 
 	// PostSetChatDescriptionExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostSetChatDescriptionExecute(r ApiPostSetChatDescriptionRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return SetChatDescriptionResponse
+	PostSetChatDescriptionExecute(r ApiPostSetChatDescriptionRequest) (*SetChatDescriptionResponse, *http.Response, error)
 
 	/*
 	PostSetChatMenuButton setChatMenuButton
@@ -1710,8 +1752,8 @@ We only recommend using this method when a response from the bot will take a **n
 	PostSetChatMenuButton(ctx context.Context) ApiPostSetChatMenuButtonRequest
 
 	// PostSetChatMenuButtonExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostSetChatMenuButtonExecute(r ApiPostSetChatMenuButtonRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return SetChatMenuButtonResponse
+	PostSetChatMenuButtonExecute(r ApiPostSetChatMenuButtonRequest) (*SetChatMenuButtonResponse, *http.Response, error)
 
 	/*
 	PostSetChatPermissions setChatPermissions
@@ -1724,8 +1766,8 @@ We only recommend using this method when a response from the bot will take a **n
 	PostSetChatPermissions(ctx context.Context) ApiPostSetChatPermissionsRequest
 
 	// PostSetChatPermissionsExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostSetChatPermissionsExecute(r ApiPostSetChatPermissionsRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return SetChatPermissionsResponse
+	PostSetChatPermissionsExecute(r ApiPostSetChatPermissionsRequest) (*SetChatPermissionsResponse, *http.Response, error)
 
 	/*
 	PostSetChatPhoto setChatPhoto
@@ -1738,8 +1780,8 @@ We only recommend using this method when a response from the bot will take a **n
 	PostSetChatPhoto(ctx context.Context) ApiPostSetChatPhotoRequest
 
 	// PostSetChatPhotoExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostSetChatPhotoExecute(r ApiPostSetChatPhotoRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return SetChatPhotoResponse
+	PostSetChatPhotoExecute(r ApiPostSetChatPhotoRequest) (*SetChatPhotoResponse, *http.Response, error)
 
 	/*
 	PostSetChatStickerSet setChatStickerSet
@@ -1752,8 +1794,8 @@ We only recommend using this method when a response from the bot will take a **n
 	PostSetChatStickerSet(ctx context.Context) ApiPostSetChatStickerSetRequest
 
 	// PostSetChatStickerSetExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostSetChatStickerSetExecute(r ApiPostSetChatStickerSetRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return SetChatStickerSetResponse
+	PostSetChatStickerSetExecute(r ApiPostSetChatStickerSetRequest) (*SetChatStickerSetResponse, *http.Response, error)
 
 	/*
 	PostSetChatTitle setChatTitle
@@ -1766,8 +1808,8 @@ We only recommend using this method when a response from the bot will take a **n
 	PostSetChatTitle(ctx context.Context) ApiPostSetChatTitleRequest
 
 	// PostSetChatTitleExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostSetChatTitleExecute(r ApiPostSetChatTitleRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return SetChatTitleResponse
+	PostSetChatTitleExecute(r ApiPostSetChatTitleRequest) (*SetChatTitleResponse, *http.Response, error)
 
 	/*
 	PostSetCustomEmojiStickerSetThumbnail setCustomEmojiStickerSetThumbnail
@@ -1780,8 +1822,8 @@ We only recommend using this method when a response from the bot will take a **n
 	PostSetCustomEmojiStickerSetThumbnail(ctx context.Context) ApiPostSetCustomEmojiStickerSetThumbnailRequest
 
 	// PostSetCustomEmojiStickerSetThumbnailExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostSetCustomEmojiStickerSetThumbnailExecute(r ApiPostSetCustomEmojiStickerSetThumbnailRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return SetCustomEmojiStickerSetThumbnailResponse
+	PostSetCustomEmojiStickerSetThumbnailExecute(r ApiPostSetCustomEmojiStickerSetThumbnailRequest) (*SetCustomEmojiStickerSetThumbnailResponse, *http.Response, error)
 
 	/*
 	PostSetGameScore setGameScore
@@ -1794,8 +1836,8 @@ We only recommend using this method when a response from the bot will take a **n
 	PostSetGameScore(ctx context.Context) ApiPostSetGameScoreRequest
 
 	// PostSetGameScoreExecute executes the request
-	//  @return PostEditMessageText200Response
-	PostSetGameScoreExecute(r ApiPostSetGameScoreRequest) (*PostEditMessageText200Response, *http.Response, error)
+	//  @return SetGameScoreResponse
+	PostSetGameScoreExecute(r ApiPostSetGameScoreRequest) (*SetGameScoreResponse, *http.Response, error)
 
 	/*
 	PostSetMessageReaction setMessageReaction
@@ -1808,8 +1850,8 @@ We only recommend using this method when a response from the bot will take a **n
 	PostSetMessageReaction(ctx context.Context) ApiPostSetMessageReactionRequest
 
 	// PostSetMessageReactionExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostSetMessageReactionExecute(r ApiPostSetMessageReactionRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return SetMessageReactionResponse
+	PostSetMessageReactionExecute(r ApiPostSetMessageReactionRequest) (*SetMessageReactionResponse, *http.Response, error)
 
 	/*
 	PostSetMyCommands setMyCommands
@@ -1822,8 +1864,8 @@ We only recommend using this method when a response from the bot will take a **n
 	PostSetMyCommands(ctx context.Context) ApiPostSetMyCommandsRequest
 
 	// PostSetMyCommandsExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostSetMyCommandsExecute(r ApiPostSetMyCommandsRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return SetMyCommandsResponse
+	PostSetMyCommandsExecute(r ApiPostSetMyCommandsRequest) (*SetMyCommandsResponse, *http.Response, error)
 
 	/*
 	PostSetMyDefaultAdministratorRights setMyDefaultAdministratorRights
@@ -1836,8 +1878,8 @@ We only recommend using this method when a response from the bot will take a **n
 	PostSetMyDefaultAdministratorRights(ctx context.Context) ApiPostSetMyDefaultAdministratorRightsRequest
 
 	// PostSetMyDefaultAdministratorRightsExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostSetMyDefaultAdministratorRightsExecute(r ApiPostSetMyDefaultAdministratorRightsRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return SetMyDefaultAdministratorRightsResponse
+	PostSetMyDefaultAdministratorRightsExecute(r ApiPostSetMyDefaultAdministratorRightsRequest) (*SetMyDefaultAdministratorRightsResponse, *http.Response, error)
 
 	/*
 	PostSetMyDescription setMyDescription
@@ -1850,8 +1892,8 @@ We only recommend using this method when a response from the bot will take a **n
 	PostSetMyDescription(ctx context.Context) ApiPostSetMyDescriptionRequest
 
 	// PostSetMyDescriptionExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostSetMyDescriptionExecute(r ApiPostSetMyDescriptionRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return SetMyDescriptionResponse
+	PostSetMyDescriptionExecute(r ApiPostSetMyDescriptionRequest) (*SetMyDescriptionResponse, *http.Response, error)
 
 	/*
 	PostSetMyName setMyName
@@ -1864,8 +1906,8 @@ We only recommend using this method when a response from the bot will take a **n
 	PostSetMyName(ctx context.Context) ApiPostSetMyNameRequest
 
 	// PostSetMyNameExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostSetMyNameExecute(r ApiPostSetMyNameRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return SetMyNameResponse
+	PostSetMyNameExecute(r ApiPostSetMyNameRequest) (*SetMyNameResponse, *http.Response, error)
 
 	/*
 	PostSetMyShortDescription setMyShortDescription
@@ -1878,8 +1920,8 @@ We only recommend using this method when a response from the bot will take a **n
 	PostSetMyShortDescription(ctx context.Context) ApiPostSetMyShortDescriptionRequest
 
 	// PostSetMyShortDescriptionExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostSetMyShortDescriptionExecute(r ApiPostSetMyShortDescriptionRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return SetMyShortDescriptionResponse
+	PostSetMyShortDescriptionExecute(r ApiPostSetMyShortDescriptionRequest) (*SetMyShortDescriptionResponse, *http.Response, error)
 
 	/*
 	PostSetPassportDataErrors setPassportDataErrors
@@ -1894,8 +1936,8 @@ Use this if the data submitted by the user doesn't satisfy the standards your se
 	PostSetPassportDataErrors(ctx context.Context) ApiPostSetPassportDataErrorsRequest
 
 	// PostSetPassportDataErrorsExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostSetPassportDataErrorsExecute(r ApiPostSetPassportDataErrorsRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return SetPassportDataErrorsResponse
+	PostSetPassportDataErrorsExecute(r ApiPostSetPassportDataErrorsRequest) (*SetPassportDataErrorsResponse, *http.Response, error)
 
 	/*
 	PostSetStickerEmojiList setStickerEmojiList
@@ -1908,8 +1950,8 @@ Use this if the data submitted by the user doesn't satisfy the standards your se
 	PostSetStickerEmojiList(ctx context.Context) ApiPostSetStickerEmojiListRequest
 
 	// PostSetStickerEmojiListExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostSetStickerEmojiListExecute(r ApiPostSetStickerEmojiListRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return SetStickerEmojiListResponse
+	PostSetStickerEmojiListExecute(r ApiPostSetStickerEmojiListRequest) (*SetStickerEmojiListResponse, *http.Response, error)
 
 	/*
 	PostSetStickerKeywords setStickerKeywords
@@ -1922,8 +1964,8 @@ Use this if the data submitted by the user doesn't satisfy the standards your se
 	PostSetStickerKeywords(ctx context.Context) ApiPostSetStickerKeywordsRequest
 
 	// PostSetStickerKeywordsExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostSetStickerKeywordsExecute(r ApiPostSetStickerKeywordsRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return SetStickerKeywordsResponse
+	PostSetStickerKeywordsExecute(r ApiPostSetStickerKeywordsRequest) (*SetStickerKeywordsResponse, *http.Response, error)
 
 	/*
 	PostSetStickerMaskPosition setStickerMaskPosition
@@ -1936,8 +1978,8 @@ Use this if the data submitted by the user doesn't satisfy the standards your se
 	PostSetStickerMaskPosition(ctx context.Context) ApiPostSetStickerMaskPositionRequest
 
 	// PostSetStickerMaskPositionExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostSetStickerMaskPositionExecute(r ApiPostSetStickerMaskPositionRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return SetStickerMaskPositionResponse
+	PostSetStickerMaskPositionExecute(r ApiPostSetStickerMaskPositionRequest) (*SetStickerMaskPositionResponse, *http.Response, error)
 
 	/*
 	PostSetStickerPositionInSet setStickerPositionInSet
@@ -1950,8 +1992,8 @@ Use this if the data submitted by the user doesn't satisfy the standards your se
 	PostSetStickerPositionInSet(ctx context.Context) ApiPostSetStickerPositionInSetRequest
 
 	// PostSetStickerPositionInSetExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostSetStickerPositionInSetExecute(r ApiPostSetStickerPositionInSetRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return SetStickerPositionInSetResponse
+	PostSetStickerPositionInSetExecute(r ApiPostSetStickerPositionInSetRequest) (*SetStickerPositionInSetResponse, *http.Response, error)
 
 	/*
 	PostSetStickerSetThumbnail setStickerSetThumbnail
@@ -1964,8 +2006,8 @@ Use this if the data submitted by the user doesn't satisfy the standards your se
 	PostSetStickerSetThumbnail(ctx context.Context) ApiPostSetStickerSetThumbnailRequest
 
 	// PostSetStickerSetThumbnailExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostSetStickerSetThumbnailExecute(r ApiPostSetStickerSetThumbnailRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return SetStickerSetThumbnailResponse
+	PostSetStickerSetThumbnailExecute(r ApiPostSetStickerSetThumbnailRequest) (*SetStickerSetThumbnailResponse, *http.Response, error)
 
 	/*
 	PostSetStickerSetTitle setStickerSetTitle
@@ -1978,8 +2020,8 @@ Use this if the data submitted by the user doesn't satisfy the standards your se
 	PostSetStickerSetTitle(ctx context.Context) ApiPostSetStickerSetTitleRequest
 
 	// PostSetStickerSetTitleExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostSetStickerSetTitleExecute(r ApiPostSetStickerSetTitleRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return SetStickerSetTitleResponse
+	PostSetStickerSetTitleExecute(r ApiPostSetStickerSetTitleRequest) (*SetStickerSetTitleResponse, *http.Response, error)
 
 	/*
 	PostSetUserEmojiStatus setUserEmojiStatus
@@ -1992,8 +2034,8 @@ Use this if the data submitted by the user doesn't satisfy the standards your se
 	PostSetUserEmojiStatus(ctx context.Context) ApiPostSetUserEmojiStatusRequest
 
 	// PostSetUserEmojiStatusExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostSetUserEmojiStatusExecute(r ApiPostSetUserEmojiStatusRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return SetUserEmojiStatusResponse
+	PostSetUserEmojiStatusExecute(r ApiPostSetUserEmojiStatusRequest) (*SetUserEmojiStatusResponse, *http.Response, error)
 
 	/*
 	PostSetWebhook setWebhook
@@ -2008,8 +2050,8 @@ If you'd like to make sure that the webhook was set by you, you can specify secr
 	PostSetWebhook(ctx context.Context) ApiPostSetWebhookRequest
 
 	// PostSetWebhookExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostSetWebhookExecute(r ApiPostSetWebhookRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return SetWebhookResponse
+	PostSetWebhookExecute(r ApiPostSetWebhookRequest) (*SetWebhookResponse, *http.Response, error)
 
 	/*
 	PostStopMessageLiveLocation stopMessageLiveLocation
@@ -2022,8 +2064,8 @@ If you'd like to make sure that the webhook was set by you, you can specify secr
 	PostStopMessageLiveLocation(ctx context.Context) ApiPostStopMessageLiveLocationRequest
 
 	// PostStopMessageLiveLocationExecute executes the request
-	//  @return PostEditMessageText200Response
-	PostStopMessageLiveLocationExecute(r ApiPostStopMessageLiveLocationRequest) (*PostEditMessageText200Response, *http.Response, error)
+	//  @return StopMessageLiveLocationResponse
+	PostStopMessageLiveLocationExecute(r ApiPostStopMessageLiveLocationRequest) (*StopMessageLiveLocationResponse, *http.Response, error)
 
 	/*
 	PostStopPoll stopPoll
@@ -2036,8 +2078,8 @@ If you'd like to make sure that the webhook was set by you, you can specify secr
 	PostStopPoll(ctx context.Context) ApiPostStopPollRequest
 
 	// PostStopPollExecute executes the request
-	//  @return PostStopPoll200Response
-	PostStopPollExecute(r ApiPostStopPollRequest) (*PostStopPoll200Response, *http.Response, error)
+	//  @return StopPollResponse
+	PostStopPollExecute(r ApiPostStopPollRequest) (*StopPollResponse, *http.Response, error)
 
 	/*
 	PostTransferBusinessAccountStars transferBusinessAccountStars
@@ -2050,8 +2092,8 @@ If you'd like to make sure that the webhook was set by you, you can specify secr
 	PostTransferBusinessAccountStars(ctx context.Context) ApiPostTransferBusinessAccountStarsRequest
 
 	// PostTransferBusinessAccountStarsExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostTransferBusinessAccountStarsExecute(r ApiPostTransferBusinessAccountStarsRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return TransferBusinessAccountStarsResponse
+	PostTransferBusinessAccountStarsExecute(r ApiPostTransferBusinessAccountStarsRequest) (*TransferBusinessAccountStarsResponse, *http.Response, error)
 
 	/*
 	PostTransferGift transferGift
@@ -2064,8 +2106,8 @@ If you'd like to make sure that the webhook was set by you, you can specify secr
 	PostTransferGift(ctx context.Context) ApiPostTransferGiftRequest
 
 	// PostTransferGiftExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostTransferGiftExecute(r ApiPostTransferGiftRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return TransferGiftResponse
+	PostTransferGiftExecute(r ApiPostTransferGiftRequest) (*TransferGiftResponse, *http.Response, error)
 
 	/*
 	PostUnbanChatMember unbanChatMember
@@ -2078,8 +2120,8 @@ If you'd like to make sure that the webhook was set by you, you can specify secr
 	PostUnbanChatMember(ctx context.Context) ApiPostUnbanChatMemberRequest
 
 	// PostUnbanChatMemberExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostUnbanChatMemberExecute(r ApiPostUnbanChatMemberRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return UnbanChatMemberResponse
+	PostUnbanChatMemberExecute(r ApiPostUnbanChatMemberRequest) (*UnbanChatMemberResponse, *http.Response, error)
 
 	/*
 	PostUnbanChatSenderChat unbanChatSenderChat
@@ -2092,8 +2134,8 @@ If you'd like to make sure that the webhook was set by you, you can specify secr
 	PostUnbanChatSenderChat(ctx context.Context) ApiPostUnbanChatSenderChatRequest
 
 	// PostUnbanChatSenderChatExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostUnbanChatSenderChatExecute(r ApiPostUnbanChatSenderChatRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return UnbanChatSenderChatResponse
+	PostUnbanChatSenderChatExecute(r ApiPostUnbanChatSenderChatRequest) (*UnbanChatSenderChatResponse, *http.Response, error)
 
 	/*
 	PostUnhideGeneralForumTopic unhideGeneralForumTopic
@@ -2106,8 +2148,8 @@ If you'd like to make sure that the webhook was set by you, you can specify secr
 	PostUnhideGeneralForumTopic(ctx context.Context) ApiPostUnhideGeneralForumTopicRequest
 
 	// PostUnhideGeneralForumTopicExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostUnhideGeneralForumTopicExecute(r ApiPostUnhideGeneralForumTopicRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return UnhideGeneralForumTopicResponse
+	PostUnhideGeneralForumTopicExecute(r ApiPostUnhideGeneralForumTopicRequest) (*UnhideGeneralForumTopicResponse, *http.Response, error)
 
 	/*
 	PostUnpinAllChatMessages unpinAllChatMessages
@@ -2120,8 +2162,8 @@ If you'd like to make sure that the webhook was set by you, you can specify secr
 	PostUnpinAllChatMessages(ctx context.Context) ApiPostUnpinAllChatMessagesRequest
 
 	// PostUnpinAllChatMessagesExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostUnpinAllChatMessagesExecute(r ApiPostUnpinAllChatMessagesRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return UnpinAllChatMessagesResponse
+	PostUnpinAllChatMessagesExecute(r ApiPostUnpinAllChatMessagesRequest) (*UnpinAllChatMessagesResponse, *http.Response, error)
 
 	/*
 	PostUnpinAllForumTopicMessages unpinAllForumTopicMessages
@@ -2134,8 +2176,8 @@ If you'd like to make sure that the webhook was set by you, you can specify secr
 	PostUnpinAllForumTopicMessages(ctx context.Context) ApiPostUnpinAllForumTopicMessagesRequest
 
 	// PostUnpinAllForumTopicMessagesExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostUnpinAllForumTopicMessagesExecute(r ApiPostUnpinAllForumTopicMessagesRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return UnpinAllForumTopicMessagesResponse
+	PostUnpinAllForumTopicMessagesExecute(r ApiPostUnpinAllForumTopicMessagesRequest) (*UnpinAllForumTopicMessagesResponse, *http.Response, error)
 
 	/*
 	PostUnpinAllGeneralForumTopicMessages unpinAllGeneralForumTopicMessages
@@ -2148,8 +2190,8 @@ If you'd like to make sure that the webhook was set by you, you can specify secr
 	PostUnpinAllGeneralForumTopicMessages(ctx context.Context) ApiPostUnpinAllGeneralForumTopicMessagesRequest
 
 	// PostUnpinAllGeneralForumTopicMessagesExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostUnpinAllGeneralForumTopicMessagesExecute(r ApiPostUnpinAllGeneralForumTopicMessagesRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return UnpinAllGeneralForumTopicMessagesResponse
+	PostUnpinAllGeneralForumTopicMessagesExecute(r ApiPostUnpinAllGeneralForumTopicMessagesRequest) (*UnpinAllGeneralForumTopicMessagesResponse, *http.Response, error)
 
 	/*
 	PostUnpinChatMessage unpinChatMessage
@@ -2162,8 +2204,8 @@ If you'd like to make sure that the webhook was set by you, you can specify secr
 	PostUnpinChatMessage(ctx context.Context) ApiPostUnpinChatMessageRequest
 
 	// PostUnpinChatMessageExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostUnpinChatMessageExecute(r ApiPostUnpinChatMessageRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return UnpinChatMessageResponse
+	PostUnpinChatMessageExecute(r ApiPostUnpinChatMessageRequest) (*UnpinChatMessageResponse, *http.Response, error)
 
 	/*
 	PostUpgradeGift upgradeGift
@@ -2176,8 +2218,8 @@ If you'd like to make sure that the webhook was set by you, you can specify secr
 	PostUpgradeGift(ctx context.Context) ApiPostUpgradeGiftRequest
 
 	// PostUpgradeGiftExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostUpgradeGiftExecute(r ApiPostUpgradeGiftRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return UpgradeGiftResponse
+	PostUpgradeGiftExecute(r ApiPostUpgradeGiftRequest) (*UpgradeGiftResponse, *http.Response, error)
 
 	/*
 	PostUploadStickerFile uploadStickerFile
@@ -2190,8 +2232,8 @@ If you'd like to make sure that the webhook was set by you, you can specify secr
 	PostUploadStickerFile(ctx context.Context) ApiPostUploadStickerFileRequest
 
 	// PostUploadStickerFileExecute executes the request
-	//  @return PostGetFile200Response
-	PostUploadStickerFileExecute(r ApiPostUploadStickerFileRequest) (*PostGetFile200Response, *http.Response, error)
+	//  @return UploadStickerFileResponse
+	PostUploadStickerFileExecute(r ApiPostUploadStickerFileRequest) (*UploadStickerFileResponse, *http.Response, error)
 
 	/*
 	PostVerifyChat verifyChat
@@ -2204,8 +2246,8 @@ If you'd like to make sure that the webhook was set by you, you can specify secr
 	PostVerifyChat(ctx context.Context) ApiPostVerifyChatRequest
 
 	// PostVerifyChatExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostVerifyChatExecute(r ApiPostVerifyChatRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return VerifyChatResponse
+	PostVerifyChatExecute(r ApiPostVerifyChatRequest) (*VerifyChatResponse, *http.Response, error)
 
 	/*
 	PostVerifyUser verifyUser
@@ -2218,8 +2260,8 @@ If you'd like to make sure that the webhook was set by you, you can specify secr
 	PostVerifyUser(ctx context.Context) ApiPostVerifyUserRequest
 
 	// PostVerifyUserExecute executes the request
-	//  @return PostSetWebhook200Response
-	PostVerifyUserExecute(r ApiPostVerifyUserRequest) (*PostSetWebhook200Response, *http.Response, error)
+	//  @return VerifyUserResponse
+	PostVerifyUserExecute(r ApiPostVerifyUserRequest) (*VerifyUserResponse, *http.Response, error)
 }
 
 // DefaultAPIService DefaultAPI service
@@ -2250,7 +2292,7 @@ func (r ApiPostAddStickerToSetRequest) Sticker(sticker InputSticker) ApiPostAddS
 	return r
 }
 
-func (r ApiPostAddStickerToSetRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostAddStickerToSetRequest) Execute() (*AddStickerToSetResponse, *http.Response, error) {
 	return r.ApiService.PostAddStickerToSetExecute(r)
 }
 
@@ -2270,13 +2312,13 @@ func (a *DefaultAPIService) PostAddStickerToSet(ctx context.Context) ApiPostAddS
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostAddStickerToSetExecute(r ApiPostAddStickerToSetRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return AddStickerToSetResponse
+func (a *DefaultAPIService) PostAddStickerToSetExecute(r ApiPostAddStickerToSetRequest) (*AddStickerToSetResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *AddStickerToSetResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostAddStickerToSet")
@@ -2300,7 +2342,7 @@ func (a *DefaultAPIService) PostAddStickerToSetExecute(r ApiPostAddStickerToSetR
 	}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"multipart/form-data"}
+	localVarHTTPContentTypes := []string{"multipart/form-data", "application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -2415,7 +2457,7 @@ func (r ApiPostAnswerCallbackQueryRequest) CacheTime(cacheTime int32) ApiPostAns
 	return r
 }
 
-func (r ApiPostAnswerCallbackQueryRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostAnswerCallbackQueryRequest) Execute() (*AnswerCallbackQueryResponse, *http.Response, error) {
 	return r.ApiService.PostAnswerCallbackQueryExecute(r)
 }
 
@@ -2437,13 +2479,13 @@ func (a *DefaultAPIService) PostAnswerCallbackQuery(ctx context.Context) ApiPost
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostAnswerCallbackQueryExecute(r ApiPostAnswerCallbackQueryRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return AnswerCallbackQueryResponse
+func (a *DefaultAPIService) PostAnswerCallbackQueryExecute(r ApiPostAnswerCallbackQueryRequest) (*AnswerCallbackQueryResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *AnswerCallbackQueryResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostAnswerCallbackQuery")
@@ -2592,7 +2634,7 @@ func (r ApiPostAnswerInlineQueryRequest) Button(button InlineQueryResultsButton)
 	return r
 }
 
-func (r ApiPostAnswerInlineQueryRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostAnswerInlineQueryRequest) Execute() (*AnswerInlineQueryResponse, *http.Response, error) {
 	return r.ApiService.PostAnswerInlineQueryExecute(r)
 }
 
@@ -2613,13 +2655,13 @@ func (a *DefaultAPIService) PostAnswerInlineQuery(ctx context.Context) ApiPostAn
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostAnswerInlineQueryExecute(r ApiPostAnswerInlineQueryRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return AnswerInlineQueryResponse
+func (a *DefaultAPIService) PostAnswerInlineQueryExecute(r ApiPostAnswerInlineQueryRequest) (*AnswerInlineQueryResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *AnswerInlineQueryResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostAnswerInlineQuery")
@@ -2756,7 +2798,7 @@ func (r ApiPostAnswerPreCheckoutQueryRequest) ErrorMessage(errorMessage string) 
 	return r
 }
 
-func (r ApiPostAnswerPreCheckoutQueryRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostAnswerPreCheckoutQueryRequest) Execute() (*AnswerPreCheckoutQueryResponse, *http.Response, error) {
 	return r.ApiService.PostAnswerPreCheckoutQueryExecute(r)
 }
 
@@ -2776,13 +2818,13 @@ func (a *DefaultAPIService) PostAnswerPreCheckoutQuery(ctx context.Context) ApiP
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostAnswerPreCheckoutQueryExecute(r ApiPostAnswerPreCheckoutQueryRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return AnswerPreCheckoutQueryResponse
+func (a *DefaultAPIService) PostAnswerPreCheckoutQueryExecute(r ApiPostAnswerPreCheckoutQueryRequest) (*AnswerPreCheckoutQueryResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *AnswerPreCheckoutQueryResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostAnswerPreCheckoutQuery")
@@ -2913,7 +2955,7 @@ func (r ApiPostAnswerShippingQueryRequest) ErrorMessage(errorMessage string) Api
 	return r
 }
 
-func (r ApiPostAnswerShippingQueryRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostAnswerShippingQueryRequest) Execute() (*AnswerShippingQueryResponse, *http.Response, error) {
 	return r.ApiService.PostAnswerShippingQueryExecute(r)
 }
 
@@ -2933,13 +2975,13 @@ func (a *DefaultAPIService) PostAnswerShippingQuery(ctx context.Context) ApiPost
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostAnswerShippingQueryExecute(r ApiPostAnswerShippingQueryRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return AnswerShippingQueryResponse
+func (a *DefaultAPIService) PostAnswerShippingQueryExecute(r ApiPostAnswerShippingQueryRequest) (*AnswerShippingQueryResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *AnswerShippingQueryResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostAnswerShippingQuery")
@@ -3058,7 +3100,7 @@ func (r ApiPostAnswerWebAppQueryRequest) Result(result InlineQueryResult) ApiPos
 	return r
 }
 
-func (r ApiPostAnswerWebAppQueryRequest) Execute() (*PostAnswerWebAppQuery200Response, *http.Response, error) {
+func (r ApiPostAnswerWebAppQueryRequest) Execute() (*AnswerWebAppQueryResponse, *http.Response, error) {
 	return r.ApiService.PostAnswerWebAppQueryExecute(r)
 }
 
@@ -3078,13 +3120,13 @@ func (a *DefaultAPIService) PostAnswerWebAppQuery(ctx context.Context) ApiPostAn
 }
 
 // Execute executes the request
-//  @return PostAnswerWebAppQuery200Response
-func (a *DefaultAPIService) PostAnswerWebAppQueryExecute(r ApiPostAnswerWebAppQueryRequest) (*PostAnswerWebAppQuery200Response, *http.Response, error) {
+//  @return AnswerWebAppQueryResponse
+func (a *DefaultAPIService) PostAnswerWebAppQueryExecute(r ApiPostAnswerWebAppQueryRequest) (*AnswerWebAppQueryResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostAnswerWebAppQuery200Response
+		localVarReturnValue  *AnswerWebAppQueryResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostAnswerWebAppQuery")
@@ -3182,11 +3224,11 @@ func (a *DefaultAPIService) PostAnswerWebAppQueryExecute(r ApiPostAnswerWebAppQu
 type ApiPostApproveChatJoinRequestRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
+	chatId *SendMessageRequestChatId
 	userId *int32
 }
 
-func (r ApiPostApproveChatJoinRequestRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostApproveChatJoinRequestRequest {
+func (r ApiPostApproveChatJoinRequestRequest) ChatId(chatId SendMessageRequestChatId) ApiPostApproveChatJoinRequestRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -3197,7 +3239,7 @@ func (r ApiPostApproveChatJoinRequestRequest) UserId(userId int32) ApiPostApprov
 	return r
 }
 
-func (r ApiPostApproveChatJoinRequestRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostApproveChatJoinRequestRequest) Execute() (*ApproveChatJoinRequestResponse, *http.Response, error) {
 	return r.ApiService.PostApproveChatJoinRequestExecute(r)
 }
 
@@ -3217,13 +3259,13 @@ func (a *DefaultAPIService) PostApproveChatJoinRequest(ctx context.Context) ApiP
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostApproveChatJoinRequestExecute(r ApiPostApproveChatJoinRequestRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return ApproveChatJoinRequestResponse
+func (a *DefaultAPIService) PostApproveChatJoinRequestExecute(r ApiPostApproveChatJoinRequestRequest) (*ApproveChatJoinRequestResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *ApproveChatJoinRequestResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostApproveChatJoinRequest")
@@ -3321,13 +3363,13 @@ func (a *DefaultAPIService) PostApproveChatJoinRequestExecute(r ApiPostApproveCh
 type ApiPostBanChatMemberRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostBanChatMemberRequestChatId
+	chatId *BanChatMemberRequestChatId
 	userId *int32
 	untilDate *int32
 	revokeMessages *bool
 }
 
-func (r ApiPostBanChatMemberRequest) ChatId(chatId PostBanChatMemberRequestChatId) ApiPostBanChatMemberRequest {
+func (r ApiPostBanChatMemberRequest) ChatId(chatId BanChatMemberRequestChatId) ApiPostBanChatMemberRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -3350,7 +3392,7 @@ func (r ApiPostBanChatMemberRequest) RevokeMessages(revokeMessages bool) ApiPost
 	return r
 }
 
-func (r ApiPostBanChatMemberRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostBanChatMemberRequest) Execute() (*BanChatMemberResponse, *http.Response, error) {
 	return r.ApiService.PostBanChatMemberExecute(r)
 }
 
@@ -3370,13 +3412,13 @@ func (a *DefaultAPIService) PostBanChatMember(ctx context.Context) ApiPostBanCha
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostBanChatMemberExecute(r ApiPostBanChatMemberRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return BanChatMemberResponse
+func (a *DefaultAPIService) PostBanChatMemberExecute(r ApiPostBanChatMemberRequest) (*BanChatMemberResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *BanChatMemberResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostBanChatMember")
@@ -3480,11 +3522,11 @@ func (a *DefaultAPIService) PostBanChatMemberExecute(r ApiPostBanChatMemberReque
 type ApiPostBanChatSenderChatRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
+	chatId *SendMessageRequestChatId
 	senderChatId *int32
 }
 
-func (r ApiPostBanChatSenderChatRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostBanChatSenderChatRequest {
+func (r ApiPostBanChatSenderChatRequest) ChatId(chatId SendMessageRequestChatId) ApiPostBanChatSenderChatRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -3495,7 +3537,7 @@ func (r ApiPostBanChatSenderChatRequest) SenderChatId(senderChatId int32) ApiPos
 	return r
 }
 
-func (r ApiPostBanChatSenderChatRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostBanChatSenderChatRequest) Execute() (*BanChatSenderChatResponse, *http.Response, error) {
 	return r.ApiService.PostBanChatSenderChatExecute(r)
 }
 
@@ -3515,13 +3557,13 @@ func (a *DefaultAPIService) PostBanChatSenderChat(ctx context.Context) ApiPostBa
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostBanChatSenderChatExecute(r ApiPostBanChatSenderChatRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return BanChatSenderChatResponse
+func (a *DefaultAPIService) PostBanChatSenderChatExecute(r ApiPostBanChatSenderChatRequest) (*BanChatSenderChatResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *BanChatSenderChatResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostBanChatSenderChat")
@@ -3621,7 +3663,7 @@ type ApiPostCloseRequest struct {
 	ApiService DefaultAPI
 }
 
-func (r ApiPostCloseRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostCloseRequest) Execute() (*CloseResponse, *http.Response, error) {
 	return r.ApiService.PostCloseExecute(r)
 }
 
@@ -3641,13 +3683,13 @@ func (a *DefaultAPIService) PostClose(ctx context.Context) ApiPostCloseRequest {
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostCloseExecute(r ApiPostCloseRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return CloseResponse
+func (a *DefaultAPIService) PostCloseExecute(r ApiPostCloseRequest) (*CloseResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *CloseResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostClose")
@@ -3737,11 +3779,11 @@ func (a *DefaultAPIService) PostCloseExecute(r ApiPostCloseRequest) (*PostSetWeb
 type ApiPostCloseForumTopicRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostRestrictChatMemberRequestChatId
+	chatId *BotCommandScopeChatChatId
 	messageThreadId *int32
 }
 
-func (r ApiPostCloseForumTopicRequest) ChatId(chatId PostRestrictChatMemberRequestChatId) ApiPostCloseForumTopicRequest {
+func (r ApiPostCloseForumTopicRequest) ChatId(chatId BotCommandScopeChatChatId) ApiPostCloseForumTopicRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -3752,7 +3794,7 @@ func (r ApiPostCloseForumTopicRequest) MessageThreadId(messageThreadId int32) Ap
 	return r
 }
 
-func (r ApiPostCloseForumTopicRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostCloseForumTopicRequest) Execute() (*CloseForumTopicResponse, *http.Response, error) {
 	return r.ApiService.PostCloseForumTopicExecute(r)
 }
 
@@ -3772,13 +3814,13 @@ func (a *DefaultAPIService) PostCloseForumTopic(ctx context.Context) ApiPostClos
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostCloseForumTopicExecute(r ApiPostCloseForumTopicRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return CloseForumTopicResponse
+func (a *DefaultAPIService) PostCloseForumTopicExecute(r ApiPostCloseForumTopicRequest) (*CloseForumTopicResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *CloseForumTopicResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostCloseForumTopic")
@@ -3876,15 +3918,15 @@ func (a *DefaultAPIService) PostCloseForumTopicExecute(r ApiPostCloseForumTopicR
 type ApiPostCloseGeneralForumTopicRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostRestrictChatMemberRequestChatId
+	chatId *BotCommandScopeChatChatId
 }
 
-func (r ApiPostCloseGeneralForumTopicRequest) ChatId(chatId PostRestrictChatMemberRequestChatId) ApiPostCloseGeneralForumTopicRequest {
+func (r ApiPostCloseGeneralForumTopicRequest) ChatId(chatId BotCommandScopeChatChatId) ApiPostCloseGeneralForumTopicRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiPostCloseGeneralForumTopicRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostCloseGeneralForumTopicRequest) Execute() (*CloseGeneralForumTopicResponse, *http.Response, error) {
 	return r.ApiService.PostCloseGeneralForumTopicExecute(r)
 }
 
@@ -3904,13 +3946,13 @@ func (a *DefaultAPIService) PostCloseGeneralForumTopic(ctx context.Context) ApiP
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostCloseGeneralForumTopicExecute(r ApiPostCloseGeneralForumTopicRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return CloseGeneralForumTopicResponse
+func (a *DefaultAPIService) PostCloseGeneralForumTopicExecute(r ApiPostCloseGeneralForumTopicRequest) (*CloseGeneralForumTopicResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *CloseGeneralForumTopicResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostCloseGeneralForumTopic")
@@ -4020,7 +4062,7 @@ func (r ApiPostConvertGiftToStarsRequest) OwnedGiftId(ownedGiftId string) ApiPos
 	return r
 }
 
-func (r ApiPostConvertGiftToStarsRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostConvertGiftToStarsRequest) Execute() (*ConvertGiftToStarsResponse, *http.Response, error) {
 	return r.ApiService.PostConvertGiftToStarsExecute(r)
 }
 
@@ -4040,13 +4082,13 @@ func (a *DefaultAPIService) PostConvertGiftToStars(ctx context.Context) ApiPostC
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostConvertGiftToStarsExecute(r ApiPostConvertGiftToStarsRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return ConvertGiftToStarsResponse
+func (a *DefaultAPIService) PostConvertGiftToStarsExecute(r ApiPostConvertGiftToStarsRequest) (*ConvertGiftToStarsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *ConvertGiftToStarsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostConvertGiftToStars")
@@ -4144,8 +4186,8 @@ func (a *DefaultAPIService) PostConvertGiftToStarsExecute(r ApiPostConvertGiftTo
 type ApiPostCopyMessageRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
-	fromChatId *PostForwardMessageRequestFromChatId
+	chatId *SendMessageRequestChatId
+	fromChatId *ForwardMessageRequestFromChatId
 	messageId *int32
 	messageThreadId *int32
 	videoStartTimestamp *int32
@@ -4157,15 +4199,15 @@ type ApiPostCopyMessageRequest struct {
 	protectContent *bool
 	allowPaidBroadcast *bool
 	replyParameters *ReplyParameters
-	replyMarkup *PostSendMessageRequestReplyMarkup
+	replyMarkup *SendMessageRequestReplyMarkup
 }
 
-func (r ApiPostCopyMessageRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostCopyMessageRequest {
+func (r ApiPostCopyMessageRequest) ChatId(chatId SendMessageRequestChatId) ApiPostCopyMessageRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiPostCopyMessageRequest) FromChatId(fromChatId PostForwardMessageRequestFromChatId) ApiPostCopyMessageRequest {
+func (r ApiPostCopyMessageRequest) FromChatId(fromChatId ForwardMessageRequestFromChatId) ApiPostCopyMessageRequest {
 	r.fromChatId = &fromChatId
 	return r
 }
@@ -4235,12 +4277,12 @@ func (r ApiPostCopyMessageRequest) ReplyParameters(replyParameters ReplyParamete
 	return r
 }
 
-func (r ApiPostCopyMessageRequest) ReplyMarkup(replyMarkup PostSendMessageRequestReplyMarkup) ApiPostCopyMessageRequest {
+func (r ApiPostCopyMessageRequest) ReplyMarkup(replyMarkup SendMessageRequestReplyMarkup) ApiPostCopyMessageRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiPostCopyMessageRequest) Execute() (*PostCopyMessage200Response, *http.Response, error) {
+func (r ApiPostCopyMessageRequest) Execute() (*CopyMessageResponse, *http.Response, error) {
 	return r.ApiService.PostCopyMessageExecute(r)
 }
 
@@ -4260,13 +4302,13 @@ func (a *DefaultAPIService) PostCopyMessage(ctx context.Context) ApiPostCopyMess
 }
 
 // Execute executes the request
-//  @return PostCopyMessage200Response
-func (a *DefaultAPIService) PostCopyMessageExecute(r ApiPostCopyMessageRequest) (*PostCopyMessage200Response, *http.Response, error) {
+//  @return CopyMessageResponse
+func (a *DefaultAPIService) PostCopyMessageExecute(r ApiPostCopyMessageRequest) (*CopyMessageResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostCopyMessage200Response
+		localVarReturnValue  *CopyMessageResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostCopyMessage")
@@ -4409,8 +4451,8 @@ func (a *DefaultAPIService) PostCopyMessageExecute(r ApiPostCopyMessageRequest) 
 type ApiPostCopyMessagesRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
-	fromChatId *PostForwardMessagesRequestFromChatId
+	chatId *SendMessageRequestChatId
+	fromChatId *ForwardMessagesRequestFromChatId
 	messageIds *[]int32
 	messageThreadId *int32
 	disableNotification *bool
@@ -4418,12 +4460,12 @@ type ApiPostCopyMessagesRequest struct {
 	removeCaption *bool
 }
 
-func (r ApiPostCopyMessagesRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostCopyMessagesRequest {
+func (r ApiPostCopyMessagesRequest) ChatId(chatId SendMessageRequestChatId) ApiPostCopyMessagesRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiPostCopyMessagesRequest) FromChatId(fromChatId PostForwardMessagesRequestFromChatId) ApiPostCopyMessagesRequest {
+func (r ApiPostCopyMessagesRequest) FromChatId(fromChatId ForwardMessagesRequestFromChatId) ApiPostCopyMessagesRequest {
 	r.fromChatId = &fromChatId
 	return r
 }
@@ -4458,7 +4500,7 @@ func (r ApiPostCopyMessagesRequest) RemoveCaption(removeCaption bool) ApiPostCop
 	return r
 }
 
-func (r ApiPostCopyMessagesRequest) Execute() (*PostForwardMessages200Response, *http.Response, error) {
+func (r ApiPostCopyMessagesRequest) Execute() (*CopyMessagesResponse, *http.Response, error) {
 	return r.ApiService.PostCopyMessagesExecute(r)
 }
 
@@ -4478,13 +4520,13 @@ func (a *DefaultAPIService) PostCopyMessages(ctx context.Context) ApiPostCopyMes
 }
 
 // Execute executes the request
-//  @return PostForwardMessages200Response
-func (a *DefaultAPIService) PostCopyMessagesExecute(r ApiPostCopyMessagesRequest) (*PostForwardMessages200Response, *http.Response, error) {
+//  @return CopyMessagesResponse
+func (a *DefaultAPIService) PostCopyMessagesExecute(r ApiPostCopyMessagesRequest) (*CopyMessagesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostForwardMessages200Response
+		localVarReturnValue  *CopyMessagesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostCopyMessages")
@@ -4598,14 +4640,14 @@ func (a *DefaultAPIService) PostCopyMessagesExecute(r ApiPostCopyMessagesRequest
 type ApiPostCreateChatInviteLinkRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
+	chatId *SendMessageRequestChatId
 	name *string
 	expireDate *int32
 	memberLimit *int32
 	createsJoinRequest *bool
 }
 
-func (r ApiPostCreateChatInviteLinkRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostCreateChatInviteLinkRequest {
+func (r ApiPostCreateChatInviteLinkRequest) ChatId(chatId SendMessageRequestChatId) ApiPostCreateChatInviteLinkRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -4634,7 +4676,7 @@ func (r ApiPostCreateChatInviteLinkRequest) CreatesJoinRequest(createsJoinReques
 	return r
 }
 
-func (r ApiPostCreateChatInviteLinkRequest) Execute() (*PostCreateChatInviteLink200Response, *http.Response, error) {
+func (r ApiPostCreateChatInviteLinkRequest) Execute() (*CreateChatInviteLinkResponse, *http.Response, error) {
 	return r.ApiService.PostCreateChatInviteLinkExecute(r)
 }
 
@@ -4654,13 +4696,13 @@ func (a *DefaultAPIService) PostCreateChatInviteLink(ctx context.Context) ApiPos
 }
 
 // Execute executes the request
-//  @return PostCreateChatInviteLink200Response
-func (a *DefaultAPIService) PostCreateChatInviteLinkExecute(r ApiPostCreateChatInviteLinkRequest) (*PostCreateChatInviteLink200Response, *http.Response, error) {
+//  @return CreateChatInviteLinkResponse
+func (a *DefaultAPIService) PostCreateChatInviteLinkExecute(r ApiPostCreateChatInviteLinkRequest) (*CreateChatInviteLinkResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostCreateChatInviteLink200Response
+		localVarReturnValue  *CreateChatInviteLinkResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostCreateChatInviteLink")
@@ -4766,13 +4808,13 @@ func (a *DefaultAPIService) PostCreateChatInviteLinkExecute(r ApiPostCreateChatI
 type ApiPostCreateChatSubscriptionInviteLinkRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostCreateChatSubscriptionInviteLinkRequestChatId
+	chatId *CreateChatSubscriptionInviteLinkRequestChatId
 	subscriptionPeriod *int32
 	subscriptionPrice *int32
 	name *string
 }
 
-func (r ApiPostCreateChatSubscriptionInviteLinkRequest) ChatId(chatId PostCreateChatSubscriptionInviteLinkRequestChatId) ApiPostCreateChatSubscriptionInviteLinkRequest {
+func (r ApiPostCreateChatSubscriptionInviteLinkRequest) ChatId(chatId CreateChatSubscriptionInviteLinkRequestChatId) ApiPostCreateChatSubscriptionInviteLinkRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -4795,7 +4837,7 @@ func (r ApiPostCreateChatSubscriptionInviteLinkRequest) Name(name string) ApiPos
 	return r
 }
 
-func (r ApiPostCreateChatSubscriptionInviteLinkRequest) Execute() (*PostCreateChatInviteLink200Response, *http.Response, error) {
+func (r ApiPostCreateChatSubscriptionInviteLinkRequest) Execute() (*CreateChatSubscriptionInviteLinkResponse, *http.Response, error) {
 	return r.ApiService.PostCreateChatSubscriptionInviteLinkExecute(r)
 }
 
@@ -4815,13 +4857,13 @@ func (a *DefaultAPIService) PostCreateChatSubscriptionInviteLink(ctx context.Con
 }
 
 // Execute executes the request
-//  @return PostCreateChatInviteLink200Response
-func (a *DefaultAPIService) PostCreateChatSubscriptionInviteLinkExecute(r ApiPostCreateChatSubscriptionInviteLinkRequest) (*PostCreateChatInviteLink200Response, *http.Response, error) {
+//  @return CreateChatSubscriptionInviteLinkResponse
+func (a *DefaultAPIService) PostCreateChatSubscriptionInviteLinkExecute(r ApiPostCreateChatSubscriptionInviteLinkRequest) (*CreateChatSubscriptionInviteLinkResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostCreateChatInviteLink200Response
+		localVarReturnValue  *CreateChatSubscriptionInviteLinkResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostCreateChatSubscriptionInviteLink")
@@ -4926,13 +4968,13 @@ func (a *DefaultAPIService) PostCreateChatSubscriptionInviteLinkExecute(r ApiPos
 type ApiPostCreateForumTopicRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostRestrictChatMemberRequestChatId
+	chatId *BotCommandScopeChatChatId
 	name *string
 	iconColor *int32
 	iconCustomEmojiId *string
 }
 
-func (r ApiPostCreateForumTopicRequest) ChatId(chatId PostRestrictChatMemberRequestChatId) ApiPostCreateForumTopicRequest {
+func (r ApiPostCreateForumTopicRequest) ChatId(chatId BotCommandScopeChatChatId) ApiPostCreateForumTopicRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -4955,7 +4997,7 @@ func (r ApiPostCreateForumTopicRequest) IconCustomEmojiId(iconCustomEmojiId stri
 	return r
 }
 
-func (r ApiPostCreateForumTopicRequest) Execute() (*PostCreateForumTopic200Response, *http.Response, error) {
+func (r ApiPostCreateForumTopicRequest) Execute() (*CreateForumTopicResponse, *http.Response, error) {
 	return r.ApiService.PostCreateForumTopicExecute(r)
 }
 
@@ -4975,13 +5017,13 @@ func (a *DefaultAPIService) PostCreateForumTopic(ctx context.Context) ApiPostCre
 }
 
 // Execute executes the request
-//  @return PostCreateForumTopic200Response
-func (a *DefaultAPIService) PostCreateForumTopicExecute(r ApiPostCreateForumTopicRequest) (*PostCreateForumTopic200Response, *http.Response, error) {
+//  @return CreateForumTopicResponse
+func (a *DefaultAPIService) PostCreateForumTopicExecute(r ApiPostCreateForumTopicRequest) (*CreateForumTopicResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostCreateForumTopic200Response
+		localVarReturnValue  *CreateForumTopicResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostCreateForumTopic")
@@ -5247,7 +5289,7 @@ func (r ApiPostCreateInvoiceLinkRequest) IsFlexible(isFlexible bool) ApiPostCrea
 	return r
 }
 
-func (r ApiPostCreateInvoiceLinkRequest) Execute() (*PostExportChatInviteLink200Response, *http.Response, error) {
+func (r ApiPostCreateInvoiceLinkRequest) Execute() (*CreateInvoiceLinkResponse, *http.Response, error) {
 	return r.ApiService.PostCreateInvoiceLinkExecute(r)
 }
 
@@ -5267,13 +5309,13 @@ func (a *DefaultAPIService) PostCreateInvoiceLink(ctx context.Context) ApiPostCr
 }
 
 // Execute executes the request
-//  @return PostExportChatInviteLink200Response
-func (a *DefaultAPIService) PostCreateInvoiceLinkExecute(r ApiPostCreateInvoiceLinkRequest) (*PostExportChatInviteLink200Response, *http.Response, error) {
+//  @return CreateInvoiceLinkResponse
+func (a *DefaultAPIService) PostCreateInvoiceLinkExecute(r ApiPostCreateInvoiceLinkRequest) (*CreateInvoiceLinkResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostExportChatInviteLink200Response
+		localVarReturnValue  *CreateInvoiceLinkResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostCreateInvoiceLink")
@@ -5490,7 +5532,7 @@ func (r ApiPostCreateNewStickerSetRequest) NeedsRepainting(needsRepainting bool)
 	return r
 }
 
-func (r ApiPostCreateNewStickerSetRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostCreateNewStickerSetRequest) Execute() (*CreateNewStickerSetResponse, *http.Response, error) {
 	return r.ApiService.PostCreateNewStickerSetExecute(r)
 }
 
@@ -5510,13 +5552,13 @@ func (a *DefaultAPIService) PostCreateNewStickerSet(ctx context.Context) ApiPost
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostCreateNewStickerSetExecute(r ApiPostCreateNewStickerSetRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return CreateNewStickerSetResponse
+func (a *DefaultAPIService) PostCreateNewStickerSetExecute(r ApiPostCreateNewStickerSetRequest) (*CreateNewStickerSetResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *CreateNewStickerSetResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostCreateNewStickerSet")
@@ -5555,7 +5597,7 @@ func (a *DefaultAPIService) PostCreateNewStickerSetExecute(r ApiPostCreateNewSti
 	}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"multipart/form-data"}
+	localVarHTTPContentTypes := []string{"multipart/form-data", "application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -5640,11 +5682,11 @@ func (a *DefaultAPIService) PostCreateNewStickerSetExecute(r ApiPostCreateNewSti
 type ApiPostDeclineChatJoinRequestRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
+	chatId *SendMessageRequestChatId
 	userId *int32
 }
 
-func (r ApiPostDeclineChatJoinRequestRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostDeclineChatJoinRequestRequest {
+func (r ApiPostDeclineChatJoinRequestRequest) ChatId(chatId SendMessageRequestChatId) ApiPostDeclineChatJoinRequestRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -5655,7 +5697,7 @@ func (r ApiPostDeclineChatJoinRequestRequest) UserId(userId int32) ApiPostDeclin
 	return r
 }
 
-func (r ApiPostDeclineChatJoinRequestRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostDeclineChatJoinRequestRequest) Execute() (*DeclineChatJoinRequestResponse, *http.Response, error) {
 	return r.ApiService.PostDeclineChatJoinRequestExecute(r)
 }
 
@@ -5675,13 +5717,13 @@ func (a *DefaultAPIService) PostDeclineChatJoinRequest(ctx context.Context) ApiP
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostDeclineChatJoinRequestExecute(r ApiPostDeclineChatJoinRequestRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return DeclineChatJoinRequestResponse
+func (a *DefaultAPIService) PostDeclineChatJoinRequestExecute(r ApiPostDeclineChatJoinRequestRequest) (*DeclineChatJoinRequestResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *DeclineChatJoinRequestResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostDeclineChatJoinRequest")
@@ -5795,7 +5837,7 @@ func (r ApiPostDeleteBusinessMessagesRequest) MessageIds(messageIds []int32) Api
 	return r
 }
 
-func (r ApiPostDeleteBusinessMessagesRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostDeleteBusinessMessagesRequest) Execute() (*DeleteBusinessMessagesResponse, *http.Response, error) {
 	return r.ApiService.PostDeleteBusinessMessagesExecute(r)
 }
 
@@ -5815,13 +5857,13 @@ func (a *DefaultAPIService) PostDeleteBusinessMessages(ctx context.Context) ApiP
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostDeleteBusinessMessagesExecute(r ApiPostDeleteBusinessMessagesRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return DeleteBusinessMessagesResponse
+func (a *DefaultAPIService) PostDeleteBusinessMessagesExecute(r ApiPostDeleteBusinessMessagesRequest) (*DeleteBusinessMessagesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *DeleteBusinessMessagesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostDeleteBusinessMessages")
@@ -5919,15 +5961,15 @@ func (a *DefaultAPIService) PostDeleteBusinessMessagesExecute(r ApiPostDeleteBus
 type ApiPostDeleteChatPhotoRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
+	chatId *SendMessageRequestChatId
 }
 
-func (r ApiPostDeleteChatPhotoRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostDeleteChatPhotoRequest {
+func (r ApiPostDeleteChatPhotoRequest) ChatId(chatId SendMessageRequestChatId) ApiPostDeleteChatPhotoRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiPostDeleteChatPhotoRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostDeleteChatPhotoRequest) Execute() (*DeleteChatPhotoResponse, *http.Response, error) {
 	return r.ApiService.PostDeleteChatPhotoExecute(r)
 }
 
@@ -5947,13 +5989,13 @@ func (a *DefaultAPIService) PostDeleteChatPhoto(ctx context.Context) ApiPostDele
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostDeleteChatPhotoExecute(r ApiPostDeleteChatPhotoRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return DeleteChatPhotoResponse
+func (a *DefaultAPIService) PostDeleteChatPhotoExecute(r ApiPostDeleteChatPhotoRequest) (*DeleteChatPhotoResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *DeleteChatPhotoResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostDeleteChatPhoto")
@@ -6047,15 +6089,15 @@ func (a *DefaultAPIService) PostDeleteChatPhotoExecute(r ApiPostDeleteChatPhotoR
 type ApiPostDeleteChatStickerSetRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostRestrictChatMemberRequestChatId
+	chatId *BotCommandScopeChatChatId
 }
 
-func (r ApiPostDeleteChatStickerSetRequest) ChatId(chatId PostRestrictChatMemberRequestChatId) ApiPostDeleteChatStickerSetRequest {
+func (r ApiPostDeleteChatStickerSetRequest) ChatId(chatId BotCommandScopeChatChatId) ApiPostDeleteChatStickerSetRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiPostDeleteChatStickerSetRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostDeleteChatStickerSetRequest) Execute() (*DeleteChatStickerSetResponse, *http.Response, error) {
 	return r.ApiService.PostDeleteChatStickerSetExecute(r)
 }
 
@@ -6075,13 +6117,13 @@ func (a *DefaultAPIService) PostDeleteChatStickerSet(ctx context.Context) ApiPos
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostDeleteChatStickerSetExecute(r ApiPostDeleteChatStickerSetRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return DeleteChatStickerSetResponse
+func (a *DefaultAPIService) PostDeleteChatStickerSetExecute(r ApiPostDeleteChatStickerSetRequest) (*DeleteChatStickerSetResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *DeleteChatStickerSetResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostDeleteChatStickerSet")
@@ -6175,11 +6217,11 @@ func (a *DefaultAPIService) PostDeleteChatStickerSetExecute(r ApiPostDeleteChatS
 type ApiPostDeleteForumTopicRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostRestrictChatMemberRequestChatId
+	chatId *BotCommandScopeChatChatId
 	messageThreadId *int32
 }
 
-func (r ApiPostDeleteForumTopicRequest) ChatId(chatId PostRestrictChatMemberRequestChatId) ApiPostDeleteForumTopicRequest {
+func (r ApiPostDeleteForumTopicRequest) ChatId(chatId BotCommandScopeChatChatId) ApiPostDeleteForumTopicRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -6190,7 +6232,7 @@ func (r ApiPostDeleteForumTopicRequest) MessageThreadId(messageThreadId int32) A
 	return r
 }
 
-func (r ApiPostDeleteForumTopicRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostDeleteForumTopicRequest) Execute() (*DeleteForumTopicResponse, *http.Response, error) {
 	return r.ApiService.PostDeleteForumTopicExecute(r)
 }
 
@@ -6210,13 +6252,13 @@ func (a *DefaultAPIService) PostDeleteForumTopic(ctx context.Context) ApiPostDel
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostDeleteForumTopicExecute(r ApiPostDeleteForumTopicRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return DeleteForumTopicResponse
+func (a *DefaultAPIService) PostDeleteForumTopicExecute(r ApiPostDeleteForumTopicRequest) (*DeleteForumTopicResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *DeleteForumTopicResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostDeleteForumTopic")
@@ -6314,11 +6356,11 @@ func (a *DefaultAPIService) PostDeleteForumTopicExecute(r ApiPostDeleteForumTopi
 type ApiPostDeleteMessageRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
+	chatId *SendMessageRequestChatId
 	messageId *int32
 }
 
-func (r ApiPostDeleteMessageRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostDeleteMessageRequest {
+func (r ApiPostDeleteMessageRequest) ChatId(chatId SendMessageRequestChatId) ApiPostDeleteMessageRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -6329,7 +6371,7 @@ func (r ApiPostDeleteMessageRequest) MessageId(messageId int32) ApiPostDeleteMes
 	return r
 }
 
-func (r ApiPostDeleteMessageRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostDeleteMessageRequest) Execute() (*DeleteMessageResponse, *http.Response, error) {
 	return r.ApiService.PostDeleteMessageExecute(r)
 }
 
@@ -6358,13 +6400,13 @@ func (a *DefaultAPIService) PostDeleteMessage(ctx context.Context) ApiPostDelete
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostDeleteMessageExecute(r ApiPostDeleteMessageRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return DeleteMessageResponse
+func (a *DefaultAPIService) PostDeleteMessageExecute(r ApiPostDeleteMessageRequest) (*DeleteMessageResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *DeleteMessageResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostDeleteMessage")
@@ -6462,11 +6504,11 @@ func (a *DefaultAPIService) PostDeleteMessageExecute(r ApiPostDeleteMessageReque
 type ApiPostDeleteMessagesRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
+	chatId *SendMessageRequestChatId
 	messageIds *[]int32
 }
 
-func (r ApiPostDeleteMessagesRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostDeleteMessagesRequest {
+func (r ApiPostDeleteMessagesRequest) ChatId(chatId SendMessageRequestChatId) ApiPostDeleteMessagesRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -6477,7 +6519,7 @@ func (r ApiPostDeleteMessagesRequest) MessageIds(messageIds []int32) ApiPostDele
 	return r
 }
 
-func (r ApiPostDeleteMessagesRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostDeleteMessagesRequest) Execute() (*DeleteMessagesResponse, *http.Response, error) {
 	return r.ApiService.PostDeleteMessagesExecute(r)
 }
 
@@ -6497,13 +6539,13 @@ func (a *DefaultAPIService) PostDeleteMessages(ctx context.Context) ApiPostDelet
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostDeleteMessagesExecute(r ApiPostDeleteMessagesRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return DeleteMessagesResponse
+func (a *DefaultAPIService) PostDeleteMessagesExecute(r ApiPostDeleteMessagesRequest) (*DeleteMessagesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *DeleteMessagesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostDeleteMessages")
@@ -6616,7 +6658,7 @@ func (r ApiPostDeleteMyCommandsRequest) LanguageCode(languageCode string) ApiPos
 	return r
 }
 
-func (r ApiPostDeleteMyCommandsRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostDeleteMyCommandsRequest) Execute() (*DeleteMyCommandsResponse, *http.Response, error) {
 	return r.ApiService.PostDeleteMyCommandsExecute(r)
 }
 
@@ -6636,13 +6678,13 @@ func (a *DefaultAPIService) PostDeleteMyCommands(ctx context.Context) ApiPostDel
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostDeleteMyCommandsExecute(r ApiPostDeleteMyCommandsRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return DeleteMyCommandsResponse
+func (a *DefaultAPIService) PostDeleteMyCommandsExecute(r ApiPostDeleteMyCommandsRequest) (*DeleteMyCommandsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *DeleteMyCommandsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostDeleteMyCommands")
@@ -6751,7 +6793,7 @@ func (r ApiPostDeleteStickerFromSetRequest) Sticker(sticker string) ApiPostDelet
 	return r
 }
 
-func (r ApiPostDeleteStickerFromSetRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostDeleteStickerFromSetRequest) Execute() (*DeleteStickerFromSetResponse, *http.Response, error) {
 	return r.ApiService.PostDeleteStickerFromSetExecute(r)
 }
 
@@ -6771,13 +6813,13 @@ func (a *DefaultAPIService) PostDeleteStickerFromSet(ctx context.Context) ApiPos
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostDeleteStickerFromSetExecute(r ApiPostDeleteStickerFromSetRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return DeleteStickerFromSetResponse
+func (a *DefaultAPIService) PostDeleteStickerFromSetExecute(r ApiPostDeleteStickerFromSetRequest) (*DeleteStickerFromSetResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *DeleteStickerFromSetResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostDeleteStickerFromSet")
@@ -6880,7 +6922,7 @@ func (r ApiPostDeleteStickerSetRequest) Name(name string) ApiPostDeleteStickerSe
 	return r
 }
 
-func (r ApiPostDeleteStickerSetRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostDeleteStickerSetRequest) Execute() (*DeleteStickerSetResponse, *http.Response, error) {
 	return r.ApiService.PostDeleteStickerSetExecute(r)
 }
 
@@ -6900,13 +6942,13 @@ func (a *DefaultAPIService) PostDeleteStickerSet(ctx context.Context) ApiPostDel
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostDeleteStickerSetExecute(r ApiPostDeleteStickerSetRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return DeleteStickerSetResponse
+func (a *DefaultAPIService) PostDeleteStickerSetExecute(r ApiPostDeleteStickerSetRequest) (*DeleteStickerSetResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *DeleteStickerSetResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostDeleteStickerSet")
@@ -7016,7 +7058,7 @@ func (r ApiPostDeleteStoryRequest) StoryId(storyId int32) ApiPostDeleteStoryRequ
 	return r
 }
 
-func (r ApiPostDeleteStoryRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostDeleteStoryRequest) Execute() (*DeleteStoryResponse, *http.Response, error) {
 	return r.ApiService.PostDeleteStoryExecute(r)
 }
 
@@ -7036,13 +7078,13 @@ func (a *DefaultAPIService) PostDeleteStory(ctx context.Context) ApiPostDeleteSt
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostDeleteStoryExecute(r ApiPostDeleteStoryRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return DeleteStoryResponse
+func (a *DefaultAPIService) PostDeleteStoryExecute(r ApiPostDeleteStoryRequest) (*DeleteStoryResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *DeleteStoryResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostDeleteStory")
@@ -7149,7 +7191,7 @@ func (r ApiPostDeleteWebhookRequest) DropPendingUpdates(dropPendingUpdates bool)
 	return r
 }
 
-func (r ApiPostDeleteWebhookRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostDeleteWebhookRequest) Execute() (*DeleteWebhookResponse, *http.Response, error) {
 	return r.ApiService.PostDeleteWebhookExecute(r)
 }
 
@@ -7169,13 +7211,13 @@ func (a *DefaultAPIService) PostDeleteWebhook(ctx context.Context) ApiPostDelete
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostDeleteWebhookExecute(r ApiPostDeleteWebhookRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return DeleteWebhookResponse
+func (a *DefaultAPIService) PostDeleteWebhookExecute(r ApiPostDeleteWebhookRequest) (*DeleteWebhookResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *DeleteWebhookResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostDeleteWebhook")
@@ -7268,7 +7310,7 @@ func (a *DefaultAPIService) PostDeleteWebhookExecute(r ApiPostDeleteWebhookReque
 type ApiPostEditChatInviteLinkRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
+	chatId *SendMessageRequestChatId
 	inviteLink *string
 	name *string
 	expireDate *int32
@@ -7276,7 +7318,7 @@ type ApiPostEditChatInviteLinkRequest struct {
 	createsJoinRequest *bool
 }
 
-func (r ApiPostEditChatInviteLinkRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostEditChatInviteLinkRequest {
+func (r ApiPostEditChatInviteLinkRequest) ChatId(chatId SendMessageRequestChatId) ApiPostEditChatInviteLinkRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -7311,7 +7353,7 @@ func (r ApiPostEditChatInviteLinkRequest) CreatesJoinRequest(createsJoinRequest 
 	return r
 }
 
-func (r ApiPostEditChatInviteLinkRequest) Execute() (*PostCreateChatInviteLink200Response, *http.Response, error) {
+func (r ApiPostEditChatInviteLinkRequest) Execute() (*EditChatInviteLinkResponse, *http.Response, error) {
 	return r.ApiService.PostEditChatInviteLinkExecute(r)
 }
 
@@ -7331,13 +7373,13 @@ func (a *DefaultAPIService) PostEditChatInviteLink(ctx context.Context) ApiPostE
 }
 
 // Execute executes the request
-//  @return PostCreateChatInviteLink200Response
-func (a *DefaultAPIService) PostEditChatInviteLinkExecute(r ApiPostEditChatInviteLinkRequest) (*PostCreateChatInviteLink200Response, *http.Response, error) {
+//  @return EditChatInviteLinkResponse
+func (a *DefaultAPIService) PostEditChatInviteLinkExecute(r ApiPostEditChatInviteLinkRequest) (*EditChatInviteLinkResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostCreateChatInviteLink200Response
+		localVarReturnValue  *EditChatInviteLinkResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostEditChatInviteLink")
@@ -7447,12 +7489,12 @@ func (a *DefaultAPIService) PostEditChatInviteLinkExecute(r ApiPostEditChatInvit
 type ApiPostEditChatSubscriptionInviteLinkRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
+	chatId *SendMessageRequestChatId
 	inviteLink *string
 	name *string
 }
 
-func (r ApiPostEditChatSubscriptionInviteLinkRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostEditChatSubscriptionInviteLinkRequest {
+func (r ApiPostEditChatSubscriptionInviteLinkRequest) ChatId(chatId SendMessageRequestChatId) ApiPostEditChatSubscriptionInviteLinkRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -7469,7 +7511,7 @@ func (r ApiPostEditChatSubscriptionInviteLinkRequest) Name(name string) ApiPostE
 	return r
 }
 
-func (r ApiPostEditChatSubscriptionInviteLinkRequest) Execute() (*PostCreateChatInviteLink200Response, *http.Response, error) {
+func (r ApiPostEditChatSubscriptionInviteLinkRequest) Execute() (*EditChatSubscriptionInviteLinkResponse, *http.Response, error) {
 	return r.ApiService.PostEditChatSubscriptionInviteLinkExecute(r)
 }
 
@@ -7489,13 +7531,13 @@ func (a *DefaultAPIService) PostEditChatSubscriptionInviteLink(ctx context.Conte
 }
 
 // Execute executes the request
-//  @return PostCreateChatInviteLink200Response
-func (a *DefaultAPIService) PostEditChatSubscriptionInviteLinkExecute(r ApiPostEditChatSubscriptionInviteLinkRequest) (*PostCreateChatInviteLink200Response, *http.Response, error) {
+//  @return EditChatSubscriptionInviteLinkResponse
+func (a *DefaultAPIService) PostEditChatSubscriptionInviteLinkExecute(r ApiPostEditChatSubscriptionInviteLinkRequest) (*EditChatSubscriptionInviteLinkResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostCreateChatInviteLink200Response
+		localVarReturnValue  *EditChatSubscriptionInviteLinkResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostEditChatSubscriptionInviteLink")
@@ -7596,13 +7638,13 @@ func (a *DefaultAPIService) PostEditChatSubscriptionInviteLinkExecute(r ApiPostE
 type ApiPostEditForumTopicRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostRestrictChatMemberRequestChatId
+	chatId *BotCommandScopeChatChatId
 	messageThreadId *int32
 	name *string
 	iconCustomEmojiId *string
 }
 
-func (r ApiPostEditForumTopicRequest) ChatId(chatId PostRestrictChatMemberRequestChatId) ApiPostEditForumTopicRequest {
+func (r ApiPostEditForumTopicRequest) ChatId(chatId BotCommandScopeChatChatId) ApiPostEditForumTopicRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -7625,7 +7667,7 @@ func (r ApiPostEditForumTopicRequest) IconCustomEmojiId(iconCustomEmojiId string
 	return r
 }
 
-func (r ApiPostEditForumTopicRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostEditForumTopicRequest) Execute() (*EditForumTopicResponse, *http.Response, error) {
 	return r.ApiService.PostEditForumTopicExecute(r)
 }
 
@@ -7645,13 +7687,13 @@ func (a *DefaultAPIService) PostEditForumTopic(ctx context.Context) ApiPostEditF
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostEditForumTopicExecute(r ApiPostEditForumTopicRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return EditForumTopicResponse
+func (a *DefaultAPIService) PostEditForumTopicExecute(r ApiPostEditForumTopicRequest) (*EditForumTopicResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *EditForumTopicResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostEditForumTopic")
@@ -7755,11 +7797,11 @@ func (a *DefaultAPIService) PostEditForumTopicExecute(r ApiPostEditForumTopicReq
 type ApiPostEditGeneralForumTopicRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostRestrictChatMemberRequestChatId
+	chatId *BotCommandScopeChatChatId
 	name *string
 }
 
-func (r ApiPostEditGeneralForumTopicRequest) ChatId(chatId PostRestrictChatMemberRequestChatId) ApiPostEditGeneralForumTopicRequest {
+func (r ApiPostEditGeneralForumTopicRequest) ChatId(chatId BotCommandScopeChatChatId) ApiPostEditGeneralForumTopicRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -7770,7 +7812,7 @@ func (r ApiPostEditGeneralForumTopicRequest) Name(name string) ApiPostEditGenera
 	return r
 }
 
-func (r ApiPostEditGeneralForumTopicRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostEditGeneralForumTopicRequest) Execute() (*EditGeneralForumTopicResponse, *http.Response, error) {
 	return r.ApiService.PostEditGeneralForumTopicExecute(r)
 }
 
@@ -7790,13 +7832,13 @@ func (a *DefaultAPIService) PostEditGeneralForumTopic(ctx context.Context) ApiPo
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostEditGeneralForumTopicExecute(r ApiPostEditGeneralForumTopicRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return EditGeneralForumTopicResponse
+func (a *DefaultAPIService) PostEditGeneralForumTopicExecute(r ApiPostEditGeneralForumTopicRequest) (*EditGeneralForumTopicResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *EditGeneralForumTopicResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostEditGeneralForumTopic")
@@ -7901,7 +7943,7 @@ type ApiPostEditMessageCaptionRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	businessConnectionId *string
-	chatId *PostEditMessageTextRequestChatId
+	chatId *EditMessageTextRequestChatId
 	messageId *int32
 	inlineMessageId *string
 	caption *string
@@ -7917,7 +7959,7 @@ func (r ApiPostEditMessageCaptionRequest) BusinessConnectionId(businessConnectio
 	return r
 }
 
-func (r ApiPostEditMessageCaptionRequest) ChatId(chatId PostEditMessageTextRequestChatId) ApiPostEditMessageCaptionRequest {
+func (r ApiPostEditMessageCaptionRequest) ChatId(chatId EditMessageTextRequestChatId) ApiPostEditMessageCaptionRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -7963,7 +8005,7 @@ func (r ApiPostEditMessageCaptionRequest) ReplyMarkup(replyMarkup InlineKeyboard
 	return r
 }
 
-func (r ApiPostEditMessageCaptionRequest) Execute() (*PostEditMessageText200Response, *http.Response, error) {
+func (r ApiPostEditMessageCaptionRequest) Execute() (*EditMessageCaptionResponse, *http.Response, error) {
 	return r.ApiService.PostEditMessageCaptionExecute(r)
 }
 
@@ -7983,13 +8025,13 @@ func (a *DefaultAPIService) PostEditMessageCaption(ctx context.Context) ApiPostE
 }
 
 // Execute executes the request
-//  @return PostEditMessageText200Response
-func (a *DefaultAPIService) PostEditMessageCaptionExecute(r ApiPostEditMessageCaptionRequest) (*PostEditMessageText200Response, *http.Response, error) {
+//  @return EditMessageCaptionResponse
+func (a *DefaultAPIService) PostEditMessageCaptionExecute(r ApiPostEditMessageCaptionRequest) (*EditMessageCaptionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostEditMessageText200Response
+		localVarReturnValue  *EditMessageCaptionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostEditMessageCaption")
@@ -8111,13 +8153,187 @@ func (a *DefaultAPIService) PostEditMessageCaptionExecute(r ApiPostEditMessageCa
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiPostEditMessageChecklistRequest struct {
+	ctx context.Context
+	ApiService DefaultAPI
+	businessConnectionId *string
+	chatId *int32
+	messageId *int32
+	checklist *InputChecklist
+	replyMarkup *InlineKeyboardMarkup
+}
+
+// Unique identifier of the business connection on behalf of which the message will be sent
+func (r ApiPostEditMessageChecklistRequest) BusinessConnectionId(businessConnectionId string) ApiPostEditMessageChecklistRequest {
+	r.businessConnectionId = &businessConnectionId
+	return r
+}
+
+// Unique identifier for the target chat
+func (r ApiPostEditMessageChecklistRequest) ChatId(chatId int32) ApiPostEditMessageChecklistRequest {
+	r.chatId = &chatId
+	return r
+}
+
+// Unique identifier for the target message
+func (r ApiPostEditMessageChecklistRequest) MessageId(messageId int32) ApiPostEditMessageChecklistRequest {
+	r.messageId = &messageId
+	return r
+}
+
+func (r ApiPostEditMessageChecklistRequest) Checklist(checklist InputChecklist) ApiPostEditMessageChecklistRequest {
+	r.checklist = &checklist
+	return r
+}
+
+func (r ApiPostEditMessageChecklistRequest) ReplyMarkup(replyMarkup InlineKeyboardMarkup) ApiPostEditMessageChecklistRequest {
+	r.replyMarkup = &replyMarkup
+	return r
+}
+
+func (r ApiPostEditMessageChecklistRequest) Execute() (*EditMessageChecklistResponse, *http.Response, error) {
+	return r.ApiService.PostEditMessageChecklistExecute(r)
+}
+
+/*
+PostEditMessageChecklist editMessageChecklist
+
+Use this method to edit a checklist on behalf of a connected business account. On success, the edited [Message](https://core.telegram.org/bots/api/#message) is returned.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPostEditMessageChecklistRequest
+*/
+func (a *DefaultAPIService) PostEditMessageChecklist(ctx context.Context) ApiPostEditMessageChecklistRequest {
+	return ApiPostEditMessageChecklistRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return EditMessageChecklistResponse
+func (a *DefaultAPIService) PostEditMessageChecklistExecute(r ApiPostEditMessageChecklistRequest) (*EditMessageChecklistResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *EditMessageChecklistResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostEditMessageChecklist")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/editMessageChecklist"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.businessConnectionId == nil {
+		return localVarReturnValue, nil, reportError("businessConnectionId is required and must be specified")
+	}
+	if r.chatId == nil {
+		return localVarReturnValue, nil, reportError("chatId is required and must be specified")
+	}
+	if r.messageId == nil {
+		return localVarReturnValue, nil, reportError("messageId is required and must be specified")
+	}
+	if r.checklist == nil {
+		return localVarReturnValue, nil, reportError("checklist is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"multipart/form-data", "application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	parameterAddToHeaderOrQuery(localVarFormParams, "business_connection_id", r.businessConnectionId, "", "")
+	parameterAddToHeaderOrQuery(localVarFormParams, "chat_id", r.chatId, "", "")
+	parameterAddToHeaderOrQuery(localVarFormParams, "message_id", r.messageId, "", "")
+	parameterAddToHeaderOrQuery(localVarFormParams, "checklist", r.checklist, "", "")
+	if r.replyMarkup != nil {
+		paramJson, err := parameterToJson(*r.replyMarkup)
+		if err != nil {
+			return localVarReturnValue, nil, err
+		}
+		localVarFormParams.Add("reply_markup", paramJson)
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiPostEditMessageLiveLocationRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	latitude *float32
 	longitude *float32
 	businessConnectionId *string
-	chatId *PostEditMessageTextRequestChatId
+	chatId *EditMessageTextRequestChatId
 	messageId *int32
 	inlineMessageId *string
 	livePeriod *int32
@@ -8145,7 +8361,7 @@ func (r ApiPostEditMessageLiveLocationRequest) BusinessConnectionId(businessConn
 	return r
 }
 
-func (r ApiPostEditMessageLiveLocationRequest) ChatId(chatId PostEditMessageTextRequestChatId) ApiPostEditMessageLiveLocationRequest {
+func (r ApiPostEditMessageLiveLocationRequest) ChatId(chatId EditMessageTextRequestChatId) ApiPostEditMessageLiveLocationRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -8191,7 +8407,7 @@ func (r ApiPostEditMessageLiveLocationRequest) ReplyMarkup(replyMarkup InlineKey
 	return r
 }
 
-func (r ApiPostEditMessageLiveLocationRequest) Execute() (*PostEditMessageText200Response, *http.Response, error) {
+func (r ApiPostEditMessageLiveLocationRequest) Execute() (*EditMessageLiveLocationResponse, *http.Response, error) {
 	return r.ApiService.PostEditMessageLiveLocationExecute(r)
 }
 
@@ -8211,13 +8427,13 @@ func (a *DefaultAPIService) PostEditMessageLiveLocation(ctx context.Context) Api
 }
 
 // Execute executes the request
-//  @return PostEditMessageText200Response
-func (a *DefaultAPIService) PostEditMessageLiveLocationExecute(r ApiPostEditMessageLiveLocationRequest) (*PostEditMessageText200Response, *http.Response, error) {
+//  @return EditMessageLiveLocationResponse
+func (a *DefaultAPIService) PostEditMessageLiveLocationExecute(r ApiPostEditMessageLiveLocationRequest) (*EditMessageLiveLocationResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostEditMessageText200Response
+		localVarReturnValue  *EditMessageLiveLocationResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostEditMessageLiveLocation")
@@ -8352,7 +8568,7 @@ type ApiPostEditMessageMediaRequest struct {
 	ApiService DefaultAPI
 	media *InputMedia
 	businessConnectionId *string
-	chatId *PostEditMessageTextRequestChatId
+	chatId *EditMessageTextRequestChatId
 	messageId *int32
 	inlineMessageId *string
 	replyMarkup *InlineKeyboardMarkup
@@ -8369,7 +8585,7 @@ func (r ApiPostEditMessageMediaRequest) BusinessConnectionId(businessConnectionI
 	return r
 }
 
-func (r ApiPostEditMessageMediaRequest) ChatId(chatId PostEditMessageTextRequestChatId) ApiPostEditMessageMediaRequest {
+func (r ApiPostEditMessageMediaRequest) ChatId(chatId EditMessageTextRequestChatId) ApiPostEditMessageMediaRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -8391,7 +8607,7 @@ func (r ApiPostEditMessageMediaRequest) ReplyMarkup(replyMarkup InlineKeyboardMa
 	return r
 }
 
-func (r ApiPostEditMessageMediaRequest) Execute() (*PostEditMessageText200Response, *http.Response, error) {
+func (r ApiPostEditMessageMediaRequest) Execute() (*EditMessageMediaResponse, *http.Response, error) {
 	return r.ApiService.PostEditMessageMediaExecute(r)
 }
 
@@ -8411,13 +8627,13 @@ func (a *DefaultAPIService) PostEditMessageMedia(ctx context.Context) ApiPostEdi
 }
 
 // Execute executes the request
-//  @return PostEditMessageText200Response
-func (a *DefaultAPIService) PostEditMessageMediaExecute(r ApiPostEditMessageMediaRequest) (*PostEditMessageText200Response, *http.Response, error) {
+//  @return EditMessageMediaResponse
+func (a *DefaultAPIService) PostEditMessageMediaExecute(r ApiPostEditMessageMediaRequest) (*EditMessageMediaResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostEditMessageText200Response
+		localVarReturnValue  *EditMessageMediaResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostEditMessageMedia")
@@ -8435,7 +8651,7 @@ func (a *DefaultAPIService) PostEditMessageMediaExecute(r ApiPostEditMessageMedi
 	}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"multipart/form-data"}
+	localVarHTTPContentTypes := []string{"multipart/form-data", "application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -8535,7 +8751,7 @@ type ApiPostEditMessageReplyMarkupRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	businessConnectionId *string
-	chatId *PostEditMessageTextRequestChatId
+	chatId *EditMessageTextRequestChatId
 	messageId *int32
 	inlineMessageId *string
 	replyMarkup *InlineKeyboardMarkup
@@ -8547,7 +8763,7 @@ func (r ApiPostEditMessageReplyMarkupRequest) BusinessConnectionId(businessConne
 	return r
 }
 
-func (r ApiPostEditMessageReplyMarkupRequest) ChatId(chatId PostEditMessageTextRequestChatId) ApiPostEditMessageReplyMarkupRequest {
+func (r ApiPostEditMessageReplyMarkupRequest) ChatId(chatId EditMessageTextRequestChatId) ApiPostEditMessageReplyMarkupRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -8569,7 +8785,7 @@ func (r ApiPostEditMessageReplyMarkupRequest) ReplyMarkup(replyMarkup InlineKeyb
 	return r
 }
 
-func (r ApiPostEditMessageReplyMarkupRequest) Execute() (*PostEditMessageText200Response, *http.Response, error) {
+func (r ApiPostEditMessageReplyMarkupRequest) Execute() (*EditMessageReplyMarkupResponse, *http.Response, error) {
 	return r.ApiService.PostEditMessageReplyMarkupExecute(r)
 }
 
@@ -8589,13 +8805,13 @@ func (a *DefaultAPIService) PostEditMessageReplyMarkup(ctx context.Context) ApiP
 }
 
 // Execute executes the request
-//  @return PostEditMessageText200Response
-func (a *DefaultAPIService) PostEditMessageReplyMarkupExecute(r ApiPostEditMessageReplyMarkupRequest) (*PostEditMessageText200Response, *http.Response, error) {
+//  @return EditMessageReplyMarkupResponse
+func (a *DefaultAPIService) PostEditMessageReplyMarkupExecute(r ApiPostEditMessageReplyMarkupRequest) (*EditMessageReplyMarkupResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostEditMessageText200Response
+		localVarReturnValue  *EditMessageReplyMarkupResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostEditMessageReplyMarkup")
@@ -8710,7 +8926,7 @@ type ApiPostEditMessageTextRequest struct {
 	ApiService DefaultAPI
 	text *string
 	businessConnectionId *string
-	chatId *PostEditMessageTextRequestChatId
+	chatId *EditMessageTextRequestChatId
 	messageId *int32
 	inlineMessageId *string
 	parseMode *string
@@ -8731,7 +8947,7 @@ func (r ApiPostEditMessageTextRequest) BusinessConnectionId(businessConnectionId
 	return r
 }
 
-func (r ApiPostEditMessageTextRequest) ChatId(chatId PostEditMessageTextRequestChatId) ApiPostEditMessageTextRequest {
+func (r ApiPostEditMessageTextRequest) ChatId(chatId EditMessageTextRequestChatId) ApiPostEditMessageTextRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -8770,7 +8986,7 @@ func (r ApiPostEditMessageTextRequest) ReplyMarkup(replyMarkup InlineKeyboardMar
 	return r
 }
 
-func (r ApiPostEditMessageTextRequest) Execute() (*PostEditMessageText200Response, *http.Response, error) {
+func (r ApiPostEditMessageTextRequest) Execute() (*EditMessageTextResponse, *http.Response, error) {
 	return r.ApiService.PostEditMessageTextExecute(r)
 }
 
@@ -8790,13 +9006,13 @@ func (a *DefaultAPIService) PostEditMessageText(ctx context.Context) ApiPostEdit
 }
 
 // Execute executes the request
-//  @return PostEditMessageText200Response
-func (a *DefaultAPIService) PostEditMessageTextExecute(r ApiPostEditMessageTextRequest) (*PostEditMessageText200Response, *http.Response, error) {
+//  @return EditMessageTextResponse
+func (a *DefaultAPIService) PostEditMessageTextExecute(r ApiPostEditMessageTextRequest) (*EditMessageTextResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostEditMessageText200Response
+		localVarReturnValue  *EditMessageTextResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostEditMessageText")
@@ -8982,7 +9198,7 @@ func (r ApiPostEditStoryRequest) Areas(areas []StoryArea) ApiPostEditStoryReques
 	return r
 }
 
-func (r ApiPostEditStoryRequest) Execute() (*PostPostStory200Response, *http.Response, error) {
+func (r ApiPostEditStoryRequest) Execute() (*EditStoryResponse, *http.Response, error) {
 	return r.ApiService.PostEditStoryExecute(r)
 }
 
@@ -9002,13 +9218,13 @@ func (a *DefaultAPIService) PostEditStory(ctx context.Context) ApiPostEditStoryR
 }
 
 // Execute executes the request
-//  @return PostPostStory200Response
-func (a *DefaultAPIService) PostEditStoryExecute(r ApiPostEditStoryRequest) (*PostPostStory200Response, *http.Response, error) {
+//  @return EditStoryResponse
+func (a *DefaultAPIService) PostEditStoryExecute(r ApiPostEditStoryRequest) (*EditStoryResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostPostStory200Response
+		localVarReturnValue  *EditStoryResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostEditStory")
@@ -9032,7 +9248,7 @@ func (a *DefaultAPIService) PostEditStoryExecute(r ApiPostEditStoryRequest) (*Po
 	}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"multipart/form-data"}
+	localVarHTTPContentTypes := []string{"multipart/form-data", "application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -9145,7 +9361,7 @@ func (r ApiPostEditUserStarSubscriptionRequest) IsCanceled(isCanceled bool) ApiP
 	return r
 }
 
-func (r ApiPostEditUserStarSubscriptionRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostEditUserStarSubscriptionRequest) Execute() (*EditUserStarSubscriptionResponse, *http.Response, error) {
 	return r.ApiService.PostEditUserStarSubscriptionExecute(r)
 }
 
@@ -9165,13 +9381,13 @@ func (a *DefaultAPIService) PostEditUserStarSubscription(ctx context.Context) Ap
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostEditUserStarSubscriptionExecute(r ApiPostEditUserStarSubscriptionRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return EditUserStarSubscriptionResponse
+func (a *DefaultAPIService) PostEditUserStarSubscriptionExecute(r ApiPostEditUserStarSubscriptionRequest) (*EditUserStarSubscriptionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *EditUserStarSubscriptionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostEditUserStarSubscription")
@@ -9273,15 +9489,15 @@ func (a *DefaultAPIService) PostEditUserStarSubscriptionExecute(r ApiPostEditUse
 type ApiPostExportChatInviteLinkRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
+	chatId *SendMessageRequestChatId
 }
 
-func (r ApiPostExportChatInviteLinkRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostExportChatInviteLinkRequest {
+func (r ApiPostExportChatInviteLinkRequest) ChatId(chatId SendMessageRequestChatId) ApiPostExportChatInviteLinkRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiPostExportChatInviteLinkRequest) Execute() (*PostExportChatInviteLink200Response, *http.Response, error) {
+func (r ApiPostExportChatInviteLinkRequest) Execute() (*ExportChatInviteLinkResponse, *http.Response, error) {
 	return r.ApiService.PostExportChatInviteLinkExecute(r)
 }
 
@@ -9301,13 +9517,13 @@ func (a *DefaultAPIService) PostExportChatInviteLink(ctx context.Context) ApiPos
 }
 
 // Execute executes the request
-//  @return PostExportChatInviteLink200Response
-func (a *DefaultAPIService) PostExportChatInviteLinkExecute(r ApiPostExportChatInviteLinkRequest) (*PostExportChatInviteLink200Response, *http.Response, error) {
+//  @return ExportChatInviteLinkResponse
+func (a *DefaultAPIService) PostExportChatInviteLinkExecute(r ApiPostExportChatInviteLinkRequest) (*ExportChatInviteLinkResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostExportChatInviteLink200Response
+		localVarReturnValue  *ExportChatInviteLinkResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostExportChatInviteLink")
@@ -9401,8 +9617,8 @@ func (a *DefaultAPIService) PostExportChatInviteLinkExecute(r ApiPostExportChatI
 type ApiPostForwardMessageRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
-	fromChatId *PostForwardMessageRequestFromChatId
+	chatId *SendMessageRequestChatId
+	fromChatId *ForwardMessageRequestFromChatId
 	messageId *int32
 	messageThreadId *int32
 	videoStartTimestamp *int32
@@ -9410,12 +9626,12 @@ type ApiPostForwardMessageRequest struct {
 	protectContent *bool
 }
 
-func (r ApiPostForwardMessageRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostForwardMessageRequest {
+func (r ApiPostForwardMessageRequest) ChatId(chatId SendMessageRequestChatId) ApiPostForwardMessageRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiPostForwardMessageRequest) FromChatId(fromChatId PostForwardMessageRequestFromChatId) ApiPostForwardMessageRequest {
+func (r ApiPostForwardMessageRequest) FromChatId(fromChatId ForwardMessageRequestFromChatId) ApiPostForwardMessageRequest {
 	r.fromChatId = &fromChatId
 	return r
 }
@@ -9450,7 +9666,7 @@ func (r ApiPostForwardMessageRequest) ProtectContent(protectContent bool) ApiPos
 	return r
 }
 
-func (r ApiPostForwardMessageRequest) Execute() (*PostSendMessage200Response, *http.Response, error) {
+func (r ApiPostForwardMessageRequest) Execute() (*ForwardMessageResponse, *http.Response, error) {
 	return r.ApiService.PostForwardMessageExecute(r)
 }
 
@@ -9470,13 +9686,13 @@ func (a *DefaultAPIService) PostForwardMessage(ctx context.Context) ApiPostForwa
 }
 
 // Execute executes the request
-//  @return PostSendMessage200Response
-func (a *DefaultAPIService) PostForwardMessageExecute(r ApiPostForwardMessageRequest) (*PostSendMessage200Response, *http.Response, error) {
+//  @return ForwardMessageResponse
+func (a *DefaultAPIService) PostForwardMessageExecute(r ApiPostForwardMessageRequest) (*ForwardMessageResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSendMessage200Response
+		localVarReturnValue  *ForwardMessageResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostForwardMessage")
@@ -9590,20 +9806,20 @@ func (a *DefaultAPIService) PostForwardMessageExecute(r ApiPostForwardMessageReq
 type ApiPostForwardMessagesRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
-	fromChatId *PostForwardMessagesRequestFromChatId
+	chatId *SendMessageRequestChatId
+	fromChatId *ForwardMessagesRequestFromChatId
 	messageIds *[]int32
 	messageThreadId *int32
 	disableNotification *bool
 	protectContent *bool
 }
 
-func (r ApiPostForwardMessagesRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostForwardMessagesRequest {
+func (r ApiPostForwardMessagesRequest) ChatId(chatId SendMessageRequestChatId) ApiPostForwardMessagesRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiPostForwardMessagesRequest) FromChatId(fromChatId PostForwardMessagesRequestFromChatId) ApiPostForwardMessagesRequest {
+func (r ApiPostForwardMessagesRequest) FromChatId(fromChatId ForwardMessagesRequestFromChatId) ApiPostForwardMessagesRequest {
 	r.fromChatId = &fromChatId
 	return r
 }
@@ -9632,7 +9848,7 @@ func (r ApiPostForwardMessagesRequest) ProtectContent(protectContent bool) ApiPo
 	return r
 }
 
-func (r ApiPostForwardMessagesRequest) Execute() (*PostForwardMessages200Response, *http.Response, error) {
+func (r ApiPostForwardMessagesRequest) Execute() (*ForwardMessagesResponse, *http.Response, error) {
 	return r.ApiService.PostForwardMessagesExecute(r)
 }
 
@@ -9652,13 +9868,13 @@ func (a *DefaultAPIService) PostForwardMessages(ctx context.Context) ApiPostForw
 }
 
 // Execute executes the request
-//  @return PostForwardMessages200Response
-func (a *DefaultAPIService) PostForwardMessagesExecute(r ApiPostForwardMessagesRequest) (*PostForwardMessages200Response, *http.Response, error) {
+//  @return ForwardMessagesResponse
+func (a *DefaultAPIService) PostForwardMessagesExecute(r ApiPostForwardMessagesRequest) (*ForwardMessagesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostForwardMessages200Response
+		localVarReturnValue  *ForwardMessagesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostForwardMessages")
@@ -9771,7 +9987,7 @@ type ApiPostGetAvailableGiftsRequest struct {
 	ApiService DefaultAPI
 }
 
-func (r ApiPostGetAvailableGiftsRequest) Execute() (*PostGetAvailableGifts200Response, *http.Response, error) {
+func (r ApiPostGetAvailableGiftsRequest) Execute() (*GetAvailableGiftsResponse, *http.Response, error) {
 	return r.ApiService.PostGetAvailableGiftsExecute(r)
 }
 
@@ -9791,13 +10007,13 @@ func (a *DefaultAPIService) PostGetAvailableGifts(ctx context.Context) ApiPostGe
 }
 
 // Execute executes the request
-//  @return PostGetAvailableGifts200Response
-func (a *DefaultAPIService) PostGetAvailableGiftsExecute(r ApiPostGetAvailableGiftsRequest) (*PostGetAvailableGifts200Response, *http.Response, error) {
+//  @return GetAvailableGiftsResponse
+func (a *DefaultAPIService) PostGetAvailableGiftsExecute(r ApiPostGetAvailableGiftsRequest) (*GetAvailableGiftsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostGetAvailableGifts200Response
+		localVarReturnValue  *GetAvailableGiftsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetAvailableGifts")
@@ -9904,37 +10120,37 @@ func (r ApiPostGetBusinessAccountGiftsRequest) BusinessConnectionId(businessConn
 	return r
 }
 
-// Pass True to exclude gifts that aren&#39;t saved to the account&#39;s profile page
+// Pass *True* to exclude gifts that aren&#39;t saved to the account&#39;s profile page
 func (r ApiPostGetBusinessAccountGiftsRequest) ExcludeUnsaved(excludeUnsaved bool) ApiPostGetBusinessAccountGiftsRequest {
 	r.excludeUnsaved = &excludeUnsaved
 	return r
 }
 
-// Pass True to exclude gifts that are saved to the account&#39;s profile page
+// Pass *True* to exclude gifts that are saved to the account&#39;s profile page
 func (r ApiPostGetBusinessAccountGiftsRequest) ExcludeSaved(excludeSaved bool) ApiPostGetBusinessAccountGiftsRequest {
 	r.excludeSaved = &excludeSaved
 	return r
 }
 
-// Pass True to exclude gifts that can be purchased an unlimited number of times
+// Pass *True* to exclude gifts that can be purchased an unlimited number of times
 func (r ApiPostGetBusinessAccountGiftsRequest) ExcludeUnlimited(excludeUnlimited bool) ApiPostGetBusinessAccountGiftsRequest {
 	r.excludeUnlimited = &excludeUnlimited
 	return r
 }
 
-// Pass True to exclude gifts that can be purchased a limited number of times
+// Pass *True* to exclude gifts that can be purchased a limited number of times
 func (r ApiPostGetBusinessAccountGiftsRequest) ExcludeLimited(excludeLimited bool) ApiPostGetBusinessAccountGiftsRequest {
 	r.excludeLimited = &excludeLimited
 	return r
 }
 
-// Pass True to exclude unique gifts
+// Pass *True* to exclude unique gifts
 func (r ApiPostGetBusinessAccountGiftsRequest) ExcludeUnique(excludeUnique bool) ApiPostGetBusinessAccountGiftsRequest {
 	r.excludeUnique = &excludeUnique
 	return r
 }
 
-// Pass True to sort results by gift price instead of send date. Sorting is applied before pagination.
+// Pass *True* to sort results by gift price instead of send date. Sorting is applied before pagination.
 func (r ApiPostGetBusinessAccountGiftsRequest) SortByPrice(sortByPrice bool) ApiPostGetBusinessAccountGiftsRequest {
 	r.sortByPrice = &sortByPrice
 	return r
@@ -9952,7 +10168,7 @@ func (r ApiPostGetBusinessAccountGiftsRequest) Limit(limit int32) ApiPostGetBusi
 	return r
 }
 
-func (r ApiPostGetBusinessAccountGiftsRequest) Execute() (*PostGetBusinessAccountGifts200Response, *http.Response, error) {
+func (r ApiPostGetBusinessAccountGiftsRequest) Execute() (*GetBusinessAccountGiftsResponse, *http.Response, error) {
 	return r.ApiService.PostGetBusinessAccountGiftsExecute(r)
 }
 
@@ -9972,13 +10188,13 @@ func (a *DefaultAPIService) PostGetBusinessAccountGifts(ctx context.Context) Api
 }
 
 // Execute executes the request
-//  @return PostGetBusinessAccountGifts200Response
-func (a *DefaultAPIService) PostGetBusinessAccountGiftsExecute(r ApiPostGetBusinessAccountGiftsRequest) (*PostGetBusinessAccountGifts200Response, *http.Response, error) {
+//  @return GetBusinessAccountGiftsResponse
+func (a *DefaultAPIService) PostGetBusinessAccountGiftsExecute(r ApiPostGetBusinessAccountGiftsRequest) (*GetBusinessAccountGiftsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostGetBusinessAccountGifts200Response
+		localVarReturnValue  *GetBusinessAccountGiftsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetBusinessAccountGifts")
@@ -10105,7 +10321,7 @@ func (r ApiPostGetBusinessAccountStarBalanceRequest) BusinessConnectionId(busine
 	return r
 }
 
-func (r ApiPostGetBusinessAccountStarBalanceRequest) Execute() (*PostGetBusinessAccountStarBalance200Response, *http.Response, error) {
+func (r ApiPostGetBusinessAccountStarBalanceRequest) Execute() (*GetBusinessAccountStarBalanceResponse, *http.Response, error) {
 	return r.ApiService.PostGetBusinessAccountStarBalanceExecute(r)
 }
 
@@ -10125,13 +10341,13 @@ func (a *DefaultAPIService) PostGetBusinessAccountStarBalance(ctx context.Contex
 }
 
 // Execute executes the request
-//  @return PostGetBusinessAccountStarBalance200Response
-func (a *DefaultAPIService) PostGetBusinessAccountStarBalanceExecute(r ApiPostGetBusinessAccountStarBalanceRequest) (*PostGetBusinessAccountStarBalance200Response, *http.Response, error) {
+//  @return GetBusinessAccountStarBalanceResponse
+func (a *DefaultAPIService) PostGetBusinessAccountStarBalanceExecute(r ApiPostGetBusinessAccountStarBalanceRequest) (*GetBusinessAccountStarBalanceResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostGetBusinessAccountStarBalance200Response
+		localVarReturnValue  *GetBusinessAccountStarBalanceResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetBusinessAccountStarBalance")
@@ -10234,7 +10450,7 @@ func (r ApiPostGetBusinessConnectionRequest) BusinessConnectionId(businessConnec
 	return r
 }
 
-func (r ApiPostGetBusinessConnectionRequest) Execute() (*PostGetBusinessConnection200Response, *http.Response, error) {
+func (r ApiPostGetBusinessConnectionRequest) Execute() (*GetBusinessConnectionResponse, *http.Response, error) {
 	return r.ApiService.PostGetBusinessConnectionExecute(r)
 }
 
@@ -10254,13 +10470,13 @@ func (a *DefaultAPIService) PostGetBusinessConnection(ctx context.Context) ApiPo
 }
 
 // Execute executes the request
-//  @return PostGetBusinessConnection200Response
-func (a *DefaultAPIService) PostGetBusinessConnectionExecute(r ApiPostGetBusinessConnectionRequest) (*PostGetBusinessConnection200Response, *http.Response, error) {
+//  @return GetBusinessConnectionResponse
+func (a *DefaultAPIService) PostGetBusinessConnectionExecute(r ApiPostGetBusinessConnectionRequest) (*GetBusinessConnectionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostGetBusinessConnection200Response
+		localVarReturnValue  *GetBusinessConnectionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetBusinessConnection")
@@ -10354,15 +10570,15 @@ func (a *DefaultAPIService) PostGetBusinessConnectionExecute(r ApiPostGetBusines
 type ApiPostGetChatRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostLeaveChatRequestChatId
+	chatId *LeaveChatRequestChatId
 }
 
-func (r ApiPostGetChatRequest) ChatId(chatId PostLeaveChatRequestChatId) ApiPostGetChatRequest {
+func (r ApiPostGetChatRequest) ChatId(chatId LeaveChatRequestChatId) ApiPostGetChatRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiPostGetChatRequest) Execute() (*PostGetChat200Response, *http.Response, error) {
+func (r ApiPostGetChatRequest) Execute() (*GetChatResponse, *http.Response, error) {
 	return r.ApiService.PostGetChatExecute(r)
 }
 
@@ -10382,13 +10598,13 @@ func (a *DefaultAPIService) PostGetChat(ctx context.Context) ApiPostGetChatReque
 }
 
 // Execute executes the request
-//  @return PostGetChat200Response
-func (a *DefaultAPIService) PostGetChatExecute(r ApiPostGetChatRequest) (*PostGetChat200Response, *http.Response, error) {
+//  @return GetChatResponse
+func (a *DefaultAPIService) PostGetChatExecute(r ApiPostGetChatRequest) (*GetChatResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostGetChat200Response
+		localVarReturnValue  *GetChatResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetChat")
@@ -10482,15 +10698,15 @@ func (a *DefaultAPIService) PostGetChatExecute(r ApiPostGetChatRequest) (*PostGe
 type ApiPostGetChatAdministratorsRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostLeaveChatRequestChatId
+	chatId *LeaveChatRequestChatId
 }
 
-func (r ApiPostGetChatAdministratorsRequest) ChatId(chatId PostLeaveChatRequestChatId) ApiPostGetChatAdministratorsRequest {
+func (r ApiPostGetChatAdministratorsRequest) ChatId(chatId LeaveChatRequestChatId) ApiPostGetChatAdministratorsRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiPostGetChatAdministratorsRequest) Execute() (*PostGetChatAdministrators200Response, *http.Response, error) {
+func (r ApiPostGetChatAdministratorsRequest) Execute() (*GetChatAdministratorsResponse, *http.Response, error) {
 	return r.ApiService.PostGetChatAdministratorsExecute(r)
 }
 
@@ -10510,13 +10726,13 @@ func (a *DefaultAPIService) PostGetChatAdministrators(ctx context.Context) ApiPo
 }
 
 // Execute executes the request
-//  @return PostGetChatAdministrators200Response
-func (a *DefaultAPIService) PostGetChatAdministratorsExecute(r ApiPostGetChatAdministratorsRequest) (*PostGetChatAdministrators200Response, *http.Response, error) {
+//  @return GetChatAdministratorsResponse
+func (a *DefaultAPIService) PostGetChatAdministratorsExecute(r ApiPostGetChatAdministratorsRequest) (*GetChatAdministratorsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostGetChatAdministrators200Response
+		localVarReturnValue  *GetChatAdministratorsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetChatAdministrators")
@@ -10610,11 +10826,11 @@ func (a *DefaultAPIService) PostGetChatAdministratorsExecute(r ApiPostGetChatAdm
 type ApiPostGetChatMemberRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostLeaveChatRequestChatId
+	chatId *LeaveChatRequestChatId
 	userId *int32
 }
 
-func (r ApiPostGetChatMemberRequest) ChatId(chatId PostLeaveChatRequestChatId) ApiPostGetChatMemberRequest {
+func (r ApiPostGetChatMemberRequest) ChatId(chatId LeaveChatRequestChatId) ApiPostGetChatMemberRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -10625,7 +10841,7 @@ func (r ApiPostGetChatMemberRequest) UserId(userId int32) ApiPostGetChatMemberRe
 	return r
 }
 
-func (r ApiPostGetChatMemberRequest) Execute() (*PostGetChatMember200Response, *http.Response, error) {
+func (r ApiPostGetChatMemberRequest) Execute() (*GetChatMemberResponse, *http.Response, error) {
 	return r.ApiService.PostGetChatMemberExecute(r)
 }
 
@@ -10645,13 +10861,13 @@ func (a *DefaultAPIService) PostGetChatMember(ctx context.Context) ApiPostGetCha
 }
 
 // Execute executes the request
-//  @return PostGetChatMember200Response
-func (a *DefaultAPIService) PostGetChatMemberExecute(r ApiPostGetChatMemberRequest) (*PostGetChatMember200Response, *http.Response, error) {
+//  @return GetChatMemberResponse
+func (a *DefaultAPIService) PostGetChatMemberExecute(r ApiPostGetChatMemberRequest) (*GetChatMemberResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostGetChatMember200Response
+		localVarReturnValue  *GetChatMemberResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetChatMember")
@@ -10749,15 +10965,15 @@ func (a *DefaultAPIService) PostGetChatMemberExecute(r ApiPostGetChatMemberReque
 type ApiPostGetChatMemberCountRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostLeaveChatRequestChatId
+	chatId *LeaveChatRequestChatId
 }
 
-func (r ApiPostGetChatMemberCountRequest) ChatId(chatId PostLeaveChatRequestChatId) ApiPostGetChatMemberCountRequest {
+func (r ApiPostGetChatMemberCountRequest) ChatId(chatId LeaveChatRequestChatId) ApiPostGetChatMemberCountRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiPostGetChatMemberCountRequest) Execute() (*PostGetChatMemberCount200Response, *http.Response, error) {
+func (r ApiPostGetChatMemberCountRequest) Execute() (*GetChatMemberCountResponse, *http.Response, error) {
 	return r.ApiService.PostGetChatMemberCountExecute(r)
 }
 
@@ -10777,13 +10993,13 @@ func (a *DefaultAPIService) PostGetChatMemberCount(ctx context.Context) ApiPostG
 }
 
 // Execute executes the request
-//  @return PostGetChatMemberCount200Response
-func (a *DefaultAPIService) PostGetChatMemberCountExecute(r ApiPostGetChatMemberCountRequest) (*PostGetChatMemberCount200Response, *http.Response, error) {
+//  @return GetChatMemberCountResponse
+func (a *DefaultAPIService) PostGetChatMemberCountExecute(r ApiPostGetChatMemberCountRequest) (*GetChatMemberCountResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostGetChatMemberCount200Response
+		localVarReturnValue  *GetChatMemberCountResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetChatMemberCount")
@@ -10886,7 +11102,7 @@ func (r ApiPostGetChatMenuButtonRequest) ChatId(chatId int32) ApiPostGetChatMenu
 	return r
 }
 
-func (r ApiPostGetChatMenuButtonRequest) Execute() (*PostGetChatMenuButton200Response, *http.Response, error) {
+func (r ApiPostGetChatMenuButtonRequest) Execute() (*GetChatMenuButtonResponse, *http.Response, error) {
 	return r.ApiService.PostGetChatMenuButtonExecute(r)
 }
 
@@ -10906,13 +11122,13 @@ func (a *DefaultAPIService) PostGetChatMenuButton(ctx context.Context) ApiPostGe
 }
 
 // Execute executes the request
-//  @return PostGetChatMenuButton200Response
-func (a *DefaultAPIService) PostGetChatMenuButtonExecute(r ApiPostGetChatMenuButtonRequest) (*PostGetChatMenuButton200Response, *http.Response, error) {
+//  @return GetChatMenuButtonResponse
+func (a *DefaultAPIService) PostGetChatMenuButtonExecute(r ApiPostGetChatMenuButtonRequest) (*GetChatMenuButtonResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostGetChatMenuButton200Response
+		localVarReturnValue  *GetChatMenuButtonResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetChatMenuButton")
@@ -11014,7 +11230,7 @@ func (r ApiPostGetCustomEmojiStickersRequest) CustomEmojiIds(customEmojiIds []st
 	return r
 }
 
-func (r ApiPostGetCustomEmojiStickersRequest) Execute() (*PostGetForumTopicIconStickers200Response, *http.Response, error) {
+func (r ApiPostGetCustomEmojiStickersRequest) Execute() (*GetCustomEmojiStickersResponse, *http.Response, error) {
 	return r.ApiService.PostGetCustomEmojiStickersExecute(r)
 }
 
@@ -11034,13 +11250,13 @@ func (a *DefaultAPIService) PostGetCustomEmojiStickers(ctx context.Context) ApiP
 }
 
 // Execute executes the request
-//  @return PostGetForumTopicIconStickers200Response
-func (a *DefaultAPIService) PostGetCustomEmojiStickersExecute(r ApiPostGetCustomEmojiStickersRequest) (*PostGetForumTopicIconStickers200Response, *http.Response, error) {
+//  @return GetCustomEmojiStickersResponse
+func (a *DefaultAPIService) PostGetCustomEmojiStickersExecute(r ApiPostGetCustomEmojiStickersRequest) (*GetCustomEmojiStickersResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostGetForumTopicIconStickers200Response
+		localVarReturnValue  *GetCustomEmojiStickersResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetCustomEmojiStickers")
@@ -11143,7 +11359,7 @@ func (r ApiPostGetFileRequest) FileId(fileId string) ApiPostGetFileRequest {
 	return r
 }
 
-func (r ApiPostGetFileRequest) Execute() (*PostGetFile200Response, *http.Response, error) {
+func (r ApiPostGetFileRequest) Execute() (*GetFileResponse, *http.Response, error) {
 	return r.ApiService.PostGetFileExecute(r)
 }
 
@@ -11163,13 +11379,13 @@ func (a *DefaultAPIService) PostGetFile(ctx context.Context) ApiPostGetFileReque
 }
 
 // Execute executes the request
-//  @return PostGetFile200Response
-func (a *DefaultAPIService) PostGetFileExecute(r ApiPostGetFileRequest) (*PostGetFile200Response, *http.Response, error) {
+//  @return GetFileResponse
+func (a *DefaultAPIService) PostGetFileExecute(r ApiPostGetFileRequest) (*GetFileResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostGetFile200Response
+		localVarReturnValue  *GetFileResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetFile")
@@ -11265,7 +11481,7 @@ type ApiPostGetForumTopicIconStickersRequest struct {
 	ApiService DefaultAPI
 }
 
-func (r ApiPostGetForumTopicIconStickersRequest) Execute() (*PostGetForumTopicIconStickers200Response, *http.Response, error) {
+func (r ApiPostGetForumTopicIconStickersRequest) Execute() (*GetForumTopicIconStickersResponse, *http.Response, error) {
 	return r.ApiService.PostGetForumTopicIconStickersExecute(r)
 }
 
@@ -11285,13 +11501,13 @@ func (a *DefaultAPIService) PostGetForumTopicIconStickers(ctx context.Context) A
 }
 
 // Execute executes the request
-//  @return PostGetForumTopicIconStickers200Response
-func (a *DefaultAPIService) PostGetForumTopicIconStickersExecute(r ApiPostGetForumTopicIconStickersRequest) (*PostGetForumTopicIconStickers200Response, *http.Response, error) {
+//  @return GetForumTopicIconStickersResponse
+func (a *DefaultAPIService) PostGetForumTopicIconStickersExecute(r ApiPostGetForumTopicIconStickersRequest) (*GetForumTopicIconStickersResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostGetForumTopicIconStickers200Response
+		localVarReturnValue  *GetForumTopicIconStickersResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetForumTopicIconStickers")
@@ -11411,7 +11627,7 @@ func (r ApiPostGetGameHighScoresRequest) InlineMessageId(inlineMessageId string)
 	return r
 }
 
-func (r ApiPostGetGameHighScoresRequest) Execute() (*PostGetGameHighScores200Response, *http.Response, error) {
+func (r ApiPostGetGameHighScoresRequest) Execute() (*GetGameHighScoresResponse, *http.Response, error) {
 	return r.ApiService.PostGetGameHighScoresExecute(r)
 }
 
@@ -11433,13 +11649,13 @@ func (a *DefaultAPIService) PostGetGameHighScores(ctx context.Context) ApiPostGe
 }
 
 // Execute executes the request
-//  @return PostGetGameHighScores200Response
-func (a *DefaultAPIService) PostGetGameHighScoresExecute(r ApiPostGetGameHighScoresRequest) (*PostGetGameHighScores200Response, *http.Response, error) {
+//  @return GetGameHighScoresResponse
+func (a *DefaultAPIService) PostGetGameHighScoresExecute(r ApiPostGetGameHighScoresRequest) (*GetGameHighScoresResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostGetGameHighScores200Response
+		localVarReturnValue  *GetGameHighScoresResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetGameHighScores")
@@ -11544,7 +11760,7 @@ type ApiPostGetMeRequest struct {
 	ApiService DefaultAPI
 }
 
-func (r ApiPostGetMeRequest) Execute() (*PostGetMe200Response, *http.Response, error) {
+func (r ApiPostGetMeRequest) Execute() (*GetMeResponse, *http.Response, error) {
 	return r.ApiService.PostGetMeExecute(r)
 }
 
@@ -11564,13 +11780,13 @@ func (a *DefaultAPIService) PostGetMe(ctx context.Context) ApiPostGetMeRequest {
 }
 
 // Execute executes the request
-//  @return PostGetMe200Response
-func (a *DefaultAPIService) PostGetMeExecute(r ApiPostGetMeRequest) (*PostGetMe200Response, *http.Response, error) {
+//  @return GetMeResponse
+func (a *DefaultAPIService) PostGetMeExecute(r ApiPostGetMeRequest) (*GetMeResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostGetMe200Response
+		localVarReturnValue  *GetMeResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetMe")
@@ -11675,7 +11891,7 @@ func (r ApiPostGetMyCommandsRequest) LanguageCode(languageCode string) ApiPostGe
 	return r
 }
 
-func (r ApiPostGetMyCommandsRequest) Execute() (*PostGetMyCommands200Response, *http.Response, error) {
+func (r ApiPostGetMyCommandsRequest) Execute() (*GetMyCommandsResponse, *http.Response, error) {
 	return r.ApiService.PostGetMyCommandsExecute(r)
 }
 
@@ -11695,13 +11911,13 @@ func (a *DefaultAPIService) PostGetMyCommands(ctx context.Context) ApiPostGetMyC
 }
 
 // Execute executes the request
-//  @return PostGetMyCommands200Response
-func (a *DefaultAPIService) PostGetMyCommandsExecute(r ApiPostGetMyCommandsRequest) (*PostGetMyCommands200Response, *http.Response, error) {
+//  @return GetMyCommandsResponse
+func (a *DefaultAPIService) PostGetMyCommandsExecute(r ApiPostGetMyCommandsRequest) (*GetMyCommandsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostGetMyCommands200Response
+		localVarReturnValue  *GetMyCommandsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetMyCommands")
@@ -11810,7 +12026,7 @@ func (r ApiPostGetMyDefaultAdministratorRightsRequest) ForChannels(forChannels b
 	return r
 }
 
-func (r ApiPostGetMyDefaultAdministratorRightsRequest) Execute() (*PostGetMyDefaultAdministratorRights200Response, *http.Response, error) {
+func (r ApiPostGetMyDefaultAdministratorRightsRequest) Execute() (*GetMyDefaultAdministratorRightsResponse, *http.Response, error) {
 	return r.ApiService.PostGetMyDefaultAdministratorRightsExecute(r)
 }
 
@@ -11830,13 +12046,13 @@ func (a *DefaultAPIService) PostGetMyDefaultAdministratorRights(ctx context.Cont
 }
 
 // Execute executes the request
-//  @return PostGetMyDefaultAdministratorRights200Response
-func (a *DefaultAPIService) PostGetMyDefaultAdministratorRightsExecute(r ApiPostGetMyDefaultAdministratorRightsRequest) (*PostGetMyDefaultAdministratorRights200Response, *http.Response, error) {
+//  @return GetMyDefaultAdministratorRightsResponse
+func (a *DefaultAPIService) PostGetMyDefaultAdministratorRightsExecute(r ApiPostGetMyDefaultAdministratorRightsRequest) (*GetMyDefaultAdministratorRightsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostGetMyDefaultAdministratorRights200Response
+		localVarReturnValue  *GetMyDefaultAdministratorRightsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetMyDefaultAdministratorRights")
@@ -11938,7 +12154,7 @@ func (r ApiPostGetMyDescriptionRequest) LanguageCode(languageCode string) ApiPos
 	return r
 }
 
-func (r ApiPostGetMyDescriptionRequest) Execute() (*PostGetMyDescription200Response, *http.Response, error) {
+func (r ApiPostGetMyDescriptionRequest) Execute() (*GetMyDescriptionResponse, *http.Response, error) {
 	return r.ApiService.PostGetMyDescriptionExecute(r)
 }
 
@@ -11958,13 +12174,13 @@ func (a *DefaultAPIService) PostGetMyDescription(ctx context.Context) ApiPostGet
 }
 
 // Execute executes the request
-//  @return PostGetMyDescription200Response
-func (a *DefaultAPIService) PostGetMyDescriptionExecute(r ApiPostGetMyDescriptionRequest) (*PostGetMyDescription200Response, *http.Response, error) {
+//  @return GetMyDescriptionResponse
+func (a *DefaultAPIService) PostGetMyDescriptionExecute(r ApiPostGetMyDescriptionRequest) (*GetMyDescriptionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostGetMyDescription200Response
+		localVarReturnValue  *GetMyDescriptionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetMyDescription")
@@ -12066,7 +12282,7 @@ func (r ApiPostGetMyNameRequest) LanguageCode(languageCode string) ApiPostGetMyN
 	return r
 }
 
-func (r ApiPostGetMyNameRequest) Execute() (*PostGetMyName200Response, *http.Response, error) {
+func (r ApiPostGetMyNameRequest) Execute() (*GetMyNameResponse, *http.Response, error) {
 	return r.ApiService.PostGetMyNameExecute(r)
 }
 
@@ -12086,13 +12302,13 @@ func (a *DefaultAPIService) PostGetMyName(ctx context.Context) ApiPostGetMyNameR
 }
 
 // Execute executes the request
-//  @return PostGetMyName200Response
-func (a *DefaultAPIService) PostGetMyNameExecute(r ApiPostGetMyNameRequest) (*PostGetMyName200Response, *http.Response, error) {
+//  @return GetMyNameResponse
+func (a *DefaultAPIService) PostGetMyNameExecute(r ApiPostGetMyNameRequest) (*GetMyNameResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostGetMyName200Response
+		localVarReturnValue  *GetMyNameResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetMyName")
@@ -12194,7 +12410,7 @@ func (r ApiPostGetMyShortDescriptionRequest) LanguageCode(languageCode string) A
 	return r
 }
 
-func (r ApiPostGetMyShortDescriptionRequest) Execute() (*PostGetMyShortDescription200Response, *http.Response, error) {
+func (r ApiPostGetMyShortDescriptionRequest) Execute() (*GetMyShortDescriptionResponse, *http.Response, error) {
 	return r.ApiService.PostGetMyShortDescriptionExecute(r)
 }
 
@@ -12214,13 +12430,13 @@ func (a *DefaultAPIService) PostGetMyShortDescription(ctx context.Context) ApiPo
 }
 
 // Execute executes the request
-//  @return PostGetMyShortDescription200Response
-func (a *DefaultAPIService) PostGetMyShortDescriptionExecute(r ApiPostGetMyShortDescriptionRequest) (*PostGetMyShortDescription200Response, *http.Response, error) {
+//  @return GetMyShortDescriptionResponse
+func (a *DefaultAPIService) PostGetMyShortDescriptionExecute(r ApiPostGetMyShortDescriptionRequest) (*GetMyShortDescriptionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostGetMyShortDescription200Response
+		localVarReturnValue  *GetMyShortDescriptionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetMyShortDescription")
@@ -12310,6 +12526,124 @@ func (a *DefaultAPIService) PostGetMyShortDescriptionExecute(r ApiPostGetMyShort
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiPostGetMyStarBalanceRequest struct {
+	ctx context.Context
+	ApiService DefaultAPI
+}
+
+func (r ApiPostGetMyStarBalanceRequest) Execute() (*GetMyStarBalanceResponse, *http.Response, error) {
+	return r.ApiService.PostGetMyStarBalanceExecute(r)
+}
+
+/*
+PostGetMyStarBalance getMyStarBalance
+
+A method to get the current Telegram Stars balance of the bot. Requires no parameters. On success, returns a [StarAmount](https://core.telegram.org/bots/api/#staramount) object.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPostGetMyStarBalanceRequest
+*/
+func (a *DefaultAPIService) PostGetMyStarBalance(ctx context.Context) ApiPostGetMyStarBalanceRequest {
+	return ApiPostGetMyStarBalanceRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return GetMyStarBalanceResponse
+func (a *DefaultAPIService) PostGetMyStarBalanceExecute(r ApiPostGetMyStarBalanceRequest) (*GetMyStarBalanceResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetMyStarBalanceResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetMyStarBalance")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/getMyStarBalance"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiPostGetStarTransactionsRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
@@ -12329,7 +12663,7 @@ func (r ApiPostGetStarTransactionsRequest) Limit(limit int32) ApiPostGetStarTran
 	return r
 }
 
-func (r ApiPostGetStarTransactionsRequest) Execute() (*PostGetStarTransactions200Response, *http.Response, error) {
+func (r ApiPostGetStarTransactionsRequest) Execute() (*GetStarTransactionsResponse, *http.Response, error) {
 	return r.ApiService.PostGetStarTransactionsExecute(r)
 }
 
@@ -12349,13 +12683,13 @@ func (a *DefaultAPIService) PostGetStarTransactions(ctx context.Context) ApiPost
 }
 
 // Execute executes the request
-//  @return PostGetStarTransactions200Response
-func (a *DefaultAPIService) PostGetStarTransactionsExecute(r ApiPostGetStarTransactionsRequest) (*PostGetStarTransactions200Response, *http.Response, error) {
+//  @return GetStarTransactionsResponse
+func (a *DefaultAPIService) PostGetStarTransactionsExecute(r ApiPostGetStarTransactionsRequest) (*GetStarTransactionsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostGetStarTransactions200Response
+		localVarReturnValue  *GetStarTransactionsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetStarTransactions")
@@ -12460,7 +12794,7 @@ func (r ApiPostGetStickerSetRequest) Name(name string) ApiPostGetStickerSetReque
 	return r
 }
 
-func (r ApiPostGetStickerSetRequest) Execute() (*PostGetStickerSet200Response, *http.Response, error) {
+func (r ApiPostGetStickerSetRequest) Execute() (*GetStickerSetResponse, *http.Response, error) {
 	return r.ApiService.PostGetStickerSetExecute(r)
 }
 
@@ -12480,13 +12814,13 @@ func (a *DefaultAPIService) PostGetStickerSet(ctx context.Context) ApiPostGetSti
 }
 
 // Execute executes the request
-//  @return PostGetStickerSet200Response
-func (a *DefaultAPIService) PostGetStickerSetExecute(r ApiPostGetStickerSetRequest) (*PostGetStickerSet200Response, *http.Response, error) {
+//  @return GetStickerSetResponse
+func (a *DefaultAPIService) PostGetStickerSetExecute(r ApiPostGetStickerSetRequest) (*GetStickerSetResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostGetStickerSet200Response
+		localVarReturnValue  *GetStickerSetResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetStickerSet")
@@ -12610,7 +12944,7 @@ func (r ApiPostGetUpdatesRequest) AllowedUpdates(allowedUpdates []string) ApiPos
 	return r
 }
 
-func (r ApiPostGetUpdatesRequest) Execute() (*PostGetUpdates200Response, *http.Response, error) {
+func (r ApiPostGetUpdatesRequest) Execute() (*GetUpdatesResponse, *http.Response, error) {
 	return r.ApiService.PostGetUpdatesExecute(r)
 }
 
@@ -12630,13 +12964,13 @@ func (a *DefaultAPIService) PostGetUpdates(ctx context.Context) ApiPostGetUpdate
 }
 
 // Execute executes the request
-//  @return PostGetUpdates200Response
-func (a *DefaultAPIService) PostGetUpdatesExecute(r ApiPostGetUpdatesRequest) (*PostGetUpdates200Response, *http.Response, error) {
+//  @return GetUpdatesResponse
+func (a *DefaultAPIService) PostGetUpdatesExecute(r ApiPostGetUpdatesRequest) (*GetUpdatesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostGetUpdates200Response
+		localVarReturnValue  *GetUpdatesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetUpdates")
@@ -12738,11 +13072,11 @@ func (a *DefaultAPIService) PostGetUpdatesExecute(r ApiPostGetUpdatesRequest) (*
 type ApiPostGetUserChatBoostsRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostGetUserChatBoostsRequestChatId
+	chatId *GetUserChatBoostsRequestChatId
 	userId *int32
 }
 
-func (r ApiPostGetUserChatBoostsRequest) ChatId(chatId PostGetUserChatBoostsRequestChatId) ApiPostGetUserChatBoostsRequest {
+func (r ApiPostGetUserChatBoostsRequest) ChatId(chatId GetUserChatBoostsRequestChatId) ApiPostGetUserChatBoostsRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -12753,7 +13087,7 @@ func (r ApiPostGetUserChatBoostsRequest) UserId(userId int32) ApiPostGetUserChat
 	return r
 }
 
-func (r ApiPostGetUserChatBoostsRequest) Execute() (*PostGetUserChatBoosts200Response, *http.Response, error) {
+func (r ApiPostGetUserChatBoostsRequest) Execute() (*GetUserChatBoostsResponse, *http.Response, error) {
 	return r.ApiService.PostGetUserChatBoostsExecute(r)
 }
 
@@ -12773,13 +13107,13 @@ func (a *DefaultAPIService) PostGetUserChatBoosts(ctx context.Context) ApiPostGe
 }
 
 // Execute executes the request
-//  @return PostGetUserChatBoosts200Response
-func (a *DefaultAPIService) PostGetUserChatBoostsExecute(r ApiPostGetUserChatBoostsRequest) (*PostGetUserChatBoosts200Response, *http.Response, error) {
+//  @return GetUserChatBoostsResponse
+func (a *DefaultAPIService) PostGetUserChatBoostsExecute(r ApiPostGetUserChatBoostsRequest) (*GetUserChatBoostsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostGetUserChatBoosts200Response
+		localVarReturnValue  *GetUserChatBoostsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetUserChatBoosts")
@@ -12900,7 +13234,7 @@ func (r ApiPostGetUserProfilePhotosRequest) Limit(limit int32) ApiPostGetUserPro
 	return r
 }
 
-func (r ApiPostGetUserProfilePhotosRequest) Execute() (*PostGetUserProfilePhotos200Response, *http.Response, error) {
+func (r ApiPostGetUserProfilePhotosRequest) Execute() (*GetUserProfilePhotosResponse, *http.Response, error) {
 	return r.ApiService.PostGetUserProfilePhotosExecute(r)
 }
 
@@ -12920,13 +13254,13 @@ func (a *DefaultAPIService) PostGetUserProfilePhotos(ctx context.Context) ApiPos
 }
 
 // Execute executes the request
-//  @return PostGetUserProfilePhotos200Response
-func (a *DefaultAPIService) PostGetUserProfilePhotosExecute(r ApiPostGetUserProfilePhotosRequest) (*PostGetUserProfilePhotos200Response, *http.Response, error) {
+//  @return GetUserProfilePhotosResponse
+func (a *DefaultAPIService) PostGetUserProfilePhotosExecute(r ApiPostGetUserProfilePhotosRequest) (*GetUserProfilePhotosResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostGetUserProfilePhotos200Response
+		localVarReturnValue  *GetUserProfilePhotosResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetUserProfilePhotos")
@@ -13028,7 +13362,7 @@ type ApiPostGetWebhookInfoRequest struct {
 	ApiService DefaultAPI
 }
 
-func (r ApiPostGetWebhookInfoRequest) Execute() (*PostGetWebhookInfo200Response, *http.Response, error) {
+func (r ApiPostGetWebhookInfoRequest) Execute() (*GetWebhookInfoResponse, *http.Response, error) {
 	return r.ApiService.PostGetWebhookInfoExecute(r)
 }
 
@@ -13048,13 +13382,13 @@ func (a *DefaultAPIService) PostGetWebhookInfo(ctx context.Context) ApiPostGetWe
 }
 
 // Execute executes the request
-//  @return PostGetWebhookInfo200Response
-func (a *DefaultAPIService) PostGetWebhookInfoExecute(r ApiPostGetWebhookInfoRequest) (*PostGetWebhookInfo200Response, *http.Response, error) {
+//  @return GetWebhookInfoResponse
+func (a *DefaultAPIService) PostGetWebhookInfoExecute(r ApiPostGetWebhookInfoRequest) (*GetWebhookInfoResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostGetWebhookInfo200Response
+		localVarReturnValue  *GetWebhookInfoResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGetWebhookInfo")
@@ -13188,7 +13522,7 @@ func (r ApiPostGiftPremiumSubscriptionRequest) TextEntities(textEntities []Messa
 	return r
 }
 
-func (r ApiPostGiftPremiumSubscriptionRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostGiftPremiumSubscriptionRequest) Execute() (*GiftPremiumSubscriptionResponse, *http.Response, error) {
 	return r.ApiService.PostGiftPremiumSubscriptionExecute(r)
 }
 
@@ -13208,13 +13542,13 @@ func (a *DefaultAPIService) PostGiftPremiumSubscription(ctx context.Context) Api
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostGiftPremiumSubscriptionExecute(r ApiPostGiftPremiumSubscriptionRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return GiftPremiumSubscriptionResponse
+func (a *DefaultAPIService) PostGiftPremiumSubscriptionExecute(r ApiPostGiftPremiumSubscriptionRequest) (*GiftPremiumSubscriptionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *GiftPremiumSubscriptionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostGiftPremiumSubscription")
@@ -13325,15 +13659,15 @@ func (a *DefaultAPIService) PostGiftPremiumSubscriptionExecute(r ApiPostGiftPrem
 type ApiPostHideGeneralForumTopicRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostRestrictChatMemberRequestChatId
+	chatId *BotCommandScopeChatChatId
 }
 
-func (r ApiPostHideGeneralForumTopicRequest) ChatId(chatId PostRestrictChatMemberRequestChatId) ApiPostHideGeneralForumTopicRequest {
+func (r ApiPostHideGeneralForumTopicRequest) ChatId(chatId BotCommandScopeChatChatId) ApiPostHideGeneralForumTopicRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiPostHideGeneralForumTopicRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostHideGeneralForumTopicRequest) Execute() (*HideGeneralForumTopicResponse, *http.Response, error) {
 	return r.ApiService.PostHideGeneralForumTopicExecute(r)
 }
 
@@ -13353,13 +13687,13 @@ func (a *DefaultAPIService) PostHideGeneralForumTopic(ctx context.Context) ApiPo
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostHideGeneralForumTopicExecute(r ApiPostHideGeneralForumTopicRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return HideGeneralForumTopicResponse
+func (a *DefaultAPIService) PostHideGeneralForumTopicExecute(r ApiPostHideGeneralForumTopicRequest) (*HideGeneralForumTopicResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *HideGeneralForumTopicResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostHideGeneralForumTopic")
@@ -13453,15 +13787,15 @@ func (a *DefaultAPIService) PostHideGeneralForumTopicExecute(r ApiPostHideGenera
 type ApiPostLeaveChatRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostLeaveChatRequestChatId
+	chatId *LeaveChatRequestChatId
 }
 
-func (r ApiPostLeaveChatRequest) ChatId(chatId PostLeaveChatRequestChatId) ApiPostLeaveChatRequest {
+func (r ApiPostLeaveChatRequest) ChatId(chatId LeaveChatRequestChatId) ApiPostLeaveChatRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiPostLeaveChatRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostLeaveChatRequest) Execute() (*LeaveChatResponse, *http.Response, error) {
 	return r.ApiService.PostLeaveChatExecute(r)
 }
 
@@ -13481,13 +13815,13 @@ func (a *DefaultAPIService) PostLeaveChat(ctx context.Context) ApiPostLeaveChatR
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostLeaveChatExecute(r ApiPostLeaveChatRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return LeaveChatResponse
+func (a *DefaultAPIService) PostLeaveChatExecute(r ApiPostLeaveChatRequest) (*LeaveChatResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *LeaveChatResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostLeaveChat")
@@ -13583,7 +13917,7 @@ type ApiPostLogOutRequest struct {
 	ApiService DefaultAPI
 }
 
-func (r ApiPostLogOutRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostLogOutRequest) Execute() (*LogOutResponse, *http.Response, error) {
 	return r.ApiService.PostLogOutExecute(r)
 }
 
@@ -13603,13 +13937,13 @@ func (a *DefaultAPIService) PostLogOut(ctx context.Context) ApiPostLogOutRequest
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostLogOutExecute(r ApiPostLogOutRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return LogOutResponse
+func (a *DefaultAPIService) PostLogOutExecute(r ApiPostLogOutRequest) (*LogOutResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *LogOutResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostLogOut")
@@ -13699,13 +14033,13 @@ func (a *DefaultAPIService) PostLogOutExecute(r ApiPostLogOutRequest) (*PostSetW
 type ApiPostPinChatMessageRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
+	chatId *SendMessageRequestChatId
 	messageId *int32
 	businessConnectionId *string
 	disableNotification *bool
 }
 
-func (r ApiPostPinChatMessageRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostPinChatMessageRequest {
+func (r ApiPostPinChatMessageRequest) ChatId(chatId SendMessageRequestChatId) ApiPostPinChatMessageRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -13728,7 +14062,7 @@ func (r ApiPostPinChatMessageRequest) DisableNotification(disableNotification bo
 	return r
 }
 
-func (r ApiPostPinChatMessageRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostPinChatMessageRequest) Execute() (*PinChatMessageResponse, *http.Response, error) {
 	return r.ApiService.PostPinChatMessageExecute(r)
 }
 
@@ -13748,13 +14082,13 @@ func (a *DefaultAPIService) PostPinChatMessage(ctx context.Context) ApiPostPinCh
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostPinChatMessageExecute(r ApiPostPinChatMessageRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return PinChatMessageResponse
+func (a *DefaultAPIService) PostPinChatMessageExecute(r ApiPostPinChatMessageRequest) (*PinChatMessageResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *PinChatMessageResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostPinChatMessage")
@@ -13922,7 +14256,7 @@ func (r ApiPostPostStoryRequest) ProtectContent(protectContent bool) ApiPostPost
 	return r
 }
 
-func (r ApiPostPostStoryRequest) Execute() (*PostPostStory200Response, *http.Response, error) {
+func (r ApiPostPostStoryRequest) Execute() (*PostStoryResponse, *http.Response, error) {
 	return r.ApiService.PostPostStoryExecute(r)
 }
 
@@ -13942,13 +14276,13 @@ func (a *DefaultAPIService) PostPostStory(ctx context.Context) ApiPostPostStoryR
 }
 
 // Execute executes the request
-//  @return PostPostStory200Response
-func (a *DefaultAPIService) PostPostStoryExecute(r ApiPostPostStoryRequest) (*PostPostStory200Response, *http.Response, error) {
+//  @return PostStoryResponse
+func (a *DefaultAPIService) PostPostStoryExecute(r ApiPostPostStoryRequest) (*PostStoryResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostPostStory200Response
+		localVarReturnValue  *PostStoryResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostPostStory")
@@ -13972,7 +14306,7 @@ func (a *DefaultAPIService) PostPostStoryExecute(r ApiPostPostStoryRequest) (*Po
 	}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"multipart/form-data"}
+	localVarHTTPContentTypes := []string{"multipart/form-data", "application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -14068,7 +14402,7 @@ func (a *DefaultAPIService) PostPostStoryExecute(r ApiPostPostStoryRequest) (*Po
 type ApiPostPromoteChatMemberRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
+	chatId *SendMessageRequestChatId
 	userId *int32
 	isAnonymous *bool
 	canManageChat *bool
@@ -14087,7 +14421,7 @@ type ApiPostPromoteChatMemberRequest struct {
 	canManageTopics *bool
 }
 
-func (r ApiPostPromoteChatMemberRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostPromoteChatMemberRequest {
+func (r ApiPostPromoteChatMemberRequest) ChatId(chatId SendMessageRequestChatId) ApiPostPromoteChatMemberRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -14104,7 +14438,7 @@ func (r ApiPostPromoteChatMemberRequest) IsAnonymous(isAnonymous bool) ApiPostPr
 	return r
 }
 
-// Pass *True* if the administrator can access the chat event log, get boost list, see hidden supergroup and channel members, report spam messages and ignore slow mode. Implied by any other administrator privilege.
+// Pass *True* if the administrator can access the chat event log, get boost list, see hidden supergroup and channel members, report spam messages, ignore slow mode, and send messages to the chat without paying Telegram Stars. Implied by any other administrator privilege.
 func (r ApiPostPromoteChatMemberRequest) CanManageChat(canManageChat bool) ApiPostPromoteChatMemberRequest {
 	r.canManageChat = &canManageChat
 	return r
@@ -14164,7 +14498,7 @@ func (r ApiPostPromoteChatMemberRequest) CanDeleteStories(canDeleteStories bool)
 	return r
 }
 
-// Pass *True* if the administrator can post messages in the channel, or access channel statistics; for channels only
+// Pass *True* if the administrator can post messages in the channel, approve suggested posts, or access channel statistics; for channels only
 func (r ApiPostPromoteChatMemberRequest) CanPostMessages(canPostMessages bool) ApiPostPromoteChatMemberRequest {
 	r.canPostMessages = &canPostMessages
 	return r
@@ -14188,7 +14522,7 @@ func (r ApiPostPromoteChatMemberRequest) CanManageTopics(canManageTopics bool) A
 	return r
 }
 
-func (r ApiPostPromoteChatMemberRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostPromoteChatMemberRequest) Execute() (*PromoteChatMemberResponse, *http.Response, error) {
 	return r.ApiService.PostPromoteChatMemberExecute(r)
 }
 
@@ -14208,13 +14542,13 @@ func (a *DefaultAPIService) PostPromoteChatMember(ctx context.Context) ApiPostPr
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostPromoteChatMemberExecute(r ApiPostPromoteChatMemberRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return PromoteChatMemberResponse
+func (a *DefaultAPIService) PostPromoteChatMemberExecute(r ApiPostPromoteChatMemberRequest) (*PromoteChatMemberResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *PromoteChatMemberResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostPromoteChatMember")
@@ -14380,7 +14714,7 @@ func (r ApiPostReadBusinessMessageRequest) MessageId(messageId int32) ApiPostRea
 	return r
 }
 
-func (r ApiPostReadBusinessMessageRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostReadBusinessMessageRequest) Execute() (*ReadBusinessMessageResponse, *http.Response, error) {
 	return r.ApiService.PostReadBusinessMessageExecute(r)
 }
 
@@ -14400,13 +14734,13 @@ func (a *DefaultAPIService) PostReadBusinessMessage(ctx context.Context) ApiPost
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostReadBusinessMessageExecute(r ApiPostReadBusinessMessageRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return ReadBusinessMessageResponse
+func (a *DefaultAPIService) PostReadBusinessMessageExecute(r ApiPostReadBusinessMessageRequest) (*ReadBusinessMessageResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *ReadBusinessMessageResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostReadBusinessMessage")
@@ -14524,7 +14858,7 @@ func (r ApiPostRefundStarPaymentRequest) TelegramPaymentChargeId(telegramPayment
 	return r
 }
 
-func (r ApiPostRefundStarPaymentRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostRefundStarPaymentRequest) Execute() (*RefundStarPaymentResponse, *http.Response, error) {
 	return r.ApiService.PostRefundStarPaymentExecute(r)
 }
 
@@ -14544,13 +14878,13 @@ func (a *DefaultAPIService) PostRefundStarPayment(ctx context.Context) ApiPostRe
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostRefundStarPaymentExecute(r ApiPostRefundStarPaymentRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return RefundStarPaymentResponse
+func (a *DefaultAPIService) PostRefundStarPaymentExecute(r ApiPostRefundStarPaymentRequest) (*RefundStarPaymentResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *RefundStarPaymentResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostRefundStarPayment")
@@ -14658,13 +14992,13 @@ func (r ApiPostRemoveBusinessAccountProfilePhotoRequest) BusinessConnectionId(bu
 	return r
 }
 
-// Pass True to remove the public photo, which is visible even if the main photo is hidden by the business account&#39;s privacy settings. After the main photo is removed, the previous profile photo (if present) becomes the main photo.
+// Pass *True* to remove the public photo, which is visible even if the main photo is hidden by the business account&#39;s privacy settings. After the main photo is removed, the previous profile photo (if present) becomes the main photo.
 func (r ApiPostRemoveBusinessAccountProfilePhotoRequest) IsPublic(isPublic bool) ApiPostRemoveBusinessAccountProfilePhotoRequest {
 	r.isPublic = &isPublic
 	return r
 }
 
-func (r ApiPostRemoveBusinessAccountProfilePhotoRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostRemoveBusinessAccountProfilePhotoRequest) Execute() (*RemoveBusinessAccountProfilePhotoResponse, *http.Response, error) {
 	return r.ApiService.PostRemoveBusinessAccountProfilePhotoExecute(r)
 }
 
@@ -14684,13 +15018,13 @@ func (a *DefaultAPIService) PostRemoveBusinessAccountProfilePhoto(ctx context.Co
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostRemoveBusinessAccountProfilePhotoExecute(r ApiPostRemoveBusinessAccountProfilePhotoRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return RemoveBusinessAccountProfilePhotoResponse
+func (a *DefaultAPIService) PostRemoveBusinessAccountProfilePhotoExecute(r ApiPostRemoveBusinessAccountProfilePhotoRequest) (*RemoveBusinessAccountProfilePhotoResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *RemoveBusinessAccountProfilePhotoResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostRemoveBusinessAccountProfilePhoto")
@@ -14787,15 +15121,15 @@ func (a *DefaultAPIService) PostRemoveBusinessAccountProfilePhotoExecute(r ApiPo
 type ApiPostRemoveChatVerificationRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
+	chatId *SendMessageRequestChatId
 }
 
-func (r ApiPostRemoveChatVerificationRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostRemoveChatVerificationRequest {
+func (r ApiPostRemoveChatVerificationRequest) ChatId(chatId SendMessageRequestChatId) ApiPostRemoveChatVerificationRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiPostRemoveChatVerificationRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostRemoveChatVerificationRequest) Execute() (*RemoveChatVerificationResponse, *http.Response, error) {
 	return r.ApiService.PostRemoveChatVerificationExecute(r)
 }
 
@@ -14815,13 +15149,13 @@ func (a *DefaultAPIService) PostRemoveChatVerification(ctx context.Context) ApiP
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostRemoveChatVerificationExecute(r ApiPostRemoveChatVerificationRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return RemoveChatVerificationResponse
+func (a *DefaultAPIService) PostRemoveChatVerificationExecute(r ApiPostRemoveChatVerificationRequest) (*RemoveChatVerificationResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *RemoveChatVerificationResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostRemoveChatVerification")
@@ -14924,7 +15258,7 @@ func (r ApiPostRemoveUserVerificationRequest) UserId(userId int32) ApiPostRemove
 	return r
 }
 
-func (r ApiPostRemoveUserVerificationRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostRemoveUserVerificationRequest) Execute() (*RemoveUserVerificationResponse, *http.Response, error) {
 	return r.ApiService.PostRemoveUserVerificationExecute(r)
 }
 
@@ -14944,13 +15278,13 @@ func (a *DefaultAPIService) PostRemoveUserVerification(ctx context.Context) ApiP
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostRemoveUserVerificationExecute(r ApiPostRemoveUserVerificationRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return RemoveUserVerificationResponse
+func (a *DefaultAPIService) PostRemoveUserVerificationExecute(r ApiPostRemoveUserVerificationRequest) (*RemoveUserVerificationResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *RemoveUserVerificationResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostRemoveUserVerification")
@@ -15044,11 +15378,11 @@ func (a *DefaultAPIService) PostRemoveUserVerificationExecute(r ApiPostRemoveUse
 type ApiPostReopenForumTopicRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostRestrictChatMemberRequestChatId
+	chatId *BotCommandScopeChatChatId
 	messageThreadId *int32
 }
 
-func (r ApiPostReopenForumTopicRequest) ChatId(chatId PostRestrictChatMemberRequestChatId) ApiPostReopenForumTopicRequest {
+func (r ApiPostReopenForumTopicRequest) ChatId(chatId BotCommandScopeChatChatId) ApiPostReopenForumTopicRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -15059,7 +15393,7 @@ func (r ApiPostReopenForumTopicRequest) MessageThreadId(messageThreadId int32) A
 	return r
 }
 
-func (r ApiPostReopenForumTopicRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostReopenForumTopicRequest) Execute() (*ReopenForumTopicResponse, *http.Response, error) {
 	return r.ApiService.PostReopenForumTopicExecute(r)
 }
 
@@ -15079,13 +15413,13 @@ func (a *DefaultAPIService) PostReopenForumTopic(ctx context.Context) ApiPostReo
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostReopenForumTopicExecute(r ApiPostReopenForumTopicRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return ReopenForumTopicResponse
+func (a *DefaultAPIService) PostReopenForumTopicExecute(r ApiPostReopenForumTopicRequest) (*ReopenForumTopicResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *ReopenForumTopicResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostReopenForumTopic")
@@ -15183,15 +15517,15 @@ func (a *DefaultAPIService) PostReopenForumTopicExecute(r ApiPostReopenForumTopi
 type ApiPostReopenGeneralForumTopicRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostRestrictChatMemberRequestChatId
+	chatId *BotCommandScopeChatChatId
 }
 
-func (r ApiPostReopenGeneralForumTopicRequest) ChatId(chatId PostRestrictChatMemberRequestChatId) ApiPostReopenGeneralForumTopicRequest {
+func (r ApiPostReopenGeneralForumTopicRequest) ChatId(chatId BotCommandScopeChatChatId) ApiPostReopenGeneralForumTopicRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiPostReopenGeneralForumTopicRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostReopenGeneralForumTopicRequest) Execute() (*ReopenGeneralForumTopicResponse, *http.Response, error) {
 	return r.ApiService.PostReopenGeneralForumTopicExecute(r)
 }
 
@@ -15211,13 +15545,13 @@ func (a *DefaultAPIService) PostReopenGeneralForumTopic(ctx context.Context) Api
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostReopenGeneralForumTopicExecute(r ApiPostReopenGeneralForumTopicRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return ReopenGeneralForumTopicResponse
+func (a *DefaultAPIService) PostReopenGeneralForumTopicExecute(r ApiPostReopenGeneralForumTopicRequest) (*ReopenGeneralForumTopicResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *ReopenGeneralForumTopicResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostReopenGeneralForumTopic")
@@ -15340,7 +15674,7 @@ func (r ApiPostReplaceStickerInSetRequest) Sticker(sticker InputSticker) ApiPost
 	return r
 }
 
-func (r ApiPostReplaceStickerInSetRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostReplaceStickerInSetRequest) Execute() (*ReplaceStickerInSetResponse, *http.Response, error) {
 	return r.ApiService.PostReplaceStickerInSetExecute(r)
 }
 
@@ -15360,13 +15694,13 @@ func (a *DefaultAPIService) PostReplaceStickerInSet(ctx context.Context) ApiPost
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostReplaceStickerInSetExecute(r ApiPostReplaceStickerInSetRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return ReplaceStickerInSetResponse
+func (a *DefaultAPIService) PostReplaceStickerInSetExecute(r ApiPostReplaceStickerInSetRequest) (*ReplaceStickerInSetResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *ReplaceStickerInSetResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostReplaceStickerInSet")
@@ -15393,7 +15727,7 @@ func (a *DefaultAPIService) PostReplaceStickerInSetExecute(r ApiPostReplaceStick
 	}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"multipart/form-data"}
+	localVarHTTPContentTypes := []string{"multipart/form-data", "application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -15472,14 +15806,14 @@ func (a *DefaultAPIService) PostReplaceStickerInSetExecute(r ApiPostReplaceStick
 type ApiPostRestrictChatMemberRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostRestrictChatMemberRequestChatId
+	chatId *BotCommandScopeChatChatId
 	userId *int32
 	permissions *ChatPermissions
 	useIndependentChatPermissions *bool
 	untilDate *int32
 }
 
-func (r ApiPostRestrictChatMemberRequest) ChatId(chatId PostRestrictChatMemberRequestChatId) ApiPostRestrictChatMemberRequest {
+func (r ApiPostRestrictChatMemberRequest) ChatId(chatId BotCommandScopeChatChatId) ApiPostRestrictChatMemberRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -15507,7 +15841,7 @@ func (r ApiPostRestrictChatMemberRequest) UntilDate(untilDate int32) ApiPostRest
 	return r
 }
 
-func (r ApiPostRestrictChatMemberRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostRestrictChatMemberRequest) Execute() (*RestrictChatMemberResponse, *http.Response, error) {
 	return r.ApiService.PostRestrictChatMemberExecute(r)
 }
 
@@ -15527,13 +15861,13 @@ func (a *DefaultAPIService) PostRestrictChatMember(ctx context.Context) ApiPostR
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostRestrictChatMemberExecute(r ApiPostRestrictChatMemberRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return RestrictChatMemberResponse
+func (a *DefaultAPIService) PostRestrictChatMemberExecute(r ApiPostRestrictChatMemberRequest) (*RestrictChatMemberResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *RestrictChatMemberResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostRestrictChatMember")
@@ -15641,11 +15975,11 @@ func (a *DefaultAPIService) PostRestrictChatMemberExecute(r ApiPostRestrictChatM
 type ApiPostRevokeChatInviteLinkRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostRevokeChatInviteLinkRequestChatId
+	chatId *RevokeChatInviteLinkRequestChatId
 	inviteLink *string
 }
 
-func (r ApiPostRevokeChatInviteLinkRequest) ChatId(chatId PostRevokeChatInviteLinkRequestChatId) ApiPostRevokeChatInviteLinkRequest {
+func (r ApiPostRevokeChatInviteLinkRequest) ChatId(chatId RevokeChatInviteLinkRequestChatId) ApiPostRevokeChatInviteLinkRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -15656,7 +15990,7 @@ func (r ApiPostRevokeChatInviteLinkRequest) InviteLink(inviteLink string) ApiPos
 	return r
 }
 
-func (r ApiPostRevokeChatInviteLinkRequest) Execute() (*PostCreateChatInviteLink200Response, *http.Response, error) {
+func (r ApiPostRevokeChatInviteLinkRequest) Execute() (*RevokeChatInviteLinkResponse, *http.Response, error) {
 	return r.ApiService.PostRevokeChatInviteLinkExecute(r)
 }
 
@@ -15676,13 +16010,13 @@ func (a *DefaultAPIService) PostRevokeChatInviteLink(ctx context.Context) ApiPos
 }
 
 // Execute executes the request
-//  @return PostCreateChatInviteLink200Response
-func (a *DefaultAPIService) PostRevokeChatInviteLinkExecute(r ApiPostRevokeChatInviteLinkRequest) (*PostCreateChatInviteLink200Response, *http.Response, error) {
+//  @return RevokeChatInviteLinkResponse
+func (a *DefaultAPIService) PostRevokeChatInviteLinkExecute(r ApiPostRevokeChatInviteLinkRequest) (*RevokeChatInviteLinkResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostCreateChatInviteLink200Response
+		localVarReturnValue  *RevokeChatInviteLinkResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostRevokeChatInviteLink")
@@ -15823,7 +16157,7 @@ func (r ApiPostSavePreparedInlineMessageRequest) AllowChannelChats(allowChannelC
 	return r
 }
 
-func (r ApiPostSavePreparedInlineMessageRequest) Execute() (*PostSavePreparedInlineMessage200Response, *http.Response, error) {
+func (r ApiPostSavePreparedInlineMessageRequest) Execute() (*SavePreparedInlineMessageResponse, *http.Response, error) {
 	return r.ApiService.PostSavePreparedInlineMessageExecute(r)
 }
 
@@ -15843,13 +16177,13 @@ func (a *DefaultAPIService) PostSavePreparedInlineMessage(ctx context.Context) A
 }
 
 // Execute executes the request
-//  @return PostSavePreparedInlineMessage200Response
-func (a *DefaultAPIService) PostSavePreparedInlineMessageExecute(r ApiPostSavePreparedInlineMessageRequest) (*PostSavePreparedInlineMessage200Response, *http.Response, error) {
+//  @return SavePreparedInlineMessageResponse
+func (a *DefaultAPIService) PostSavePreparedInlineMessageExecute(r ApiPostSavePreparedInlineMessageRequest) (*SavePreparedInlineMessageResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSavePreparedInlineMessage200Response
+		localVarReturnValue  *SavePreparedInlineMessageResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSavePreparedInlineMessage")
@@ -15959,14 +16293,14 @@ func (a *DefaultAPIService) PostSavePreparedInlineMessageExecute(r ApiPostSavePr
 type ApiPostSendAnimationRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
-	animation *PostSendAnimationRequestAnimation
+	chatId *SendMessageRequestChatId
+	animation *string
 	businessConnectionId *string
 	messageThreadId *int32
 	duration *int32
 	width *int32
 	height *int32
-	thumbnail *PostSendAudioRequestThumbnail
+	thumbnail *string
 	caption *string
 	parseMode *string
 	captionEntities *[]MessageEntity
@@ -15977,15 +16311,15 @@ type ApiPostSendAnimationRequest struct {
 	allowPaidBroadcast *bool
 	messageEffectId *string
 	replyParameters *ReplyParameters
-	replyMarkup *PostSendMessageRequestReplyMarkup
+	replyMarkup *SendMessageRequestReplyMarkup
 }
 
-func (r ApiPostSendAnimationRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSendAnimationRequest {
+func (r ApiPostSendAnimationRequest) ChatId(chatId SendMessageRequestChatId) ApiPostSendAnimationRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiPostSendAnimationRequest) Animation(animation PostSendAnimationRequestAnimation) ApiPostSendAnimationRequest {
+func (r ApiPostSendAnimationRequest) Animation(animation string) ApiPostSendAnimationRequest {
 	r.animation = &animation
 	return r
 }
@@ -16020,7 +16354,7 @@ func (r ApiPostSendAnimationRequest) Height(height int32) ApiPostSendAnimationRe
 	return r
 }
 
-func (r ApiPostSendAnimationRequest) Thumbnail(thumbnail PostSendAudioRequestThumbnail) ApiPostSendAnimationRequest {
+func (r ApiPostSendAnimationRequest) Thumbnail(thumbnail string) ApiPostSendAnimationRequest {
 	r.thumbnail = &thumbnail
 	return r
 }
@@ -16084,12 +16418,12 @@ func (r ApiPostSendAnimationRequest) ReplyParameters(replyParameters ReplyParame
 	return r
 }
 
-func (r ApiPostSendAnimationRequest) ReplyMarkup(replyMarkup PostSendMessageRequestReplyMarkup) ApiPostSendAnimationRequest {
+func (r ApiPostSendAnimationRequest) ReplyMarkup(replyMarkup SendMessageRequestReplyMarkup) ApiPostSendAnimationRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiPostSendAnimationRequest) Execute() (*PostSendMessage200Response, *http.Response, error) {
+func (r ApiPostSendAnimationRequest) Execute() (*SendAnimationResponse, *http.Response, error) {
 	return r.ApiService.PostSendAnimationExecute(r)
 }
 
@@ -16109,13 +16443,13 @@ func (a *DefaultAPIService) PostSendAnimation(ctx context.Context) ApiPostSendAn
 }
 
 // Execute executes the request
-//  @return PostSendMessage200Response
-func (a *DefaultAPIService) PostSendAnimationExecute(r ApiPostSendAnimationRequest) (*PostSendMessage200Response, *http.Response, error) {
+//  @return SendAnimationResponse
+func (a *DefaultAPIService) PostSendAnimationExecute(r ApiPostSendAnimationRequest) (*SendAnimationResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSendMessage200Response
+		localVarReturnValue  *SendAnimationResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendAnimation")
@@ -16136,7 +16470,7 @@ func (a *DefaultAPIService) PostSendAnimationExecute(r ApiPostSendAnimationReque
 	}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"multipart/form-data"}
+	localVarHTTPContentTypes := []string{"multipart/form-data", "application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -16170,11 +16504,7 @@ func (a *DefaultAPIService) PostSendAnimationExecute(r ApiPostSendAnimationReque
 		parameterAddToHeaderOrQuery(localVarFormParams, "height", r.height, "", "")
 	}
 	if r.thumbnail != nil {
-		paramJson, err := parameterToJson(*r.thumbnail)
-		if err != nil {
-			return localVarReturnValue, nil, err
-		}
-		localVarFormParams.Add("thumbnail", paramJson)
+		parameterAddToHeaderOrQuery(localVarFormParams, "thumbnail", r.thumbnail, "", "")
 	}
 	if r.caption != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "caption", r.caption, "", "")
@@ -16276,8 +16606,8 @@ func (a *DefaultAPIService) PostSendAnimationExecute(r ApiPostSendAnimationReque
 type ApiPostSendAudioRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
-	audio *PostSendAudioRequestAudio
+	chatId *SendMessageRequestChatId
+	audio *string
 	businessConnectionId *string
 	messageThreadId *int32
 	caption *string
@@ -16286,21 +16616,21 @@ type ApiPostSendAudioRequest struct {
 	duration *int32
 	performer *string
 	title *string
-	thumbnail *PostSendAudioRequestThumbnail
+	thumbnail *string
 	disableNotification *bool
 	protectContent *bool
 	allowPaidBroadcast *bool
 	messageEffectId *string
 	replyParameters *ReplyParameters
-	replyMarkup *PostSendMessageRequestReplyMarkup
+	replyMarkup *SendMessageRequestReplyMarkup
 }
 
-func (r ApiPostSendAudioRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSendAudioRequest {
+func (r ApiPostSendAudioRequest) ChatId(chatId SendMessageRequestChatId) ApiPostSendAudioRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiPostSendAudioRequest) Audio(audio PostSendAudioRequestAudio) ApiPostSendAudioRequest {
+func (r ApiPostSendAudioRequest) Audio(audio string) ApiPostSendAudioRequest {
 	r.audio = &audio
 	return r
 }
@@ -16353,7 +16683,7 @@ func (r ApiPostSendAudioRequest) Title(title string) ApiPostSendAudioRequest {
 	return r
 }
 
-func (r ApiPostSendAudioRequest) Thumbnail(thumbnail PostSendAudioRequestThumbnail) ApiPostSendAudioRequest {
+func (r ApiPostSendAudioRequest) Thumbnail(thumbnail string) ApiPostSendAudioRequest {
 	r.thumbnail = &thumbnail
 	return r
 }
@@ -16387,12 +16717,12 @@ func (r ApiPostSendAudioRequest) ReplyParameters(replyParameters ReplyParameters
 	return r
 }
 
-func (r ApiPostSendAudioRequest) ReplyMarkup(replyMarkup PostSendMessageRequestReplyMarkup) ApiPostSendAudioRequest {
+func (r ApiPostSendAudioRequest) ReplyMarkup(replyMarkup SendMessageRequestReplyMarkup) ApiPostSendAudioRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiPostSendAudioRequest) Execute() (*PostSendMessage200Response, *http.Response, error) {
+func (r ApiPostSendAudioRequest) Execute() (*SendAudioResponse, *http.Response, error) {
 	return r.ApiService.PostSendAudioExecute(r)
 }
 
@@ -16414,13 +16744,13 @@ func (a *DefaultAPIService) PostSendAudio(ctx context.Context) ApiPostSendAudioR
 }
 
 // Execute executes the request
-//  @return PostSendMessage200Response
-func (a *DefaultAPIService) PostSendAudioExecute(r ApiPostSendAudioRequest) (*PostSendMessage200Response, *http.Response, error) {
+//  @return SendAudioResponse
+func (a *DefaultAPIService) PostSendAudioExecute(r ApiPostSendAudioRequest) (*SendAudioResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSendMessage200Response
+		localVarReturnValue  *SendAudioResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendAudio")
@@ -16441,7 +16771,7 @@ func (a *DefaultAPIService) PostSendAudioExecute(r ApiPostSendAudioRequest) (*Po
 	}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"multipart/form-data"}
+	localVarHTTPContentTypes := []string{"multipart/form-data", "application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -16484,11 +16814,7 @@ func (a *DefaultAPIService) PostSendAudioExecute(r ApiPostSendAudioRequest) (*Po
 		parameterAddToHeaderOrQuery(localVarFormParams, "title", r.title, "", "")
 	}
 	if r.thumbnail != nil {
-		paramJson, err := parameterToJson(*r.thumbnail)
-		if err != nil {
-			return localVarReturnValue, nil, err
-		}
-		localVarFormParams.Add("thumbnail", paramJson)
+		parameterAddToHeaderOrQuery(localVarFormParams, "thumbnail", r.thumbnail, "", "")
 	}
 	if r.disableNotification != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "disable_notification", r.disableNotification, "", "")
@@ -16575,13 +16901,13 @@ func (a *DefaultAPIService) PostSendAudioExecute(r ApiPostSendAudioRequest) (*Po
 type ApiPostSendChatActionRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
+	chatId *SendMessageRequestChatId
 	action *string
 	businessConnectionId *string
 	messageThreadId *int32
 }
 
-func (r ApiPostSendChatActionRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSendChatActionRequest {
+func (r ApiPostSendChatActionRequest) ChatId(chatId SendMessageRequestChatId) ApiPostSendChatActionRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -16604,7 +16930,7 @@ func (r ApiPostSendChatActionRequest) MessageThreadId(messageThreadId int32) Api
 	return r
 }
 
-func (r ApiPostSendChatActionRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostSendChatActionRequest) Execute() (*SendChatActionResponse, *http.Response, error) {
 	return r.ApiService.PostSendChatActionExecute(r)
 }
 
@@ -16628,13 +16954,13 @@ func (a *DefaultAPIService) PostSendChatAction(ctx context.Context) ApiPostSendC
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostSendChatActionExecute(r ApiPostSendChatActionRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return SendChatActionResponse
+func (a *DefaultAPIService) PostSendChatActionExecute(r ApiPostSendChatActionRequest) (*SendChatActionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *SendChatActionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendChatAction")
@@ -16735,10 +17061,216 @@ func (a *DefaultAPIService) PostSendChatActionExecute(r ApiPostSendChatActionReq
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiPostSendChecklistRequest struct {
+	ctx context.Context
+	ApiService DefaultAPI
+	businessConnectionId *string
+	chatId *int32
+	checklist *InputChecklist
+	disableNotification *bool
+	protectContent *bool
+	messageEffectId *string
+	replyParameters *ReplyParameters
+	replyMarkup *InlineKeyboardMarkup
+}
+
+// Unique identifier of the business connection on behalf of which the message will be sent
+func (r ApiPostSendChecklistRequest) BusinessConnectionId(businessConnectionId string) ApiPostSendChecklistRequest {
+	r.businessConnectionId = &businessConnectionId
+	return r
+}
+
+// Unique identifier for the target chat
+func (r ApiPostSendChecklistRequest) ChatId(chatId int32) ApiPostSendChecklistRequest {
+	r.chatId = &chatId
+	return r
+}
+
+func (r ApiPostSendChecklistRequest) Checklist(checklist InputChecklist) ApiPostSendChecklistRequest {
+	r.checklist = &checklist
+	return r
+}
+
+// Sends the message silently. Users will receive a notification with no sound.
+func (r ApiPostSendChecklistRequest) DisableNotification(disableNotification bool) ApiPostSendChecklistRequest {
+	r.disableNotification = &disableNotification
+	return r
+}
+
+// Protects the contents of the sent message from forwarding and saving
+func (r ApiPostSendChecklistRequest) ProtectContent(protectContent bool) ApiPostSendChecklistRequest {
+	r.protectContent = &protectContent
+	return r
+}
+
+// Unique identifier of the message effect to be added to the message
+func (r ApiPostSendChecklistRequest) MessageEffectId(messageEffectId string) ApiPostSendChecklistRequest {
+	r.messageEffectId = &messageEffectId
+	return r
+}
+
+func (r ApiPostSendChecklistRequest) ReplyParameters(replyParameters ReplyParameters) ApiPostSendChecklistRequest {
+	r.replyParameters = &replyParameters
+	return r
+}
+
+func (r ApiPostSendChecklistRequest) ReplyMarkup(replyMarkup InlineKeyboardMarkup) ApiPostSendChecklistRequest {
+	r.replyMarkup = &replyMarkup
+	return r
+}
+
+func (r ApiPostSendChecklistRequest) Execute() (*SendChecklistResponse, *http.Response, error) {
+	return r.ApiService.PostSendChecklistExecute(r)
+}
+
+/*
+PostSendChecklist sendChecklist
+
+Use this method to send a checklist on behalf of a connected business account. On success, the sent [Message](https://core.telegram.org/bots/api/#message) is returned.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPostSendChecklistRequest
+*/
+func (a *DefaultAPIService) PostSendChecklist(ctx context.Context) ApiPostSendChecklistRequest {
+	return ApiPostSendChecklistRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return SendChecklistResponse
+func (a *DefaultAPIService) PostSendChecklistExecute(r ApiPostSendChecklistRequest) (*SendChecklistResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *SendChecklistResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendChecklist")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/sendChecklist"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.businessConnectionId == nil {
+		return localVarReturnValue, nil, reportError("businessConnectionId is required and must be specified")
+	}
+	if r.chatId == nil {
+		return localVarReturnValue, nil, reportError("chatId is required and must be specified")
+	}
+	if r.checklist == nil {
+		return localVarReturnValue, nil, reportError("checklist is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"multipart/form-data", "application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	parameterAddToHeaderOrQuery(localVarFormParams, "business_connection_id", r.businessConnectionId, "", "")
+	parameterAddToHeaderOrQuery(localVarFormParams, "chat_id", r.chatId, "", "")
+	parameterAddToHeaderOrQuery(localVarFormParams, "checklist", r.checklist, "", "")
+	if r.disableNotification != nil {
+		parameterAddToHeaderOrQuery(localVarFormParams, "disable_notification", r.disableNotification, "", "")
+	}
+	if r.protectContent != nil {
+		parameterAddToHeaderOrQuery(localVarFormParams, "protect_content", r.protectContent, "", "")
+	}
+	if r.messageEffectId != nil {
+		parameterAddToHeaderOrQuery(localVarFormParams, "message_effect_id", r.messageEffectId, "", "")
+	}
+	if r.replyParameters != nil {
+		paramJson, err := parameterToJson(*r.replyParameters)
+		if err != nil {
+			return localVarReturnValue, nil, err
+		}
+		localVarFormParams.Add("reply_parameters", paramJson)
+	}
+	if r.replyMarkup != nil {
+		paramJson, err := parameterToJson(*r.replyMarkup)
+		if err != nil {
+			return localVarReturnValue, nil, err
+		}
+		localVarFormParams.Add("reply_markup", paramJson)
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiPostSendContactRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
+	chatId *SendMessageRequestChatId
 	phoneNumber *string
 	firstName *string
 	businessConnectionId *string
@@ -16750,10 +17282,10 @@ type ApiPostSendContactRequest struct {
 	allowPaidBroadcast *bool
 	messageEffectId *string
 	replyParameters *ReplyParameters
-	replyMarkup *PostSendMessageRequestReplyMarkup
+	replyMarkup *SendMessageRequestReplyMarkup
 }
 
-func (r ApiPostSendContactRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSendContactRequest {
+func (r ApiPostSendContactRequest) ChatId(chatId SendMessageRequestChatId) ApiPostSendContactRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -16823,12 +17355,12 @@ func (r ApiPostSendContactRequest) ReplyParameters(replyParameters ReplyParamete
 	return r
 }
 
-func (r ApiPostSendContactRequest) ReplyMarkup(replyMarkup PostSendMessageRequestReplyMarkup) ApiPostSendContactRequest {
+func (r ApiPostSendContactRequest) ReplyMarkup(replyMarkup SendMessageRequestReplyMarkup) ApiPostSendContactRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiPostSendContactRequest) Execute() (*PostSendMessage200Response, *http.Response, error) {
+func (r ApiPostSendContactRequest) Execute() (*SendContactResponse, *http.Response, error) {
 	return r.ApiService.PostSendContactExecute(r)
 }
 
@@ -16848,13 +17380,13 @@ func (a *DefaultAPIService) PostSendContact(ctx context.Context) ApiPostSendCont
 }
 
 // Execute executes the request
-//  @return PostSendMessage200Response
-func (a *DefaultAPIService) PostSendContactExecute(r ApiPostSendContactRequest) (*PostSendMessage200Response, *http.Response, error) {
+//  @return SendContactResponse
+func (a *DefaultAPIService) PostSendContactExecute(r ApiPostSendContactRequest) (*SendContactResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSendMessage200Response
+		localVarReturnValue  *SendContactResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendContact")
@@ -16994,7 +17526,7 @@ func (a *DefaultAPIService) PostSendContactExecute(r ApiPostSendContactRequest) 
 type ApiPostSendDiceRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
+	chatId *SendMessageRequestChatId
 	businessConnectionId *string
 	messageThreadId *int32
 	emoji *string
@@ -17003,10 +17535,10 @@ type ApiPostSendDiceRequest struct {
 	allowPaidBroadcast *bool
 	messageEffectId *string
 	replyParameters *ReplyParameters
-	replyMarkup *PostSendMessageRequestReplyMarkup
+	replyMarkup *SendMessageRequestReplyMarkup
 }
 
-func (r ApiPostSendDiceRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSendDiceRequest {
+func (r ApiPostSendDiceRequest) ChatId(chatId SendMessageRequestChatId) ApiPostSendDiceRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -17058,12 +17590,12 @@ func (r ApiPostSendDiceRequest) ReplyParameters(replyParameters ReplyParameters)
 	return r
 }
 
-func (r ApiPostSendDiceRequest) ReplyMarkup(replyMarkup PostSendMessageRequestReplyMarkup) ApiPostSendDiceRequest {
+func (r ApiPostSendDiceRequest) ReplyMarkup(replyMarkup SendMessageRequestReplyMarkup) ApiPostSendDiceRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiPostSendDiceRequest) Execute() (*PostSendMessage200Response, *http.Response, error) {
+func (r ApiPostSendDiceRequest) Execute() (*SendDiceResponse, *http.Response, error) {
 	return r.ApiService.PostSendDiceExecute(r)
 }
 
@@ -17083,13 +17615,13 @@ func (a *DefaultAPIService) PostSendDice(ctx context.Context) ApiPostSendDiceReq
 }
 
 // Execute executes the request
-//  @return PostSendMessage200Response
-func (a *DefaultAPIService) PostSendDiceExecute(r ApiPostSendDiceRequest) (*PostSendMessage200Response, *http.Response, error) {
+//  @return SendDiceResponse
+func (a *DefaultAPIService) PostSendDiceExecute(r ApiPostSendDiceRequest) (*SendDiceResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSendMessage200Response
+		localVarReturnValue  *SendDiceResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendDice")
@@ -17218,11 +17750,11 @@ func (a *DefaultAPIService) PostSendDiceExecute(r ApiPostSendDiceRequest) (*Post
 type ApiPostSendDocumentRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
-	document *PostSendDocumentRequestDocument
+	chatId *SendMessageRequestChatId
+	document *string
 	businessConnectionId *string
 	messageThreadId *int32
-	thumbnail *PostSendAudioRequestThumbnail
+	thumbnail *string
 	caption *string
 	parseMode *string
 	captionEntities *[]MessageEntity
@@ -17232,15 +17764,15 @@ type ApiPostSendDocumentRequest struct {
 	allowPaidBroadcast *bool
 	messageEffectId *string
 	replyParameters *ReplyParameters
-	replyMarkup *PostSendMessageRequestReplyMarkup
+	replyMarkup *SendMessageRequestReplyMarkup
 }
 
-func (r ApiPostSendDocumentRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSendDocumentRequest {
+func (r ApiPostSendDocumentRequest) ChatId(chatId SendMessageRequestChatId) ApiPostSendDocumentRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiPostSendDocumentRequest) Document(document PostSendDocumentRequestDocument) ApiPostSendDocumentRequest {
+func (r ApiPostSendDocumentRequest) Document(document string) ApiPostSendDocumentRequest {
 	r.document = &document
 	return r
 }
@@ -17257,7 +17789,7 @@ func (r ApiPostSendDocumentRequest) MessageThreadId(messageThreadId int32) ApiPo
 	return r
 }
 
-func (r ApiPostSendDocumentRequest) Thumbnail(thumbnail PostSendAudioRequestThumbnail) ApiPostSendDocumentRequest {
+func (r ApiPostSendDocumentRequest) Thumbnail(thumbnail string) ApiPostSendDocumentRequest {
 	r.thumbnail = &thumbnail
 	return r
 }
@@ -17315,12 +17847,12 @@ func (r ApiPostSendDocumentRequest) ReplyParameters(replyParameters ReplyParamet
 	return r
 }
 
-func (r ApiPostSendDocumentRequest) ReplyMarkup(replyMarkup PostSendMessageRequestReplyMarkup) ApiPostSendDocumentRequest {
+func (r ApiPostSendDocumentRequest) ReplyMarkup(replyMarkup SendMessageRequestReplyMarkup) ApiPostSendDocumentRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiPostSendDocumentRequest) Execute() (*PostSendMessage200Response, *http.Response, error) {
+func (r ApiPostSendDocumentRequest) Execute() (*SendDocumentResponse, *http.Response, error) {
 	return r.ApiService.PostSendDocumentExecute(r)
 }
 
@@ -17340,13 +17872,13 @@ func (a *DefaultAPIService) PostSendDocument(ctx context.Context) ApiPostSendDoc
 }
 
 // Execute executes the request
-//  @return PostSendMessage200Response
-func (a *DefaultAPIService) PostSendDocumentExecute(r ApiPostSendDocumentRequest) (*PostSendMessage200Response, *http.Response, error) {
+//  @return SendDocumentResponse
+func (a *DefaultAPIService) PostSendDocumentExecute(r ApiPostSendDocumentRequest) (*SendDocumentResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSendMessage200Response
+		localVarReturnValue  *SendDocumentResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendDocument")
@@ -17367,7 +17899,7 @@ func (a *DefaultAPIService) PostSendDocumentExecute(r ApiPostSendDocumentRequest
 	}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"multipart/form-data"}
+	localVarHTTPContentTypes := []string{"multipart/form-data", "application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -17392,11 +17924,7 @@ func (a *DefaultAPIService) PostSendDocumentExecute(r ApiPostSendDocumentRequest
 	}
 	parameterAddToHeaderOrQuery(localVarFormParams, "document", r.document, "", "")
 	if r.thumbnail != nil {
-		paramJson, err := parameterToJson(*r.thumbnail)
-		if err != nil {
-			return localVarReturnValue, nil, err
-		}
-		localVarFormParams.Add("thumbnail", paramJson)
+		parameterAddToHeaderOrQuery(localVarFormParams, "thumbnail", r.thumbnail, "", "")
 	}
 	if r.caption != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "caption", r.caption, "", "")
@@ -17565,7 +18093,7 @@ func (r ApiPostSendGameRequest) ReplyMarkup(replyMarkup InlineKeyboardMarkup) Ap
 	return r
 }
 
-func (r ApiPostSendGameRequest) Execute() (*PostSendMessage200Response, *http.Response, error) {
+func (r ApiPostSendGameRequest) Execute() (*SendGameResponse, *http.Response, error) {
 	return r.ApiService.PostSendGameExecute(r)
 }
 
@@ -17585,13 +18113,13 @@ func (a *DefaultAPIService) PostSendGame(ctx context.Context) ApiPostSendGameReq
 }
 
 // Execute executes the request
-//  @return PostSendMessage200Response
-func (a *DefaultAPIService) PostSendGameExecute(r ApiPostSendGameRequest) (*PostSendMessage200Response, *http.Response, error) {
+//  @return SendGameResponse
+func (a *DefaultAPIService) PostSendGameExecute(r ApiPostSendGameRequest) (*SendGameResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSendMessage200Response
+		localVarReturnValue  *SendGameResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendGame")
@@ -17723,7 +18251,7 @@ type ApiPostSendGiftRequest struct {
 	ApiService DefaultAPI
 	giftId *string
 	userId *int32
-	chatId *PostSendGiftRequestChatId
+	chatId *SendGiftRequestChatId
 	payForUpgrade *bool
 	text *string
 	textParseMode *string
@@ -17742,7 +18270,7 @@ func (r ApiPostSendGiftRequest) UserId(userId int32) ApiPostSendGiftRequest {
 	return r
 }
 
-func (r ApiPostSendGiftRequest) ChatId(chatId PostSendGiftRequestChatId) ApiPostSendGiftRequest {
+func (r ApiPostSendGiftRequest) ChatId(chatId SendGiftRequestChatId) ApiPostSendGiftRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -17771,7 +18299,7 @@ func (r ApiPostSendGiftRequest) TextEntities(textEntities []MessageEntity) ApiPo
 	return r
 }
 
-func (r ApiPostSendGiftRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostSendGiftRequest) Execute() (*SendGiftResponse, *http.Response, error) {
 	return r.ApiService.PostSendGiftExecute(r)
 }
 
@@ -17791,13 +18319,13 @@ func (a *DefaultAPIService) PostSendGift(ctx context.Context) ApiPostSendGiftReq
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostSendGiftExecute(r ApiPostSendGiftRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return SendGiftResponse
+func (a *DefaultAPIService) PostSendGiftExecute(r ApiPostSendGiftRequest) (*SendGiftResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *SendGiftResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendGift")
@@ -17913,7 +18441,7 @@ func (a *DefaultAPIService) PostSendGiftExecute(r ApiPostSendGiftRequest) (*Post
 type ApiPostSendInvoiceRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
+	chatId *SendMessageRequestChatId
 	title *string
 	description *string
 	payload *string
@@ -17944,7 +18472,7 @@ type ApiPostSendInvoiceRequest struct {
 	replyMarkup *InlineKeyboardMarkup
 }
 
-func (r ApiPostSendInvoiceRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSendInvoiceRequest {
+func (r ApiPostSendInvoiceRequest) ChatId(chatId SendMessageRequestChatId) ApiPostSendInvoiceRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -18115,7 +18643,7 @@ func (r ApiPostSendInvoiceRequest) ReplyMarkup(replyMarkup InlineKeyboardMarkup)
 	return r
 }
 
-func (r ApiPostSendInvoiceRequest) Execute() (*PostSendMessage200Response, *http.Response, error) {
+func (r ApiPostSendInvoiceRequest) Execute() (*SendInvoiceResponse, *http.Response, error) {
 	return r.ApiService.PostSendInvoiceExecute(r)
 }
 
@@ -18135,13 +18663,13 @@ func (a *DefaultAPIService) PostSendInvoice(ctx context.Context) ApiPostSendInvo
 }
 
 // Execute executes the request
-//  @return PostSendMessage200Response
-func (a *DefaultAPIService) PostSendInvoiceExecute(r ApiPostSendInvoiceRequest) (*PostSendMessage200Response, *http.Response, error) {
+//  @return SendInvoiceResponse
+func (a *DefaultAPIService) PostSendInvoiceExecute(r ApiPostSendInvoiceRequest) (*SendInvoiceResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSendMessage200Response
+		localVarReturnValue  *SendInvoiceResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendInvoice")
@@ -18344,7 +18872,7 @@ func (a *DefaultAPIService) PostSendInvoiceExecute(r ApiPostSendInvoiceRequest) 
 type ApiPostSendLocationRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
+	chatId *SendMessageRequestChatId
 	latitude *float32
 	longitude *float32
 	businessConnectionId *string
@@ -18358,10 +18886,10 @@ type ApiPostSendLocationRequest struct {
 	allowPaidBroadcast *bool
 	messageEffectId *string
 	replyParameters *ReplyParameters
-	replyMarkup *PostSendMessageRequestReplyMarkup
+	replyMarkup *SendMessageRequestReplyMarkup
 }
 
-func (r ApiPostSendLocationRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSendLocationRequest {
+func (r ApiPostSendLocationRequest) ChatId(chatId SendMessageRequestChatId) ApiPostSendLocationRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -18443,12 +18971,12 @@ func (r ApiPostSendLocationRequest) ReplyParameters(replyParameters ReplyParamet
 	return r
 }
 
-func (r ApiPostSendLocationRequest) ReplyMarkup(replyMarkup PostSendMessageRequestReplyMarkup) ApiPostSendLocationRequest {
+func (r ApiPostSendLocationRequest) ReplyMarkup(replyMarkup SendMessageRequestReplyMarkup) ApiPostSendLocationRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiPostSendLocationRequest) Execute() (*PostSendMessage200Response, *http.Response, error) {
+func (r ApiPostSendLocationRequest) Execute() (*SendLocationResponse, *http.Response, error) {
 	return r.ApiService.PostSendLocationExecute(r)
 }
 
@@ -18468,13 +18996,13 @@ func (a *DefaultAPIService) PostSendLocation(ctx context.Context) ApiPostSendLoc
 }
 
 // Execute executes the request
-//  @return PostSendMessage200Response
-func (a *DefaultAPIService) PostSendLocationExecute(r ApiPostSendLocationRequest) (*PostSendMessage200Response, *http.Response, error) {
+//  @return SendLocationResponse
+func (a *DefaultAPIService) PostSendLocationExecute(r ApiPostSendLocationRequest) (*SendLocationResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSendMessage200Response
+		localVarReturnValue  *SendLocationResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendLocation")
@@ -18620,8 +19148,8 @@ func (a *DefaultAPIService) PostSendLocationExecute(r ApiPostSendLocationRequest
 type ApiPostSendMediaGroupRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
-	media *[]PostSendMediaGroupRequestMediaInner
+	chatId *SendMessageRequestChatId
+	media *[]SendMediaGroupRequestMediaInner
 	businessConnectionId *string
 	messageThreadId *int32
 	disableNotification *bool
@@ -18631,13 +19159,13 @@ type ApiPostSendMediaGroupRequest struct {
 	replyParameters *ReplyParameters
 }
 
-func (r ApiPostSendMediaGroupRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSendMediaGroupRequest {
+func (r ApiPostSendMediaGroupRequest) ChatId(chatId SendMessageRequestChatId) ApiPostSendMediaGroupRequest {
 	r.chatId = &chatId
 	return r
 }
 
 // A JSON-serialized array describing messages to be sent, must include 2-10 items
-func (r ApiPostSendMediaGroupRequest) Media(media []PostSendMediaGroupRequestMediaInner) ApiPostSendMediaGroupRequest {
+func (r ApiPostSendMediaGroupRequest) Media(media []SendMediaGroupRequestMediaInner) ApiPostSendMediaGroupRequest {
 	r.media = &media
 	return r
 }
@@ -18683,7 +19211,7 @@ func (r ApiPostSendMediaGroupRequest) ReplyParameters(replyParameters ReplyParam
 	return r
 }
 
-func (r ApiPostSendMediaGroupRequest) Execute() (*PostSendMediaGroup200Response, *http.Response, error) {
+func (r ApiPostSendMediaGroupRequest) Execute() (*SendMediaGroupResponse, *http.Response, error) {
 	return r.ApiService.PostSendMediaGroupExecute(r)
 }
 
@@ -18703,13 +19231,13 @@ func (a *DefaultAPIService) PostSendMediaGroup(ctx context.Context) ApiPostSendM
 }
 
 // Execute executes the request
-//  @return PostSendMediaGroup200Response
-func (a *DefaultAPIService) PostSendMediaGroupExecute(r ApiPostSendMediaGroupRequest) (*PostSendMediaGroup200Response, *http.Response, error) {
+//  @return SendMediaGroupResponse
+func (a *DefaultAPIService) PostSendMediaGroupExecute(r ApiPostSendMediaGroupRequest) (*SendMediaGroupResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSendMediaGroup200Response
+		localVarReturnValue  *SendMediaGroupResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendMediaGroup")
@@ -18730,7 +19258,7 @@ func (a *DefaultAPIService) PostSendMediaGroupExecute(r ApiPostSendMediaGroupReq
 	}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"multipart/form-data"}
+	localVarHTTPContentTypes := []string{"multipart/form-data", "application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -18832,7 +19360,7 @@ func (a *DefaultAPIService) PostSendMediaGroupExecute(r ApiPostSendMediaGroupReq
 type ApiPostSendMessageRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
+	chatId *SendMessageRequestChatId
 	text *string
 	businessConnectionId *string
 	messageThreadId *int32
@@ -18844,10 +19372,10 @@ type ApiPostSendMessageRequest struct {
 	allowPaidBroadcast *bool
 	messageEffectId *string
 	replyParameters *ReplyParameters
-	replyMarkup *PostSendMessageRequestReplyMarkup
+	replyMarkup *SendMessageRequestReplyMarkup
 }
 
-func (r ApiPostSendMessageRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSendMessageRequest {
+func (r ApiPostSendMessageRequest) ChatId(chatId SendMessageRequestChatId) ApiPostSendMessageRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -18916,12 +19444,12 @@ func (r ApiPostSendMessageRequest) ReplyParameters(replyParameters ReplyParamete
 	return r
 }
 
-func (r ApiPostSendMessageRequest) ReplyMarkup(replyMarkup PostSendMessageRequestReplyMarkup) ApiPostSendMessageRequest {
+func (r ApiPostSendMessageRequest) ReplyMarkup(replyMarkup SendMessageRequestReplyMarkup) ApiPostSendMessageRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiPostSendMessageRequest) Execute() (*PostSendMessage200Response, *http.Response, error) {
+func (r ApiPostSendMessageRequest) Execute() (*SendMessageResponse, *http.Response, error) {
 	return r.ApiService.PostSendMessageExecute(r)
 }
 
@@ -18941,13 +19469,13 @@ func (a *DefaultAPIService) PostSendMessage(ctx context.Context) ApiPostSendMess
 }
 
 // Execute executes the request
-//  @return PostSendMessage200Response
-func (a *DefaultAPIService) PostSendMessageExecute(r ApiPostSendMessageRequest) (*PostSendMessage200Response, *http.Response, error) {
+//  @return SendMessageResponse
+func (a *DefaultAPIService) PostSendMessageExecute(r ApiPostSendMessageRequest) (*SendMessageResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSendMessage200Response
+		localVarReturnValue  *SendMessageResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendMessage")
@@ -19096,7 +19624,7 @@ func (a *DefaultAPIService) PostSendMessageExecute(r ApiPostSendMessageRequest) 
 type ApiPostSendPaidMediaRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendPaidMediaRequestChatId
+	chatId *SendPaidMediaRequestChatId
 	starCount *int32
 	media *[]InputPaidMedia
 	businessConnectionId *string
@@ -19109,10 +19637,10 @@ type ApiPostSendPaidMediaRequest struct {
 	protectContent *bool
 	allowPaidBroadcast *bool
 	replyParameters *ReplyParameters
-	replyMarkup *PostSendMessageRequestReplyMarkup
+	replyMarkup *SendMessageRequestReplyMarkup
 }
 
-func (r ApiPostSendPaidMediaRequest) ChatId(chatId PostSendPaidMediaRequestChatId) ApiPostSendPaidMediaRequest {
+func (r ApiPostSendPaidMediaRequest) ChatId(chatId SendPaidMediaRequestChatId) ApiPostSendPaidMediaRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -19188,12 +19716,12 @@ func (r ApiPostSendPaidMediaRequest) ReplyParameters(replyParameters ReplyParame
 	return r
 }
 
-func (r ApiPostSendPaidMediaRequest) ReplyMarkup(replyMarkup PostSendMessageRequestReplyMarkup) ApiPostSendPaidMediaRequest {
+func (r ApiPostSendPaidMediaRequest) ReplyMarkup(replyMarkup SendMessageRequestReplyMarkup) ApiPostSendPaidMediaRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiPostSendPaidMediaRequest) Execute() (*PostSendMessage200Response, *http.Response, error) {
+func (r ApiPostSendPaidMediaRequest) Execute() (*SendPaidMediaResponse, *http.Response, error) {
 	return r.ApiService.PostSendPaidMediaExecute(r)
 }
 
@@ -19213,13 +19741,13 @@ func (a *DefaultAPIService) PostSendPaidMedia(ctx context.Context) ApiPostSendPa
 }
 
 // Execute executes the request
-//  @return PostSendMessage200Response
-func (a *DefaultAPIService) PostSendPaidMediaExecute(r ApiPostSendPaidMediaRequest) (*PostSendMessage200Response, *http.Response, error) {
+//  @return SendPaidMediaResponse
+func (a *DefaultAPIService) PostSendPaidMediaExecute(r ApiPostSendPaidMediaRequest) (*SendPaidMediaResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSendMessage200Response
+		localVarReturnValue  *SendPaidMediaResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendPaidMedia")
@@ -19243,7 +19771,7 @@ func (a *DefaultAPIService) PostSendPaidMediaExecute(r ApiPostSendPaidMediaReque
 	}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"multipart/form-data"}
+	localVarHTTPContentTypes := []string{"multipart/form-data", "application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -19362,8 +19890,8 @@ func (a *DefaultAPIService) PostSendPaidMediaExecute(r ApiPostSendPaidMediaReque
 type ApiPostSendPhotoRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
-	photo *PostSendPhotoRequestPhoto
+	chatId *SendMessageRequestChatId
+	photo *string
 	businessConnectionId *string
 	messageThreadId *int32
 	caption *string
@@ -19376,15 +19904,15 @@ type ApiPostSendPhotoRequest struct {
 	allowPaidBroadcast *bool
 	messageEffectId *string
 	replyParameters *ReplyParameters
-	replyMarkup *PostSendMessageRequestReplyMarkup
+	replyMarkup *SendMessageRequestReplyMarkup
 }
 
-func (r ApiPostSendPhotoRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSendPhotoRequest {
+func (r ApiPostSendPhotoRequest) ChatId(chatId SendMessageRequestChatId) ApiPostSendPhotoRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiPostSendPhotoRequest) Photo(photo PostSendPhotoRequestPhoto) ApiPostSendPhotoRequest {
+func (r ApiPostSendPhotoRequest) Photo(photo string) ApiPostSendPhotoRequest {
 	r.photo = &photo
 	return r
 }
@@ -19460,12 +19988,12 @@ func (r ApiPostSendPhotoRequest) ReplyParameters(replyParameters ReplyParameters
 	return r
 }
 
-func (r ApiPostSendPhotoRequest) ReplyMarkup(replyMarkup PostSendMessageRequestReplyMarkup) ApiPostSendPhotoRequest {
+func (r ApiPostSendPhotoRequest) ReplyMarkup(replyMarkup SendMessageRequestReplyMarkup) ApiPostSendPhotoRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiPostSendPhotoRequest) Execute() (*PostSendMessage200Response, *http.Response, error) {
+func (r ApiPostSendPhotoRequest) Execute() (*SendPhotoResponse, *http.Response, error) {
 	return r.ApiService.PostSendPhotoExecute(r)
 }
 
@@ -19485,13 +20013,13 @@ func (a *DefaultAPIService) PostSendPhoto(ctx context.Context) ApiPostSendPhotoR
 }
 
 // Execute executes the request
-//  @return PostSendMessage200Response
-func (a *DefaultAPIService) PostSendPhotoExecute(r ApiPostSendPhotoRequest) (*PostSendMessage200Response, *http.Response, error) {
+//  @return SendPhotoResponse
+func (a *DefaultAPIService) PostSendPhotoExecute(r ApiPostSendPhotoRequest) (*SendPhotoResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSendMessage200Response
+		localVarReturnValue  *SendPhotoResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendPhoto")
@@ -19512,7 +20040,7 @@ func (a *DefaultAPIService) PostSendPhotoExecute(r ApiPostSendPhotoRequest) (*Po
 	}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"multipart/form-data"}
+	localVarHTTPContentTypes := []string{"multipart/form-data", "application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -19636,7 +20164,7 @@ func (a *DefaultAPIService) PostSendPhotoExecute(r ApiPostSendPhotoRequest) (*Po
 type ApiPostSendPollRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
+	chatId *SendMessageRequestChatId
 	question *string
 	options *[]InputPollOption
 	businessConnectionId *string
@@ -19658,10 +20186,10 @@ type ApiPostSendPollRequest struct {
 	allowPaidBroadcast *bool
 	messageEffectId *string
 	replyParameters *ReplyParameters
-	replyMarkup *PostSendMessageRequestReplyMarkup
+	replyMarkup *SendMessageRequestReplyMarkup
 }
 
-func (r ApiPostSendPollRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSendPollRequest {
+func (r ApiPostSendPollRequest) ChatId(chatId SendMessageRequestChatId) ApiPostSendPollRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -19672,7 +20200,7 @@ func (r ApiPostSendPollRequest) Question(question string) ApiPostSendPollRequest
 	return r
 }
 
-// A JSON-serialized list of 2-10 answer options
+// A JSON-serialized list of 2-12 answer options
 func (r ApiPostSendPollRequest) Options(options []InputPollOption) ApiPostSendPollRequest {
 	r.options = &options
 	return r
@@ -19791,12 +20319,12 @@ func (r ApiPostSendPollRequest) ReplyParameters(replyParameters ReplyParameters)
 	return r
 }
 
-func (r ApiPostSendPollRequest) ReplyMarkup(replyMarkup PostSendMessageRequestReplyMarkup) ApiPostSendPollRequest {
+func (r ApiPostSendPollRequest) ReplyMarkup(replyMarkup SendMessageRequestReplyMarkup) ApiPostSendPollRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiPostSendPollRequest) Execute() (*PostSendMessage200Response, *http.Response, error) {
+func (r ApiPostSendPollRequest) Execute() (*SendPollResponse, *http.Response, error) {
 	return r.ApiService.PostSendPollExecute(r)
 }
 
@@ -19816,13 +20344,13 @@ func (a *DefaultAPIService) PostSendPoll(ctx context.Context) ApiPostSendPollReq
 }
 
 // Execute executes the request
-//  @return PostSendMessage200Response
-func (a *DefaultAPIService) PostSendPollExecute(r ApiPostSendPollRequest) (*PostSendMessage200Response, *http.Response, error) {
+//  @return SendPollResponse
+func (a *DefaultAPIService) PostSendPollExecute(r ApiPostSendPollRequest) (*SendPollResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSendMessage200Response
+		localVarReturnValue  *SendPollResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendPoll")
@@ -19998,8 +20526,8 @@ func (a *DefaultAPIService) PostSendPollExecute(r ApiPostSendPollRequest) (*Post
 type ApiPostSendStickerRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
-	sticker *PostSendStickerRequestSticker
+	chatId *SendMessageRequestChatId
+	sticker *string
 	businessConnectionId *string
 	messageThreadId *int32
 	emoji *string
@@ -20008,15 +20536,15 @@ type ApiPostSendStickerRequest struct {
 	allowPaidBroadcast *bool
 	messageEffectId *string
 	replyParameters *ReplyParameters
-	replyMarkup *PostSendMessageRequestReplyMarkup
+	replyMarkup *SendMessageRequestReplyMarkup
 }
 
-func (r ApiPostSendStickerRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSendStickerRequest {
+func (r ApiPostSendStickerRequest) ChatId(chatId SendMessageRequestChatId) ApiPostSendStickerRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiPostSendStickerRequest) Sticker(sticker PostSendStickerRequestSticker) ApiPostSendStickerRequest {
+func (r ApiPostSendStickerRequest) Sticker(sticker string) ApiPostSendStickerRequest {
 	r.sticker = &sticker
 	return r
 }
@@ -20068,12 +20596,12 @@ func (r ApiPostSendStickerRequest) ReplyParameters(replyParameters ReplyParamete
 	return r
 }
 
-func (r ApiPostSendStickerRequest) ReplyMarkup(replyMarkup PostSendMessageRequestReplyMarkup) ApiPostSendStickerRequest {
+func (r ApiPostSendStickerRequest) ReplyMarkup(replyMarkup SendMessageRequestReplyMarkup) ApiPostSendStickerRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiPostSendStickerRequest) Execute() (*PostSendMessage200Response, *http.Response, error) {
+func (r ApiPostSendStickerRequest) Execute() (*SendStickerResponse, *http.Response, error) {
 	return r.ApiService.PostSendStickerExecute(r)
 }
 
@@ -20093,13 +20621,13 @@ func (a *DefaultAPIService) PostSendSticker(ctx context.Context) ApiPostSendStic
 }
 
 // Execute executes the request
-//  @return PostSendMessage200Response
-func (a *DefaultAPIService) PostSendStickerExecute(r ApiPostSendStickerRequest) (*PostSendMessage200Response, *http.Response, error) {
+//  @return SendStickerResponse
+func (a *DefaultAPIService) PostSendStickerExecute(r ApiPostSendStickerRequest) (*SendStickerResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSendMessage200Response
+		localVarReturnValue  *SendStickerResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendSticker")
@@ -20120,7 +20648,7 @@ func (a *DefaultAPIService) PostSendStickerExecute(r ApiPostSendStickerRequest) 
 	}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"multipart/form-data"}
+	localVarHTTPContentTypes := []string{"multipart/form-data", "application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -20232,7 +20760,7 @@ func (a *DefaultAPIService) PostSendStickerExecute(r ApiPostSendStickerRequest) 
 type ApiPostSendVenueRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
+	chatId *SendMessageRequestChatId
 	latitude *float32
 	longitude *float32
 	title *string
@@ -20248,10 +20776,10 @@ type ApiPostSendVenueRequest struct {
 	allowPaidBroadcast *bool
 	messageEffectId *string
 	replyParameters *ReplyParameters
-	replyMarkup *PostSendMessageRequestReplyMarkup
+	replyMarkup *SendMessageRequestReplyMarkup
 }
 
-func (r ApiPostSendVenueRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSendVenueRequest {
+func (r ApiPostSendVenueRequest) ChatId(chatId SendMessageRequestChatId) ApiPostSendVenueRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -20345,12 +20873,12 @@ func (r ApiPostSendVenueRequest) ReplyParameters(replyParameters ReplyParameters
 	return r
 }
 
-func (r ApiPostSendVenueRequest) ReplyMarkup(replyMarkup PostSendMessageRequestReplyMarkup) ApiPostSendVenueRequest {
+func (r ApiPostSendVenueRequest) ReplyMarkup(replyMarkup SendMessageRequestReplyMarkup) ApiPostSendVenueRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiPostSendVenueRequest) Execute() (*PostSendMessage200Response, *http.Response, error) {
+func (r ApiPostSendVenueRequest) Execute() (*SendVenueResponse, *http.Response, error) {
 	return r.ApiService.PostSendVenueExecute(r)
 }
 
@@ -20370,13 +20898,13 @@ func (a *DefaultAPIService) PostSendVenue(ctx context.Context) ApiPostSendVenueR
 }
 
 // Execute executes the request
-//  @return PostSendMessage200Response
-func (a *DefaultAPIService) PostSendVenueExecute(r ApiPostSendVenueRequest) (*PostSendMessage200Response, *http.Response, error) {
+//  @return SendVenueResponse
+func (a *DefaultAPIService) PostSendVenueExecute(r ApiPostSendVenueRequest) (*SendVenueResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSendMessage200Response
+		localVarReturnValue  *SendVenueResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendVenue")
@@ -20530,15 +21058,15 @@ func (a *DefaultAPIService) PostSendVenueExecute(r ApiPostSendVenueRequest) (*Po
 type ApiPostSendVideoRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
-	video *PostSendVideoRequestVideo
+	chatId *SendMessageRequestChatId
+	video *string
 	businessConnectionId *string
 	messageThreadId *int32
 	duration *int32
 	width *int32
 	height *int32
-	thumbnail *PostSendAudioRequestThumbnail
-	cover *PostSendVideoRequestCover
+	thumbnail *string
+	cover *string
 	startTimestamp *int32
 	caption *string
 	parseMode *string
@@ -20551,15 +21079,15 @@ type ApiPostSendVideoRequest struct {
 	allowPaidBroadcast *bool
 	messageEffectId *string
 	replyParameters *ReplyParameters
-	replyMarkup *PostSendMessageRequestReplyMarkup
+	replyMarkup *SendMessageRequestReplyMarkup
 }
 
-func (r ApiPostSendVideoRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSendVideoRequest {
+func (r ApiPostSendVideoRequest) ChatId(chatId SendMessageRequestChatId) ApiPostSendVideoRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiPostSendVideoRequest) Video(video PostSendVideoRequestVideo) ApiPostSendVideoRequest {
+func (r ApiPostSendVideoRequest) Video(video string) ApiPostSendVideoRequest {
 	r.video = &video
 	return r
 }
@@ -20594,12 +21122,12 @@ func (r ApiPostSendVideoRequest) Height(height int32) ApiPostSendVideoRequest {
 	return r
 }
 
-func (r ApiPostSendVideoRequest) Thumbnail(thumbnail PostSendAudioRequestThumbnail) ApiPostSendVideoRequest {
+func (r ApiPostSendVideoRequest) Thumbnail(thumbnail string) ApiPostSendVideoRequest {
 	r.thumbnail = &thumbnail
 	return r
 }
 
-func (r ApiPostSendVideoRequest) Cover(cover PostSendVideoRequestCover) ApiPostSendVideoRequest {
+func (r ApiPostSendVideoRequest) Cover(cover string) ApiPostSendVideoRequest {
 	r.cover = &cover
 	return r
 }
@@ -20675,12 +21203,12 @@ func (r ApiPostSendVideoRequest) ReplyParameters(replyParameters ReplyParameters
 	return r
 }
 
-func (r ApiPostSendVideoRequest) ReplyMarkup(replyMarkup PostSendMessageRequestReplyMarkup) ApiPostSendVideoRequest {
+func (r ApiPostSendVideoRequest) ReplyMarkup(replyMarkup SendMessageRequestReplyMarkup) ApiPostSendVideoRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiPostSendVideoRequest) Execute() (*PostSendMessage200Response, *http.Response, error) {
+func (r ApiPostSendVideoRequest) Execute() (*SendVideoResponse, *http.Response, error) {
 	return r.ApiService.PostSendVideoExecute(r)
 }
 
@@ -20700,13 +21228,13 @@ func (a *DefaultAPIService) PostSendVideo(ctx context.Context) ApiPostSendVideoR
 }
 
 // Execute executes the request
-//  @return PostSendMessage200Response
-func (a *DefaultAPIService) PostSendVideoExecute(r ApiPostSendVideoRequest) (*PostSendMessage200Response, *http.Response, error) {
+//  @return SendVideoResponse
+func (a *DefaultAPIService) PostSendVideoExecute(r ApiPostSendVideoRequest) (*SendVideoResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSendMessage200Response
+		localVarReturnValue  *SendVideoResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendVideo")
@@ -20727,7 +21255,7 @@ func (a *DefaultAPIService) PostSendVideoExecute(r ApiPostSendVideoRequest) (*Po
 	}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"multipart/form-data"}
+	localVarHTTPContentTypes := []string{"multipart/form-data", "application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -20761,18 +21289,10 @@ func (a *DefaultAPIService) PostSendVideoExecute(r ApiPostSendVideoRequest) (*Po
 		parameterAddToHeaderOrQuery(localVarFormParams, "height", r.height, "", "")
 	}
 	if r.thumbnail != nil {
-		paramJson, err := parameterToJson(*r.thumbnail)
-		if err != nil {
-			return localVarReturnValue, nil, err
-		}
-		localVarFormParams.Add("thumbnail", paramJson)
+		parameterAddToHeaderOrQuery(localVarFormParams, "thumbnail", r.thumbnail, "", "")
 	}
 	if r.cover != nil {
-		paramJson, err := parameterToJson(*r.cover)
-		if err != nil {
-			return localVarReturnValue, nil, err
-		}
-		localVarFormParams.Add("cover", paramJson)
+		parameterAddToHeaderOrQuery(localVarFormParams, "cover", r.cover, "", "")
 	}
 	if r.startTimestamp != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "start_timestamp", r.startTimestamp, "", "")
@@ -20880,27 +21400,27 @@ func (a *DefaultAPIService) PostSendVideoExecute(r ApiPostSendVideoRequest) (*Po
 type ApiPostSendVideoNoteRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
-	videoNote *PostSendVideoNoteRequestVideoNote
+	chatId *SendMessageRequestChatId
+	videoNote *string
 	businessConnectionId *string
 	messageThreadId *int32
 	duration *int32
 	length *int32
-	thumbnail *PostSendAudioRequestThumbnail
+	thumbnail *string
 	disableNotification *bool
 	protectContent *bool
 	allowPaidBroadcast *bool
 	messageEffectId *string
 	replyParameters *ReplyParameters
-	replyMarkup *PostSendMessageRequestReplyMarkup
+	replyMarkup *SendMessageRequestReplyMarkup
 }
 
-func (r ApiPostSendVideoNoteRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSendVideoNoteRequest {
+func (r ApiPostSendVideoNoteRequest) ChatId(chatId SendMessageRequestChatId) ApiPostSendVideoNoteRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiPostSendVideoNoteRequest) VideoNote(videoNote PostSendVideoNoteRequestVideoNote) ApiPostSendVideoNoteRequest {
+func (r ApiPostSendVideoNoteRequest) VideoNote(videoNote string) ApiPostSendVideoNoteRequest {
 	r.videoNote = &videoNote
 	return r
 }
@@ -20929,7 +21449,7 @@ func (r ApiPostSendVideoNoteRequest) Length(length int32) ApiPostSendVideoNoteRe
 	return r
 }
 
-func (r ApiPostSendVideoNoteRequest) Thumbnail(thumbnail PostSendAudioRequestThumbnail) ApiPostSendVideoNoteRequest {
+func (r ApiPostSendVideoNoteRequest) Thumbnail(thumbnail string) ApiPostSendVideoNoteRequest {
 	r.thumbnail = &thumbnail
 	return r
 }
@@ -20963,12 +21483,12 @@ func (r ApiPostSendVideoNoteRequest) ReplyParameters(replyParameters ReplyParame
 	return r
 }
 
-func (r ApiPostSendVideoNoteRequest) ReplyMarkup(replyMarkup PostSendMessageRequestReplyMarkup) ApiPostSendVideoNoteRequest {
+func (r ApiPostSendVideoNoteRequest) ReplyMarkup(replyMarkup SendMessageRequestReplyMarkup) ApiPostSendVideoNoteRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiPostSendVideoNoteRequest) Execute() (*PostSendMessage200Response, *http.Response, error) {
+func (r ApiPostSendVideoNoteRequest) Execute() (*SendVideoNoteResponse, *http.Response, error) {
 	return r.ApiService.PostSendVideoNoteExecute(r)
 }
 
@@ -20988,13 +21508,13 @@ func (a *DefaultAPIService) PostSendVideoNote(ctx context.Context) ApiPostSendVi
 }
 
 // Execute executes the request
-//  @return PostSendMessage200Response
-func (a *DefaultAPIService) PostSendVideoNoteExecute(r ApiPostSendVideoNoteRequest) (*PostSendMessage200Response, *http.Response, error) {
+//  @return SendVideoNoteResponse
+func (a *DefaultAPIService) PostSendVideoNoteExecute(r ApiPostSendVideoNoteRequest) (*SendVideoNoteResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSendMessage200Response
+		localVarReturnValue  *SendVideoNoteResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendVideoNote")
@@ -21015,7 +21535,7 @@ func (a *DefaultAPIService) PostSendVideoNoteExecute(r ApiPostSendVideoNoteReque
 	}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"multipart/form-data"}
+	localVarHTTPContentTypes := []string{"multipart/form-data", "application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -21046,11 +21566,7 @@ func (a *DefaultAPIService) PostSendVideoNoteExecute(r ApiPostSendVideoNoteReque
 		parameterAddToHeaderOrQuery(localVarFormParams, "length", r.length, "", "")
 	}
 	if r.thumbnail != nil {
-		paramJson, err := parameterToJson(*r.thumbnail)
-		if err != nil {
-			return localVarReturnValue, nil, err
-		}
-		localVarFormParams.Add("thumbnail", paramJson)
+		parameterAddToHeaderOrQuery(localVarFormParams, "thumbnail", r.thumbnail, "", "")
 	}
 	if r.disableNotification != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "disable_notification", r.disableNotification, "", "")
@@ -21137,8 +21653,8 @@ func (a *DefaultAPIService) PostSendVideoNoteExecute(r ApiPostSendVideoNoteReque
 type ApiPostSendVoiceRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
-	voice *PostSendVoiceRequestVoice
+	chatId *SendMessageRequestChatId
+	voice *string
 	businessConnectionId *string
 	messageThreadId *int32
 	caption *string
@@ -21150,15 +21666,15 @@ type ApiPostSendVoiceRequest struct {
 	allowPaidBroadcast *bool
 	messageEffectId *string
 	replyParameters *ReplyParameters
-	replyMarkup *PostSendMessageRequestReplyMarkup
+	replyMarkup *SendMessageRequestReplyMarkup
 }
 
-func (r ApiPostSendVoiceRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSendVoiceRequest {
+func (r ApiPostSendVoiceRequest) ChatId(chatId SendMessageRequestChatId) ApiPostSendVoiceRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiPostSendVoiceRequest) Voice(voice PostSendVoiceRequestVoice) ApiPostSendVoiceRequest {
+func (r ApiPostSendVoiceRequest) Voice(voice string) ApiPostSendVoiceRequest {
 	r.voice = &voice
 	return r
 }
@@ -21228,12 +21744,12 @@ func (r ApiPostSendVoiceRequest) ReplyParameters(replyParameters ReplyParameters
 	return r
 }
 
-func (r ApiPostSendVoiceRequest) ReplyMarkup(replyMarkup PostSendMessageRequestReplyMarkup) ApiPostSendVoiceRequest {
+func (r ApiPostSendVoiceRequest) ReplyMarkup(replyMarkup SendMessageRequestReplyMarkup) ApiPostSendVoiceRequest {
 	r.replyMarkup = &replyMarkup
 	return r
 }
 
-func (r ApiPostSendVoiceRequest) Execute() (*PostSendMessage200Response, *http.Response, error) {
+func (r ApiPostSendVoiceRequest) Execute() (*SendVoiceResponse, *http.Response, error) {
 	return r.ApiService.PostSendVoiceExecute(r)
 }
 
@@ -21253,13 +21769,13 @@ func (a *DefaultAPIService) PostSendVoice(ctx context.Context) ApiPostSendVoiceR
 }
 
 // Execute executes the request
-//  @return PostSendMessage200Response
-func (a *DefaultAPIService) PostSendVoiceExecute(r ApiPostSendVoiceRequest) (*PostSendMessage200Response, *http.Response, error) {
+//  @return SendVoiceResponse
+func (a *DefaultAPIService) PostSendVoiceExecute(r ApiPostSendVoiceRequest) (*SendVoiceResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSendMessage200Response
+		localVarReturnValue  *SendVoiceResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSendVoice")
@@ -21280,7 +21796,7 @@ func (a *DefaultAPIService) PostSendVoiceExecute(r ApiPostSendVoiceRequest) (*Po
 	}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"multipart/form-data"}
+	localVarHTTPContentTypes := []string{"multipart/form-data", "application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -21417,7 +21933,7 @@ func (r ApiPostSetBusinessAccountBioRequest) Bio(bio string) ApiPostSetBusinessA
 	return r
 }
 
-func (r ApiPostSetBusinessAccountBioRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostSetBusinessAccountBioRequest) Execute() (*SetBusinessAccountBioResponse, *http.Response, error) {
 	return r.ApiService.PostSetBusinessAccountBioExecute(r)
 }
 
@@ -21437,13 +21953,13 @@ func (a *DefaultAPIService) PostSetBusinessAccountBio(ctx context.Context) ApiPo
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostSetBusinessAccountBioExecute(r ApiPostSetBusinessAccountBioRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return SetBusinessAccountBioResponse
+func (a *DefaultAPIService) PostSetBusinessAccountBioExecute(r ApiPostSetBusinessAccountBioRequest) (*SetBusinessAccountBioResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *SetBusinessAccountBioResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetBusinessAccountBio")
@@ -21551,7 +22067,7 @@ func (r ApiPostSetBusinessAccountGiftSettingsRequest) BusinessConnectionId(busin
 	return r
 }
 
-// Pass True, if a button for sending a gift to the user or by the business account must always be shown in the input field
+// Pass *True*, if a button for sending a gift to the user or by the business account must always be shown in the input field
 func (r ApiPostSetBusinessAccountGiftSettingsRequest) ShowGiftButton(showGiftButton bool) ApiPostSetBusinessAccountGiftSettingsRequest {
 	r.showGiftButton = &showGiftButton
 	return r
@@ -21562,7 +22078,7 @@ func (r ApiPostSetBusinessAccountGiftSettingsRequest) AcceptedGiftTypes(accepted
 	return r
 }
 
-func (r ApiPostSetBusinessAccountGiftSettingsRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostSetBusinessAccountGiftSettingsRequest) Execute() (*SetBusinessAccountGiftSettingsResponse, *http.Response, error) {
 	return r.ApiService.PostSetBusinessAccountGiftSettingsExecute(r)
 }
 
@@ -21582,13 +22098,13 @@ func (a *DefaultAPIService) PostSetBusinessAccountGiftSettings(ctx context.Conte
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostSetBusinessAccountGiftSettingsExecute(r ApiPostSetBusinessAccountGiftSettingsRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return SetBusinessAccountGiftSettingsResponse
+func (a *DefaultAPIService) PostSetBusinessAccountGiftSettingsExecute(r ApiPostSetBusinessAccountGiftSettingsRequest) (*SetBusinessAccountGiftSettingsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *SetBusinessAccountGiftSettingsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetBusinessAccountGiftSettings")
@@ -21713,7 +22229,7 @@ func (r ApiPostSetBusinessAccountNameRequest) LastName(lastName string) ApiPostS
 	return r
 }
 
-func (r ApiPostSetBusinessAccountNameRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostSetBusinessAccountNameRequest) Execute() (*SetBusinessAccountNameResponse, *http.Response, error) {
 	return r.ApiService.PostSetBusinessAccountNameExecute(r)
 }
 
@@ -21733,13 +22249,13 @@ func (a *DefaultAPIService) PostSetBusinessAccountName(ctx context.Context) ApiP
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostSetBusinessAccountNameExecute(r ApiPostSetBusinessAccountNameRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return SetBusinessAccountNameResponse
+func (a *DefaultAPIService) PostSetBusinessAccountNameExecute(r ApiPostSetBusinessAccountNameRequest) (*SetBusinessAccountNameResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *SetBusinessAccountNameResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetBusinessAccountName")
@@ -21862,13 +22378,13 @@ func (r ApiPostSetBusinessAccountProfilePhotoRequest) Photo(photo InputProfilePh
 	return r
 }
 
-// Pass True to set the public photo, which will be visible even if the main photo is hidden by the business account&#39;s privacy settings. An account can have only one public photo.
+// Pass *True* to set the public photo, which will be visible even if the main photo is hidden by the business account&#39;s privacy settings. An account can have only one public photo.
 func (r ApiPostSetBusinessAccountProfilePhotoRequest) IsPublic(isPublic bool) ApiPostSetBusinessAccountProfilePhotoRequest {
 	r.isPublic = &isPublic
 	return r
 }
 
-func (r ApiPostSetBusinessAccountProfilePhotoRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostSetBusinessAccountProfilePhotoRequest) Execute() (*SetBusinessAccountProfilePhotoResponse, *http.Response, error) {
 	return r.ApiService.PostSetBusinessAccountProfilePhotoExecute(r)
 }
 
@@ -21888,13 +22404,13 @@ func (a *DefaultAPIService) PostSetBusinessAccountProfilePhoto(ctx context.Conte
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostSetBusinessAccountProfilePhotoExecute(r ApiPostSetBusinessAccountProfilePhotoRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return SetBusinessAccountProfilePhotoResponse
+func (a *DefaultAPIService) PostSetBusinessAccountProfilePhotoExecute(r ApiPostSetBusinessAccountProfilePhotoRequest) (*SetBusinessAccountProfilePhotoResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *SetBusinessAccountProfilePhotoResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetBusinessAccountProfilePhoto")
@@ -21915,7 +22431,7 @@ func (a *DefaultAPIService) PostSetBusinessAccountProfilePhotoExecute(r ApiPostS
 	}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"multipart/form-data"}
+	localVarHTTPContentTypes := []string{"multipart/form-data", "application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -22011,7 +22527,7 @@ func (r ApiPostSetBusinessAccountUsernameRequest) Username(username string) ApiP
 	return r
 }
 
-func (r ApiPostSetBusinessAccountUsernameRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostSetBusinessAccountUsernameRequest) Execute() (*SetBusinessAccountUsernameResponse, *http.Response, error) {
 	return r.ApiService.PostSetBusinessAccountUsernameExecute(r)
 }
 
@@ -22031,13 +22547,13 @@ func (a *DefaultAPIService) PostSetBusinessAccountUsername(ctx context.Context) 
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostSetBusinessAccountUsernameExecute(r ApiPostSetBusinessAccountUsernameRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return SetBusinessAccountUsernameResponse
+func (a *DefaultAPIService) PostSetBusinessAccountUsernameExecute(r ApiPostSetBusinessAccountUsernameRequest) (*SetBusinessAccountUsernameResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *SetBusinessAccountUsernameResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetBusinessAccountUsername")
@@ -22134,12 +22650,12 @@ func (a *DefaultAPIService) PostSetBusinessAccountUsernameExecute(r ApiPostSetBu
 type ApiPostSetChatAdministratorCustomTitleRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostRestrictChatMemberRequestChatId
+	chatId *BotCommandScopeChatChatId
 	userId *int32
 	customTitle *string
 }
 
-func (r ApiPostSetChatAdministratorCustomTitleRequest) ChatId(chatId PostRestrictChatMemberRequestChatId) ApiPostSetChatAdministratorCustomTitleRequest {
+func (r ApiPostSetChatAdministratorCustomTitleRequest) ChatId(chatId BotCommandScopeChatChatId) ApiPostSetChatAdministratorCustomTitleRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -22156,7 +22672,7 @@ func (r ApiPostSetChatAdministratorCustomTitleRequest) CustomTitle(customTitle s
 	return r
 }
 
-func (r ApiPostSetChatAdministratorCustomTitleRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostSetChatAdministratorCustomTitleRequest) Execute() (*SetChatAdministratorCustomTitleResponse, *http.Response, error) {
 	return r.ApiService.PostSetChatAdministratorCustomTitleExecute(r)
 }
 
@@ -22176,13 +22692,13 @@ func (a *DefaultAPIService) PostSetChatAdministratorCustomTitle(ctx context.Cont
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostSetChatAdministratorCustomTitleExecute(r ApiPostSetChatAdministratorCustomTitleRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return SetChatAdministratorCustomTitleResponse
+func (a *DefaultAPIService) PostSetChatAdministratorCustomTitleExecute(r ApiPostSetChatAdministratorCustomTitleRequest) (*SetChatAdministratorCustomTitleResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *SetChatAdministratorCustomTitleResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetChatAdministratorCustomTitle")
@@ -22290,11 +22806,11 @@ func (a *DefaultAPIService) PostSetChatAdministratorCustomTitleExecute(r ApiPost
 type ApiPostSetChatDescriptionRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
+	chatId *SendMessageRequestChatId
 	description *string
 }
 
-func (r ApiPostSetChatDescriptionRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSetChatDescriptionRequest {
+func (r ApiPostSetChatDescriptionRequest) ChatId(chatId SendMessageRequestChatId) ApiPostSetChatDescriptionRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -22305,7 +22821,7 @@ func (r ApiPostSetChatDescriptionRequest) Description(description string) ApiPos
 	return r
 }
 
-func (r ApiPostSetChatDescriptionRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostSetChatDescriptionRequest) Execute() (*SetChatDescriptionResponse, *http.Response, error) {
 	return r.ApiService.PostSetChatDescriptionExecute(r)
 }
 
@@ -22325,13 +22841,13 @@ func (a *DefaultAPIService) PostSetChatDescription(ctx context.Context) ApiPostS
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostSetChatDescriptionExecute(r ApiPostSetChatDescriptionRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return SetChatDescriptionResponse
+func (a *DefaultAPIService) PostSetChatDescriptionExecute(r ApiPostSetChatDescriptionRequest) (*SetChatDescriptionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *SetChatDescriptionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetChatDescription")
@@ -22443,7 +22959,7 @@ func (r ApiPostSetChatMenuButtonRequest) MenuButton(menuButton MenuButton) ApiPo
 	return r
 }
 
-func (r ApiPostSetChatMenuButtonRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostSetChatMenuButtonRequest) Execute() (*SetChatMenuButtonResponse, *http.Response, error) {
 	return r.ApiService.PostSetChatMenuButtonExecute(r)
 }
 
@@ -22463,13 +22979,13 @@ func (a *DefaultAPIService) PostSetChatMenuButton(ctx context.Context) ApiPostSe
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostSetChatMenuButtonExecute(r ApiPostSetChatMenuButtonRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return SetChatMenuButtonResponse
+func (a *DefaultAPIService) PostSetChatMenuButtonExecute(r ApiPostSetChatMenuButtonRequest) (*SetChatMenuButtonResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *SetChatMenuButtonResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetChatMenuButton")
@@ -22569,12 +23085,12 @@ func (a *DefaultAPIService) PostSetChatMenuButtonExecute(r ApiPostSetChatMenuBut
 type ApiPostSetChatPermissionsRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostRestrictChatMemberRequestChatId
+	chatId *BotCommandScopeChatChatId
 	permissions *ChatPermissions
 	useIndependentChatPermissions *bool
 }
 
-func (r ApiPostSetChatPermissionsRequest) ChatId(chatId PostRestrictChatMemberRequestChatId) ApiPostSetChatPermissionsRequest {
+func (r ApiPostSetChatPermissionsRequest) ChatId(chatId BotCommandScopeChatChatId) ApiPostSetChatPermissionsRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -22590,7 +23106,7 @@ func (r ApiPostSetChatPermissionsRequest) UseIndependentChatPermissions(useIndep
 	return r
 }
 
-func (r ApiPostSetChatPermissionsRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostSetChatPermissionsRequest) Execute() (*SetChatPermissionsResponse, *http.Response, error) {
 	return r.ApiService.PostSetChatPermissionsExecute(r)
 }
 
@@ -22610,13 +23126,13 @@ func (a *DefaultAPIService) PostSetChatPermissions(ctx context.Context) ApiPostS
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostSetChatPermissionsExecute(r ApiPostSetChatPermissionsRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return SetChatPermissionsResponse
+func (a *DefaultAPIService) PostSetChatPermissionsExecute(r ApiPostSetChatPermissionsRequest) (*SetChatPermissionsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *SetChatPermissionsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetChatPermissions")
@@ -22717,11 +23233,11 @@ func (a *DefaultAPIService) PostSetChatPermissionsExecute(r ApiPostSetChatPermis
 type ApiPostSetChatPhotoRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
+	chatId *SendMessageRequestChatId
 	photo *interface{}
 }
 
-func (r ApiPostSetChatPhotoRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSetChatPhotoRequest {
+func (r ApiPostSetChatPhotoRequest) ChatId(chatId SendMessageRequestChatId) ApiPostSetChatPhotoRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -22731,7 +23247,7 @@ func (r ApiPostSetChatPhotoRequest) Photo(photo interface{}) ApiPostSetChatPhoto
 	return r
 }
 
-func (r ApiPostSetChatPhotoRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostSetChatPhotoRequest) Execute() (*SetChatPhotoResponse, *http.Response, error) {
 	return r.ApiService.PostSetChatPhotoExecute(r)
 }
 
@@ -22751,13 +23267,13 @@ func (a *DefaultAPIService) PostSetChatPhoto(ctx context.Context) ApiPostSetChat
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostSetChatPhotoExecute(r ApiPostSetChatPhotoRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return SetChatPhotoResponse
+func (a *DefaultAPIService) PostSetChatPhotoExecute(r ApiPostSetChatPhotoRequest) (*SetChatPhotoResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *SetChatPhotoResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetChatPhoto")
@@ -22778,7 +23294,7 @@ func (a *DefaultAPIService) PostSetChatPhotoExecute(r ApiPostSetChatPhotoRequest
 	}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"multipart/form-data"}
+	localVarHTTPContentTypes := []string{"multipart/form-data", "application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -22855,11 +23371,11 @@ func (a *DefaultAPIService) PostSetChatPhotoExecute(r ApiPostSetChatPhotoRequest
 type ApiPostSetChatStickerSetRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostRestrictChatMemberRequestChatId
+	chatId *BotCommandScopeChatChatId
 	stickerSetName *string
 }
 
-func (r ApiPostSetChatStickerSetRequest) ChatId(chatId PostRestrictChatMemberRequestChatId) ApiPostSetChatStickerSetRequest {
+func (r ApiPostSetChatStickerSetRequest) ChatId(chatId BotCommandScopeChatChatId) ApiPostSetChatStickerSetRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -22870,7 +23386,7 @@ func (r ApiPostSetChatStickerSetRequest) StickerSetName(stickerSetName string) A
 	return r
 }
 
-func (r ApiPostSetChatStickerSetRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostSetChatStickerSetRequest) Execute() (*SetChatStickerSetResponse, *http.Response, error) {
 	return r.ApiService.PostSetChatStickerSetExecute(r)
 }
 
@@ -22890,13 +23406,13 @@ func (a *DefaultAPIService) PostSetChatStickerSet(ctx context.Context) ApiPostSe
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostSetChatStickerSetExecute(r ApiPostSetChatStickerSetRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return SetChatStickerSetResponse
+func (a *DefaultAPIService) PostSetChatStickerSetExecute(r ApiPostSetChatStickerSetRequest) (*SetChatStickerSetResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *SetChatStickerSetResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetChatStickerSet")
@@ -22994,11 +23510,11 @@ func (a *DefaultAPIService) PostSetChatStickerSetExecute(r ApiPostSetChatSticker
 type ApiPostSetChatTitleRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
+	chatId *SendMessageRequestChatId
 	title *string
 }
 
-func (r ApiPostSetChatTitleRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSetChatTitleRequest {
+func (r ApiPostSetChatTitleRequest) ChatId(chatId SendMessageRequestChatId) ApiPostSetChatTitleRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -23009,7 +23525,7 @@ func (r ApiPostSetChatTitleRequest) Title(title string) ApiPostSetChatTitleReque
 	return r
 }
 
-func (r ApiPostSetChatTitleRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostSetChatTitleRequest) Execute() (*SetChatTitleResponse, *http.Response, error) {
 	return r.ApiService.PostSetChatTitleExecute(r)
 }
 
@@ -23029,13 +23545,13 @@ func (a *DefaultAPIService) PostSetChatTitle(ctx context.Context) ApiPostSetChat
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostSetChatTitleExecute(r ApiPostSetChatTitleRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return SetChatTitleResponse
+func (a *DefaultAPIService) PostSetChatTitleExecute(r ApiPostSetChatTitleRequest) (*SetChatTitleResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *SetChatTitleResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetChatTitle")
@@ -23155,7 +23671,7 @@ func (r ApiPostSetCustomEmojiStickerSetThumbnailRequest) CustomEmojiId(customEmo
 	return r
 }
 
-func (r ApiPostSetCustomEmojiStickerSetThumbnailRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostSetCustomEmojiStickerSetThumbnailRequest) Execute() (*SetCustomEmojiStickerSetThumbnailResponse, *http.Response, error) {
 	return r.ApiService.PostSetCustomEmojiStickerSetThumbnailExecute(r)
 }
 
@@ -23175,13 +23691,13 @@ func (a *DefaultAPIService) PostSetCustomEmojiStickerSetThumbnail(ctx context.Co
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostSetCustomEmojiStickerSetThumbnailExecute(r ApiPostSetCustomEmojiStickerSetThumbnailRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return SetCustomEmojiStickerSetThumbnailResponse
+func (a *DefaultAPIService) PostSetCustomEmojiStickerSetThumbnailExecute(r ApiPostSetCustomEmojiStickerSetThumbnailRequest) (*SetCustomEmojiStickerSetThumbnailResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *SetCustomEmojiStickerSetThumbnailResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetCustomEmojiStickerSetThumbnail")
@@ -23329,7 +23845,7 @@ func (r ApiPostSetGameScoreRequest) InlineMessageId(inlineMessageId string) ApiP
 	return r
 }
 
-func (r ApiPostSetGameScoreRequest) Execute() (*PostEditMessageText200Response, *http.Response, error) {
+func (r ApiPostSetGameScoreRequest) Execute() (*SetGameScoreResponse, *http.Response, error) {
 	return r.ApiService.PostSetGameScoreExecute(r)
 }
 
@@ -23349,13 +23865,13 @@ func (a *DefaultAPIService) PostSetGameScore(ctx context.Context) ApiPostSetGame
 }
 
 // Execute executes the request
-//  @return PostEditMessageText200Response
-func (a *DefaultAPIService) PostSetGameScoreExecute(r ApiPostSetGameScoreRequest) (*PostEditMessageText200Response, *http.Response, error) {
+//  @return SetGameScoreResponse
+func (a *DefaultAPIService) PostSetGameScoreExecute(r ApiPostSetGameScoreRequest) (*SetGameScoreResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostEditMessageText200Response
+		localVarReturnValue  *SetGameScoreResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetGameScore")
@@ -23468,13 +23984,13 @@ func (a *DefaultAPIService) PostSetGameScoreExecute(r ApiPostSetGameScoreRequest
 type ApiPostSetMessageReactionRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
+	chatId *SendMessageRequestChatId
 	messageId *int32
 	reaction *[]ReactionType
 	isBig *bool
 }
 
-func (r ApiPostSetMessageReactionRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostSetMessageReactionRequest {
+func (r ApiPostSetMessageReactionRequest) ChatId(chatId SendMessageRequestChatId) ApiPostSetMessageReactionRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -23497,7 +24013,7 @@ func (r ApiPostSetMessageReactionRequest) IsBig(isBig bool) ApiPostSetMessageRea
 	return r
 }
 
-func (r ApiPostSetMessageReactionRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostSetMessageReactionRequest) Execute() (*SetMessageReactionResponse, *http.Response, error) {
 	return r.ApiService.PostSetMessageReactionExecute(r)
 }
 
@@ -23517,13 +24033,13 @@ func (a *DefaultAPIService) PostSetMessageReaction(ctx context.Context) ApiPostS
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostSetMessageReactionExecute(r ApiPostSetMessageReactionRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return SetMessageReactionResponse
+func (a *DefaultAPIService) PostSetMessageReactionExecute(r ApiPostSetMessageReactionRequest) (*SetMessageReactionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *SetMessageReactionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetMessageReaction")
@@ -23649,7 +24165,7 @@ func (r ApiPostSetMyCommandsRequest) LanguageCode(languageCode string) ApiPostSe
 	return r
 }
 
-func (r ApiPostSetMyCommandsRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostSetMyCommandsRequest) Execute() (*SetMyCommandsResponse, *http.Response, error) {
 	return r.ApiService.PostSetMyCommandsExecute(r)
 }
 
@@ -23669,13 +24185,13 @@ func (a *DefaultAPIService) PostSetMyCommands(ctx context.Context) ApiPostSetMyC
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostSetMyCommandsExecute(r ApiPostSetMyCommandsRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return SetMyCommandsResponse
+func (a *DefaultAPIService) PostSetMyCommandsExecute(r ApiPostSetMyCommandsRequest) (*SetMyCommandsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *SetMyCommandsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetMyCommands")
@@ -23794,7 +24310,7 @@ func (r ApiPostSetMyDefaultAdministratorRightsRequest) ForChannels(forChannels b
 	return r
 }
 
-func (r ApiPostSetMyDefaultAdministratorRightsRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostSetMyDefaultAdministratorRightsRequest) Execute() (*SetMyDefaultAdministratorRightsResponse, *http.Response, error) {
 	return r.ApiService.PostSetMyDefaultAdministratorRightsExecute(r)
 }
 
@@ -23814,13 +24330,13 @@ func (a *DefaultAPIService) PostSetMyDefaultAdministratorRights(ctx context.Cont
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostSetMyDefaultAdministratorRightsExecute(r ApiPostSetMyDefaultAdministratorRightsRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return SetMyDefaultAdministratorRightsResponse
+func (a *DefaultAPIService) PostSetMyDefaultAdministratorRightsExecute(r ApiPostSetMyDefaultAdministratorRightsRequest) (*SetMyDefaultAdministratorRightsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *SetMyDefaultAdministratorRightsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetMyDefaultAdministratorRights")
@@ -23936,7 +24452,7 @@ func (r ApiPostSetMyDescriptionRequest) LanguageCode(languageCode string) ApiPos
 	return r
 }
 
-func (r ApiPostSetMyDescriptionRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostSetMyDescriptionRequest) Execute() (*SetMyDescriptionResponse, *http.Response, error) {
 	return r.ApiService.PostSetMyDescriptionExecute(r)
 }
 
@@ -23956,13 +24472,13 @@ func (a *DefaultAPIService) PostSetMyDescription(ctx context.Context) ApiPostSet
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostSetMyDescriptionExecute(r ApiPostSetMyDescriptionRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return SetMyDescriptionResponse
+func (a *DefaultAPIService) PostSetMyDescriptionExecute(r ApiPostSetMyDescriptionRequest) (*SetMyDescriptionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *SetMyDescriptionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetMyDescription")
@@ -24074,7 +24590,7 @@ func (r ApiPostSetMyNameRequest) LanguageCode(languageCode string) ApiPostSetMyN
 	return r
 }
 
-func (r ApiPostSetMyNameRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostSetMyNameRequest) Execute() (*SetMyNameResponse, *http.Response, error) {
 	return r.ApiService.PostSetMyNameExecute(r)
 }
 
@@ -24094,13 +24610,13 @@ func (a *DefaultAPIService) PostSetMyName(ctx context.Context) ApiPostSetMyNameR
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostSetMyNameExecute(r ApiPostSetMyNameRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return SetMyNameResponse
+func (a *DefaultAPIService) PostSetMyNameExecute(r ApiPostSetMyNameRequest) (*SetMyNameResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *SetMyNameResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetMyName")
@@ -24212,7 +24728,7 @@ func (r ApiPostSetMyShortDescriptionRequest) LanguageCode(languageCode string) A
 	return r
 }
 
-func (r ApiPostSetMyShortDescriptionRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostSetMyShortDescriptionRequest) Execute() (*SetMyShortDescriptionResponse, *http.Response, error) {
 	return r.ApiService.PostSetMyShortDescriptionExecute(r)
 }
 
@@ -24232,13 +24748,13 @@ func (a *DefaultAPIService) PostSetMyShortDescription(ctx context.Context) ApiPo
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostSetMyShortDescriptionExecute(r ApiPostSetMyShortDescriptionRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return SetMyShortDescriptionResponse
+func (a *DefaultAPIService) PostSetMyShortDescriptionExecute(r ApiPostSetMyShortDescriptionRequest) (*SetMyShortDescriptionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *SetMyShortDescriptionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetMyShortDescription")
@@ -24350,7 +24866,7 @@ func (r ApiPostSetPassportDataErrorsRequest) Errors(errors []PassportElementErro
 	return r
 }
 
-func (r ApiPostSetPassportDataErrorsRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostSetPassportDataErrorsRequest) Execute() (*SetPassportDataErrorsResponse, *http.Response, error) {
 	return r.ApiService.PostSetPassportDataErrorsExecute(r)
 }
 
@@ -24372,13 +24888,13 @@ func (a *DefaultAPIService) PostSetPassportDataErrors(ctx context.Context) ApiPo
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostSetPassportDataErrorsExecute(r ApiPostSetPassportDataErrorsRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return SetPassportDataErrorsResponse
+func (a *DefaultAPIService) PostSetPassportDataErrorsExecute(r ApiPostSetPassportDataErrorsRequest) (*SetPassportDataErrorsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *SetPassportDataErrorsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetPassportDataErrors")
@@ -24492,7 +25008,7 @@ func (r ApiPostSetStickerEmojiListRequest) EmojiList(emojiList []string) ApiPost
 	return r
 }
 
-func (r ApiPostSetStickerEmojiListRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostSetStickerEmojiListRequest) Execute() (*SetStickerEmojiListResponse, *http.Response, error) {
 	return r.ApiService.PostSetStickerEmojiListExecute(r)
 }
 
@@ -24512,13 +25028,13 @@ func (a *DefaultAPIService) PostSetStickerEmojiList(ctx context.Context) ApiPost
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostSetStickerEmojiListExecute(r ApiPostSetStickerEmojiListRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return SetStickerEmojiListResponse
+func (a *DefaultAPIService) PostSetStickerEmojiListExecute(r ApiPostSetStickerEmojiListRequest) (*SetStickerEmojiListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *SetStickerEmojiListResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetStickerEmojiList")
@@ -24632,7 +25148,7 @@ func (r ApiPostSetStickerKeywordsRequest) Keywords(keywords []string) ApiPostSet
 	return r
 }
 
-func (r ApiPostSetStickerKeywordsRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostSetStickerKeywordsRequest) Execute() (*SetStickerKeywordsResponse, *http.Response, error) {
 	return r.ApiService.PostSetStickerKeywordsExecute(r)
 }
 
@@ -24652,13 +25168,13 @@ func (a *DefaultAPIService) PostSetStickerKeywords(ctx context.Context) ApiPostS
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostSetStickerKeywordsExecute(r ApiPostSetStickerKeywordsRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return SetStickerKeywordsResponse
+func (a *DefaultAPIService) PostSetStickerKeywordsExecute(r ApiPostSetStickerKeywordsRequest) (*SetStickerKeywordsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *SetStickerKeywordsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetStickerKeywords")
@@ -24770,7 +25286,7 @@ func (r ApiPostSetStickerMaskPositionRequest) MaskPosition(maskPosition MaskPosi
 	return r
 }
 
-func (r ApiPostSetStickerMaskPositionRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostSetStickerMaskPositionRequest) Execute() (*SetStickerMaskPositionResponse, *http.Response, error) {
 	return r.ApiService.PostSetStickerMaskPositionExecute(r)
 }
 
@@ -24790,13 +25306,13 @@ func (a *DefaultAPIService) PostSetStickerMaskPosition(ctx context.Context) ApiP
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostSetStickerMaskPositionExecute(r ApiPostSetStickerMaskPositionRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return SetStickerMaskPositionResponse
+func (a *DefaultAPIService) PostSetStickerMaskPositionExecute(r ApiPostSetStickerMaskPositionRequest) (*SetStickerMaskPositionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *SetStickerMaskPositionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetStickerMaskPosition")
@@ -24913,7 +25429,7 @@ func (r ApiPostSetStickerPositionInSetRequest) Position(position int32) ApiPostS
 	return r
 }
 
-func (r ApiPostSetStickerPositionInSetRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostSetStickerPositionInSetRequest) Execute() (*SetStickerPositionInSetResponse, *http.Response, error) {
 	return r.ApiService.PostSetStickerPositionInSetExecute(r)
 }
 
@@ -24933,13 +25449,13 @@ func (a *DefaultAPIService) PostSetStickerPositionInSet(ctx context.Context) Api
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostSetStickerPositionInSetExecute(r ApiPostSetStickerPositionInSetRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return SetStickerPositionInSetResponse
+func (a *DefaultAPIService) PostSetStickerPositionInSetExecute(r ApiPostSetStickerPositionInSetRequest) (*SetStickerPositionInSetResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *SetStickerPositionInSetResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetStickerPositionInSet")
@@ -25040,7 +25556,7 @@ type ApiPostSetStickerSetThumbnailRequest struct {
 	name *string
 	userId *int32
 	format *string
-	thumbnail *PostSetStickerSetThumbnailRequestThumbnail
+	thumbnail *string
 }
 
 // Sticker set name
@@ -25061,12 +25577,12 @@ func (r ApiPostSetStickerSetThumbnailRequest) Format(format string) ApiPostSetSt
 	return r
 }
 
-func (r ApiPostSetStickerSetThumbnailRequest) Thumbnail(thumbnail PostSetStickerSetThumbnailRequestThumbnail) ApiPostSetStickerSetThumbnailRequest {
+func (r ApiPostSetStickerSetThumbnailRequest) Thumbnail(thumbnail string) ApiPostSetStickerSetThumbnailRequest {
 	r.thumbnail = &thumbnail
 	return r
 }
 
-func (r ApiPostSetStickerSetThumbnailRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostSetStickerSetThumbnailRequest) Execute() (*SetStickerSetThumbnailResponse, *http.Response, error) {
 	return r.ApiService.PostSetStickerSetThumbnailExecute(r)
 }
 
@@ -25086,13 +25602,13 @@ func (a *DefaultAPIService) PostSetStickerSetThumbnail(ctx context.Context) ApiP
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostSetStickerSetThumbnailExecute(r ApiPostSetStickerSetThumbnailRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return SetStickerSetThumbnailResponse
+func (a *DefaultAPIService) PostSetStickerSetThumbnailExecute(r ApiPostSetStickerSetThumbnailRequest) (*SetStickerSetThumbnailResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *SetStickerSetThumbnailResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetStickerSetThumbnail")
@@ -25116,7 +25632,7 @@ func (a *DefaultAPIService) PostSetStickerSetThumbnailExecute(r ApiPostSetSticke
 	}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"multipart/form-data"}
+	localVarHTTPContentTypes := []string{"multipart/form-data", "application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -25135,11 +25651,7 @@ func (a *DefaultAPIService) PostSetStickerSetThumbnailExecute(r ApiPostSetSticke
 	parameterAddToHeaderOrQuery(localVarFormParams, "name", r.name, "", "")
 	parameterAddToHeaderOrQuery(localVarFormParams, "user_id", r.userId, "", "")
 	if r.thumbnail != nil {
-		paramJson, err := parameterToJson(*r.thumbnail)
-		if err != nil {
-			return localVarReturnValue, nil, err
-		}
-		localVarFormParams.Add("thumbnail", paramJson)
+		parameterAddToHeaderOrQuery(localVarFormParams, "thumbnail", r.thumbnail, "", "")
 	}
 	parameterAddToHeaderOrQuery(localVarFormParams, "format", r.format, "", "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -25217,7 +25729,7 @@ func (r ApiPostSetStickerSetTitleRequest) Title(title string) ApiPostSetStickerS
 	return r
 }
 
-func (r ApiPostSetStickerSetTitleRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostSetStickerSetTitleRequest) Execute() (*SetStickerSetTitleResponse, *http.Response, error) {
 	return r.ApiService.PostSetStickerSetTitleExecute(r)
 }
 
@@ -25237,13 +25749,13 @@ func (a *DefaultAPIService) PostSetStickerSetTitle(ctx context.Context) ApiPostS
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostSetStickerSetTitleExecute(r ApiPostSetStickerSetTitleRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return SetStickerSetTitleResponse
+func (a *DefaultAPIService) PostSetStickerSetTitleExecute(r ApiPostSetStickerSetTitleRequest) (*SetStickerSetTitleResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *SetStickerSetTitleResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetStickerSetTitle")
@@ -25370,7 +25882,7 @@ func (r ApiPostSetUserEmojiStatusRequest) EmojiStatusExpirationDate(emojiStatusE
 	return r
 }
 
-func (r ApiPostSetUserEmojiStatusRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostSetUserEmojiStatusRequest) Execute() (*SetUserEmojiStatusResponse, *http.Response, error) {
 	return r.ApiService.PostSetUserEmojiStatusExecute(r)
 }
 
@@ -25390,13 +25902,13 @@ func (a *DefaultAPIService) PostSetUserEmojiStatus(ctx context.Context) ApiPostS
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostSetUserEmojiStatusExecute(r ApiPostSetUserEmojiStatusRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return SetUserEmojiStatusResponse
+func (a *DefaultAPIService) PostSetUserEmojiStatusExecute(r ApiPostSetUserEmojiStatusRequest) (*SetUserEmojiStatusResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *SetUserEmojiStatusResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetUserEmojiStatus")
@@ -25546,7 +26058,7 @@ func (r ApiPostSetWebhookRequest) SecretToken(secretToken string) ApiPostSetWebh
 	return r
 }
 
-func (r ApiPostSetWebhookRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostSetWebhookRequest) Execute() (*SetWebhookResponse, *http.Response, error) {
 	return r.ApiService.PostSetWebhookExecute(r)
 }
 
@@ -25568,13 +26080,13 @@ func (a *DefaultAPIService) PostSetWebhook(ctx context.Context) ApiPostSetWebhoo
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostSetWebhookExecute(r ApiPostSetWebhookRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return SetWebhookResponse
+func (a *DefaultAPIService) PostSetWebhookExecute(r ApiPostSetWebhookRequest) (*SetWebhookResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *SetWebhookResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostSetWebhook")
@@ -25592,7 +26104,7 @@ func (a *DefaultAPIService) PostSetWebhookExecute(r ApiPostSetWebhookRequest) (*
 	}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"multipart/form-data"}
+	localVarHTTPContentTypes := []string{"multipart/form-data", "application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -25687,7 +26199,7 @@ type ApiPostStopMessageLiveLocationRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
 	businessConnectionId *string
-	chatId *PostEditMessageTextRequestChatId
+	chatId *EditMessageTextRequestChatId
 	messageId *int32
 	inlineMessageId *string
 	replyMarkup *InlineKeyboardMarkup
@@ -25699,7 +26211,7 @@ func (r ApiPostStopMessageLiveLocationRequest) BusinessConnectionId(businessConn
 	return r
 }
 
-func (r ApiPostStopMessageLiveLocationRequest) ChatId(chatId PostEditMessageTextRequestChatId) ApiPostStopMessageLiveLocationRequest {
+func (r ApiPostStopMessageLiveLocationRequest) ChatId(chatId EditMessageTextRequestChatId) ApiPostStopMessageLiveLocationRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -25721,7 +26233,7 @@ func (r ApiPostStopMessageLiveLocationRequest) ReplyMarkup(replyMarkup InlineKey
 	return r
 }
 
-func (r ApiPostStopMessageLiveLocationRequest) Execute() (*PostEditMessageText200Response, *http.Response, error) {
+func (r ApiPostStopMessageLiveLocationRequest) Execute() (*StopMessageLiveLocationResponse, *http.Response, error) {
 	return r.ApiService.PostStopMessageLiveLocationExecute(r)
 }
 
@@ -25741,13 +26253,13 @@ func (a *DefaultAPIService) PostStopMessageLiveLocation(ctx context.Context) Api
 }
 
 // Execute executes the request
-//  @return PostEditMessageText200Response
-func (a *DefaultAPIService) PostStopMessageLiveLocationExecute(r ApiPostStopMessageLiveLocationRequest) (*PostEditMessageText200Response, *http.Response, error) {
+//  @return StopMessageLiveLocationResponse
+func (a *DefaultAPIService) PostStopMessageLiveLocationExecute(r ApiPostStopMessageLiveLocationRequest) (*StopMessageLiveLocationResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostEditMessageText200Response
+		localVarReturnValue  *StopMessageLiveLocationResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostStopMessageLiveLocation")
@@ -25860,13 +26372,13 @@ func (a *DefaultAPIService) PostStopMessageLiveLocationExecute(r ApiPostStopMess
 type ApiPostStopPollRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
+	chatId *SendMessageRequestChatId
 	messageId *int32
 	businessConnectionId *string
 	replyMarkup *InlineKeyboardMarkup
 }
 
-func (r ApiPostStopPollRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostStopPollRequest {
+func (r ApiPostStopPollRequest) ChatId(chatId SendMessageRequestChatId) ApiPostStopPollRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -25888,7 +26400,7 @@ func (r ApiPostStopPollRequest) ReplyMarkup(replyMarkup InlineKeyboardMarkup) Ap
 	return r
 }
 
-func (r ApiPostStopPollRequest) Execute() (*PostStopPoll200Response, *http.Response, error) {
+func (r ApiPostStopPollRequest) Execute() (*StopPollResponse, *http.Response, error) {
 	return r.ApiService.PostStopPollExecute(r)
 }
 
@@ -25908,13 +26420,13 @@ func (a *DefaultAPIService) PostStopPoll(ctx context.Context) ApiPostStopPollReq
 }
 
 // Execute executes the request
-//  @return PostStopPoll200Response
-func (a *DefaultAPIService) PostStopPollExecute(r ApiPostStopPollRequest) (*PostStopPoll200Response, *http.Response, error) {
+//  @return StopPollResponse
+func (a *DefaultAPIService) PostStopPollExecute(r ApiPostStopPollRequest) (*StopPollResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostStopPoll200Response
+		localVarReturnValue  *StopPollResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostStopPoll")
@@ -26038,7 +26550,7 @@ func (r ApiPostTransferBusinessAccountStarsRequest) StarCount(starCount int32) A
 	return r
 }
 
-func (r ApiPostTransferBusinessAccountStarsRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostTransferBusinessAccountStarsRequest) Execute() (*TransferBusinessAccountStarsResponse, *http.Response, error) {
 	return r.ApiService.PostTransferBusinessAccountStarsExecute(r)
 }
 
@@ -26058,13 +26570,13 @@ func (a *DefaultAPIService) PostTransferBusinessAccountStars(ctx context.Context
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostTransferBusinessAccountStarsExecute(r ApiPostTransferBusinessAccountStarsRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return TransferBusinessAccountStarsResponse
+func (a *DefaultAPIService) PostTransferBusinessAccountStarsExecute(r ApiPostTransferBusinessAccountStarsRequest) (*TransferBusinessAccountStarsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *TransferBusinessAccountStarsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostTransferBusinessAccountStars")
@@ -26192,7 +26704,7 @@ func (r ApiPostTransferGiftRequest) StarCount(starCount int32) ApiPostTransferGi
 	return r
 }
 
-func (r ApiPostTransferGiftRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostTransferGiftRequest) Execute() (*TransferGiftResponse, *http.Response, error) {
 	return r.ApiService.PostTransferGiftExecute(r)
 }
 
@@ -26212,13 +26724,13 @@ func (a *DefaultAPIService) PostTransferGift(ctx context.Context) ApiPostTransfe
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostTransferGiftExecute(r ApiPostTransferGiftRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return TransferGiftResponse
+func (a *DefaultAPIService) PostTransferGiftExecute(r ApiPostTransferGiftRequest) (*TransferGiftResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *TransferGiftResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostTransferGift")
@@ -26323,12 +26835,12 @@ func (a *DefaultAPIService) PostTransferGiftExecute(r ApiPostTransferGiftRequest
 type ApiPostUnbanChatMemberRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostBanChatMemberRequestChatId
+	chatId *BanChatMemberRequestChatId
 	userId *int32
 	onlyIfBanned *bool
 }
 
-func (r ApiPostUnbanChatMemberRequest) ChatId(chatId PostBanChatMemberRequestChatId) ApiPostUnbanChatMemberRequest {
+func (r ApiPostUnbanChatMemberRequest) ChatId(chatId BanChatMemberRequestChatId) ApiPostUnbanChatMemberRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -26345,7 +26857,7 @@ func (r ApiPostUnbanChatMemberRequest) OnlyIfBanned(onlyIfBanned bool) ApiPostUn
 	return r
 }
 
-func (r ApiPostUnbanChatMemberRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostUnbanChatMemberRequest) Execute() (*UnbanChatMemberResponse, *http.Response, error) {
 	return r.ApiService.PostUnbanChatMemberExecute(r)
 }
 
@@ -26365,13 +26877,13 @@ func (a *DefaultAPIService) PostUnbanChatMember(ctx context.Context) ApiPostUnba
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostUnbanChatMemberExecute(r ApiPostUnbanChatMemberRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return UnbanChatMemberResponse
+func (a *DefaultAPIService) PostUnbanChatMemberExecute(r ApiPostUnbanChatMemberRequest) (*UnbanChatMemberResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *UnbanChatMemberResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostUnbanChatMember")
@@ -26472,11 +26984,11 @@ func (a *DefaultAPIService) PostUnbanChatMemberExecute(r ApiPostUnbanChatMemberR
 type ApiPostUnbanChatSenderChatRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
+	chatId *SendMessageRequestChatId
 	senderChatId *int32
 }
 
-func (r ApiPostUnbanChatSenderChatRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostUnbanChatSenderChatRequest {
+func (r ApiPostUnbanChatSenderChatRequest) ChatId(chatId SendMessageRequestChatId) ApiPostUnbanChatSenderChatRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -26487,7 +26999,7 @@ func (r ApiPostUnbanChatSenderChatRequest) SenderChatId(senderChatId int32) ApiP
 	return r
 }
 
-func (r ApiPostUnbanChatSenderChatRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostUnbanChatSenderChatRequest) Execute() (*UnbanChatSenderChatResponse, *http.Response, error) {
 	return r.ApiService.PostUnbanChatSenderChatExecute(r)
 }
 
@@ -26507,13 +27019,13 @@ func (a *DefaultAPIService) PostUnbanChatSenderChat(ctx context.Context) ApiPost
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostUnbanChatSenderChatExecute(r ApiPostUnbanChatSenderChatRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return UnbanChatSenderChatResponse
+func (a *DefaultAPIService) PostUnbanChatSenderChatExecute(r ApiPostUnbanChatSenderChatRequest) (*UnbanChatSenderChatResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *UnbanChatSenderChatResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostUnbanChatSenderChat")
@@ -26611,15 +27123,15 @@ func (a *DefaultAPIService) PostUnbanChatSenderChatExecute(r ApiPostUnbanChatSen
 type ApiPostUnhideGeneralForumTopicRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostRestrictChatMemberRequestChatId
+	chatId *BotCommandScopeChatChatId
 }
 
-func (r ApiPostUnhideGeneralForumTopicRequest) ChatId(chatId PostRestrictChatMemberRequestChatId) ApiPostUnhideGeneralForumTopicRequest {
+func (r ApiPostUnhideGeneralForumTopicRequest) ChatId(chatId BotCommandScopeChatChatId) ApiPostUnhideGeneralForumTopicRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiPostUnhideGeneralForumTopicRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostUnhideGeneralForumTopicRequest) Execute() (*UnhideGeneralForumTopicResponse, *http.Response, error) {
 	return r.ApiService.PostUnhideGeneralForumTopicExecute(r)
 }
 
@@ -26639,13 +27151,13 @@ func (a *DefaultAPIService) PostUnhideGeneralForumTopic(ctx context.Context) Api
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostUnhideGeneralForumTopicExecute(r ApiPostUnhideGeneralForumTopicRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return UnhideGeneralForumTopicResponse
+func (a *DefaultAPIService) PostUnhideGeneralForumTopicExecute(r ApiPostUnhideGeneralForumTopicRequest) (*UnhideGeneralForumTopicResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *UnhideGeneralForumTopicResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostUnhideGeneralForumTopic")
@@ -26739,15 +27251,15 @@ func (a *DefaultAPIService) PostUnhideGeneralForumTopicExecute(r ApiPostUnhideGe
 type ApiPostUnpinAllChatMessagesRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
+	chatId *SendMessageRequestChatId
 }
 
-func (r ApiPostUnpinAllChatMessagesRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostUnpinAllChatMessagesRequest {
+func (r ApiPostUnpinAllChatMessagesRequest) ChatId(chatId SendMessageRequestChatId) ApiPostUnpinAllChatMessagesRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiPostUnpinAllChatMessagesRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostUnpinAllChatMessagesRequest) Execute() (*UnpinAllChatMessagesResponse, *http.Response, error) {
 	return r.ApiService.PostUnpinAllChatMessagesExecute(r)
 }
 
@@ -26767,13 +27279,13 @@ func (a *DefaultAPIService) PostUnpinAllChatMessages(ctx context.Context) ApiPos
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostUnpinAllChatMessagesExecute(r ApiPostUnpinAllChatMessagesRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return UnpinAllChatMessagesResponse
+func (a *DefaultAPIService) PostUnpinAllChatMessagesExecute(r ApiPostUnpinAllChatMessagesRequest) (*UnpinAllChatMessagesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *UnpinAllChatMessagesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostUnpinAllChatMessages")
@@ -26867,11 +27379,11 @@ func (a *DefaultAPIService) PostUnpinAllChatMessagesExecute(r ApiPostUnpinAllCha
 type ApiPostUnpinAllForumTopicMessagesRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostRestrictChatMemberRequestChatId
+	chatId *BotCommandScopeChatChatId
 	messageThreadId *int32
 }
 
-func (r ApiPostUnpinAllForumTopicMessagesRequest) ChatId(chatId PostRestrictChatMemberRequestChatId) ApiPostUnpinAllForumTopicMessagesRequest {
+func (r ApiPostUnpinAllForumTopicMessagesRequest) ChatId(chatId BotCommandScopeChatChatId) ApiPostUnpinAllForumTopicMessagesRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -26882,7 +27394,7 @@ func (r ApiPostUnpinAllForumTopicMessagesRequest) MessageThreadId(messageThreadI
 	return r
 }
 
-func (r ApiPostUnpinAllForumTopicMessagesRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostUnpinAllForumTopicMessagesRequest) Execute() (*UnpinAllForumTopicMessagesResponse, *http.Response, error) {
 	return r.ApiService.PostUnpinAllForumTopicMessagesExecute(r)
 }
 
@@ -26902,13 +27414,13 @@ func (a *DefaultAPIService) PostUnpinAllForumTopicMessages(ctx context.Context) 
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostUnpinAllForumTopicMessagesExecute(r ApiPostUnpinAllForumTopicMessagesRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return UnpinAllForumTopicMessagesResponse
+func (a *DefaultAPIService) PostUnpinAllForumTopicMessagesExecute(r ApiPostUnpinAllForumTopicMessagesRequest) (*UnpinAllForumTopicMessagesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *UnpinAllForumTopicMessagesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostUnpinAllForumTopicMessages")
@@ -27006,15 +27518,15 @@ func (a *DefaultAPIService) PostUnpinAllForumTopicMessagesExecute(r ApiPostUnpin
 type ApiPostUnpinAllGeneralForumTopicMessagesRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostRestrictChatMemberRequestChatId
+	chatId *BotCommandScopeChatChatId
 }
 
-func (r ApiPostUnpinAllGeneralForumTopicMessagesRequest) ChatId(chatId PostRestrictChatMemberRequestChatId) ApiPostUnpinAllGeneralForumTopicMessagesRequest {
+func (r ApiPostUnpinAllGeneralForumTopicMessagesRequest) ChatId(chatId BotCommandScopeChatChatId) ApiPostUnpinAllGeneralForumTopicMessagesRequest {
 	r.chatId = &chatId
 	return r
 }
 
-func (r ApiPostUnpinAllGeneralForumTopicMessagesRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostUnpinAllGeneralForumTopicMessagesRequest) Execute() (*UnpinAllGeneralForumTopicMessagesResponse, *http.Response, error) {
 	return r.ApiService.PostUnpinAllGeneralForumTopicMessagesExecute(r)
 }
 
@@ -27034,13 +27546,13 @@ func (a *DefaultAPIService) PostUnpinAllGeneralForumTopicMessages(ctx context.Co
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostUnpinAllGeneralForumTopicMessagesExecute(r ApiPostUnpinAllGeneralForumTopicMessagesRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return UnpinAllGeneralForumTopicMessagesResponse
+func (a *DefaultAPIService) PostUnpinAllGeneralForumTopicMessagesExecute(r ApiPostUnpinAllGeneralForumTopicMessagesRequest) (*UnpinAllGeneralForumTopicMessagesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *UnpinAllGeneralForumTopicMessagesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostUnpinAllGeneralForumTopicMessages")
@@ -27134,12 +27646,12 @@ func (a *DefaultAPIService) PostUnpinAllGeneralForumTopicMessagesExecute(r ApiPo
 type ApiPostUnpinChatMessageRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
+	chatId *SendMessageRequestChatId
 	businessConnectionId *string
 	messageId *int32
 }
 
-func (r ApiPostUnpinChatMessageRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostUnpinChatMessageRequest {
+func (r ApiPostUnpinChatMessageRequest) ChatId(chatId SendMessageRequestChatId) ApiPostUnpinChatMessageRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -27156,7 +27668,7 @@ func (r ApiPostUnpinChatMessageRequest) MessageId(messageId int32) ApiPostUnpinC
 	return r
 }
 
-func (r ApiPostUnpinChatMessageRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostUnpinChatMessageRequest) Execute() (*UnpinChatMessageResponse, *http.Response, error) {
 	return r.ApiService.PostUnpinChatMessageExecute(r)
 }
 
@@ -27176,13 +27688,13 @@ func (a *DefaultAPIService) PostUnpinChatMessage(ctx context.Context) ApiPostUnp
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostUnpinChatMessageExecute(r ApiPostUnpinChatMessageRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return UnpinChatMessageResponse
+func (a *DefaultAPIService) PostUnpinChatMessageExecute(r ApiPostUnpinChatMessageRequest) (*UnpinChatMessageResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *UnpinChatMessageResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostUnpinChatMessage")
@@ -27300,7 +27812,7 @@ func (r ApiPostUpgradeGiftRequest) OwnedGiftId(ownedGiftId string) ApiPostUpgrad
 	return r
 }
 
-// Pass True to keep the original gift text, sender and receiver in the upgraded gift
+// Pass *True* to keep the original gift text, sender and receiver in the upgraded gift
 func (r ApiPostUpgradeGiftRequest) KeepOriginalDetails(keepOriginalDetails bool) ApiPostUpgradeGiftRequest {
 	r.keepOriginalDetails = &keepOriginalDetails
 	return r
@@ -27312,7 +27824,7 @@ func (r ApiPostUpgradeGiftRequest) StarCount(starCount int32) ApiPostUpgradeGift
 	return r
 }
 
-func (r ApiPostUpgradeGiftRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostUpgradeGiftRequest) Execute() (*UpgradeGiftResponse, *http.Response, error) {
 	return r.ApiService.PostUpgradeGiftExecute(r)
 }
 
@@ -27332,13 +27844,13 @@ func (a *DefaultAPIService) PostUpgradeGift(ctx context.Context) ApiPostUpgradeG
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostUpgradeGiftExecute(r ApiPostUpgradeGiftRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return UpgradeGiftResponse
+func (a *DefaultAPIService) PostUpgradeGiftExecute(r ApiPostUpgradeGiftRequest) (*UpgradeGiftResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *UpgradeGiftResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostUpgradeGift")
@@ -27464,7 +27976,7 @@ func (r ApiPostUploadStickerFileRequest) StickerFormat(stickerFormat string) Api
 	return r
 }
 
-func (r ApiPostUploadStickerFileRequest) Execute() (*PostGetFile200Response, *http.Response, error) {
+func (r ApiPostUploadStickerFileRequest) Execute() (*UploadStickerFileResponse, *http.Response, error) {
 	return r.ApiService.PostUploadStickerFileExecute(r)
 }
 
@@ -27484,13 +27996,13 @@ func (a *DefaultAPIService) PostUploadStickerFile(ctx context.Context) ApiPostUp
 }
 
 // Execute executes the request
-//  @return PostGetFile200Response
-func (a *DefaultAPIService) PostUploadStickerFileExecute(r ApiPostUploadStickerFileRequest) (*PostGetFile200Response, *http.Response, error) {
+//  @return UploadStickerFileResponse
+func (a *DefaultAPIService) PostUploadStickerFileExecute(r ApiPostUploadStickerFileRequest) (*UploadStickerFileResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostGetFile200Response
+		localVarReturnValue  *UploadStickerFileResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostUploadStickerFile")
@@ -27514,7 +28026,7 @@ func (a *DefaultAPIService) PostUploadStickerFileExecute(r ApiPostUploadStickerF
 	}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"multipart/form-data"}
+	localVarHTTPContentTypes := []string{"multipart/form-data", "application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -27592,11 +28104,11 @@ func (a *DefaultAPIService) PostUploadStickerFileExecute(r ApiPostUploadStickerF
 type ApiPostVerifyChatRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *PostSendMessageRequestChatId
+	chatId *SendMessageRequestChatId
 	customDescription *string
 }
 
-func (r ApiPostVerifyChatRequest) ChatId(chatId PostSendMessageRequestChatId) ApiPostVerifyChatRequest {
+func (r ApiPostVerifyChatRequest) ChatId(chatId SendMessageRequestChatId) ApiPostVerifyChatRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -27607,7 +28119,7 @@ func (r ApiPostVerifyChatRequest) CustomDescription(customDescription string) Ap
 	return r
 }
 
-func (r ApiPostVerifyChatRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostVerifyChatRequest) Execute() (*VerifyChatResponse, *http.Response, error) {
 	return r.ApiService.PostVerifyChatExecute(r)
 }
 
@@ -27627,13 +28139,13 @@ func (a *DefaultAPIService) PostVerifyChat(ctx context.Context) ApiPostVerifyCha
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostVerifyChatExecute(r ApiPostVerifyChatRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return VerifyChatResponse
+func (a *DefaultAPIService) PostVerifyChatExecute(r ApiPostVerifyChatRequest) (*VerifyChatResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *VerifyChatResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostVerifyChat")
@@ -27746,7 +28258,7 @@ func (r ApiPostVerifyUserRequest) CustomDescription(customDescription string) Ap
 	return r
 }
 
-func (r ApiPostVerifyUserRequest) Execute() (*PostSetWebhook200Response, *http.Response, error) {
+func (r ApiPostVerifyUserRequest) Execute() (*VerifyUserResponse, *http.Response, error) {
 	return r.ApiService.PostVerifyUserExecute(r)
 }
 
@@ -27766,13 +28278,13 @@ func (a *DefaultAPIService) PostVerifyUser(ctx context.Context) ApiPostVerifyUse
 }
 
 // Execute executes the request
-//  @return PostSetWebhook200Response
-func (a *DefaultAPIService) PostVerifyUserExecute(r ApiPostVerifyUserRequest) (*PostSetWebhook200Response, *http.Response, error) {
+//  @return VerifyUserResponse
+func (a *DefaultAPIService) PostVerifyUserExecute(r ApiPostVerifyUserRequest) (*VerifyUserResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PostSetWebhook200Response
+		localVarReturnValue  *VerifyUserResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostVerifyUser")

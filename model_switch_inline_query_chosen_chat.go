@@ -5,8 +5,8 @@
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.0.0
- *    * - **Modified**: 2025-07-02T07:03:19.642213517Z[Etc/UTC]
+ *    * - **Version**: 9.1.0
+ *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -55,13 +55,13 @@ var _ MappedNullable = &SwitchInlineQueryChosenChat{}
 type SwitchInlineQueryChosenChat struct {
 	// *Optional*. The default inline query to be inserted in the input field. If left empty, only the bot's username will be inserted
 	Query *string `json:"query,omitempty"`
-	// *Optional*. True, if private chats with users can be chosen
+	// *Optional*. *True*, if private chats with users can be chosen
 	AllowUserChats *bool `json:"allow_user_chats,omitempty"`
-	// *Optional*. True, if private chats with bots can be chosen
+	// *Optional*. *True*, if private chats with bots can be chosen
 	AllowBotChats *bool `json:"allow_bot_chats,omitempty"`
-	// *Optional*. True, if group and supergroup chats can be chosen
+	// *Optional*. *True*, if group and supergroup chats can be chosen
 	AllowGroupChats *bool `json:"allow_group_chats,omitempty"`
-	// *Optional*. True, if channel chats can be chosen
+	// *Optional*. *True*, if channel chats can be chosen
 	AllowChannelChats *bool `json:"allow_channel_chats,omitempty"`
 }
 

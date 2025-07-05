@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **VideoNote** | Pointer to [**VideoNote**](VideoNote.md) |  | [optional] 
 **Voice** | Pointer to [**Voice**](Voice.md) |  | [optional] 
 **HasMediaSpoiler** | Pointer to **bool** | *Optional*. *True*, if the message media is covered by a spoiler animation | [optional] [default to true]
+**Checklist** | Pointer to [**Checklist**](Checklist.md) |  | [optional] 
 **Contact** | Pointer to [**Contact**](Contact.md) |  | [optional] 
 **Dice** | Pointer to [**Dice**](Dice.md) |  | [optional] 
 **Game** | Pointer to [**Game**](Game.md) |  | [optional] 
@@ -417,6 +418,31 @@ SetHasMediaSpoiler sets HasMediaSpoiler field to given value.
 `func (o *ExternalReplyInfo) HasHasMediaSpoiler() bool`
 
 HasHasMediaSpoiler returns a boolean if a field has been set.
+
+### GetChecklist
+
+`func (o *ExternalReplyInfo) GetChecklist() Checklist`
+
+GetChecklist returns the Checklist field if non-nil, zero value otherwise.
+
+### GetChecklistOk
+
+`func (o *ExternalReplyInfo) GetChecklistOk() (*Checklist, bool)`
+
+GetChecklistOk returns a tuple with the Checklist field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChecklist
+
+`func (o *ExternalReplyInfo) SetChecklist(v Checklist)`
+
+SetChecklist sets Checklist field to given value.
+
+### HasChecklist
+
+`func (o *ExternalReplyInfo) HasChecklist() bool`
+
+HasChecklist returns a boolean if a field has been set.
 
 ### GetContact
 

@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**UnlimitedGifts** | **bool** | True, if unlimited regular gifts are accepted | 
-**LimitedGifts** | **bool** | True, if limited regular gifts are accepted | 
-**UniqueGifts** | **bool** | True, if unique gifts or gifts that can be upgraded to unique for free are accepted | 
-**PremiumSubscription** | **bool** | True, if a Telegram Premium subscription is accepted | 
+**UnlimitedGifts** | **bool** | *True*, if unlimited regular gifts are accepted | 
+**LimitedGifts** | **bool** | *True*, if limited regular gifts are accepted | 
+**UniqueGifts** | **bool** | *True*, if unique gifts or gifts that can be upgraded to unique for free are accepted | 
+**PremiumSubscription** | **bool** | *True*, if a Telegram Premium subscription is accepted | 
 
 ## Methods
 

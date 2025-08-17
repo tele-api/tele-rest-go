@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ChatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
+**ChatId** | [**RestrictChatMemberRequestChatId**](RestrictChatMemberRequestChatId.md) |  | 
 **MessageThreadId** | **int32** | Unique identifier for the target message thread of the forum topic | 
 
 ## Methods
 
 ### NewUnpinAllForumTopicMessagesRequest
 
-`func NewUnpinAllForumTopicMessagesRequest(chatId BotCommandScopeChatChatId, messageThreadId int32, ) *UnpinAllForumTopicMessagesRequest`
+`func NewUnpinAllForumTopicMessagesRequest(chatId RestrictChatMemberRequestChatId, messageThreadId int32, ) *UnpinAllForumTopicMessagesRequest`
 
 NewUnpinAllForumTopicMessagesRequest instantiates a new UnpinAllForumTopicMessagesRequest object
 This constructor will assign default values to properties that have it defined,
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetChatId
 
-`func (o *UnpinAllForumTopicMessagesRequest) GetChatId() BotCommandScopeChatChatId`
+`func (o *UnpinAllForumTopicMessagesRequest) GetChatId() RestrictChatMemberRequestChatId`
 
 GetChatId returns the ChatId field if non-nil, zero value otherwise.
 
 ### GetChatIdOk
 
-`func (o *UnpinAllForumTopicMessagesRequest) GetChatIdOk() (*BotCommandScopeChatChatId, bool)`
+`func (o *UnpinAllForumTopicMessagesRequest) GetChatIdOk() (*RestrictChatMemberRequestChatId, bool)`
 
 GetChatIdOk returns a tuple with the ChatId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChatId
 
-`func (o *UnpinAllForumTopicMessagesRequest) SetChatId(v BotCommandScopeChatChatId)`
+`func (o *UnpinAllForumTopicMessagesRequest) SetChatId(v RestrictChatMemberRequestChatId)`
 
 SetChatId sets ChatId field to given value.
 

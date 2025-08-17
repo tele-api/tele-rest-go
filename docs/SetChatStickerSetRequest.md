@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ChatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
+**ChatId** | [**RestrictChatMemberRequestChatId**](RestrictChatMemberRequestChatId.md) |  | 
 **StickerSetName** | **string** | Name of the sticker set to be set as the group sticker set | 
 
 ## Methods
 
 ### NewSetChatStickerSetRequest
 
-`func NewSetChatStickerSetRequest(chatId BotCommandScopeChatChatId, stickerSetName string, ) *SetChatStickerSetRequest`
+`func NewSetChatStickerSetRequest(chatId RestrictChatMemberRequestChatId, stickerSetName string, ) *SetChatStickerSetRequest`
 
 NewSetChatStickerSetRequest instantiates a new SetChatStickerSetRequest object
 This constructor will assign default values to properties that have it defined,
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetChatId
 
-`func (o *SetChatStickerSetRequest) GetChatId() BotCommandScopeChatChatId`
+`func (o *SetChatStickerSetRequest) GetChatId() RestrictChatMemberRequestChatId`
 
 GetChatId returns the ChatId field if non-nil, zero value otherwise.
 
 ### GetChatIdOk
 
-`func (o *SetChatStickerSetRequest) GetChatIdOk() (*BotCommandScopeChatChatId, bool)`
+`func (o *SetChatStickerSetRequest) GetChatIdOk() (*RestrictChatMemberRequestChatId, bool)`
 
 GetChatIdOk returns a tuple with the ChatId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChatId
 
-`func (o *SetChatStickerSetRequest) SetChatId(v BotCommandScopeChatChatId)`
+`func (o *SetChatStickerSetRequest) SetChatId(v RestrictChatMemberRequestChatId)`
 
 SetChatId sets ChatId field to given value.
 

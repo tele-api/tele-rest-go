@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ChatId** | [**LeaveChatRequestChatId**](LeaveChatRequestChatId.md) |  | 
+**ChatId** | [**GetChatRequestChatId**](GetChatRequestChatId.md) |  | 
 
 ## Methods
 
 ### NewGetChatMemberCountRequest
 
-`func NewGetChatMemberCountRequest(chatId LeaveChatRequestChatId, ) *GetChatMemberCountRequest`
+`func NewGetChatMemberCountRequest(chatId GetChatRequestChatId, ) *GetChatMemberCountRequest`
 
 NewGetChatMemberCountRequest instantiates a new GetChatMemberCountRequest object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetChatId
 
-`func (o *GetChatMemberCountRequest) GetChatId() LeaveChatRequestChatId`
+`func (o *GetChatMemberCountRequest) GetChatId() GetChatRequestChatId`
 
 GetChatId returns the ChatId field if non-nil, zero value otherwise.
 
 ### GetChatIdOk
 
-`func (o *GetChatMemberCountRequest) GetChatIdOk() (*LeaveChatRequestChatId, bool)`
+`func (o *GetChatMemberCountRequest) GetChatIdOk() (*GetChatRequestChatId, bool)`
 
 GetChatIdOk returns a tuple with the ChatId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChatId
 
-`func (o *GetChatMemberCountRequest) SetChatId(v LeaveChatRequestChatId)`
+`func (o *GetChatMemberCountRequest) SetChatId(v GetChatRequestChatId)`
 
 SetChatId sets ChatId field to given value.
 

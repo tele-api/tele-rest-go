@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MessageId** | **int32** | Unique message identifier inside the chat | 
 **MessageThreadId** | Pointer to **int32** | *Optional*. Unique identifier of a message thread to which the message belongs; for supergroups only | [optional] 
+**DirectMessagesTopic** | Pointer to [**DirectMessagesTopic**](DirectMessagesTopic.md) |  | [optional] 
 **From** | Pointer to [**User**](User.md) |  | [optional] 
 **SenderChat** | Pointer to [**Chat**](Chat.md) |  | [optional] 
 **SenderBoostCount** | Pointer to **int32** | *Optional*. If the sender of the message boosted the chat, the number of boosts added by the user | [optional] 
@@ -20,16 +21,19 @@ Name | Type | Description | Notes
 **ExternalReply** | Pointer to [**ExternalReplyInfo**](ExternalReplyInfo.md) |  | [optional] 
 **Quote** | Pointer to [**TextQuote**](TextQuote.md) |  | [optional] 
 **ReplyToStory** | Pointer to [**Story**](Story.md) |  | [optional] 
+**ReplyToChecklistTaskId** | Pointer to **int32** | *Optional*. Identifier of the specific checklist task that is being replied to | [optional] 
 **ViaBot** | Pointer to [**User**](User.md) |  | [optional] 
 **EditDate** | Pointer to **int32** | *Optional*. Date the message was last edited in Unix time | [optional] 
 **HasProtectedContent** | Pointer to **bool** | *Optional*. *True*, if the message can&#39;t be forwarded | [optional] [default to true]
 **IsFromOffline** | Pointer to **bool** | *Optional*. *True*, if the message was sent by an implicit action, for example, as an away or a greeting business message, or as a scheduled message | [optional] [default to true]
+**IsPaidPost** | Pointer to **bool** | *Optional*. *True*, if the message is a paid post. Note that such posts must not be deleted for 24 hours to receive the payment and can&#39;t be edited. | [optional] [default to true]
 **MediaGroupId** | Pointer to **string** | *Optional*. The unique identifier of a media message group this message belongs to | [optional] 
 **AuthorSignature** | Pointer to **string** | *Optional*. Signature of the post author for messages in channels, or the custom title of an anonymous group administrator | [optional] 
 **PaidStarCount** | Pointer to **int32** | *Optional*. The number of Telegram Stars that were paid by the sender of the message to send it | [optional] 
 **Text** | Pointer to **string** | *Optional*. For text messages, the actual UTF-8 text of the message | [optional] 
 **Entities** | Pointer to [**[]MessageEntity**](MessageEntity.md) | *Optional*. For text messages, special entities like usernames, URLs, bot commands, etc. that appear in the text | [optional] 
 **LinkPreviewOptions** | Pointer to [**LinkPreviewOptions**](LinkPreviewOptions.md) |  | [optional] 
+**SuggestedPostInfo** | Pointer to [**SuggestedPostInfo**](SuggestedPostInfo.md) |  | [optional] 
 **EffectId** | Pointer to **string** | *Optional*. Unique identifier of the message effect added to the message | [optional] 
 **Animation** | Pointer to [**Animation**](Animation.md) |  | [optional] 
 **Audio** | Pointer to [**Audio**](Audio.md) |  | [optional] 
@@ -91,6 +95,11 @@ Name | Type | Description | Notes
 **GiveawayWinners** | Pointer to [**GiveawayWinners**](GiveawayWinners.md) |  | [optional] 
 **GiveawayCompleted** | Pointer to [**GiveawayCompleted**](GiveawayCompleted.md) |  | [optional] 
 **PaidMessagePriceChanged** | Pointer to [**PaidMessagePriceChanged**](PaidMessagePriceChanged.md) |  | [optional] 
+**SuggestedPostApproved** | Pointer to [**SuggestedPostApproved**](SuggestedPostApproved.md) |  | [optional] 
+**SuggestedPostApprovalFailed** | Pointer to [**SuggestedPostApprovalFailed**](SuggestedPostApprovalFailed.md) |  | [optional] 
+**SuggestedPostDeclined** | Pointer to [**SuggestedPostDeclined**](SuggestedPostDeclined.md) |  | [optional] 
+**SuggestedPostPaid** | Pointer to [**SuggestedPostPaid**](SuggestedPostPaid.md) |  | [optional] 
+**SuggestedPostRefunded** | Pointer to [**SuggestedPostRefunded**](SuggestedPostRefunded.md) |  | [optional] 
 **VideoChatScheduled** | Pointer to [**VideoChatScheduled**](VideoChatScheduled.md) |  | [optional] 
 **VideoChatStarted** | Pointer to **interface{}** |  | [optional] 
 **VideoChatEnded** | Pointer to [**VideoChatEnded**](VideoChatEnded.md) |  | [optional] 
@@ -161,6 +170,31 @@ SetMessageThreadId sets MessageThreadId field to given value.
 `func (o *MaybeInaccessibleMessage) HasMessageThreadId() bool`
 
 HasMessageThreadId returns a boolean if a field has been set.
+
+### GetDirectMessagesTopic
+
+`func (o *MaybeInaccessibleMessage) GetDirectMessagesTopic() DirectMessagesTopic`
+
+GetDirectMessagesTopic returns the DirectMessagesTopic field if non-nil, zero value otherwise.
+
+### GetDirectMessagesTopicOk
+
+`func (o *MaybeInaccessibleMessage) GetDirectMessagesTopicOk() (*DirectMessagesTopic, bool)`
+
+GetDirectMessagesTopicOk returns a tuple with the DirectMessagesTopic field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDirectMessagesTopic
+
+`func (o *MaybeInaccessibleMessage) SetDirectMessagesTopic(v DirectMessagesTopic)`
+
+SetDirectMessagesTopic sets DirectMessagesTopic field to given value.
+
+### HasDirectMessagesTopic
+
+`func (o *MaybeInaccessibleMessage) HasDirectMessagesTopic() bool`
+
+HasDirectMessagesTopic returns a boolean if a field has been set.
 
 ### GetFrom
 
@@ -502,6 +536,31 @@ SetReplyToStory sets ReplyToStory field to given value.
 
 HasReplyToStory returns a boolean if a field has been set.
 
+### GetReplyToChecklistTaskId
+
+`func (o *MaybeInaccessibleMessage) GetReplyToChecklistTaskId() int32`
+
+GetReplyToChecklistTaskId returns the ReplyToChecklistTaskId field if non-nil, zero value otherwise.
+
+### GetReplyToChecklistTaskIdOk
+
+`func (o *MaybeInaccessibleMessage) GetReplyToChecklistTaskIdOk() (*int32, bool)`
+
+GetReplyToChecklistTaskIdOk returns a tuple with the ReplyToChecklistTaskId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReplyToChecklistTaskId
+
+`func (o *MaybeInaccessibleMessage) SetReplyToChecklistTaskId(v int32)`
+
+SetReplyToChecklistTaskId sets ReplyToChecklistTaskId field to given value.
+
+### HasReplyToChecklistTaskId
+
+`func (o *MaybeInaccessibleMessage) HasReplyToChecklistTaskId() bool`
+
+HasReplyToChecklistTaskId returns a boolean if a field has been set.
+
 ### GetViaBot
 
 `func (o *MaybeInaccessibleMessage) GetViaBot() User`
@@ -601,6 +660,31 @@ SetIsFromOffline sets IsFromOffline field to given value.
 `func (o *MaybeInaccessibleMessage) HasIsFromOffline() bool`
 
 HasIsFromOffline returns a boolean if a field has been set.
+
+### GetIsPaidPost
+
+`func (o *MaybeInaccessibleMessage) GetIsPaidPost() bool`
+
+GetIsPaidPost returns the IsPaidPost field if non-nil, zero value otherwise.
+
+### GetIsPaidPostOk
+
+`func (o *MaybeInaccessibleMessage) GetIsPaidPostOk() (*bool, bool)`
+
+GetIsPaidPostOk returns a tuple with the IsPaidPost field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsPaidPost
+
+`func (o *MaybeInaccessibleMessage) SetIsPaidPost(v bool)`
+
+SetIsPaidPost sets IsPaidPost field to given value.
+
+### HasIsPaidPost
+
+`func (o *MaybeInaccessibleMessage) HasIsPaidPost() bool`
+
+HasIsPaidPost returns a boolean if a field has been set.
 
 ### GetMediaGroupId
 
@@ -751,6 +835,31 @@ SetLinkPreviewOptions sets LinkPreviewOptions field to given value.
 `func (o *MaybeInaccessibleMessage) HasLinkPreviewOptions() bool`
 
 HasLinkPreviewOptions returns a boolean if a field has been set.
+
+### GetSuggestedPostInfo
+
+`func (o *MaybeInaccessibleMessage) GetSuggestedPostInfo() SuggestedPostInfo`
+
+GetSuggestedPostInfo returns the SuggestedPostInfo field if non-nil, zero value otherwise.
+
+### GetSuggestedPostInfoOk
+
+`func (o *MaybeInaccessibleMessage) GetSuggestedPostInfoOk() (*SuggestedPostInfo, bool)`
+
+GetSuggestedPostInfoOk returns a tuple with the SuggestedPostInfo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSuggestedPostInfo
+
+`func (o *MaybeInaccessibleMessage) SetSuggestedPostInfo(v SuggestedPostInfo)`
+
+SetSuggestedPostInfo sets SuggestedPostInfo field to given value.
+
+### HasSuggestedPostInfo
+
+`func (o *MaybeInaccessibleMessage) HasSuggestedPostInfo() bool`
+
+HasSuggestedPostInfo returns a boolean if a field has been set.
 
 ### GetEffectId
 
@@ -2316,6 +2425,131 @@ SetPaidMessagePriceChanged sets PaidMessagePriceChanged field to given value.
 `func (o *MaybeInaccessibleMessage) HasPaidMessagePriceChanged() bool`
 
 HasPaidMessagePriceChanged returns a boolean if a field has been set.
+
+### GetSuggestedPostApproved
+
+`func (o *MaybeInaccessibleMessage) GetSuggestedPostApproved() SuggestedPostApproved`
+
+GetSuggestedPostApproved returns the SuggestedPostApproved field if non-nil, zero value otherwise.
+
+### GetSuggestedPostApprovedOk
+
+`func (o *MaybeInaccessibleMessage) GetSuggestedPostApprovedOk() (*SuggestedPostApproved, bool)`
+
+GetSuggestedPostApprovedOk returns a tuple with the SuggestedPostApproved field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSuggestedPostApproved
+
+`func (o *MaybeInaccessibleMessage) SetSuggestedPostApproved(v SuggestedPostApproved)`
+
+SetSuggestedPostApproved sets SuggestedPostApproved field to given value.
+
+### HasSuggestedPostApproved
+
+`func (o *MaybeInaccessibleMessage) HasSuggestedPostApproved() bool`
+
+HasSuggestedPostApproved returns a boolean if a field has been set.
+
+### GetSuggestedPostApprovalFailed
+
+`func (o *MaybeInaccessibleMessage) GetSuggestedPostApprovalFailed() SuggestedPostApprovalFailed`
+
+GetSuggestedPostApprovalFailed returns the SuggestedPostApprovalFailed field if non-nil, zero value otherwise.
+
+### GetSuggestedPostApprovalFailedOk
+
+`func (o *MaybeInaccessibleMessage) GetSuggestedPostApprovalFailedOk() (*SuggestedPostApprovalFailed, bool)`
+
+GetSuggestedPostApprovalFailedOk returns a tuple with the SuggestedPostApprovalFailed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSuggestedPostApprovalFailed
+
+`func (o *MaybeInaccessibleMessage) SetSuggestedPostApprovalFailed(v SuggestedPostApprovalFailed)`
+
+SetSuggestedPostApprovalFailed sets SuggestedPostApprovalFailed field to given value.
+
+### HasSuggestedPostApprovalFailed
+
+`func (o *MaybeInaccessibleMessage) HasSuggestedPostApprovalFailed() bool`
+
+HasSuggestedPostApprovalFailed returns a boolean if a field has been set.
+
+### GetSuggestedPostDeclined
+
+`func (o *MaybeInaccessibleMessage) GetSuggestedPostDeclined() SuggestedPostDeclined`
+
+GetSuggestedPostDeclined returns the SuggestedPostDeclined field if non-nil, zero value otherwise.
+
+### GetSuggestedPostDeclinedOk
+
+`func (o *MaybeInaccessibleMessage) GetSuggestedPostDeclinedOk() (*SuggestedPostDeclined, bool)`
+
+GetSuggestedPostDeclinedOk returns a tuple with the SuggestedPostDeclined field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSuggestedPostDeclined
+
+`func (o *MaybeInaccessibleMessage) SetSuggestedPostDeclined(v SuggestedPostDeclined)`
+
+SetSuggestedPostDeclined sets SuggestedPostDeclined field to given value.
+
+### HasSuggestedPostDeclined
+
+`func (o *MaybeInaccessibleMessage) HasSuggestedPostDeclined() bool`
+
+HasSuggestedPostDeclined returns a boolean if a field has been set.
+
+### GetSuggestedPostPaid
+
+`func (o *MaybeInaccessibleMessage) GetSuggestedPostPaid() SuggestedPostPaid`
+
+GetSuggestedPostPaid returns the SuggestedPostPaid field if non-nil, zero value otherwise.
+
+### GetSuggestedPostPaidOk
+
+`func (o *MaybeInaccessibleMessage) GetSuggestedPostPaidOk() (*SuggestedPostPaid, bool)`
+
+GetSuggestedPostPaidOk returns a tuple with the SuggestedPostPaid field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSuggestedPostPaid
+
+`func (o *MaybeInaccessibleMessage) SetSuggestedPostPaid(v SuggestedPostPaid)`
+
+SetSuggestedPostPaid sets SuggestedPostPaid field to given value.
+
+### HasSuggestedPostPaid
+
+`func (o *MaybeInaccessibleMessage) HasSuggestedPostPaid() bool`
+
+HasSuggestedPostPaid returns a boolean if a field has been set.
+
+### GetSuggestedPostRefunded
+
+`func (o *MaybeInaccessibleMessage) GetSuggestedPostRefunded() SuggestedPostRefunded`
+
+GetSuggestedPostRefunded returns the SuggestedPostRefunded field if non-nil, zero value otherwise.
+
+### GetSuggestedPostRefundedOk
+
+`func (o *MaybeInaccessibleMessage) GetSuggestedPostRefundedOk() (*SuggestedPostRefunded, bool)`
+
+GetSuggestedPostRefundedOk returns a tuple with the SuggestedPostRefunded field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSuggestedPostRefunded
+
+`func (o *MaybeInaccessibleMessage) SetSuggestedPostRefunded(v SuggestedPostRefunded)`
+
+SetSuggestedPostRefunded sets SuggestedPostRefunded field to given value.
+
+### HasSuggestedPostRefunded
+
+`func (o *MaybeInaccessibleMessage) HasSuggestedPostRefunded() bool`
+
+HasSuggestedPostRefunded returns a boolean if a field has been set.
 
 ### GetVideoChatScheduled
 

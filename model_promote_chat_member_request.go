@@ -5,8 +5,8 @@
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
+ *    * - **Version**: 9.2.0
+ *    * - **Modified**: 2025-08-17T02:10:51.183543732Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -88,6 +88,8 @@ type PromoteChatMemberRequest struct {
 	CanPinMessages *bool `json:"can_pin_messages,omitempty"`
 	// Pass *True* if the user is allowed to create, rename, close, and reopen forum topics; for supergroups only
 	CanManageTopics *bool `json:"can_manage_topics,omitempty"`
+	// Pass *True* if the administrator can manage direct messages within the channel and decline suggested posts; for channels only
+	CanManageDirectMessages *bool `json:"can_manage_direct_messages,omitempty"`
 }
 
 type _PromoteChatMemberRequest PromoteChatMemberRequest
@@ -654,6 +656,39 @@ func (o *PromoteChatMemberRequest) SetCanManageTopics(v bool) {
 }
 
 
+// GetCanManageDirectMessages returns the CanManageDirectMessages field value if set, zero value otherwise.
+func (o *PromoteChatMemberRequest) GetCanManageDirectMessages() bool {
+	if o == nil || IsNil(o.CanManageDirectMessages) {
+		var ret bool
+		return ret
+	}
+	return *o.CanManageDirectMessages
+}
+
+// GetCanManageDirectMessagesOk returns a tuple with the CanManageDirectMessages field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PromoteChatMemberRequest) GetCanManageDirectMessagesOk() (*bool, bool) {
+	if o == nil || IsNil(o.CanManageDirectMessages) {
+		return nil, false
+	}
+	return o.CanManageDirectMessages, true
+}
+
+// HasCanManageDirectMessages returns a boolean if a field has been set.
+func (o *PromoteChatMemberRequest) HasCanManageDirectMessages() bool {
+	if o != nil && !IsNil(o.CanManageDirectMessages) {
+		return true
+	}
+
+	return false
+}
+
+// SetCanManageDirectMessages gets a reference to the given bool and assigns it to the CanManageDirectMessages field.
+func (o *PromoteChatMemberRequest) SetCanManageDirectMessages(v bool) {
+	o.CanManageDirectMessages = &v
+}
+
+
 func (o PromoteChatMemberRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -710,6 +745,9 @@ func (o PromoteChatMemberRequest) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.CanManageTopics) {
 		toSerialize["can_manage_topics"] = o.CanManageTopics
+	}
+	if !IsNil(o.CanManageDirectMessages) {
+		toSerialize["can_manage_direct_messages"] = o.CanManageDirectMessages
 	}
 	return toSerialize, nil
 }

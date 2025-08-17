@@ -5,8 +5,8 @@
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
+ *    * - **Version**: 9.2.0
+ *    * - **Modified**: 2025-08-17T02:10:51.183543732Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -66,6 +66,7 @@ type Gift struct {
 	TotalCount *int32 `json:"total_count,omitempty"`
 	// *Optional*. The number of remaining gifts of this type that can be sent; for limited gifts only
 	RemainingCount *int32 `json:"remaining_count,omitempty"`
+	PublisherChat *Chat `json:"publisher_chat,omitempty"`
 }
 
 type _Gift Gift
@@ -261,6 +262,39 @@ func (o *Gift) SetRemainingCount(v int32) {
 }
 
 
+// GetPublisherChat returns the PublisherChat field value if set, zero value otherwise.
+func (o *Gift) GetPublisherChat() Chat {
+	if o == nil || IsNil(o.PublisherChat) {
+		var ret Chat
+		return ret
+	}
+	return *o.PublisherChat
+}
+
+// GetPublisherChatOk returns a tuple with the PublisherChat field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Gift) GetPublisherChatOk() (*Chat, bool) {
+	if o == nil || IsNil(o.PublisherChat) {
+		return nil, false
+	}
+	return o.PublisherChat, true
+}
+
+// HasPublisherChat returns a boolean if a field has been set.
+func (o *Gift) HasPublisherChat() bool {
+	if o != nil && !IsNil(o.PublisherChat) {
+		return true
+	}
+
+	return false
+}
+
+// SetPublisherChat gets a reference to the given Chat and assigns it to the PublisherChat field.
+func (o *Gift) SetPublisherChat(v Chat) {
+	o.PublisherChat = &v
+}
+
+
 func (o Gift) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -282,6 +316,9 @@ func (o Gift) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.RemainingCount) {
 		toSerialize["remaining_count"] = o.RemainingCount
+	}
+	if !IsNil(o.PublisherChat) {
+		toSerialize["publisher_chat"] = o.PublisherChat
 	}
 	return toSerialize, nil
 }

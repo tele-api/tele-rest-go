@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BusinessConnectionId** | Pointer to **string** | Unique identifier of the business connection on behalf of which the action will be sent | [optional] 
-**ChatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
+**ChatId** | [**SendChatActionRequestChatId**](SendChatActionRequestChatId.md) |  | 
 **MessageThreadId** | Pointer to **int32** | Unique identifier for the target message thread; for supergroups only | [optional] 
 **Action** | **string** | Type of action to broadcast. Choose one, depending on what the user is about to receive: *typing* for [text messages](https://core.telegram.org/bots/api/#sendmessage), *upload\\_photo* for [photos](https://core.telegram.org/bots/api/#sendphoto), *record\\_video* or *upload\\_video* for [videos](https://core.telegram.org/bots/api/#sendvideo), *record\\_voice* or *upload\\_voice* for [voice notes](https://core.telegram.org/bots/api/#sendvoice), *upload\\_document* for [general files](https://core.telegram.org/bots/api/#senddocument), *choose\\_sticker* for [stickers](https://core.telegram.org/bots/api/#sendsticker), *find\\_location* for [location data](https://core.telegram.org/bots/api/#sendlocation), *record\\_video\\_note* or *upload\\_video\\_note* for [video notes](https://core.telegram.org/bots/api/#sendvideonote). | 
 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewSendChatActionRequest
 
-`func NewSendChatActionRequest(chatId SendMessageRequestChatId, action string, ) *SendChatActionRequest`
+`func NewSendChatActionRequest(chatId SendChatActionRequestChatId, action string, ) *SendChatActionRequest`
 
 NewSendChatActionRequest instantiates a new SendChatActionRequest object
 This constructor will assign default values to properties that have it defined,
@@ -55,20 +55,20 @@ HasBusinessConnectionId returns a boolean if a field has been set.
 
 ### GetChatId
 
-`func (o *SendChatActionRequest) GetChatId() SendMessageRequestChatId`
+`func (o *SendChatActionRequest) GetChatId() SendChatActionRequestChatId`
 
 GetChatId returns the ChatId field if non-nil, zero value otherwise.
 
 ### GetChatIdOk
 
-`func (o *SendChatActionRequest) GetChatIdOk() (*SendMessageRequestChatId, bool)`
+`func (o *SendChatActionRequest) GetChatIdOk() (*SendChatActionRequestChatId, bool)`
 
 GetChatIdOk returns a tuple with the ChatId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChatId
 
-`func (o *SendChatActionRequest) SetChatId(v SendMessageRequestChatId)`
+`func (o *SendChatActionRequest) SetChatId(v SendChatActionRequestChatId)`
 
 SetChatId sets ChatId field to given value.
 

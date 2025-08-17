@@ -6,6 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BusinessConnectionId** | Pointer to **string** | Unique identifier of the business connection on behalf of which the message will be sent | [optional] 
 **ChatId** | [**SendPaidMediaRequestChatId**](SendPaidMediaRequestChatId.md) |  | 
+**MessageThreadId** | Pointer to **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | [optional] 
+**DirectMessagesTopicId** | Pointer to **int32** | Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat | [optional] 
 **StarCount** | **int32** | The number of Telegram Stars that must be paid to buy access to the media; 1-10000 | 
 **Media** | [**[]InputPaidMedia**](InputPaidMedia.md) | A JSON-serialized array describing the media to be sent; up to 10 items | 
 **Payload** | Pointer to **string** | Bot-defined paid media payload, 0-128 bytes. This will not be displayed to the user, use it for your internal processes. | [optional] 
@@ -16,6 +18,7 @@ Name | Type | Description | Notes
 **DisableNotification** | Pointer to **bool** | Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. | [optional] 
 **ProtectContent** | Pointer to **bool** | Protects the contents of the sent message from forwarding and saving | [optional] 
 **AllowPaidBroadcast** | Pointer to **bool** | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance | [optional] 
+**SuggestedPostParameters** | Pointer to [**SuggestedPostParameters**](SuggestedPostParameters.md) |  | [optional] 
 **ReplyParameters** | Pointer to [**ReplyParameters**](ReplyParameters.md) |  | [optional] 
 **ReplyMarkup** | Pointer to [**SendMessageRequestReplyMarkup**](SendMessageRequestReplyMarkup.md) |  | [optional] 
 
@@ -82,6 +85,56 @@ and a boolean to check if the value has been set.
 
 SetChatId sets ChatId field to given value.
 
+
+### GetMessageThreadId
+
+`func (o *SendPaidMediaRequest) GetMessageThreadId() int32`
+
+GetMessageThreadId returns the MessageThreadId field if non-nil, zero value otherwise.
+
+### GetMessageThreadIdOk
+
+`func (o *SendPaidMediaRequest) GetMessageThreadIdOk() (*int32, bool)`
+
+GetMessageThreadIdOk returns a tuple with the MessageThreadId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMessageThreadId
+
+`func (o *SendPaidMediaRequest) SetMessageThreadId(v int32)`
+
+SetMessageThreadId sets MessageThreadId field to given value.
+
+### HasMessageThreadId
+
+`func (o *SendPaidMediaRequest) HasMessageThreadId() bool`
+
+HasMessageThreadId returns a boolean if a field has been set.
+
+### GetDirectMessagesTopicId
+
+`func (o *SendPaidMediaRequest) GetDirectMessagesTopicId() int32`
+
+GetDirectMessagesTopicId returns the DirectMessagesTopicId field if non-nil, zero value otherwise.
+
+### GetDirectMessagesTopicIdOk
+
+`func (o *SendPaidMediaRequest) GetDirectMessagesTopicIdOk() (*int32, bool)`
+
+GetDirectMessagesTopicIdOk returns a tuple with the DirectMessagesTopicId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDirectMessagesTopicId
+
+`func (o *SendPaidMediaRequest) SetDirectMessagesTopicId(v int32)`
+
+SetDirectMessagesTopicId sets DirectMessagesTopicId field to given value.
+
+### HasDirectMessagesTopicId
+
+`func (o *SendPaidMediaRequest) HasDirectMessagesTopicId() bool`
+
+HasDirectMessagesTopicId returns a boolean if a field has been set.
 
 ### GetStarCount
 
@@ -322,6 +375,31 @@ SetAllowPaidBroadcast sets AllowPaidBroadcast field to given value.
 `func (o *SendPaidMediaRequest) HasAllowPaidBroadcast() bool`
 
 HasAllowPaidBroadcast returns a boolean if a field has been set.
+
+### GetSuggestedPostParameters
+
+`func (o *SendPaidMediaRequest) GetSuggestedPostParameters() SuggestedPostParameters`
+
+GetSuggestedPostParameters returns the SuggestedPostParameters field if non-nil, zero value otherwise.
+
+### GetSuggestedPostParametersOk
+
+`func (o *SendPaidMediaRequest) GetSuggestedPostParametersOk() (*SuggestedPostParameters, bool)`
+
+GetSuggestedPostParametersOk returns a tuple with the SuggestedPostParameters field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSuggestedPostParameters
+
+`func (o *SendPaidMediaRequest) SetSuggestedPostParameters(v SuggestedPostParameters)`
+
+SetSuggestedPostParameters sets SuggestedPostParameters field to given value.
+
+### HasSuggestedPostParameters
+
+`func (o *SendPaidMediaRequest) HasSuggestedPostParameters() bool`
+
+HasSuggestedPostParameters returns a boolean if a field has been set.
 
 ### GetReplyParameters
 

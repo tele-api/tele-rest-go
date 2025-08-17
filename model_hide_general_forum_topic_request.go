@@ -5,8 +5,8 @@
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
+ *    * - **Version**: 9.2.0
+ *    * - **Modified**: 2025-08-17T02:10:51.183543732Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -55,7 +55,7 @@ var _ MappedNullable = &HideGeneralForumTopicRequest{}
 
 // HideGeneralForumTopicRequest Request parameters for hideGeneralForumTopic
 type HideGeneralForumTopicRequest struct {
-	ChatId BotCommandScopeChatChatId `json:"chat_id"`
+	ChatId RestrictChatMemberRequestChatId `json:"chat_id"`
 }
 
 type _HideGeneralForumTopicRequest HideGeneralForumTopicRequest
@@ -64,7 +64,7 @@ type _HideGeneralForumTopicRequest HideGeneralForumTopicRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewHideGeneralForumTopicRequest(chatId BotCommandScopeChatChatId) *HideGeneralForumTopicRequest {
+func NewHideGeneralForumTopicRequest(chatId RestrictChatMemberRequestChatId) *HideGeneralForumTopicRequest {
 	this := HideGeneralForumTopicRequest{}
 	this.ChatId = chatId
 	return &this
@@ -79,9 +79,9 @@ func NewHideGeneralForumTopicRequestWithDefaults() *HideGeneralForumTopicRequest
 }
 
 // GetChatId returns the ChatId field value
-func (o *HideGeneralForumTopicRequest) GetChatId() BotCommandScopeChatChatId {
+func (o *HideGeneralForumTopicRequest) GetChatId() RestrictChatMemberRequestChatId {
 	if o == nil {
-		var ret BotCommandScopeChatChatId
+		var ret RestrictChatMemberRequestChatId
 		return ret
 	}
 
@@ -90,7 +90,7 @@ func (o *HideGeneralForumTopicRequest) GetChatId() BotCommandScopeChatChatId {
 
 // GetChatIdOk returns a tuple with the ChatId field value
 // and a boolean to check if the value has been set.
-func (o *HideGeneralForumTopicRequest) GetChatIdOk() (*BotCommandScopeChatChatId, bool) {
+func (o *HideGeneralForumTopicRequest) GetChatIdOk() (*RestrictChatMemberRequestChatId, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -98,7 +98,7 @@ func (o *HideGeneralForumTopicRequest) GetChatIdOk() (*BotCommandScopeChatChatId
 }
 
 // SetChatId sets field value
-func (o *HideGeneralForumTopicRequest) SetChatId(v BotCommandScopeChatChatId) {
+func (o *HideGeneralForumTopicRequest) SetChatId(v RestrictChatMemberRequestChatId) {
 	o.ChatId = v
 }
 

@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ChatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
+**ChatId** | [**RestrictChatMemberRequestChatId**](RestrictChatMemberRequestChatId.md) |  | 
 **Name** | **string** | New topic name, 1-128 characters | 
 
 ## Methods
 
 ### NewEditGeneralForumTopicRequest
 
-`func NewEditGeneralForumTopicRequest(chatId BotCommandScopeChatChatId, name string, ) *EditGeneralForumTopicRequest`
+`func NewEditGeneralForumTopicRequest(chatId RestrictChatMemberRequestChatId, name string, ) *EditGeneralForumTopicRequest`
 
 NewEditGeneralForumTopicRequest instantiates a new EditGeneralForumTopicRequest object
 This constructor will assign default values to properties that have it defined,
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetChatId
 
-`func (o *EditGeneralForumTopicRequest) GetChatId() BotCommandScopeChatChatId`
+`func (o *EditGeneralForumTopicRequest) GetChatId() RestrictChatMemberRequestChatId`
 
 GetChatId returns the ChatId field if non-nil, zero value otherwise.
 
 ### GetChatIdOk
 
-`func (o *EditGeneralForumTopicRequest) GetChatIdOk() (*BotCommandScopeChatChatId, bool)`
+`func (o *EditGeneralForumTopicRequest) GetChatIdOk() (*RestrictChatMemberRequestChatId, bool)`
 
 GetChatIdOk returns a tuple with the ChatId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChatId
 
-`func (o *EditGeneralForumTopicRequest) SetChatId(v BotCommandScopeChatChatId)`
+`func (o *EditGeneralForumTopicRequest) SetChatId(v RestrictChatMemberRequestChatId)`
 
 SetChatId sets ChatId field to given value.
 

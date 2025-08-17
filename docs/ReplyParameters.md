@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **QuoteParseMode** | Pointer to **string** | *Optional*. Mode for parsing entities in the quote. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. | [optional] 
 **QuoteEntities** | Pointer to [**[]MessageEntity**](MessageEntity.md) | *Optional*. A JSON-serialized list of special entities that appear in the quote. It can be specified instead of *quote\\_parse\\_mode*. | [optional] 
 **QuotePosition** | Pointer to **int32** | *Optional*. Position of the quote in the original message in UTF-16 code units | [optional] 
+**ChecklistTaskId** | Pointer to **int32** | *Optional*. Identifier of the specific checklist task to be replied to | [optional] 
 
 ## Methods
 
@@ -200,6 +201,31 @@ SetQuotePosition sets QuotePosition field to given value.
 `func (o *ReplyParameters) HasQuotePosition() bool`
 
 HasQuotePosition returns a boolean if a field has been set.
+
+### GetChecklistTaskId
+
+`func (o *ReplyParameters) GetChecklistTaskId() int32`
+
+GetChecklistTaskId returns the ChecklistTaskId field if non-nil, zero value otherwise.
+
+### GetChecklistTaskIdOk
+
+`func (o *ReplyParameters) GetChecklistTaskIdOk() (*int32, bool)`
+
+GetChecklistTaskIdOk returns a tuple with the ChecklistTaskId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChecklistTaskId
+
+`func (o *ReplyParameters) SetChecklistTaskId(v int32)`
+
+SetChecklistTaskId sets ChecklistTaskId field to given value.
+
+### HasChecklistTaskId
+
+`func (o *ReplyParameters) HasChecklistTaskId() bool`
+
+HasChecklistTaskId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

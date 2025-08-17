@@ -5,8 +5,8 @@
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
+ *    * - **Version**: 9.2.0
+ *    * - **Modified**: 2025-08-17T02:10:51.183543732Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -57,7 +57,7 @@ var _ MappedNullable = &SendGameRequest{}
 type SendGameRequest struct {
 	// Unique identifier of the business connection on behalf of which the message will be sent
 	BusinessConnectionId *string `json:"business_connection_id,omitempty"`
-	// Unique identifier for the target chat
+	// Unique identifier for the target chat. Games can't be sent to channel direct messages chats and channel chats.
 	ChatId int32 `json:"chat_id"`
 	// Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
 	MessageThreadId *int32 `json:"message_thread_id,omitempty"`

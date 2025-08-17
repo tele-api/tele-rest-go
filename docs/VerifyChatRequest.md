@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ChatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
+**ChatId** | [**VerifyChatRequestChatId**](VerifyChatRequestChatId.md) |  | 
 **CustomDescription** | Pointer to **string** | Custom description for the verification; 0-70 characters. Must be empty if the organization isn&#39;t allowed to provide a custom verification description. | [optional] 
 
 ## Methods
 
 ### NewVerifyChatRequest
 
-`func NewVerifyChatRequest(chatId SendMessageRequestChatId, ) *VerifyChatRequest`
+`func NewVerifyChatRequest(chatId VerifyChatRequestChatId, ) *VerifyChatRequest`
 
 NewVerifyChatRequest instantiates a new VerifyChatRequest object
 This constructor will assign default values to properties that have it defined,
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetChatId
 
-`func (o *VerifyChatRequest) GetChatId() SendMessageRequestChatId`
+`func (o *VerifyChatRequest) GetChatId() VerifyChatRequestChatId`
 
 GetChatId returns the ChatId field if non-nil, zero value otherwise.
 
 ### GetChatIdOk
 
-`func (o *VerifyChatRequest) GetChatIdOk() (*SendMessageRequestChatId, bool)`
+`func (o *VerifyChatRequest) GetChatIdOk() (*VerifyChatRequestChatId, bool)`
 
 GetChatIdOk returns a tuple with the ChatId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChatId
 
-`func (o *VerifyChatRequest) SetChatId(v SendMessageRequestChatId)`
+`func (o *VerifyChatRequest) SetChatId(v VerifyChatRequestChatId)`
 
 SetChatId sets ChatId field to given value.
 

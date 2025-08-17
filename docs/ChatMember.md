@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **CanEditMessages** | Pointer to **bool** | *Optional*. *True*, if the administrator can edit messages of other users and can pin messages; for channels only | [optional] 
 **CanPinMessages** | **bool** | *True*, if the user is allowed to pin messages | 
 **CanManageTopics** | **bool** | *True*, if the user is allowed to create forum topics | 
+**CanManageDirectMessages** | Pointer to **bool** | *Optional*. *True*, if the administrator can manage direct messages of the channel and decline suggested posts; for channels only | [optional] 
 **UntilDate** | **int32** | Date when restrictions will be lifted for this user; Unix time. If 0, then the user is banned forever | 
 **IsMember** | **bool** | *True*, if the user is a member of the chat at the moment of the request | 
 **CanSendMessages** | **bool** | *True*, if the user is allowed to send text messages, contacts, giveaways, giveaway winners, invoices, locations and venues | 
@@ -449,6 +450,31 @@ and a boolean to check if the value has been set.
 
 SetCanManageTopics sets CanManageTopics field to given value.
 
+
+### GetCanManageDirectMessages
+
+`func (o *ChatMember) GetCanManageDirectMessages() bool`
+
+GetCanManageDirectMessages returns the CanManageDirectMessages field if non-nil, zero value otherwise.
+
+### GetCanManageDirectMessagesOk
+
+`func (o *ChatMember) GetCanManageDirectMessagesOk() (*bool, bool)`
+
+GetCanManageDirectMessagesOk returns a tuple with the CanManageDirectMessages field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCanManageDirectMessages
+
+`func (o *ChatMember) SetCanManageDirectMessages(v bool)`
+
+SetCanManageDirectMessages sets CanManageDirectMessages field to given value.
+
+### HasCanManageDirectMessages
+
+`func (o *ChatMember) HasCanManageDirectMessages() bool`
+
+HasCanManageDirectMessages returns a boolean if a field has been set.
 
 ### GetUntilDate
 

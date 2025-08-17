@@ -5,8 +5,8 @@
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
+ *    * - **Version**: 9.2.0
+ *    * - **Modified**: 2025-08-17T02:10:51.183543732Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -50,7 +50,7 @@ import (
 	"gopkg.in/validator.v2"
 )
 
-// BotCommandScopeChatChatId - Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)
+// BotCommandScopeChatChatId - Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`). Channel direct messages chats and channel chats aren't supported.
 type BotCommandScopeChatChatId struct {
 	Int32 *int32
 	String *string

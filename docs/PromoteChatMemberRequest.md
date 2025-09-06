@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **CanEditMessages** | Pointer to **bool** | Pass *True* if the administrator can edit messages of other users and can pin messages; for channels only | [optional] 
 **CanPinMessages** | Pointer to **bool** | Pass *True* if the administrator can pin messages; for supergroups only | [optional] 
 **CanManageTopics** | Pointer to **bool** | Pass *True* if the user is allowed to create, rename, close, and reopen forum topics; for supergroups only | [optional] 
+**CanManageDirectMessages** | Pointer to **bool** | Pass *True* if the administrator can manage direct messages within the channel and decline suggested posts; for channels only | [optional] 
 
 ## Methods
 
@@ -455,6 +456,31 @@ SetCanManageTopics sets CanManageTopics field to given value.
 `func (o *PromoteChatMemberRequest) HasCanManageTopics() bool`
 
 HasCanManageTopics returns a boolean if a field has been set.
+
+### GetCanManageDirectMessages
+
+`func (o *PromoteChatMemberRequest) GetCanManageDirectMessages() bool`
+
+GetCanManageDirectMessages returns the CanManageDirectMessages field if non-nil, zero value otherwise.
+
+### GetCanManageDirectMessagesOk
+
+`func (o *PromoteChatMemberRequest) GetCanManageDirectMessagesOk() (*bool, bool)`
+
+GetCanManageDirectMessagesOk returns a tuple with the CanManageDirectMessages field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCanManageDirectMessages
+
+`func (o *PromoteChatMemberRequest) SetCanManageDirectMessages(v bool)`
+
+SetCanManageDirectMessages sets CanManageDirectMessages field to given value.
+
+### HasCanManageDirectMessages
+
+`func (o *PromoteChatMemberRequest) HasCanManageDirectMessages() bool`
+
+HasCanManageDirectMessages returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

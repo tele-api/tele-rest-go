@@ -5,8 +5,8 @@
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
+ *    * - **Version**: 9.2.0
+ *    * - **Modified**: 2025-09-06T05:32:05.180087835Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -155,6 +155,20 @@ No more than **50** results per query are allowed.
 	// PostApproveChatJoinRequestExecute executes the request
 	//  @return ApproveChatJoinRequestResponse
 	PostApproveChatJoinRequestExecute(r ApiPostApproveChatJoinRequestRequest) (*ApproveChatJoinRequestResponse, *http.Response, error)
+
+	/*
+	PostApproveSuggestedPost approveSuggestedPost
+
+	Use this method to approve a suggested post in a direct messages chat. The bot must have the 'can\_post\_messages' administrator right in the corresponding channel chat. Returns *True* on success.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostApproveSuggestedPostRequest
+	*/
+	PostApproveSuggestedPost(ctx context.Context) ApiPostApproveSuggestedPostRequest
+
+	// PostApproveSuggestedPostExecute executes the request
+	//  @return ApproveSuggestedPostResponse
+	PostApproveSuggestedPostExecute(r ApiPostApproveSuggestedPostRequest) (*ApproveSuggestedPostResponse, *http.Response, error)
 
 	/*
 	PostBanChatMember banChatMember
@@ -353,6 +367,20 @@ No more than **50** results per query are allowed.
 	PostDeclineChatJoinRequestExecute(r ApiPostDeclineChatJoinRequestRequest) (*DeclineChatJoinRequestResponse, *http.Response, error)
 
 	/*
+	PostDeclineSuggestedPost declineSuggestedPost
+
+	Use this method to decline a suggested post in a direct messages chat. The bot must have the 'can\_manage\_direct\_messages' administrator right in the corresponding channel chat. Returns *True* on success.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostDeclineSuggestedPostRequest
+	*/
+	PostDeclineSuggestedPost(ctx context.Context) ApiPostDeclineSuggestedPostRequest
+
+	// PostDeclineSuggestedPostExecute executes the request
+	//  @return DeclineSuggestedPostResponse
+	PostDeclineSuggestedPostExecute(r ApiPostDeclineSuggestedPostRequest) (*DeclineSuggestedPostResponse, *http.Response, error)
+
+	/*
 	PostDeleteBusinessMessages deleteBusinessMessages
 
 	Delete messages on behalf of a business account. Requires the *can\_delete\_sent\_messages* business bot right to delete messages sent by the bot itself, or the *can\_delete\_all\_messages* business bot right to delete any message. Returns *True* on success.
@@ -419,7 +447,8 @@ No more than **50** results per query are allowed.
 \- Bots can delete incoming messages in private chats.  
 \- Bots granted *can\_post\_messages* permissions can delete outgoing messages in channels.  
 \- If the bot is an administrator of a group, it can delete any message there.  
-\- If the bot has *can\_delete\_messages* permission in a supergroup or a channel, it can delete any message there.  
+\- If the bot has *can\_delete\_messages* administrator right in a supergroup or a channel, it can delete any message there.  
+\- If the bot has *can\_manage\_direct\_messages* administrator right in a channel, it can delete any message in the corresponding direct messages chat.  
 Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1150,7 +1179,7 @@ This method will currently return scores for the target user, plus two of their 
 	/*
 	PostPinChatMessage pinChatMessage
 
-	Use this method to add a message to the list of pinned messages in a chat. If the chat is not a private chat, the bot must be an administrator in the chat for this to work and must have the 'can\_pin\_messages' administrator right in a supergroup or 'can\_edit\_messages' administrator right in a channel. Returns *True* on success.
+	Use this method to add a message to the list of pinned messages in a chat. In private chats and channel direct messages chats, all non-service messages can be pinned. Conversely, the bot must be an administrator with the 'can\_pin\_messages' right or the 'can\_edit\_messages' right to pin messages in groups and channels respectively. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiPostPinChatMessageRequest
@@ -1506,7 +1535,7 @@ We only recommend using this method when a response from the bot will take a **n
 	/*
 	PostSendMediaGroup sendMediaGroup
 
-	Use this method to send a group of photos, videos, documents or audios as an album. Documents and audio files can be only grouped in an album with messages of the same type. On success, an array of [Messages](https://core.telegram.org/bots/api/#message) that were sent is returned.
+	Use this method to send a group of photos, videos, documents or audios as an album. Documents and audio files can be only grouped in an album with messages of the same type. On success, an array of [Message](https://core.telegram.org/bots/api/#message) objects that were sent is returned.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiPostSendMediaGroupRequest
@@ -2154,7 +2183,7 @@ If you'd like to make sure that the webhook was set by you, you can specify secr
 	/*
 	PostUnpinAllChatMessages unpinAllChatMessages
 
-	Use this method to clear the list of pinned messages in a chat. If the chat is not a private chat, the bot must be an administrator in the chat for this to work and must have the 'can\_pin\_messages' administrator right in a supergroup or 'can\_edit\_messages' administrator right in a channel. Returns *True* on success.
+	Use this method to clear the list of pinned messages in a chat. In private chats and channel direct messages chats, no additional rights are required to unpin all pinned messages. Conversely, the bot must be an administrator with the 'can\_pin\_messages' right or the 'can\_edit\_messages' right to unpin all pinned messages in groups and channels respectively. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiPostUnpinAllChatMessagesRequest
@@ -2196,7 +2225,7 @@ If you'd like to make sure that the webhook was set by you, you can specify secr
 	/*
 	PostUnpinChatMessage unpinChatMessage
 
-	Use this method to remove a message from the list of pinned messages in a chat. If the chat is not a private chat, the bot must be an administrator in the chat for this to work and must have the 'can\_pin\_messages' administrator right in a supergroup or 'can\_edit\_messages' administrator right in a channel. Returns *True* on success.
+	Use this method to remove a message from the list of pinned messages in a chat. In private chats and channel direct messages chats, all messages can be unpinned. Conversely, the bot must be an administrator with the 'can\_pin\_messages' right or the 'can\_edit\_messages' right to unpin messages in groups and channels respectively. Returns *True* on success.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiPostUnpinChatMessageRequest
@@ -3360,6 +3389,156 @@ func (a *DefaultAPIService) PostApproveChatJoinRequestExecute(r ApiPostApproveCh
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiPostApproveSuggestedPostRequest struct {
+	ctx context.Context
+	ApiService DefaultAPI
+	chatId *int32
+	messageId *int32
+	sendDate *int32
+}
+
+// Unique identifier for the target direct messages chat
+func (r ApiPostApproveSuggestedPostRequest) ChatId(chatId int32) ApiPostApproveSuggestedPostRequest {
+	r.chatId = &chatId
+	return r
+}
+
+// Identifier of a suggested post message to approve
+func (r ApiPostApproveSuggestedPostRequest) MessageId(messageId int32) ApiPostApproveSuggestedPostRequest {
+	r.messageId = &messageId
+	return r
+}
+
+// Point in time (Unix timestamp) when the post is expected to be published; omit if the date has already been specified when the suggested post was created. If specified, then the date must be not more than 2678400 seconds (30 days) in the future
+func (r ApiPostApproveSuggestedPostRequest) SendDate(sendDate int32) ApiPostApproveSuggestedPostRequest {
+	r.sendDate = &sendDate
+	return r
+}
+
+func (r ApiPostApproveSuggestedPostRequest) Execute() (*ApproveSuggestedPostResponse, *http.Response, error) {
+	return r.ApiService.PostApproveSuggestedPostExecute(r)
+}
+
+/*
+PostApproveSuggestedPost approveSuggestedPost
+
+Use this method to approve a suggested post in a direct messages chat. The bot must have the 'can\_post\_messages' administrator right in the corresponding channel chat. Returns *True* on success.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPostApproveSuggestedPostRequest
+*/
+func (a *DefaultAPIService) PostApproveSuggestedPost(ctx context.Context) ApiPostApproveSuggestedPostRequest {
+	return ApiPostApproveSuggestedPostRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return ApproveSuggestedPostResponse
+func (a *DefaultAPIService) PostApproveSuggestedPostExecute(r ApiPostApproveSuggestedPostRequest) (*ApproveSuggestedPostResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ApproveSuggestedPostResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostApproveSuggestedPost")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/approveSuggestedPost"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.chatId == nil {
+		return localVarReturnValue, nil, reportError("chatId is required and must be specified")
+	}
+	if r.messageId == nil {
+		return localVarReturnValue, nil, reportError("messageId is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/x-www-form-urlencoded", "multipart/form-data", "application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	parameterAddToHeaderOrQuery(localVarFormParams, "chat_id", r.chatId, "", "")
+	parameterAddToHeaderOrQuery(localVarFormParams, "message_id", r.messageId, "", "")
+	if r.sendDate != nil {
+		parameterAddToHeaderOrQuery(localVarFormParams, "send_date", r.sendDate, "", "")
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiPostBanChatMemberRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
@@ -3779,11 +3958,11 @@ func (a *DefaultAPIService) PostCloseExecute(r ApiPostCloseRequest) (*CloseRespo
 type ApiPostCloseForumTopicRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *BotCommandScopeChatChatId
+	chatId *RestrictChatMemberRequestChatId
 	messageThreadId *int32
 }
 
-func (r ApiPostCloseForumTopicRequest) ChatId(chatId BotCommandScopeChatChatId) ApiPostCloseForumTopicRequest {
+func (r ApiPostCloseForumTopicRequest) ChatId(chatId RestrictChatMemberRequestChatId) ApiPostCloseForumTopicRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -3918,10 +4097,10 @@ func (a *DefaultAPIService) PostCloseForumTopicExecute(r ApiPostCloseForumTopicR
 type ApiPostCloseGeneralForumTopicRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *BotCommandScopeChatChatId
+	chatId *RestrictChatMemberRequestChatId
 }
 
-func (r ApiPostCloseGeneralForumTopicRequest) ChatId(chatId BotCommandScopeChatChatId) ApiPostCloseGeneralForumTopicRequest {
+func (r ApiPostCloseGeneralForumTopicRequest) ChatId(chatId RestrictChatMemberRequestChatId) ApiPostCloseGeneralForumTopicRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -4190,6 +4369,7 @@ type ApiPostCopyMessageRequest struct {
 	fromChatId *ForwardMessageRequestFromChatId
 	messageId *int32
 	messageThreadId *int32
+	directMessagesTopicId *int32
 	videoStartTimestamp *int32
 	caption *string
 	parseMode *string
@@ -4198,6 +4378,7 @@ type ApiPostCopyMessageRequest struct {
 	disableNotification *bool
 	protectContent *bool
 	allowPaidBroadcast *bool
+	suggestedPostParameters *SuggestedPostParameters
 	replyParameters *ReplyParameters
 	replyMarkup *SendMessageRequestReplyMarkup
 }
@@ -4221,6 +4402,12 @@ func (r ApiPostCopyMessageRequest) MessageId(messageId int32) ApiPostCopyMessage
 // Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
 func (r ApiPostCopyMessageRequest) MessageThreadId(messageThreadId int32) ApiPostCopyMessageRequest {
 	r.messageThreadId = &messageThreadId
+	return r
+}
+
+// Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat
+func (r ApiPostCopyMessageRequest) DirectMessagesTopicId(directMessagesTopicId int32) ApiPostCopyMessageRequest {
+	r.directMessagesTopicId = &directMessagesTopicId
 	return r
 }
 
@@ -4269,6 +4456,11 @@ func (r ApiPostCopyMessageRequest) ProtectContent(protectContent bool) ApiPostCo
 // Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance
 func (r ApiPostCopyMessageRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiPostCopyMessageRequest {
 	r.allowPaidBroadcast = &allowPaidBroadcast
+	return r
+}
+
+func (r ApiPostCopyMessageRequest) SuggestedPostParameters(suggestedPostParameters SuggestedPostParameters) ApiPostCopyMessageRequest {
+	r.suggestedPostParameters = &suggestedPostParameters
 	return r
 }
 
@@ -4352,6 +4544,9 @@ func (a *DefaultAPIService) PostCopyMessageExecute(r ApiPostCopyMessageRequest) 
 	if r.messageThreadId != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "message_thread_id", r.messageThreadId, "", "")
 	}
+	if r.directMessagesTopicId != nil {
+		parameterAddToHeaderOrQuery(localVarFormParams, "direct_messages_topic_id", r.directMessagesTopicId, "", "")
+	}
 	parameterAddToHeaderOrQuery(localVarFormParams, "from_chat_id", r.fromChatId, "", "")
 	parameterAddToHeaderOrQuery(localVarFormParams, "message_id", r.messageId, "", "")
 	if r.videoStartTimestamp != nil {
@@ -4377,6 +4572,13 @@ func (a *DefaultAPIService) PostCopyMessageExecute(r ApiPostCopyMessageRequest) 
 	}
 	if r.allowPaidBroadcast != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "allow_paid_broadcast", r.allowPaidBroadcast, "", "")
+	}
+	if r.suggestedPostParameters != nil {
+		paramJson, err := parameterToJson(*r.suggestedPostParameters)
+		if err != nil {
+			return localVarReturnValue, nil, err
+		}
+		localVarFormParams.Add("suggested_post_parameters", paramJson)
 	}
 	if r.replyParameters != nil {
 		paramJson, err := parameterToJson(*r.replyParameters)
@@ -4455,6 +4657,7 @@ type ApiPostCopyMessagesRequest struct {
 	fromChatId *ForwardMessagesRequestFromChatId
 	messageIds *[]int32
 	messageThreadId *int32
+	directMessagesTopicId *int32
 	disableNotification *bool
 	protectContent *bool
 	removeCaption *bool
@@ -4479,6 +4682,12 @@ func (r ApiPostCopyMessagesRequest) MessageIds(messageIds []int32) ApiPostCopyMe
 // Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
 func (r ApiPostCopyMessagesRequest) MessageThreadId(messageThreadId int32) ApiPostCopyMessagesRequest {
 	r.messageThreadId = &messageThreadId
+	return r
+}
+
+// Identifier of the direct messages topic to which the messages will be sent; required if the messages are sent to a direct messages chat
+func (r ApiPostCopyMessagesRequest) DirectMessagesTopicId(directMessagesTopicId int32) ApiPostCopyMessagesRequest {
+	r.directMessagesTopicId = &directMessagesTopicId
 	return r
 }
 
@@ -4569,6 +4778,9 @@ func (a *DefaultAPIService) PostCopyMessagesExecute(r ApiPostCopyMessagesRequest
 	parameterAddToHeaderOrQuery(localVarFormParams, "chat_id", r.chatId, "", "")
 	if r.messageThreadId != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "message_thread_id", r.messageThreadId, "", "")
+	}
+	if r.directMessagesTopicId != nil {
+		parameterAddToHeaderOrQuery(localVarFormParams, "direct_messages_topic_id", r.directMessagesTopicId, "", "")
 	}
 	parameterAddToHeaderOrQuery(localVarFormParams, "from_chat_id", r.fromChatId, "", "")
 	parameterAddToHeaderOrQuery(localVarFormParams, "message_ids", r.messageIds, "", "csv")
@@ -4968,13 +5180,13 @@ func (a *DefaultAPIService) PostCreateChatSubscriptionInviteLinkExecute(r ApiPos
 type ApiPostCreateForumTopicRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *BotCommandScopeChatChatId
+	chatId *RestrictChatMemberRequestChatId
 	name *string
 	iconColor *int32
 	iconCustomEmojiId *string
 }
 
-func (r ApiPostCreateForumTopicRequest) ChatId(chatId BotCommandScopeChatChatId) ApiPostCreateForumTopicRequest {
+func (r ApiPostCreateForumTopicRequest) ChatId(chatId RestrictChatMemberRequestChatId) ApiPostCreateForumTopicRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -5818,6 +6030,156 @@ func (a *DefaultAPIService) PostDeclineChatJoinRequestExecute(r ApiPostDeclineCh
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiPostDeclineSuggestedPostRequest struct {
+	ctx context.Context
+	ApiService DefaultAPI
+	chatId *int32
+	messageId *int32
+	comment *string
+}
+
+// Unique identifier for the target direct messages chat
+func (r ApiPostDeclineSuggestedPostRequest) ChatId(chatId int32) ApiPostDeclineSuggestedPostRequest {
+	r.chatId = &chatId
+	return r
+}
+
+// Identifier of a suggested post message to decline
+func (r ApiPostDeclineSuggestedPostRequest) MessageId(messageId int32) ApiPostDeclineSuggestedPostRequest {
+	r.messageId = &messageId
+	return r
+}
+
+// Comment for the creator of the suggested post; 0-128 characters
+func (r ApiPostDeclineSuggestedPostRequest) Comment(comment string) ApiPostDeclineSuggestedPostRequest {
+	r.comment = &comment
+	return r
+}
+
+func (r ApiPostDeclineSuggestedPostRequest) Execute() (*DeclineSuggestedPostResponse, *http.Response, error) {
+	return r.ApiService.PostDeclineSuggestedPostExecute(r)
+}
+
+/*
+PostDeclineSuggestedPost declineSuggestedPost
+
+Use this method to decline a suggested post in a direct messages chat. The bot must have the 'can\_manage\_direct\_messages' administrator right in the corresponding channel chat. Returns *True* on success.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPostDeclineSuggestedPostRequest
+*/
+func (a *DefaultAPIService) PostDeclineSuggestedPost(ctx context.Context) ApiPostDeclineSuggestedPostRequest {
+	return ApiPostDeclineSuggestedPostRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return DeclineSuggestedPostResponse
+func (a *DefaultAPIService) PostDeclineSuggestedPostExecute(r ApiPostDeclineSuggestedPostRequest) (*DeclineSuggestedPostResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *DeclineSuggestedPostResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.PostDeclineSuggestedPost")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/declineSuggestedPost"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.chatId == nil {
+		return localVarReturnValue, nil, reportError("chatId is required and must be specified")
+	}
+	if r.messageId == nil {
+		return localVarReturnValue, nil, reportError("messageId is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/x-www-form-urlencoded", "multipart/form-data", "application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	parameterAddToHeaderOrQuery(localVarFormParams, "chat_id", r.chatId, "", "")
+	parameterAddToHeaderOrQuery(localVarFormParams, "message_id", r.messageId, "", "")
+	if r.comment != nil {
+		parameterAddToHeaderOrQuery(localVarFormParams, "comment", r.comment, "", "")
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiPostDeleteBusinessMessagesRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
@@ -6089,10 +6451,10 @@ func (a *DefaultAPIService) PostDeleteChatPhotoExecute(r ApiPostDeleteChatPhotoR
 type ApiPostDeleteChatStickerSetRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *BotCommandScopeChatChatId
+	chatId *RestrictChatMemberRequestChatId
 }
 
-func (r ApiPostDeleteChatStickerSetRequest) ChatId(chatId BotCommandScopeChatChatId) ApiPostDeleteChatStickerSetRequest {
+func (r ApiPostDeleteChatStickerSetRequest) ChatId(chatId RestrictChatMemberRequestChatId) ApiPostDeleteChatStickerSetRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -6217,11 +6579,11 @@ func (a *DefaultAPIService) PostDeleteChatStickerSetExecute(r ApiPostDeleteChatS
 type ApiPostDeleteForumTopicRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *BotCommandScopeChatChatId
+	chatId *RestrictChatMemberRequestChatId
 	messageThreadId *int32
 }
 
-func (r ApiPostDeleteForumTopicRequest) ChatId(chatId BotCommandScopeChatChatId) ApiPostDeleteForumTopicRequest {
+func (r ApiPostDeleteForumTopicRequest) ChatId(chatId RestrictChatMemberRequestChatId) ApiPostDeleteForumTopicRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -6386,7 +6748,8 @@ Use this method to delete a message, including service messages, with the follow
 \- Bots can delete incoming messages in private chats.  
 \- Bots granted *can\_post\_messages* permissions can delete outgoing messages in channels.  
 \- If the bot is an administrator of a group, it can delete any message there.  
-\- If the bot has *can\_delete\_messages* permission in a supergroup or a channel, it can delete any message there.  
+\- If the bot has *can\_delete\_messages* administrator right in a supergroup or a channel, it can delete any message there.  
+\- If the bot has *can\_manage\_direct\_messages* administrator right in a channel, it can delete any message in the corresponding direct messages chat.  
 Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -7638,13 +8001,13 @@ func (a *DefaultAPIService) PostEditChatSubscriptionInviteLinkExecute(r ApiPostE
 type ApiPostEditForumTopicRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *BotCommandScopeChatChatId
+	chatId *RestrictChatMemberRequestChatId
 	messageThreadId *int32
 	name *string
 	iconCustomEmojiId *string
 }
 
-func (r ApiPostEditForumTopicRequest) ChatId(chatId BotCommandScopeChatChatId) ApiPostEditForumTopicRequest {
+func (r ApiPostEditForumTopicRequest) ChatId(chatId RestrictChatMemberRequestChatId) ApiPostEditForumTopicRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -7797,11 +8160,11 @@ func (a *DefaultAPIService) PostEditForumTopicExecute(r ApiPostEditForumTopicReq
 type ApiPostEditGeneralForumTopicRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *BotCommandScopeChatChatId
+	chatId *RestrictChatMemberRequestChatId
 	name *string
 }
 
-func (r ApiPostEditGeneralForumTopicRequest) ChatId(chatId BotCommandScopeChatChatId) ApiPostEditGeneralForumTopicRequest {
+func (r ApiPostEditGeneralForumTopicRequest) ChatId(chatId RestrictChatMemberRequestChatId) ApiPostEditGeneralForumTopicRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -9621,9 +9984,11 @@ type ApiPostForwardMessageRequest struct {
 	fromChatId *ForwardMessageRequestFromChatId
 	messageId *int32
 	messageThreadId *int32
+	directMessagesTopicId *int32
 	videoStartTimestamp *int32
 	disableNotification *bool
 	protectContent *bool
+	suggestedPostParameters *SuggestedPostParameters
 }
 
 func (r ApiPostForwardMessageRequest) ChatId(chatId SendMessageRequestChatId) ApiPostForwardMessageRequest {
@@ -9648,6 +10013,12 @@ func (r ApiPostForwardMessageRequest) MessageThreadId(messageThreadId int32) Api
 	return r
 }
 
+// Identifier of the direct messages topic to which the message will be forwarded; required if the message is forwarded to a direct messages chat
+func (r ApiPostForwardMessageRequest) DirectMessagesTopicId(directMessagesTopicId int32) ApiPostForwardMessageRequest {
+	r.directMessagesTopicId = &directMessagesTopicId
+	return r
+}
+
 // New start timestamp for the forwarded video in the message
 func (r ApiPostForwardMessageRequest) VideoStartTimestamp(videoStartTimestamp int32) ApiPostForwardMessageRequest {
 	r.videoStartTimestamp = &videoStartTimestamp
@@ -9663,6 +10034,11 @@ func (r ApiPostForwardMessageRequest) DisableNotification(disableNotification bo
 // Protects the contents of the forwarded message from forwarding and saving
 func (r ApiPostForwardMessageRequest) ProtectContent(protectContent bool) ApiPostForwardMessageRequest {
 	r.protectContent = &protectContent
+	return r
+}
+
+func (r ApiPostForwardMessageRequest) SuggestedPostParameters(suggestedPostParameters SuggestedPostParameters) ApiPostForwardMessageRequest {
+	r.suggestedPostParameters = &suggestedPostParameters
 	return r
 }
 
@@ -9736,6 +10112,9 @@ func (a *DefaultAPIService) PostForwardMessageExecute(r ApiPostForwardMessageReq
 	if r.messageThreadId != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "message_thread_id", r.messageThreadId, "", "")
 	}
+	if r.directMessagesTopicId != nil {
+		parameterAddToHeaderOrQuery(localVarFormParams, "direct_messages_topic_id", r.directMessagesTopicId, "", "")
+	}
 	parameterAddToHeaderOrQuery(localVarFormParams, "from_chat_id", r.fromChatId, "", "")
 	if r.videoStartTimestamp != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "video_start_timestamp", r.videoStartTimestamp, "", "")
@@ -9745,6 +10124,13 @@ func (a *DefaultAPIService) PostForwardMessageExecute(r ApiPostForwardMessageReq
 	}
 	if r.protectContent != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "protect_content", r.protectContent, "", "")
+	}
+	if r.suggestedPostParameters != nil {
+		paramJson, err := parameterToJson(*r.suggestedPostParameters)
+		if err != nil {
+			return localVarReturnValue, nil, err
+		}
+		localVarFormParams.Add("suggested_post_parameters", paramJson)
 	}
 	parameterAddToHeaderOrQuery(localVarFormParams, "message_id", r.messageId, "", "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -9810,6 +10196,7 @@ type ApiPostForwardMessagesRequest struct {
 	fromChatId *ForwardMessagesRequestFromChatId
 	messageIds *[]int32
 	messageThreadId *int32
+	directMessagesTopicId *int32
 	disableNotification *bool
 	protectContent *bool
 }
@@ -9833,6 +10220,12 @@ func (r ApiPostForwardMessagesRequest) MessageIds(messageIds []int32) ApiPostFor
 // Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
 func (r ApiPostForwardMessagesRequest) MessageThreadId(messageThreadId int32) ApiPostForwardMessagesRequest {
 	r.messageThreadId = &messageThreadId
+	return r
+}
+
+// Identifier of the direct messages topic to which the messages will be forwarded; required if the messages are forwarded to a direct messages chat
+func (r ApiPostForwardMessagesRequest) DirectMessagesTopicId(directMessagesTopicId int32) ApiPostForwardMessagesRequest {
+	r.directMessagesTopicId = &directMessagesTopicId
 	return r
 }
 
@@ -9917,6 +10310,9 @@ func (a *DefaultAPIService) PostForwardMessagesExecute(r ApiPostForwardMessagesR
 	parameterAddToHeaderOrQuery(localVarFormParams, "chat_id", r.chatId, "", "")
 	if r.messageThreadId != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "message_thread_id", r.messageThreadId, "", "")
+	}
+	if r.directMessagesTopicId != nil {
+		parameterAddToHeaderOrQuery(localVarFormParams, "direct_messages_topic_id", r.directMessagesTopicId, "", "")
 	}
 	parameterAddToHeaderOrQuery(localVarFormParams, "from_chat_id", r.fromChatId, "", "")
 	parameterAddToHeaderOrQuery(localVarFormParams, "message_ids", r.messageIds, "", "csv")
@@ -10570,10 +10966,10 @@ func (a *DefaultAPIService) PostGetBusinessConnectionExecute(r ApiPostGetBusines
 type ApiPostGetChatRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *LeaveChatRequestChatId
+	chatId *GetChatRequestChatId
 }
 
-func (r ApiPostGetChatRequest) ChatId(chatId LeaveChatRequestChatId) ApiPostGetChatRequest {
+func (r ApiPostGetChatRequest) ChatId(chatId GetChatRequestChatId) ApiPostGetChatRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -10698,10 +11094,10 @@ func (a *DefaultAPIService) PostGetChatExecute(r ApiPostGetChatRequest) (*GetCha
 type ApiPostGetChatAdministratorsRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *LeaveChatRequestChatId
+	chatId *GetChatRequestChatId
 }
 
-func (r ApiPostGetChatAdministratorsRequest) ChatId(chatId LeaveChatRequestChatId) ApiPostGetChatAdministratorsRequest {
+func (r ApiPostGetChatAdministratorsRequest) ChatId(chatId GetChatRequestChatId) ApiPostGetChatAdministratorsRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -10826,11 +11222,11 @@ func (a *DefaultAPIService) PostGetChatAdministratorsExecute(r ApiPostGetChatAdm
 type ApiPostGetChatMemberRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *LeaveChatRequestChatId
+	chatId *GetChatRequestChatId
 	userId *int32
 }
 
-func (r ApiPostGetChatMemberRequest) ChatId(chatId LeaveChatRequestChatId) ApiPostGetChatMemberRequest {
+func (r ApiPostGetChatMemberRequest) ChatId(chatId GetChatRequestChatId) ApiPostGetChatMemberRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -10965,10 +11361,10 @@ func (a *DefaultAPIService) PostGetChatMemberExecute(r ApiPostGetChatMemberReque
 type ApiPostGetChatMemberCountRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *LeaveChatRequestChatId
+	chatId *GetChatRequestChatId
 }
 
-func (r ApiPostGetChatMemberCountRequest) ChatId(chatId LeaveChatRequestChatId) ApiPostGetChatMemberCountRequest {
+func (r ApiPostGetChatMemberCountRequest) ChatId(chatId GetChatRequestChatId) ApiPostGetChatMemberCountRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -13659,10 +14055,10 @@ func (a *DefaultAPIService) PostGiftPremiumSubscriptionExecute(r ApiPostGiftPrem
 type ApiPostHideGeneralForumTopicRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *BotCommandScopeChatChatId
+	chatId *RestrictChatMemberRequestChatId
 }
 
-func (r ApiPostHideGeneralForumTopicRequest) ChatId(chatId BotCommandScopeChatChatId) ApiPostHideGeneralForumTopicRequest {
+func (r ApiPostHideGeneralForumTopicRequest) ChatId(chatId RestrictChatMemberRequestChatId) ApiPostHideGeneralForumTopicRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -14069,7 +14465,7 @@ func (r ApiPostPinChatMessageRequest) Execute() (*PinChatMessageResponse, *http.
 /*
 PostPinChatMessage pinChatMessage
 
-Use this method to add a message to the list of pinned messages in a chat. If the chat is not a private chat, the bot must be an administrator in the chat for this to work and must have the 'can\_pin\_messages' administrator right in a supergroup or 'can\_edit\_messages' administrator right in a channel. Returns *True* on success.
+Use this method to add a message to the list of pinned messages in a chat. In private chats and channel direct messages chats, all non-service messages can be pinned. Conversely, the bot must be an administrator with the 'can\_pin\_messages' right or the 'can\_edit\_messages' right to pin messages in groups and channels respectively. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostPinChatMessageRequest
@@ -14419,6 +14815,7 @@ type ApiPostPromoteChatMemberRequest struct {
 	canEditMessages *bool
 	canPinMessages *bool
 	canManageTopics *bool
+	canManageDirectMessages *bool
 }
 
 func (r ApiPostPromoteChatMemberRequest) ChatId(chatId SendMessageRequestChatId) ApiPostPromoteChatMemberRequest {
@@ -14519,6 +14916,12 @@ func (r ApiPostPromoteChatMemberRequest) CanPinMessages(canPinMessages bool) Api
 // Pass *True* if the user is allowed to create, rename, close, and reopen forum topics; for supergroups only
 func (r ApiPostPromoteChatMemberRequest) CanManageTopics(canManageTopics bool) ApiPostPromoteChatMemberRequest {
 	r.canManageTopics = &canManageTopics
+	return r
+}
+
+// Pass *True* if the administrator can manage direct messages within the channel and decline suggested posts; for channels only
+func (r ApiPostPromoteChatMemberRequest) CanManageDirectMessages(canManageDirectMessages bool) ApiPostPromoteChatMemberRequest {
+	r.canManageDirectMessages = &canManageDirectMessages
 	return r
 }
 
@@ -14631,6 +15034,9 @@ func (a *DefaultAPIService) PostPromoteChatMemberExecute(r ApiPostPromoteChatMem
 	}
 	if r.canManageTopics != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "can_manage_topics", r.canManageTopics, "", "")
+	}
+	if r.canManageDirectMessages != nil {
+		parameterAddToHeaderOrQuery(localVarFormParams, "can_manage_direct_messages", r.canManageDirectMessages, "", "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -15378,11 +15784,11 @@ func (a *DefaultAPIService) PostRemoveUserVerificationExecute(r ApiPostRemoveUse
 type ApiPostReopenForumTopicRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *BotCommandScopeChatChatId
+	chatId *RestrictChatMemberRequestChatId
 	messageThreadId *int32
 }
 
-func (r ApiPostReopenForumTopicRequest) ChatId(chatId BotCommandScopeChatChatId) ApiPostReopenForumTopicRequest {
+func (r ApiPostReopenForumTopicRequest) ChatId(chatId RestrictChatMemberRequestChatId) ApiPostReopenForumTopicRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -15517,10 +15923,10 @@ func (a *DefaultAPIService) PostReopenForumTopicExecute(r ApiPostReopenForumTopi
 type ApiPostReopenGeneralForumTopicRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *BotCommandScopeChatChatId
+	chatId *RestrictChatMemberRequestChatId
 }
 
-func (r ApiPostReopenGeneralForumTopicRequest) ChatId(chatId BotCommandScopeChatChatId) ApiPostReopenGeneralForumTopicRequest {
+func (r ApiPostReopenGeneralForumTopicRequest) ChatId(chatId RestrictChatMemberRequestChatId) ApiPostReopenGeneralForumTopicRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -15806,14 +16212,14 @@ func (a *DefaultAPIService) PostReplaceStickerInSetExecute(r ApiPostReplaceStick
 type ApiPostRestrictChatMemberRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *BotCommandScopeChatChatId
+	chatId *RestrictChatMemberRequestChatId
 	userId *int32
 	permissions *ChatPermissions
 	useIndependentChatPermissions *bool
 	untilDate *int32
 }
 
-func (r ApiPostRestrictChatMemberRequest) ChatId(chatId BotCommandScopeChatChatId) ApiPostRestrictChatMemberRequest {
+func (r ApiPostRestrictChatMemberRequest) ChatId(chatId RestrictChatMemberRequestChatId) ApiPostRestrictChatMemberRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -16297,6 +16703,7 @@ type ApiPostSendAnimationRequest struct {
 	animation *string
 	businessConnectionId *string
 	messageThreadId *int32
+	directMessagesTopicId *int32
 	duration *int32
 	width *int32
 	height *int32
@@ -16310,6 +16717,7 @@ type ApiPostSendAnimationRequest struct {
 	protectContent *bool
 	allowPaidBroadcast *bool
 	messageEffectId *string
+	suggestedPostParameters *SuggestedPostParameters
 	replyParameters *ReplyParameters
 	replyMarkup *SendMessageRequestReplyMarkup
 }
@@ -16333,6 +16741,12 @@ func (r ApiPostSendAnimationRequest) BusinessConnectionId(businessConnectionId s
 // Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
 func (r ApiPostSendAnimationRequest) MessageThreadId(messageThreadId int32) ApiPostSendAnimationRequest {
 	r.messageThreadId = &messageThreadId
+	return r
+}
+
+// Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat
+func (r ApiPostSendAnimationRequest) DirectMessagesTopicId(directMessagesTopicId int32) ApiPostSendAnimationRequest {
+	r.directMessagesTopicId = &directMessagesTopicId
 	return r
 }
 
@@ -16410,6 +16824,11 @@ func (r ApiPostSendAnimationRequest) AllowPaidBroadcast(allowPaidBroadcast bool)
 // Unique identifier of the message effect to be added to the message; for private chats only
 func (r ApiPostSendAnimationRequest) MessageEffectId(messageEffectId string) ApiPostSendAnimationRequest {
 	r.messageEffectId = &messageEffectId
+	return r
+}
+
+func (r ApiPostSendAnimationRequest) SuggestedPostParameters(suggestedPostParameters SuggestedPostParameters) ApiPostSendAnimationRequest {
+	r.suggestedPostParameters = &suggestedPostParameters
 	return r
 }
 
@@ -16493,6 +16912,9 @@ func (a *DefaultAPIService) PostSendAnimationExecute(r ApiPostSendAnimationReque
 	if r.messageThreadId != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "message_thread_id", r.messageThreadId, "", "")
 	}
+	if r.directMessagesTopicId != nil {
+		parameterAddToHeaderOrQuery(localVarFormParams, "direct_messages_topic_id", r.directMessagesTopicId, "", "")
+	}
 	parameterAddToHeaderOrQuery(localVarFormParams, "animation", r.animation, "", "")
 	if r.duration != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "duration", r.duration, "", "")
@@ -16532,6 +16954,13 @@ func (a *DefaultAPIService) PostSendAnimationExecute(r ApiPostSendAnimationReque
 	}
 	if r.messageEffectId != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "message_effect_id", r.messageEffectId, "", "")
+	}
+	if r.suggestedPostParameters != nil {
+		paramJson, err := parameterToJson(*r.suggestedPostParameters)
+		if err != nil {
+			return localVarReturnValue, nil, err
+		}
+		localVarFormParams.Add("suggested_post_parameters", paramJson)
 	}
 	if r.replyParameters != nil {
 		paramJson, err := parameterToJson(*r.replyParameters)
@@ -16610,6 +17039,7 @@ type ApiPostSendAudioRequest struct {
 	audio *string
 	businessConnectionId *string
 	messageThreadId *int32
+	directMessagesTopicId *int32
 	caption *string
 	parseMode *string
 	captionEntities *[]MessageEntity
@@ -16621,6 +17051,7 @@ type ApiPostSendAudioRequest struct {
 	protectContent *bool
 	allowPaidBroadcast *bool
 	messageEffectId *string
+	suggestedPostParameters *SuggestedPostParameters
 	replyParameters *ReplyParameters
 	replyMarkup *SendMessageRequestReplyMarkup
 }
@@ -16644,6 +17075,12 @@ func (r ApiPostSendAudioRequest) BusinessConnectionId(businessConnectionId strin
 // Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
 func (r ApiPostSendAudioRequest) MessageThreadId(messageThreadId int32) ApiPostSendAudioRequest {
 	r.messageThreadId = &messageThreadId
+	return r
+}
+
+// Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat
+func (r ApiPostSendAudioRequest) DirectMessagesTopicId(directMessagesTopicId int32) ApiPostSendAudioRequest {
+	r.directMessagesTopicId = &directMessagesTopicId
 	return r
 }
 
@@ -16709,6 +17146,11 @@ func (r ApiPostSendAudioRequest) AllowPaidBroadcast(allowPaidBroadcast bool) Api
 // Unique identifier of the message effect to be added to the message; for private chats only
 func (r ApiPostSendAudioRequest) MessageEffectId(messageEffectId string) ApiPostSendAudioRequest {
 	r.messageEffectId = &messageEffectId
+	return r
+}
+
+func (r ApiPostSendAudioRequest) SuggestedPostParameters(suggestedPostParameters SuggestedPostParameters) ApiPostSendAudioRequest {
+	r.suggestedPostParameters = &suggestedPostParameters
 	return r
 }
 
@@ -16794,6 +17236,9 @@ func (a *DefaultAPIService) PostSendAudioExecute(r ApiPostSendAudioRequest) (*Se
 	if r.messageThreadId != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "message_thread_id", r.messageThreadId, "", "")
 	}
+	if r.directMessagesTopicId != nil {
+		parameterAddToHeaderOrQuery(localVarFormParams, "direct_messages_topic_id", r.directMessagesTopicId, "", "")
+	}
 	parameterAddToHeaderOrQuery(localVarFormParams, "audio", r.audio, "", "")
 	if r.caption != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "caption", r.caption, "", "")
@@ -16827,6 +17272,13 @@ func (a *DefaultAPIService) PostSendAudioExecute(r ApiPostSendAudioRequest) (*Se
 	}
 	if r.messageEffectId != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "message_effect_id", r.messageEffectId, "", "")
+	}
+	if r.suggestedPostParameters != nil {
+		paramJson, err := parameterToJson(*r.suggestedPostParameters)
+		if err != nil {
+			return localVarReturnValue, nil, err
+		}
+		localVarFormParams.Add("suggested_post_parameters", paramJson)
 	}
 	if r.replyParameters != nil {
 		paramJson, err := parameterToJson(*r.replyParameters)
@@ -16901,13 +17353,13 @@ func (a *DefaultAPIService) PostSendAudioExecute(r ApiPostSendAudioRequest) (*Se
 type ApiPostSendChatActionRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessageRequestChatId
+	chatId *SendChatActionRequestChatId
 	action *string
 	businessConnectionId *string
 	messageThreadId *int32
 }
 
-func (r ApiPostSendChatActionRequest) ChatId(chatId SendMessageRequestChatId) ApiPostSendChatActionRequest {
+func (r ApiPostSendChatActionRequest) ChatId(chatId SendChatActionRequestChatId) ApiPostSendChatActionRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -17275,12 +17727,14 @@ type ApiPostSendContactRequest struct {
 	firstName *string
 	businessConnectionId *string
 	messageThreadId *int32
+	directMessagesTopicId *int32
 	lastName *string
 	vcard *string
 	disableNotification *bool
 	protectContent *bool
 	allowPaidBroadcast *bool
 	messageEffectId *string
+	suggestedPostParameters *SuggestedPostParameters
 	replyParameters *ReplyParameters
 	replyMarkup *SendMessageRequestReplyMarkup
 }
@@ -17311,6 +17765,12 @@ func (r ApiPostSendContactRequest) BusinessConnectionId(businessConnectionId str
 // Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
 func (r ApiPostSendContactRequest) MessageThreadId(messageThreadId int32) ApiPostSendContactRequest {
 	r.messageThreadId = &messageThreadId
+	return r
+}
+
+// Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat
+func (r ApiPostSendContactRequest) DirectMessagesTopicId(directMessagesTopicId int32) ApiPostSendContactRequest {
+	r.directMessagesTopicId = &directMessagesTopicId
 	return r
 }
 
@@ -17347,6 +17807,11 @@ func (r ApiPostSendContactRequest) AllowPaidBroadcast(allowPaidBroadcast bool) A
 // Unique identifier of the message effect to be added to the message; for private chats only
 func (r ApiPostSendContactRequest) MessageEffectId(messageEffectId string) ApiPostSendContactRequest {
 	r.messageEffectId = &messageEffectId
+	return r
+}
+
+func (r ApiPostSendContactRequest) SuggestedPostParameters(suggestedPostParameters SuggestedPostParameters) ApiPostSendContactRequest {
+	r.suggestedPostParameters = &suggestedPostParameters
 	return r
 }
 
@@ -17433,6 +17898,9 @@ func (a *DefaultAPIService) PostSendContactExecute(r ApiPostSendContactRequest) 
 	if r.messageThreadId != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "message_thread_id", r.messageThreadId, "", "")
 	}
+	if r.directMessagesTopicId != nil {
+		parameterAddToHeaderOrQuery(localVarFormParams, "direct_messages_topic_id", r.directMessagesTopicId, "", "")
+	}
 	parameterAddToHeaderOrQuery(localVarFormParams, "phone_number", r.phoneNumber, "", "")
 	parameterAddToHeaderOrQuery(localVarFormParams, "first_name", r.firstName, "", "")
 	if r.lastName != nil {
@@ -17452,6 +17920,13 @@ func (a *DefaultAPIService) PostSendContactExecute(r ApiPostSendContactRequest) 
 	}
 	if r.messageEffectId != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "message_effect_id", r.messageEffectId, "", "")
+	}
+	if r.suggestedPostParameters != nil {
+		paramJson, err := parameterToJson(*r.suggestedPostParameters)
+		if err != nil {
+			return localVarReturnValue, nil, err
+		}
+		localVarFormParams.Add("suggested_post_parameters", paramJson)
 	}
 	if r.replyParameters != nil {
 		paramJson, err := parameterToJson(*r.replyParameters)
@@ -17529,11 +18004,13 @@ type ApiPostSendDiceRequest struct {
 	chatId *SendMessageRequestChatId
 	businessConnectionId *string
 	messageThreadId *int32
+	directMessagesTopicId *int32
 	emoji *string
 	disableNotification *bool
 	protectContent *bool
 	allowPaidBroadcast *bool
 	messageEffectId *string
+	suggestedPostParameters *SuggestedPostParameters
 	replyParameters *ReplyParameters
 	replyMarkup *SendMessageRequestReplyMarkup
 }
@@ -17552,6 +18029,12 @@ func (r ApiPostSendDiceRequest) BusinessConnectionId(businessConnectionId string
 // Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
 func (r ApiPostSendDiceRequest) MessageThreadId(messageThreadId int32) ApiPostSendDiceRequest {
 	r.messageThreadId = &messageThreadId
+	return r
+}
+
+// Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat
+func (r ApiPostSendDiceRequest) DirectMessagesTopicId(directMessagesTopicId int32) ApiPostSendDiceRequest {
+	r.directMessagesTopicId = &directMessagesTopicId
 	return r
 }
 
@@ -17582,6 +18065,11 @@ func (r ApiPostSendDiceRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiP
 // Unique identifier of the message effect to be added to the message; for private chats only
 func (r ApiPostSendDiceRequest) MessageEffectId(messageEffectId string) ApiPostSendDiceRequest {
 	r.messageEffectId = &messageEffectId
+	return r
+}
+
+func (r ApiPostSendDiceRequest) SuggestedPostParameters(suggestedPostParameters SuggestedPostParameters) ApiPostSendDiceRequest {
+	r.suggestedPostParameters = &suggestedPostParameters
 	return r
 }
 
@@ -17662,6 +18150,9 @@ func (a *DefaultAPIService) PostSendDiceExecute(r ApiPostSendDiceRequest) (*Send
 	if r.messageThreadId != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "message_thread_id", r.messageThreadId, "", "")
 	}
+	if r.directMessagesTopicId != nil {
+		parameterAddToHeaderOrQuery(localVarFormParams, "direct_messages_topic_id", r.directMessagesTopicId, "", "")
+	}
 	if r.emoji != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "emoji", r.emoji, "", "")
 	}
@@ -17676,6 +18167,13 @@ func (a *DefaultAPIService) PostSendDiceExecute(r ApiPostSendDiceRequest) (*Send
 	}
 	if r.messageEffectId != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "message_effect_id", r.messageEffectId, "", "")
+	}
+	if r.suggestedPostParameters != nil {
+		paramJson, err := parameterToJson(*r.suggestedPostParameters)
+		if err != nil {
+			return localVarReturnValue, nil, err
+		}
+		localVarFormParams.Add("suggested_post_parameters", paramJson)
 	}
 	if r.replyParameters != nil {
 		paramJson, err := parameterToJson(*r.replyParameters)
@@ -17754,6 +18252,7 @@ type ApiPostSendDocumentRequest struct {
 	document *string
 	businessConnectionId *string
 	messageThreadId *int32
+	directMessagesTopicId *int32
 	thumbnail *string
 	caption *string
 	parseMode *string
@@ -17763,6 +18262,7 @@ type ApiPostSendDocumentRequest struct {
 	protectContent *bool
 	allowPaidBroadcast *bool
 	messageEffectId *string
+	suggestedPostParameters *SuggestedPostParameters
 	replyParameters *ReplyParameters
 	replyMarkup *SendMessageRequestReplyMarkup
 }
@@ -17786,6 +18286,12 @@ func (r ApiPostSendDocumentRequest) BusinessConnectionId(businessConnectionId st
 // Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
 func (r ApiPostSendDocumentRequest) MessageThreadId(messageThreadId int32) ApiPostSendDocumentRequest {
 	r.messageThreadId = &messageThreadId
+	return r
+}
+
+// Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat
+func (r ApiPostSendDocumentRequest) DirectMessagesTopicId(directMessagesTopicId int32) ApiPostSendDocumentRequest {
+	r.directMessagesTopicId = &directMessagesTopicId
 	return r
 }
 
@@ -17839,6 +18345,11 @@ func (r ApiPostSendDocumentRequest) AllowPaidBroadcast(allowPaidBroadcast bool) 
 // Unique identifier of the message effect to be added to the message; for private chats only
 func (r ApiPostSendDocumentRequest) MessageEffectId(messageEffectId string) ApiPostSendDocumentRequest {
 	r.messageEffectId = &messageEffectId
+	return r
+}
+
+func (r ApiPostSendDocumentRequest) SuggestedPostParameters(suggestedPostParameters SuggestedPostParameters) ApiPostSendDocumentRequest {
+	r.suggestedPostParameters = &suggestedPostParameters
 	return r
 }
 
@@ -17922,6 +18433,9 @@ func (a *DefaultAPIService) PostSendDocumentExecute(r ApiPostSendDocumentRequest
 	if r.messageThreadId != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "message_thread_id", r.messageThreadId, "", "")
 	}
+	if r.directMessagesTopicId != nil {
+		parameterAddToHeaderOrQuery(localVarFormParams, "direct_messages_topic_id", r.directMessagesTopicId, "", "")
+	}
 	parameterAddToHeaderOrQuery(localVarFormParams, "document", r.document, "", "")
 	if r.thumbnail != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "thumbnail", r.thumbnail, "", "")
@@ -17949,6 +18463,13 @@ func (a *DefaultAPIService) PostSendDocumentExecute(r ApiPostSendDocumentRequest
 	}
 	if r.messageEffectId != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "message_effect_id", r.messageEffectId, "", "")
+	}
+	if r.suggestedPostParameters != nil {
+		paramJson, err := parameterToJson(*r.suggestedPostParameters)
+		if err != nil {
+			return localVarReturnValue, nil, err
+		}
+		localVarFormParams.Add("suggested_post_parameters", paramJson)
 	}
 	if r.replyParameters != nil {
 		paramJson, err := parameterToJson(*r.replyParameters)
@@ -18035,7 +18556,7 @@ type ApiPostSendGameRequest struct {
 	replyMarkup *InlineKeyboardMarkup
 }
 
-// Unique identifier for the target chat
+// Unique identifier for the target chat. Games can&#39;t be sent to channel direct messages chats and channel chats.
 func (r ApiPostSendGameRequest) ChatId(chatId int32) ApiPostSendGameRequest {
 	r.chatId = &chatId
 	return r
@@ -18448,6 +18969,7 @@ type ApiPostSendInvoiceRequest struct {
 	currency *string
 	prices *[]LabeledPrice
 	messageThreadId *int32
+	directMessagesTopicId *int32
 	providerToken *string
 	maxTipAmount *int32
 	suggestedTipAmounts *[]int32
@@ -18468,6 +18990,7 @@ type ApiPostSendInvoiceRequest struct {
 	protectContent *bool
 	allowPaidBroadcast *bool
 	messageEffectId *string
+	suggestedPostParameters *SuggestedPostParameters
 	replyParameters *ReplyParameters
 	replyMarkup *InlineKeyboardMarkup
 }
@@ -18510,6 +19033,12 @@ func (r ApiPostSendInvoiceRequest) Prices(prices []LabeledPrice) ApiPostSendInvo
 // Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
 func (r ApiPostSendInvoiceRequest) MessageThreadId(messageThreadId int32) ApiPostSendInvoiceRequest {
 	r.messageThreadId = &messageThreadId
+	return r
+}
+
+// Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat
+func (r ApiPostSendInvoiceRequest) DirectMessagesTopicId(directMessagesTopicId int32) ApiPostSendInvoiceRequest {
+	r.directMessagesTopicId = &directMessagesTopicId
 	return r
 }
 
@@ -18633,6 +19162,11 @@ func (r ApiPostSendInvoiceRequest) MessageEffectId(messageEffectId string) ApiPo
 	return r
 }
 
+func (r ApiPostSendInvoiceRequest) SuggestedPostParameters(suggestedPostParameters SuggestedPostParameters) ApiPostSendInvoiceRequest {
+	r.suggestedPostParameters = &suggestedPostParameters
+	return r
+}
+
 func (r ApiPostSendInvoiceRequest) ReplyParameters(replyParameters ReplyParameters) ApiPostSendInvoiceRequest {
 	r.replyParameters = &replyParameters
 	return r
@@ -18734,6 +19268,9 @@ func (a *DefaultAPIService) PostSendInvoiceExecute(r ApiPostSendInvoiceRequest) 
 	if r.messageThreadId != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "message_thread_id", r.messageThreadId, "", "")
 	}
+	if r.directMessagesTopicId != nil {
+		parameterAddToHeaderOrQuery(localVarFormParams, "direct_messages_topic_id", r.directMessagesTopicId, "", "")
+	}
 	parameterAddToHeaderOrQuery(localVarFormParams, "title", r.title, "", "")
 	parameterAddToHeaderOrQuery(localVarFormParams, "description", r.description, "", "")
 	parameterAddToHeaderOrQuery(localVarFormParams, "payload", r.payload, "", "")
@@ -18798,6 +19335,13 @@ func (a *DefaultAPIService) PostSendInvoiceExecute(r ApiPostSendInvoiceRequest) 
 	}
 	if r.messageEffectId != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "message_effect_id", r.messageEffectId, "", "")
+	}
+	if r.suggestedPostParameters != nil {
+		paramJson, err := parameterToJson(*r.suggestedPostParameters)
+		if err != nil {
+			return localVarReturnValue, nil, err
+		}
+		localVarFormParams.Add("suggested_post_parameters", paramJson)
 	}
 	if r.replyParameters != nil {
 		paramJson, err := parameterToJson(*r.replyParameters)
@@ -18877,6 +19421,7 @@ type ApiPostSendLocationRequest struct {
 	longitude *float32
 	businessConnectionId *string
 	messageThreadId *int32
+	directMessagesTopicId *int32
 	horizontalAccuracy *float32
 	livePeriod *int32
 	heading *int32
@@ -18885,6 +19430,7 @@ type ApiPostSendLocationRequest struct {
 	protectContent *bool
 	allowPaidBroadcast *bool
 	messageEffectId *string
+	suggestedPostParameters *SuggestedPostParameters
 	replyParameters *ReplyParameters
 	replyMarkup *SendMessageRequestReplyMarkup
 }
@@ -18915,6 +19461,12 @@ func (r ApiPostSendLocationRequest) BusinessConnectionId(businessConnectionId st
 // Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
 func (r ApiPostSendLocationRequest) MessageThreadId(messageThreadId int32) ApiPostSendLocationRequest {
 	r.messageThreadId = &messageThreadId
+	return r
+}
+
+// Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat
+func (r ApiPostSendLocationRequest) DirectMessagesTopicId(directMessagesTopicId int32) ApiPostSendLocationRequest {
+	r.directMessagesTopicId = &directMessagesTopicId
 	return r
 }
 
@@ -18963,6 +19515,11 @@ func (r ApiPostSendLocationRequest) AllowPaidBroadcast(allowPaidBroadcast bool) 
 // Unique identifier of the message effect to be added to the message; for private chats only
 func (r ApiPostSendLocationRequest) MessageEffectId(messageEffectId string) ApiPostSendLocationRequest {
 	r.messageEffectId = &messageEffectId
+	return r
+}
+
+func (r ApiPostSendLocationRequest) SuggestedPostParameters(suggestedPostParameters SuggestedPostParameters) ApiPostSendLocationRequest {
+	r.suggestedPostParameters = &suggestedPostParameters
 	return r
 }
 
@@ -19049,6 +19606,9 @@ func (a *DefaultAPIService) PostSendLocationExecute(r ApiPostSendLocationRequest
 	if r.messageThreadId != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "message_thread_id", r.messageThreadId, "", "")
 	}
+	if r.directMessagesTopicId != nil {
+		parameterAddToHeaderOrQuery(localVarFormParams, "direct_messages_topic_id", r.directMessagesTopicId, "", "")
+	}
 	parameterAddToHeaderOrQuery(localVarFormParams, "latitude", r.latitude, "", "")
 	parameterAddToHeaderOrQuery(localVarFormParams, "longitude", r.longitude, "", "")
 	if r.horizontalAccuracy != nil {
@@ -19074,6 +19634,13 @@ func (a *DefaultAPIService) PostSendLocationExecute(r ApiPostSendLocationRequest
 	}
 	if r.messageEffectId != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "message_effect_id", r.messageEffectId, "", "")
+	}
+	if r.suggestedPostParameters != nil {
+		paramJson, err := parameterToJson(*r.suggestedPostParameters)
+		if err != nil {
+			return localVarReturnValue, nil, err
+		}
+		localVarFormParams.Add("suggested_post_parameters", paramJson)
 	}
 	if r.replyParameters != nil {
 		paramJson, err := parameterToJson(*r.replyParameters)
@@ -19152,6 +19719,7 @@ type ApiPostSendMediaGroupRequest struct {
 	media *[]SendMediaGroupRequestMediaInner
 	businessConnectionId *string
 	messageThreadId *int32
+	directMessagesTopicId *int32
 	disableNotification *bool
 	protectContent *bool
 	allowPaidBroadcast *bool
@@ -19179,6 +19747,12 @@ func (r ApiPostSendMediaGroupRequest) BusinessConnectionId(businessConnectionId 
 // Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
 func (r ApiPostSendMediaGroupRequest) MessageThreadId(messageThreadId int32) ApiPostSendMediaGroupRequest {
 	r.messageThreadId = &messageThreadId
+	return r
+}
+
+// Identifier of the direct messages topic to which the messages will be sent; required if the messages are sent to a direct messages chat
+func (r ApiPostSendMediaGroupRequest) DirectMessagesTopicId(directMessagesTopicId int32) ApiPostSendMediaGroupRequest {
+	r.directMessagesTopicId = &directMessagesTopicId
 	return r
 }
 
@@ -19218,7 +19792,7 @@ func (r ApiPostSendMediaGroupRequest) Execute() (*SendMediaGroupResponse, *http.
 /*
 PostSendMediaGroup sendMediaGroup
 
-Use this method to send a group of photos, videos, documents or audios as an album. Documents and audio files can be only grouped in an album with messages of the same type. On success, an array of [Messages](https://core.telegram.org/bots/api/#message) that were sent is returned.
+Use this method to send a group of photos, videos, documents or audios as an album. Documents and audio files can be only grouped in an album with messages of the same type. On success, an array of [Message](https://core.telegram.org/bots/api/#message) objects that were sent is returned.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostSendMediaGroupRequest
@@ -19280,6 +19854,9 @@ func (a *DefaultAPIService) PostSendMediaGroupExecute(r ApiPostSendMediaGroupReq
 	parameterAddToHeaderOrQuery(localVarFormParams, "chat_id", r.chatId, "", "")
 	if r.messageThreadId != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "message_thread_id", r.messageThreadId, "", "")
+	}
+	if r.directMessagesTopicId != nil {
+		parameterAddToHeaderOrQuery(localVarFormParams, "direct_messages_topic_id", r.directMessagesTopicId, "", "")
 	}
 	parameterAddToHeaderOrQuery(localVarFormParams, "media", r.media, "", "csv")
 	if r.disableNotification != nil {
@@ -19364,6 +19941,7 @@ type ApiPostSendMessageRequest struct {
 	text *string
 	businessConnectionId *string
 	messageThreadId *int32
+	directMessagesTopicId *int32
 	parseMode *string
 	entities *[]MessageEntity
 	linkPreviewOptions *LinkPreviewOptions
@@ -19371,6 +19949,7 @@ type ApiPostSendMessageRequest struct {
 	protectContent *bool
 	allowPaidBroadcast *bool
 	messageEffectId *string
+	suggestedPostParameters *SuggestedPostParameters
 	replyParameters *ReplyParameters
 	replyMarkup *SendMessageRequestReplyMarkup
 }
@@ -19395,6 +19974,12 @@ func (r ApiPostSendMessageRequest) BusinessConnectionId(businessConnectionId str
 // Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
 func (r ApiPostSendMessageRequest) MessageThreadId(messageThreadId int32) ApiPostSendMessageRequest {
 	r.messageThreadId = &messageThreadId
+	return r
+}
+
+// Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat
+func (r ApiPostSendMessageRequest) DirectMessagesTopicId(directMessagesTopicId int32) ApiPostSendMessageRequest {
+	r.directMessagesTopicId = &directMessagesTopicId
 	return r
 }
 
@@ -19436,6 +20021,11 @@ func (r ApiPostSendMessageRequest) AllowPaidBroadcast(allowPaidBroadcast bool) A
 // Unique identifier of the message effect to be added to the message; for private chats only
 func (r ApiPostSendMessageRequest) MessageEffectId(messageEffectId string) ApiPostSendMessageRequest {
 	r.messageEffectId = &messageEffectId
+	return r
+}
+
+func (r ApiPostSendMessageRequest) SuggestedPostParameters(suggestedPostParameters SuggestedPostParameters) ApiPostSendMessageRequest {
+	r.suggestedPostParameters = &suggestedPostParameters
 	return r
 }
 
@@ -19525,6 +20115,9 @@ func (a *DefaultAPIService) PostSendMessageExecute(r ApiPostSendMessageRequest) 
 	if r.messageThreadId != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "message_thread_id", r.messageThreadId, "", "")
 	}
+	if r.directMessagesTopicId != nil {
+		parameterAddToHeaderOrQuery(localVarFormParams, "direct_messages_topic_id", r.directMessagesTopicId, "", "")
+	}
 	parameterAddToHeaderOrQuery(localVarFormParams, "text", r.text, "", "")
 	if r.parseMode != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "parse_mode", r.parseMode, "", "")
@@ -19550,6 +20143,13 @@ func (a *DefaultAPIService) PostSendMessageExecute(r ApiPostSendMessageRequest) 
 	}
 	if r.messageEffectId != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "message_effect_id", r.messageEffectId, "", "")
+	}
+	if r.suggestedPostParameters != nil {
+		paramJson, err := parameterToJson(*r.suggestedPostParameters)
+		if err != nil {
+			return localVarReturnValue, nil, err
+		}
+		localVarFormParams.Add("suggested_post_parameters", paramJson)
 	}
 	if r.replyParameters != nil {
 		paramJson, err := parameterToJson(*r.replyParameters)
@@ -19628,6 +20228,8 @@ type ApiPostSendPaidMediaRequest struct {
 	starCount *int32
 	media *[]InputPaidMedia
 	businessConnectionId *string
+	messageThreadId *int32
+	directMessagesTopicId *int32
 	payload *string
 	caption *string
 	parseMode *string
@@ -19636,6 +20238,7 @@ type ApiPostSendPaidMediaRequest struct {
 	disableNotification *bool
 	protectContent *bool
 	allowPaidBroadcast *bool
+	suggestedPostParameters *SuggestedPostParameters
 	replyParameters *ReplyParameters
 	replyMarkup *SendMessageRequestReplyMarkup
 }
@@ -19660,6 +20263,18 @@ func (r ApiPostSendPaidMediaRequest) Media(media []InputPaidMedia) ApiPostSendPa
 // Unique identifier of the business connection on behalf of which the message will be sent
 func (r ApiPostSendPaidMediaRequest) BusinessConnectionId(businessConnectionId string) ApiPostSendPaidMediaRequest {
 	r.businessConnectionId = &businessConnectionId
+	return r
+}
+
+// Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
+func (r ApiPostSendPaidMediaRequest) MessageThreadId(messageThreadId int32) ApiPostSendPaidMediaRequest {
+	r.messageThreadId = &messageThreadId
+	return r
+}
+
+// Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat
+func (r ApiPostSendPaidMediaRequest) DirectMessagesTopicId(directMessagesTopicId int32) ApiPostSendPaidMediaRequest {
+	r.directMessagesTopicId = &directMessagesTopicId
 	return r
 }
 
@@ -19708,6 +20323,11 @@ func (r ApiPostSendPaidMediaRequest) ProtectContent(protectContent bool) ApiPost
 // Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance
 func (r ApiPostSendPaidMediaRequest) AllowPaidBroadcast(allowPaidBroadcast bool) ApiPostSendPaidMediaRequest {
 	r.allowPaidBroadcast = &allowPaidBroadcast
+	return r
+}
+
+func (r ApiPostSendPaidMediaRequest) SuggestedPostParameters(suggestedPostParameters SuggestedPostParameters) ApiPostSendPaidMediaRequest {
+	r.suggestedPostParameters = &suggestedPostParameters
 	return r
 }
 
@@ -19791,6 +20411,12 @@ func (a *DefaultAPIService) PostSendPaidMediaExecute(r ApiPostSendPaidMediaReque
 		parameterAddToHeaderOrQuery(localVarFormParams, "business_connection_id", r.businessConnectionId, "", "")
 	}
 	parameterAddToHeaderOrQuery(localVarFormParams, "chat_id", r.chatId, "", "")
+	if r.messageThreadId != nil {
+		parameterAddToHeaderOrQuery(localVarFormParams, "message_thread_id", r.messageThreadId, "", "")
+	}
+	if r.directMessagesTopicId != nil {
+		parameterAddToHeaderOrQuery(localVarFormParams, "direct_messages_topic_id", r.directMessagesTopicId, "", "")
+	}
 	parameterAddToHeaderOrQuery(localVarFormParams, "star_count", r.starCount, "", "")
 	parameterAddToHeaderOrQuery(localVarFormParams, "media", r.media, "", "csv")
 	if r.payload != nil {
@@ -19816,6 +20442,13 @@ func (a *DefaultAPIService) PostSendPaidMediaExecute(r ApiPostSendPaidMediaReque
 	}
 	if r.allowPaidBroadcast != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "allow_paid_broadcast", r.allowPaidBroadcast, "", "")
+	}
+	if r.suggestedPostParameters != nil {
+		paramJson, err := parameterToJson(*r.suggestedPostParameters)
+		if err != nil {
+			return localVarReturnValue, nil, err
+		}
+		localVarFormParams.Add("suggested_post_parameters", paramJson)
 	}
 	if r.replyParameters != nil {
 		paramJson, err := parameterToJson(*r.replyParameters)
@@ -19894,6 +20527,7 @@ type ApiPostSendPhotoRequest struct {
 	photo *string
 	businessConnectionId *string
 	messageThreadId *int32
+	directMessagesTopicId *int32
 	caption *string
 	parseMode *string
 	captionEntities *[]MessageEntity
@@ -19903,6 +20537,7 @@ type ApiPostSendPhotoRequest struct {
 	protectContent *bool
 	allowPaidBroadcast *bool
 	messageEffectId *string
+	suggestedPostParameters *SuggestedPostParameters
 	replyParameters *ReplyParameters
 	replyMarkup *SendMessageRequestReplyMarkup
 }
@@ -19926,6 +20561,12 @@ func (r ApiPostSendPhotoRequest) BusinessConnectionId(businessConnectionId strin
 // Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
 func (r ApiPostSendPhotoRequest) MessageThreadId(messageThreadId int32) ApiPostSendPhotoRequest {
 	r.messageThreadId = &messageThreadId
+	return r
+}
+
+// Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat
+func (r ApiPostSendPhotoRequest) DirectMessagesTopicId(directMessagesTopicId int32) ApiPostSendPhotoRequest {
+	r.directMessagesTopicId = &directMessagesTopicId
 	return r
 }
 
@@ -19980,6 +20621,11 @@ func (r ApiPostSendPhotoRequest) AllowPaidBroadcast(allowPaidBroadcast bool) Api
 // Unique identifier of the message effect to be added to the message; for private chats only
 func (r ApiPostSendPhotoRequest) MessageEffectId(messageEffectId string) ApiPostSendPhotoRequest {
 	r.messageEffectId = &messageEffectId
+	return r
+}
+
+func (r ApiPostSendPhotoRequest) SuggestedPostParameters(suggestedPostParameters SuggestedPostParameters) ApiPostSendPhotoRequest {
+	r.suggestedPostParameters = &suggestedPostParameters
 	return r
 }
 
@@ -20063,6 +20709,9 @@ func (a *DefaultAPIService) PostSendPhotoExecute(r ApiPostSendPhotoRequest) (*Se
 	if r.messageThreadId != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "message_thread_id", r.messageThreadId, "", "")
 	}
+	if r.directMessagesTopicId != nil {
+		parameterAddToHeaderOrQuery(localVarFormParams, "direct_messages_topic_id", r.directMessagesTopicId, "", "")
+	}
 	parameterAddToHeaderOrQuery(localVarFormParams, "photo", r.photo, "", "")
 	if r.caption != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "caption", r.caption, "", "")
@@ -20090,6 +20739,13 @@ func (a *DefaultAPIService) PostSendPhotoExecute(r ApiPostSendPhotoRequest) (*Se
 	}
 	if r.messageEffectId != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "message_effect_id", r.messageEffectId, "", "")
+	}
+	if r.suggestedPostParameters != nil {
+		paramJson, err := parameterToJson(*r.suggestedPostParameters)
+		if err != nil {
+			return localVarReturnValue, nil, err
+		}
+		localVarFormParams.Add("suggested_post_parameters", paramJson)
 	}
 	if r.replyParameters != nil {
 		paramJson, err := parameterToJson(*r.replyParameters)
@@ -20164,7 +20820,7 @@ func (a *DefaultAPIService) PostSendPhotoExecute(r ApiPostSendPhotoRequest) (*Se
 type ApiPostSendPollRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessageRequestChatId
+	chatId *SendPollRequestChatId
 	question *string
 	options *[]InputPollOption
 	businessConnectionId *string
@@ -20189,7 +20845,7 @@ type ApiPostSendPollRequest struct {
 	replyMarkup *SendMessageRequestReplyMarkup
 }
 
-func (r ApiPostSendPollRequest) ChatId(chatId SendMessageRequestChatId) ApiPostSendPollRequest {
+func (r ApiPostSendPollRequest) ChatId(chatId SendPollRequestChatId) ApiPostSendPollRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -20530,11 +21186,13 @@ type ApiPostSendStickerRequest struct {
 	sticker *string
 	businessConnectionId *string
 	messageThreadId *int32
+	directMessagesTopicId *int32
 	emoji *string
 	disableNotification *bool
 	protectContent *bool
 	allowPaidBroadcast *bool
 	messageEffectId *string
+	suggestedPostParameters *SuggestedPostParameters
 	replyParameters *ReplyParameters
 	replyMarkup *SendMessageRequestReplyMarkup
 }
@@ -20558,6 +21216,12 @@ func (r ApiPostSendStickerRequest) BusinessConnectionId(businessConnectionId str
 // Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
 func (r ApiPostSendStickerRequest) MessageThreadId(messageThreadId int32) ApiPostSendStickerRequest {
 	r.messageThreadId = &messageThreadId
+	return r
+}
+
+// Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat
+func (r ApiPostSendStickerRequest) DirectMessagesTopicId(directMessagesTopicId int32) ApiPostSendStickerRequest {
+	r.directMessagesTopicId = &directMessagesTopicId
 	return r
 }
 
@@ -20588,6 +21252,11 @@ func (r ApiPostSendStickerRequest) AllowPaidBroadcast(allowPaidBroadcast bool) A
 // Unique identifier of the message effect to be added to the message; for private chats only
 func (r ApiPostSendStickerRequest) MessageEffectId(messageEffectId string) ApiPostSendStickerRequest {
 	r.messageEffectId = &messageEffectId
+	return r
+}
+
+func (r ApiPostSendStickerRequest) SuggestedPostParameters(suggestedPostParameters SuggestedPostParameters) ApiPostSendStickerRequest {
+	r.suggestedPostParameters = &suggestedPostParameters
 	return r
 }
 
@@ -20671,6 +21340,9 @@ func (a *DefaultAPIService) PostSendStickerExecute(r ApiPostSendStickerRequest) 
 	if r.messageThreadId != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "message_thread_id", r.messageThreadId, "", "")
 	}
+	if r.directMessagesTopicId != nil {
+		parameterAddToHeaderOrQuery(localVarFormParams, "direct_messages_topic_id", r.directMessagesTopicId, "", "")
+	}
 	parameterAddToHeaderOrQuery(localVarFormParams, "sticker", r.sticker, "", "")
 	if r.emoji != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "emoji", r.emoji, "", "")
@@ -20686,6 +21358,13 @@ func (a *DefaultAPIService) PostSendStickerExecute(r ApiPostSendStickerRequest) 
 	}
 	if r.messageEffectId != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "message_effect_id", r.messageEffectId, "", "")
+	}
+	if r.suggestedPostParameters != nil {
+		paramJson, err := parameterToJson(*r.suggestedPostParameters)
+		if err != nil {
+			return localVarReturnValue, nil, err
+		}
+		localVarFormParams.Add("suggested_post_parameters", paramJson)
 	}
 	if r.replyParameters != nil {
 		paramJson, err := parameterToJson(*r.replyParameters)
@@ -20767,6 +21446,7 @@ type ApiPostSendVenueRequest struct {
 	address *string
 	businessConnectionId *string
 	messageThreadId *int32
+	directMessagesTopicId *int32
 	foursquareId *string
 	foursquareType *string
 	googlePlaceId *string
@@ -20775,6 +21455,7 @@ type ApiPostSendVenueRequest struct {
 	protectContent *bool
 	allowPaidBroadcast *bool
 	messageEffectId *string
+	suggestedPostParameters *SuggestedPostParameters
 	replyParameters *ReplyParameters
 	replyMarkup *SendMessageRequestReplyMarkup
 }
@@ -20817,6 +21498,12 @@ func (r ApiPostSendVenueRequest) BusinessConnectionId(businessConnectionId strin
 // Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
 func (r ApiPostSendVenueRequest) MessageThreadId(messageThreadId int32) ApiPostSendVenueRequest {
 	r.messageThreadId = &messageThreadId
+	return r
+}
+
+// Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat
+func (r ApiPostSendVenueRequest) DirectMessagesTopicId(directMessagesTopicId int32) ApiPostSendVenueRequest {
+	r.directMessagesTopicId = &directMessagesTopicId
 	return r
 }
 
@@ -20865,6 +21552,11 @@ func (r ApiPostSendVenueRequest) AllowPaidBroadcast(allowPaidBroadcast bool) Api
 // Unique identifier of the message effect to be added to the message; for private chats only
 func (r ApiPostSendVenueRequest) MessageEffectId(messageEffectId string) ApiPostSendVenueRequest {
 	r.messageEffectId = &messageEffectId
+	return r
+}
+
+func (r ApiPostSendVenueRequest) SuggestedPostParameters(suggestedPostParameters SuggestedPostParameters) ApiPostSendVenueRequest {
+	r.suggestedPostParameters = &suggestedPostParameters
 	return r
 }
 
@@ -20957,6 +21649,9 @@ func (a *DefaultAPIService) PostSendVenueExecute(r ApiPostSendVenueRequest) (*Se
 	if r.messageThreadId != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "message_thread_id", r.messageThreadId, "", "")
 	}
+	if r.directMessagesTopicId != nil {
+		parameterAddToHeaderOrQuery(localVarFormParams, "direct_messages_topic_id", r.directMessagesTopicId, "", "")
+	}
 	parameterAddToHeaderOrQuery(localVarFormParams, "latitude", r.latitude, "", "")
 	parameterAddToHeaderOrQuery(localVarFormParams, "longitude", r.longitude, "", "")
 	parameterAddToHeaderOrQuery(localVarFormParams, "title", r.title, "", "")
@@ -20984,6 +21679,13 @@ func (a *DefaultAPIService) PostSendVenueExecute(r ApiPostSendVenueRequest) (*Se
 	}
 	if r.messageEffectId != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "message_effect_id", r.messageEffectId, "", "")
+	}
+	if r.suggestedPostParameters != nil {
+		paramJson, err := parameterToJson(*r.suggestedPostParameters)
+		if err != nil {
+			return localVarReturnValue, nil, err
+		}
+		localVarFormParams.Add("suggested_post_parameters", paramJson)
 	}
 	if r.replyParameters != nil {
 		paramJson, err := parameterToJson(*r.replyParameters)
@@ -21062,6 +21764,7 @@ type ApiPostSendVideoRequest struct {
 	video *string
 	businessConnectionId *string
 	messageThreadId *int32
+	directMessagesTopicId *int32
 	duration *int32
 	width *int32
 	height *int32
@@ -21078,6 +21781,7 @@ type ApiPostSendVideoRequest struct {
 	protectContent *bool
 	allowPaidBroadcast *bool
 	messageEffectId *string
+	suggestedPostParameters *SuggestedPostParameters
 	replyParameters *ReplyParameters
 	replyMarkup *SendMessageRequestReplyMarkup
 }
@@ -21101,6 +21805,12 @@ func (r ApiPostSendVideoRequest) BusinessConnectionId(businessConnectionId strin
 // Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
 func (r ApiPostSendVideoRequest) MessageThreadId(messageThreadId int32) ApiPostSendVideoRequest {
 	r.messageThreadId = &messageThreadId
+	return r
+}
+
+// Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat
+func (r ApiPostSendVideoRequest) DirectMessagesTopicId(directMessagesTopicId int32) ApiPostSendVideoRequest {
+	r.directMessagesTopicId = &directMessagesTopicId
 	return r
 }
 
@@ -21198,6 +21908,11 @@ func (r ApiPostSendVideoRequest) MessageEffectId(messageEffectId string) ApiPost
 	return r
 }
 
+func (r ApiPostSendVideoRequest) SuggestedPostParameters(suggestedPostParameters SuggestedPostParameters) ApiPostSendVideoRequest {
+	r.suggestedPostParameters = &suggestedPostParameters
+	return r
+}
+
 func (r ApiPostSendVideoRequest) ReplyParameters(replyParameters ReplyParameters) ApiPostSendVideoRequest {
 	r.replyParameters = &replyParameters
 	return r
@@ -21278,6 +21993,9 @@ func (a *DefaultAPIService) PostSendVideoExecute(r ApiPostSendVideoRequest) (*Se
 	if r.messageThreadId != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "message_thread_id", r.messageThreadId, "", "")
 	}
+	if r.directMessagesTopicId != nil {
+		parameterAddToHeaderOrQuery(localVarFormParams, "direct_messages_topic_id", r.directMessagesTopicId, "", "")
+	}
 	parameterAddToHeaderOrQuery(localVarFormParams, "video", r.video, "", "")
 	if r.duration != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "duration", r.duration, "", "")
@@ -21326,6 +22044,13 @@ func (a *DefaultAPIService) PostSendVideoExecute(r ApiPostSendVideoRequest) (*Se
 	}
 	if r.messageEffectId != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "message_effect_id", r.messageEffectId, "", "")
+	}
+	if r.suggestedPostParameters != nil {
+		paramJson, err := parameterToJson(*r.suggestedPostParameters)
+		if err != nil {
+			return localVarReturnValue, nil, err
+		}
+		localVarFormParams.Add("suggested_post_parameters", paramJson)
 	}
 	if r.replyParameters != nil {
 		paramJson, err := parameterToJson(*r.replyParameters)
@@ -21404,6 +22129,7 @@ type ApiPostSendVideoNoteRequest struct {
 	videoNote *string
 	businessConnectionId *string
 	messageThreadId *int32
+	directMessagesTopicId *int32
 	duration *int32
 	length *int32
 	thumbnail *string
@@ -21411,6 +22137,7 @@ type ApiPostSendVideoNoteRequest struct {
 	protectContent *bool
 	allowPaidBroadcast *bool
 	messageEffectId *string
+	suggestedPostParameters *SuggestedPostParameters
 	replyParameters *ReplyParameters
 	replyMarkup *SendMessageRequestReplyMarkup
 }
@@ -21434,6 +22161,12 @@ func (r ApiPostSendVideoNoteRequest) BusinessConnectionId(businessConnectionId s
 // Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
 func (r ApiPostSendVideoNoteRequest) MessageThreadId(messageThreadId int32) ApiPostSendVideoNoteRequest {
 	r.messageThreadId = &messageThreadId
+	return r
+}
+
+// Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat
+func (r ApiPostSendVideoNoteRequest) DirectMessagesTopicId(directMessagesTopicId int32) ApiPostSendVideoNoteRequest {
+	r.directMessagesTopicId = &directMessagesTopicId
 	return r
 }
 
@@ -21475,6 +22208,11 @@ func (r ApiPostSendVideoNoteRequest) AllowPaidBroadcast(allowPaidBroadcast bool)
 // Unique identifier of the message effect to be added to the message; for private chats only
 func (r ApiPostSendVideoNoteRequest) MessageEffectId(messageEffectId string) ApiPostSendVideoNoteRequest {
 	r.messageEffectId = &messageEffectId
+	return r
+}
+
+func (r ApiPostSendVideoNoteRequest) SuggestedPostParameters(suggestedPostParameters SuggestedPostParameters) ApiPostSendVideoNoteRequest {
+	r.suggestedPostParameters = &suggestedPostParameters
 	return r
 }
 
@@ -21558,6 +22296,9 @@ func (a *DefaultAPIService) PostSendVideoNoteExecute(r ApiPostSendVideoNoteReque
 	if r.messageThreadId != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "message_thread_id", r.messageThreadId, "", "")
 	}
+	if r.directMessagesTopicId != nil {
+		parameterAddToHeaderOrQuery(localVarFormParams, "direct_messages_topic_id", r.directMessagesTopicId, "", "")
+	}
 	parameterAddToHeaderOrQuery(localVarFormParams, "video_note", r.videoNote, "", "")
 	if r.duration != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "duration", r.duration, "", "")
@@ -21579,6 +22320,13 @@ func (a *DefaultAPIService) PostSendVideoNoteExecute(r ApiPostSendVideoNoteReque
 	}
 	if r.messageEffectId != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "message_effect_id", r.messageEffectId, "", "")
+	}
+	if r.suggestedPostParameters != nil {
+		paramJson, err := parameterToJson(*r.suggestedPostParameters)
+		if err != nil {
+			return localVarReturnValue, nil, err
+		}
+		localVarFormParams.Add("suggested_post_parameters", paramJson)
 	}
 	if r.replyParameters != nil {
 		paramJson, err := parameterToJson(*r.replyParameters)
@@ -21657,6 +22405,7 @@ type ApiPostSendVoiceRequest struct {
 	voice *string
 	businessConnectionId *string
 	messageThreadId *int32
+	directMessagesTopicId *int32
 	caption *string
 	parseMode *string
 	captionEntities *[]MessageEntity
@@ -21665,6 +22414,7 @@ type ApiPostSendVoiceRequest struct {
 	protectContent *bool
 	allowPaidBroadcast *bool
 	messageEffectId *string
+	suggestedPostParameters *SuggestedPostParameters
 	replyParameters *ReplyParameters
 	replyMarkup *SendMessageRequestReplyMarkup
 }
@@ -21688,6 +22438,12 @@ func (r ApiPostSendVoiceRequest) BusinessConnectionId(businessConnectionId strin
 // Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
 func (r ApiPostSendVoiceRequest) MessageThreadId(messageThreadId int32) ApiPostSendVoiceRequest {
 	r.messageThreadId = &messageThreadId
+	return r
+}
+
+// Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat
+func (r ApiPostSendVoiceRequest) DirectMessagesTopicId(directMessagesTopicId int32) ApiPostSendVoiceRequest {
+	r.directMessagesTopicId = &directMessagesTopicId
 	return r
 }
 
@@ -21736,6 +22492,11 @@ func (r ApiPostSendVoiceRequest) AllowPaidBroadcast(allowPaidBroadcast bool) Api
 // Unique identifier of the message effect to be added to the message; for private chats only
 func (r ApiPostSendVoiceRequest) MessageEffectId(messageEffectId string) ApiPostSendVoiceRequest {
 	r.messageEffectId = &messageEffectId
+	return r
+}
+
+func (r ApiPostSendVoiceRequest) SuggestedPostParameters(suggestedPostParameters SuggestedPostParameters) ApiPostSendVoiceRequest {
+	r.suggestedPostParameters = &suggestedPostParameters
 	return r
 }
 
@@ -21819,6 +22580,9 @@ func (a *DefaultAPIService) PostSendVoiceExecute(r ApiPostSendVoiceRequest) (*Se
 	if r.messageThreadId != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "message_thread_id", r.messageThreadId, "", "")
 	}
+	if r.directMessagesTopicId != nil {
+		parameterAddToHeaderOrQuery(localVarFormParams, "direct_messages_topic_id", r.directMessagesTopicId, "", "")
+	}
 	parameterAddToHeaderOrQuery(localVarFormParams, "voice", r.voice, "", "")
 	if r.caption != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "caption", r.caption, "", "")
@@ -21843,6 +22607,13 @@ func (a *DefaultAPIService) PostSendVoiceExecute(r ApiPostSendVoiceRequest) (*Se
 	}
 	if r.messageEffectId != nil {
 		parameterAddToHeaderOrQuery(localVarFormParams, "message_effect_id", r.messageEffectId, "", "")
+	}
+	if r.suggestedPostParameters != nil {
+		paramJson, err := parameterToJson(*r.suggestedPostParameters)
+		if err != nil {
+			return localVarReturnValue, nil, err
+		}
+		localVarFormParams.Add("suggested_post_parameters", paramJson)
 	}
 	if r.replyParameters != nil {
 		paramJson, err := parameterToJson(*r.replyParameters)
@@ -22650,12 +23421,12 @@ func (a *DefaultAPIService) PostSetBusinessAccountUsernameExecute(r ApiPostSetBu
 type ApiPostSetChatAdministratorCustomTitleRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *BotCommandScopeChatChatId
+	chatId *RestrictChatMemberRequestChatId
 	userId *int32
 	customTitle *string
 }
 
-func (r ApiPostSetChatAdministratorCustomTitleRequest) ChatId(chatId BotCommandScopeChatChatId) ApiPostSetChatAdministratorCustomTitleRequest {
+func (r ApiPostSetChatAdministratorCustomTitleRequest) ChatId(chatId RestrictChatMemberRequestChatId) ApiPostSetChatAdministratorCustomTitleRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -23085,12 +23856,12 @@ func (a *DefaultAPIService) PostSetChatMenuButtonExecute(r ApiPostSetChatMenuBut
 type ApiPostSetChatPermissionsRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *BotCommandScopeChatChatId
+	chatId *RestrictChatMemberRequestChatId
 	permissions *ChatPermissions
 	useIndependentChatPermissions *bool
 }
 
-func (r ApiPostSetChatPermissionsRequest) ChatId(chatId BotCommandScopeChatChatId) ApiPostSetChatPermissionsRequest {
+func (r ApiPostSetChatPermissionsRequest) ChatId(chatId RestrictChatMemberRequestChatId) ApiPostSetChatPermissionsRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -23371,11 +24142,11 @@ func (a *DefaultAPIService) PostSetChatPhotoExecute(r ApiPostSetChatPhotoRequest
 type ApiPostSetChatStickerSetRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *BotCommandScopeChatChatId
+	chatId *RestrictChatMemberRequestChatId
 	stickerSetName *string
 }
 
-func (r ApiPostSetChatStickerSetRequest) ChatId(chatId BotCommandScopeChatChatId) ApiPostSetChatStickerSetRequest {
+func (r ApiPostSetChatStickerSetRequest) ChatId(chatId RestrictChatMemberRequestChatId) ApiPostSetChatStickerSetRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -27123,10 +27894,10 @@ func (a *DefaultAPIService) PostUnbanChatSenderChatExecute(r ApiPostUnbanChatSen
 type ApiPostUnhideGeneralForumTopicRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *BotCommandScopeChatChatId
+	chatId *RestrictChatMemberRequestChatId
 }
 
-func (r ApiPostUnhideGeneralForumTopicRequest) ChatId(chatId BotCommandScopeChatChatId) ApiPostUnhideGeneralForumTopicRequest {
+func (r ApiPostUnhideGeneralForumTopicRequest) ChatId(chatId RestrictChatMemberRequestChatId) ApiPostUnhideGeneralForumTopicRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -27266,7 +28037,7 @@ func (r ApiPostUnpinAllChatMessagesRequest) Execute() (*UnpinAllChatMessagesResp
 /*
 PostUnpinAllChatMessages unpinAllChatMessages
 
-Use this method to clear the list of pinned messages in a chat. If the chat is not a private chat, the bot must be an administrator in the chat for this to work and must have the 'can\_pin\_messages' administrator right in a supergroup or 'can\_edit\_messages' administrator right in a channel. Returns *True* on success.
+Use this method to clear the list of pinned messages in a chat. In private chats and channel direct messages chats, no additional rights are required to unpin all pinned messages. Conversely, the bot must be an administrator with the 'can\_pin\_messages' right or the 'can\_edit\_messages' right to unpin all pinned messages in groups and channels respectively. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostUnpinAllChatMessagesRequest
@@ -27379,11 +28150,11 @@ func (a *DefaultAPIService) PostUnpinAllChatMessagesExecute(r ApiPostUnpinAllCha
 type ApiPostUnpinAllForumTopicMessagesRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *BotCommandScopeChatChatId
+	chatId *RestrictChatMemberRequestChatId
 	messageThreadId *int32
 }
 
-func (r ApiPostUnpinAllForumTopicMessagesRequest) ChatId(chatId BotCommandScopeChatChatId) ApiPostUnpinAllForumTopicMessagesRequest {
+func (r ApiPostUnpinAllForumTopicMessagesRequest) ChatId(chatId RestrictChatMemberRequestChatId) ApiPostUnpinAllForumTopicMessagesRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -27518,10 +28289,10 @@ func (a *DefaultAPIService) PostUnpinAllForumTopicMessagesExecute(r ApiPostUnpin
 type ApiPostUnpinAllGeneralForumTopicMessagesRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *BotCommandScopeChatChatId
+	chatId *RestrictChatMemberRequestChatId
 }
 
-func (r ApiPostUnpinAllGeneralForumTopicMessagesRequest) ChatId(chatId BotCommandScopeChatChatId) ApiPostUnpinAllGeneralForumTopicMessagesRequest {
+func (r ApiPostUnpinAllGeneralForumTopicMessagesRequest) ChatId(chatId RestrictChatMemberRequestChatId) ApiPostUnpinAllGeneralForumTopicMessagesRequest {
 	r.chatId = &chatId
 	return r
 }
@@ -27675,7 +28446,7 @@ func (r ApiPostUnpinChatMessageRequest) Execute() (*UnpinChatMessageResponse, *h
 /*
 PostUnpinChatMessage unpinChatMessage
 
-Use this method to remove a message from the list of pinned messages in a chat. If the chat is not a private chat, the bot must be an administrator in the chat for this to work and must have the 'can\_pin\_messages' administrator right in a supergroup or 'can\_edit\_messages' administrator right in a channel. Returns *True* on success.
+Use this method to remove a message from the list of pinned messages in a chat. In private chats and channel direct messages chats, all messages can be unpinned. Conversely, the bot must be an administrator with the 'can\_pin\_messages' right or the 'can\_edit\_messages' right to unpin messages in groups and channels respectively. Returns *True* on success.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostUnpinChatMessageRequest
@@ -28104,11 +28875,11 @@ func (a *DefaultAPIService) PostUploadStickerFileExecute(r ApiPostUploadStickerF
 type ApiPostVerifyChatRequest struct {
 	ctx context.Context
 	ApiService DefaultAPI
-	chatId *SendMessageRequestChatId
+	chatId *VerifyChatRequestChatId
 	customDescription *string
 }
 
-func (r ApiPostVerifyChatRequest) ChatId(chatId SendMessageRequestChatId) ApiPostVerifyChatRequest {
+func (r ApiPostVerifyChatRequest) ChatId(chatId VerifyChatRequestChatId) ApiPostVerifyChatRequest {
 	r.chatId = &chatId
 	return r
 }

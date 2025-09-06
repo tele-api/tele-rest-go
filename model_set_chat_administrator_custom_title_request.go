@@ -5,8 +5,8 @@
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
+ *    * - **Version**: 9.2.0
+ *    * - **Modified**: 2025-09-06T05:32:05.180087835Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -55,7 +55,7 @@ var _ MappedNullable = &SetChatAdministratorCustomTitleRequest{}
 
 // SetChatAdministratorCustomTitleRequest Request parameters for setChatAdministratorCustomTitle
 type SetChatAdministratorCustomTitleRequest struct {
-	ChatId BotCommandScopeChatChatId `json:"chat_id"`
+	ChatId RestrictChatMemberRequestChatId `json:"chat_id"`
 	// Unique identifier of the target user
 	UserId int32 `json:"user_id"`
 	// New custom title for the administrator; 0-16 characters, emoji are not allowed
@@ -68,7 +68,7 @@ type _SetChatAdministratorCustomTitleRequest SetChatAdministratorCustomTitleRequ
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSetChatAdministratorCustomTitleRequest(chatId BotCommandScopeChatChatId, userId int32, customTitle string) *SetChatAdministratorCustomTitleRequest {
+func NewSetChatAdministratorCustomTitleRequest(chatId RestrictChatMemberRequestChatId, userId int32, customTitle string) *SetChatAdministratorCustomTitleRequest {
 	this := SetChatAdministratorCustomTitleRequest{}
 	this.ChatId = chatId
 	this.UserId = userId
@@ -85,9 +85,9 @@ func NewSetChatAdministratorCustomTitleRequestWithDefaults() *SetChatAdministrat
 }
 
 // GetChatId returns the ChatId field value
-func (o *SetChatAdministratorCustomTitleRequest) GetChatId() BotCommandScopeChatChatId {
+func (o *SetChatAdministratorCustomTitleRequest) GetChatId() RestrictChatMemberRequestChatId {
 	if o == nil {
-		var ret BotCommandScopeChatChatId
+		var ret RestrictChatMemberRequestChatId
 		return ret
 	}
 
@@ -96,7 +96,7 @@ func (o *SetChatAdministratorCustomTitleRequest) GetChatId() BotCommandScopeChat
 
 // GetChatIdOk returns a tuple with the ChatId field value
 // and a boolean to check if the value has been set.
-func (o *SetChatAdministratorCustomTitleRequest) GetChatIdOk() (*BotCommandScopeChatChatId, bool) {
+func (o *SetChatAdministratorCustomTitleRequest) GetChatIdOk() (*RestrictChatMemberRequestChatId, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -104,7 +104,7 @@ func (o *SetChatAdministratorCustomTitleRequest) GetChatIdOk() (*BotCommandScope
 }
 
 // SetChatId sets field value
-func (o *SetChatAdministratorCustomTitleRequest) SetChatId(v BotCommandScopeChatChatId) {
+func (o *SetChatAdministratorCustomTitleRequest) SetChatId(v RestrictChatMemberRequestChatId) {
 	o.ChatId = v
 }
 

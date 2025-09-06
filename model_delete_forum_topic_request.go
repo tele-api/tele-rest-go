@@ -5,8 +5,8 @@
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
+ *    * - **Version**: 9.2.0
+ *    * - **Modified**: 2025-09-06T05:32:05.180087835Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -55,7 +55,7 @@ var _ MappedNullable = &DeleteForumTopicRequest{}
 
 // DeleteForumTopicRequest Request parameters for deleteForumTopic
 type DeleteForumTopicRequest struct {
-	ChatId BotCommandScopeChatChatId `json:"chat_id"`
+	ChatId RestrictChatMemberRequestChatId `json:"chat_id"`
 	// Unique identifier for the target message thread of the forum topic
 	MessageThreadId int32 `json:"message_thread_id"`
 }
@@ -66,7 +66,7 @@ type _DeleteForumTopicRequest DeleteForumTopicRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDeleteForumTopicRequest(chatId BotCommandScopeChatChatId, messageThreadId int32) *DeleteForumTopicRequest {
+func NewDeleteForumTopicRequest(chatId RestrictChatMemberRequestChatId, messageThreadId int32) *DeleteForumTopicRequest {
 	this := DeleteForumTopicRequest{}
 	this.ChatId = chatId
 	this.MessageThreadId = messageThreadId
@@ -82,9 +82,9 @@ func NewDeleteForumTopicRequestWithDefaults() *DeleteForumTopicRequest {
 }
 
 // GetChatId returns the ChatId field value
-func (o *DeleteForumTopicRequest) GetChatId() BotCommandScopeChatChatId {
+func (o *DeleteForumTopicRequest) GetChatId() RestrictChatMemberRequestChatId {
 	if o == nil {
-		var ret BotCommandScopeChatChatId
+		var ret RestrictChatMemberRequestChatId
 		return ret
 	}
 
@@ -93,7 +93,7 @@ func (o *DeleteForumTopicRequest) GetChatId() BotCommandScopeChatChatId {
 
 // GetChatIdOk returns a tuple with the ChatId field value
 // and a boolean to check if the value has been set.
-func (o *DeleteForumTopicRequest) GetChatIdOk() (*BotCommandScopeChatChatId, bool) {
+func (o *DeleteForumTopicRequest) GetChatIdOk() (*RestrictChatMemberRequestChatId, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -101,7 +101,7 @@ func (o *DeleteForumTopicRequest) GetChatIdOk() (*BotCommandScopeChatChatId, boo
 }
 
 // SetChatId sets field value
-func (o *DeleteForumTopicRequest) SetChatId(v BotCommandScopeChatChatId) {
+func (o *DeleteForumTopicRequest) SetChatId(v RestrictChatMemberRequestChatId) {
 	o.ChatId = v
 }
 

@@ -5,8 +5,8 @@
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
+ *    * - **Version**: 9.2.0
+ *    * - **Modified**: 2025-09-06T05:32:05.180087835Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -69,6 +69,8 @@ type ChatFullInfo struct {
 	LastName *string `json:"last_name,omitempty"`
 	// *Optional*. *True*, if the supergroup chat is a forum (has [topics](https://telegram.org/blog/topics-in-groups-collectible-usernames#topics-in-groups) enabled)
 	IsForum *bool `json:"is_forum,omitempty"`
+	// *Optional*. *True*, if the chat is the direct messages chat of a channel
+	IsDirectMessages *bool `json:"is_direct_messages,omitempty"`
 	// Identifier of the accent color for the chat name and backgrounds of the chat photo, reply header, and link preview. See [accent colors](https://core.telegram.org/bots/api/#accent-colors) for more details.
 	AccentColorId int32 `json:"accent_color_id"`
 	// The maximum number of reactions that can be set on a message in the chat
@@ -81,6 +83,7 @@ type ChatFullInfo struct {
 	BusinessLocation *BusinessLocation `json:"business_location,omitempty"`
 	BusinessOpeningHours *BusinessOpeningHours `json:"business_opening_hours,omitempty"`
 	PersonalChat *Chat `json:"personal_chat,omitempty"`
+	ParentChat *Chat `json:"parent_chat,omitempty"`
 	// *Optional*. List of available reactions allowed in the chat. If omitted, then all [emoji reactions](https://core.telegram.org/bots/api/#reactiontypeemoji) are allowed.
 	AvailableReactions []ReactionType `json:"available_reactions,omitempty"`
 	// *Optional*. Custom emoji identifier of the emoji chosen by the chat for the reply header and link preview background
@@ -149,6 +152,8 @@ func NewChatFullInfo(id int32, type_ string, accentColorId int32, maxReactionCou
 	this.Type = type_
 	var isForum bool = true
 	this.IsForum = &isForum
+	var isDirectMessages bool = true
+	this.IsDirectMessages = &isDirectMessages
 	this.AccentColorId = accentColorId
 	this.MaxReactionCount = maxReactionCount
 	var hasPrivateForwards bool = true
@@ -182,6 +187,8 @@ func NewChatFullInfoWithDefaults() *ChatFullInfo {
 	this := ChatFullInfo{}
 	var isForum bool = true
 	this.IsForum = &isForum
+	var isDirectMessages bool = true
+	this.IsDirectMessages = &isDirectMessages
 	var hasPrivateForwards bool = true
 	this.HasPrivateForwards = &hasPrivateForwards
 	var hasRestrictedVoiceAndVideoMessages bool = true
@@ -415,6 +422,39 @@ func (o *ChatFullInfo) HasIsForum() bool {
 // SetIsForum gets a reference to the given bool and assigns it to the IsForum field.
 func (o *ChatFullInfo) SetIsForum(v bool) {
 	o.IsForum = &v
+}
+
+
+// GetIsDirectMessages returns the IsDirectMessages field value if set, zero value otherwise.
+func (o *ChatFullInfo) GetIsDirectMessages() bool {
+	if o == nil || IsNil(o.IsDirectMessages) {
+		var ret bool
+		return ret
+	}
+	return *o.IsDirectMessages
+}
+
+// GetIsDirectMessagesOk returns a tuple with the IsDirectMessages field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ChatFullInfo) GetIsDirectMessagesOk() (*bool, bool) {
+	if o == nil || IsNil(o.IsDirectMessages) {
+		return nil, false
+	}
+	return o.IsDirectMessages, true
+}
+
+// HasIsDirectMessages returns a boolean if a field has been set.
+func (o *ChatFullInfo) HasIsDirectMessages() bool {
+	if o != nil && !IsNil(o.IsDirectMessages) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsDirectMessages gets a reference to the given bool and assigns it to the IsDirectMessages field.
+func (o *ChatFullInfo) SetIsDirectMessages(v bool) {
+	o.IsDirectMessages = &v
 }
 
 
@@ -694,6 +734,39 @@ func (o *ChatFullInfo) HasPersonalChat() bool {
 // SetPersonalChat gets a reference to the given Chat and assigns it to the PersonalChat field.
 func (o *ChatFullInfo) SetPersonalChat(v Chat) {
 	o.PersonalChat = &v
+}
+
+
+// GetParentChat returns the ParentChat field value if set, zero value otherwise.
+func (o *ChatFullInfo) GetParentChat() Chat {
+	if o == nil || IsNil(o.ParentChat) {
+		var ret Chat
+		return ret
+	}
+	return *o.ParentChat
+}
+
+// GetParentChatOk returns a tuple with the ParentChat field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ChatFullInfo) GetParentChatOk() (*Chat, bool) {
+	if o == nil || IsNil(o.ParentChat) {
+		return nil, false
+	}
+	return o.ParentChat, true
+}
+
+// HasParentChat returns a boolean if a field has been set.
+func (o *ChatFullInfo) HasParentChat() bool {
+	if o != nil && !IsNil(o.ParentChat) {
+		return true
+	}
+
+	return false
+}
+
+// SetParentChat gets a reference to the given Chat and assigns it to the ParentChat field.
+func (o *ChatFullInfo) SetParentChat(v Chat) {
+	o.ParentChat = &v
 }
 
 
@@ -1672,6 +1745,9 @@ func (o ChatFullInfo) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.IsForum) {
 		toSerialize["is_forum"] = o.IsForum
 	}
+	if !IsNil(o.IsDirectMessages) {
+		toSerialize["is_direct_messages"] = o.IsDirectMessages
+	}
 	toSerialize["accent_color_id"] = o.AccentColorId
 	toSerialize["max_reaction_count"] = o.MaxReactionCount
 	if !IsNil(o.Photo) {
@@ -1694,6 +1770,9 @@ func (o ChatFullInfo) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.PersonalChat) {
 		toSerialize["personal_chat"] = o.PersonalChat
+	}
+	if !IsNil(o.ParentChat) {
+		toSerialize["parent_chat"] = o.ParentChat
 	}
 	if !IsNil(o.AvailableReactions) {
 		toSerialize["available_reactions"] = o.AvailableReactions

@@ -5,8 +5,8 @@
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
+ *    * - **Version**: 9.2.0
+ *    * - **Modified**: 2025-09-06T05:32:05.180087835Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -58,6 +58,8 @@ type SendInvoiceRequest struct {
 	ChatId SendMessageRequestChatId `json:"chat_id"`
 	// Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
 	MessageThreadId *int32 `json:"message_thread_id,omitempty"`
+	// Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat
+	DirectMessagesTopicId *int32 `json:"direct_messages_topic_id,omitempty"`
 	// Product name, 1-32 characters
 	Title string `json:"title"`
 	// Product description, 1-255 characters
@@ -108,6 +110,7 @@ type SendInvoiceRequest struct {
 	AllowPaidBroadcast *bool `json:"allow_paid_broadcast,omitempty"`
 	// Unique identifier of the message effect to be added to the message; for private chats only
 	MessageEffectId *string `json:"message_effect_id,omitempty"`
+	SuggestedPostParameters *SuggestedPostParameters `json:"suggested_post_parameters,omitempty"`
 	ReplyParameters *ReplyParameters `json:"reply_parameters,omitempty"`
 	ReplyMarkup *InlineKeyboardMarkup `json:"reply_markup,omitempty"`
 }
@@ -195,6 +198,39 @@ func (o *SendInvoiceRequest) HasMessageThreadId() bool {
 // SetMessageThreadId gets a reference to the given int32 and assigns it to the MessageThreadId field.
 func (o *SendInvoiceRequest) SetMessageThreadId(v int32) {
 	o.MessageThreadId = &v
+}
+
+
+// GetDirectMessagesTopicId returns the DirectMessagesTopicId field value if set, zero value otherwise.
+func (o *SendInvoiceRequest) GetDirectMessagesTopicId() int32 {
+	if o == nil || IsNil(o.DirectMessagesTopicId) {
+		var ret int32
+		return ret
+	}
+	return *o.DirectMessagesTopicId
+}
+
+// GetDirectMessagesTopicIdOk returns a tuple with the DirectMessagesTopicId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SendInvoiceRequest) GetDirectMessagesTopicIdOk() (*int32, bool) {
+	if o == nil || IsNil(o.DirectMessagesTopicId) {
+		return nil, false
+	}
+	return o.DirectMessagesTopicId, true
+}
+
+// HasDirectMessagesTopicId returns a boolean if a field has been set.
+func (o *SendInvoiceRequest) HasDirectMessagesTopicId() bool {
+	if o != nil && !IsNil(o.DirectMessagesTopicId) {
+		return true
+	}
+
+	return false
+}
+
+// SetDirectMessagesTopicId gets a reference to the given int32 and assigns it to the DirectMessagesTopicId field.
+func (o *SendInvoiceRequest) SetDirectMessagesTopicId(v int32) {
+	o.DirectMessagesTopicId = &v
 }
 
 
@@ -978,6 +1014,39 @@ func (o *SendInvoiceRequest) SetMessageEffectId(v string) {
 }
 
 
+// GetSuggestedPostParameters returns the SuggestedPostParameters field value if set, zero value otherwise.
+func (o *SendInvoiceRequest) GetSuggestedPostParameters() SuggestedPostParameters {
+	if o == nil || IsNil(o.SuggestedPostParameters) {
+		var ret SuggestedPostParameters
+		return ret
+	}
+	return *o.SuggestedPostParameters
+}
+
+// GetSuggestedPostParametersOk returns a tuple with the SuggestedPostParameters field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SendInvoiceRequest) GetSuggestedPostParametersOk() (*SuggestedPostParameters, bool) {
+	if o == nil || IsNil(o.SuggestedPostParameters) {
+		return nil, false
+	}
+	return o.SuggestedPostParameters, true
+}
+
+// HasSuggestedPostParameters returns a boolean if a field has been set.
+func (o *SendInvoiceRequest) HasSuggestedPostParameters() bool {
+	if o != nil && !IsNil(o.SuggestedPostParameters) {
+		return true
+	}
+
+	return false
+}
+
+// SetSuggestedPostParameters gets a reference to the given SuggestedPostParameters and assigns it to the SuggestedPostParameters field.
+func (o *SendInvoiceRequest) SetSuggestedPostParameters(v SuggestedPostParameters) {
+	o.SuggestedPostParameters = &v
+}
+
+
 // GetReplyParameters returns the ReplyParameters field value if set, zero value otherwise.
 func (o *SendInvoiceRequest) GetReplyParameters() ReplyParameters {
 	if o == nil || IsNil(o.ReplyParameters) {
@@ -1058,6 +1127,9 @@ func (o SendInvoiceRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.MessageThreadId) {
 		toSerialize["message_thread_id"] = o.MessageThreadId
 	}
+	if !IsNil(o.DirectMessagesTopicId) {
+		toSerialize["direct_messages_topic_id"] = o.DirectMessagesTopicId
+	}
 	toSerialize["title"] = o.Title
 	toSerialize["description"] = o.Description
 	toSerialize["payload"] = o.Payload
@@ -1122,6 +1194,9 @@ func (o SendInvoiceRequest) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.MessageEffectId) {
 		toSerialize["message_effect_id"] = o.MessageEffectId
+	}
+	if !IsNil(o.SuggestedPostParameters) {
+		toSerialize["suggested_post_parameters"] = o.SuggestedPostParameters
 	}
 	if !IsNil(o.ReplyParameters) {
 		toSerialize["reply_parameters"] = o.ReplyParameters

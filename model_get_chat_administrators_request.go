@@ -5,8 +5,8 @@
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
+ *    * - **Version**: 9.2.0
+ *    * - **Modified**: 2025-09-06T05:32:05.180087835Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -55,7 +55,7 @@ var _ MappedNullable = &GetChatAdministratorsRequest{}
 
 // GetChatAdministratorsRequest Request parameters for getChatAdministrators
 type GetChatAdministratorsRequest struct {
-	ChatId LeaveChatRequestChatId `json:"chat_id"`
+	ChatId GetChatRequestChatId `json:"chat_id"`
 }
 
 type _GetChatAdministratorsRequest GetChatAdministratorsRequest
@@ -64,7 +64,7 @@ type _GetChatAdministratorsRequest GetChatAdministratorsRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGetChatAdministratorsRequest(chatId LeaveChatRequestChatId) *GetChatAdministratorsRequest {
+func NewGetChatAdministratorsRequest(chatId GetChatRequestChatId) *GetChatAdministratorsRequest {
 	this := GetChatAdministratorsRequest{}
 	this.ChatId = chatId
 	return &this
@@ -79,9 +79,9 @@ func NewGetChatAdministratorsRequestWithDefaults() *GetChatAdministratorsRequest
 }
 
 // GetChatId returns the ChatId field value
-func (o *GetChatAdministratorsRequest) GetChatId() LeaveChatRequestChatId {
+func (o *GetChatAdministratorsRequest) GetChatId() GetChatRequestChatId {
 	if o == nil {
-		var ret LeaveChatRequestChatId
+		var ret GetChatRequestChatId
 		return ret
 	}
 
@@ -90,7 +90,7 @@ func (o *GetChatAdministratorsRequest) GetChatId() LeaveChatRequestChatId {
 
 // GetChatIdOk returns a tuple with the ChatId field value
 // and a boolean to check if the value has been set.
-func (o *GetChatAdministratorsRequest) GetChatIdOk() (*LeaveChatRequestChatId, bool) {
+func (o *GetChatAdministratorsRequest) GetChatIdOk() (*GetChatRequestChatId, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -98,7 +98,7 @@ func (o *GetChatAdministratorsRequest) GetChatIdOk() (*LeaveChatRequestChatId, b
 }
 
 // SetChatId sets field value
-func (o *GetChatAdministratorsRequest) SetChatId(v LeaveChatRequestChatId) {
+func (o *GetChatAdministratorsRequest) SetChatId(v GetChatRequestChatId) {
 	o.ChatId = v
 }
 

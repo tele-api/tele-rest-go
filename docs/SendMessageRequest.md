@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **BusinessConnectionId** | Pointer to **string** | Unique identifier of the business connection on behalf of which the message will be sent | [optional] 
 **ChatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
 **MessageThreadId** | Pointer to **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | [optional] 
+**DirectMessagesTopicId** | Pointer to **int32** | Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat | [optional] 
 **Text** | **string** | Text of the message to be sent, 1-4096 characters after entities parsing | 
 **ParseMode** | Pointer to **string** | Mode for parsing entities in the message text. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. | [optional] 
 **Entities** | Pointer to [**[]MessageEntity**](MessageEntity.md) | A JSON-serialized list of special entities that appear in message text, which can be specified instead of *parse\\_mode* | [optional] 
@@ -15,6 +16,7 @@ Name | Type | Description | Notes
 **ProtectContent** | Pointer to **bool** | Protects the contents of the sent message from forwarding and saving | [optional] 
 **AllowPaidBroadcast** | Pointer to **bool** | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance | [optional] 
 **MessageEffectId** | Pointer to **string** | Unique identifier of the message effect to be added to the message; for private chats only | [optional] 
+**SuggestedPostParameters** | Pointer to [**SuggestedPostParameters**](SuggestedPostParameters.md) |  | [optional] 
 **ReplyParameters** | Pointer to [**ReplyParameters**](ReplyParameters.md) |  | [optional] 
 **ReplyMarkup** | Pointer to [**SendMessageRequestReplyMarkup**](SendMessageRequestReplyMarkup.md) |  | [optional] 
 
@@ -106,6 +108,31 @@ SetMessageThreadId sets MessageThreadId field to given value.
 `func (o *SendMessageRequest) HasMessageThreadId() bool`
 
 HasMessageThreadId returns a boolean if a field has been set.
+
+### GetDirectMessagesTopicId
+
+`func (o *SendMessageRequest) GetDirectMessagesTopicId() int32`
+
+GetDirectMessagesTopicId returns the DirectMessagesTopicId field if non-nil, zero value otherwise.
+
+### GetDirectMessagesTopicIdOk
+
+`func (o *SendMessageRequest) GetDirectMessagesTopicIdOk() (*int32, bool)`
+
+GetDirectMessagesTopicIdOk returns a tuple with the DirectMessagesTopicId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDirectMessagesTopicId
+
+`func (o *SendMessageRequest) SetDirectMessagesTopicId(v int32)`
+
+SetDirectMessagesTopicId sets DirectMessagesTopicId field to given value.
+
+### HasDirectMessagesTopicId
+
+`func (o *SendMessageRequest) HasDirectMessagesTopicId() bool`
+
+HasDirectMessagesTopicId returns a boolean if a field has been set.
 
 ### GetText
 
@@ -301,6 +328,31 @@ SetMessageEffectId sets MessageEffectId field to given value.
 `func (o *SendMessageRequest) HasMessageEffectId() bool`
 
 HasMessageEffectId returns a boolean if a field has been set.
+
+### GetSuggestedPostParameters
+
+`func (o *SendMessageRequest) GetSuggestedPostParameters() SuggestedPostParameters`
+
+GetSuggestedPostParameters returns the SuggestedPostParameters field if non-nil, zero value otherwise.
+
+### GetSuggestedPostParametersOk
+
+`func (o *SendMessageRequest) GetSuggestedPostParametersOk() (*SuggestedPostParameters, bool)`
+
+GetSuggestedPostParametersOk returns a tuple with the SuggestedPostParameters field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSuggestedPostParameters
+
+`func (o *SendMessageRequest) SetSuggestedPostParameters(v SuggestedPostParameters)`
+
+SetSuggestedPostParameters sets SuggestedPostParameters field to given value.
+
+### HasSuggestedPostParameters
+
+`func (o *SendMessageRequest) HasSuggestedPostParameters() bool`
+
+HasSuggestedPostParameters returns a boolean if a field has been set.
 
 ### GetReplyParameters
 

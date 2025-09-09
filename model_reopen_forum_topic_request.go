@@ -5,8 +5,8 @@
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
+ *    * - **Version**: 9.2.0
+ *    * - **Modified**: 2025-09-09T23:46:30.762261440Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -55,7 +55,7 @@ var _ MappedNullable = &ReopenForumTopicRequest{}
 
 // ReopenForumTopicRequest Request parameters for reopenForumTopic
 type ReopenForumTopicRequest struct {
-	ChatId BotCommandScopeChatChatId `json:"chat_id"`
+	ChatId RestrictChatMemberRequestChatId `json:"chat_id"`
 	// Unique identifier for the target message thread of the forum topic
 	MessageThreadId int32 `json:"message_thread_id"`
 }
@@ -66,7 +66,7 @@ type _ReopenForumTopicRequest ReopenForumTopicRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewReopenForumTopicRequest(chatId BotCommandScopeChatChatId, messageThreadId int32) *ReopenForumTopicRequest {
+func NewReopenForumTopicRequest(chatId RestrictChatMemberRequestChatId, messageThreadId int32) *ReopenForumTopicRequest {
 	this := ReopenForumTopicRequest{}
 	this.ChatId = chatId
 	this.MessageThreadId = messageThreadId
@@ -82,9 +82,9 @@ func NewReopenForumTopicRequestWithDefaults() *ReopenForumTopicRequest {
 }
 
 // GetChatId returns the ChatId field value
-func (o *ReopenForumTopicRequest) GetChatId() BotCommandScopeChatChatId {
+func (o *ReopenForumTopicRequest) GetChatId() RestrictChatMemberRequestChatId {
 	if o == nil {
-		var ret BotCommandScopeChatChatId
+		var ret RestrictChatMemberRequestChatId
 		return ret
 	}
 
@@ -93,7 +93,7 @@ func (o *ReopenForumTopicRequest) GetChatId() BotCommandScopeChatChatId {
 
 // GetChatIdOk returns a tuple with the ChatId field value
 // and a boolean to check if the value has been set.
-func (o *ReopenForumTopicRequest) GetChatIdOk() (*BotCommandScopeChatChatId, bool) {
+func (o *ReopenForumTopicRequest) GetChatIdOk() (*RestrictChatMemberRequestChatId, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -101,7 +101,7 @@ func (o *ReopenForumTopicRequest) GetChatIdOk() (*BotCommandScopeChatChatId, boo
 }
 
 // SetChatId sets field value
-func (o *ReopenForumTopicRequest) SetChatId(v BotCommandScopeChatChatId) {
+func (o *ReopenForumTopicRequest) SetChatId(v RestrictChatMemberRequestChatId) {
 	o.ChatId = v
 }
 

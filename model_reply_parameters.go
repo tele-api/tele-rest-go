@@ -5,8 +5,8 @@
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
+ *    * - **Version**: 9.2.0
+ *    * - **Modified**: 2025-09-09T23:46:30.762261440Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -68,6 +68,8 @@ type ReplyParameters struct {
 	QuoteEntities []MessageEntity `json:"quote_entities,omitempty"`
 	// *Optional*. Position of the quote in the original message in UTF-16 code units
 	QuotePosition *int32 `json:"quote_position,omitempty"`
+	// *Optional*. Identifier of the specific checklist task to be replied to
+	ChecklistTaskId *int32 `json:"checklist_task_id,omitempty"`
 }
 
 type _ReplyParameters ReplyParameters
@@ -312,6 +314,39 @@ func (o *ReplyParameters) SetQuotePosition(v int32) {
 }
 
 
+// GetChecklistTaskId returns the ChecklistTaskId field value if set, zero value otherwise.
+func (o *ReplyParameters) GetChecklistTaskId() int32 {
+	if o == nil || IsNil(o.ChecklistTaskId) {
+		var ret int32
+		return ret
+	}
+	return *o.ChecklistTaskId
+}
+
+// GetChecklistTaskIdOk returns a tuple with the ChecklistTaskId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ReplyParameters) GetChecklistTaskIdOk() (*int32, bool) {
+	if o == nil || IsNil(o.ChecklistTaskId) {
+		return nil, false
+	}
+	return o.ChecklistTaskId, true
+}
+
+// HasChecklistTaskId returns a boolean if a field has been set.
+func (o *ReplyParameters) HasChecklistTaskId() bool {
+	if o != nil && !IsNil(o.ChecklistTaskId) {
+		return true
+	}
+
+	return false
+}
+
+// SetChecklistTaskId gets a reference to the given int32 and assigns it to the ChecklistTaskId field.
+func (o *ReplyParameters) SetChecklistTaskId(v int32) {
+	o.ChecklistTaskId = &v
+}
+
+
 func (o ReplyParameters) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -340,6 +375,9 @@ func (o ReplyParameters) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.QuotePosition) {
 		toSerialize["quote_position"] = o.QuotePosition
+	}
+	if !IsNil(o.ChecklistTaskId) {
+		toSerialize["checklist_task_id"] = o.ChecklistTaskId
 	}
 	return toSerialize, nil
 }

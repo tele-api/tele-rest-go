@@ -5,8 +5,8 @@
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
+ *    * - **Version**: 9.2.0
+ *    * - **Modified**: 2025-09-09T23:46:30.762261440Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -59,6 +59,7 @@ type Message struct {
 	MessageId int32 `json:"message_id"`
 	// *Optional*. Unique identifier of a message thread to which the message belongs; for supergroups only
 	MessageThreadId *int32 `json:"message_thread_id,omitempty"`
+	DirectMessagesTopic *DirectMessagesTopic `json:"direct_messages_topic,omitempty"`
 	From *User `json:"from,omitempty"`
 	SenderChat *Chat `json:"sender_chat,omitempty"`
 	// *Optional*. If the sender of the message boosted the chat, the number of boosts added by the user
@@ -78,6 +79,8 @@ type Message struct {
 	ExternalReply *ExternalReplyInfo `json:"external_reply,omitempty"`
 	Quote *TextQuote `json:"quote,omitempty"`
 	ReplyToStory *Story `json:"reply_to_story,omitempty"`
+	// *Optional*. Identifier of the specific checklist task that is being replied to
+	ReplyToChecklistTaskId *int32 `json:"reply_to_checklist_task_id,omitempty"`
 	ViaBot *User `json:"via_bot,omitempty"`
 	// *Optional*. Date the message was last edited in Unix time
 	EditDate *int32 `json:"edit_date,omitempty"`
@@ -85,6 +88,8 @@ type Message struct {
 	HasProtectedContent *bool `json:"has_protected_content,omitempty"`
 	// *Optional*. *True*, if the message was sent by an implicit action, for example, as an away or a greeting business message, or as a scheduled message
 	IsFromOffline *bool `json:"is_from_offline,omitempty"`
+	// *Optional*. *True*, if the message is a paid post. Note that such posts must not be deleted for 24 hours to receive the payment and can't be edited.
+	IsPaidPost *bool `json:"is_paid_post,omitempty"`
 	// *Optional*. The unique identifier of a media message group this message belongs to
 	MediaGroupId *string `json:"media_group_id,omitempty"`
 	// *Optional*. Signature of the post author for messages in channels, or the custom title of an anonymous group administrator
@@ -96,6 +101,7 @@ type Message struct {
 	// *Optional*. For text messages, special entities like usernames, URLs, bot commands, etc. that appear in the text
 	Entities []MessageEntity `json:"entities,omitempty"`
 	LinkPreviewOptions *LinkPreviewOptions `json:"link_preview_options,omitempty"`
+	SuggestedPostInfo *SuggestedPostInfo `json:"suggested_post_info,omitempty"`
 	// *Optional*. Unique identifier of the message effect added to the message
 	EffectId *string `json:"effect_id,omitempty"`
 	Animation *Animation `json:"animation,omitempty"`
@@ -173,6 +179,11 @@ type Message struct {
 	GiveawayWinners *GiveawayWinners `json:"giveaway_winners,omitempty"`
 	GiveawayCompleted *GiveawayCompleted `json:"giveaway_completed,omitempty"`
 	PaidMessagePriceChanged *PaidMessagePriceChanged `json:"paid_message_price_changed,omitempty"`
+	SuggestedPostApproved *SuggestedPostApproved `json:"suggested_post_approved,omitempty"`
+	SuggestedPostApprovalFailed *SuggestedPostApprovalFailed `json:"suggested_post_approval_failed,omitempty"`
+	SuggestedPostDeclined *SuggestedPostDeclined `json:"suggested_post_declined,omitempty"`
+	SuggestedPostPaid *SuggestedPostPaid `json:"suggested_post_paid,omitempty"`
+	SuggestedPostRefunded *SuggestedPostRefunded `json:"suggested_post_refunded,omitempty"`
 	VideoChatScheduled *VideoChatScheduled `json:"video_chat_scheduled,omitempty"`
 	VideoChatStarted interface{} `json:"video_chat_started,omitempty"`
 	VideoChatEnded *VideoChatEnded `json:"video_chat_ended,omitempty"`
@@ -200,6 +211,8 @@ func NewMessage(messageId int32, date int32, chat Chat) *Message {
 	this.HasProtectedContent = &hasProtectedContent
 	var isFromOffline bool = true
 	this.IsFromOffline = &isFromOffline
+	var isPaidPost bool = true
+	this.IsPaidPost = &isPaidPost
 	var showCaptionAboveMedia bool = true
 	this.ShowCaptionAboveMedia = &showCaptionAboveMedia
 	var hasMediaSpoiler bool = true
@@ -228,6 +241,8 @@ func NewMessageWithDefaults() *Message {
 	this.HasProtectedContent = &hasProtectedContent
 	var isFromOffline bool = true
 	this.IsFromOffline = &isFromOffline
+	var isPaidPost bool = true
+	this.IsPaidPost = &isPaidPost
 	var showCaptionAboveMedia bool = true
 	this.ShowCaptionAboveMedia = &showCaptionAboveMedia
 	var hasMediaSpoiler bool = true
@@ -297,6 +312,39 @@ func (o *Message) HasMessageThreadId() bool {
 // SetMessageThreadId gets a reference to the given int32 and assigns it to the MessageThreadId field.
 func (o *Message) SetMessageThreadId(v int32) {
 	o.MessageThreadId = &v
+}
+
+
+// GetDirectMessagesTopic returns the DirectMessagesTopic field value if set, zero value otherwise.
+func (o *Message) GetDirectMessagesTopic() DirectMessagesTopic {
+	if o == nil || IsNil(o.DirectMessagesTopic) {
+		var ret DirectMessagesTopic
+		return ret
+	}
+	return *o.DirectMessagesTopic
+}
+
+// GetDirectMessagesTopicOk returns a tuple with the DirectMessagesTopic field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Message) GetDirectMessagesTopicOk() (*DirectMessagesTopic, bool) {
+	if o == nil || IsNil(o.DirectMessagesTopic) {
+		return nil, false
+	}
+	return o.DirectMessagesTopic, true
+}
+
+// HasDirectMessagesTopic returns a boolean if a field has been set.
+func (o *Message) HasDirectMessagesTopic() bool {
+	if o != nil && !IsNil(o.DirectMessagesTopic) {
+		return true
+	}
+
+	return false
+}
+
+// SetDirectMessagesTopic gets a reference to the given DirectMessagesTopic and assigns it to the DirectMessagesTopic field.
+func (o *Message) SetDirectMessagesTopic(v DirectMessagesTopic) {
+	o.DirectMessagesTopic = &v
 }
 
 
@@ -744,6 +792,39 @@ func (o *Message) SetReplyToStory(v Story) {
 }
 
 
+// GetReplyToChecklistTaskId returns the ReplyToChecklistTaskId field value if set, zero value otherwise.
+func (o *Message) GetReplyToChecklistTaskId() int32 {
+	if o == nil || IsNil(o.ReplyToChecklistTaskId) {
+		var ret int32
+		return ret
+	}
+	return *o.ReplyToChecklistTaskId
+}
+
+// GetReplyToChecklistTaskIdOk returns a tuple with the ReplyToChecklistTaskId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Message) GetReplyToChecklistTaskIdOk() (*int32, bool) {
+	if o == nil || IsNil(o.ReplyToChecklistTaskId) {
+		return nil, false
+	}
+	return o.ReplyToChecklistTaskId, true
+}
+
+// HasReplyToChecklistTaskId returns a boolean if a field has been set.
+func (o *Message) HasReplyToChecklistTaskId() bool {
+	if o != nil && !IsNil(o.ReplyToChecklistTaskId) {
+		return true
+	}
+
+	return false
+}
+
+// SetReplyToChecklistTaskId gets a reference to the given int32 and assigns it to the ReplyToChecklistTaskId field.
+func (o *Message) SetReplyToChecklistTaskId(v int32) {
+	o.ReplyToChecklistTaskId = &v
+}
+
+
 // GetViaBot returns the ViaBot field value if set, zero value otherwise.
 func (o *Message) GetViaBot() User {
 	if o == nil || IsNil(o.ViaBot) {
@@ -873,6 +954,39 @@ func (o *Message) HasIsFromOffline() bool {
 // SetIsFromOffline gets a reference to the given bool and assigns it to the IsFromOffline field.
 func (o *Message) SetIsFromOffline(v bool) {
 	o.IsFromOffline = &v
+}
+
+
+// GetIsPaidPost returns the IsPaidPost field value if set, zero value otherwise.
+func (o *Message) GetIsPaidPost() bool {
+	if o == nil || IsNil(o.IsPaidPost) {
+		var ret bool
+		return ret
+	}
+	return *o.IsPaidPost
+}
+
+// GetIsPaidPostOk returns a tuple with the IsPaidPost field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Message) GetIsPaidPostOk() (*bool, bool) {
+	if o == nil || IsNil(o.IsPaidPost) {
+		return nil, false
+	}
+	return o.IsPaidPost, true
+}
+
+// HasIsPaidPost returns a boolean if a field has been set.
+func (o *Message) HasIsPaidPost() bool {
+	if o != nil && !IsNil(o.IsPaidPost) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsPaidPost gets a reference to the given bool and assigns it to the IsPaidPost field.
+func (o *Message) SetIsPaidPost(v bool) {
+	o.IsPaidPost = &v
 }
 
 
@@ -1071,6 +1185,39 @@ func (o *Message) HasLinkPreviewOptions() bool {
 // SetLinkPreviewOptions gets a reference to the given LinkPreviewOptions and assigns it to the LinkPreviewOptions field.
 func (o *Message) SetLinkPreviewOptions(v LinkPreviewOptions) {
 	o.LinkPreviewOptions = &v
+}
+
+
+// GetSuggestedPostInfo returns the SuggestedPostInfo field value if set, zero value otherwise.
+func (o *Message) GetSuggestedPostInfo() SuggestedPostInfo {
+	if o == nil || IsNil(o.SuggestedPostInfo) {
+		var ret SuggestedPostInfo
+		return ret
+	}
+	return *o.SuggestedPostInfo
+}
+
+// GetSuggestedPostInfoOk returns a tuple with the SuggestedPostInfo field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Message) GetSuggestedPostInfoOk() (*SuggestedPostInfo, bool) {
+	if o == nil || IsNil(o.SuggestedPostInfo) {
+		return nil, false
+	}
+	return o.SuggestedPostInfo, true
+}
+
+// HasSuggestedPostInfo returns a boolean if a field has been set.
+func (o *Message) HasSuggestedPostInfo() bool {
+	if o != nil && !IsNil(o.SuggestedPostInfo) {
+		return true
+	}
+
+	return false
+}
+
+// SetSuggestedPostInfo gets a reference to the given SuggestedPostInfo and assigns it to the SuggestedPostInfo field.
+func (o *Message) SetSuggestedPostInfo(v SuggestedPostInfo) {
+	o.SuggestedPostInfo = &v
 }
 
 
@@ -3091,6 +3238,171 @@ func (o *Message) SetPaidMessagePriceChanged(v PaidMessagePriceChanged) {
 }
 
 
+// GetSuggestedPostApproved returns the SuggestedPostApproved field value if set, zero value otherwise.
+func (o *Message) GetSuggestedPostApproved() SuggestedPostApproved {
+	if o == nil || IsNil(o.SuggestedPostApproved) {
+		var ret SuggestedPostApproved
+		return ret
+	}
+	return *o.SuggestedPostApproved
+}
+
+// GetSuggestedPostApprovedOk returns a tuple with the SuggestedPostApproved field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Message) GetSuggestedPostApprovedOk() (*SuggestedPostApproved, bool) {
+	if o == nil || IsNil(o.SuggestedPostApproved) {
+		return nil, false
+	}
+	return o.SuggestedPostApproved, true
+}
+
+// HasSuggestedPostApproved returns a boolean if a field has been set.
+func (o *Message) HasSuggestedPostApproved() bool {
+	if o != nil && !IsNil(o.SuggestedPostApproved) {
+		return true
+	}
+
+	return false
+}
+
+// SetSuggestedPostApproved gets a reference to the given SuggestedPostApproved and assigns it to the SuggestedPostApproved field.
+func (o *Message) SetSuggestedPostApproved(v SuggestedPostApproved) {
+	o.SuggestedPostApproved = &v
+}
+
+
+// GetSuggestedPostApprovalFailed returns the SuggestedPostApprovalFailed field value if set, zero value otherwise.
+func (o *Message) GetSuggestedPostApprovalFailed() SuggestedPostApprovalFailed {
+	if o == nil || IsNil(o.SuggestedPostApprovalFailed) {
+		var ret SuggestedPostApprovalFailed
+		return ret
+	}
+	return *o.SuggestedPostApprovalFailed
+}
+
+// GetSuggestedPostApprovalFailedOk returns a tuple with the SuggestedPostApprovalFailed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Message) GetSuggestedPostApprovalFailedOk() (*SuggestedPostApprovalFailed, bool) {
+	if o == nil || IsNil(o.SuggestedPostApprovalFailed) {
+		return nil, false
+	}
+	return o.SuggestedPostApprovalFailed, true
+}
+
+// HasSuggestedPostApprovalFailed returns a boolean if a field has been set.
+func (o *Message) HasSuggestedPostApprovalFailed() bool {
+	if o != nil && !IsNil(o.SuggestedPostApprovalFailed) {
+		return true
+	}
+
+	return false
+}
+
+// SetSuggestedPostApprovalFailed gets a reference to the given SuggestedPostApprovalFailed and assigns it to the SuggestedPostApprovalFailed field.
+func (o *Message) SetSuggestedPostApprovalFailed(v SuggestedPostApprovalFailed) {
+	o.SuggestedPostApprovalFailed = &v
+}
+
+
+// GetSuggestedPostDeclined returns the SuggestedPostDeclined field value if set, zero value otherwise.
+func (o *Message) GetSuggestedPostDeclined() SuggestedPostDeclined {
+	if o == nil || IsNil(o.SuggestedPostDeclined) {
+		var ret SuggestedPostDeclined
+		return ret
+	}
+	return *o.SuggestedPostDeclined
+}
+
+// GetSuggestedPostDeclinedOk returns a tuple with the SuggestedPostDeclined field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Message) GetSuggestedPostDeclinedOk() (*SuggestedPostDeclined, bool) {
+	if o == nil || IsNil(o.SuggestedPostDeclined) {
+		return nil, false
+	}
+	return o.SuggestedPostDeclined, true
+}
+
+// HasSuggestedPostDeclined returns a boolean if a field has been set.
+func (o *Message) HasSuggestedPostDeclined() bool {
+	if o != nil && !IsNil(o.SuggestedPostDeclined) {
+		return true
+	}
+
+	return false
+}
+
+// SetSuggestedPostDeclined gets a reference to the given SuggestedPostDeclined and assigns it to the SuggestedPostDeclined field.
+func (o *Message) SetSuggestedPostDeclined(v SuggestedPostDeclined) {
+	o.SuggestedPostDeclined = &v
+}
+
+
+// GetSuggestedPostPaid returns the SuggestedPostPaid field value if set, zero value otherwise.
+func (o *Message) GetSuggestedPostPaid() SuggestedPostPaid {
+	if o == nil || IsNil(o.SuggestedPostPaid) {
+		var ret SuggestedPostPaid
+		return ret
+	}
+	return *o.SuggestedPostPaid
+}
+
+// GetSuggestedPostPaidOk returns a tuple with the SuggestedPostPaid field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Message) GetSuggestedPostPaidOk() (*SuggestedPostPaid, bool) {
+	if o == nil || IsNil(o.SuggestedPostPaid) {
+		return nil, false
+	}
+	return o.SuggestedPostPaid, true
+}
+
+// HasSuggestedPostPaid returns a boolean if a field has been set.
+func (o *Message) HasSuggestedPostPaid() bool {
+	if o != nil && !IsNil(o.SuggestedPostPaid) {
+		return true
+	}
+
+	return false
+}
+
+// SetSuggestedPostPaid gets a reference to the given SuggestedPostPaid and assigns it to the SuggestedPostPaid field.
+func (o *Message) SetSuggestedPostPaid(v SuggestedPostPaid) {
+	o.SuggestedPostPaid = &v
+}
+
+
+// GetSuggestedPostRefunded returns the SuggestedPostRefunded field value if set, zero value otherwise.
+func (o *Message) GetSuggestedPostRefunded() SuggestedPostRefunded {
+	if o == nil || IsNil(o.SuggestedPostRefunded) {
+		var ret SuggestedPostRefunded
+		return ret
+	}
+	return *o.SuggestedPostRefunded
+}
+
+// GetSuggestedPostRefundedOk returns a tuple with the SuggestedPostRefunded field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Message) GetSuggestedPostRefundedOk() (*SuggestedPostRefunded, bool) {
+	if o == nil || IsNil(o.SuggestedPostRefunded) {
+		return nil, false
+	}
+	return o.SuggestedPostRefunded, true
+}
+
+// HasSuggestedPostRefunded returns a boolean if a field has been set.
+func (o *Message) HasSuggestedPostRefunded() bool {
+	if o != nil && !IsNil(o.SuggestedPostRefunded) {
+		return true
+	}
+
+	return false
+}
+
+// SetSuggestedPostRefunded gets a reference to the given SuggestedPostRefunded and assigns it to the SuggestedPostRefunded field.
+func (o *Message) SetSuggestedPostRefunded(v SuggestedPostRefunded) {
+	o.SuggestedPostRefunded = &v
+}
+
+
 // GetVideoChatScheduled returns the VideoChatScheduled field value if set, zero value otherwise.
 func (o *Message) GetVideoChatScheduled() VideoChatScheduled {
 	if o == nil || IsNil(o.VideoChatScheduled) {
@@ -3304,6 +3616,9 @@ func (o Message) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.MessageThreadId) {
 		toSerialize["message_thread_id"] = o.MessageThreadId
 	}
+	if !IsNil(o.DirectMessagesTopic) {
+		toSerialize["direct_messages_topic"] = o.DirectMessagesTopic
+	}
 	if !IsNil(o.From) {
 		toSerialize["from"] = o.From
 	}
@@ -3342,6 +3657,9 @@ func (o Message) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ReplyToStory) {
 		toSerialize["reply_to_story"] = o.ReplyToStory
 	}
+	if !IsNil(o.ReplyToChecklistTaskId) {
+		toSerialize["reply_to_checklist_task_id"] = o.ReplyToChecklistTaskId
+	}
 	if !IsNil(o.ViaBot) {
 		toSerialize["via_bot"] = o.ViaBot
 	}
@@ -3353,6 +3671,9 @@ func (o Message) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.IsFromOffline) {
 		toSerialize["is_from_offline"] = o.IsFromOffline
+	}
+	if !IsNil(o.IsPaidPost) {
+		toSerialize["is_paid_post"] = o.IsPaidPost
 	}
 	if !IsNil(o.MediaGroupId) {
 		toSerialize["media_group_id"] = o.MediaGroupId
@@ -3371,6 +3692,9 @@ func (o Message) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.LinkPreviewOptions) {
 		toSerialize["link_preview_options"] = o.LinkPreviewOptions
+	}
+	if !IsNil(o.SuggestedPostInfo) {
+		toSerialize["suggested_post_info"] = o.SuggestedPostInfo
 	}
 	if !IsNil(o.EffectId) {
 		toSerialize["effect_id"] = o.EffectId
@@ -3554,6 +3878,21 @@ func (o Message) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.PaidMessagePriceChanged) {
 		toSerialize["paid_message_price_changed"] = o.PaidMessagePriceChanged
+	}
+	if !IsNil(o.SuggestedPostApproved) {
+		toSerialize["suggested_post_approved"] = o.SuggestedPostApproved
+	}
+	if !IsNil(o.SuggestedPostApprovalFailed) {
+		toSerialize["suggested_post_approval_failed"] = o.SuggestedPostApprovalFailed
+	}
+	if !IsNil(o.SuggestedPostDeclined) {
+		toSerialize["suggested_post_declined"] = o.SuggestedPostDeclined
+	}
+	if !IsNil(o.SuggestedPostPaid) {
+		toSerialize["suggested_post_paid"] = o.SuggestedPostPaid
+	}
+	if !IsNil(o.SuggestedPostRefunded) {
+		toSerialize["suggested_post_refunded"] = o.SuggestedPostRefunded
 	}
 	if !IsNil(o.VideoChatScheduled) {
 		toSerialize["video_chat_scheduled"] = o.VideoChatScheduled

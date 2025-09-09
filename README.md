@@ -5,9 +5,9 @@ To learn how to create and set up a bot, please consult our Introduction to Bots
 
 ## Overview
 
-- API version: 9.1.0
-- Package version: 9.1.0
-- Build date: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
+- API version: 9.2.0
+- Package version: 9.2.0
+- Build date: 2025-09-09T23:46:30.762261440Z[Etc/UTC]
 - Generator version: 7.14.0
 
 ## Installation
@@ -85,6 +85,7 @@ Class | Method | HTTP request | Description
 *DefaultAPI* | [**PostAnswerShippingQuery**](docs/DefaultAPI.md#postanswershippingquery) | **Post** /answerShippingQuery | answerShippingQuery
 *DefaultAPI* | [**PostAnswerWebAppQuery**](docs/DefaultAPI.md#postanswerwebappquery) | **Post** /answerWebAppQuery | answerWebAppQuery
 *DefaultAPI* | [**PostApproveChatJoinRequest**](docs/DefaultAPI.md#postapprovechatjoinrequest) | **Post** /approveChatJoinRequest | approveChatJoinRequest
+*DefaultAPI* | [**PostApproveSuggestedPost**](docs/DefaultAPI.md#postapprovesuggestedpost) | **Post** /approveSuggestedPost | approveSuggestedPost
 *DefaultAPI* | [**PostBanChatMember**](docs/DefaultAPI.md#postbanchatmember) | **Post** /banChatMember | banChatMember
 *DefaultAPI* | [**PostBanChatSenderChat**](docs/DefaultAPI.md#postbanchatsenderchat) | **Post** /banChatSenderChat | banChatSenderChat
 *DefaultAPI* | [**PostClose**](docs/DefaultAPI.md#postclose) | **Post** /close | close
@@ -99,6 +100,7 @@ Class | Method | HTTP request | Description
 *DefaultAPI* | [**PostCreateInvoiceLink**](docs/DefaultAPI.md#postcreateinvoicelink) | **Post** /createInvoiceLink | createInvoiceLink
 *DefaultAPI* | [**PostCreateNewStickerSet**](docs/DefaultAPI.md#postcreatenewstickerset) | **Post** /createNewStickerSet | createNewStickerSet
 *DefaultAPI* | [**PostDeclineChatJoinRequest**](docs/DefaultAPI.md#postdeclinechatjoinrequest) | **Post** /declineChatJoinRequest | declineChatJoinRequest
+*DefaultAPI* | [**PostDeclineSuggestedPost**](docs/DefaultAPI.md#postdeclinesuggestedpost) | **Post** /declineSuggestedPost | declineSuggestedPost
 *DefaultAPI* | [**PostDeleteBusinessMessages**](docs/DefaultAPI.md#postdeletebusinessmessages) | **Post** /deleteBusinessMessages | deleteBusinessMessages
 *DefaultAPI* | [**PostDeleteChatPhoto**](docs/DefaultAPI.md#postdeletechatphoto) | **Post** /deleteChatPhoto | deleteChatPhoto
 *DefaultAPI* | [**PostDeleteChatStickerSet**](docs/DefaultAPI.md#postdeletechatstickerset) | **Post** /deleteChatStickerSet | deleteChatStickerSet
@@ -255,6 +257,8 @@ Class | Method | HTTP request | Description
  - [AnswerWebAppQueryResponse](docs/AnswerWebAppQueryResponse.md)
  - [ApproveChatJoinRequestRequest](docs/ApproveChatJoinRequestRequest.md)
  - [ApproveChatJoinRequestResponse](docs/ApproveChatJoinRequestResponse.md)
+ - [ApproveSuggestedPostRequest](docs/ApproveSuggestedPostRequest.md)
+ - [ApproveSuggestedPostResponse](docs/ApproveSuggestedPostResponse.md)
  - [Audio](docs/Audio.md)
  - [BackgroundFill](docs/BackgroundFill.md)
  - [BackgroundFillFreeformGradient](docs/BackgroundFillFreeformGradient.md)
@@ -349,6 +353,8 @@ Class | Method | HTTP request | Description
  - [CreateNewStickerSetResponse](docs/CreateNewStickerSetResponse.md)
  - [DeclineChatJoinRequestRequest](docs/DeclineChatJoinRequestRequest.md)
  - [DeclineChatJoinRequestResponse](docs/DeclineChatJoinRequestResponse.md)
+ - [DeclineSuggestedPostRequest](docs/DeclineSuggestedPostRequest.md)
+ - [DeclineSuggestedPostResponse](docs/DeclineSuggestedPostResponse.md)
  - [DeleteBusinessMessagesRequest](docs/DeleteBusinessMessagesRequest.md)
  - [DeleteBusinessMessagesResponse](docs/DeleteBusinessMessagesResponse.md)
  - [DeleteChatPhotoRequest](docs/DeleteChatPhotoRequest.md)
@@ -373,6 +379,7 @@ Class | Method | HTTP request | Description
  - [DeleteWebhookResponse](docs/DeleteWebhookResponse.md)
  - [Dice](docs/Dice.md)
  - [DirectMessagePriceChanged](docs/DirectMessagePriceChanged.md)
+ - [DirectMessagesTopic](docs/DirectMessagesTopic.md)
  - [Document](docs/Document.md)
  - [EditChatInviteLinkRequest](docs/EditChatInviteLinkRequest.md)
  - [EditChatInviteLinkResponse](docs/EditChatInviteLinkResponse.md)
@@ -435,6 +442,7 @@ Class | Method | HTTP request | Description
  - [GetChatMenuButtonRequest](docs/GetChatMenuButtonRequest.md)
  - [GetChatMenuButtonResponse](docs/GetChatMenuButtonResponse.md)
  - [GetChatRequest](docs/GetChatRequest.md)
+ - [GetChatRequestChatId](docs/GetChatRequestChatId.md)
  - [GetChatResponse](docs/GetChatResponse.md)
  - [GetCustomEmojiStickersRequest](docs/GetCustomEmojiStickersRequest.md)
  - [GetCustomEmojiStickersResponse](docs/GetCustomEmojiStickersResponse.md)
@@ -625,6 +633,7 @@ Class | Method | HTTP request | Description
  - [ReplyParametersChatId](docs/ReplyParametersChatId.md)
  - [ResponseParameters](docs/ResponseParameters.md)
  - [RestrictChatMemberRequest](docs/RestrictChatMemberRequest.md)
+ - [RestrictChatMemberRequestChatId](docs/RestrictChatMemberRequestChatId.md)
  - [RestrictChatMemberResponse](docs/RestrictChatMemberResponse.md)
  - [RevenueWithdrawalState](docs/RevenueWithdrawalState.md)
  - [RevenueWithdrawalStateFailed](docs/RevenueWithdrawalStateFailed.md)
@@ -640,6 +649,7 @@ Class | Method | HTTP request | Description
  - [SendAudioRequest](docs/SendAudioRequest.md)
  - [SendAudioResponse](docs/SendAudioResponse.md)
  - [SendChatActionRequest](docs/SendChatActionRequest.md)
+ - [SendChatActionRequestChatId](docs/SendChatActionRequestChatId.md)
  - [SendChatActionResponse](docs/SendChatActionResponse.md)
  - [SendChecklistRequest](docs/SendChecklistRequest.md)
  - [SendChecklistResponse](docs/SendChecklistResponse.md)
@@ -671,6 +681,7 @@ Class | Method | HTTP request | Description
  - [SendPhotoRequest](docs/SendPhotoRequest.md)
  - [SendPhotoResponse](docs/SendPhotoResponse.md)
  - [SendPollRequest](docs/SendPollRequest.md)
+ - [SendPollRequestChatId](docs/SendPollRequestChatId.md)
  - [SendPollResponse](docs/SendPollResponse.md)
  - [SendStickerRequest](docs/SendStickerRequest.md)
  - [SendStickerResponse](docs/SendStickerResponse.md)
@@ -764,6 +775,14 @@ Class | Method | HTTP request | Description
  - [StoryAreaTypeUniqueGift](docs/StoryAreaTypeUniqueGift.md)
  - [StoryAreaTypeWeather](docs/StoryAreaTypeWeather.md)
  - [SuccessfulPayment](docs/SuccessfulPayment.md)
+ - [SuggestedPostApprovalFailed](docs/SuggestedPostApprovalFailed.md)
+ - [SuggestedPostApproved](docs/SuggestedPostApproved.md)
+ - [SuggestedPostDeclined](docs/SuggestedPostDeclined.md)
+ - [SuggestedPostInfo](docs/SuggestedPostInfo.md)
+ - [SuggestedPostPaid](docs/SuggestedPostPaid.md)
+ - [SuggestedPostParameters](docs/SuggestedPostParameters.md)
+ - [SuggestedPostPrice](docs/SuggestedPostPrice.md)
+ - [SuggestedPostRefunded](docs/SuggestedPostRefunded.md)
  - [SwitchInlineQueryChosenChat](docs/SwitchInlineQueryChosenChat.md)
  - [TextQuote](docs/TextQuote.md)
  - [TransactionPartner](docs/TransactionPartner.md)
@@ -809,6 +828,7 @@ Class | Method | HTTP request | Description
  - [UsersShared](docs/UsersShared.md)
  - [Venue](docs/Venue.md)
  - [VerifyChatRequest](docs/VerifyChatRequest.md)
+ - [VerifyChatRequestChatId](docs/VerifyChatRequestChatId.md)
  - [VerifyChatResponse](docs/VerifyChatResponse.md)
  - [VerifyUserRequest](docs/VerifyUserRequest.md)
  - [VerifyUserResponse](docs/VerifyUserResponse.md)

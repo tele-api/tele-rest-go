@@ -5,8 +5,8 @@
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
+ *    * - **Version**: 9.2.0
+ *    * - **Modified**: 2025-09-09T23:46:30.762261440Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -60,6 +60,8 @@ type SendMediaGroupRequest struct {
 	ChatId SendMessageRequestChatId `json:"chat_id"`
 	// Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
 	MessageThreadId *int32 `json:"message_thread_id,omitempty"`
+	// Identifier of the direct messages topic to which the messages will be sent; required if the messages are sent to a direct messages chat
+	DirectMessagesTopicId *int32 `json:"direct_messages_topic_id,omitempty"`
 	// A JSON-serialized array describing messages to be sent, must include 2-10 items
 	Media []SendMediaGroupRequestMediaInner `json:"media"`
 	// Sends messages [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.
@@ -181,6 +183,39 @@ func (o *SendMediaGroupRequest) HasMessageThreadId() bool {
 // SetMessageThreadId gets a reference to the given int32 and assigns it to the MessageThreadId field.
 func (o *SendMediaGroupRequest) SetMessageThreadId(v int32) {
 	o.MessageThreadId = &v
+}
+
+
+// GetDirectMessagesTopicId returns the DirectMessagesTopicId field value if set, zero value otherwise.
+func (o *SendMediaGroupRequest) GetDirectMessagesTopicId() int32 {
+	if o == nil || IsNil(o.DirectMessagesTopicId) {
+		var ret int32
+		return ret
+	}
+	return *o.DirectMessagesTopicId
+}
+
+// GetDirectMessagesTopicIdOk returns a tuple with the DirectMessagesTopicId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SendMediaGroupRequest) GetDirectMessagesTopicIdOk() (*int32, bool) {
+	if o == nil || IsNil(o.DirectMessagesTopicId) {
+		return nil, false
+	}
+	return o.DirectMessagesTopicId, true
+}
+
+// HasDirectMessagesTopicId returns a boolean if a field has been set.
+func (o *SendMediaGroupRequest) HasDirectMessagesTopicId() bool {
+	if o != nil && !IsNil(o.DirectMessagesTopicId) {
+		return true
+	}
+
+	return false
+}
+
+// SetDirectMessagesTopicId gets a reference to the given int32 and assigns it to the DirectMessagesTopicId field.
+func (o *SendMediaGroupRequest) SetDirectMessagesTopicId(v int32) {
+	o.DirectMessagesTopicId = &v
 }
 
 
@@ -389,6 +424,9 @@ func (o SendMediaGroupRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize["chat_id"] = o.ChatId
 	if !IsNil(o.MessageThreadId) {
 		toSerialize["message_thread_id"] = o.MessageThreadId
+	}
+	if !IsNil(o.DirectMessagesTopicId) {
+		toSerialize["direct_messages_topic_id"] = o.DirectMessagesTopicId
 	}
 	toSerialize["media"] = o.Media
 	if !IsNil(o.DisableNotification) {

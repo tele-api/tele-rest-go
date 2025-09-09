@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **FirstName** | Pointer to **string** | *Optional*. First name of the other party in a private chat | [optional] 
 **LastName** | Pointer to **string** | *Optional*. Last name of the other party in a private chat | [optional] 
 **IsForum** | Pointer to **bool** | *Optional*. *True*, if the supergroup chat is a forum (has [topics](https://telegram.org/blog/topics-in-groups-collectible-usernames#topics-in-groups) enabled) | [optional] [default to true]
+**IsDirectMessages** | Pointer to **bool** | *Optional*. *True*, if the chat is the direct messages chat of a channel | [optional] [default to true]
 **AccentColorId** | **int32** | Identifier of the accent color for the chat name and backgrounds of the chat photo, reply header, and link preview. See [accent colors](https://core.telegram.org/bots/api/#accent-colors) for more details. | 
 **MaxReactionCount** | **int32** | The maximum number of reactions that can be set on a message in the chat | 
 **Photo** | Pointer to [**ChatPhoto**](ChatPhoto.md) |  | [optional] 
@@ -20,6 +21,7 @@ Name | Type | Description | Notes
 **BusinessLocation** | Pointer to [**BusinessLocation**](BusinessLocation.md) |  | [optional] 
 **BusinessOpeningHours** | Pointer to [**BusinessOpeningHours**](BusinessOpeningHours.md) |  | [optional] 
 **PersonalChat** | Pointer to [**Chat**](Chat.md) |  | [optional] 
+**ParentChat** | Pointer to [**Chat**](Chat.md) |  | [optional] 
 **AvailableReactions** | Pointer to [**[]ReactionType**](ReactionType.md) | *Optional*. List of available reactions allowed in the chat. If omitted, then all [emoji reactions](https://core.telegram.org/bots/api/#reactiontypeemoji) are allowed. | [optional] 
 **BackgroundCustomEmojiId** | Pointer to **string** | *Optional*. Custom emoji identifier of the emoji chosen by the chat for the reply header and link preview background | [optional] 
 **ProfileAccentColorId** | Pointer to **int32** | *Optional*. Identifier of the accent color for the chat&#39;s profile background. See [profile accent colors](https://core.telegram.org/bots/api/#profile-accent-colors) for more details. | [optional] 
@@ -233,6 +235,31 @@ SetIsForum sets IsForum field to given value.
 `func (o *ChatFullInfo) HasIsForum() bool`
 
 HasIsForum returns a boolean if a field has been set.
+
+### GetIsDirectMessages
+
+`func (o *ChatFullInfo) GetIsDirectMessages() bool`
+
+GetIsDirectMessages returns the IsDirectMessages field if non-nil, zero value otherwise.
+
+### GetIsDirectMessagesOk
+
+`func (o *ChatFullInfo) GetIsDirectMessagesOk() (*bool, bool)`
+
+GetIsDirectMessagesOk returns a tuple with the IsDirectMessages field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsDirectMessages
+
+`func (o *ChatFullInfo) SetIsDirectMessages(v bool)`
+
+SetIsDirectMessages sets IsDirectMessages field to given value.
+
+### HasIsDirectMessages
+
+`func (o *ChatFullInfo) HasIsDirectMessages() bool`
+
+HasIsDirectMessages returns a boolean if a field has been set.
 
 ### GetAccentColorId
 
@@ -448,6 +475,31 @@ SetPersonalChat sets PersonalChat field to given value.
 `func (o *ChatFullInfo) HasPersonalChat() bool`
 
 HasPersonalChat returns a boolean if a field has been set.
+
+### GetParentChat
+
+`func (o *ChatFullInfo) GetParentChat() Chat`
+
+GetParentChat returns the ParentChat field if non-nil, zero value otherwise.
+
+### GetParentChatOk
+
+`func (o *ChatFullInfo) GetParentChatOk() (*Chat, bool)`
+
+GetParentChatOk returns a tuple with the ParentChat field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParentChat
+
+`func (o *ChatFullInfo) SetParentChat(v Chat)`
+
+SetParentChat sets ParentChat field to given value.
+
+### HasParentChat
+
+`func (o *ChatFullInfo) HasParentChat() bool`
+
+HasParentChat returns a boolean if a field has been set.
 
 ### GetAvailableReactions
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Title** | **string** | Title of the checklist; 1-255 characters after entities parsing | 
-**ParseMode** | Pointer to **string** | Optional. Mode for parsing entities in the title. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. | [optional] 
+**ParseMode** | Pointer to **string** | *Optional*. Mode for parsing entities in the title. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. | [optional] 
 **TitleEntities** | Pointer to [**[]MessageEntity**](MessageEntity.md) | *Optional*. List of special entities that appear in the title, which can be specified instead of parse\\_mode. Currently, only *bold*, *italic*, *underline*, *strikethrough*, *spoiler*, and *custom\\_emoji* entities are allowed. | [optional] 
 **Tasks** | [**[]InputChecklistTask**](InputChecklistTask.md) | List of 1-30 tasks in the checklist | 
 **OthersCanAddTasks** | Pointer to **bool** | *Optional*. Pass *True* if other users can add tasks to the checklist | [optional] 

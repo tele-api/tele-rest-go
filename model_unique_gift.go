@@ -5,8 +5,8 @@
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
+ *    * - **Version**: 9.2.0
+ *    * - **Modified**: 2025-09-09T23:46:30.762261440Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -64,6 +64,7 @@ type UniqueGift struct {
 	Model UniqueGiftModel `json:"model"`
 	Symbol UniqueGiftSymbol `json:"symbol"`
 	Backdrop UniqueGiftBackdrop `json:"backdrop"`
+	PublisherChat *Chat `json:"publisher_chat,omitempty"`
 }
 
 type _UniqueGift UniqueGift
@@ -235,6 +236,39 @@ func (o *UniqueGift) SetBackdrop(v UniqueGiftBackdrop) {
 	o.Backdrop = v
 }
 
+// GetPublisherChat returns the PublisherChat field value if set, zero value otherwise.
+func (o *UniqueGift) GetPublisherChat() Chat {
+	if o == nil || IsNil(o.PublisherChat) {
+		var ret Chat
+		return ret
+	}
+	return *o.PublisherChat
+}
+
+// GetPublisherChatOk returns a tuple with the PublisherChat field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UniqueGift) GetPublisherChatOk() (*Chat, bool) {
+	if o == nil || IsNil(o.PublisherChat) {
+		return nil, false
+	}
+	return o.PublisherChat, true
+}
+
+// HasPublisherChat returns a boolean if a field has been set.
+func (o *UniqueGift) HasPublisherChat() bool {
+	if o != nil && !IsNil(o.PublisherChat) {
+		return true
+	}
+
+	return false
+}
+
+// SetPublisherChat gets a reference to the given Chat and assigns it to the PublisherChat field.
+func (o *UniqueGift) SetPublisherChat(v Chat) {
+	o.PublisherChat = &v
+}
+
+
 func (o UniqueGift) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -251,6 +285,9 @@ func (o UniqueGift) ToMap() (map[string]interface{}, error) {
 	toSerialize["model"] = o.Model
 	toSerialize["symbol"] = o.Symbol
 	toSerialize["backdrop"] = o.Backdrop
+	if !IsNil(o.PublisherChat) {
+		toSerialize["publisher_chat"] = o.PublisherChat
+	}
 	return toSerialize, nil
 }
 

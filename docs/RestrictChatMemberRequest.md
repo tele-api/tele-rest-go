@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ChatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
+**ChatId** | [**RestrictChatMemberRequestChatId**](RestrictChatMemberRequestChatId.md) |  | 
 **UserId** | **int32** | Unique identifier of the target user | 
 **Permissions** | [**ChatPermissions**](ChatPermissions.md) |  | 
 **UseIndependentChatPermissions** | Pointer to **bool** | Pass *True* if chat permissions are set independently. Otherwise, the *can\\_send\\_other\\_messages* and *can\\_add\\_web\\_page\\_previews* permissions will imply the *can\\_send\\_messages*, *can\\_send\\_audios*, *can\\_send\\_documents*, *can\\_send\\_photos*, *can\\_send\\_videos*, *can\\_send\\_video\\_notes*, and *can\\_send\\_voice\\_notes* permissions; the *can\\_send\\_polls* permission will imply the *can\\_send\\_messages* permission. | [optional] 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewRestrictChatMemberRequest
 
-`func NewRestrictChatMemberRequest(chatId BotCommandScopeChatChatId, userId int32, permissions ChatPermissions, ) *RestrictChatMemberRequest`
+`func NewRestrictChatMemberRequest(chatId RestrictChatMemberRequestChatId, userId int32, permissions ChatPermissions, ) *RestrictChatMemberRequest`
 
 NewRestrictChatMemberRequest instantiates a new RestrictChatMemberRequest object
 This constructor will assign default values to properties that have it defined,
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetChatId
 
-`func (o *RestrictChatMemberRequest) GetChatId() BotCommandScopeChatChatId`
+`func (o *RestrictChatMemberRequest) GetChatId() RestrictChatMemberRequestChatId`
 
 GetChatId returns the ChatId field if non-nil, zero value otherwise.
 
 ### GetChatIdOk
 
-`func (o *RestrictChatMemberRequest) GetChatIdOk() (*BotCommandScopeChatChatId, bool)`
+`func (o *RestrictChatMemberRequest) GetChatIdOk() (*RestrictChatMemberRequestChatId, bool)`
 
 GetChatIdOk returns a tuple with the ChatId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChatId
 
-`func (o *RestrictChatMemberRequest) SetChatId(v BotCommandScopeChatChatId)`
+`func (o *RestrictChatMemberRequest) SetChatId(v RestrictChatMemberRequestChatId)`
 
 SetChatId sets ChatId field to given value.
 

@@ -5,8 +5,8 @@
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
+ *    * - **Version**: 9.2.0
+ *    * - **Modified**: 2025-09-09T23:46:30.762261440Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -50,7 +50,7 @@ import (
 	"gopkg.in/validator.v2"
 )
 
-// LeaveChatRequestChatId - Unique identifier for the target chat or username of the target supergroup or channel (in the format `@channelusername`)
+// LeaveChatRequestChatId - Unique identifier for the target chat or username of the target supergroup or channel (in the format `@channelusername`). Channel direct messages chats aren't supported; leave the corresponding channel instead.
 type LeaveChatRequestChatId struct {
 	Int32 *int32
 	String *string

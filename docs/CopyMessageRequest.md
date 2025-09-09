@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ChatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
 **MessageThreadId** | Pointer to **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | [optional] 
+**DirectMessagesTopicId** | Pointer to **int32** | Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat | [optional] 
 **FromChatId** | [**ForwardMessageRequestFromChatId**](ForwardMessageRequestFromChatId.md) |  | 
 **MessageId** | **int32** | Message identifier in the chat specified in *from\\_chat\\_id* | 
 **VideoStartTimestamp** | Pointer to **int32** | New start timestamp for the copied video in the message | [optional] 
@@ -16,6 +17,7 @@ Name | Type | Description | Notes
 **DisableNotification** | Pointer to **bool** | Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. | [optional] 
 **ProtectContent** | Pointer to **bool** | Protects the contents of the sent message from forwarding and saving | [optional] 
 **AllowPaidBroadcast** | Pointer to **bool** | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance | [optional] 
+**SuggestedPostParameters** | Pointer to [**SuggestedPostParameters**](SuggestedPostParameters.md) |  | [optional] 
 **ReplyParameters** | Pointer to [**ReplyParameters**](ReplyParameters.md) |  | [optional] 
 **ReplyMarkup** | Pointer to [**SendMessageRequestReplyMarkup**](SendMessageRequestReplyMarkup.md) |  | [optional] 
 
@@ -82,6 +84,31 @@ SetMessageThreadId sets MessageThreadId field to given value.
 `func (o *CopyMessageRequest) HasMessageThreadId() bool`
 
 HasMessageThreadId returns a boolean if a field has been set.
+
+### GetDirectMessagesTopicId
+
+`func (o *CopyMessageRequest) GetDirectMessagesTopicId() int32`
+
+GetDirectMessagesTopicId returns the DirectMessagesTopicId field if non-nil, zero value otherwise.
+
+### GetDirectMessagesTopicIdOk
+
+`func (o *CopyMessageRequest) GetDirectMessagesTopicIdOk() (*int32, bool)`
+
+GetDirectMessagesTopicIdOk returns a tuple with the DirectMessagesTopicId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDirectMessagesTopicId
+
+`func (o *CopyMessageRequest) SetDirectMessagesTopicId(v int32)`
+
+SetDirectMessagesTopicId sets DirectMessagesTopicId field to given value.
+
+### HasDirectMessagesTopicId
+
+`func (o *CopyMessageRequest) HasDirectMessagesTopicId() bool`
+
+HasDirectMessagesTopicId returns a boolean if a field has been set.
 
 ### GetFromChatId
 
@@ -322,6 +349,31 @@ SetAllowPaidBroadcast sets AllowPaidBroadcast field to given value.
 `func (o *CopyMessageRequest) HasAllowPaidBroadcast() bool`
 
 HasAllowPaidBroadcast returns a boolean if a field has been set.
+
+### GetSuggestedPostParameters
+
+`func (o *CopyMessageRequest) GetSuggestedPostParameters() SuggestedPostParameters`
+
+GetSuggestedPostParameters returns the SuggestedPostParameters field if non-nil, zero value otherwise.
+
+### GetSuggestedPostParametersOk
+
+`func (o *CopyMessageRequest) GetSuggestedPostParametersOk() (*SuggestedPostParameters, bool)`
+
+GetSuggestedPostParametersOk returns a tuple with the SuggestedPostParameters field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSuggestedPostParameters
+
+`func (o *CopyMessageRequest) SetSuggestedPostParameters(v SuggestedPostParameters)`
+
+SetSuggestedPostParameters sets SuggestedPostParameters field to given value.
+
+### HasSuggestedPostParameters
+
+`func (o *CopyMessageRequest) HasSuggestedPostParameters() bool`
+
+HasSuggestedPostParameters returns a boolean if a field has been set.
 
 ### GetReplyParameters
 

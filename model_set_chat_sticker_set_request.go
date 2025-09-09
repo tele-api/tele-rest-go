@@ -5,8 +5,8 @@
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
+ *    * - **Version**: 9.2.0
+ *    * - **Modified**: 2025-09-09T23:46:30.762261440Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -55,7 +55,7 @@ var _ MappedNullable = &SetChatStickerSetRequest{}
 
 // SetChatStickerSetRequest Request parameters for setChatStickerSet
 type SetChatStickerSetRequest struct {
-	ChatId BotCommandScopeChatChatId `json:"chat_id"`
+	ChatId RestrictChatMemberRequestChatId `json:"chat_id"`
 	// Name of the sticker set to be set as the group sticker set
 	StickerSetName string `json:"sticker_set_name"`
 }
@@ -66,7 +66,7 @@ type _SetChatStickerSetRequest SetChatStickerSetRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSetChatStickerSetRequest(chatId BotCommandScopeChatChatId, stickerSetName string) *SetChatStickerSetRequest {
+func NewSetChatStickerSetRequest(chatId RestrictChatMemberRequestChatId, stickerSetName string) *SetChatStickerSetRequest {
 	this := SetChatStickerSetRequest{}
 	this.ChatId = chatId
 	this.StickerSetName = stickerSetName
@@ -82,9 +82,9 @@ func NewSetChatStickerSetRequestWithDefaults() *SetChatStickerSetRequest {
 }
 
 // GetChatId returns the ChatId field value
-func (o *SetChatStickerSetRequest) GetChatId() BotCommandScopeChatChatId {
+func (o *SetChatStickerSetRequest) GetChatId() RestrictChatMemberRequestChatId {
 	if o == nil {
-		var ret BotCommandScopeChatChatId
+		var ret RestrictChatMemberRequestChatId
 		return ret
 	}
 
@@ -93,7 +93,7 @@ func (o *SetChatStickerSetRequest) GetChatId() BotCommandScopeChatChatId {
 
 // GetChatIdOk returns a tuple with the ChatId field value
 // and a boolean to check if the value has been set.
-func (o *SetChatStickerSetRequest) GetChatIdOk() (*BotCommandScopeChatChatId, bool) {
+func (o *SetChatStickerSetRequest) GetChatIdOk() (*RestrictChatMemberRequestChatId, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -101,7 +101,7 @@ func (o *SetChatStickerSetRequest) GetChatIdOk() (*BotCommandScopeChatChatId, bo
 }
 
 // SetChatId sets field value
-func (o *SetChatStickerSetRequest) SetChatId(v BotCommandScopeChatChatId) {
+func (o *SetChatStickerSetRequest) SetChatId(v RestrictChatMemberRequestChatId) {
 	o.ChatId = v
 }
 

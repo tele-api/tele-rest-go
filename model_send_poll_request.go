@@ -5,8 +5,8 @@
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
+ *    * - **Version**: 9.2.0
+ *    * - **Modified**: 2025-09-09T23:46:30.762261440Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -57,7 +57,7 @@ var _ MappedNullable = &SendPollRequest{}
 type SendPollRequest struct {
 	// Unique identifier of the business connection on behalf of which the message will be sent
 	BusinessConnectionId *string `json:"business_connection_id,omitempty"`
-	ChatId SendMessageRequestChatId `json:"chat_id"`
+	ChatId SendPollRequestChatId `json:"chat_id"`
 	// Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
 	MessageThreadId *int32 `json:"message_thread_id,omitempty"`
 	// Poll question, 1-300 characters
@@ -106,7 +106,7 @@ type _SendPollRequest SendPollRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSendPollRequest(chatId SendMessageRequestChatId, question string, options []InputPollOption) *SendPollRequest {
+func NewSendPollRequest(chatId SendPollRequestChatId, question string, options []InputPollOption) *SendPollRequest {
 	this := SendPollRequest{}
 	this.ChatId = chatId
 	this.Question = question
@@ -156,9 +156,9 @@ func (o *SendPollRequest) SetBusinessConnectionId(v string) {
 
 
 // GetChatId returns the ChatId field value
-func (o *SendPollRequest) GetChatId() SendMessageRequestChatId {
+func (o *SendPollRequest) GetChatId() SendPollRequestChatId {
 	if o == nil {
-		var ret SendMessageRequestChatId
+		var ret SendPollRequestChatId
 		return ret
 	}
 
@@ -167,7 +167,7 @@ func (o *SendPollRequest) GetChatId() SendMessageRequestChatId {
 
 // GetChatIdOk returns a tuple with the ChatId field value
 // and a boolean to check if the value has been set.
-func (o *SendPollRequest) GetChatIdOk() (*SendMessageRequestChatId, bool) {
+func (o *SendPollRequest) GetChatIdOk() (*SendPollRequestChatId, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -175,7 +175,7 @@ func (o *SendPollRequest) GetChatIdOk() (*SendMessageRequestChatId, bool) {
 }
 
 // SetChatId sets field value
-func (o *SendPollRequest) SetChatId(v SendMessageRequestChatId) {
+func (o *SendPollRequest) SetChatId(v SendPollRequestChatId) {
 	o.ChatId = v
 }
 

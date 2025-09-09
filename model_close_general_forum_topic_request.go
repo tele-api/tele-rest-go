@@ -5,8 +5,8 @@
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
+ *    * - **Version**: 9.2.0
+ *    * - **Modified**: 2025-09-09T23:46:30.762261440Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -55,7 +55,7 @@ var _ MappedNullable = &CloseGeneralForumTopicRequest{}
 
 // CloseGeneralForumTopicRequest Request parameters for closeGeneralForumTopic
 type CloseGeneralForumTopicRequest struct {
-	ChatId BotCommandScopeChatChatId `json:"chat_id"`
+	ChatId RestrictChatMemberRequestChatId `json:"chat_id"`
 }
 
 type _CloseGeneralForumTopicRequest CloseGeneralForumTopicRequest
@@ -64,7 +64,7 @@ type _CloseGeneralForumTopicRequest CloseGeneralForumTopicRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCloseGeneralForumTopicRequest(chatId BotCommandScopeChatChatId) *CloseGeneralForumTopicRequest {
+func NewCloseGeneralForumTopicRequest(chatId RestrictChatMemberRequestChatId) *CloseGeneralForumTopicRequest {
 	this := CloseGeneralForumTopicRequest{}
 	this.ChatId = chatId
 	return &this
@@ -79,9 +79,9 @@ func NewCloseGeneralForumTopicRequestWithDefaults() *CloseGeneralForumTopicReque
 }
 
 // GetChatId returns the ChatId field value
-func (o *CloseGeneralForumTopicRequest) GetChatId() BotCommandScopeChatChatId {
+func (o *CloseGeneralForumTopicRequest) GetChatId() RestrictChatMemberRequestChatId {
 	if o == nil {
-		var ret BotCommandScopeChatChatId
+		var ret RestrictChatMemberRequestChatId
 		return ret
 	}
 
@@ -90,7 +90,7 @@ func (o *CloseGeneralForumTopicRequest) GetChatId() BotCommandScopeChatChatId {
 
 // GetChatIdOk returns a tuple with the ChatId field value
 // and a boolean to check if the value has been set.
-func (o *CloseGeneralForumTopicRequest) GetChatIdOk() (*BotCommandScopeChatChatId, bool) {
+func (o *CloseGeneralForumTopicRequest) GetChatIdOk() (*RestrictChatMemberRequestChatId, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -98,7 +98,7 @@ func (o *CloseGeneralForumTopicRequest) GetChatIdOk() (*BotCommandScopeChatChatI
 }
 
 // SetChatId sets field value
-func (o *CloseGeneralForumTopicRequest) SetChatId(v BotCommandScopeChatChatId) {
+func (o *CloseGeneralForumTopicRequest) SetChatId(v RestrictChatMemberRequestChatId) {
 	o.ChatId = v
 }
 

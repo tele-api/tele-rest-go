@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ChatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
+**ChatId** | [**RestrictChatMemberRequestChatId**](RestrictChatMemberRequestChatId.md) |  | 
 **MessageThreadId** | **int32** | Unique identifier for the target message thread of the forum topic | 
 **Name** | Pointer to **string** | New topic name, 0-128 characters. If not specified or empty, the current name of the topic will be kept | [optional] 
 **IconCustomEmojiId** | Pointer to **string** | New unique identifier of the custom emoji shown as the topic icon. Use [getForumTopicIconStickers](https://core.telegram.org/bots/api/#getforumtopiciconstickers) to get all allowed custom emoji identifiers. Pass an empty string to remove the icon. If not specified, the current icon will be kept | [optional] 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewEditForumTopicRequest
 
-`func NewEditForumTopicRequest(chatId BotCommandScopeChatChatId, messageThreadId int32, ) *EditForumTopicRequest`
+`func NewEditForumTopicRequest(chatId RestrictChatMemberRequestChatId, messageThreadId int32, ) *EditForumTopicRequest`
 
 NewEditForumTopicRequest instantiates a new EditForumTopicRequest object
 This constructor will assign default values to properties that have it defined,
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetChatId
 
-`func (o *EditForumTopicRequest) GetChatId() BotCommandScopeChatChatId`
+`func (o *EditForumTopicRequest) GetChatId() RestrictChatMemberRequestChatId`
 
 GetChatId returns the ChatId field if non-nil, zero value otherwise.
 
 ### GetChatIdOk
 
-`func (o *EditForumTopicRequest) GetChatIdOk() (*BotCommandScopeChatChatId, bool)`
+`func (o *EditForumTopicRequest) GetChatIdOk() (*RestrictChatMemberRequestChatId, bool)`
 
 GetChatIdOk returns a tuple with the ChatId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChatId
 
-`func (o *EditForumTopicRequest) SetChatId(v BotCommandScopeChatChatId)`
+`func (o *EditForumTopicRequest) SetChatId(v RestrictChatMemberRequestChatId)`
 
 SetChatId sets ChatId field to given value.
 

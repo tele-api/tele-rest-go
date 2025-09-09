@@ -5,8 +5,8 @@
  * ## Metadata
  *    * - **Copyright**: Copyright (c) 2025 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
+ *    * - **Version**: 9.2.0
+ *    * - **Modified**: 2025-09-09T23:46:30.762261440Z[Etc/UTC]
  *    * - **Generator Version**: 7.14.0
  * 
  * <details>
@@ -57,7 +57,7 @@ var _ MappedNullable = &SendChatActionRequest{}
 type SendChatActionRequest struct {
 	// Unique identifier of the business connection on behalf of which the action will be sent
 	BusinessConnectionId *string `json:"business_connection_id,omitempty"`
-	ChatId SendMessageRequestChatId `json:"chat_id"`
+	ChatId SendChatActionRequestChatId `json:"chat_id"`
 	// Unique identifier for the target message thread; for supergroups only
 	MessageThreadId *int32 `json:"message_thread_id,omitempty"`
 	// Type of action to broadcast. Choose one, depending on what the user is about to receive: *typing* for [text messages](https://core.telegram.org/bots/api/#sendmessage), *upload\\_photo* for [photos](https://core.telegram.org/bots/api/#sendphoto), *record\\_video* or *upload\\_video* for [videos](https://core.telegram.org/bots/api/#sendvideo), *record\\_voice* or *upload\\_voice* for [voice notes](https://core.telegram.org/bots/api/#sendvoice), *upload\\_document* for [general files](https://core.telegram.org/bots/api/#senddocument), *choose\\_sticker* for [stickers](https://core.telegram.org/bots/api/#sendsticker), *find\\_location* for [location data](https://core.telegram.org/bots/api/#sendlocation), *record\\_video\\_note* or *upload\\_video\\_note* for [video notes](https://core.telegram.org/bots/api/#sendvideonote).
@@ -70,7 +70,7 @@ type _SendChatActionRequest SendChatActionRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSendChatActionRequest(chatId SendMessageRequestChatId, action string) *SendChatActionRequest {
+func NewSendChatActionRequest(chatId SendChatActionRequestChatId, action string) *SendChatActionRequest {
 	this := SendChatActionRequest{}
 	this.ChatId = chatId
 	this.Action = action
@@ -119,9 +119,9 @@ func (o *SendChatActionRequest) SetBusinessConnectionId(v string) {
 
 
 // GetChatId returns the ChatId field value
-func (o *SendChatActionRequest) GetChatId() SendMessageRequestChatId {
+func (o *SendChatActionRequest) GetChatId() SendChatActionRequestChatId {
 	if o == nil {
-		var ret SendMessageRequestChatId
+		var ret SendChatActionRequestChatId
 		return ret
 	}
 
@@ -130,7 +130,7 @@ func (o *SendChatActionRequest) GetChatId() SendMessageRequestChatId {
 
 // GetChatIdOk returns a tuple with the ChatId field value
 // and a boolean to check if the value has been set.
-func (o *SendChatActionRequest) GetChatIdOk() (*SendMessageRequestChatId, bool) {
+func (o *SendChatActionRequest) GetChatIdOk() (*SendChatActionRequestChatId, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -138,7 +138,7 @@ func (o *SendChatActionRequest) GetChatIdOk() (*SendMessageRequestChatId, bool) 
 }
 
 // SetChatId sets field value
-func (o *SendChatActionRequest) SetChatId(v SendMessageRequestChatId) {
+func (o *SendChatActionRequest) SetChatId(v SendChatActionRequestChatId) {
 	o.ChatId = v
 }
 

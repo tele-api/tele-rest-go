@@ -5,7 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ChatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
-**MessageThreadId** | Pointer to **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | [optional] 
+**MessageThreadId** | Pointer to **int32** | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only | [optional] 
+**DirectMessagesTopicId** | Pointer to **int32** | Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat | [optional] 
 **Title** | **string** | Product name, 1-32 characters | 
 **Description** | **string** | Product description, 1-255 characters | 
 **Payload** | **string** | Bot-defined invoice payload, 1-128 bytes. This will not be displayed to the user, use it for your internal processes. | 
@@ -31,6 +32,7 @@ Name | Type | Description | Notes
 **ProtectContent** | Pointer to **bool** | Protects the contents of the sent message from forwarding and saving | [optional] 
 **AllowPaidBroadcast** | Pointer to **bool** | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance | [optional] 
 **MessageEffectId** | Pointer to **string** | Unique identifier of the message effect to be added to the message; for private chats only | [optional] 
+**SuggestedPostParameters** | Pointer to [**SuggestedPostParameters**](SuggestedPostParameters.md) |  | [optional] 
 **ReplyParameters** | Pointer to [**ReplyParameters**](ReplyParameters.md) |  | [optional] 
 **ReplyMarkup** | Pointer to [**InlineKeyboardMarkup**](InlineKeyboardMarkup.md) |  | [optional] 
 
@@ -97,6 +99,31 @@ SetMessageThreadId sets MessageThreadId field to given value.
 `func (o *SendInvoiceRequest) HasMessageThreadId() bool`
 
 HasMessageThreadId returns a boolean if a field has been set.
+
+### GetDirectMessagesTopicId
+
+`func (o *SendInvoiceRequest) GetDirectMessagesTopicId() int32`
+
+GetDirectMessagesTopicId returns the DirectMessagesTopicId field if non-nil, zero value otherwise.
+
+### GetDirectMessagesTopicIdOk
+
+`func (o *SendInvoiceRequest) GetDirectMessagesTopicIdOk() (*int32, bool)`
+
+GetDirectMessagesTopicIdOk returns a tuple with the DirectMessagesTopicId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDirectMessagesTopicId
+
+`func (o *SendInvoiceRequest) SetDirectMessagesTopicId(v int32)`
+
+SetDirectMessagesTopicId sets DirectMessagesTopicId field to given value.
+
+### HasDirectMessagesTopicId
+
+`func (o *SendInvoiceRequest) HasDirectMessagesTopicId() bool`
+
+HasDirectMessagesTopicId returns a boolean if a field has been set.
 
 ### GetTitle
 
@@ -697,6 +724,31 @@ SetMessageEffectId sets MessageEffectId field to given value.
 `func (o *SendInvoiceRequest) HasMessageEffectId() bool`
 
 HasMessageEffectId returns a boolean if a field has been set.
+
+### GetSuggestedPostParameters
+
+`func (o *SendInvoiceRequest) GetSuggestedPostParameters() SuggestedPostParameters`
+
+GetSuggestedPostParameters returns the SuggestedPostParameters field if non-nil, zero value otherwise.
+
+### GetSuggestedPostParametersOk
+
+`func (o *SendInvoiceRequest) GetSuggestedPostParametersOk() (*SuggestedPostParameters, bool)`
+
+GetSuggestedPostParametersOk returns a tuple with the SuggestedPostParameters field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSuggestedPostParameters
+
+`func (o *SendInvoiceRequest) SetSuggestedPostParameters(v SuggestedPostParameters)`
+
+SetSuggestedPostParameters sets SuggestedPostParameters field to given value.
+
+### HasSuggestedPostParameters
+
+`func (o *SendInvoiceRequest) HasSuggestedPostParameters() bool`
+
+HasSuggestedPostParameters returns a boolean if a field has been set.
 
 ### GetReplyParameters
 

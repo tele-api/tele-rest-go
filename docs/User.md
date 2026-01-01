@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **SupportsInlineQueries** | Pointer to **bool** | *Optional*. *True*, if the bot supports inline queries. Returned only in [getMe](https://core.telegram.org/bots/api/#getme). | [optional] 
 **CanConnectToBusiness** | Pointer to **bool** | *Optional*. *True*, if the bot can be connected to a Telegram Business account to receive its messages. Returned only in [getMe](https://core.telegram.org/bots/api/#getme). | [optional] 
 **HasMainWebApp** | Pointer to **bool** | *Optional*. *True*, if the bot has a main Web App. Returned only in [getMe](https://core.telegram.org/bots/api/#getme). | [optional] 
+**HasTopicsEnabled** | Pointer to **bool** | *Optional*. *True*, if the bot has forum topic mode enabled in private chats. Returned only in [getMe](https://core.telegram.org/bots/api/#getme). | [optional] 
 
 ## Methods
 
@@ -346,6 +347,31 @@ SetHasMainWebApp sets HasMainWebApp field to given value.
 `func (o *User) HasHasMainWebApp() bool`
 
 HasHasMainWebApp returns a boolean if a field has been set.
+
+### GetHasTopicsEnabled
+
+`func (o *User) GetHasTopicsEnabled() bool`
+
+GetHasTopicsEnabled returns the HasTopicsEnabled field if non-nil, zero value otherwise.
+
+### GetHasTopicsEnabledOk
+
+`func (o *User) GetHasTopicsEnabledOk() (*bool, bool)`
+
+GetHasTopicsEnabledOk returns a tuple with the HasTopicsEnabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHasTopicsEnabled
+
+`func (o *User) SetHasTopicsEnabled(v bool)`
+
+SetHasTopicsEnabled sets HasTopicsEnabled field to given value.
+
+### HasHasTopicsEnabled
+
+`func (o *User) HasHasTopicsEnabled() bool`
+
+HasHasTopicsEnabled returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

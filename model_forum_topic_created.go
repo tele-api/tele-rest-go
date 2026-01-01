@@ -3,11 +3,11 @@
  * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
- *    * - **Copyright**: Copyright (c) 2025 Qntx
+ *    * - **Copyright**: Copyright (c) 2026 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
- *    * - **Generator Version**: 7.14.0
+ *    * - **Version**: 9.3.0
+ *    * - **Modified**: 2026-01-01T02:06:16.405655294Z[Etc/UTC]
+ *    * - **Generator Version**: 7.18.0
  * 
  * <details>
  * <summary><strong>⚠️ Important Disclaimer & Limitation of Liability</strong></summary>
@@ -61,6 +61,8 @@ type ForumTopicCreated struct {
 	IconColor int32 `json:"icon_color"`
 	// *Optional*. Unique identifier of the custom emoji shown as the topic icon
 	IconCustomEmojiId *string `json:"icon_custom_emoji_id,omitempty"`
+	// *Optional*. *True*, if the name of the topic wasn't specified explicitly by its creator and likely needs to be changed by the bot
+	IsNameImplicit *bool `json:"is_name_implicit,omitempty"`
 }
 
 type _ForumTopicCreated ForumTopicCreated
@@ -73,6 +75,8 @@ func NewForumTopicCreated(name string, iconColor int32) *ForumTopicCreated {
 	this := ForumTopicCreated{}
 	this.Name = name
 	this.IconColor = iconColor
+	var isNameImplicit bool = true
+	this.IsNameImplicit = &isNameImplicit
 	return &this
 }
 
@@ -81,6 +85,8 @@ func NewForumTopicCreated(name string, iconColor int32) *ForumTopicCreated {
 // but it doesn't guarantee that properties required by API are set
 func NewForumTopicCreatedWithDefaults() *ForumTopicCreated {
 	this := ForumTopicCreated{}
+	var isNameImplicit bool = true
+	this.IsNameImplicit = &isNameImplicit
 	return &this
 }
 
@@ -165,6 +171,39 @@ func (o *ForumTopicCreated) SetIconCustomEmojiId(v string) {
 }
 
 
+// GetIsNameImplicit returns the IsNameImplicit field value if set, zero value otherwise.
+func (o *ForumTopicCreated) GetIsNameImplicit() bool {
+	if o == nil || IsNil(o.IsNameImplicit) {
+		var ret bool
+		return ret
+	}
+	return *o.IsNameImplicit
+}
+
+// GetIsNameImplicitOk returns a tuple with the IsNameImplicit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ForumTopicCreated) GetIsNameImplicitOk() (*bool, bool) {
+	if o == nil || IsNil(o.IsNameImplicit) {
+		return nil, false
+	}
+	return o.IsNameImplicit, true
+}
+
+// HasIsNameImplicit returns a boolean if a field has been set.
+func (o *ForumTopicCreated) HasIsNameImplicit() bool {
+	if o != nil && !IsNil(o.IsNameImplicit) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsNameImplicit gets a reference to the given bool and assigns it to the IsNameImplicit field.
+func (o *ForumTopicCreated) SetIsNameImplicit(v bool) {
+	o.IsNameImplicit = &v
+}
+
+
 func (o ForumTopicCreated) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -179,6 +218,9 @@ func (o ForumTopicCreated) ToMap() (map[string]interface{}, error) {
 	toSerialize["icon_color"] = o.IconColor
 	if !IsNil(o.IconCustomEmojiId) {
 		toSerialize["icon_custom_emoji_id"] = o.IconCustomEmojiId
+	}
+	if !IsNil(o.IsNameImplicit) {
+		toSerialize["is_name_implicit"] = o.IsNameImplicit
 	}
 	return toSerialize, nil
 }
@@ -256,5 +298,4 @@ func (v *NullableForumTopicCreated) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
 

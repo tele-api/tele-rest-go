@@ -8,8 +8,10 @@ Name | Type | Description | Notes
 **ExcludeUnsaved** | Pointer to **bool** | Pass *True* to exclude gifts that aren&#39;t saved to the account&#39;s profile page | [optional] 
 **ExcludeSaved** | Pointer to **bool** | Pass *True* to exclude gifts that are saved to the account&#39;s profile page | [optional] 
 **ExcludeUnlimited** | Pointer to **bool** | Pass *True* to exclude gifts that can be purchased an unlimited number of times | [optional] 
-**ExcludeLimited** | Pointer to **bool** | Pass *True* to exclude gifts that can be purchased a limited number of times | [optional] 
+**ExcludeLimitedUpgradable** | Pointer to **bool** | Pass *True* to exclude gifts that can be purchased a limited number of times and can be upgraded to unique | [optional] 
+**ExcludeLimitedNonUpgradable** | Pointer to **bool** | Pass *True* to exclude gifts that can be purchased a limited number of times and can&#39;t be upgraded to unique | [optional] 
 **ExcludeUnique** | Pointer to **bool** | Pass *True* to exclude unique gifts | [optional] 
+**ExcludeFromBlockchain** | Pointer to **bool** | Pass *True* to exclude gifts that were assigned from the TON blockchain and can&#39;t be resold or transferred in Telegram | [optional] 
 **SortByPrice** | Pointer to **bool** | Pass *True* to sort results by gift price instead of send date. Sorting is applied before pagination. | [optional] 
 **Offset** | Pointer to **string** | Offset of the first entry to return as received from the previous request; use empty string to get the first chunk of results | [optional] 
 **Limit** | Pointer to **int32** | The maximum number of gifts to be returned; 1-100. Defaults to 100 | [optional] [default to 100]
@@ -128,30 +130,55 @@ SetExcludeUnlimited sets ExcludeUnlimited field to given value.
 
 HasExcludeUnlimited returns a boolean if a field has been set.
 
-### GetExcludeLimited
+### GetExcludeLimitedUpgradable
 
-`func (o *GetBusinessAccountGiftsRequest) GetExcludeLimited() bool`
+`func (o *GetBusinessAccountGiftsRequest) GetExcludeLimitedUpgradable() bool`
 
-GetExcludeLimited returns the ExcludeLimited field if non-nil, zero value otherwise.
+GetExcludeLimitedUpgradable returns the ExcludeLimitedUpgradable field if non-nil, zero value otherwise.
 
-### GetExcludeLimitedOk
+### GetExcludeLimitedUpgradableOk
 
-`func (o *GetBusinessAccountGiftsRequest) GetExcludeLimitedOk() (*bool, bool)`
+`func (o *GetBusinessAccountGiftsRequest) GetExcludeLimitedUpgradableOk() (*bool, bool)`
 
-GetExcludeLimitedOk returns a tuple with the ExcludeLimited field if it's non-nil, zero value otherwise
+GetExcludeLimitedUpgradableOk returns a tuple with the ExcludeLimitedUpgradable field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetExcludeLimited
+### SetExcludeLimitedUpgradable
 
-`func (o *GetBusinessAccountGiftsRequest) SetExcludeLimited(v bool)`
+`func (o *GetBusinessAccountGiftsRequest) SetExcludeLimitedUpgradable(v bool)`
 
-SetExcludeLimited sets ExcludeLimited field to given value.
+SetExcludeLimitedUpgradable sets ExcludeLimitedUpgradable field to given value.
 
-### HasExcludeLimited
+### HasExcludeLimitedUpgradable
 
-`func (o *GetBusinessAccountGiftsRequest) HasExcludeLimited() bool`
+`func (o *GetBusinessAccountGiftsRequest) HasExcludeLimitedUpgradable() bool`
 
-HasExcludeLimited returns a boolean if a field has been set.
+HasExcludeLimitedUpgradable returns a boolean if a field has been set.
+
+### GetExcludeLimitedNonUpgradable
+
+`func (o *GetBusinessAccountGiftsRequest) GetExcludeLimitedNonUpgradable() bool`
+
+GetExcludeLimitedNonUpgradable returns the ExcludeLimitedNonUpgradable field if non-nil, zero value otherwise.
+
+### GetExcludeLimitedNonUpgradableOk
+
+`func (o *GetBusinessAccountGiftsRequest) GetExcludeLimitedNonUpgradableOk() (*bool, bool)`
+
+GetExcludeLimitedNonUpgradableOk returns a tuple with the ExcludeLimitedNonUpgradable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExcludeLimitedNonUpgradable
+
+`func (o *GetBusinessAccountGiftsRequest) SetExcludeLimitedNonUpgradable(v bool)`
+
+SetExcludeLimitedNonUpgradable sets ExcludeLimitedNonUpgradable field to given value.
+
+### HasExcludeLimitedNonUpgradable
+
+`func (o *GetBusinessAccountGiftsRequest) HasExcludeLimitedNonUpgradable() bool`
+
+HasExcludeLimitedNonUpgradable returns a boolean if a field has been set.
 
 ### GetExcludeUnique
 
@@ -177,6 +204,31 @@ SetExcludeUnique sets ExcludeUnique field to given value.
 `func (o *GetBusinessAccountGiftsRequest) HasExcludeUnique() bool`
 
 HasExcludeUnique returns a boolean if a field has been set.
+
+### GetExcludeFromBlockchain
+
+`func (o *GetBusinessAccountGiftsRequest) GetExcludeFromBlockchain() bool`
+
+GetExcludeFromBlockchain returns the ExcludeFromBlockchain field if non-nil, zero value otherwise.
+
+### GetExcludeFromBlockchainOk
+
+`func (o *GetBusinessAccountGiftsRequest) GetExcludeFromBlockchainOk() (*bool, bool)`
+
+GetExcludeFromBlockchainOk returns a tuple with the ExcludeFromBlockchain field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExcludeFromBlockchain
+
+`func (o *GetBusinessAccountGiftsRequest) SetExcludeFromBlockchain(v bool)`
+
+SetExcludeFromBlockchain sets ExcludeFromBlockchain field to given value.
+
+### HasExcludeFromBlockchain
+
+`func (o *GetBusinessAccountGiftsRequest) HasExcludeFromBlockchain() bool`
+
+HasExcludeFromBlockchain returns a boolean if a field has been set.
 
 ### GetSortByPrice
 

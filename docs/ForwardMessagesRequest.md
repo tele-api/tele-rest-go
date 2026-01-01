@@ -5,7 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ChatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
-**MessageThreadId** | Pointer to **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | [optional] 
+**MessageThreadId** | Pointer to **int32** | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only | [optional] 
+**DirectMessagesTopicId** | Pointer to **int32** | Identifier of the direct messages topic to which the messages will be forwarded; required if the messages are forwarded to a direct messages chat | [optional] 
 **FromChatId** | [**ForwardMessagesRequestFromChatId**](ForwardMessagesRequestFromChatId.md) |  | 
 **MessageIds** | **[]int32** | A JSON-serialized list of 1-100 identifiers of messages in the chat *from\\_chat\\_id* to forward. The identifiers must be specified in a strictly increasing order. | 
 **DisableNotification** | Pointer to **bool** | Sends the messages [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. | [optional] 
@@ -74,6 +75,31 @@ SetMessageThreadId sets MessageThreadId field to given value.
 `func (o *ForwardMessagesRequest) HasMessageThreadId() bool`
 
 HasMessageThreadId returns a boolean if a field has been set.
+
+### GetDirectMessagesTopicId
+
+`func (o *ForwardMessagesRequest) GetDirectMessagesTopicId() int32`
+
+GetDirectMessagesTopicId returns the DirectMessagesTopicId field if non-nil, zero value otherwise.
+
+### GetDirectMessagesTopicIdOk
+
+`func (o *ForwardMessagesRequest) GetDirectMessagesTopicIdOk() (*int32, bool)`
+
+GetDirectMessagesTopicIdOk returns a tuple with the DirectMessagesTopicId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDirectMessagesTopicId
+
+`func (o *ForwardMessagesRequest) SetDirectMessagesTopicId(v int32)`
+
+SetDirectMessagesTopicId sets DirectMessagesTopicId field to given value.
+
+### HasDirectMessagesTopicId
+
+`func (o *ForwardMessagesRequest) HasDirectMessagesTopicId() bool`
+
+HasDirectMessagesTopicId returns a boolean if a field has been set.
 
 ### GetFromChatId
 

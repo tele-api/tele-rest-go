@@ -3,11 +3,11 @@
  * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
- *    * - **Copyright**: Copyright (c) 2025 Qntx
+ *    * - **Copyright**: Copyright (c) 2026 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
- *    * - **Generator Version**: 7.14.0
+ *    * - **Version**: 9.3.0
+ *    * - **Modified**: 2026-01-01T02:06:16.405655294Z[Etc/UTC]
+ *    * - **Generator Version**: 7.18.0
  * 
  * <details>
  * <summary><strong>⚠️ Important Disclaimer & Limitation of Liability</strong></summary>
@@ -81,6 +81,8 @@ type User struct {
 	CanConnectToBusiness *bool `json:"can_connect_to_business,omitempty"`
 	// *Optional*. *True*, if the bot has a main Web App. Returned only in [getMe](https://core.telegram.org/bots/api/#getme).
 	HasMainWebApp *bool `json:"has_main_web_app,omitempty"`
+	// *Optional*. *True*, if the bot has forum topic mode enabled in private chats. Returned only in [getMe](https://core.telegram.org/bots/api/#getme).
+	HasTopicsEnabled *bool `json:"has_topics_enabled,omitempty"`
 }
 
 type _User User
@@ -515,6 +517,39 @@ func (o *User) SetHasMainWebApp(v bool) {
 }
 
 
+// GetHasTopicsEnabled returns the HasTopicsEnabled field value if set, zero value otherwise.
+func (o *User) GetHasTopicsEnabled() bool {
+	if o == nil || IsNil(o.HasTopicsEnabled) {
+		var ret bool
+		return ret
+	}
+	return *o.HasTopicsEnabled
+}
+
+// GetHasTopicsEnabledOk returns a tuple with the HasTopicsEnabled field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *User) GetHasTopicsEnabledOk() (*bool, bool) {
+	if o == nil || IsNil(o.HasTopicsEnabled) {
+		return nil, false
+	}
+	return o.HasTopicsEnabled, true
+}
+
+// HasHasTopicsEnabled returns a boolean if a field has been set.
+func (o *User) HasHasTopicsEnabled() bool {
+	if o != nil && !IsNil(o.HasTopicsEnabled) {
+		return true
+	}
+
+	return false
+}
+
+// SetHasTopicsEnabled gets a reference to the given bool and assigns it to the HasTopicsEnabled field.
+func (o *User) SetHasTopicsEnabled(v bool) {
+	o.HasTopicsEnabled = &v
+}
+
+
 func (o User) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -557,6 +592,9 @@ func (o User) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.HasMainWebApp) {
 		toSerialize["has_main_web_app"] = o.HasMainWebApp
+	}
+	if !IsNil(o.HasTopicsEnabled) {
+		toSerialize["has_topics_enabled"] = o.HasTopicsEnabled
 	}
 	return toSerialize, nil
 }
@@ -635,5 +673,4 @@ func (v *NullableUser) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
 

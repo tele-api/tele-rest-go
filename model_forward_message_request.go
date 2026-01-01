@@ -3,11 +3,11 @@
  * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
- *    * - **Copyright**: Copyright (c) 2025 Qntx
+ *    * - **Copyright**: Copyright (c) 2026 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
- *    * - **Generator Version**: 7.14.0
+ *    * - **Version**: 9.3.0
+ *    * - **Modified**: 2026-01-01T02:06:16.405655294Z[Etc/UTC]
+ *    * - **Generator Version**: 7.18.0
  * 
  * <details>
  * <summary><strong>⚠️ Important Disclaimer & Limitation of Liability</strong></summary>
@@ -56,8 +56,10 @@ var _ MappedNullable = &ForwardMessageRequest{}
 // ForwardMessageRequest Request parameters for forwardMessage
 type ForwardMessageRequest struct {
 	ChatId SendMessageRequestChatId `json:"chat_id"`
-	// Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
+	// Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only
 	MessageThreadId *int32 `json:"message_thread_id,omitempty"`
+	// Identifier of the direct messages topic to which the message will be forwarded; required if the message is forwarded to a direct messages chat
+	DirectMessagesTopicId *int32 `json:"direct_messages_topic_id,omitempty"`
 	FromChatId ForwardMessageRequestFromChatId `json:"from_chat_id"`
 	// New start timestamp for the forwarded video in the message
 	VideoStartTimestamp *int32 `json:"video_start_timestamp,omitempty"`
@@ -65,6 +67,9 @@ type ForwardMessageRequest struct {
 	DisableNotification *bool `json:"disable_notification,omitempty"`
 	// Protects the contents of the forwarded message from forwarding and saving
 	ProtectContent *bool `json:"protect_content,omitempty"`
+	// Unique identifier of the message effect to be added to the message; only available when forwarding to private chats
+	MessageEffectId *string `json:"message_effect_id,omitempty"`
+	SuggestedPostParameters *SuggestedPostParameters `json:"suggested_post_parameters,omitempty"`
 	// Message identifier in the chat specified in *from\\_chat\\_id*
 	MessageId int32 `json:"message_id"`
 }
@@ -145,6 +150,39 @@ func (o *ForwardMessageRequest) HasMessageThreadId() bool {
 // SetMessageThreadId gets a reference to the given int32 and assigns it to the MessageThreadId field.
 func (o *ForwardMessageRequest) SetMessageThreadId(v int32) {
 	o.MessageThreadId = &v
+}
+
+
+// GetDirectMessagesTopicId returns the DirectMessagesTopicId field value if set, zero value otherwise.
+func (o *ForwardMessageRequest) GetDirectMessagesTopicId() int32 {
+	if o == nil || IsNil(o.DirectMessagesTopicId) {
+		var ret int32
+		return ret
+	}
+	return *o.DirectMessagesTopicId
+}
+
+// GetDirectMessagesTopicIdOk returns a tuple with the DirectMessagesTopicId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ForwardMessageRequest) GetDirectMessagesTopicIdOk() (*int32, bool) {
+	if o == nil || IsNil(o.DirectMessagesTopicId) {
+		return nil, false
+	}
+	return o.DirectMessagesTopicId, true
+}
+
+// HasDirectMessagesTopicId returns a boolean if a field has been set.
+func (o *ForwardMessageRequest) HasDirectMessagesTopicId() bool {
+	if o != nil && !IsNil(o.DirectMessagesTopicId) {
+		return true
+	}
+
+	return false
+}
+
+// SetDirectMessagesTopicId gets a reference to the given int32 and assigns it to the DirectMessagesTopicId field.
+func (o *ForwardMessageRequest) SetDirectMessagesTopicId(v int32) {
+	o.DirectMessagesTopicId = &v
 }
 
 
@@ -271,6 +309,72 @@ func (o *ForwardMessageRequest) SetProtectContent(v bool) {
 }
 
 
+// GetMessageEffectId returns the MessageEffectId field value if set, zero value otherwise.
+func (o *ForwardMessageRequest) GetMessageEffectId() string {
+	if o == nil || IsNil(o.MessageEffectId) {
+		var ret string
+		return ret
+	}
+	return *o.MessageEffectId
+}
+
+// GetMessageEffectIdOk returns a tuple with the MessageEffectId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ForwardMessageRequest) GetMessageEffectIdOk() (*string, bool) {
+	if o == nil || IsNil(o.MessageEffectId) {
+		return nil, false
+	}
+	return o.MessageEffectId, true
+}
+
+// HasMessageEffectId returns a boolean if a field has been set.
+func (o *ForwardMessageRequest) HasMessageEffectId() bool {
+	if o != nil && !IsNil(o.MessageEffectId) {
+		return true
+	}
+
+	return false
+}
+
+// SetMessageEffectId gets a reference to the given string and assigns it to the MessageEffectId field.
+func (o *ForwardMessageRequest) SetMessageEffectId(v string) {
+	o.MessageEffectId = &v
+}
+
+
+// GetSuggestedPostParameters returns the SuggestedPostParameters field value if set, zero value otherwise.
+func (o *ForwardMessageRequest) GetSuggestedPostParameters() SuggestedPostParameters {
+	if o == nil || IsNil(o.SuggestedPostParameters) {
+		var ret SuggestedPostParameters
+		return ret
+	}
+	return *o.SuggestedPostParameters
+}
+
+// GetSuggestedPostParametersOk returns a tuple with the SuggestedPostParameters field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ForwardMessageRequest) GetSuggestedPostParametersOk() (*SuggestedPostParameters, bool) {
+	if o == nil || IsNil(o.SuggestedPostParameters) {
+		return nil, false
+	}
+	return o.SuggestedPostParameters, true
+}
+
+// HasSuggestedPostParameters returns a boolean if a field has been set.
+func (o *ForwardMessageRequest) HasSuggestedPostParameters() bool {
+	if o != nil && !IsNil(o.SuggestedPostParameters) {
+		return true
+	}
+
+	return false
+}
+
+// SetSuggestedPostParameters gets a reference to the given SuggestedPostParameters and assigns it to the SuggestedPostParameters field.
+func (o *ForwardMessageRequest) SetSuggestedPostParameters(v SuggestedPostParameters) {
+	o.SuggestedPostParameters = &v
+}
+
+
 // GetMessageId returns the MessageId field value
 func (o *ForwardMessageRequest) GetMessageId() int32 {
 	if o == nil {
@@ -309,6 +413,9 @@ func (o ForwardMessageRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.MessageThreadId) {
 		toSerialize["message_thread_id"] = o.MessageThreadId
 	}
+	if !IsNil(o.DirectMessagesTopicId) {
+		toSerialize["direct_messages_topic_id"] = o.DirectMessagesTopicId
+	}
 	toSerialize["from_chat_id"] = o.FromChatId
 	if !IsNil(o.VideoStartTimestamp) {
 		toSerialize["video_start_timestamp"] = o.VideoStartTimestamp
@@ -318,6 +425,12 @@ func (o ForwardMessageRequest) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ProtectContent) {
 		toSerialize["protect_content"] = o.ProtectContent
+	}
+	if !IsNil(o.MessageEffectId) {
+		toSerialize["message_effect_id"] = o.MessageEffectId
+	}
+	if !IsNil(o.SuggestedPostParameters) {
+		toSerialize["suggested_post_parameters"] = o.SuggestedPostParameters
 	}
 	toSerialize["message_id"] = o.MessageId
 	return toSerialize, nil
@@ -397,5 +510,4 @@ func (v *NullableForwardMessageRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
 

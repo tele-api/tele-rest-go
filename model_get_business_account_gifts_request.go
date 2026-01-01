@@ -3,11 +3,11 @@
  * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
- *    * - **Copyright**: Copyright (c) 2025 Qntx
+ *    * - **Copyright**: Copyright (c) 2026 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
- *    * - **Generator Version**: 7.14.0
+ *    * - **Version**: 9.3.0
+ *    * - **Modified**: 2026-01-01T02:06:16.405655294Z[Etc/UTC]
+ *    * - **Generator Version**: 7.18.0
  * 
  * <details>
  * <summary><strong>⚠️ Important Disclaimer & Limitation of Liability</strong></summary>
@@ -63,10 +63,14 @@ type GetBusinessAccountGiftsRequest struct {
 	ExcludeSaved *bool `json:"exclude_saved,omitempty"`
 	// Pass *True* to exclude gifts that can be purchased an unlimited number of times
 	ExcludeUnlimited *bool `json:"exclude_unlimited,omitempty"`
-	// Pass *True* to exclude gifts that can be purchased a limited number of times
-	ExcludeLimited *bool `json:"exclude_limited,omitempty"`
+	// Pass *True* to exclude gifts that can be purchased a limited number of times and can be upgraded to unique
+	ExcludeLimitedUpgradable *bool `json:"exclude_limited_upgradable,omitempty"`
+	// Pass *True* to exclude gifts that can be purchased a limited number of times and can't be upgraded to unique
+	ExcludeLimitedNonUpgradable *bool `json:"exclude_limited_non_upgradable,omitempty"`
 	// Pass *True* to exclude unique gifts
 	ExcludeUnique *bool `json:"exclude_unique,omitempty"`
+	// Pass *True* to exclude gifts that were assigned from the TON blockchain and can't be resold or transferred in Telegram
+	ExcludeFromBlockchain *bool `json:"exclude_from_blockchain,omitempty"`
 	// Pass *True* to sort results by gift price instead of send date. Sorting is applied before pagination.
 	SortByPrice *bool `json:"sort_by_price,omitempty"`
 	// Offset of the first entry to return as received from the previous request; use empty string to get the first chunk of results
@@ -222,36 +226,69 @@ func (o *GetBusinessAccountGiftsRequest) SetExcludeUnlimited(v bool) {
 }
 
 
-// GetExcludeLimited returns the ExcludeLimited field value if set, zero value otherwise.
-func (o *GetBusinessAccountGiftsRequest) GetExcludeLimited() bool {
-	if o == nil || IsNil(o.ExcludeLimited) {
+// GetExcludeLimitedUpgradable returns the ExcludeLimitedUpgradable field value if set, zero value otherwise.
+func (o *GetBusinessAccountGiftsRequest) GetExcludeLimitedUpgradable() bool {
+	if o == nil || IsNil(o.ExcludeLimitedUpgradable) {
 		var ret bool
 		return ret
 	}
-	return *o.ExcludeLimited
+	return *o.ExcludeLimitedUpgradable
 }
 
-// GetExcludeLimitedOk returns a tuple with the ExcludeLimited field value if set, nil otherwise
+// GetExcludeLimitedUpgradableOk returns a tuple with the ExcludeLimitedUpgradable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetBusinessAccountGiftsRequest) GetExcludeLimitedOk() (*bool, bool) {
-	if o == nil || IsNil(o.ExcludeLimited) {
+func (o *GetBusinessAccountGiftsRequest) GetExcludeLimitedUpgradableOk() (*bool, bool) {
+	if o == nil || IsNil(o.ExcludeLimitedUpgradable) {
 		return nil, false
 	}
-	return o.ExcludeLimited, true
+	return o.ExcludeLimitedUpgradable, true
 }
 
-// HasExcludeLimited returns a boolean if a field has been set.
-func (o *GetBusinessAccountGiftsRequest) HasExcludeLimited() bool {
-	if o != nil && !IsNil(o.ExcludeLimited) {
+// HasExcludeLimitedUpgradable returns a boolean if a field has been set.
+func (o *GetBusinessAccountGiftsRequest) HasExcludeLimitedUpgradable() bool {
+	if o != nil && !IsNil(o.ExcludeLimitedUpgradable) {
 		return true
 	}
 
 	return false
 }
 
-// SetExcludeLimited gets a reference to the given bool and assigns it to the ExcludeLimited field.
-func (o *GetBusinessAccountGiftsRequest) SetExcludeLimited(v bool) {
-	o.ExcludeLimited = &v
+// SetExcludeLimitedUpgradable gets a reference to the given bool and assigns it to the ExcludeLimitedUpgradable field.
+func (o *GetBusinessAccountGiftsRequest) SetExcludeLimitedUpgradable(v bool) {
+	o.ExcludeLimitedUpgradable = &v
+}
+
+
+// GetExcludeLimitedNonUpgradable returns the ExcludeLimitedNonUpgradable field value if set, zero value otherwise.
+func (o *GetBusinessAccountGiftsRequest) GetExcludeLimitedNonUpgradable() bool {
+	if o == nil || IsNil(o.ExcludeLimitedNonUpgradable) {
+		var ret bool
+		return ret
+	}
+	return *o.ExcludeLimitedNonUpgradable
+}
+
+// GetExcludeLimitedNonUpgradableOk returns a tuple with the ExcludeLimitedNonUpgradable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetBusinessAccountGiftsRequest) GetExcludeLimitedNonUpgradableOk() (*bool, bool) {
+	if o == nil || IsNil(o.ExcludeLimitedNonUpgradable) {
+		return nil, false
+	}
+	return o.ExcludeLimitedNonUpgradable, true
+}
+
+// HasExcludeLimitedNonUpgradable returns a boolean if a field has been set.
+func (o *GetBusinessAccountGiftsRequest) HasExcludeLimitedNonUpgradable() bool {
+	if o != nil && !IsNil(o.ExcludeLimitedNonUpgradable) {
+		return true
+	}
+
+	return false
+}
+
+// SetExcludeLimitedNonUpgradable gets a reference to the given bool and assigns it to the ExcludeLimitedNonUpgradable field.
+func (o *GetBusinessAccountGiftsRequest) SetExcludeLimitedNonUpgradable(v bool) {
+	o.ExcludeLimitedNonUpgradable = &v
 }
 
 
@@ -285,6 +322,39 @@ func (o *GetBusinessAccountGiftsRequest) HasExcludeUnique() bool {
 // SetExcludeUnique gets a reference to the given bool and assigns it to the ExcludeUnique field.
 func (o *GetBusinessAccountGiftsRequest) SetExcludeUnique(v bool) {
 	o.ExcludeUnique = &v
+}
+
+
+// GetExcludeFromBlockchain returns the ExcludeFromBlockchain field value if set, zero value otherwise.
+func (o *GetBusinessAccountGiftsRequest) GetExcludeFromBlockchain() bool {
+	if o == nil || IsNil(o.ExcludeFromBlockchain) {
+		var ret bool
+		return ret
+	}
+	return *o.ExcludeFromBlockchain
+}
+
+// GetExcludeFromBlockchainOk returns a tuple with the ExcludeFromBlockchain field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetBusinessAccountGiftsRequest) GetExcludeFromBlockchainOk() (*bool, bool) {
+	if o == nil || IsNil(o.ExcludeFromBlockchain) {
+		return nil, false
+	}
+	return o.ExcludeFromBlockchain, true
+}
+
+// HasExcludeFromBlockchain returns a boolean if a field has been set.
+func (o *GetBusinessAccountGiftsRequest) HasExcludeFromBlockchain() bool {
+	if o != nil && !IsNil(o.ExcludeFromBlockchain) {
+		return true
+	}
+
+	return false
+}
+
+// SetExcludeFromBlockchain gets a reference to the given bool and assigns it to the ExcludeFromBlockchain field.
+func (o *GetBusinessAccountGiftsRequest) SetExcludeFromBlockchain(v bool) {
+	o.ExcludeFromBlockchain = &v
 }
 
 
@@ -407,11 +477,17 @@ func (o GetBusinessAccountGiftsRequest) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.ExcludeUnlimited) {
 		toSerialize["exclude_unlimited"] = o.ExcludeUnlimited
 	}
-	if !IsNil(o.ExcludeLimited) {
-		toSerialize["exclude_limited"] = o.ExcludeLimited
+	if !IsNil(o.ExcludeLimitedUpgradable) {
+		toSerialize["exclude_limited_upgradable"] = o.ExcludeLimitedUpgradable
+	}
+	if !IsNil(o.ExcludeLimitedNonUpgradable) {
+		toSerialize["exclude_limited_non_upgradable"] = o.ExcludeLimitedNonUpgradable
 	}
 	if !IsNil(o.ExcludeUnique) {
 		toSerialize["exclude_unique"] = o.ExcludeUnique
+	}
+	if !IsNil(o.ExcludeFromBlockchain) {
+		toSerialize["exclude_from_blockchain"] = o.ExcludeFromBlockchain
 	}
 	if !IsNil(o.SortByPrice) {
 		toSerialize["sort_by_price"] = o.SortByPrice
@@ -497,5 +573,4 @@ func (v *NullableGetBusinessAccountGiftsRequest) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
 

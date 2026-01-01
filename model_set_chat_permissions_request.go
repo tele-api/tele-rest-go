@@ -3,11 +3,11 @@
  * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
- *    * - **Copyright**: Copyright (c) 2025 Qntx
+ *    * - **Copyright**: Copyright (c) 2026 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
- *    * - **Generator Version**: 7.14.0
+ *    * - **Version**: 9.3.0
+ *    * - **Modified**: 2026-01-01T02:06:16.405655294Z[Etc/UTC]
+ *    * - **Generator Version**: 7.18.0
  * 
  * <details>
  * <summary><strong>⚠️ Important Disclaimer & Limitation of Liability</strong></summary>
@@ -55,7 +55,7 @@ var _ MappedNullable = &SetChatPermissionsRequest{}
 
 // SetChatPermissionsRequest Request parameters for setChatPermissions
 type SetChatPermissionsRequest struct {
-	ChatId BotCommandScopeChatChatId `json:"chat_id"`
+	ChatId RestrictChatMemberRequestChatId `json:"chat_id"`
 	Permissions ChatPermissions `json:"permissions"`
 	// Pass *True* if chat permissions are set independently. Otherwise, the *can\\_send\\_other\\_messages* and *can\\_add\\_web\\_page\\_previews* permissions will imply the *can\\_send\\_messages*, *can\\_send\\_audios*, *can\\_send\\_documents*, *can\\_send\\_photos*, *can\\_send\\_videos*, *can\\_send\\_video\\_notes*, and *can\\_send\\_voice\\_notes* permissions; the *can\\_send\\_polls* permission will imply the *can\\_send\\_messages* permission.
 	UseIndependentChatPermissions *bool `json:"use_independent_chat_permissions,omitempty"`
@@ -67,7 +67,7 @@ type _SetChatPermissionsRequest SetChatPermissionsRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSetChatPermissionsRequest(chatId BotCommandScopeChatChatId, permissions ChatPermissions) *SetChatPermissionsRequest {
+func NewSetChatPermissionsRequest(chatId RestrictChatMemberRequestChatId, permissions ChatPermissions) *SetChatPermissionsRequest {
 	this := SetChatPermissionsRequest{}
 	this.ChatId = chatId
 	this.Permissions = permissions
@@ -83,9 +83,9 @@ func NewSetChatPermissionsRequestWithDefaults() *SetChatPermissionsRequest {
 }
 
 // GetChatId returns the ChatId field value
-func (o *SetChatPermissionsRequest) GetChatId() BotCommandScopeChatChatId {
+func (o *SetChatPermissionsRequest) GetChatId() RestrictChatMemberRequestChatId {
 	if o == nil {
-		var ret BotCommandScopeChatChatId
+		var ret RestrictChatMemberRequestChatId
 		return ret
 	}
 
@@ -94,7 +94,7 @@ func (o *SetChatPermissionsRequest) GetChatId() BotCommandScopeChatChatId {
 
 // GetChatIdOk returns a tuple with the ChatId field value
 // and a boolean to check if the value has been set.
-func (o *SetChatPermissionsRequest) GetChatIdOk() (*BotCommandScopeChatChatId, bool) {
+func (o *SetChatPermissionsRequest) GetChatIdOk() (*RestrictChatMemberRequestChatId, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -102,7 +102,7 @@ func (o *SetChatPermissionsRequest) GetChatIdOk() (*BotCommandScopeChatChatId, b
 }
 
 // SetChatId sets field value
-func (o *SetChatPermissionsRequest) SetChatId(v BotCommandScopeChatChatId) {
+func (o *SetChatPermissionsRequest) SetChatId(v RestrictChatMemberRequestChatId) {
 	o.ChatId = v
 }
 
@@ -254,5 +254,4 @@ func (v *NullableSetChatPermissionsRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
 

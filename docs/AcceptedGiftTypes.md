@@ -8,12 +8,13 @@ Name | Type | Description | Notes
 **LimitedGifts** | **bool** | *True*, if limited regular gifts are accepted | 
 **UniqueGifts** | **bool** | *True*, if unique gifts or gifts that can be upgraded to unique for free are accepted | 
 **PremiumSubscription** | **bool** | *True*, if a Telegram Premium subscription is accepted | 
+**GiftsFromChannels** | **bool** | *True*, if transfers of unique gifts from channels are accepted | 
 
 ## Methods
 
 ### NewAcceptedGiftTypes
 
-`func NewAcceptedGiftTypes(unlimitedGifts bool, limitedGifts bool, uniqueGifts bool, premiumSubscription bool, ) *AcceptedGiftTypes`
+`func NewAcceptedGiftTypes(unlimitedGifts bool, limitedGifts bool, uniqueGifts bool, premiumSubscription bool, giftsFromChannels bool, ) *AcceptedGiftTypes`
 
 NewAcceptedGiftTypes instantiates a new AcceptedGiftTypes object
 This constructor will assign default values to properties that have it defined,
@@ -106,6 +107,26 @@ and a boolean to check if the value has been set.
 `func (o *AcceptedGiftTypes) SetPremiumSubscription(v bool)`
 
 SetPremiumSubscription sets PremiumSubscription field to given value.
+
+
+### GetGiftsFromChannels
+
+`func (o *AcceptedGiftTypes) GetGiftsFromChannels() bool`
+
+GetGiftsFromChannels returns the GiftsFromChannels field if non-nil, zero value otherwise.
+
+### GetGiftsFromChannelsOk
+
+`func (o *AcceptedGiftTypes) GetGiftsFromChannelsOk() (*bool, bool)`
+
+GetGiftsFromChannelsOk returns a tuple with the GiftsFromChannels field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGiftsFromChannels
+
+`func (o *AcceptedGiftTypes) SetGiftsFromChannels(v bool)`
+
+SetGiftsFromChannels sets GiftsFromChannels field to given value.
 
 
 

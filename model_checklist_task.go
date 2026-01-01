@@ -3,11 +3,11 @@
  * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
- *    * - **Copyright**: Copyright (c) 2025 Qntx
+ *    * - **Copyright**: Copyright (c) 2026 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
- *    * - **Generator Version**: 7.14.0
+ *    * - **Version**: 9.3.0
+ *    * - **Modified**: 2026-01-01T02:06:16.405655294Z[Etc/UTC]
+ *    * - **Generator Version**: 7.18.0
  * 
  * <details>
  * <summary><strong>⚠️ Important Disclaimer & Limitation of Liability</strong></summary>
@@ -62,6 +62,7 @@ type ChecklistTask struct {
 	// *Optional*. Special entities that appear in the task text
 	TextEntities []MessageEntity `json:"text_entities,omitempty"`
 	CompletedByUser *User `json:"completed_by_user,omitempty"`
+	CompletedByChat *Chat `json:"completed_by_chat,omitempty"`
 	// *Optional*. Point in time (Unix timestamp) when the task was completed; 0 if the task wasn't completed
 	CompletionDate *int32 `json:"completion_date,omitempty"`
 }
@@ -201,6 +202,39 @@ func (o *ChecklistTask) SetCompletedByUser(v User) {
 }
 
 
+// GetCompletedByChat returns the CompletedByChat field value if set, zero value otherwise.
+func (o *ChecklistTask) GetCompletedByChat() Chat {
+	if o == nil || IsNil(o.CompletedByChat) {
+		var ret Chat
+		return ret
+	}
+	return *o.CompletedByChat
+}
+
+// GetCompletedByChatOk returns a tuple with the CompletedByChat field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ChecklistTask) GetCompletedByChatOk() (*Chat, bool) {
+	if o == nil || IsNil(o.CompletedByChat) {
+		return nil, false
+	}
+	return o.CompletedByChat, true
+}
+
+// HasCompletedByChat returns a boolean if a field has been set.
+func (o *ChecklistTask) HasCompletedByChat() bool {
+	if o != nil && !IsNil(o.CompletedByChat) {
+		return true
+	}
+
+	return false
+}
+
+// SetCompletedByChat gets a reference to the given Chat and assigns it to the CompletedByChat field.
+func (o *ChecklistTask) SetCompletedByChat(v Chat) {
+	o.CompletedByChat = &v
+}
+
+
 // GetCompletionDate returns the CompletionDate field value if set, zero value otherwise.
 func (o *ChecklistTask) GetCompletionDate() int32 {
 	if o == nil || IsNil(o.CompletionDate) {
@@ -251,6 +285,9 @@ func (o ChecklistTask) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.CompletedByUser) {
 		toSerialize["completed_by_user"] = o.CompletedByUser
+	}
+	if !IsNil(o.CompletedByChat) {
+		toSerialize["completed_by_chat"] = o.CompletedByChat
 	}
 	if !IsNil(o.CompletionDate) {
 		toSerialize["completion_date"] = o.CompletionDate
@@ -331,5 +368,4 @@ func (v *NullableChecklistTask) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
 

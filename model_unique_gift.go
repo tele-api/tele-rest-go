@@ -3,11 +3,11 @@
  * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
- *    * - **Copyright**: Copyright (c) 2025 Qntx
+ *    * - **Copyright**: Copyright (c) 2026 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
- *    * - **Generator Version**: 7.14.0
+ *    * - **Version**: 9.3.0
+ *    * - **Modified**: 2026-01-01T02:06:16.405655294Z[Etc/UTC]
+ *    * - **Generator Version**: 7.18.0
  * 
  * <details>
  * <summary><strong>⚠️ Important Disclaimer & Limitation of Liability</strong></summary>
@@ -55,6 +55,8 @@ var _ MappedNullable = &UniqueGift{}
 
 // UniqueGift This object describes a unique gift that was upgraded from a regular gift.
 type UniqueGift struct {
+	// Identifier of the regular gift from which the gift was upgraded
+	GiftId string `json:"gift_id"`
 	// Human-readable name of the regular gift from which this unique gift was upgraded
 	BaseName string `json:"base_name"`
 	// Unique name of the gift. This name can be used in `https://t.me/nft/...` links and story areas
@@ -64,6 +66,12 @@ type UniqueGift struct {
 	Model UniqueGiftModel `json:"model"`
 	Symbol UniqueGiftSymbol `json:"symbol"`
 	Backdrop UniqueGiftBackdrop `json:"backdrop"`
+	// *Optional*. *True*, if the original regular gift was exclusively purchaseable by Telegram Premium subscribers
+	IsPremium *bool `json:"is_premium,omitempty"`
+	// *Optional*. *True*, if the gift is assigned from the TON blockchain and can't be resold or transferred in Telegram
+	IsFromBlockchain *bool `json:"is_from_blockchain,omitempty"`
+	Colors *UniqueGiftColors `json:"colors,omitempty"`
+	PublisherChat *Chat `json:"publisher_chat,omitempty"`
 }
 
 type _UniqueGift UniqueGift
@@ -72,14 +80,19 @@ type _UniqueGift UniqueGift
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUniqueGift(baseName string, name string, number int32, model UniqueGiftModel, symbol UniqueGiftSymbol, backdrop UniqueGiftBackdrop) *UniqueGift {
+func NewUniqueGift(giftId string, baseName string, name string, number int32, model UniqueGiftModel, symbol UniqueGiftSymbol, backdrop UniqueGiftBackdrop) *UniqueGift {
 	this := UniqueGift{}
+	this.GiftId = giftId
 	this.BaseName = baseName
 	this.Name = name
 	this.Number = number
 	this.Model = model
 	this.Symbol = symbol
 	this.Backdrop = backdrop
+	var isPremium bool = true
+	this.IsPremium = &isPremium
+	var isFromBlockchain bool = true
+	this.IsFromBlockchain = &isFromBlockchain
 	return &this
 }
 
@@ -88,7 +101,35 @@ func NewUniqueGift(baseName string, name string, number int32, model UniqueGiftM
 // but it doesn't guarantee that properties required by API are set
 func NewUniqueGiftWithDefaults() *UniqueGift {
 	this := UniqueGift{}
+	var isPremium bool = true
+	this.IsPremium = &isPremium
+	var isFromBlockchain bool = true
+	this.IsFromBlockchain = &isFromBlockchain
 	return &this
+}
+
+// GetGiftId returns the GiftId field value
+func (o *UniqueGift) GetGiftId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.GiftId
+}
+
+// GetGiftIdOk returns a tuple with the GiftId field value
+// and a boolean to check if the value has been set.
+func (o *UniqueGift) GetGiftIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.GiftId, true
+}
+
+// SetGiftId sets field value
+func (o *UniqueGift) SetGiftId(v string) {
+	o.GiftId = v
 }
 
 // GetBaseName returns the BaseName field value
@@ -235,6 +276,138 @@ func (o *UniqueGift) SetBackdrop(v UniqueGiftBackdrop) {
 	o.Backdrop = v
 }
 
+// GetIsPremium returns the IsPremium field value if set, zero value otherwise.
+func (o *UniqueGift) GetIsPremium() bool {
+	if o == nil || IsNil(o.IsPremium) {
+		var ret bool
+		return ret
+	}
+	return *o.IsPremium
+}
+
+// GetIsPremiumOk returns a tuple with the IsPremium field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UniqueGift) GetIsPremiumOk() (*bool, bool) {
+	if o == nil || IsNil(o.IsPremium) {
+		return nil, false
+	}
+	return o.IsPremium, true
+}
+
+// HasIsPremium returns a boolean if a field has been set.
+func (o *UniqueGift) HasIsPremium() bool {
+	if o != nil && !IsNil(o.IsPremium) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsPremium gets a reference to the given bool and assigns it to the IsPremium field.
+func (o *UniqueGift) SetIsPremium(v bool) {
+	o.IsPremium = &v
+}
+
+
+// GetIsFromBlockchain returns the IsFromBlockchain field value if set, zero value otherwise.
+func (o *UniqueGift) GetIsFromBlockchain() bool {
+	if o == nil || IsNil(o.IsFromBlockchain) {
+		var ret bool
+		return ret
+	}
+	return *o.IsFromBlockchain
+}
+
+// GetIsFromBlockchainOk returns a tuple with the IsFromBlockchain field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UniqueGift) GetIsFromBlockchainOk() (*bool, bool) {
+	if o == nil || IsNil(o.IsFromBlockchain) {
+		return nil, false
+	}
+	return o.IsFromBlockchain, true
+}
+
+// HasIsFromBlockchain returns a boolean if a field has been set.
+func (o *UniqueGift) HasIsFromBlockchain() bool {
+	if o != nil && !IsNil(o.IsFromBlockchain) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsFromBlockchain gets a reference to the given bool and assigns it to the IsFromBlockchain field.
+func (o *UniqueGift) SetIsFromBlockchain(v bool) {
+	o.IsFromBlockchain = &v
+}
+
+
+// GetColors returns the Colors field value if set, zero value otherwise.
+func (o *UniqueGift) GetColors() UniqueGiftColors {
+	if o == nil || IsNil(o.Colors) {
+		var ret UniqueGiftColors
+		return ret
+	}
+	return *o.Colors
+}
+
+// GetColorsOk returns a tuple with the Colors field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UniqueGift) GetColorsOk() (*UniqueGiftColors, bool) {
+	if o == nil || IsNil(o.Colors) {
+		return nil, false
+	}
+	return o.Colors, true
+}
+
+// HasColors returns a boolean if a field has been set.
+func (o *UniqueGift) HasColors() bool {
+	if o != nil && !IsNil(o.Colors) {
+		return true
+	}
+
+	return false
+}
+
+// SetColors gets a reference to the given UniqueGiftColors and assigns it to the Colors field.
+func (o *UniqueGift) SetColors(v UniqueGiftColors) {
+	o.Colors = &v
+}
+
+
+// GetPublisherChat returns the PublisherChat field value if set, zero value otherwise.
+func (o *UniqueGift) GetPublisherChat() Chat {
+	if o == nil || IsNil(o.PublisherChat) {
+		var ret Chat
+		return ret
+	}
+	return *o.PublisherChat
+}
+
+// GetPublisherChatOk returns a tuple with the PublisherChat field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UniqueGift) GetPublisherChatOk() (*Chat, bool) {
+	if o == nil || IsNil(o.PublisherChat) {
+		return nil, false
+	}
+	return o.PublisherChat, true
+}
+
+// HasPublisherChat returns a boolean if a field has been set.
+func (o *UniqueGift) HasPublisherChat() bool {
+	if o != nil && !IsNil(o.PublisherChat) {
+		return true
+	}
+
+	return false
+}
+
+// SetPublisherChat gets a reference to the given Chat and assigns it to the PublisherChat field.
+func (o *UniqueGift) SetPublisherChat(v Chat) {
+	o.PublisherChat = &v
+}
+
+
 func (o UniqueGift) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -245,12 +418,25 @@ func (o UniqueGift) MarshalJSON() ([]byte, error) {
 
 func (o UniqueGift) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	toSerialize["gift_id"] = o.GiftId
 	toSerialize["base_name"] = o.BaseName
 	toSerialize["name"] = o.Name
 	toSerialize["number"] = o.Number
 	toSerialize["model"] = o.Model
 	toSerialize["symbol"] = o.Symbol
 	toSerialize["backdrop"] = o.Backdrop
+	if !IsNil(o.IsPremium) {
+		toSerialize["is_premium"] = o.IsPremium
+	}
+	if !IsNil(o.IsFromBlockchain) {
+		toSerialize["is_from_blockchain"] = o.IsFromBlockchain
+	}
+	if !IsNil(o.Colors) {
+		toSerialize["colors"] = o.Colors
+	}
+	if !IsNil(o.PublisherChat) {
+		toSerialize["publisher_chat"] = o.PublisherChat
+	}
 	return toSerialize, nil
 }
 
@@ -259,6 +445,7 @@ func (o *UniqueGift) UnmarshalJSON(data []byte) (err error) {
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
+		"gift_id",
 		"base_name",
 		"name",
 		"number",
@@ -331,5 +518,4 @@ func (v *NullableUniqueGift) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
 

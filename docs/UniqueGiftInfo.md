@@ -5,8 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Gift** | [**UniqueGift**](UniqueGift.md) |  | 
-**Origin** | **string** | Origin of the gift. Currently, either “upgrade” for gifts upgraded from regular gifts, “transfer” for gifts transferred from other users or channels, or “resale” for gifts bought from other users | 
-**LastResaleStarCount** | Pointer to **int32** | *Optional*. For gifts bought from other users, the price paid for the gift | [optional] 
+**Origin** | **string** | Origin of the gift. Currently, either “upgrade” for gifts upgraded from regular gifts, “transfer” for gifts transferred from other users or channels, “resale” for gifts bought from other users, “gifted\\_upgrade” for upgrades purchased after the gift was sent, or “offer” for gifts bought or sold through gift purchase offers | 
+**LastResaleCurrency** | Pointer to **string** | *Optional*. For gifts bought from other users, the currency in which the payment for the gift was done. Currently, one of “XTR” for Telegram Stars or “TON” for toncoins. | [optional] 
+**LastResaleAmount** | Pointer to **int32** | *Optional*. For gifts bought from other users, the price paid for the gift in either Telegram Stars or nanotoncoins | [optional] 
 **OwnedGiftId** | Pointer to **string** | *Optional*. Unique identifier of the received gift for the bot; only present for gifts received on behalf of business accounts | [optional] 
 **TransferStarCount** | Pointer to **int32** | *Optional*. Number of Telegram Stars that must be paid to transfer the gift; omitted if the bot cannot transfer the gift | [optional] 
 **NextTransferDate** | Pointer to **int32** | *Optional*. Point in time (Unix timestamp) when the gift can be transferred. If it is in the past, then the gift can be transferred now | [optional] 
@@ -70,30 +71,55 @@ and a boolean to check if the value has been set.
 SetOrigin sets Origin field to given value.
 
 
-### GetLastResaleStarCount
+### GetLastResaleCurrency
 
-`func (o *UniqueGiftInfo) GetLastResaleStarCount() int32`
+`func (o *UniqueGiftInfo) GetLastResaleCurrency() string`
 
-GetLastResaleStarCount returns the LastResaleStarCount field if non-nil, zero value otherwise.
+GetLastResaleCurrency returns the LastResaleCurrency field if non-nil, zero value otherwise.
 
-### GetLastResaleStarCountOk
+### GetLastResaleCurrencyOk
 
-`func (o *UniqueGiftInfo) GetLastResaleStarCountOk() (*int32, bool)`
+`func (o *UniqueGiftInfo) GetLastResaleCurrencyOk() (*string, bool)`
 
-GetLastResaleStarCountOk returns a tuple with the LastResaleStarCount field if it's non-nil, zero value otherwise
+GetLastResaleCurrencyOk returns a tuple with the LastResaleCurrency field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetLastResaleStarCount
+### SetLastResaleCurrency
 
-`func (o *UniqueGiftInfo) SetLastResaleStarCount(v int32)`
+`func (o *UniqueGiftInfo) SetLastResaleCurrency(v string)`
 
-SetLastResaleStarCount sets LastResaleStarCount field to given value.
+SetLastResaleCurrency sets LastResaleCurrency field to given value.
 
-### HasLastResaleStarCount
+### HasLastResaleCurrency
 
-`func (o *UniqueGiftInfo) HasLastResaleStarCount() bool`
+`func (o *UniqueGiftInfo) HasLastResaleCurrency() bool`
 
-HasLastResaleStarCount returns a boolean if a field has been set.
+HasLastResaleCurrency returns a boolean if a field has been set.
+
+### GetLastResaleAmount
+
+`func (o *UniqueGiftInfo) GetLastResaleAmount() int32`
+
+GetLastResaleAmount returns the LastResaleAmount field if non-nil, zero value otherwise.
+
+### GetLastResaleAmountOk
+
+`func (o *UniqueGiftInfo) GetLastResaleAmountOk() (*int32, bool)`
+
+GetLastResaleAmountOk returns a tuple with the LastResaleAmount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastResaleAmount
+
+`func (o *UniqueGiftInfo) SetLastResaleAmount(v int32)`
+
+SetLastResaleAmount sets LastResaleAmount field to given value.
+
+### HasLastResaleAmount
+
+`func (o *UniqueGiftInfo) HasLastResaleAmount() bool`
+
+HasLastResaleAmount returns a boolean if a field has been set.
 
 ### GetOwnedGiftId
 

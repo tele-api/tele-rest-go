@@ -15,8 +15,10 @@ Name | Type | Description | Notes
 **IsSaved** | Pointer to **bool** | *Optional*. *True*, if the gift is displayed on the account&#39;s profile page; for gifts received on behalf of business accounts only | [optional] [default to true]
 **CanBeUpgraded** | Pointer to **bool** | *Optional*. *True*, if the gift can be upgraded to a unique gift; for gifts received on behalf of business accounts only | [optional] [default to true]
 **WasRefunded** | Pointer to **bool** | *Optional*. *True*, if the gift was refunded and isn&#39;t available anymore | [optional] [default to true]
-**ConvertStarCount** | Pointer to **int32** | *Optional*. Number of Telegram Stars that can be claimed by the receiver instead of the gift; omitted if the gift cannot be converted to Telegram Stars | [optional] 
-**PrepaidUpgradeStarCount** | Pointer to **int32** | *Optional*. Number of Telegram Stars that were paid by the sender for the ability to upgrade the gift | [optional] 
+**ConvertStarCount** | Pointer to **int32** | *Optional*. Number of Telegram Stars that can be claimed by the receiver instead of the gift; omitted if the gift cannot be converted to Telegram Stars; for gifts received on behalf of business accounts only | [optional] 
+**PrepaidUpgradeStarCount** | Pointer to **int32** | *Optional*. Number of Telegram Stars that were paid for the ability to upgrade the gift | [optional] 
+**IsUpgradeSeparate** | Pointer to **bool** | *Optional*. *True*, if the gift&#39;s upgrade was purchased after the gift was sent; for gifts received on behalf of business accounts only | [optional] [default to true]
+**UniqueGiftNumber** | Pointer to **int32** | *Optional*. Unique number reserved for this gift when upgraded. See the *number* field in [UniqueGift](https://core.telegram.org/bots/api/#uniquegift) | [optional] 
 **CanBeTransferred** | Pointer to **bool** | *Optional*. *True*, if the gift can be transferred to another owner; for gifts received on behalf of business accounts only | [optional] [default to true]
 **TransferStarCount** | Pointer to **int32** | *Optional*. Number of Telegram Stars that must be paid to transfer the gift; omitted if the bot cannot transfer the gift | [optional] 
 **NextTransferDate** | Pointer to **int32** | *Optional*. Point in time (Unix timestamp) when the gift can be transferred. If it is in the past, then the gift can be transferred now | [optional] 
@@ -349,6 +351,56 @@ SetPrepaidUpgradeStarCount sets PrepaidUpgradeStarCount field to given value.
 `func (o *OwnedGift) HasPrepaidUpgradeStarCount() bool`
 
 HasPrepaidUpgradeStarCount returns a boolean if a field has been set.
+
+### GetIsUpgradeSeparate
+
+`func (o *OwnedGift) GetIsUpgradeSeparate() bool`
+
+GetIsUpgradeSeparate returns the IsUpgradeSeparate field if non-nil, zero value otherwise.
+
+### GetIsUpgradeSeparateOk
+
+`func (o *OwnedGift) GetIsUpgradeSeparateOk() (*bool, bool)`
+
+GetIsUpgradeSeparateOk returns a tuple with the IsUpgradeSeparate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsUpgradeSeparate
+
+`func (o *OwnedGift) SetIsUpgradeSeparate(v bool)`
+
+SetIsUpgradeSeparate sets IsUpgradeSeparate field to given value.
+
+### HasIsUpgradeSeparate
+
+`func (o *OwnedGift) HasIsUpgradeSeparate() bool`
+
+HasIsUpgradeSeparate returns a boolean if a field has been set.
+
+### GetUniqueGiftNumber
+
+`func (o *OwnedGift) GetUniqueGiftNumber() int32`
+
+GetUniqueGiftNumber returns the UniqueGiftNumber field if non-nil, zero value otherwise.
+
+### GetUniqueGiftNumberOk
+
+`func (o *OwnedGift) GetUniqueGiftNumberOk() (*int32, bool)`
+
+GetUniqueGiftNumberOk returns a tuple with the UniqueGiftNumber field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUniqueGiftNumber
+
+`func (o *OwnedGift) SetUniqueGiftNumber(v int32)`
+
+SetUniqueGiftNumber sets UniqueGiftNumber field to given value.
+
+### HasUniqueGiftNumber
+
+`func (o *OwnedGift) HasUniqueGiftNumber() bool`
+
+HasUniqueGiftNumber returns a boolean if a field has been set.
 
 ### GetCanBeTransferred
 

@@ -3,11 +3,11 @@
  * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
- *    * - **Copyright**: Copyright (c) 2025 Qntx
+ *    * - **Copyright**: Copyright (c) 2026 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
- *    * - **Generator Version**: 7.14.0
+ *    * - **Version**: 9.3.0
+ *    * - **Modified**: 2026-01-01T02:06:16.405655294Z[Etc/UTC]
+ *    * - **Generator Version**: 7.18.0
  * 
  * <details>
  * <summary><strong>⚠️ Important Disclaimer & Limitation of Liability</strong></summary>
@@ -60,8 +60,10 @@ type GiftInfo struct {
 	OwnedGiftId *string `json:"owned_gift_id,omitempty"`
 	// *Optional*. Number of Telegram Stars that can be claimed by the receiver by converting the gift; omitted if conversion to Telegram Stars is impossible
 	ConvertStarCount *int32 `json:"convert_star_count,omitempty"`
-	// *Optional*. Number of Telegram Stars that were prepaid by the sender for the ability to upgrade the gift
+	// *Optional*. Number of Telegram Stars that were prepaid for the ability to upgrade the gift
 	PrepaidUpgradeStarCount *int32 `json:"prepaid_upgrade_star_count,omitempty"`
+	// *Optional*. *True*, if the gift's upgrade was purchased after the gift was sent
+	IsUpgradeSeparate *bool `json:"is_upgrade_separate,omitempty"`
 	// *Optional*. *True*, if the gift can be upgraded to a unique gift
 	CanBeUpgraded *bool `json:"can_be_upgraded,omitempty"`
 	// *Optional*. Text of the message that was added to the gift
@@ -70,6 +72,8 @@ type GiftInfo struct {
 	Entities []MessageEntity `json:"entities,omitempty"`
 	// *Optional*. *True*, if the sender and gift text are shown only to the gift receiver; otherwise, everyone will be able to see them
 	IsPrivate *bool `json:"is_private,omitempty"`
+	// *Optional*. Unique number reserved for this gift when upgraded. See the *number* field in [UniqueGift](https://core.telegram.org/bots/api/#uniquegift)
+	UniqueGiftNumber *int32 `json:"unique_gift_number,omitempty"`
 }
 
 type _GiftInfo GiftInfo
@@ -81,6 +85,8 @@ type _GiftInfo GiftInfo
 func NewGiftInfo(gift Gift) *GiftInfo {
 	this := GiftInfo{}
 	this.Gift = gift
+	var isUpgradeSeparate bool = true
+	this.IsUpgradeSeparate = &isUpgradeSeparate
 	var canBeUpgraded bool = true
 	this.CanBeUpgraded = &canBeUpgraded
 	var isPrivate bool = true
@@ -93,6 +99,8 @@ func NewGiftInfo(gift Gift) *GiftInfo {
 // but it doesn't guarantee that properties required by API are set
 func NewGiftInfoWithDefaults() *GiftInfo {
 	this := GiftInfo{}
+	var isUpgradeSeparate bool = true
+	this.IsUpgradeSeparate = &isUpgradeSeparate
 	var canBeUpgraded bool = true
 	this.CanBeUpgraded = &canBeUpgraded
 	var isPrivate bool = true
@@ -220,6 +228,39 @@ func (o *GiftInfo) HasPrepaidUpgradeStarCount() bool {
 // SetPrepaidUpgradeStarCount gets a reference to the given int32 and assigns it to the PrepaidUpgradeStarCount field.
 func (o *GiftInfo) SetPrepaidUpgradeStarCount(v int32) {
 	o.PrepaidUpgradeStarCount = &v
+}
+
+
+// GetIsUpgradeSeparate returns the IsUpgradeSeparate field value if set, zero value otherwise.
+func (o *GiftInfo) GetIsUpgradeSeparate() bool {
+	if o == nil || IsNil(o.IsUpgradeSeparate) {
+		var ret bool
+		return ret
+	}
+	return *o.IsUpgradeSeparate
+}
+
+// GetIsUpgradeSeparateOk returns a tuple with the IsUpgradeSeparate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GiftInfo) GetIsUpgradeSeparateOk() (*bool, bool) {
+	if o == nil || IsNil(o.IsUpgradeSeparate) {
+		return nil, false
+	}
+	return o.IsUpgradeSeparate, true
+}
+
+// HasIsUpgradeSeparate returns a boolean if a field has been set.
+func (o *GiftInfo) HasIsUpgradeSeparate() bool {
+	if o != nil && !IsNil(o.IsUpgradeSeparate) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsUpgradeSeparate gets a reference to the given bool and assigns it to the IsUpgradeSeparate field.
+func (o *GiftInfo) SetIsUpgradeSeparate(v bool) {
+	o.IsUpgradeSeparate = &v
 }
 
 
@@ -355,6 +396,39 @@ func (o *GiftInfo) SetIsPrivate(v bool) {
 }
 
 
+// GetUniqueGiftNumber returns the UniqueGiftNumber field value if set, zero value otherwise.
+func (o *GiftInfo) GetUniqueGiftNumber() int32 {
+	if o == nil || IsNil(o.UniqueGiftNumber) {
+		var ret int32
+		return ret
+	}
+	return *o.UniqueGiftNumber
+}
+
+// GetUniqueGiftNumberOk returns a tuple with the UniqueGiftNumber field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GiftInfo) GetUniqueGiftNumberOk() (*int32, bool) {
+	if o == nil || IsNil(o.UniqueGiftNumber) {
+		return nil, false
+	}
+	return o.UniqueGiftNumber, true
+}
+
+// HasUniqueGiftNumber returns a boolean if a field has been set.
+func (o *GiftInfo) HasUniqueGiftNumber() bool {
+	if o != nil && !IsNil(o.UniqueGiftNumber) {
+		return true
+	}
+
+	return false
+}
+
+// SetUniqueGiftNumber gets a reference to the given int32 and assigns it to the UniqueGiftNumber field.
+func (o *GiftInfo) SetUniqueGiftNumber(v int32) {
+	o.UniqueGiftNumber = &v
+}
+
+
 func (o GiftInfo) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -375,6 +449,9 @@ func (o GiftInfo) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.PrepaidUpgradeStarCount) {
 		toSerialize["prepaid_upgrade_star_count"] = o.PrepaidUpgradeStarCount
 	}
+	if !IsNil(o.IsUpgradeSeparate) {
+		toSerialize["is_upgrade_separate"] = o.IsUpgradeSeparate
+	}
 	if !IsNil(o.CanBeUpgraded) {
 		toSerialize["can_be_upgraded"] = o.CanBeUpgraded
 	}
@@ -386,6 +463,9 @@ func (o GiftInfo) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.IsPrivate) {
 		toSerialize["is_private"] = o.IsPrivate
+	}
+	if !IsNil(o.UniqueGiftNumber) {
+		toSerialize["unique_gift_number"] = o.UniqueGiftNumber
 	}
 	return toSerialize, nil
 }
@@ -462,5 +542,4 @@ func (v *NullableGiftInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
 

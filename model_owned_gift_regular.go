@@ -3,11 +3,11 @@
  * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
- *    * - **Copyright**: Copyright (c) 2025 Qntx
+ *    * - **Copyright**: Copyright (c) 2026 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
- *    * - **Generator Version**: 7.14.0
+ *    * - **Version**: 9.3.0
+ *    * - **Modified**: 2026-01-01T02:06:16.405655294Z[Etc/UTC]
+ *    * - **Generator Version**: 7.18.0
  * 
  * <details>
  * <summary><strong>⚠️ Important Disclaimer & Limitation of Liability</strong></summary>
@@ -75,10 +75,14 @@ type OwnedGiftRegular struct {
 	CanBeUpgraded *bool `json:"can_be_upgraded,omitempty"`
 	// *Optional*. *True*, if the gift was refunded and isn't available anymore
 	WasRefunded *bool `json:"was_refunded,omitempty"`
-	// *Optional*. Number of Telegram Stars that can be claimed by the receiver instead of the gift; omitted if the gift cannot be converted to Telegram Stars
+	// *Optional*. Number of Telegram Stars that can be claimed by the receiver instead of the gift; omitted if the gift cannot be converted to Telegram Stars; for gifts received on behalf of business accounts only
 	ConvertStarCount *int32 `json:"convert_star_count,omitempty"`
-	// *Optional*. Number of Telegram Stars that were paid by the sender for the ability to upgrade the gift
+	// *Optional*. Number of Telegram Stars that were paid for the ability to upgrade the gift
 	PrepaidUpgradeStarCount *int32 `json:"prepaid_upgrade_star_count,omitempty"`
+	// *Optional*. *True*, if the gift's upgrade was purchased after the gift was sent; for gifts received on behalf of business accounts only
+	IsUpgradeSeparate *bool `json:"is_upgrade_separate,omitempty"`
+	// *Optional*. Unique number reserved for this gift when upgraded. See the *number* field in [UniqueGift](https://core.telegram.org/bots/api/#uniquegift)
+	UniqueGiftNumber *int32 `json:"unique_gift_number,omitempty"`
 }
 
 type _OwnedGiftRegular OwnedGiftRegular
@@ -100,6 +104,8 @@ func NewOwnedGiftRegular(type_ string, gift Gift, sendDate int32) *OwnedGiftRegu
 	this.CanBeUpgraded = &canBeUpgraded
 	var wasRefunded bool = true
 	this.WasRefunded = &wasRefunded
+	var isUpgradeSeparate bool = true
+	this.IsUpgradeSeparate = &isUpgradeSeparate
 	return &this
 }
 
@@ -118,6 +124,8 @@ func NewOwnedGiftRegularWithDefaults() *OwnedGiftRegular {
 	this.CanBeUpgraded = &canBeUpgraded
 	var wasRefunded bool = true
 	this.WasRefunded = &wasRefunded
+	var isUpgradeSeparate bool = true
+	this.IsUpgradeSeparate = &isUpgradeSeparate
 	return &this
 }
 
@@ -523,6 +531,72 @@ func (o *OwnedGiftRegular) SetPrepaidUpgradeStarCount(v int32) {
 }
 
 
+// GetIsUpgradeSeparate returns the IsUpgradeSeparate field value if set, zero value otherwise.
+func (o *OwnedGiftRegular) GetIsUpgradeSeparate() bool {
+	if o == nil || IsNil(o.IsUpgradeSeparate) {
+		var ret bool
+		return ret
+	}
+	return *o.IsUpgradeSeparate
+}
+
+// GetIsUpgradeSeparateOk returns a tuple with the IsUpgradeSeparate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OwnedGiftRegular) GetIsUpgradeSeparateOk() (*bool, bool) {
+	if o == nil || IsNil(o.IsUpgradeSeparate) {
+		return nil, false
+	}
+	return o.IsUpgradeSeparate, true
+}
+
+// HasIsUpgradeSeparate returns a boolean if a field has been set.
+func (o *OwnedGiftRegular) HasIsUpgradeSeparate() bool {
+	if o != nil && !IsNil(o.IsUpgradeSeparate) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsUpgradeSeparate gets a reference to the given bool and assigns it to the IsUpgradeSeparate field.
+func (o *OwnedGiftRegular) SetIsUpgradeSeparate(v bool) {
+	o.IsUpgradeSeparate = &v
+}
+
+
+// GetUniqueGiftNumber returns the UniqueGiftNumber field value if set, zero value otherwise.
+func (o *OwnedGiftRegular) GetUniqueGiftNumber() int32 {
+	if o == nil || IsNil(o.UniqueGiftNumber) {
+		var ret int32
+		return ret
+	}
+	return *o.UniqueGiftNumber
+}
+
+// GetUniqueGiftNumberOk returns a tuple with the UniqueGiftNumber field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OwnedGiftRegular) GetUniqueGiftNumberOk() (*int32, bool) {
+	if o == nil || IsNil(o.UniqueGiftNumber) {
+		return nil, false
+	}
+	return o.UniqueGiftNumber, true
+}
+
+// HasUniqueGiftNumber returns a boolean if a field has been set.
+func (o *OwnedGiftRegular) HasUniqueGiftNumber() bool {
+	if o != nil && !IsNil(o.UniqueGiftNumber) {
+		return true
+	}
+
+	return false
+}
+
+// SetUniqueGiftNumber gets a reference to the given int32 and assigns it to the UniqueGiftNumber field.
+func (o *OwnedGiftRegular) SetUniqueGiftNumber(v int32) {
+	o.UniqueGiftNumber = &v
+}
+
+
 func (o OwnedGiftRegular) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -565,6 +639,12 @@ func (o OwnedGiftRegular) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.PrepaidUpgradeStarCount) {
 		toSerialize["prepaid_upgrade_star_count"] = o.PrepaidUpgradeStarCount
+	}
+	if !IsNil(o.IsUpgradeSeparate) {
+		toSerialize["is_upgrade_separate"] = o.IsUpgradeSeparate
+	}
+	if !IsNil(o.UniqueGiftNumber) {
+		toSerialize["unique_gift_number"] = o.UniqueGiftNumber
 	}
 	return toSerialize, nil
 }
@@ -643,5 +723,4 @@ func (v *NullableOwnedGiftRegular) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
 

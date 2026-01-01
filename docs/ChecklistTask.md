@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Text** | **string** | Text of the task | 
 **TextEntities** | Pointer to [**[]MessageEntity**](MessageEntity.md) | *Optional*. Special entities that appear in the task text | [optional] 
 **CompletedByUser** | Pointer to [**User**](User.md) |  | [optional] 
+**CompletedByChat** | Pointer to [**Chat**](Chat.md) |  | [optional] 
 **CompletionDate** | Pointer to **int32** | *Optional*. Point in time (Unix timestamp) when the task was completed; 0 if the task wasn&#39;t completed | [optional] 
 
 ## Methods
@@ -118,6 +119,31 @@ SetCompletedByUser sets CompletedByUser field to given value.
 `func (o *ChecklistTask) HasCompletedByUser() bool`
 
 HasCompletedByUser returns a boolean if a field has been set.
+
+### GetCompletedByChat
+
+`func (o *ChecklistTask) GetCompletedByChat() Chat`
+
+GetCompletedByChat returns the CompletedByChat field if non-nil, zero value otherwise.
+
+### GetCompletedByChatOk
+
+`func (o *ChecklistTask) GetCompletedByChatOk() (*Chat, bool)`
+
+GetCompletedByChatOk returns a tuple with the CompletedByChat field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCompletedByChat
+
+`func (o *ChecklistTask) SetCompletedByChat(v Chat)`
+
+SetCompletedByChat sets CompletedByChat field to given value.
+
+### HasCompletedByChat
+
+`func (o *ChecklistTask) HasCompletedByChat() bool`
+
+HasCompletedByChat returns a boolean if a field has been set.
 
 ### GetCompletionDate
 

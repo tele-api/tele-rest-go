@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ChatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
+**ChatId** | [**RestrictChatMemberRequestChatId**](RestrictChatMemberRequestChatId.md) |  | 
 **MessageThreadId** | **int32** | Unique identifier for the target message thread of the forum topic | 
 
 ## Methods
 
 ### NewCloseForumTopicRequest
 
-`func NewCloseForumTopicRequest(chatId BotCommandScopeChatChatId, messageThreadId int32, ) *CloseForumTopicRequest`
+`func NewCloseForumTopicRequest(chatId RestrictChatMemberRequestChatId, messageThreadId int32, ) *CloseForumTopicRequest`
 
 NewCloseForumTopicRequest instantiates a new CloseForumTopicRequest object
 This constructor will assign default values to properties that have it defined,
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetChatId
 
-`func (o *CloseForumTopicRequest) GetChatId() BotCommandScopeChatChatId`
+`func (o *CloseForumTopicRequest) GetChatId() RestrictChatMemberRequestChatId`
 
 GetChatId returns the ChatId field if non-nil, zero value otherwise.
 
 ### GetChatIdOk
 
-`func (o *CloseForumTopicRequest) GetChatIdOk() (*BotCommandScopeChatChatId, bool)`
+`func (o *CloseForumTopicRequest) GetChatIdOk() (*RestrictChatMemberRequestChatId, bool)`
 
 GetChatIdOk returns a tuple with the ChatId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChatId
 
-`func (o *CloseForumTopicRequest) SetChatId(v BotCommandScopeChatChatId)`
+`func (o *CloseForumTopicRequest) SetChatId(v RestrictChatMemberRequestChatId)`
 
 SetChatId sets ChatId field to given value.
 

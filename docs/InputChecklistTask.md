@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** | Unique identifier of the task; must be positive and unique among all task identifiers currently present in the checklist | 
 **Text** | **string** | Text of the task; 1-100 characters after entities parsing | 
-**ParseMode** | Pointer to **string** | Optional. Mode for parsing entities in the text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details. | [optional] 
+**ParseMode** | Pointer to **string** | *Optional*. Mode for parsing entities in the text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details. | [optional] 
 **TextEntities** | Pointer to [**[]MessageEntity**](MessageEntity.md) | *Optional*. List of special entities that appear in the text, which can be specified instead of parse\\_mode. Currently, only *bold*, *italic*, *underline*, *strikethrough*, *spoiler*, and *custom\\_emoji* entities are allowed. | [optional] 
 
 ## Methods

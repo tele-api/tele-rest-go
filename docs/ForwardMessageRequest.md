@@ -5,11 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ChatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
-**MessageThreadId** | Pointer to **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | [optional] 
+**MessageThreadId** | Pointer to **int32** | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only | [optional] 
+**DirectMessagesTopicId** | Pointer to **int32** | Identifier of the direct messages topic to which the message will be forwarded; required if the message is forwarded to a direct messages chat | [optional] 
 **FromChatId** | [**ForwardMessageRequestFromChatId**](ForwardMessageRequestFromChatId.md) |  | 
 **VideoStartTimestamp** | Pointer to **int32** | New start timestamp for the forwarded video in the message | [optional] 
 **DisableNotification** | Pointer to **bool** | Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. | [optional] 
 **ProtectContent** | Pointer to **bool** | Protects the contents of the forwarded message from forwarding and saving | [optional] 
+**MessageEffectId** | Pointer to **string** | Unique identifier of the message effect to be added to the message; only available when forwarding to private chats | [optional] 
+**SuggestedPostParameters** | Pointer to [**SuggestedPostParameters**](SuggestedPostParameters.md) |  | [optional] 
 **MessageId** | **int32** | Message identifier in the chat specified in *from\\_chat\\_id* | 
 
 ## Methods
@@ -75,6 +78,31 @@ SetMessageThreadId sets MessageThreadId field to given value.
 `func (o *ForwardMessageRequest) HasMessageThreadId() bool`
 
 HasMessageThreadId returns a boolean if a field has been set.
+
+### GetDirectMessagesTopicId
+
+`func (o *ForwardMessageRequest) GetDirectMessagesTopicId() int32`
+
+GetDirectMessagesTopicId returns the DirectMessagesTopicId field if non-nil, zero value otherwise.
+
+### GetDirectMessagesTopicIdOk
+
+`func (o *ForwardMessageRequest) GetDirectMessagesTopicIdOk() (*int32, bool)`
+
+GetDirectMessagesTopicIdOk returns a tuple with the DirectMessagesTopicId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDirectMessagesTopicId
+
+`func (o *ForwardMessageRequest) SetDirectMessagesTopicId(v int32)`
+
+SetDirectMessagesTopicId sets DirectMessagesTopicId field to given value.
+
+### HasDirectMessagesTopicId
+
+`func (o *ForwardMessageRequest) HasDirectMessagesTopicId() bool`
+
+HasDirectMessagesTopicId returns a boolean if a field has been set.
 
 ### GetFromChatId
 
@@ -170,6 +198,56 @@ SetProtectContent sets ProtectContent field to given value.
 `func (o *ForwardMessageRequest) HasProtectContent() bool`
 
 HasProtectContent returns a boolean if a field has been set.
+
+### GetMessageEffectId
+
+`func (o *ForwardMessageRequest) GetMessageEffectId() string`
+
+GetMessageEffectId returns the MessageEffectId field if non-nil, zero value otherwise.
+
+### GetMessageEffectIdOk
+
+`func (o *ForwardMessageRequest) GetMessageEffectIdOk() (*string, bool)`
+
+GetMessageEffectIdOk returns a tuple with the MessageEffectId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMessageEffectId
+
+`func (o *ForwardMessageRequest) SetMessageEffectId(v string)`
+
+SetMessageEffectId sets MessageEffectId field to given value.
+
+### HasMessageEffectId
+
+`func (o *ForwardMessageRequest) HasMessageEffectId() bool`
+
+HasMessageEffectId returns a boolean if a field has been set.
+
+### GetSuggestedPostParameters
+
+`func (o *ForwardMessageRequest) GetSuggestedPostParameters() SuggestedPostParameters`
+
+GetSuggestedPostParameters returns the SuggestedPostParameters field if non-nil, zero value otherwise.
+
+### GetSuggestedPostParametersOk
+
+`func (o *ForwardMessageRequest) GetSuggestedPostParametersOk() (*SuggestedPostParameters, bool)`
+
+GetSuggestedPostParametersOk returns a tuple with the SuggestedPostParameters field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSuggestedPostParameters
+
+`func (o *ForwardMessageRequest) SetSuggestedPostParameters(v SuggestedPostParameters)`
+
+SetSuggestedPostParameters sets SuggestedPostParameters field to given value.
+
+### HasSuggestedPostParameters
+
+`func (o *ForwardMessageRequest) HasSuggestedPostParameters() bool`
+
+HasSuggestedPostParameters returns a boolean if a field has been set.
 
 ### GetMessageId
 

@@ -3,11 +3,11 @@
  * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
- *    * - **Copyright**: Copyright (c) 2025 Qntx
+ *    * - **Copyright**: Copyright (c) 2026 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
- *    * - **Generator Version**: 7.14.0
+ *    * - **Version**: 9.3.0
+ *    * - **Modified**: 2026-01-01T02:06:16.405655294Z[Etc/UTC]
+ *    * - **Generator Version**: 7.18.0
  * 
  * <details>
  * <summary><strong>⚠️ Important Disclaimer & Limitation of Liability</strong></summary>
@@ -55,7 +55,7 @@ var _ MappedNullable = &EditGeneralForumTopicRequest{}
 
 // EditGeneralForumTopicRequest Request parameters for editGeneralForumTopic
 type EditGeneralForumTopicRequest struct {
-	ChatId BotCommandScopeChatChatId `json:"chat_id"`
+	ChatId RestrictChatMemberRequestChatId `json:"chat_id"`
 	// New topic name, 1-128 characters
 	Name string `json:"name"`
 }
@@ -66,7 +66,7 @@ type _EditGeneralForumTopicRequest EditGeneralForumTopicRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEditGeneralForumTopicRequest(chatId BotCommandScopeChatChatId, name string) *EditGeneralForumTopicRequest {
+func NewEditGeneralForumTopicRequest(chatId RestrictChatMemberRequestChatId, name string) *EditGeneralForumTopicRequest {
 	this := EditGeneralForumTopicRequest{}
 	this.ChatId = chatId
 	this.Name = name
@@ -82,9 +82,9 @@ func NewEditGeneralForumTopicRequestWithDefaults() *EditGeneralForumTopicRequest
 }
 
 // GetChatId returns the ChatId field value
-func (o *EditGeneralForumTopicRequest) GetChatId() BotCommandScopeChatChatId {
+func (o *EditGeneralForumTopicRequest) GetChatId() RestrictChatMemberRequestChatId {
 	if o == nil {
-		var ret BotCommandScopeChatChatId
+		var ret RestrictChatMemberRequestChatId
 		return ret
 	}
 
@@ -93,7 +93,7 @@ func (o *EditGeneralForumTopicRequest) GetChatId() BotCommandScopeChatChatId {
 
 // GetChatIdOk returns a tuple with the ChatId field value
 // and a boolean to check if the value has been set.
-func (o *EditGeneralForumTopicRequest) GetChatIdOk() (*BotCommandScopeChatChatId, bool) {
+func (o *EditGeneralForumTopicRequest) GetChatIdOk() (*RestrictChatMemberRequestChatId, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -101,7 +101,7 @@ func (o *EditGeneralForumTopicRequest) GetChatIdOk() (*BotCommandScopeChatChatId
 }
 
 // SetChatId sets field value
-func (o *EditGeneralForumTopicRequest) SetChatId(v BotCommandScopeChatChatId) {
+func (o *EditGeneralForumTopicRequest) SetChatId(v RestrictChatMemberRequestChatId) {
 	o.ChatId = v
 }
 
@@ -217,5 +217,4 @@ func (v *NullableEditGeneralForumTopicRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
 

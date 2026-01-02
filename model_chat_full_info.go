@@ -3,11 +3,11 @@
  * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
- *    * - **Copyright**: Copyright (c) 2025 Qntx
+ *    * - **Copyright**: Copyright (c) 2026 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
- *    * - **Generator Version**: 7.14.0
+ *    * - **Version**: 9.3.0
+ *    * - **Modified**: 2026-01-01T02:06:16.405655294Z[Etc/UTC]
+ *    * - **Generator Version**: 7.18.0
  * 
  * <details>
  * <summary><strong>⚠️ Important Disclaimer & Limitation of Liability</strong></summary>
@@ -69,6 +69,8 @@ type ChatFullInfo struct {
 	LastName *string `json:"last_name,omitempty"`
 	// *Optional*. *True*, if the supergroup chat is a forum (has [topics](https://telegram.org/blog/topics-in-groups-collectible-usernames#topics-in-groups) enabled)
 	IsForum *bool `json:"is_forum,omitempty"`
+	// *Optional*. *True*, if the chat is the direct messages chat of a channel
+	IsDirectMessages *bool `json:"is_direct_messages,omitempty"`
 	// Identifier of the accent color for the chat name and backgrounds of the chat photo, reply header, and link preview. See [accent colors](https://core.telegram.org/bots/api/#accent-colors) for more details.
 	AccentColorId int32 `json:"accent_color_id"`
 	// The maximum number of reactions that can be set on a message in the chat
@@ -81,6 +83,7 @@ type ChatFullInfo struct {
 	BusinessLocation *BusinessLocation `json:"business_location,omitempty"`
 	BusinessOpeningHours *BusinessOpeningHours `json:"business_opening_hours,omitempty"`
 	PersonalChat *Chat `json:"personal_chat,omitempty"`
+	ParentChat *Chat `json:"parent_chat,omitempty"`
 	// *Optional*. List of available reactions allowed in the chat. If omitted, then all [emoji reactions](https://core.telegram.org/bots/api/#reactiontypeemoji) are allowed.
 	AvailableReactions []ReactionType `json:"available_reactions,omitempty"`
 	// *Optional*. Custom emoji identifier of the emoji chosen by the chat for the reply header and link preview background
@@ -135,6 +138,10 @@ type ChatFullInfo struct {
 	// *Optional*. Unique identifier for the linked chat, i.e. the discussion group identifier for a channel and vice versa; for supergroups and channel chats. This identifier may be greater than 32 bits and some programming languages may have difficulty/silent defects in interpreting it. But it is smaller than 52 bits, so a signed 64 bit integer or double-precision float type are safe for storing this identifier.
 	LinkedChatId *int32 `json:"linked_chat_id,omitempty"`
 	Location *ChatLocation `json:"location,omitempty"`
+	Rating *UserRating `json:"rating,omitempty"`
+	UniqueGiftColors *UniqueGiftColors `json:"unique_gift_colors,omitempty"`
+	// *Optional*. The number of Telegram Stars a general user have to pay to send a message to the chat
+	PaidMessageStarCount *int32 `json:"paid_message_star_count,omitempty"`
 }
 
 type _ChatFullInfo ChatFullInfo
@@ -149,6 +156,8 @@ func NewChatFullInfo(id int32, type_ string, accentColorId int32, maxReactionCou
 	this.Type = type_
 	var isForum bool = true
 	this.IsForum = &isForum
+	var isDirectMessages bool = true
+	this.IsDirectMessages = &isDirectMessages
 	this.AccentColorId = accentColorId
 	this.MaxReactionCount = maxReactionCount
 	var hasPrivateForwards bool = true
@@ -182,6 +191,8 @@ func NewChatFullInfoWithDefaults() *ChatFullInfo {
 	this := ChatFullInfo{}
 	var isForum bool = true
 	this.IsForum = &isForum
+	var isDirectMessages bool = true
+	this.IsDirectMessages = &isDirectMessages
 	var hasPrivateForwards bool = true
 	this.HasPrivateForwards = &hasPrivateForwards
 	var hasRestrictedVoiceAndVideoMessages bool = true
@@ -415,6 +426,39 @@ func (o *ChatFullInfo) HasIsForum() bool {
 // SetIsForum gets a reference to the given bool and assigns it to the IsForum field.
 func (o *ChatFullInfo) SetIsForum(v bool) {
 	o.IsForum = &v
+}
+
+
+// GetIsDirectMessages returns the IsDirectMessages field value if set, zero value otherwise.
+func (o *ChatFullInfo) GetIsDirectMessages() bool {
+	if o == nil || IsNil(o.IsDirectMessages) {
+		var ret bool
+		return ret
+	}
+	return *o.IsDirectMessages
+}
+
+// GetIsDirectMessagesOk returns a tuple with the IsDirectMessages field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ChatFullInfo) GetIsDirectMessagesOk() (*bool, bool) {
+	if o == nil || IsNil(o.IsDirectMessages) {
+		return nil, false
+	}
+	return o.IsDirectMessages, true
+}
+
+// HasIsDirectMessages returns a boolean if a field has been set.
+func (o *ChatFullInfo) HasIsDirectMessages() bool {
+	if o != nil && !IsNil(o.IsDirectMessages) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsDirectMessages gets a reference to the given bool and assigns it to the IsDirectMessages field.
+func (o *ChatFullInfo) SetIsDirectMessages(v bool) {
+	o.IsDirectMessages = &v
 }
 
 
@@ -694,6 +738,39 @@ func (o *ChatFullInfo) HasPersonalChat() bool {
 // SetPersonalChat gets a reference to the given Chat and assigns it to the PersonalChat field.
 func (o *ChatFullInfo) SetPersonalChat(v Chat) {
 	o.PersonalChat = &v
+}
+
+
+// GetParentChat returns the ParentChat field value if set, zero value otherwise.
+func (o *ChatFullInfo) GetParentChat() Chat {
+	if o == nil || IsNil(o.ParentChat) {
+		var ret Chat
+		return ret
+	}
+	return *o.ParentChat
+}
+
+// GetParentChatOk returns a tuple with the ParentChat field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ChatFullInfo) GetParentChatOk() (*Chat, bool) {
+	if o == nil || IsNil(o.ParentChat) {
+		return nil, false
+	}
+	return o.ParentChat, true
+}
+
+// HasParentChat returns a boolean if a field has been set.
+func (o *ChatFullInfo) HasParentChat() bool {
+	if o != nil && !IsNil(o.ParentChat) {
+		return true
+	}
+
+	return false
+}
+
+// SetParentChat gets a reference to the given Chat and assigns it to the ParentChat field.
+func (o *ChatFullInfo) SetParentChat(v Chat) {
+	o.ParentChat = &v
 }
 
 
@@ -1645,6 +1722,105 @@ func (o *ChatFullInfo) SetLocation(v ChatLocation) {
 }
 
 
+// GetRating returns the Rating field value if set, zero value otherwise.
+func (o *ChatFullInfo) GetRating() UserRating {
+	if o == nil || IsNil(o.Rating) {
+		var ret UserRating
+		return ret
+	}
+	return *o.Rating
+}
+
+// GetRatingOk returns a tuple with the Rating field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ChatFullInfo) GetRatingOk() (*UserRating, bool) {
+	if o == nil || IsNil(o.Rating) {
+		return nil, false
+	}
+	return o.Rating, true
+}
+
+// HasRating returns a boolean if a field has been set.
+func (o *ChatFullInfo) HasRating() bool {
+	if o != nil && !IsNil(o.Rating) {
+		return true
+	}
+
+	return false
+}
+
+// SetRating gets a reference to the given UserRating and assigns it to the Rating field.
+func (o *ChatFullInfo) SetRating(v UserRating) {
+	o.Rating = &v
+}
+
+
+// GetUniqueGiftColors returns the UniqueGiftColors field value if set, zero value otherwise.
+func (o *ChatFullInfo) GetUniqueGiftColors() UniqueGiftColors {
+	if o == nil || IsNil(o.UniqueGiftColors) {
+		var ret UniqueGiftColors
+		return ret
+	}
+	return *o.UniqueGiftColors
+}
+
+// GetUniqueGiftColorsOk returns a tuple with the UniqueGiftColors field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ChatFullInfo) GetUniqueGiftColorsOk() (*UniqueGiftColors, bool) {
+	if o == nil || IsNil(o.UniqueGiftColors) {
+		return nil, false
+	}
+	return o.UniqueGiftColors, true
+}
+
+// HasUniqueGiftColors returns a boolean if a field has been set.
+func (o *ChatFullInfo) HasUniqueGiftColors() bool {
+	if o != nil && !IsNil(o.UniqueGiftColors) {
+		return true
+	}
+
+	return false
+}
+
+// SetUniqueGiftColors gets a reference to the given UniqueGiftColors and assigns it to the UniqueGiftColors field.
+func (o *ChatFullInfo) SetUniqueGiftColors(v UniqueGiftColors) {
+	o.UniqueGiftColors = &v
+}
+
+
+// GetPaidMessageStarCount returns the PaidMessageStarCount field value if set, zero value otherwise.
+func (o *ChatFullInfo) GetPaidMessageStarCount() int32 {
+	if o == nil || IsNil(o.PaidMessageStarCount) {
+		var ret int32
+		return ret
+	}
+	return *o.PaidMessageStarCount
+}
+
+// GetPaidMessageStarCountOk returns a tuple with the PaidMessageStarCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ChatFullInfo) GetPaidMessageStarCountOk() (*int32, bool) {
+	if o == nil || IsNil(o.PaidMessageStarCount) {
+		return nil, false
+	}
+	return o.PaidMessageStarCount, true
+}
+
+// HasPaidMessageStarCount returns a boolean if a field has been set.
+func (o *ChatFullInfo) HasPaidMessageStarCount() bool {
+	if o != nil && !IsNil(o.PaidMessageStarCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetPaidMessageStarCount gets a reference to the given int32 and assigns it to the PaidMessageStarCount field.
+func (o *ChatFullInfo) SetPaidMessageStarCount(v int32) {
+	o.PaidMessageStarCount = &v
+}
+
+
 func (o ChatFullInfo) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -1672,6 +1848,9 @@ func (o ChatFullInfo) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.IsForum) {
 		toSerialize["is_forum"] = o.IsForum
 	}
+	if !IsNil(o.IsDirectMessages) {
+		toSerialize["is_direct_messages"] = o.IsDirectMessages
+	}
 	toSerialize["accent_color_id"] = o.AccentColorId
 	toSerialize["max_reaction_count"] = o.MaxReactionCount
 	if !IsNil(o.Photo) {
@@ -1694,6 +1873,9 @@ func (o ChatFullInfo) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.PersonalChat) {
 		toSerialize["personal_chat"] = o.PersonalChat
+	}
+	if !IsNil(o.ParentChat) {
+		toSerialize["parent_chat"] = o.ParentChat
 	}
 	if !IsNil(o.AvailableReactions) {
 		toSerialize["available_reactions"] = o.AvailableReactions
@@ -1780,6 +1962,15 @@ func (o ChatFullInfo) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Location) {
 		toSerialize["location"] = o.Location
 	}
+	if !IsNil(o.Rating) {
+		toSerialize["rating"] = o.Rating
+	}
+	if !IsNil(o.UniqueGiftColors) {
+		toSerialize["unique_gift_colors"] = o.UniqueGiftColors
+	}
+	if !IsNil(o.PaidMessageStarCount) {
+		toSerialize["paid_message_star_count"] = o.PaidMessageStarCount
+	}
 	return toSerialize, nil
 }
 
@@ -1859,5 +2050,4 @@ func (v *NullableChatFullInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
 

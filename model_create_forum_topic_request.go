@@ -3,11 +3,11 @@
  * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
- *    * - **Copyright**: Copyright (c) 2025 Qntx
+ *    * - **Copyright**: Copyright (c) 2026 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
- *    * - **Generator Version**: 7.14.0
+ *    * - **Version**: 9.3.0
+ *    * - **Modified**: 2026-01-01T02:06:16.405655294Z[Etc/UTC]
+ *    * - **Generator Version**: 7.18.0
  * 
  * <details>
  * <summary><strong>⚠️ Important Disclaimer & Limitation of Liability</strong></summary>
@@ -55,7 +55,7 @@ var _ MappedNullable = &CreateForumTopicRequest{}
 
 // CreateForumTopicRequest Request parameters for createForumTopic
 type CreateForumTopicRequest struct {
-	ChatId BotCommandScopeChatChatId `json:"chat_id"`
+	ChatId RestrictChatMemberRequestChatId `json:"chat_id"`
 	// Topic name, 1-128 characters
 	Name string `json:"name"`
 	// Color of the topic icon in RGB format. Currently, must be one of 7322096 (0x6FB9F0), 16766590 (0xFFD67E), 13338331 (0xCB86DB), 9367192 (0x8EEE98), 16749490 (0xFF93B2), or 16478047 (0xFB6F5F)
@@ -70,7 +70,7 @@ type _CreateForumTopicRequest CreateForumTopicRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCreateForumTopicRequest(chatId BotCommandScopeChatChatId, name string) *CreateForumTopicRequest {
+func NewCreateForumTopicRequest(chatId RestrictChatMemberRequestChatId, name string) *CreateForumTopicRequest {
 	this := CreateForumTopicRequest{}
 	this.ChatId = chatId
 	this.Name = name
@@ -86,9 +86,9 @@ func NewCreateForumTopicRequestWithDefaults() *CreateForumTopicRequest {
 }
 
 // GetChatId returns the ChatId field value
-func (o *CreateForumTopicRequest) GetChatId() BotCommandScopeChatChatId {
+func (o *CreateForumTopicRequest) GetChatId() RestrictChatMemberRequestChatId {
 	if o == nil {
-		var ret BotCommandScopeChatChatId
+		var ret RestrictChatMemberRequestChatId
 		return ret
 	}
 
@@ -97,7 +97,7 @@ func (o *CreateForumTopicRequest) GetChatId() BotCommandScopeChatChatId {
 
 // GetChatIdOk returns a tuple with the ChatId field value
 // and a boolean to check if the value has been set.
-func (o *CreateForumTopicRequest) GetChatIdOk() (*BotCommandScopeChatChatId, bool) {
+func (o *CreateForumTopicRequest) GetChatIdOk() (*RestrictChatMemberRequestChatId, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -105,7 +105,7 @@ func (o *CreateForumTopicRequest) GetChatIdOk() (*BotCommandScopeChatChatId, boo
 }
 
 // SetChatId sets field value
-func (o *CreateForumTopicRequest) SetChatId(v BotCommandScopeChatChatId) {
+func (o *CreateForumTopicRequest) SetChatId(v RestrictChatMemberRequestChatId) {
 	o.ChatId = v
 }
 
@@ -293,5 +293,4 @@ func (v *NullableCreateForumTopicRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
 

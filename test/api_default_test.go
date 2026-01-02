@@ -106,6 +106,18 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test DefaultAPIService PostApproveSuggestedPost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.DefaultAPI.PostApproveSuggestedPost(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test DefaultAPIService PostBanChatMember", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -267,6 +279,18 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.DefaultAPI.PostDeclineChatJoinRequest(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test DefaultAPIService PostDeclineSuggestedPost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.DefaultAPI.PostDeclineSuggestedPost(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -658,6 +682,18 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test DefaultAPIService PostGetChatGifts", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.DefaultAPI.PostGetChatGifts(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test DefaultAPIService PostGetChatMember", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -874,6 +910,18 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test DefaultAPIService PostGetUserGifts", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.DefaultAPI.PostGetUserGifts(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test DefaultAPIService PostGetUserProfilePhotos", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -1078,6 +1126,18 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test DefaultAPIService PostRepostStory", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.DefaultAPI.PostRepostStory(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test DefaultAPIService PostRestrictChatMember", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -1263,6 +1323,18 @@ func Test_tele_rest_DefaultAPIService(t *testing.T) {
 		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.DefaultAPI.PostSendMessage(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test DefaultAPIService PostSendMessageDraft", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.DefaultAPI.PostSendMessageDraft(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

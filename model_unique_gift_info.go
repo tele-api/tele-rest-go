@@ -3,11 +3,11 @@
  * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
- *    * - **Copyright**: Copyright (c) 2025 Qntx
+ *    * - **Copyright**: Copyright (c) 2026 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
- *    * - **Generator Version**: 7.14.0
+ *    * - **Version**: 9.3.0
+ *    * - **Modified**: 2026-01-01T02:06:16.405655294Z[Etc/UTC]
+ *    * - **Generator Version**: 7.18.0
  * 
  * <details>
  * <summary><strong>⚠️ Important Disclaimer & Limitation of Liability</strong></summary>
@@ -56,10 +56,12 @@ var _ MappedNullable = &UniqueGiftInfo{}
 // UniqueGiftInfo Describes a service message about a unique gift that was sent or received.
 type UniqueGiftInfo struct {
 	Gift UniqueGift `json:"gift"`
-	// Origin of the gift. Currently, either “upgrade” for gifts upgraded from regular gifts, “transfer” for gifts transferred from other users or channels, or “resale” for gifts bought from other users
+	// Origin of the gift. Currently, either “upgrade” for gifts upgraded from regular gifts, “transfer” for gifts transferred from other users or channels, “resale” for gifts bought from other users, “gifted\\_upgrade” for upgrades purchased after the gift was sent, or “offer” for gifts bought or sold through gift purchase offers
 	Origin string `json:"origin"`
-	// *Optional*. For gifts bought from other users, the price paid for the gift
-	LastResaleStarCount *int32 `json:"last_resale_star_count,omitempty"`
+	// *Optional*. For gifts bought from other users, the currency in which the payment for the gift was done. Currently, one of “XTR” for Telegram Stars or “TON” for toncoins.
+	LastResaleCurrency *string `json:"last_resale_currency,omitempty"`
+	// *Optional*. For gifts bought from other users, the price paid for the gift in either Telegram Stars or nanotoncoins
+	LastResaleAmount *int32 `json:"last_resale_amount,omitempty"`
 	// *Optional*. Unique identifier of the received gift for the bot; only present for gifts received on behalf of business accounts
 	OwnedGiftId *string `json:"owned_gift_id,omitempty"`
 	// *Optional*. Number of Telegram Stars that must be paid to transfer the gift; omitted if the bot cannot transfer the gift
@@ -137,36 +139,69 @@ func (o *UniqueGiftInfo) SetOrigin(v string) {
 	o.Origin = v
 }
 
-// GetLastResaleStarCount returns the LastResaleStarCount field value if set, zero value otherwise.
-func (o *UniqueGiftInfo) GetLastResaleStarCount() int32 {
-	if o == nil || IsNil(o.LastResaleStarCount) {
-		var ret int32
+// GetLastResaleCurrency returns the LastResaleCurrency field value if set, zero value otherwise.
+func (o *UniqueGiftInfo) GetLastResaleCurrency() string {
+	if o == nil || IsNil(o.LastResaleCurrency) {
+		var ret string
 		return ret
 	}
-	return *o.LastResaleStarCount
+	return *o.LastResaleCurrency
 }
 
-// GetLastResaleStarCountOk returns a tuple with the LastResaleStarCount field value if set, nil otherwise
+// GetLastResaleCurrencyOk returns a tuple with the LastResaleCurrency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UniqueGiftInfo) GetLastResaleStarCountOk() (*int32, bool) {
-	if o == nil || IsNil(o.LastResaleStarCount) {
+func (o *UniqueGiftInfo) GetLastResaleCurrencyOk() (*string, bool) {
+	if o == nil || IsNil(o.LastResaleCurrency) {
 		return nil, false
 	}
-	return o.LastResaleStarCount, true
+	return o.LastResaleCurrency, true
 }
 
-// HasLastResaleStarCount returns a boolean if a field has been set.
-func (o *UniqueGiftInfo) HasLastResaleStarCount() bool {
-	if o != nil && !IsNil(o.LastResaleStarCount) {
+// HasLastResaleCurrency returns a boolean if a field has been set.
+func (o *UniqueGiftInfo) HasLastResaleCurrency() bool {
+	if o != nil && !IsNil(o.LastResaleCurrency) {
 		return true
 	}
 
 	return false
 }
 
-// SetLastResaleStarCount gets a reference to the given int32 and assigns it to the LastResaleStarCount field.
-func (o *UniqueGiftInfo) SetLastResaleStarCount(v int32) {
-	o.LastResaleStarCount = &v
+// SetLastResaleCurrency gets a reference to the given string and assigns it to the LastResaleCurrency field.
+func (o *UniqueGiftInfo) SetLastResaleCurrency(v string) {
+	o.LastResaleCurrency = &v
+}
+
+
+// GetLastResaleAmount returns the LastResaleAmount field value if set, zero value otherwise.
+func (o *UniqueGiftInfo) GetLastResaleAmount() int32 {
+	if o == nil || IsNil(o.LastResaleAmount) {
+		var ret int32
+		return ret
+	}
+	return *o.LastResaleAmount
+}
+
+// GetLastResaleAmountOk returns a tuple with the LastResaleAmount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UniqueGiftInfo) GetLastResaleAmountOk() (*int32, bool) {
+	if o == nil || IsNil(o.LastResaleAmount) {
+		return nil, false
+	}
+	return o.LastResaleAmount, true
+}
+
+// HasLastResaleAmount returns a boolean if a field has been set.
+func (o *UniqueGiftInfo) HasLastResaleAmount() bool {
+	if o != nil && !IsNil(o.LastResaleAmount) {
+		return true
+	}
+
+	return false
+}
+
+// SetLastResaleAmount gets a reference to the given int32 and assigns it to the LastResaleAmount field.
+func (o *UniqueGiftInfo) SetLastResaleAmount(v int32) {
+	o.LastResaleAmount = &v
 }
 
 
@@ -281,8 +316,11 @@ func (o UniqueGiftInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["gift"] = o.Gift
 	toSerialize["origin"] = o.Origin
-	if !IsNil(o.LastResaleStarCount) {
-		toSerialize["last_resale_star_count"] = o.LastResaleStarCount
+	if !IsNil(o.LastResaleCurrency) {
+		toSerialize["last_resale_currency"] = o.LastResaleCurrency
+	}
+	if !IsNil(o.LastResaleAmount) {
+		toSerialize["last_resale_amount"] = o.LastResaleAmount
 	}
 	if !IsNil(o.OwnedGiftId) {
 		toSerialize["owned_gift_id"] = o.OwnedGiftId
@@ -369,5 +407,4 @@ func (v *NullableUniqueGiftInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
 

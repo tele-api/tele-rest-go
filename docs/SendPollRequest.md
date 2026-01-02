@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BusinessConnectionId** | Pointer to **string** | Unique identifier of the business connection on behalf of which the message will be sent | [optional] 
-**ChatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
-**MessageThreadId** | Pointer to **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | [optional] 
+**ChatId** | [**SendPollRequestChatId**](SendPollRequestChatId.md) |  | 
+**MessageThreadId** | Pointer to **int32** | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only | [optional] 
 **Question** | **string** | Poll question, 1-300 characters | 
 **QuestionParseMode** | Pointer to **string** | Mode for parsing entities in the question. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. Currently, only custom emoji entities are allowed | [optional] 
 **QuestionEntities** | Pointer to [**[]MessageEntity**](MessageEntity.md) | A JSON-serialized list of special entities that appear in the poll question. It can be specified instead of *question\\_parse\\_mode* | [optional] 
@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 
 ### NewSendPollRequest
 
-`func NewSendPollRequest(chatId SendMessageRequestChatId, question string, options []InputPollOption, ) *SendPollRequest`
+`func NewSendPollRequest(chatId SendPollRequestChatId, question string, options []InputPollOption, ) *SendPollRequest`
 
 NewSendPollRequest instantiates a new SendPollRequest object
 This constructor will assign default values to properties that have it defined,
@@ -74,20 +74,20 @@ HasBusinessConnectionId returns a boolean if a field has been set.
 
 ### GetChatId
 
-`func (o *SendPollRequest) GetChatId() SendMessageRequestChatId`
+`func (o *SendPollRequest) GetChatId() SendPollRequestChatId`
 
 GetChatId returns the ChatId field if non-nil, zero value otherwise.
 
 ### GetChatIdOk
 
-`func (o *SendPollRequest) GetChatIdOk() (*SendMessageRequestChatId, bool)`
+`func (o *SendPollRequest) GetChatIdOk() (*SendPollRequestChatId, bool)`
 
 GetChatIdOk returns a tuple with the ChatId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChatId
 
-`func (o *SendPollRequest) SetChatId(v SendMessageRequestChatId)`
+`func (o *SendPollRequest) SetChatId(v SendPollRequestChatId)`
 
 SetChatId sets ChatId field to given value.
 

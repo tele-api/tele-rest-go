@@ -3,11 +3,11 @@
  * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
- *    * - **Copyright**: Copyright (c) 2025 Qntx
+ *    * - **Copyright**: Copyright (c) 2026 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
- *    * - **Generator Version**: 7.14.0
+ *    * - **Version**: 9.3.0
+ *    * - **Modified**: 2026-01-01T02:06:16.405655294Z[Etc/UTC]
+ *    * - **Generator Version**: 7.18.0
  * 
  * <details>
  * <summary><strong>⚠️ Important Disclaimer & Limitation of Liability</strong></summary>
@@ -69,6 +69,8 @@ type Chat struct {
 	LastName *string `json:"last_name,omitempty"`
 	// *Optional*. *True*, if the supergroup chat is a forum (has [topics](https://telegram.org/blog/topics-in-groups-collectible-usernames#topics-in-groups) enabled)
 	IsForum *bool `json:"is_forum,omitempty"`
+	// *Optional*. *True*, if the chat is the direct messages chat of a channel
+	IsDirectMessages *bool `json:"is_direct_messages,omitempty"`
 }
 
 type _Chat Chat
@@ -83,6 +85,8 @@ func NewChat(id int32, type_ string) *Chat {
 	this.Type = type_
 	var isForum bool = true
 	this.IsForum = &isForum
+	var isDirectMessages bool = true
+	this.IsDirectMessages = &isDirectMessages
 	return &this
 }
 
@@ -93,6 +97,8 @@ func NewChatWithDefaults() *Chat {
 	this := Chat{}
 	var isForum bool = true
 	this.IsForum = &isForum
+	var isDirectMessages bool = true
+	this.IsDirectMessages = &isDirectMessages
 	return &this
 }
 
@@ -309,6 +315,39 @@ func (o *Chat) SetIsForum(v bool) {
 }
 
 
+// GetIsDirectMessages returns the IsDirectMessages field value if set, zero value otherwise.
+func (o *Chat) GetIsDirectMessages() bool {
+	if o == nil || IsNil(o.IsDirectMessages) {
+		var ret bool
+		return ret
+	}
+	return *o.IsDirectMessages
+}
+
+// GetIsDirectMessagesOk returns a tuple with the IsDirectMessages field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Chat) GetIsDirectMessagesOk() (*bool, bool) {
+	if o == nil || IsNil(o.IsDirectMessages) {
+		return nil, false
+	}
+	return o.IsDirectMessages, true
+}
+
+// HasIsDirectMessages returns a boolean if a field has been set.
+func (o *Chat) HasIsDirectMessages() bool {
+	if o != nil && !IsNil(o.IsDirectMessages) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsDirectMessages gets a reference to the given bool and assigns it to the IsDirectMessages field.
+func (o *Chat) SetIsDirectMessages(v bool) {
+	o.IsDirectMessages = &v
+}
+
+
 func (o Chat) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -335,6 +374,9 @@ func (o Chat) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.IsForum) {
 		toSerialize["is_forum"] = o.IsForum
+	}
+	if !IsNil(o.IsDirectMessages) {
+		toSerialize["is_direct_messages"] = o.IsDirectMessages
 	}
 	return toSerialize, nil
 }
@@ -412,5 +454,4 @@ func (v *NullableChat) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
 

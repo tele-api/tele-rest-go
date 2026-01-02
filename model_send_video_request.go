@@ -3,11 +3,11 @@
  * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
- *    * - **Copyright**: Copyright (c) 2025 Qntx
+ *    * - **Copyright**: Copyright (c) 2026 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
- *    * - **Generator Version**: 7.14.0
+ *    * - **Version**: 9.3.0
+ *    * - **Modified**: 2026-01-01T02:06:16.405655294Z[Etc/UTC]
+ *    * - **Generator Version**: 7.18.0
  * 
  * <details>
  * <summary><strong>⚠️ Important Disclaimer & Limitation of Liability</strong></summary>
@@ -58,8 +58,10 @@ type SendVideoRequest struct {
 	// Unique identifier of the business connection on behalf of which the message will be sent
 	BusinessConnectionId *string `json:"business_connection_id,omitempty"`
 	ChatId SendMessageRequestChatId `json:"chat_id"`
-	// Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
+	// Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only
 	MessageThreadId *int32 `json:"message_thread_id,omitempty"`
+	// Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat
+	DirectMessagesTopicId *int32 `json:"direct_messages_topic_id,omitempty"`
 	Video NullableString `json:"video"`
 	// Duration of sent video in seconds
 	Duration *int32 `json:"duration,omitempty"`
@@ -91,6 +93,7 @@ type SendVideoRequest struct {
 	AllowPaidBroadcast *bool `json:"allow_paid_broadcast,omitempty"`
 	// Unique identifier of the message effect to be added to the message; for private chats only
 	MessageEffectId *string `json:"message_effect_id,omitempty"`
+	SuggestedPostParameters *SuggestedPostParameters `json:"suggested_post_parameters,omitempty"`
 	ReplyParameters *ReplyParameters `json:"reply_parameters,omitempty"`
 	ReplyMarkup *SendMessageRequestReplyMarkup `json:"reply_markup,omitempty"`
 }
@@ -203,6 +206,39 @@ func (o *SendVideoRequest) HasMessageThreadId() bool {
 // SetMessageThreadId gets a reference to the given int32 and assigns it to the MessageThreadId field.
 func (o *SendVideoRequest) SetMessageThreadId(v int32) {
 	o.MessageThreadId = &v
+}
+
+
+// GetDirectMessagesTopicId returns the DirectMessagesTopicId field value if set, zero value otherwise.
+func (o *SendVideoRequest) GetDirectMessagesTopicId() int32 {
+	if o == nil || IsNil(o.DirectMessagesTopicId) {
+		var ret int32
+		return ret
+	}
+	return *o.DirectMessagesTopicId
+}
+
+// GetDirectMessagesTopicIdOk returns a tuple with the DirectMessagesTopicId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SendVideoRequest) GetDirectMessagesTopicIdOk() (*int32, bool) {
+	if o == nil || IsNil(o.DirectMessagesTopicId) {
+		return nil, false
+	}
+	return o.DirectMessagesTopicId, true
+}
+
+// HasDirectMessagesTopicId returns a boolean if a field has been set.
+func (o *SendVideoRequest) HasDirectMessagesTopicId() bool {
+	if o != nil && !IsNil(o.DirectMessagesTopicId) {
+		return true
+	}
+
+	return false
+}
+
+// SetDirectMessagesTopicId gets a reference to the given int32 and assigns it to the DirectMessagesTopicId field.
+func (o *SendVideoRequest) SetDirectMessagesTopicId(v int32) {
+	o.DirectMessagesTopicId = &v
 }
 
 
@@ -780,6 +816,39 @@ func (o *SendVideoRequest) SetMessageEffectId(v string) {
 }
 
 
+// GetSuggestedPostParameters returns the SuggestedPostParameters field value if set, zero value otherwise.
+func (o *SendVideoRequest) GetSuggestedPostParameters() SuggestedPostParameters {
+	if o == nil || IsNil(o.SuggestedPostParameters) {
+		var ret SuggestedPostParameters
+		return ret
+	}
+	return *o.SuggestedPostParameters
+}
+
+// GetSuggestedPostParametersOk returns a tuple with the SuggestedPostParameters field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SendVideoRequest) GetSuggestedPostParametersOk() (*SuggestedPostParameters, bool) {
+	if o == nil || IsNil(o.SuggestedPostParameters) {
+		return nil, false
+	}
+	return o.SuggestedPostParameters, true
+}
+
+// HasSuggestedPostParameters returns a boolean if a field has been set.
+func (o *SendVideoRequest) HasSuggestedPostParameters() bool {
+	if o != nil && !IsNil(o.SuggestedPostParameters) {
+		return true
+	}
+
+	return false
+}
+
+// SetSuggestedPostParameters gets a reference to the given SuggestedPostParameters and assigns it to the SuggestedPostParameters field.
+func (o *SendVideoRequest) SetSuggestedPostParameters(v SuggestedPostParameters) {
+	o.SuggestedPostParameters = &v
+}
+
+
 // GetReplyParameters returns the ReplyParameters field value if set, zero value otherwise.
 func (o *SendVideoRequest) GetReplyParameters() ReplyParameters {
 	if o == nil || IsNil(o.ReplyParameters) {
@@ -863,6 +932,9 @@ func (o SendVideoRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.MessageThreadId) {
 		toSerialize["message_thread_id"] = o.MessageThreadId
 	}
+	if !IsNil(o.DirectMessagesTopicId) {
+		toSerialize["direct_messages_topic_id"] = o.DirectMessagesTopicId
+	}
 	toSerialize["video"] = o.Video.Get()
 	if !IsNil(o.Duration) {
 		toSerialize["duration"] = o.Duration
@@ -911,6 +983,9 @@ func (o SendVideoRequest) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.MessageEffectId) {
 		toSerialize["message_effect_id"] = o.MessageEffectId
+	}
+	if !IsNil(o.SuggestedPostParameters) {
+		toSerialize["suggested_post_parameters"] = o.SuggestedPostParameters
 	}
 	if !IsNil(o.ReplyParameters) {
 		toSerialize["reply_parameters"] = o.ReplyParameters
@@ -994,5 +1069,4 @@ func (v *NullableSendVideoRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
 

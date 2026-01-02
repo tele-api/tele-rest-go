@@ -3,11 +3,11 @@
  * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
- *    * - **Copyright**: Copyright (c) 2025 Qntx
+ *    * - **Copyright**: Copyright (c) 2026 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
- *    * - **Generator Version**: 7.14.0
+ *    * - **Version**: 9.3.0
+ *    * - **Modified**: 2026-01-01T02:06:16.405655294Z[Etc/UTC]
+ *    * - **Generator Version**: 7.18.0
  * 
  * <details>
  * <summary><strong>⚠️ Important Disclaimer & Limitation of Liability</strong></summary>
@@ -63,6 +63,8 @@ type AcceptedGiftTypes struct {
 	UniqueGifts bool `json:"unique_gifts"`
 	// *True*, if a Telegram Premium subscription is accepted
 	PremiumSubscription bool `json:"premium_subscription"`
+	// *True*, if transfers of unique gifts from channels are accepted
+	GiftsFromChannels bool `json:"gifts_from_channels"`
 }
 
 type _AcceptedGiftTypes AcceptedGiftTypes
@@ -71,12 +73,13 @@ type _AcceptedGiftTypes AcceptedGiftTypes
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAcceptedGiftTypes(unlimitedGifts bool, limitedGifts bool, uniqueGifts bool, premiumSubscription bool) *AcceptedGiftTypes {
+func NewAcceptedGiftTypes(unlimitedGifts bool, limitedGifts bool, uniqueGifts bool, premiumSubscription bool, giftsFromChannels bool) *AcceptedGiftTypes {
 	this := AcceptedGiftTypes{}
 	this.UnlimitedGifts = unlimitedGifts
 	this.LimitedGifts = limitedGifts
 	this.UniqueGifts = uniqueGifts
 	this.PremiumSubscription = premiumSubscription
+	this.GiftsFromChannels = giftsFromChannels
 	return &this
 }
 
@@ -184,6 +187,30 @@ func (o *AcceptedGiftTypes) SetPremiumSubscription(v bool) {
 	o.PremiumSubscription = v
 }
 
+// GetGiftsFromChannels returns the GiftsFromChannels field value
+func (o *AcceptedGiftTypes) GetGiftsFromChannels() bool {
+	if o == nil {
+		var ret bool
+		return ret
+	}
+
+	return o.GiftsFromChannels
+}
+
+// GetGiftsFromChannelsOk returns a tuple with the GiftsFromChannels field value
+// and a boolean to check if the value has been set.
+func (o *AcceptedGiftTypes) GetGiftsFromChannelsOk() (*bool, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.GiftsFromChannels, true
+}
+
+// SetGiftsFromChannels sets field value
+func (o *AcceptedGiftTypes) SetGiftsFromChannels(v bool) {
+	o.GiftsFromChannels = v
+}
+
 func (o AcceptedGiftTypes) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -198,6 +225,7 @@ func (o AcceptedGiftTypes) ToMap() (map[string]interface{}, error) {
 	toSerialize["limited_gifts"] = o.LimitedGifts
 	toSerialize["unique_gifts"] = o.UniqueGifts
 	toSerialize["premium_subscription"] = o.PremiumSubscription
+	toSerialize["gifts_from_channels"] = o.GiftsFromChannels
 	return toSerialize, nil
 }
 
@@ -210,6 +238,7 @@ func (o *AcceptedGiftTypes) UnmarshalJSON(data []byte) (err error) {
 		"limited_gifts",
 		"unique_gifts",
 		"premium_subscription",
+		"gifts_from_channels",
 	}
 
 	allProperties := make(map[string]interface{})
@@ -276,5 +305,4 @@ func (v *NullableAcceptedGiftTypes) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
 

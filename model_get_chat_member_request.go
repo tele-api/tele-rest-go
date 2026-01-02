@@ -3,11 +3,11 @@
  * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
- *    * - **Copyright**: Copyright (c) 2025 Qntx
+ *    * - **Copyright**: Copyright (c) 2026 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
- *    * - **Generator Version**: 7.14.0
+ *    * - **Version**: 9.3.0
+ *    * - **Modified**: 2026-01-01T02:06:16.405655294Z[Etc/UTC]
+ *    * - **Generator Version**: 7.18.0
  * 
  * <details>
  * <summary><strong>⚠️ Important Disclaimer & Limitation of Liability</strong></summary>
@@ -55,7 +55,7 @@ var _ MappedNullable = &GetChatMemberRequest{}
 
 // GetChatMemberRequest Request parameters for getChatMember
 type GetChatMemberRequest struct {
-	ChatId LeaveChatRequestChatId `json:"chat_id"`
+	ChatId GetChatRequestChatId `json:"chat_id"`
 	// Unique identifier of the target user
 	UserId int32 `json:"user_id"`
 }
@@ -66,7 +66,7 @@ type _GetChatMemberRequest GetChatMemberRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGetChatMemberRequest(chatId LeaveChatRequestChatId, userId int32) *GetChatMemberRequest {
+func NewGetChatMemberRequest(chatId GetChatRequestChatId, userId int32) *GetChatMemberRequest {
 	this := GetChatMemberRequest{}
 	this.ChatId = chatId
 	this.UserId = userId
@@ -82,9 +82,9 @@ func NewGetChatMemberRequestWithDefaults() *GetChatMemberRequest {
 }
 
 // GetChatId returns the ChatId field value
-func (o *GetChatMemberRequest) GetChatId() LeaveChatRequestChatId {
+func (o *GetChatMemberRequest) GetChatId() GetChatRequestChatId {
 	if o == nil {
-		var ret LeaveChatRequestChatId
+		var ret GetChatRequestChatId
 		return ret
 	}
 
@@ -93,7 +93,7 @@ func (o *GetChatMemberRequest) GetChatId() LeaveChatRequestChatId {
 
 // GetChatIdOk returns a tuple with the ChatId field value
 // and a boolean to check if the value has been set.
-func (o *GetChatMemberRequest) GetChatIdOk() (*LeaveChatRequestChatId, bool) {
+func (o *GetChatMemberRequest) GetChatIdOk() (*GetChatRequestChatId, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -101,7 +101,7 @@ func (o *GetChatMemberRequest) GetChatIdOk() (*LeaveChatRequestChatId, bool) {
 }
 
 // SetChatId sets field value
-func (o *GetChatMemberRequest) SetChatId(v LeaveChatRequestChatId) {
+func (o *GetChatMemberRequest) SetChatId(v GetChatRequestChatId) {
 	o.ChatId = v
 }
 
@@ -217,5 +217,4 @@ func (v *NullableGetChatMemberRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
 

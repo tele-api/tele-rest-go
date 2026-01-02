@@ -3,11 +3,11 @@
  * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
- *    * - **Copyright**: Copyright (c) 2025 Qntx
+ *    * - **Copyright**: Copyright (c) 2026 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
- *    * - **Generator Version**: 7.14.0
+ *    * - **Version**: 9.3.0
+ *    * - **Modified**: 2026-01-01T02:06:16.405655294Z[Etc/UTC]
+ *    * - **Generator Version**: 7.18.0
  * 
  * <details>
  * <summary><strong>⚠️ Important Disclaimer & Limitation of Liability</strong></summary>
@@ -66,7 +66,7 @@ type PromoteChatMemberRequest struct {
 	CanDeleteMessages *bool `json:"can_delete_messages,omitempty"`
 	// Pass *True* if the administrator can manage video chats
 	CanManageVideoChats *bool `json:"can_manage_video_chats,omitempty"`
-	// Pass *True* if the administrator can restrict, ban or unban chat members, or access supergroup statistics
+	// Pass *True* if the administrator can restrict, ban or unban chat members, or access supergroup statistics. For backward compatibility, defaults to *True* for promotions of channel administrators
 	CanRestrictMembers *bool `json:"can_restrict_members,omitempty"`
 	// Pass *True* if the administrator can add new administrators with a subset of their own privileges or demote administrators that they have promoted, directly or indirectly (promoted by administrators that were appointed by him)
 	CanPromoteMembers *bool `json:"can_promote_members,omitempty"`
@@ -88,6 +88,8 @@ type PromoteChatMemberRequest struct {
 	CanPinMessages *bool `json:"can_pin_messages,omitempty"`
 	// Pass *True* if the user is allowed to create, rename, close, and reopen forum topics; for supergroups only
 	CanManageTopics *bool `json:"can_manage_topics,omitempty"`
+	// Pass *True* if the administrator can manage direct messages within the channel and decline suggested posts; for channels only
+	CanManageDirectMessages *bool `json:"can_manage_direct_messages,omitempty"`
 }
 
 type _PromoteChatMemberRequest PromoteChatMemberRequest
@@ -654,6 +656,39 @@ func (o *PromoteChatMemberRequest) SetCanManageTopics(v bool) {
 }
 
 
+// GetCanManageDirectMessages returns the CanManageDirectMessages field value if set, zero value otherwise.
+func (o *PromoteChatMemberRequest) GetCanManageDirectMessages() bool {
+	if o == nil || IsNil(o.CanManageDirectMessages) {
+		var ret bool
+		return ret
+	}
+	return *o.CanManageDirectMessages
+}
+
+// GetCanManageDirectMessagesOk returns a tuple with the CanManageDirectMessages field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PromoteChatMemberRequest) GetCanManageDirectMessagesOk() (*bool, bool) {
+	if o == nil || IsNil(o.CanManageDirectMessages) {
+		return nil, false
+	}
+	return o.CanManageDirectMessages, true
+}
+
+// HasCanManageDirectMessages returns a boolean if a field has been set.
+func (o *PromoteChatMemberRequest) HasCanManageDirectMessages() bool {
+	if o != nil && !IsNil(o.CanManageDirectMessages) {
+		return true
+	}
+
+	return false
+}
+
+// SetCanManageDirectMessages gets a reference to the given bool and assigns it to the CanManageDirectMessages field.
+func (o *PromoteChatMemberRequest) SetCanManageDirectMessages(v bool) {
+	o.CanManageDirectMessages = &v
+}
+
+
 func (o PromoteChatMemberRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -710,6 +745,9 @@ func (o PromoteChatMemberRequest) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.CanManageTopics) {
 		toSerialize["can_manage_topics"] = o.CanManageTopics
+	}
+	if !IsNil(o.CanManageDirectMessages) {
+		toSerialize["can_manage_direct_messages"] = o.CanManageDirectMessages
 	}
 	return toSerialize, nil
 }
@@ -787,5 +825,4 @@ func (v *NullablePromoteChatMemberRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
 

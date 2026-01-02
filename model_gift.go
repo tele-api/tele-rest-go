@@ -3,11 +3,11 @@
  * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
- *    * - **Copyright**: Copyright (c) 2025 Qntx
+ *    * - **Copyright**: Copyright (c) 2026 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
- *    * - **Generator Version**: 7.14.0
+ *    * - **Version**: 9.3.0
+ *    * - **Modified**: 2026-01-01T02:06:16.405655294Z[Etc/UTC]
+ *    * - **Generator Version**: 7.18.0
  * 
  * <details>
  * <summary><strong>⚠️ Important Disclaimer & Limitation of Liability</strong></summary>
@@ -62,10 +62,22 @@ type Gift struct {
 	StarCount int32 `json:"star_count"`
 	// *Optional*. The number of Telegram Stars that must be paid to upgrade the gift to a unique one
 	UpgradeStarCount *int32 `json:"upgrade_star_count,omitempty"`
-	// *Optional*. The total number of the gifts of this type that can be sent; for limited gifts only
+	// *Optional*. *True*, if the gift can only be purchased by Telegram Premium subscribers
+	IsPremium *bool `json:"is_premium,omitempty"`
+	// *Optional*. *True*, if the gift can be used (after being upgraded) to customize a user's appearance
+	HasColors *bool `json:"has_colors,omitempty"`
+	// *Optional*. The total number of gifts of this type that can be sent by all users; for limited gifts only
 	TotalCount *int32 `json:"total_count,omitempty"`
-	// *Optional*. The number of remaining gifts of this type that can be sent; for limited gifts only
+	// *Optional*. The number of remaining gifts of this type that can be sent by all users; for limited gifts only
 	RemainingCount *int32 `json:"remaining_count,omitempty"`
+	// *Optional*. The total number of gifts of this type that can be sent by the bot; for limited gifts only
+	PersonalTotalCount *int32 `json:"personal_total_count,omitempty"`
+	// *Optional*. The number of remaining gifts of this type that can be sent by the bot; for limited gifts only
+	PersonalRemainingCount *int32 `json:"personal_remaining_count,omitempty"`
+	Background *GiftBackground `json:"background,omitempty"`
+	// *Optional*. The total number of different unique gifts that can be obtained by upgrading the gift
+	UniqueGiftVariantCount *int32 `json:"unique_gift_variant_count,omitempty"`
+	PublisherChat *Chat `json:"publisher_chat,omitempty"`
 }
 
 type _Gift Gift
@@ -79,6 +91,10 @@ func NewGift(id string, sticker Sticker, starCount int32) *Gift {
 	this.Id = id
 	this.Sticker = sticker
 	this.StarCount = starCount
+	var isPremium bool = true
+	this.IsPremium = &isPremium
+	var hasColors bool = true
+	this.HasColors = &hasColors
 	return &this
 }
 
@@ -87,6 +103,10 @@ func NewGift(id string, sticker Sticker, starCount int32) *Gift {
 // but it doesn't guarantee that properties required by API are set
 func NewGiftWithDefaults() *Gift {
 	this := Gift{}
+	var isPremium bool = true
+	this.IsPremium = &isPremium
+	var hasColors bool = true
+	this.HasColors = &hasColors
 	return &this
 }
 
@@ -195,6 +215,72 @@ func (o *Gift) SetUpgradeStarCount(v int32) {
 }
 
 
+// GetIsPremium returns the IsPremium field value if set, zero value otherwise.
+func (o *Gift) GetIsPremium() bool {
+	if o == nil || IsNil(o.IsPremium) {
+		var ret bool
+		return ret
+	}
+	return *o.IsPremium
+}
+
+// GetIsPremiumOk returns a tuple with the IsPremium field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Gift) GetIsPremiumOk() (*bool, bool) {
+	if o == nil || IsNil(o.IsPremium) {
+		return nil, false
+	}
+	return o.IsPremium, true
+}
+
+// HasIsPremium returns a boolean if a field has been set.
+func (o *Gift) HasIsPremium() bool {
+	if o != nil && !IsNil(o.IsPremium) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsPremium gets a reference to the given bool and assigns it to the IsPremium field.
+func (o *Gift) SetIsPremium(v bool) {
+	o.IsPremium = &v
+}
+
+
+// GetHasColors returns the HasColors field value if set, zero value otherwise.
+func (o *Gift) GetHasColors() bool {
+	if o == nil || IsNil(o.HasColors) {
+		var ret bool
+		return ret
+	}
+	return *o.HasColors
+}
+
+// GetHasColorsOk returns a tuple with the HasColors field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Gift) GetHasColorsOk() (*bool, bool) {
+	if o == nil || IsNil(o.HasColors) {
+		return nil, false
+	}
+	return o.HasColors, true
+}
+
+// HasHasColors returns a boolean if a field has been set.
+func (o *Gift) HasHasColors() bool {
+	if o != nil && !IsNil(o.HasColors) {
+		return true
+	}
+
+	return false
+}
+
+// SetHasColors gets a reference to the given bool and assigns it to the HasColors field.
+func (o *Gift) SetHasColors(v bool) {
+	o.HasColors = &v
+}
+
+
 // GetTotalCount returns the TotalCount field value if set, zero value otherwise.
 func (o *Gift) GetTotalCount() int32 {
 	if o == nil || IsNil(o.TotalCount) {
@@ -261,6 +347,171 @@ func (o *Gift) SetRemainingCount(v int32) {
 }
 
 
+// GetPersonalTotalCount returns the PersonalTotalCount field value if set, zero value otherwise.
+func (o *Gift) GetPersonalTotalCount() int32 {
+	if o == nil || IsNil(o.PersonalTotalCount) {
+		var ret int32
+		return ret
+	}
+	return *o.PersonalTotalCount
+}
+
+// GetPersonalTotalCountOk returns a tuple with the PersonalTotalCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Gift) GetPersonalTotalCountOk() (*int32, bool) {
+	if o == nil || IsNil(o.PersonalTotalCount) {
+		return nil, false
+	}
+	return o.PersonalTotalCount, true
+}
+
+// HasPersonalTotalCount returns a boolean if a field has been set.
+func (o *Gift) HasPersonalTotalCount() bool {
+	if o != nil && !IsNil(o.PersonalTotalCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetPersonalTotalCount gets a reference to the given int32 and assigns it to the PersonalTotalCount field.
+func (o *Gift) SetPersonalTotalCount(v int32) {
+	o.PersonalTotalCount = &v
+}
+
+
+// GetPersonalRemainingCount returns the PersonalRemainingCount field value if set, zero value otherwise.
+func (o *Gift) GetPersonalRemainingCount() int32 {
+	if o == nil || IsNil(o.PersonalRemainingCount) {
+		var ret int32
+		return ret
+	}
+	return *o.PersonalRemainingCount
+}
+
+// GetPersonalRemainingCountOk returns a tuple with the PersonalRemainingCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Gift) GetPersonalRemainingCountOk() (*int32, bool) {
+	if o == nil || IsNil(o.PersonalRemainingCount) {
+		return nil, false
+	}
+	return o.PersonalRemainingCount, true
+}
+
+// HasPersonalRemainingCount returns a boolean if a field has been set.
+func (o *Gift) HasPersonalRemainingCount() bool {
+	if o != nil && !IsNil(o.PersonalRemainingCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetPersonalRemainingCount gets a reference to the given int32 and assigns it to the PersonalRemainingCount field.
+func (o *Gift) SetPersonalRemainingCount(v int32) {
+	o.PersonalRemainingCount = &v
+}
+
+
+// GetBackground returns the Background field value if set, zero value otherwise.
+func (o *Gift) GetBackground() GiftBackground {
+	if o == nil || IsNil(o.Background) {
+		var ret GiftBackground
+		return ret
+	}
+	return *o.Background
+}
+
+// GetBackgroundOk returns a tuple with the Background field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Gift) GetBackgroundOk() (*GiftBackground, bool) {
+	if o == nil || IsNil(o.Background) {
+		return nil, false
+	}
+	return o.Background, true
+}
+
+// HasBackground returns a boolean if a field has been set.
+func (o *Gift) HasBackground() bool {
+	if o != nil && !IsNil(o.Background) {
+		return true
+	}
+
+	return false
+}
+
+// SetBackground gets a reference to the given GiftBackground and assigns it to the Background field.
+func (o *Gift) SetBackground(v GiftBackground) {
+	o.Background = &v
+}
+
+
+// GetUniqueGiftVariantCount returns the UniqueGiftVariantCount field value if set, zero value otherwise.
+func (o *Gift) GetUniqueGiftVariantCount() int32 {
+	if o == nil || IsNil(o.UniqueGiftVariantCount) {
+		var ret int32
+		return ret
+	}
+	return *o.UniqueGiftVariantCount
+}
+
+// GetUniqueGiftVariantCountOk returns a tuple with the UniqueGiftVariantCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Gift) GetUniqueGiftVariantCountOk() (*int32, bool) {
+	if o == nil || IsNil(o.UniqueGiftVariantCount) {
+		return nil, false
+	}
+	return o.UniqueGiftVariantCount, true
+}
+
+// HasUniqueGiftVariantCount returns a boolean if a field has been set.
+func (o *Gift) HasUniqueGiftVariantCount() bool {
+	if o != nil && !IsNil(o.UniqueGiftVariantCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetUniqueGiftVariantCount gets a reference to the given int32 and assigns it to the UniqueGiftVariantCount field.
+func (o *Gift) SetUniqueGiftVariantCount(v int32) {
+	o.UniqueGiftVariantCount = &v
+}
+
+
+// GetPublisherChat returns the PublisherChat field value if set, zero value otherwise.
+func (o *Gift) GetPublisherChat() Chat {
+	if o == nil || IsNil(o.PublisherChat) {
+		var ret Chat
+		return ret
+	}
+	return *o.PublisherChat
+}
+
+// GetPublisherChatOk returns a tuple with the PublisherChat field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Gift) GetPublisherChatOk() (*Chat, bool) {
+	if o == nil || IsNil(o.PublisherChat) {
+		return nil, false
+	}
+	return o.PublisherChat, true
+}
+
+// HasPublisherChat returns a boolean if a field has been set.
+func (o *Gift) HasPublisherChat() bool {
+	if o != nil && !IsNil(o.PublisherChat) {
+		return true
+	}
+
+	return false
+}
+
+// SetPublisherChat gets a reference to the given Chat and assigns it to the PublisherChat field.
+func (o *Gift) SetPublisherChat(v Chat) {
+	o.PublisherChat = &v
+}
+
+
 func (o Gift) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -277,11 +528,32 @@ func (o Gift) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.UpgradeStarCount) {
 		toSerialize["upgrade_star_count"] = o.UpgradeStarCount
 	}
+	if !IsNil(o.IsPremium) {
+		toSerialize["is_premium"] = o.IsPremium
+	}
+	if !IsNil(o.HasColors) {
+		toSerialize["has_colors"] = o.HasColors
+	}
 	if !IsNil(o.TotalCount) {
 		toSerialize["total_count"] = o.TotalCount
 	}
 	if !IsNil(o.RemainingCount) {
 		toSerialize["remaining_count"] = o.RemainingCount
+	}
+	if !IsNil(o.PersonalTotalCount) {
+		toSerialize["personal_total_count"] = o.PersonalTotalCount
+	}
+	if !IsNil(o.PersonalRemainingCount) {
+		toSerialize["personal_remaining_count"] = o.PersonalRemainingCount
+	}
+	if !IsNil(o.Background) {
+		toSerialize["background"] = o.Background
+	}
+	if !IsNil(o.UniqueGiftVariantCount) {
+		toSerialize["unique_gift_variant_count"] = o.UniqueGiftVariantCount
+	}
+	if !IsNil(o.PublisherChat) {
+		toSerialize["publisher_chat"] = o.PublisherChat
 	}
 	return toSerialize, nil
 }
@@ -360,5 +632,4 @@ func (v *NullableGift) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
 

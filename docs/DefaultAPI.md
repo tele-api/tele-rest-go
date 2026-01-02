@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**PostAnswerShippingQuery**](DefaultAPI.md#PostAnswerShippingQuery) | **Post** /answerShippingQuery | answerShippingQuery
 [**PostAnswerWebAppQuery**](DefaultAPI.md#PostAnswerWebAppQuery) | **Post** /answerWebAppQuery | answerWebAppQuery
 [**PostApproveChatJoinRequest**](DefaultAPI.md#PostApproveChatJoinRequest) | **Post** /approveChatJoinRequest | approveChatJoinRequest
+[**PostApproveSuggestedPost**](DefaultAPI.md#PostApproveSuggestedPost) | **Post** /approveSuggestedPost | approveSuggestedPost
 [**PostBanChatMember**](DefaultAPI.md#PostBanChatMember) | **Post** /banChatMember | banChatMember
 [**PostBanChatSenderChat**](DefaultAPI.md#PostBanChatSenderChat) | **Post** /banChatSenderChat | banChatSenderChat
 [**PostClose**](DefaultAPI.md#PostClose) | **Post** /close | close
@@ -25,6 +26,7 @@ Method | HTTP request | Description
 [**PostCreateInvoiceLink**](DefaultAPI.md#PostCreateInvoiceLink) | **Post** /createInvoiceLink | createInvoiceLink
 [**PostCreateNewStickerSet**](DefaultAPI.md#PostCreateNewStickerSet) | **Post** /createNewStickerSet | createNewStickerSet
 [**PostDeclineChatJoinRequest**](DefaultAPI.md#PostDeclineChatJoinRequest) | **Post** /declineChatJoinRequest | declineChatJoinRequest
+[**PostDeclineSuggestedPost**](DefaultAPI.md#PostDeclineSuggestedPost) | **Post** /declineSuggestedPost | declineSuggestedPost
 [**PostDeleteBusinessMessages**](DefaultAPI.md#PostDeleteBusinessMessages) | **Post** /deleteBusinessMessages | deleteBusinessMessages
 [**PostDeleteChatPhoto**](DefaultAPI.md#PostDeleteChatPhoto) | **Post** /deleteChatPhoto | deleteChatPhoto
 [**PostDeleteChatStickerSet**](DefaultAPI.md#PostDeleteChatStickerSet) | **Post** /deleteChatStickerSet | deleteChatStickerSet
@@ -57,6 +59,7 @@ Method | HTTP request | Description
 [**PostGetBusinessConnection**](DefaultAPI.md#PostGetBusinessConnection) | **Post** /getBusinessConnection | getBusinessConnection
 [**PostGetChat**](DefaultAPI.md#PostGetChat) | **Post** /getChat | getChat
 [**PostGetChatAdministrators**](DefaultAPI.md#PostGetChatAdministrators) | **Post** /getChatAdministrators | getChatAdministrators
+[**PostGetChatGifts**](DefaultAPI.md#PostGetChatGifts) | **Post** /getChatGifts | getChatGifts
 [**PostGetChatMember**](DefaultAPI.md#PostGetChatMember) | **Post** /getChatMember | getChatMember
 [**PostGetChatMemberCount**](DefaultAPI.md#PostGetChatMemberCount) | **Post** /getChatMemberCount | getChatMemberCount
 [**PostGetChatMenuButton**](DefaultAPI.md#PostGetChatMenuButton) | **Post** /getChatMenuButton | getChatMenuButton
@@ -75,6 +78,7 @@ Method | HTTP request | Description
 [**PostGetStickerSet**](DefaultAPI.md#PostGetStickerSet) | **Post** /getStickerSet | getStickerSet
 [**PostGetUpdates**](DefaultAPI.md#PostGetUpdates) | **Post** /getUpdates | getUpdates
 [**PostGetUserChatBoosts**](DefaultAPI.md#PostGetUserChatBoosts) | **Post** /getUserChatBoosts | getUserChatBoosts
+[**PostGetUserGifts**](DefaultAPI.md#PostGetUserGifts) | **Post** /getUserGifts | getUserGifts
 [**PostGetUserProfilePhotos**](DefaultAPI.md#PostGetUserProfilePhotos) | **Post** /getUserProfilePhotos | getUserProfilePhotos
 [**PostGetWebhookInfo**](DefaultAPI.md#PostGetWebhookInfo) | **Post** /getWebhookInfo | getWebhookInfo
 [**PostGiftPremiumSubscription**](DefaultAPI.md#PostGiftPremiumSubscription) | **Post** /giftPremiumSubscription | giftPremiumSubscription
@@ -92,6 +96,7 @@ Method | HTTP request | Description
 [**PostReopenForumTopic**](DefaultAPI.md#PostReopenForumTopic) | **Post** /reopenForumTopic | reopenForumTopic
 [**PostReopenGeneralForumTopic**](DefaultAPI.md#PostReopenGeneralForumTopic) | **Post** /reopenGeneralForumTopic | reopenGeneralForumTopic
 [**PostReplaceStickerInSet**](DefaultAPI.md#PostReplaceStickerInSet) | **Post** /replaceStickerInSet | replaceStickerInSet
+[**PostRepostStory**](DefaultAPI.md#PostRepostStory) | **Post** /repostStory | repostStory
 [**PostRestrictChatMember**](DefaultAPI.md#PostRestrictChatMember) | **Post** /restrictChatMember | restrictChatMember
 [**PostRevokeChatInviteLink**](DefaultAPI.md#PostRevokeChatInviteLink) | **Post** /revokeChatInviteLink | revokeChatInviteLink
 [**PostSavePreparedInlineMessage**](DefaultAPI.md#PostSavePreparedInlineMessage) | **Post** /savePreparedInlineMessage | savePreparedInlineMessage
@@ -108,6 +113,7 @@ Method | HTTP request | Description
 [**PostSendLocation**](DefaultAPI.md#PostSendLocation) | **Post** /sendLocation | sendLocation
 [**PostSendMediaGroup**](DefaultAPI.md#PostSendMediaGroup) | **Post** /sendMediaGroup | sendMediaGroup
 [**PostSendMessage**](DefaultAPI.md#PostSendMessage) | **Post** /sendMessage | sendMessage
+[**PostSendMessageDraft**](DefaultAPI.md#PostSendMessageDraft) | **Post** /sendMessageDraft | sendMessageDraft
 [**PostSendPaidMedia**](DefaultAPI.md#PostSendPaidMedia) | **Post** /sendPaidMedia | sendPaidMedia
 [**PostSendPhoto**](DefaultAPI.md#PostSendPhoto) | **Post** /sendPhoto | sendPhoto
 [**PostSendPoll**](DefaultAPI.md#PostSendPoll) | **Post** /sendPoll | sendPoll
@@ -661,6 +667,76 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## PostApproveSuggestedPost
+
+> ApproveSuggestedPostResponse PostApproveSuggestedPost(ctx).ChatId(chatId).MessageId(messageId).SendDate(sendDate).Execute()
+
+approveSuggestedPost
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/tele-api/tele-rest-go"
+)
+
+func main() {
+	chatId := int32(56) // int32 | Unique identifier for the target direct messages chat
+	messageId := int32(56) // int32 | Identifier of a suggested post message to approve
+	sendDate := int32(56) // int32 | Point in time (Unix timestamp) when the post is expected to be published; omit if the date has already been specified when the suggested post was created. If specified, then the date must be not more than 2678400 seconds (30 days) in the future (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DefaultAPI.PostApproveSuggestedPost(context.Background()).ChatId(chatId).MessageId(messageId).SendDate(sendDate).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostApproveSuggestedPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PostApproveSuggestedPost`: ApproveSuggestedPostResponse
+	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostApproveSuggestedPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostApproveSuggestedPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **chatId** | **int32** | Unique identifier for the target direct messages chat | 
+ **messageId** | **int32** | Identifier of a suggested post message to approve | 
+ **sendDate** | **int32** | Point in time (Unix timestamp) when the post is expected to be published; omit if the date has already been specified when the suggested post was created. If specified, then the date must be not more than 2678400 seconds (30 days) in the future | 
+
+### Return type
+
+[**ApproveSuggestedPostResponse**](ApproveSuggestedPostResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/x-www-form-urlencoded, multipart/form-data, application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## PostBanChatMember
 
 > BanChatMemberResponse PostBanChatMember(ctx).ChatId(chatId).UserId(userId).UntilDate(untilDate).RevokeMessages(revokeMessages).Execute()
@@ -883,7 +959,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.BotCommandScopeChat_chat_id{Int32: new(int32)} // BotCommandScopeChatChatId | 
+	chatId := openapiclient.restrictChatMemberRequest_chat_id{Int32: new(int32)} // RestrictChatMemberRequestChatId | 
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread of the forum topic
 
 	configuration := openapiclient.NewConfiguration()
@@ -909,7 +985,7 @@ Other parameters are passed through a pointer to a apiPostCloseForumTopicRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
+ **chatId** | [**RestrictChatMemberRequestChatId**](RestrictChatMemberRequestChatId.md) |  | 
  **messageThreadId** | **int32** | Unique identifier for the target message thread of the forum topic | 
 
 ### Return type
@@ -951,7 +1027,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.BotCommandScopeChat_chat_id{Int32: new(int32)} // BotCommandScopeChatChatId | 
+	chatId := openapiclient.restrictChatMemberRequest_chat_id{Int32: new(int32)} // RestrictChatMemberRequestChatId | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -976,7 +1052,7 @@ Other parameters are passed through a pointer to a apiPostCloseGeneralForumTopic
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
+ **chatId** | [**RestrictChatMemberRequestChatId**](RestrictChatMemberRequestChatId.md) |  | 
 
 ### Return type
 
@@ -1066,7 +1142,7 @@ No authorization required
 
 ## PostCopyMessage
 
-> CopyMessageResponse PostCopyMessage(ctx).ChatId(chatId).FromChatId(fromChatId).MessageId(messageId).MessageThreadId(messageThreadId).VideoStartTimestamp(videoStartTimestamp).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).ShowCaptionAboveMedia(showCaptionAboveMedia).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+> CopyMessageResponse PostCopyMessage(ctx).ChatId(chatId).FromChatId(fromChatId).MessageId(messageId).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).VideoStartTimestamp(videoStartTimestamp).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).ShowCaptionAboveMedia(showCaptionAboveMedia).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).SuggestedPostParameters(suggestedPostParameters).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 
 copyMessage
 
@@ -1088,7 +1164,8 @@ func main() {
 	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	fromChatId := openapiclient.forwardMessageRequest_from_chat_id{Int32: new(int32)} // ForwardMessageRequestFromChatId | 
 	messageId := int32(56) // int32 | Message identifier in the chat specified in *from\\\\_chat\\\\_id*
-	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
+	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only (optional)
+	directMessagesTopicId := int32(56) // int32 | Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat (optional)
 	videoStartTimestamp := int32(56) // int32 | New start timestamp for the copied video in the message (optional)
 	caption := "caption_example" // string | New caption for media, 0-1024 characters after entities parsing. If not specified, the original caption is kept (optional)
 	parseMode := "parseMode_example" // string | Mode for parsing entities in the new caption. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. (optional)
@@ -1097,12 +1174,14 @@ func main() {
 	disableNotification := true // bool | Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. (optional)
 	protectContent := true // bool | Protects the contents of the sent message from forwarding and saving (optional)
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
+	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; only available when copying to private chats (optional)
+	suggestedPostParameters := *openapiclient.NewSuggestedPostParameters() // SuggestedPostParameters |  (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
 	replyMarkup := openapiclient.sendMessageRequest_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessageRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DefaultAPI.PostCopyMessage(context.Background()).ChatId(chatId).FromChatId(fromChatId).MessageId(messageId).MessageThreadId(messageThreadId).VideoStartTimestamp(videoStartTimestamp).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).ShowCaptionAboveMedia(showCaptionAboveMedia).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+	resp, r, err := apiClient.DefaultAPI.PostCopyMessage(context.Background()).ChatId(chatId).FromChatId(fromChatId).MessageId(messageId).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).VideoStartTimestamp(videoStartTimestamp).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).ShowCaptionAboveMedia(showCaptionAboveMedia).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).SuggestedPostParameters(suggestedPostParameters).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostCopyMessage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1126,7 +1205,8 @@ Name | Type | Description  | Notes
  **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **fromChatId** | [**ForwardMessageRequestFromChatId**](ForwardMessageRequestFromChatId.md) |  | 
  **messageId** | **int32** | Message identifier in the chat specified in *from\\\\_chat\\\\_id* | 
- **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | 
+ **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only | 
+ **directMessagesTopicId** | **int32** | Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat | 
  **videoStartTimestamp** | **int32** | New start timestamp for the copied video in the message | 
  **caption** | **string** | New caption for media, 0-1024 characters after entities parsing. If not specified, the original caption is kept | 
  **parseMode** | **string** | Mode for parsing entities in the new caption. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. | 
@@ -1135,6 +1215,8 @@ Name | Type | Description  | Notes
  **disableNotification** | **bool** | Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. | 
  **protectContent** | **bool** | Protects the contents of the sent message from forwarding and saving | 
  **allowPaidBroadcast** | **bool** | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance | 
+ **messageEffectId** | **string** | Unique identifier of the message effect to be added to the message; only available when copying to private chats | 
+ **suggestedPostParameters** | [**SuggestedPostParameters**](SuggestedPostParameters.md) |  | 
  **replyParameters** | [**ReplyParameters**](ReplyParameters.md) |  | 
  **replyMarkup** | [**SendMessageRequestReplyMarkup**](SendMessageRequestReplyMarkup.md) |  | 
 
@@ -1158,7 +1240,7 @@ No authorization required
 
 ## PostCopyMessages
 
-> CopyMessagesResponse PostCopyMessages(ctx).ChatId(chatId).FromChatId(fromChatId).MessageIds(messageIds).MessageThreadId(messageThreadId).DisableNotification(disableNotification).ProtectContent(protectContent).RemoveCaption(removeCaption).Execute()
+> CopyMessagesResponse PostCopyMessages(ctx).ChatId(chatId).FromChatId(fromChatId).MessageIds(messageIds).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).DisableNotification(disableNotification).ProtectContent(protectContent).RemoveCaption(removeCaption).Execute()
 
 copyMessages
 
@@ -1180,14 +1262,15 @@ func main() {
 	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	fromChatId := openapiclient.forwardMessagesRequest_from_chat_id{Int32: new(int32)} // ForwardMessagesRequestFromChatId | 
 	messageIds := []int32{int32(123)} // []int32 | A JSON-serialized list of 1-100 identifiers of messages in the chat *from\\\\_chat\\\\_id* to copy. The identifiers must be specified in a strictly increasing order.
-	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
+	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only (optional)
+	directMessagesTopicId := int32(56) // int32 | Identifier of the direct messages topic to which the messages will be sent; required if the messages are sent to a direct messages chat (optional)
 	disableNotification := true // bool | Sends the messages [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. (optional)
 	protectContent := true // bool | Protects the contents of the sent messages from forwarding and saving (optional)
 	removeCaption := true // bool | Pass *True* to copy the messages without their captions (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DefaultAPI.PostCopyMessages(context.Background()).ChatId(chatId).FromChatId(fromChatId).MessageIds(messageIds).MessageThreadId(messageThreadId).DisableNotification(disableNotification).ProtectContent(protectContent).RemoveCaption(removeCaption).Execute()
+	resp, r, err := apiClient.DefaultAPI.PostCopyMessages(context.Background()).ChatId(chatId).FromChatId(fromChatId).MessageIds(messageIds).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).DisableNotification(disableNotification).ProtectContent(protectContent).RemoveCaption(removeCaption).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostCopyMessages``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1211,7 +1294,8 @@ Name | Type | Description  | Notes
  **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **fromChatId** | [**ForwardMessagesRequestFromChatId**](ForwardMessagesRequestFromChatId.md) |  | 
  **messageIds** | **[]int32** | A JSON-serialized list of 1-100 identifiers of messages in the chat *from\\\\_chat\\\\_id* to copy. The identifiers must be specified in a strictly increasing order. | 
- **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | 
+ **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only | 
+ **directMessagesTopicId** | **int32** | Identifier of the direct messages topic to which the messages will be sent; required if the messages are sent to a direct messages chat | 
  **disableNotification** | **bool** | Sends the messages [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. | 
  **protectContent** | **bool** | Protects the contents of the sent messages from forwarding and saving | 
  **removeCaption** | **bool** | Pass *True* to copy the messages without their captions | 
@@ -1401,7 +1485,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.BotCommandScopeChat_chat_id{Int32: new(int32)} // BotCommandScopeChatChatId | 
+	chatId := openapiclient.restrictChatMemberRequest_chat_id{Int32: new(int32)} // RestrictChatMemberRequestChatId | 
 	name := "name_example" // string | Topic name, 1-128 characters
 	iconColor := int32(56) // int32 | Color of the topic icon in RGB format. Currently, must be one of 7322096 (0x6FB9F0), 16766590 (0xFFD67E), 13338331 (0xCB86DB), 9367192 (0x8EEE98), 16749490 (0xFF93B2), or 16478047 (0xFB6F5F) (optional)
 	iconCustomEmojiId := "iconCustomEmojiId_example" // string | Unique identifier of the custom emoji shown as the topic icon. Use [getForumTopicIconStickers](https://core.telegram.org/bots/api/#getforumtopiciconstickers) to get all allowed custom emoji identifiers. (optional)
@@ -1429,7 +1513,7 @@ Other parameters are passed through a pointer to a apiPostCreateForumTopicReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
+ **chatId** | [**RestrictChatMemberRequestChatId**](RestrictChatMemberRequestChatId.md) |  | 
  **name** | **string** | Topic name, 1-128 characters | 
  **iconColor** | **int32** | Color of the topic icon in RGB format. Currently, must be one of 7322096 (0x6FB9F0), 16766590 (0xFFD67E), 13338331 (0xCB86DB), 9367192 (0x8EEE98), 16749490 (0xFF93B2), or 16478047 (0xFB6F5F) | 
  **iconCustomEmojiId** | **string** | Unique identifier of the custom emoji shown as the topic icon. Use [getForumTopicIconStickers](https://core.telegram.org/bots/api/#getforumtopiciconstickers) to get all allowed custom emoji identifiers. | 
@@ -1704,6 +1788,76 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## PostDeclineSuggestedPost
+
+> DeclineSuggestedPostResponse PostDeclineSuggestedPost(ctx).ChatId(chatId).MessageId(messageId).Comment(comment).Execute()
+
+declineSuggestedPost
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/tele-api/tele-rest-go"
+)
+
+func main() {
+	chatId := int32(56) // int32 | Unique identifier for the target direct messages chat
+	messageId := int32(56) // int32 | Identifier of a suggested post message to decline
+	comment := "comment_example" // string | Comment for the creator of the suggested post; 0-128 characters (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DefaultAPI.PostDeclineSuggestedPost(context.Background()).ChatId(chatId).MessageId(messageId).Comment(comment).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostDeclineSuggestedPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PostDeclineSuggestedPost`: DeclineSuggestedPostResponse
+	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostDeclineSuggestedPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostDeclineSuggestedPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **chatId** | **int32** | Unique identifier for the target direct messages chat | 
+ **messageId** | **int32** | Identifier of a suggested post message to decline | 
+ **comment** | **string** | Comment for the creator of the suggested post; 0-128 characters | 
+
+### Return type
+
+[**DeclineSuggestedPostResponse**](DeclineSuggestedPostResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/x-www-form-urlencoded, multipart/form-data, application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## PostDeleteBusinessMessages
 
 > DeleteBusinessMessagesResponse PostDeleteBusinessMessages(ctx).BusinessConnectionId(businessConnectionId).MessageIds(messageIds).Execute()
@@ -1859,7 +2013,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.BotCommandScopeChat_chat_id{Int32: new(int32)} // BotCommandScopeChatChatId | 
+	chatId := openapiclient.restrictChatMemberRequest_chat_id{Int32: new(int32)} // RestrictChatMemberRequestChatId | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1884,7 +2038,7 @@ Other parameters are passed through a pointer to a apiPostDeleteChatStickerSetRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
+ **chatId** | [**RestrictChatMemberRequestChatId**](RestrictChatMemberRequestChatId.md) |  | 
 
 ### Return type
 
@@ -1925,7 +2079,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.BotCommandScopeChat_chat_id{Int32: new(int32)} // BotCommandScopeChatChatId | 
+	chatId := openapiclient.restrictChatMemberRequest_chat_id{Int32: new(int32)} // RestrictChatMemberRequestChatId | 
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread of the forum topic
 
 	configuration := openapiclient.NewConfiguration()
@@ -1951,7 +2105,7 @@ Other parameters are passed through a pointer to a apiPostDeleteForumTopicReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
+ **chatId** | [**RestrictChatMemberRequestChatId**](RestrictChatMemberRequestChatId.md) |  | 
  **messageThreadId** | **int32** | Unique identifier for the target message thread of the forum topic | 
 
 ### Return type
@@ -2609,7 +2763,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.BotCommandScopeChat_chat_id{Int32: new(int32)} // BotCommandScopeChatChatId | 
+	chatId := openapiclient.restrictChatMemberRequest_chat_id{Int32: new(int32)} // RestrictChatMemberRequestChatId | 
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread of the forum topic
 	name := "name_example" // string | New topic name, 0-128 characters. If not specified or empty, the current name of the topic will be kept (optional)
 	iconCustomEmojiId := "iconCustomEmojiId_example" // string | New unique identifier of the custom emoji shown as the topic icon. Use [getForumTopicIconStickers](https://core.telegram.org/bots/api/#getforumtopiciconstickers) to get all allowed custom emoji identifiers. Pass an empty string to remove the icon. If not specified, the current icon will be kept (optional)
@@ -2637,7 +2791,7 @@ Other parameters are passed through a pointer to a apiPostEditForumTopicRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
+ **chatId** | [**RestrictChatMemberRequestChatId**](RestrictChatMemberRequestChatId.md) |  | 
  **messageThreadId** | **int32** | Unique identifier for the target message thread of the forum topic | 
  **name** | **string** | New topic name, 0-128 characters. If not specified or empty, the current name of the topic will be kept | 
  **iconCustomEmojiId** | **string** | New unique identifier of the custom emoji shown as the topic icon. Use [getForumTopicIconStickers](https://core.telegram.org/bots/api/#getforumtopiciconstickers) to get all allowed custom emoji identifiers. Pass an empty string to remove the icon. If not specified, the current icon will be kept | 
@@ -2681,7 +2835,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.BotCommandScopeChat_chat_id{Int32: new(int32)} // BotCommandScopeChatChatId | 
+	chatId := openapiclient.restrictChatMemberRequest_chat_id{Int32: new(int32)} // RestrictChatMemberRequestChatId | 
 	name := "name_example" // string | New topic name, 1-128 characters
 
 	configuration := openapiclient.NewConfiguration()
@@ -2707,7 +2861,7 @@ Other parameters are passed through a pointer to a apiPostEditGeneralForumTopicR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
+ **chatId** | [**RestrictChatMemberRequestChatId**](RestrictChatMemberRequestChatId.md) |  | 
  **name** | **string** | New topic name, 1-128 characters | 
 
 ### Return type
@@ -3418,7 +3572,7 @@ No authorization required
 
 ## PostForwardMessage
 
-> ForwardMessageResponse PostForwardMessage(ctx).ChatId(chatId).FromChatId(fromChatId).MessageId(messageId).MessageThreadId(messageThreadId).VideoStartTimestamp(videoStartTimestamp).DisableNotification(disableNotification).ProtectContent(protectContent).Execute()
+> ForwardMessageResponse PostForwardMessage(ctx).ChatId(chatId).FromChatId(fromChatId).MessageId(messageId).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).VideoStartTimestamp(videoStartTimestamp).DisableNotification(disableNotification).ProtectContent(protectContent).MessageEffectId(messageEffectId).SuggestedPostParameters(suggestedPostParameters).Execute()
 
 forwardMessage
 
@@ -3440,14 +3594,17 @@ func main() {
 	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	fromChatId := openapiclient.forwardMessageRequest_from_chat_id{Int32: new(int32)} // ForwardMessageRequestFromChatId | 
 	messageId := int32(56) // int32 | Message identifier in the chat specified in *from\\\\_chat\\\\_id*
-	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
+	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only (optional)
+	directMessagesTopicId := int32(56) // int32 | Identifier of the direct messages topic to which the message will be forwarded; required if the message is forwarded to a direct messages chat (optional)
 	videoStartTimestamp := int32(56) // int32 | New start timestamp for the forwarded video in the message (optional)
 	disableNotification := true // bool | Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. (optional)
 	protectContent := true // bool | Protects the contents of the forwarded message from forwarding and saving (optional)
+	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; only available when forwarding to private chats (optional)
+	suggestedPostParameters := *openapiclient.NewSuggestedPostParameters() // SuggestedPostParameters |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DefaultAPI.PostForwardMessage(context.Background()).ChatId(chatId).FromChatId(fromChatId).MessageId(messageId).MessageThreadId(messageThreadId).VideoStartTimestamp(videoStartTimestamp).DisableNotification(disableNotification).ProtectContent(protectContent).Execute()
+	resp, r, err := apiClient.DefaultAPI.PostForwardMessage(context.Background()).ChatId(chatId).FromChatId(fromChatId).MessageId(messageId).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).VideoStartTimestamp(videoStartTimestamp).DisableNotification(disableNotification).ProtectContent(protectContent).MessageEffectId(messageEffectId).SuggestedPostParameters(suggestedPostParameters).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostForwardMessage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3471,10 +3628,13 @@ Name | Type | Description  | Notes
  **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **fromChatId** | [**ForwardMessageRequestFromChatId**](ForwardMessageRequestFromChatId.md) |  | 
  **messageId** | **int32** | Message identifier in the chat specified in *from\\\\_chat\\\\_id* | 
- **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | 
+ **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only | 
+ **directMessagesTopicId** | **int32** | Identifier of the direct messages topic to which the message will be forwarded; required if the message is forwarded to a direct messages chat | 
  **videoStartTimestamp** | **int32** | New start timestamp for the forwarded video in the message | 
  **disableNotification** | **bool** | Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. | 
  **protectContent** | **bool** | Protects the contents of the forwarded message from forwarding and saving | 
+ **messageEffectId** | **string** | Unique identifier of the message effect to be added to the message; only available when forwarding to private chats | 
+ **suggestedPostParameters** | [**SuggestedPostParameters**](SuggestedPostParameters.md) |  | 
 
 ### Return type
 
@@ -3496,7 +3656,7 @@ No authorization required
 
 ## PostForwardMessages
 
-> ForwardMessagesResponse PostForwardMessages(ctx).ChatId(chatId).FromChatId(fromChatId).MessageIds(messageIds).MessageThreadId(messageThreadId).DisableNotification(disableNotification).ProtectContent(protectContent).Execute()
+> ForwardMessagesResponse PostForwardMessages(ctx).ChatId(chatId).FromChatId(fromChatId).MessageIds(messageIds).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).DisableNotification(disableNotification).ProtectContent(protectContent).Execute()
 
 forwardMessages
 
@@ -3518,13 +3678,14 @@ func main() {
 	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	fromChatId := openapiclient.forwardMessagesRequest_from_chat_id{Int32: new(int32)} // ForwardMessagesRequestFromChatId | 
 	messageIds := []int32{int32(123)} // []int32 | A JSON-serialized list of 1-100 identifiers of messages in the chat *from\\\\_chat\\\\_id* to forward. The identifiers must be specified in a strictly increasing order.
-	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
+	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only (optional)
+	directMessagesTopicId := int32(56) // int32 | Identifier of the direct messages topic to which the messages will be forwarded; required if the messages are forwarded to a direct messages chat (optional)
 	disableNotification := true // bool | Sends the messages [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. (optional)
 	protectContent := true // bool | Protects the contents of the forwarded messages from forwarding and saving (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DefaultAPI.PostForwardMessages(context.Background()).ChatId(chatId).FromChatId(fromChatId).MessageIds(messageIds).MessageThreadId(messageThreadId).DisableNotification(disableNotification).ProtectContent(protectContent).Execute()
+	resp, r, err := apiClient.DefaultAPI.PostForwardMessages(context.Background()).ChatId(chatId).FromChatId(fromChatId).MessageIds(messageIds).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).DisableNotification(disableNotification).ProtectContent(protectContent).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostForwardMessages``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3548,7 +3709,8 @@ Name | Type | Description  | Notes
  **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **fromChatId** | [**ForwardMessagesRequestFromChatId**](ForwardMessagesRequestFromChatId.md) |  | 
  **messageIds** | **[]int32** | A JSON-serialized list of 1-100 identifiers of messages in the chat *from\\\\_chat\\\\_id* to forward. The identifiers must be specified in a strictly increasing order. | 
- **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | 
+ **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only | 
+ **directMessagesTopicId** | **int32** | Identifier of the direct messages topic to which the messages will be forwarded; required if the messages are forwarded to a direct messages chat | 
  **disableNotification** | **bool** | Sends the messages [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. | 
  **protectContent** | **bool** | Protects the contents of the forwarded messages from forwarding and saving | 
 
@@ -3633,7 +3795,7 @@ No authorization required
 
 ## PostGetBusinessAccountGifts
 
-> GetBusinessAccountGiftsResponse PostGetBusinessAccountGifts(ctx).BusinessConnectionId(businessConnectionId).ExcludeUnsaved(excludeUnsaved).ExcludeSaved(excludeSaved).ExcludeUnlimited(excludeUnlimited).ExcludeLimited(excludeLimited).ExcludeUnique(excludeUnique).SortByPrice(sortByPrice).Offset(offset).Limit(limit).Execute()
+> GetBusinessAccountGiftsResponse PostGetBusinessAccountGifts(ctx).BusinessConnectionId(businessConnectionId).ExcludeUnsaved(excludeUnsaved).ExcludeSaved(excludeSaved).ExcludeUnlimited(excludeUnlimited).ExcludeLimitedUpgradable(excludeLimitedUpgradable).ExcludeLimitedNonUpgradable(excludeLimitedNonUpgradable).ExcludeUnique(excludeUnique).ExcludeFromBlockchain(excludeFromBlockchain).SortByPrice(sortByPrice).Offset(offset).Limit(limit).Execute()
 
 getBusinessAccountGifts
 
@@ -3656,15 +3818,17 @@ func main() {
 	excludeUnsaved := true // bool | Pass *True* to exclude gifts that aren't saved to the account's profile page (optional)
 	excludeSaved := true // bool | Pass *True* to exclude gifts that are saved to the account's profile page (optional)
 	excludeUnlimited := true // bool | Pass *True* to exclude gifts that can be purchased an unlimited number of times (optional)
-	excludeLimited := true // bool | Pass *True* to exclude gifts that can be purchased a limited number of times (optional)
+	excludeLimitedUpgradable := true // bool | Pass *True* to exclude gifts that can be purchased a limited number of times and can be upgraded to unique (optional)
+	excludeLimitedNonUpgradable := true // bool | Pass *True* to exclude gifts that can be purchased a limited number of times and can't be upgraded to unique (optional)
 	excludeUnique := true // bool | Pass *True* to exclude unique gifts (optional)
+	excludeFromBlockchain := true // bool | Pass *True* to exclude gifts that were assigned from the TON blockchain and can't be resold or transferred in Telegram (optional)
 	sortByPrice := true // bool | Pass *True* to sort results by gift price instead of send date. Sorting is applied before pagination. (optional)
 	offset := "offset_example" // string | Offset of the first entry to return as received from the previous request; use empty string to get the first chunk of results (optional)
 	limit := int32(56) // int32 | The maximum number of gifts to be returned; 1-100. Defaults to 100 (optional) (default to 100)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DefaultAPI.PostGetBusinessAccountGifts(context.Background()).BusinessConnectionId(businessConnectionId).ExcludeUnsaved(excludeUnsaved).ExcludeSaved(excludeSaved).ExcludeUnlimited(excludeUnlimited).ExcludeLimited(excludeLimited).ExcludeUnique(excludeUnique).SortByPrice(sortByPrice).Offset(offset).Limit(limit).Execute()
+	resp, r, err := apiClient.DefaultAPI.PostGetBusinessAccountGifts(context.Background()).BusinessConnectionId(businessConnectionId).ExcludeUnsaved(excludeUnsaved).ExcludeSaved(excludeSaved).ExcludeUnlimited(excludeUnlimited).ExcludeLimitedUpgradable(excludeLimitedUpgradable).ExcludeLimitedNonUpgradable(excludeLimitedNonUpgradable).ExcludeUnique(excludeUnique).ExcludeFromBlockchain(excludeFromBlockchain).SortByPrice(sortByPrice).Offset(offset).Limit(limit).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostGetBusinessAccountGifts``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3689,8 +3853,10 @@ Name | Type | Description  | Notes
  **excludeUnsaved** | **bool** | Pass *True* to exclude gifts that aren&#39;t saved to the account&#39;s profile page | 
  **excludeSaved** | **bool** | Pass *True* to exclude gifts that are saved to the account&#39;s profile page | 
  **excludeUnlimited** | **bool** | Pass *True* to exclude gifts that can be purchased an unlimited number of times | 
- **excludeLimited** | **bool** | Pass *True* to exclude gifts that can be purchased a limited number of times | 
+ **excludeLimitedUpgradable** | **bool** | Pass *True* to exclude gifts that can be purchased a limited number of times and can be upgraded to unique | 
+ **excludeLimitedNonUpgradable** | **bool** | Pass *True* to exclude gifts that can be purchased a limited number of times and can&#39;t be upgraded to unique | 
  **excludeUnique** | **bool** | Pass *True* to exclude unique gifts | 
+ **excludeFromBlockchain** | **bool** | Pass *True* to exclude gifts that were assigned from the TON blockchain and can&#39;t be resold or transferred in Telegram | 
  **sortByPrice** | **bool** | Pass *True* to sort results by gift price instead of send date. Sorting is applied before pagination. | 
  **offset** | **string** | Offset of the first entry to return as received from the previous request; use empty string to get the first chunk of results | 
  **limit** | **int32** | The maximum number of gifts to be returned; 1-100. Defaults to 100 | [default to 100]
@@ -3866,7 +4032,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.leaveChatRequest_chat_id{Int32: new(int32)} // LeaveChatRequestChatId | 
+	chatId := openapiclient.getChatRequest_chat_id{Int32: new(int32)} // GetChatRequestChatId | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3891,7 +4057,7 @@ Other parameters are passed through a pointer to a apiPostGetChatRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**LeaveChatRequestChatId**](LeaveChatRequestChatId.md) |  | 
+ **chatId** | [**GetChatRequestChatId**](GetChatRequestChatId.md) |  | 
 
 ### Return type
 
@@ -3932,7 +4098,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.leaveChatRequest_chat_id{Int32: new(int32)} // LeaveChatRequestChatId | 
+	chatId := openapiclient.getChatRequest_chat_id{Int32: new(int32)} // GetChatRequestChatId | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3957,11 +4123,97 @@ Other parameters are passed through a pointer to a apiPostGetChatAdministratorsR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**LeaveChatRequestChatId**](LeaveChatRequestChatId.md) |  | 
+ **chatId** | [**GetChatRequestChatId**](GetChatRequestChatId.md) |  | 
 
 ### Return type
 
 [**GetChatAdministratorsResponse**](GetChatAdministratorsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/x-www-form-urlencoded, multipart/form-data, application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PostGetChatGifts
+
+> GetChatGiftsResponse PostGetChatGifts(ctx).ChatId(chatId).ExcludeUnsaved(excludeUnsaved).ExcludeSaved(excludeSaved).ExcludeUnlimited(excludeUnlimited).ExcludeLimitedUpgradable(excludeLimitedUpgradable).ExcludeLimitedNonUpgradable(excludeLimitedNonUpgradable).ExcludeFromBlockchain(excludeFromBlockchain).ExcludeUnique(excludeUnique).SortByPrice(sortByPrice).Offset(offset).Limit(limit).Execute()
+
+getChatGifts
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/tele-api/tele-rest-go"
+)
+
+func main() {
+	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
+	excludeUnsaved := true // bool | Pass *True* to exclude gifts that aren't saved to the chat's profile page. Always *True*, unless the bot has the *can\\\\_post\\\\_messages* administrator right in the channel. (optional)
+	excludeSaved := true // bool | Pass *True* to exclude gifts that are saved to the chat's profile page. Always *False*, unless the bot has the *can\\\\_post\\\\_messages* administrator right in the channel. (optional)
+	excludeUnlimited := true // bool | Pass *True* to exclude gifts that can be purchased an unlimited number of times (optional)
+	excludeLimitedUpgradable := true // bool | Pass *True* to exclude gifts that can be purchased a limited number of times and can be upgraded to unique (optional)
+	excludeLimitedNonUpgradable := true // bool | Pass *True* to exclude gifts that can be purchased a limited number of times and can't be upgraded to unique (optional)
+	excludeFromBlockchain := true // bool | Pass *True* to exclude gifts that were assigned from the TON blockchain and can't be resold or transferred in Telegram (optional)
+	excludeUnique := true // bool | Pass *True* to exclude unique gifts (optional)
+	sortByPrice := true // bool | Pass *True* to sort results by gift price instead of send date. Sorting is applied before pagination. (optional)
+	offset := "offset_example" // string | Offset of the first entry to return as received from the previous request; use an empty string to get the first chunk of results (optional)
+	limit := int32(56) // int32 | The maximum number of gifts to be returned; 1-100. Defaults to 100 (optional) (default to 100)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DefaultAPI.PostGetChatGifts(context.Background()).ChatId(chatId).ExcludeUnsaved(excludeUnsaved).ExcludeSaved(excludeSaved).ExcludeUnlimited(excludeUnlimited).ExcludeLimitedUpgradable(excludeLimitedUpgradable).ExcludeLimitedNonUpgradable(excludeLimitedNonUpgradable).ExcludeFromBlockchain(excludeFromBlockchain).ExcludeUnique(excludeUnique).SortByPrice(sortByPrice).Offset(offset).Limit(limit).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostGetChatGifts``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PostGetChatGifts`: GetChatGiftsResponse
+	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostGetChatGifts`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostGetChatGiftsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
+ **excludeUnsaved** | **bool** | Pass *True* to exclude gifts that aren&#39;t saved to the chat&#39;s profile page. Always *True*, unless the bot has the *can\\\\_post\\\\_messages* administrator right in the channel. | 
+ **excludeSaved** | **bool** | Pass *True* to exclude gifts that are saved to the chat&#39;s profile page. Always *False*, unless the bot has the *can\\\\_post\\\\_messages* administrator right in the channel. | 
+ **excludeUnlimited** | **bool** | Pass *True* to exclude gifts that can be purchased an unlimited number of times | 
+ **excludeLimitedUpgradable** | **bool** | Pass *True* to exclude gifts that can be purchased a limited number of times and can be upgraded to unique | 
+ **excludeLimitedNonUpgradable** | **bool** | Pass *True* to exclude gifts that can be purchased a limited number of times and can&#39;t be upgraded to unique | 
+ **excludeFromBlockchain** | **bool** | Pass *True* to exclude gifts that were assigned from the TON blockchain and can&#39;t be resold or transferred in Telegram | 
+ **excludeUnique** | **bool** | Pass *True* to exclude unique gifts | 
+ **sortByPrice** | **bool** | Pass *True* to sort results by gift price instead of send date. Sorting is applied before pagination. | 
+ **offset** | **string** | Offset of the first entry to return as received from the previous request; use an empty string to get the first chunk of results | 
+ **limit** | **int32** | The maximum number of gifts to be returned; 1-100. Defaults to 100 | [default to 100]
+
+### Return type
+
+[**GetChatGiftsResponse**](GetChatGiftsResponse.md)
 
 ### Authorization
 
@@ -3998,7 +4250,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.leaveChatRequest_chat_id{Int32: new(int32)} // LeaveChatRequestChatId | 
+	chatId := openapiclient.getChatRequest_chat_id{Int32: new(int32)} // GetChatRequestChatId | 
 	userId := int32(56) // int32 | Unique identifier of the target user
 
 	configuration := openapiclient.NewConfiguration()
@@ -4024,7 +4276,7 @@ Other parameters are passed through a pointer to a apiPostGetChatMemberRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**LeaveChatRequestChatId**](LeaveChatRequestChatId.md) |  | 
+ **chatId** | [**GetChatRequestChatId**](GetChatRequestChatId.md) |  | 
  **userId** | **int32** | Unique identifier of the target user | 
 
 ### Return type
@@ -4066,7 +4318,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.leaveChatRequest_chat_id{Int32: new(int32)} // LeaveChatRequestChatId | 
+	chatId := openapiclient.getChatRequest_chat_id{Int32: new(int32)} // GetChatRequestChatId | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4091,7 +4343,7 @@ Other parameters are passed through a pointer to a apiPostGetChatMemberCountRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**LeaveChatRequestChatId**](LeaveChatRequestChatId.md) |  | 
+ **chatId** | [**GetChatRequestChatId**](GetChatRequestChatId.md) |  | 
 
 ### Return type
 
@@ -5170,6 +5422,88 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## PostGetUserGifts
+
+> GetUserGiftsResponse PostGetUserGifts(ctx).UserId(userId).ExcludeUnlimited(excludeUnlimited).ExcludeLimitedUpgradable(excludeLimitedUpgradable).ExcludeLimitedNonUpgradable(excludeLimitedNonUpgradable).ExcludeFromBlockchain(excludeFromBlockchain).ExcludeUnique(excludeUnique).SortByPrice(sortByPrice).Offset(offset).Limit(limit).Execute()
+
+getUserGifts
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/tele-api/tele-rest-go"
+)
+
+func main() {
+	userId := int32(56) // int32 | Unique identifier of the user
+	excludeUnlimited := true // bool | Pass *True* to exclude gifts that can be purchased an unlimited number of times (optional)
+	excludeLimitedUpgradable := true // bool | Pass *True* to exclude gifts that can be purchased a limited number of times and can be upgraded to unique (optional)
+	excludeLimitedNonUpgradable := true // bool | Pass *True* to exclude gifts that can be purchased a limited number of times and can't be upgraded to unique (optional)
+	excludeFromBlockchain := true // bool | Pass *True* to exclude gifts that were assigned from the TON blockchain and can't be resold or transferred in Telegram (optional)
+	excludeUnique := true // bool | Pass *True* to exclude unique gifts (optional)
+	sortByPrice := true // bool | Pass *True* to sort results by gift price instead of send date. Sorting is applied before pagination. (optional)
+	offset := "offset_example" // string | Offset of the first entry to return as received from the previous request; use an empty string to get the first chunk of results (optional)
+	limit := int32(56) // int32 | The maximum number of gifts to be returned; 1-100. Defaults to 100 (optional) (default to 100)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DefaultAPI.PostGetUserGifts(context.Background()).UserId(userId).ExcludeUnlimited(excludeUnlimited).ExcludeLimitedUpgradable(excludeLimitedUpgradable).ExcludeLimitedNonUpgradable(excludeLimitedNonUpgradable).ExcludeFromBlockchain(excludeFromBlockchain).ExcludeUnique(excludeUnique).SortByPrice(sortByPrice).Offset(offset).Limit(limit).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostGetUserGifts``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PostGetUserGifts`: GetUserGiftsResponse
+	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostGetUserGifts`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostGetUserGiftsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **int32** | Unique identifier of the user | 
+ **excludeUnlimited** | **bool** | Pass *True* to exclude gifts that can be purchased an unlimited number of times | 
+ **excludeLimitedUpgradable** | **bool** | Pass *True* to exclude gifts that can be purchased a limited number of times and can be upgraded to unique | 
+ **excludeLimitedNonUpgradable** | **bool** | Pass *True* to exclude gifts that can be purchased a limited number of times and can&#39;t be upgraded to unique | 
+ **excludeFromBlockchain** | **bool** | Pass *True* to exclude gifts that were assigned from the TON blockchain and can&#39;t be resold or transferred in Telegram | 
+ **excludeUnique** | **bool** | Pass *True* to exclude unique gifts | 
+ **sortByPrice** | **bool** | Pass *True* to sort results by gift price instead of send date. Sorting is applied before pagination. | 
+ **offset** | **string** | Offset of the first entry to return as received from the previous request; use an empty string to get the first chunk of results | 
+ **limit** | **int32** | The maximum number of gifts to be returned; 1-100. Defaults to 100 | [default to 100]
+
+### Return type
+
+[**GetUserGiftsResponse**](GetUserGiftsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/x-www-form-urlencoded, multipart/form-data, application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## PostGetUserProfilePhotos
 
 > GetUserProfilePhotosResponse PostGetUserProfilePhotos(ctx).UserId(userId).Offset(offset).Limit(limit).Execute()
@@ -5398,7 +5732,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.BotCommandScopeChat_chat_id{Int32: new(int32)} // BotCommandScopeChatChatId | 
+	chatId := openapiclient.restrictChatMemberRequest_chat_id{Int32: new(int32)} // RestrictChatMemberRequestChatId | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5423,7 +5757,7 @@ Other parameters are passed through a pointer to a apiPostHideGeneralForumTopicR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
+ **chatId** | [**RestrictChatMemberRequestChatId**](RestrictChatMemberRequestChatId.md) |  | 
 
 ### Return type
 
@@ -5726,7 +6060,7 @@ No authorization required
 
 ## PostPromoteChatMember
 
-> PromoteChatMemberResponse PostPromoteChatMember(ctx).ChatId(chatId).UserId(userId).IsAnonymous(isAnonymous).CanManageChat(canManageChat).CanDeleteMessages(canDeleteMessages).CanManageVideoChats(canManageVideoChats).CanRestrictMembers(canRestrictMembers).CanPromoteMembers(canPromoteMembers).CanChangeInfo(canChangeInfo).CanInviteUsers(canInviteUsers).CanPostStories(canPostStories).CanEditStories(canEditStories).CanDeleteStories(canDeleteStories).CanPostMessages(canPostMessages).CanEditMessages(canEditMessages).CanPinMessages(canPinMessages).CanManageTopics(canManageTopics).Execute()
+> PromoteChatMemberResponse PostPromoteChatMember(ctx).ChatId(chatId).UserId(userId).IsAnonymous(isAnonymous).CanManageChat(canManageChat).CanDeleteMessages(canDeleteMessages).CanManageVideoChats(canManageVideoChats).CanRestrictMembers(canRestrictMembers).CanPromoteMembers(canPromoteMembers).CanChangeInfo(canChangeInfo).CanInviteUsers(canInviteUsers).CanPostStories(canPostStories).CanEditStories(canEditStories).CanDeleteStories(canDeleteStories).CanPostMessages(canPostMessages).CanEditMessages(canEditMessages).CanPinMessages(canPinMessages).CanManageTopics(canManageTopics).CanManageDirectMessages(canManageDirectMessages).Execute()
 
 promoteChatMember
 
@@ -5751,7 +6085,7 @@ func main() {
 	canManageChat := true // bool | Pass *True* if the administrator can access the chat event log, get boost list, see hidden supergroup and channel members, report spam messages, ignore slow mode, and send messages to the chat without paying Telegram Stars. Implied by any other administrator privilege. (optional)
 	canDeleteMessages := true // bool | Pass *True* if the administrator can delete messages of other users (optional)
 	canManageVideoChats := true // bool | Pass *True* if the administrator can manage video chats (optional)
-	canRestrictMembers := true // bool | Pass *True* if the administrator can restrict, ban or unban chat members, or access supergroup statistics (optional)
+	canRestrictMembers := true // bool | Pass *True* if the administrator can restrict, ban or unban chat members, or access supergroup statistics. For backward compatibility, defaults to *True* for promotions of channel administrators (optional)
 	canPromoteMembers := true // bool | Pass *True* if the administrator can add new administrators with a subset of their own privileges or demote administrators that they have promoted, directly or indirectly (promoted by administrators that were appointed by him) (optional)
 	canChangeInfo := true // bool | Pass *True* if the administrator can change chat title, photo and other settings (optional)
 	canInviteUsers := true // bool | Pass *True* if the administrator can invite new users to the chat (optional)
@@ -5762,10 +6096,11 @@ func main() {
 	canEditMessages := true // bool | Pass *True* if the administrator can edit messages of other users and can pin messages; for channels only (optional)
 	canPinMessages := true // bool | Pass *True* if the administrator can pin messages; for supergroups only (optional)
 	canManageTopics := true // bool | Pass *True* if the user is allowed to create, rename, close, and reopen forum topics; for supergroups only (optional)
+	canManageDirectMessages := true // bool | Pass *True* if the administrator can manage direct messages within the channel and decline suggested posts; for channels only (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DefaultAPI.PostPromoteChatMember(context.Background()).ChatId(chatId).UserId(userId).IsAnonymous(isAnonymous).CanManageChat(canManageChat).CanDeleteMessages(canDeleteMessages).CanManageVideoChats(canManageVideoChats).CanRestrictMembers(canRestrictMembers).CanPromoteMembers(canPromoteMembers).CanChangeInfo(canChangeInfo).CanInviteUsers(canInviteUsers).CanPostStories(canPostStories).CanEditStories(canEditStories).CanDeleteStories(canDeleteStories).CanPostMessages(canPostMessages).CanEditMessages(canEditMessages).CanPinMessages(canPinMessages).CanManageTopics(canManageTopics).Execute()
+	resp, r, err := apiClient.DefaultAPI.PostPromoteChatMember(context.Background()).ChatId(chatId).UserId(userId).IsAnonymous(isAnonymous).CanManageChat(canManageChat).CanDeleteMessages(canDeleteMessages).CanManageVideoChats(canManageVideoChats).CanRestrictMembers(canRestrictMembers).CanPromoteMembers(canPromoteMembers).CanChangeInfo(canChangeInfo).CanInviteUsers(canInviteUsers).CanPostStories(canPostStories).CanEditStories(canEditStories).CanDeleteStories(canDeleteStories).CanPostMessages(canPostMessages).CanEditMessages(canEditMessages).CanPinMessages(canPinMessages).CanManageTopics(canManageTopics).CanManageDirectMessages(canManageDirectMessages).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostPromoteChatMember``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5792,7 +6127,7 @@ Name | Type | Description  | Notes
  **canManageChat** | **bool** | Pass *True* if the administrator can access the chat event log, get boost list, see hidden supergroup and channel members, report spam messages, ignore slow mode, and send messages to the chat without paying Telegram Stars. Implied by any other administrator privilege. | 
  **canDeleteMessages** | **bool** | Pass *True* if the administrator can delete messages of other users | 
  **canManageVideoChats** | **bool** | Pass *True* if the administrator can manage video chats | 
- **canRestrictMembers** | **bool** | Pass *True* if the administrator can restrict, ban or unban chat members, or access supergroup statistics | 
+ **canRestrictMembers** | **bool** | Pass *True* if the administrator can restrict, ban or unban chat members, or access supergroup statistics. For backward compatibility, defaults to *True* for promotions of channel administrators | 
  **canPromoteMembers** | **bool** | Pass *True* if the administrator can add new administrators with a subset of their own privileges or demote administrators that they have promoted, directly or indirectly (promoted by administrators that were appointed by him) | 
  **canChangeInfo** | **bool** | Pass *True* if the administrator can change chat title, photo and other settings | 
  **canInviteUsers** | **bool** | Pass *True* if the administrator can invite new users to the chat | 
@@ -5803,6 +6138,7 @@ Name | Type | Description  | Notes
  **canEditMessages** | **bool** | Pass *True* if the administrator can edit messages of other users and can pin messages; for channels only | 
  **canPinMessages** | **bool** | Pass *True* if the administrator can pin messages; for supergroups only | 
  **canManageTopics** | **bool** | Pass *True* if the user is allowed to create, rename, close, and reopen forum topics; for supergroups only | 
+ **canManageDirectMessages** | **bool** | Pass *True* if the administrator can manage direct messages within the channel and decline suggested posts; for channels only | 
 
 ### Return type
 
@@ -6181,7 +6517,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.BotCommandScopeChat_chat_id{Int32: new(int32)} // BotCommandScopeChatChatId | 
+	chatId := openapiclient.restrictChatMemberRequest_chat_id{Int32: new(int32)} // RestrictChatMemberRequestChatId | 
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread of the forum topic
 
 	configuration := openapiclient.NewConfiguration()
@@ -6207,7 +6543,7 @@ Other parameters are passed through a pointer to a apiPostReopenForumTopicReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
+ **chatId** | [**RestrictChatMemberRequestChatId**](RestrictChatMemberRequestChatId.md) |  | 
  **messageThreadId** | **int32** | Unique identifier for the target message thread of the forum topic | 
 
 ### Return type
@@ -6249,7 +6585,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.BotCommandScopeChat_chat_id{Int32: new(int32)} // BotCommandScopeChatChatId | 
+	chatId := openapiclient.restrictChatMemberRequest_chat_id{Int32: new(int32)} // RestrictChatMemberRequestChatId | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6274,7 +6610,7 @@ Other parameters are passed through a pointer to a apiPostReopenGeneralForumTopi
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
+ **chatId** | [**RestrictChatMemberRequestChatId**](RestrictChatMemberRequestChatId.md) |  | 
 
 ### Return type
 
@@ -6366,6 +6702,82 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## PostRepostStory
+
+> RepostStoryResponse PostRepostStory(ctx).BusinessConnectionId(businessConnectionId).FromChatId(fromChatId).FromStoryId(fromStoryId).ActivePeriod(activePeriod).PostToChatPage(postToChatPage).ProtectContent(protectContent).Execute()
+
+repostStory
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/tele-api/tele-rest-go"
+)
+
+func main() {
+	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection
+	fromChatId := int32(56) // int32 | Unique identifier of the chat which posted the story that should be reposted
+	fromStoryId := int32(56) // int32 | Unique identifier of the story that should be reposted
+	activePeriod := int32(56) // int32 | Period after which the story is moved to the archive, in seconds; must be one of `6 * 3600`, `12 * 3600`, `86400`, or `2 * 86400`
+	postToChatPage := true // bool | Pass *True* to keep the story accessible after it expires (optional)
+	protectContent := true // bool | Pass *True* if the content of the story must be protected from forwarding and screenshotting (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DefaultAPI.PostRepostStory(context.Background()).BusinessConnectionId(businessConnectionId).FromChatId(fromChatId).FromStoryId(fromStoryId).ActivePeriod(activePeriod).PostToChatPage(postToChatPage).ProtectContent(protectContent).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostRepostStory``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PostRepostStory`: RepostStoryResponse
+	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostRepostStory`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostRepostStoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **businessConnectionId** | **string** | Unique identifier of the business connection | 
+ **fromChatId** | **int32** | Unique identifier of the chat which posted the story that should be reposted | 
+ **fromStoryId** | **int32** | Unique identifier of the story that should be reposted | 
+ **activePeriod** | **int32** | Period after which the story is moved to the archive, in seconds; must be one of &#x60;6 * 3600&#x60;, &#x60;12 * 3600&#x60;, &#x60;86400&#x60;, or &#x60;2 * 86400&#x60; | 
+ **postToChatPage** | **bool** | Pass *True* to keep the story accessible after it expires | 
+ **protectContent** | **bool** | Pass *True* if the content of the story must be protected from forwarding and screenshotting | 
+
+### Return type
+
+[**RepostStoryResponse**](RepostStoryResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/x-www-form-urlencoded, multipart/form-data, application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## PostRestrictChatMember
 
 > RestrictChatMemberResponse PostRestrictChatMember(ctx).ChatId(chatId).UserId(userId).Permissions(permissions).UseIndependentChatPermissions(useIndependentChatPermissions).UntilDate(untilDate).Execute()
@@ -6387,7 +6799,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.BotCommandScopeChat_chat_id{Int32: new(int32)} // BotCommandScopeChatChatId | 
+	chatId := openapiclient.restrictChatMemberRequest_chat_id{Int32: new(int32)} // RestrictChatMemberRequestChatId | 
 	userId := int32(56) // int32 | Unique identifier of the target user
 	permissions := *openapiclient.NewChatPermissions() // ChatPermissions | 
 	useIndependentChatPermissions := true // bool | Pass *True* if chat permissions are set independently. Otherwise, the *can\\\\_send\\\\_other\\\\_messages* and *can\\\\_add\\\\_web\\\\_page\\\\_previews* permissions will imply the *can\\\\_send\\\\_messages*, *can\\\\_send\\\\_audios*, *can\\\\_send\\\\_documents*, *can\\\\_send\\\\_photos*, *can\\\\_send\\\\_videos*, *can\\\\_send\\\\_video\\\\_notes*, and *can\\\\_send\\\\_voice\\\\_notes* permissions; the *can\\\\_send\\\\_polls* permission will imply the *can\\\\_send\\\\_messages* permission. (optional)
@@ -6416,7 +6828,7 @@ Other parameters are passed through a pointer to a apiPostRestrictChatMemberRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
+ **chatId** | [**RestrictChatMemberRequestChatId**](RestrictChatMemberRequestChatId.md) |  | 
  **userId** | **int32** | Unique identifier of the target user | 
  **permissions** | [**ChatPermissions**](ChatPermissions.md) |  | 
  **useIndependentChatPermissions** | **bool** | Pass *True* if chat permissions are set independently. Otherwise, the *can\\\\_send\\\\_other\\\\_messages* and *can\\\\_add\\\\_web\\\\_page\\\\_previews* permissions will imply the *can\\\\_send\\\\_messages*, *can\\\\_send\\\\_audios*, *can\\\\_send\\\\_documents*, *can\\\\_send\\\\_photos*, *can\\\\_send\\\\_videos*, *can\\\\_send\\\\_video\\\\_notes*, and *can\\\\_send\\\\_voice\\\\_notes* permissions; the *can\\\\_send\\\\_polls* permission will imply the *can\\\\_send\\\\_messages* permission. | 
@@ -6586,7 +6998,7 @@ No authorization required
 
 ## PostSendAnimation
 
-> SendAnimationResponse PostSendAnimation(ctx).ChatId(chatId).Animation(animation).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).Duration(duration).Width(width).Height(height).Thumbnail(thumbnail).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).ShowCaptionAboveMedia(showCaptionAboveMedia).HasSpoiler(hasSpoiler).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+> SendAnimationResponse PostSendAnimation(ctx).ChatId(chatId).Animation(animation).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).Duration(duration).Width(width).Height(height).Thumbnail(thumbnail).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).ShowCaptionAboveMedia(showCaptionAboveMedia).HasSpoiler(hasSpoiler).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).SuggestedPostParameters(suggestedPostParameters).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 
 sendAnimation
 
@@ -6608,7 +7020,8 @@ func main() {
 	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	animation := "animation_example" // string | 
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
-	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
+	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only (optional)
+	directMessagesTopicId := int32(56) // int32 | Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat (optional)
 	duration := int32(56) // int32 | Duration of sent animation in seconds (optional)
 	width := int32(56) // int32 | Animation width (optional)
 	height := int32(56) // int32 | Animation height (optional)
@@ -6622,12 +7035,13 @@ func main() {
 	protectContent := true // bool | Protects the contents of the sent message from forwarding and saving (optional)
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
+	suggestedPostParameters := *openapiclient.NewSuggestedPostParameters() // SuggestedPostParameters |  (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
 	replyMarkup := openapiclient.sendMessageRequest_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessageRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DefaultAPI.PostSendAnimation(context.Background()).ChatId(chatId).Animation(animation).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).Duration(duration).Width(width).Height(height).Thumbnail(thumbnail).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).ShowCaptionAboveMedia(showCaptionAboveMedia).HasSpoiler(hasSpoiler).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+	resp, r, err := apiClient.DefaultAPI.PostSendAnimation(context.Background()).ChatId(chatId).Animation(animation).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).Duration(duration).Width(width).Height(height).Thumbnail(thumbnail).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).ShowCaptionAboveMedia(showCaptionAboveMedia).HasSpoiler(hasSpoiler).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).SuggestedPostParameters(suggestedPostParameters).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSendAnimation``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6651,7 +7065,8 @@ Name | Type | Description  | Notes
  **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **animation** | **string** |  | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message will be sent | 
- **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | 
+ **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only | 
+ **directMessagesTopicId** | **int32** | Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat | 
  **duration** | **int32** | Duration of sent animation in seconds | 
  **width** | **int32** | Animation width | 
  **height** | **int32** | Animation height | 
@@ -6665,6 +7080,7 @@ Name | Type | Description  | Notes
  **protectContent** | **bool** | Protects the contents of the sent message from forwarding and saving | 
  **allowPaidBroadcast** | **bool** | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance | 
  **messageEffectId** | **string** | Unique identifier of the message effect to be added to the message; for private chats only | 
+ **suggestedPostParameters** | [**SuggestedPostParameters**](SuggestedPostParameters.md) |  | 
  **replyParameters** | [**ReplyParameters**](ReplyParameters.md) |  | 
  **replyMarkup** | [**SendMessageRequestReplyMarkup**](SendMessageRequestReplyMarkup.md) |  | 
 
@@ -6688,7 +7104,7 @@ No authorization required
 
 ## PostSendAudio
 
-> SendAudioResponse PostSendAudio(ctx).ChatId(chatId).Audio(audio).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).Duration(duration).Performer(performer).Title(title).Thumbnail(thumbnail).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+> SendAudioResponse PostSendAudio(ctx).ChatId(chatId).Audio(audio).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).Duration(duration).Performer(performer).Title(title).Thumbnail(thumbnail).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).SuggestedPostParameters(suggestedPostParameters).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 
 sendAudio
 
@@ -6710,7 +7126,8 @@ func main() {
 	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	audio := "audio_example" // string | 
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
-	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
+	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only (optional)
+	directMessagesTopicId := int32(56) // int32 | Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat (optional)
 	caption := "caption_example" // string | Audio caption, 0-1024 characters after entities parsing (optional)
 	parseMode := "parseMode_example" // string | Mode for parsing entities in the audio caption. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. (optional)
 	captionEntities := []openapiclient.MessageEntity{*openapiclient.NewMessageEntity("Type_example", int32(123), int32(123))} // []MessageEntity | A JSON-serialized list of special entities that appear in the caption, which can be specified instead of *parse\\\\_mode* (optional)
@@ -6722,12 +7139,13 @@ func main() {
 	protectContent := true // bool | Protects the contents of the sent message from forwarding and saving (optional)
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
+	suggestedPostParameters := *openapiclient.NewSuggestedPostParameters() // SuggestedPostParameters |  (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
 	replyMarkup := openapiclient.sendMessageRequest_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessageRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DefaultAPI.PostSendAudio(context.Background()).ChatId(chatId).Audio(audio).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).Duration(duration).Performer(performer).Title(title).Thumbnail(thumbnail).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+	resp, r, err := apiClient.DefaultAPI.PostSendAudio(context.Background()).ChatId(chatId).Audio(audio).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).Duration(duration).Performer(performer).Title(title).Thumbnail(thumbnail).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).SuggestedPostParameters(suggestedPostParameters).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSendAudio``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6751,7 +7169,8 @@ Name | Type | Description  | Notes
  **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **audio** | **string** |  | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message will be sent | 
- **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | 
+ **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only | 
+ **directMessagesTopicId** | **int32** | Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat | 
  **caption** | **string** | Audio caption, 0-1024 characters after entities parsing | 
  **parseMode** | **string** | Mode for parsing entities in the audio caption. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. | 
  **captionEntities** | [**[]MessageEntity**](MessageEntity.md) | A JSON-serialized list of special entities that appear in the caption, which can be specified instead of *parse\\\\_mode* | 
@@ -6763,6 +7182,7 @@ Name | Type | Description  | Notes
  **protectContent** | **bool** | Protects the contents of the sent message from forwarding and saving | 
  **allowPaidBroadcast** | **bool** | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance | 
  **messageEffectId** | **string** | Unique identifier of the message effect to be added to the message; for private chats only | 
+ **suggestedPostParameters** | [**SuggestedPostParameters**](SuggestedPostParameters.md) |  | 
  **replyParameters** | [**ReplyParameters**](ReplyParameters.md) |  | 
  **replyMarkup** | [**SendMessageRequestReplyMarkup**](SendMessageRequestReplyMarkup.md) |  | 
 
@@ -6805,10 +7225,10 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
+	chatId := openapiclient.sendChatActionRequest_chat_id{Int32: new(int32)} // SendChatActionRequestChatId | 
 	action := "action_example" // string | Type of action to broadcast. Choose one, depending on what the user is about to receive: *typing* for [text messages](https://core.telegram.org/bots/api/#sendmessage), *upload\\\\_photo* for [photos](https://core.telegram.org/bots/api/#sendphoto), *record\\\\_video* or *upload\\\\_video* for [videos](https://core.telegram.org/bots/api/#sendvideo), *record\\\\_voice* or *upload\\\\_voice* for [voice notes](https://core.telegram.org/bots/api/#sendvoice), *upload\\\\_document* for [general files](https://core.telegram.org/bots/api/#senddocument), *choose\\\\_sticker* for [stickers](https://core.telegram.org/bots/api/#sendsticker), *find\\\\_location* for [location data](https://core.telegram.org/bots/api/#sendlocation), *record\\\\_video\\\\_note* or *upload\\\\_video\\\\_note* for [video notes](https://core.telegram.org/bots/api/#sendvideonote).
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the action will be sent (optional)
-	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread; for supergroups only (optional)
+	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread or topic of a forum; for supergroups and private chats of bots with forum topic mode enabled only (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6833,10 +7253,10 @@ Other parameters are passed through a pointer to a apiPostSendChatActionRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
+ **chatId** | [**SendChatActionRequestChatId**](SendChatActionRequestChatId.md) |  | 
  **action** | **string** | Type of action to broadcast. Choose one, depending on what the user is about to receive: *typing* for [text messages](https://core.telegram.org/bots/api/#sendmessage), *upload\\\\_photo* for [photos](https://core.telegram.org/bots/api/#sendphoto), *record\\\\_video* or *upload\\\\_video* for [videos](https://core.telegram.org/bots/api/#sendvideo), *record\\\\_voice* or *upload\\\\_voice* for [voice notes](https://core.telegram.org/bots/api/#sendvoice), *upload\\\\_document* for [general files](https://core.telegram.org/bots/api/#senddocument), *choose\\\\_sticker* for [stickers](https://core.telegram.org/bots/api/#sendsticker), *find\\\\_location* for [location data](https://core.telegram.org/bots/api/#sendlocation), *record\\\\_video\\\\_note* or *upload\\\\_video\\\\_note* for [video notes](https://core.telegram.org/bots/api/#sendvideonote). | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the action will be sent | 
- **messageThreadId** | **int32** | Unique identifier for the target message thread; for supergroups only | 
+ **messageThreadId** | **int32** | Unique identifier for the target message thread or topic of a forum; for supergroups and private chats of bots with forum topic mode enabled only | 
 
 ### Return type
 
@@ -6938,7 +7358,7 @@ No authorization required
 
 ## PostSendContact
 
-> SendContactResponse PostSendContact(ctx).ChatId(chatId).PhoneNumber(phoneNumber).FirstName(firstName).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).LastName(lastName).Vcard(vcard).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+> SendContactResponse PostSendContact(ctx).ChatId(chatId).PhoneNumber(phoneNumber).FirstName(firstName).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).LastName(lastName).Vcard(vcard).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).SuggestedPostParameters(suggestedPostParameters).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 
 sendContact
 
@@ -6961,19 +7381,21 @@ func main() {
 	phoneNumber := "phoneNumber_example" // string | Contact's phone number
 	firstName := "firstName_example" // string | Contact's first name
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
-	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
+	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only (optional)
+	directMessagesTopicId := int32(56) // int32 | Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat (optional)
 	lastName := "lastName_example" // string | Contact's last name (optional)
 	vcard := "vcard_example" // string | Additional data about the contact in the form of a [vCard](https://en.wikipedia.org/wiki/VCard), 0-2048 bytes (optional)
 	disableNotification := true // bool | Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. (optional)
 	protectContent := true // bool | Protects the contents of the sent message from forwarding and saving (optional)
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
+	suggestedPostParameters := *openapiclient.NewSuggestedPostParameters() // SuggestedPostParameters |  (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
 	replyMarkup := openapiclient.sendMessageRequest_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessageRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DefaultAPI.PostSendContact(context.Background()).ChatId(chatId).PhoneNumber(phoneNumber).FirstName(firstName).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).LastName(lastName).Vcard(vcard).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+	resp, r, err := apiClient.DefaultAPI.PostSendContact(context.Background()).ChatId(chatId).PhoneNumber(phoneNumber).FirstName(firstName).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).LastName(lastName).Vcard(vcard).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).SuggestedPostParameters(suggestedPostParameters).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSendContact``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6998,13 +7420,15 @@ Name | Type | Description  | Notes
  **phoneNumber** | **string** | Contact&#39;s phone number | 
  **firstName** | **string** | Contact&#39;s first name | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message will be sent | 
- **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | 
+ **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only | 
+ **directMessagesTopicId** | **int32** | Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat | 
  **lastName** | **string** | Contact&#39;s last name | 
  **vcard** | **string** | Additional data about the contact in the form of a [vCard](https://en.wikipedia.org/wiki/VCard), 0-2048 bytes | 
  **disableNotification** | **bool** | Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. | 
  **protectContent** | **bool** | Protects the contents of the sent message from forwarding and saving | 
  **allowPaidBroadcast** | **bool** | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance | 
  **messageEffectId** | **string** | Unique identifier of the message effect to be added to the message; for private chats only | 
+ **suggestedPostParameters** | [**SuggestedPostParameters**](SuggestedPostParameters.md) |  | 
  **replyParameters** | [**ReplyParameters**](ReplyParameters.md) |  | 
  **replyMarkup** | [**SendMessageRequestReplyMarkup**](SendMessageRequestReplyMarkup.md) |  | 
 
@@ -7028,7 +7452,7 @@ No authorization required
 
 ## PostSendDice
 
-> SendDiceResponse PostSendDice(ctx).ChatId(chatId).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).Emoji(emoji).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+> SendDiceResponse PostSendDice(ctx).ChatId(chatId).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).Emoji(emoji).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).SuggestedPostParameters(suggestedPostParameters).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 
 sendDice
 
@@ -7049,18 +7473,20 @@ import (
 func main() {
 	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
-	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
+	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only (optional)
+	directMessagesTopicId := int32(56) // int32 | Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat (optional)
 	emoji := "emoji_example" // string | Emoji on which the dice throw animation is based. Currently, must be one of “🎲”, “🎯”, “🏀”, “⚽”, “🎳”, or “🎰”. Dice can have values 1-6 for “🎲”, “🎯” and “🎳”, values 1-5 for “🏀” and “⚽”, and values 1-64 for “🎰”. Defaults to “🎲” (optional) (default to "🎲")
 	disableNotification := true // bool | Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. (optional)
 	protectContent := true // bool | Protects the contents of the sent message from forwarding (optional)
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
+	suggestedPostParameters := *openapiclient.NewSuggestedPostParameters() // SuggestedPostParameters |  (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
 	replyMarkup := openapiclient.sendMessageRequest_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessageRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DefaultAPI.PostSendDice(context.Background()).ChatId(chatId).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).Emoji(emoji).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+	resp, r, err := apiClient.DefaultAPI.PostSendDice(context.Background()).ChatId(chatId).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).Emoji(emoji).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).SuggestedPostParameters(suggestedPostParameters).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSendDice``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7083,12 +7509,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message will be sent | 
- **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | 
+ **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only | 
+ **directMessagesTopicId** | **int32** | Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat | 
  **emoji** | **string** | Emoji on which the dice throw animation is based. Currently, must be one of “🎲”, “🎯”, “🏀”, “⚽”, “🎳”, or “🎰”. Dice can have values 1-6 for “🎲”, “🎯” and “🎳”, values 1-5 for “🏀” and “⚽”, and values 1-64 for “🎰”. Defaults to “🎲” | [default to &quot;🎲&quot;]
  **disableNotification** | **bool** | Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. | 
  **protectContent** | **bool** | Protects the contents of the sent message from forwarding | 
  **allowPaidBroadcast** | **bool** | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance | 
  **messageEffectId** | **string** | Unique identifier of the message effect to be added to the message; for private chats only | 
+ **suggestedPostParameters** | [**SuggestedPostParameters**](SuggestedPostParameters.md) |  | 
  **replyParameters** | [**ReplyParameters**](ReplyParameters.md) |  | 
  **replyMarkup** | [**SendMessageRequestReplyMarkup**](SendMessageRequestReplyMarkup.md) |  | 
 
@@ -7112,7 +7540,7 @@ No authorization required
 
 ## PostSendDocument
 
-> SendDocumentResponse PostSendDocument(ctx).ChatId(chatId).Document(document).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).Thumbnail(thumbnail).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).DisableContentTypeDetection(disableContentTypeDetection).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+> SendDocumentResponse PostSendDocument(ctx).ChatId(chatId).Document(document).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).Thumbnail(thumbnail).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).DisableContentTypeDetection(disableContentTypeDetection).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).SuggestedPostParameters(suggestedPostParameters).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 
 sendDocument
 
@@ -7134,7 +7562,8 @@ func main() {
 	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	document := "document_example" // string | 
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
-	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
+	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only (optional)
+	directMessagesTopicId := int32(56) // int32 | Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat (optional)
 	thumbnail := "thumbnail_example" // string |  (optional)
 	caption := "caption_example" // string | Document caption (may also be used when resending documents by *file\\\\_id*), 0-1024 characters after entities parsing (optional)
 	parseMode := "parseMode_example" // string | Mode for parsing entities in the document caption. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. (optional)
@@ -7144,12 +7573,13 @@ func main() {
 	protectContent := true // bool | Protects the contents of the sent message from forwarding and saving (optional)
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
+	suggestedPostParameters := *openapiclient.NewSuggestedPostParameters() // SuggestedPostParameters |  (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
 	replyMarkup := openapiclient.sendMessageRequest_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessageRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DefaultAPI.PostSendDocument(context.Background()).ChatId(chatId).Document(document).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).Thumbnail(thumbnail).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).DisableContentTypeDetection(disableContentTypeDetection).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+	resp, r, err := apiClient.DefaultAPI.PostSendDocument(context.Background()).ChatId(chatId).Document(document).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).Thumbnail(thumbnail).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).DisableContentTypeDetection(disableContentTypeDetection).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).SuggestedPostParameters(suggestedPostParameters).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSendDocument``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7173,7 +7603,8 @@ Name | Type | Description  | Notes
  **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **document** | **string** |  | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message will be sent | 
- **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | 
+ **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only | 
+ **directMessagesTopicId** | **int32** | Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat | 
  **thumbnail** | **string** |  | 
  **caption** | **string** | Document caption (may also be used when resending documents by *file\\\\_id*), 0-1024 characters after entities parsing | 
  **parseMode** | **string** | Mode for parsing entities in the document caption. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. | 
@@ -7183,6 +7614,7 @@ Name | Type | Description  | Notes
  **protectContent** | **bool** | Protects the contents of the sent message from forwarding and saving | 
  **allowPaidBroadcast** | **bool** | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance | 
  **messageEffectId** | **string** | Unique identifier of the message effect to be added to the message; for private chats only | 
+ **suggestedPostParameters** | [**SuggestedPostParameters**](SuggestedPostParameters.md) |  | 
  **replyParameters** | [**ReplyParameters**](ReplyParameters.md) |  | 
  **replyMarkup** | [**SendMessageRequestReplyMarkup**](SendMessageRequestReplyMarkup.md) |  | 
 
@@ -7225,10 +7657,10 @@ import (
 )
 
 func main() {
-	chatId := int32(56) // int32 | Unique identifier for the target chat
+	chatId := int32(56) // int32 | Unique identifier for the target chat. Games can't be sent to channel direct messages chats and channel chats.
 	gameShortName := "gameShortName_example" // string | Short name of the game, serves as the unique identifier for the game. Set up your games via [@BotFather](https://t.me/botfather).
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
-	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
+	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only (optional)
 	disableNotification := true // bool | Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. (optional)
 	protectContent := true // bool | Protects the contents of the sent message from forwarding and saving (optional)
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
@@ -7259,10 +7691,10 @@ Other parameters are passed through a pointer to a apiPostSendGameRequest struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | **int32** | Unique identifier for the target chat | 
+ **chatId** | **int32** | Unique identifier for the target chat. Games can&#39;t be sent to channel direct messages chats and channel chats. | 
  **gameShortName** | **string** | Short name of the game, serves as the unique identifier for the game. Set up your games via [@BotFather](https://t.me/botfather). | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message will be sent | 
- **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | 
+ **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only | 
  **disableNotification** | **bool** | Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. | 
  **protectContent** | **bool** | Protects the contents of the sent message from forwarding and saving | 
  **allowPaidBroadcast** | **bool** | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance | 
@@ -7309,7 +7741,7 @@ import (
 )
 
 func main() {
-	giftId := "giftId_example" // string | Identifier of the gift
+	giftId := "giftId_example" // string | Identifier of the gift; limited gifts can't be sent to channel chats
 	userId := int32(56) // int32 | Required if *chat\\\\_id* is not specified. Unique identifier of the target user who will receive the gift. (optional)
 	chatId := openapiclient.sendGiftRequest_chat_id{Int32: new(int32)} // SendGiftRequestChatId |  (optional)
 	payForUpgrade := true // bool | Pass *True* to pay for the gift upgrade from the bot's balance, thereby making the upgrade free for the receiver (optional)
@@ -7340,7 +7772,7 @@ Other parameters are passed through a pointer to a apiPostSendGiftRequest struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **giftId** | **string** | Identifier of the gift | 
+ **giftId** | **string** | Identifier of the gift; limited gifts can&#39;t be sent to channel chats | 
  **userId** | **int32** | Required if *chat\\\\_id* is not specified. Unique identifier of the target user who will receive the gift. | 
  **chatId** | [**SendGiftRequestChatId**](SendGiftRequestChatId.md) |  | 
  **payForUpgrade** | **bool** | Pass *True* to pay for the gift upgrade from the bot&#39;s balance, thereby making the upgrade free for the receiver | 
@@ -7368,7 +7800,7 @@ No authorization required
 
 ## PostSendInvoice
 
-> SendInvoiceResponse PostSendInvoice(ctx).ChatId(chatId).Title(title).Description(description).Payload(payload).Currency(currency).Prices(prices).MessageThreadId(messageThreadId).ProviderToken(providerToken).MaxTipAmount(maxTipAmount).SuggestedTipAmounts(suggestedTipAmounts).StartParameter(startParameter).ProviderData(providerData).PhotoUrl(photoUrl).PhotoSize(photoSize).PhotoWidth(photoWidth).PhotoHeight(photoHeight).NeedName(needName).NeedPhoneNumber(needPhoneNumber).NeedEmail(needEmail).NeedShippingAddress(needShippingAddress).SendPhoneNumberToProvider(sendPhoneNumberToProvider).SendEmailToProvider(sendEmailToProvider).IsFlexible(isFlexible).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+> SendInvoiceResponse PostSendInvoice(ctx).ChatId(chatId).Title(title).Description(description).Payload(payload).Currency(currency).Prices(prices).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).ProviderToken(providerToken).MaxTipAmount(maxTipAmount).SuggestedTipAmounts(suggestedTipAmounts).StartParameter(startParameter).ProviderData(providerData).PhotoUrl(photoUrl).PhotoSize(photoSize).PhotoWidth(photoWidth).PhotoHeight(photoHeight).NeedName(needName).NeedPhoneNumber(needPhoneNumber).NeedEmail(needEmail).NeedShippingAddress(needShippingAddress).SendPhoneNumberToProvider(sendPhoneNumberToProvider).SendEmailToProvider(sendEmailToProvider).IsFlexible(isFlexible).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).SuggestedPostParameters(suggestedPostParameters).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 
 sendInvoice
 
@@ -7393,7 +7825,8 @@ func main() {
 	payload := "payload_example" // string | Bot-defined invoice payload, 1-128 bytes. This will not be displayed to the user, use it for your internal processes.
 	currency := "currency_example" // string | Three-letter ISO 4217 currency code, see [more on currencies](https://core.telegram.org/bots/payments#supported-currencies). Pass “XTR” for payments in [Telegram Stars](https://t.me/BotNews/90).
 	prices := []openapiclient.LabeledPrice{*openapiclient.NewLabeledPrice("Label_example", int32(123))} // []LabeledPrice | Price breakdown, a JSON-serialized list of components (e.g. product price, tax, discount, delivery cost, delivery tax, bonus, etc.). Must contain exactly one item for payments in [Telegram Stars](https://t.me/BotNews/90).
-	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
+	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only (optional)
+	directMessagesTopicId := int32(56) // int32 | Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat (optional)
 	providerToken := "providerToken_example" // string | Payment provider token, obtained via [@BotFather](https://t.me/botfather). Pass an empty string for payments in [Telegram Stars](https://t.me/BotNews/90). (optional)
 	maxTipAmount := int32(56) // int32 | The maximum accepted amount for tips in the *smallest units* of the currency (integer, **not** float/double). For example, for a maximum tip of `US$ 1.45` pass `max_tip_amount = 145`. See the *exp* parameter in [currencies.json](https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). Defaults to 0. Not supported for payments in [Telegram Stars](https://t.me/BotNews/90). (optional) (default to 0)
 	suggestedTipAmounts := []int32{int32(123)} // []int32 | A JSON-serialized array of suggested amounts of tips in the *smallest units* of the currency (integer, **not** float/double). At most 4 suggested tip amounts can be specified. The suggested tip amounts must be positive, passed in a strictly increased order and must not exceed *max\\\\_tip\\\\_amount*. (optional)
@@ -7414,12 +7847,13 @@ func main() {
 	protectContent := true // bool | Protects the contents of the sent message from forwarding and saving (optional)
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
+	suggestedPostParameters := *openapiclient.NewSuggestedPostParameters() // SuggestedPostParameters |  (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
 	replyMarkup := *openapiclient.NewInlineKeyboardMarkup([][]InlineKeyboardButton{[]openapiclient.InlineKeyboardButton{*openapiclient.NewInlineKeyboardButton("Text_example")}}) // InlineKeyboardMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DefaultAPI.PostSendInvoice(context.Background()).ChatId(chatId).Title(title).Description(description).Payload(payload).Currency(currency).Prices(prices).MessageThreadId(messageThreadId).ProviderToken(providerToken).MaxTipAmount(maxTipAmount).SuggestedTipAmounts(suggestedTipAmounts).StartParameter(startParameter).ProviderData(providerData).PhotoUrl(photoUrl).PhotoSize(photoSize).PhotoWidth(photoWidth).PhotoHeight(photoHeight).NeedName(needName).NeedPhoneNumber(needPhoneNumber).NeedEmail(needEmail).NeedShippingAddress(needShippingAddress).SendPhoneNumberToProvider(sendPhoneNumberToProvider).SendEmailToProvider(sendEmailToProvider).IsFlexible(isFlexible).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+	resp, r, err := apiClient.DefaultAPI.PostSendInvoice(context.Background()).ChatId(chatId).Title(title).Description(description).Payload(payload).Currency(currency).Prices(prices).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).ProviderToken(providerToken).MaxTipAmount(maxTipAmount).SuggestedTipAmounts(suggestedTipAmounts).StartParameter(startParameter).ProviderData(providerData).PhotoUrl(photoUrl).PhotoSize(photoSize).PhotoWidth(photoWidth).PhotoHeight(photoHeight).NeedName(needName).NeedPhoneNumber(needPhoneNumber).NeedEmail(needEmail).NeedShippingAddress(needShippingAddress).SendPhoneNumberToProvider(sendPhoneNumberToProvider).SendEmailToProvider(sendEmailToProvider).IsFlexible(isFlexible).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).SuggestedPostParameters(suggestedPostParameters).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSendInvoice``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7446,7 +7880,8 @@ Name | Type | Description  | Notes
  **payload** | **string** | Bot-defined invoice payload, 1-128 bytes. This will not be displayed to the user, use it for your internal processes. | 
  **currency** | **string** | Three-letter ISO 4217 currency code, see [more on currencies](https://core.telegram.org/bots/payments#supported-currencies). Pass “XTR” for payments in [Telegram Stars](https://t.me/BotNews/90). | 
  **prices** | [**[]LabeledPrice**](LabeledPrice.md) | Price breakdown, a JSON-serialized list of components (e.g. product price, tax, discount, delivery cost, delivery tax, bonus, etc.). Must contain exactly one item for payments in [Telegram Stars](https://t.me/BotNews/90). | 
- **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | 
+ **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only | 
+ **directMessagesTopicId** | **int32** | Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat | 
  **providerToken** | **string** | Payment provider token, obtained via [@BotFather](https://t.me/botfather). Pass an empty string for payments in [Telegram Stars](https://t.me/BotNews/90). | 
  **maxTipAmount** | **int32** | The maximum accepted amount for tips in the *smallest units* of the currency (integer, **not** float/double). For example, for a maximum tip of &#x60;US$ 1.45&#x60; pass &#x60;max_tip_amount &#x3D; 145&#x60;. See the *exp* parameter in [currencies.json](https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). Defaults to 0. Not supported for payments in [Telegram Stars](https://t.me/BotNews/90). | [default to 0]
  **suggestedTipAmounts** | **[]int32** | A JSON-serialized array of suggested amounts of tips in the *smallest units* of the currency (integer, **not** float/double). At most 4 suggested tip amounts can be specified. The suggested tip amounts must be positive, passed in a strictly increased order and must not exceed *max\\\\_tip\\\\_amount*. | 
@@ -7467,6 +7902,7 @@ Name | Type | Description  | Notes
  **protectContent** | **bool** | Protects the contents of the sent message from forwarding and saving | 
  **allowPaidBroadcast** | **bool** | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance | 
  **messageEffectId** | **string** | Unique identifier of the message effect to be added to the message; for private chats only | 
+ **suggestedPostParameters** | [**SuggestedPostParameters**](SuggestedPostParameters.md) |  | 
  **replyParameters** | [**ReplyParameters**](ReplyParameters.md) |  | 
  **replyMarkup** | [**InlineKeyboardMarkup**](InlineKeyboardMarkup.md) |  | 
 
@@ -7490,7 +7926,7 @@ No authorization required
 
 ## PostSendLocation
 
-> SendLocationResponse PostSendLocation(ctx).ChatId(chatId).Latitude(latitude).Longitude(longitude).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).HorizontalAccuracy(horizontalAccuracy).LivePeriod(livePeriod).Heading(heading).ProximityAlertRadius(proximityAlertRadius).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+> SendLocationResponse PostSendLocation(ctx).ChatId(chatId).Latitude(latitude).Longitude(longitude).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).HorizontalAccuracy(horizontalAccuracy).LivePeriod(livePeriod).Heading(heading).ProximityAlertRadius(proximityAlertRadius).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).SuggestedPostParameters(suggestedPostParameters).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 
 sendLocation
 
@@ -7513,7 +7949,8 @@ func main() {
 	latitude := float32(8.14) // float32 | Latitude of the location
 	longitude := float32(8.14) // float32 | Longitude of the location
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
-	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
+	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only (optional)
+	directMessagesTopicId := int32(56) // int32 | Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat (optional)
 	horizontalAccuracy := float32(8.14) // float32 | The radius of uncertainty for the location, measured in meters; 0-1500 (optional)
 	livePeriod := int32(56) // int32 | Period in seconds during which the location will be updated (see [Live Locations](https://telegram.org/blog/live-locations), should be between 60 and 86400, or 0x7FFFFFFF for live locations that can be edited indefinitely. (optional)
 	heading := int32(56) // int32 | For live locations, a direction in which the user is moving, in degrees. Must be between 1 and 360 if specified. (optional)
@@ -7522,12 +7959,13 @@ func main() {
 	protectContent := true // bool | Protects the contents of the sent message from forwarding and saving (optional)
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
+	suggestedPostParameters := *openapiclient.NewSuggestedPostParameters() // SuggestedPostParameters |  (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
 	replyMarkup := openapiclient.sendMessageRequest_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessageRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DefaultAPI.PostSendLocation(context.Background()).ChatId(chatId).Latitude(latitude).Longitude(longitude).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).HorizontalAccuracy(horizontalAccuracy).LivePeriod(livePeriod).Heading(heading).ProximityAlertRadius(proximityAlertRadius).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+	resp, r, err := apiClient.DefaultAPI.PostSendLocation(context.Background()).ChatId(chatId).Latitude(latitude).Longitude(longitude).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).HorizontalAccuracy(horizontalAccuracy).LivePeriod(livePeriod).Heading(heading).ProximityAlertRadius(proximityAlertRadius).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).SuggestedPostParameters(suggestedPostParameters).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSendLocation``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7552,7 +7990,8 @@ Name | Type | Description  | Notes
  **latitude** | **float32** | Latitude of the location | 
  **longitude** | **float32** | Longitude of the location | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message will be sent | 
- **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | 
+ **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only | 
+ **directMessagesTopicId** | **int32** | Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat | 
  **horizontalAccuracy** | **float32** | The radius of uncertainty for the location, measured in meters; 0-1500 | 
  **livePeriod** | **int32** | Period in seconds during which the location will be updated (see [Live Locations](https://telegram.org/blog/live-locations), should be between 60 and 86400, or 0x7FFFFFFF for live locations that can be edited indefinitely. | 
  **heading** | **int32** | For live locations, a direction in which the user is moving, in degrees. Must be between 1 and 360 if specified. | 
@@ -7561,6 +8000,7 @@ Name | Type | Description  | Notes
  **protectContent** | **bool** | Protects the contents of the sent message from forwarding and saving | 
  **allowPaidBroadcast** | **bool** | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance | 
  **messageEffectId** | **string** | Unique identifier of the message effect to be added to the message; for private chats only | 
+ **suggestedPostParameters** | [**SuggestedPostParameters**](SuggestedPostParameters.md) |  | 
  **replyParameters** | [**ReplyParameters**](ReplyParameters.md) |  | 
  **replyMarkup** | [**SendMessageRequestReplyMarkup**](SendMessageRequestReplyMarkup.md) |  | 
 
@@ -7584,7 +8024,7 @@ No authorization required
 
 ## PostSendMediaGroup
 
-> SendMediaGroupResponse PostSendMediaGroup(ctx).ChatId(chatId).Media(media).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).Execute()
+> SendMediaGroupResponse PostSendMediaGroup(ctx).ChatId(chatId).Media(media).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).Execute()
 
 sendMediaGroup
 
@@ -7606,7 +8046,8 @@ func main() {
 	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	media := []openapiclient.SendMediaGroupRequestMediaInner{openapiclient.sendMediaGroupRequest_media_inner{InputMediaAudio: openapiclient.NewInputMediaAudio("Type_example", "Media_example")}} // []SendMediaGroupRequestMediaInner | A JSON-serialized array describing messages to be sent, must include 2-10 items
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
-	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
+	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only (optional)
+	directMessagesTopicId := int32(56) // int32 | Identifier of the direct messages topic to which the messages will be sent; required if the messages are sent to a direct messages chat (optional)
 	disableNotification := true // bool | Sends messages [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. (optional)
 	protectContent := true // bool | Protects the contents of the sent messages from forwarding and saving (optional)
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
@@ -7615,7 +8056,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DefaultAPI.PostSendMediaGroup(context.Background()).ChatId(chatId).Media(media).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).Execute()
+	resp, r, err := apiClient.DefaultAPI.PostSendMediaGroup(context.Background()).ChatId(chatId).Media(media).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSendMediaGroup``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7639,7 +8080,8 @@ Name | Type | Description  | Notes
  **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **media** | [**[]SendMediaGroupRequestMediaInner**](SendMediaGroupRequestMediaInner.md) | A JSON-serialized array describing messages to be sent, must include 2-10 items | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message will be sent | 
- **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | 
+ **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only | 
+ **directMessagesTopicId** | **int32** | Identifier of the direct messages topic to which the messages will be sent; required if the messages are sent to a direct messages chat | 
  **disableNotification** | **bool** | Sends messages [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. | 
  **protectContent** | **bool** | Protects the contents of the sent messages from forwarding and saving | 
  **allowPaidBroadcast** | **bool** | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance | 
@@ -7666,7 +8108,7 @@ No authorization required
 
 ## PostSendMessage
 
-> SendMessageResponse PostSendMessage(ctx).ChatId(chatId).Text(text).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).ParseMode(parseMode).Entities(entities).LinkPreviewOptions(linkPreviewOptions).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+> SendMessageResponse PostSendMessage(ctx).ChatId(chatId).Text(text).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).ParseMode(parseMode).Entities(entities).LinkPreviewOptions(linkPreviewOptions).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).SuggestedPostParameters(suggestedPostParameters).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 
 sendMessage
 
@@ -7688,7 +8130,8 @@ func main() {
 	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	text := "text_example" // string | Text of the message to be sent, 1-4096 characters after entities parsing
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
-	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
+	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only (optional)
+	directMessagesTopicId := int32(56) // int32 | Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat (optional)
 	parseMode := "parseMode_example" // string | Mode for parsing entities in the message text. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. (optional)
 	entities := []openapiclient.MessageEntity{*openapiclient.NewMessageEntity("Type_example", int32(123), int32(123))} // []MessageEntity | A JSON-serialized list of special entities that appear in message text, which can be specified instead of *parse\\\\_mode* (optional)
 	linkPreviewOptions := *openapiclient.NewLinkPreviewOptions() // LinkPreviewOptions |  (optional)
@@ -7696,12 +8139,13 @@ func main() {
 	protectContent := true // bool | Protects the contents of the sent message from forwarding and saving (optional)
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
+	suggestedPostParameters := *openapiclient.NewSuggestedPostParameters() // SuggestedPostParameters |  (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
 	replyMarkup := openapiclient.sendMessageRequest_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessageRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DefaultAPI.PostSendMessage(context.Background()).ChatId(chatId).Text(text).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).ParseMode(parseMode).Entities(entities).LinkPreviewOptions(linkPreviewOptions).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+	resp, r, err := apiClient.DefaultAPI.PostSendMessage(context.Background()).ChatId(chatId).Text(text).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).ParseMode(parseMode).Entities(entities).LinkPreviewOptions(linkPreviewOptions).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).SuggestedPostParameters(suggestedPostParameters).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSendMessage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7725,7 +8169,8 @@ Name | Type | Description  | Notes
  **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **text** | **string** | Text of the message to be sent, 1-4096 characters after entities parsing | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message will be sent | 
- **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | 
+ **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only | 
+ **directMessagesTopicId** | **int32** | Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat | 
  **parseMode** | **string** | Mode for parsing entities in the message text. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. | 
  **entities** | [**[]MessageEntity**](MessageEntity.md) | A JSON-serialized list of special entities that appear in message text, which can be specified instead of *parse\\\\_mode* | 
  **linkPreviewOptions** | [**LinkPreviewOptions**](LinkPreviewOptions.md) |  | 
@@ -7733,6 +8178,7 @@ Name | Type | Description  | Notes
  **protectContent** | **bool** | Protects the contents of the sent message from forwarding and saving | 
  **allowPaidBroadcast** | **bool** | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance | 
  **messageEffectId** | **string** | Unique identifier of the message effect to be added to the message; for private chats only | 
+ **suggestedPostParameters** | [**SuggestedPostParameters**](SuggestedPostParameters.md) |  | 
  **replyParameters** | [**ReplyParameters**](ReplyParameters.md) |  | 
  **replyMarkup** | [**SendMessageRequestReplyMarkup**](SendMessageRequestReplyMarkup.md) |  | 
 
@@ -7754,9 +8200,85 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## PostSendMessageDraft
+
+> SendMessageDraftResponse PostSendMessageDraft(ctx).ChatId(chatId).DraftId(draftId).Text(text).MessageThreadId(messageThreadId).ParseMode(parseMode).Entities(entities).Execute()
+
+sendMessageDraft
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/tele-api/tele-rest-go"
+)
+
+func main() {
+	chatId := int32(56) // int32 | Unique identifier for the target private chat
+	draftId := int32(56) // int32 | Unique identifier of the message draft; must be non-zero. Changes of drafts with the same identifier are animated
+	text := "text_example" // string | Text of the message to be sent, 1-4096 characters after entities parsing
+	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (optional)
+	parseMode := "parseMode_example" // string | Mode for parsing entities in the message text. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. (optional)
+	entities := []openapiclient.MessageEntity{*openapiclient.NewMessageEntity("Type_example", int32(123), int32(123))} // []MessageEntity | A JSON-serialized list of special entities that appear in message text, which can be specified instead of *parse\\\\_mode* (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DefaultAPI.PostSendMessageDraft(context.Background()).ChatId(chatId).DraftId(draftId).Text(text).MessageThreadId(messageThreadId).ParseMode(parseMode).Entities(entities).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSendMessageDraft``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PostSendMessageDraft`: SendMessageDraftResponse
+	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PostSendMessageDraft`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostSendMessageDraftRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **chatId** | **int32** | Unique identifier for the target private chat | 
+ **draftId** | **int32** | Unique identifier of the message draft; must be non-zero. Changes of drafts with the same identifier are animated | 
+ **text** | **string** | Text of the message to be sent, 1-4096 characters after entities parsing | 
+ **messageThreadId** | **int32** | Unique identifier for the target message thread | 
+ **parseMode** | **string** | Mode for parsing entities in the message text. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. | 
+ **entities** | [**[]MessageEntity**](MessageEntity.md) | A JSON-serialized list of special entities that appear in message text, which can be specified instead of *parse\\\\_mode* | 
+
+### Return type
+
+[**SendMessageDraftResponse**](SendMessageDraftResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/x-www-form-urlencoded, multipart/form-data, application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## PostSendPaidMedia
 
-> SendPaidMediaResponse PostSendPaidMedia(ctx).ChatId(chatId).StarCount(starCount).Media(media).BusinessConnectionId(businessConnectionId).Payload(payload).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).ShowCaptionAboveMedia(showCaptionAboveMedia).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+> SendPaidMediaResponse PostSendPaidMedia(ctx).ChatId(chatId).StarCount(starCount).Media(media).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).Payload(payload).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).ShowCaptionAboveMedia(showCaptionAboveMedia).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).SuggestedPostParameters(suggestedPostParameters).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 
 sendPaidMedia
 
@@ -7776,9 +8298,11 @@ import (
 
 func main() {
 	chatId := openapiclient.sendPaidMediaRequest_chat_id{Int32: new(int32)} // SendPaidMediaRequestChatId | 
-	starCount := int32(56) // int32 | The number of Telegram Stars that must be paid to buy access to the media; 1-10000
+	starCount := int32(56) // int32 | The number of Telegram Stars that must be paid to buy access to the media; 1-25000
 	media := []openapiclient.InputPaidMedia{openapiclient.InputPaidMedia{InputPaidMediaPhoto: openapiclient.NewInputPaidMediaPhoto("Type_example", "Media_example")}} // []InputPaidMedia | A JSON-serialized array describing the media to be sent; up to 10 items
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
+	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only (optional)
+	directMessagesTopicId := int32(56) // int32 | Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat (optional)
 	payload := "payload_example" // string | Bot-defined paid media payload, 0-128 bytes. This will not be displayed to the user, use it for your internal processes. (optional)
 	caption := "caption_example" // string | Media caption, 0-1024 characters after entities parsing (optional)
 	parseMode := "parseMode_example" // string | Mode for parsing entities in the media caption. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. (optional)
@@ -7787,12 +8311,13 @@ func main() {
 	disableNotification := true // bool | Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. (optional)
 	protectContent := true // bool | Protects the contents of the sent message from forwarding and saving (optional)
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
+	suggestedPostParameters := *openapiclient.NewSuggestedPostParameters() // SuggestedPostParameters |  (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
 	replyMarkup := openapiclient.sendMessageRequest_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessageRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DefaultAPI.PostSendPaidMedia(context.Background()).ChatId(chatId).StarCount(starCount).Media(media).BusinessConnectionId(businessConnectionId).Payload(payload).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).ShowCaptionAboveMedia(showCaptionAboveMedia).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+	resp, r, err := apiClient.DefaultAPI.PostSendPaidMedia(context.Background()).ChatId(chatId).StarCount(starCount).Media(media).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).Payload(payload).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).ShowCaptionAboveMedia(showCaptionAboveMedia).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).SuggestedPostParameters(suggestedPostParameters).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSendPaidMedia``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7814,9 +8339,11 @@ Other parameters are passed through a pointer to a apiPostSendPaidMediaRequest s
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **chatId** | [**SendPaidMediaRequestChatId**](SendPaidMediaRequestChatId.md) |  | 
- **starCount** | **int32** | The number of Telegram Stars that must be paid to buy access to the media; 1-10000 | 
+ **starCount** | **int32** | The number of Telegram Stars that must be paid to buy access to the media; 1-25000 | 
  **media** | [**[]InputPaidMedia**](InputPaidMedia.md) | A JSON-serialized array describing the media to be sent; up to 10 items | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message will be sent | 
+ **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only | 
+ **directMessagesTopicId** | **int32** | Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat | 
  **payload** | **string** | Bot-defined paid media payload, 0-128 bytes. This will not be displayed to the user, use it for your internal processes. | 
  **caption** | **string** | Media caption, 0-1024 characters after entities parsing | 
  **parseMode** | **string** | Mode for parsing entities in the media caption. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. | 
@@ -7825,6 +8352,7 @@ Name | Type | Description  | Notes
  **disableNotification** | **bool** | Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. | 
  **protectContent** | **bool** | Protects the contents of the sent message from forwarding and saving | 
  **allowPaidBroadcast** | **bool** | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance | 
+ **suggestedPostParameters** | [**SuggestedPostParameters**](SuggestedPostParameters.md) |  | 
  **replyParameters** | [**ReplyParameters**](ReplyParameters.md) |  | 
  **replyMarkup** | [**SendMessageRequestReplyMarkup**](SendMessageRequestReplyMarkup.md) |  | 
 
@@ -7848,7 +8376,7 @@ No authorization required
 
 ## PostSendPhoto
 
-> SendPhotoResponse PostSendPhoto(ctx).ChatId(chatId).Photo(photo).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).ShowCaptionAboveMedia(showCaptionAboveMedia).HasSpoiler(hasSpoiler).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+> SendPhotoResponse PostSendPhoto(ctx).ChatId(chatId).Photo(photo).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).ShowCaptionAboveMedia(showCaptionAboveMedia).HasSpoiler(hasSpoiler).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).SuggestedPostParameters(suggestedPostParameters).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 
 sendPhoto
 
@@ -7870,7 +8398,8 @@ func main() {
 	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	photo := "photo_example" // string | 
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
-	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
+	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only (optional)
+	directMessagesTopicId := int32(56) // int32 | Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat (optional)
 	caption := "caption_example" // string | Photo caption (may also be used when resending photos by *file\\\\_id*), 0-1024 characters after entities parsing (optional)
 	parseMode := "parseMode_example" // string | Mode for parsing entities in the photo caption. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. (optional)
 	captionEntities := []openapiclient.MessageEntity{*openapiclient.NewMessageEntity("Type_example", int32(123), int32(123))} // []MessageEntity | A JSON-serialized list of special entities that appear in the caption, which can be specified instead of *parse\\\\_mode* (optional)
@@ -7880,12 +8409,13 @@ func main() {
 	protectContent := true // bool | Protects the contents of the sent message from forwarding and saving (optional)
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
+	suggestedPostParameters := *openapiclient.NewSuggestedPostParameters() // SuggestedPostParameters |  (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
 	replyMarkup := openapiclient.sendMessageRequest_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessageRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DefaultAPI.PostSendPhoto(context.Background()).ChatId(chatId).Photo(photo).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).ShowCaptionAboveMedia(showCaptionAboveMedia).HasSpoiler(hasSpoiler).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+	resp, r, err := apiClient.DefaultAPI.PostSendPhoto(context.Background()).ChatId(chatId).Photo(photo).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).ShowCaptionAboveMedia(showCaptionAboveMedia).HasSpoiler(hasSpoiler).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).SuggestedPostParameters(suggestedPostParameters).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSendPhoto``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7909,7 +8439,8 @@ Name | Type | Description  | Notes
  **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **photo** | **string** |  | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message will be sent | 
- **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | 
+ **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only | 
+ **directMessagesTopicId** | **int32** | Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat | 
  **caption** | **string** | Photo caption (may also be used when resending photos by *file\\\\_id*), 0-1024 characters after entities parsing | 
  **parseMode** | **string** | Mode for parsing entities in the photo caption. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. | 
  **captionEntities** | [**[]MessageEntity**](MessageEntity.md) | A JSON-serialized list of special entities that appear in the caption, which can be specified instead of *parse\\\\_mode* | 
@@ -7919,6 +8450,7 @@ Name | Type | Description  | Notes
  **protectContent** | **bool** | Protects the contents of the sent message from forwarding and saving | 
  **allowPaidBroadcast** | **bool** | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance | 
  **messageEffectId** | **string** | Unique identifier of the message effect to be added to the message; for private chats only | 
+ **suggestedPostParameters** | [**SuggestedPostParameters**](SuggestedPostParameters.md) |  | 
  **replyParameters** | [**ReplyParameters**](ReplyParameters.md) |  | 
  **replyMarkup** | [**SendMessageRequestReplyMarkup**](SendMessageRequestReplyMarkup.md) |  | 
 
@@ -7961,11 +8493,11 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
+	chatId := openapiclient.sendPollRequest_chat_id{Int32: new(int32)} // SendPollRequestChatId | 
 	question := "question_example" // string | Poll question, 1-300 characters
 	options := []openapiclient.InputPollOption{*openapiclient.NewInputPollOption("Text_example")} // []InputPollOption | A JSON-serialized list of 2-12 answer options
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
-	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
+	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only (optional)
 	questionParseMode := "questionParseMode_example" // string | Mode for parsing entities in the question. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. Currently, only custom emoji entities are allowed (optional)
 	questionEntities := []openapiclient.MessageEntity{*openapiclient.NewMessageEntity("Type_example", int32(123), int32(123))} // []MessageEntity | A JSON-serialized list of special entities that appear in the poll question. It can be specified instead of *question\\\\_parse\\\\_mode* (optional)
 	isAnonymous := true // bool | *True*, if the poll needs to be anonymous, defaults to *True* (optional)
@@ -8008,11 +8540,11 @@ Other parameters are passed through a pointer to a apiPostSendPollRequest struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
+ **chatId** | [**SendPollRequestChatId**](SendPollRequestChatId.md) |  | 
  **question** | **string** | Poll question, 1-300 characters | 
  **options** | [**[]InputPollOption**](InputPollOption.md) | A JSON-serialized list of 2-12 answer options | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message will be sent | 
- **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | 
+ **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only | 
  **questionParseMode** | **string** | Mode for parsing entities in the question. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. Currently, only custom emoji entities are allowed | 
  **questionEntities** | [**[]MessageEntity**](MessageEntity.md) | A JSON-serialized list of special entities that appear in the poll question. It can be specified instead of *question\\\\_parse\\\\_mode* | 
  **isAnonymous** | **bool** | *True*, if the poll needs to be anonymous, defaults to *True* | 
@@ -8052,7 +8584,7 @@ No authorization required
 
 ## PostSendSticker
 
-> SendStickerResponse PostSendSticker(ctx).ChatId(chatId).Sticker(sticker).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).Emoji(emoji).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+> SendStickerResponse PostSendSticker(ctx).ChatId(chatId).Sticker(sticker).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).Emoji(emoji).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).SuggestedPostParameters(suggestedPostParameters).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 
 sendSticker
 
@@ -8074,18 +8606,20 @@ func main() {
 	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	sticker := "sticker_example" // string | 
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
-	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
+	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only (optional)
+	directMessagesTopicId := int32(56) // int32 | Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat (optional)
 	emoji := "emoji_example" // string | Emoji associated with the sticker; only for just uploaded stickers (optional)
 	disableNotification := true // bool | Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. (optional)
 	protectContent := true // bool | Protects the contents of the sent message from forwarding and saving (optional)
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
+	suggestedPostParameters := *openapiclient.NewSuggestedPostParameters() // SuggestedPostParameters |  (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
 	replyMarkup := openapiclient.sendMessageRequest_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessageRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DefaultAPI.PostSendSticker(context.Background()).ChatId(chatId).Sticker(sticker).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).Emoji(emoji).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+	resp, r, err := apiClient.DefaultAPI.PostSendSticker(context.Background()).ChatId(chatId).Sticker(sticker).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).Emoji(emoji).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).SuggestedPostParameters(suggestedPostParameters).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSendSticker``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8109,12 +8643,14 @@ Name | Type | Description  | Notes
  **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **sticker** | **string** |  | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message will be sent | 
- **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | 
+ **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only | 
+ **directMessagesTopicId** | **int32** | Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat | 
  **emoji** | **string** | Emoji associated with the sticker; only for just uploaded stickers | 
  **disableNotification** | **bool** | Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound. | 
  **protectContent** | **bool** | Protects the contents of the sent message from forwarding and saving | 
  **allowPaidBroadcast** | **bool** | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance | 
  **messageEffectId** | **string** | Unique identifier of the message effect to be added to the message; for private chats only | 
+ **suggestedPostParameters** | [**SuggestedPostParameters**](SuggestedPostParameters.md) |  | 
  **replyParameters** | [**ReplyParameters**](ReplyParameters.md) |  | 
  **replyMarkup** | [**SendMessageRequestReplyMarkup**](SendMessageRequestReplyMarkup.md) |  | 
 
@@ -8138,7 +8674,7 @@ No authorization required
 
 ## PostSendVenue
 
-> SendVenueResponse PostSendVenue(ctx).ChatId(chatId).Latitude(latitude).Longitude(longitude).Title(title).Address(address).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).FoursquareId(foursquareId).FoursquareType(foursquareType).GooglePlaceId(googlePlaceId).GooglePlaceType(googlePlaceType).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+> SendVenueResponse PostSendVenue(ctx).ChatId(chatId).Latitude(latitude).Longitude(longitude).Title(title).Address(address).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).FoursquareId(foursquareId).FoursquareType(foursquareType).GooglePlaceId(googlePlaceId).GooglePlaceType(googlePlaceType).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).SuggestedPostParameters(suggestedPostParameters).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 
 sendVenue
 
@@ -8163,7 +8699,8 @@ func main() {
 	title := "title_example" // string | Name of the venue
 	address := "address_example" // string | Address of the venue
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
-	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
+	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only (optional)
+	directMessagesTopicId := int32(56) // int32 | Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat (optional)
 	foursquareId := "foursquareId_example" // string | Foursquare identifier of the venue (optional)
 	foursquareType := "foursquareType_example" // string | Foursquare type of the venue, if known. (For example, “arts\\\\_entertainment/default”, “arts\\\\_entertainment/aquarium” or “food/icecream”.) (optional)
 	googlePlaceId := "googlePlaceId_example" // string | Google Places identifier of the venue (optional)
@@ -8172,12 +8709,13 @@ func main() {
 	protectContent := true // bool | Protects the contents of the sent message from forwarding and saving (optional)
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
+	suggestedPostParameters := *openapiclient.NewSuggestedPostParameters() // SuggestedPostParameters |  (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
 	replyMarkup := openapiclient.sendMessageRequest_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessageRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DefaultAPI.PostSendVenue(context.Background()).ChatId(chatId).Latitude(latitude).Longitude(longitude).Title(title).Address(address).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).FoursquareId(foursquareId).FoursquareType(foursquareType).GooglePlaceId(googlePlaceId).GooglePlaceType(googlePlaceType).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+	resp, r, err := apiClient.DefaultAPI.PostSendVenue(context.Background()).ChatId(chatId).Latitude(latitude).Longitude(longitude).Title(title).Address(address).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).FoursquareId(foursquareId).FoursquareType(foursquareType).GooglePlaceId(googlePlaceId).GooglePlaceType(googlePlaceType).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).SuggestedPostParameters(suggestedPostParameters).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSendVenue``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8204,7 +8742,8 @@ Name | Type | Description  | Notes
  **title** | **string** | Name of the venue | 
  **address** | **string** | Address of the venue | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message will be sent | 
- **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | 
+ **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only | 
+ **directMessagesTopicId** | **int32** | Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat | 
  **foursquareId** | **string** | Foursquare identifier of the venue | 
  **foursquareType** | **string** | Foursquare type of the venue, if known. (For example, “arts\\\\_entertainment/default”, “arts\\\\_entertainment/aquarium” or “food/icecream”.) | 
  **googlePlaceId** | **string** | Google Places identifier of the venue | 
@@ -8213,6 +8752,7 @@ Name | Type | Description  | Notes
  **protectContent** | **bool** | Protects the contents of the sent message from forwarding and saving | 
  **allowPaidBroadcast** | **bool** | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance | 
  **messageEffectId** | **string** | Unique identifier of the message effect to be added to the message; for private chats only | 
+ **suggestedPostParameters** | [**SuggestedPostParameters**](SuggestedPostParameters.md) |  | 
  **replyParameters** | [**ReplyParameters**](ReplyParameters.md) |  | 
  **replyMarkup** | [**SendMessageRequestReplyMarkup**](SendMessageRequestReplyMarkup.md) |  | 
 
@@ -8236,7 +8776,7 @@ No authorization required
 
 ## PostSendVideo
 
-> SendVideoResponse PostSendVideo(ctx).ChatId(chatId).Video(video).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).Duration(duration).Width(width).Height(height).Thumbnail(thumbnail).Cover(cover).StartTimestamp(startTimestamp).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).ShowCaptionAboveMedia(showCaptionAboveMedia).HasSpoiler(hasSpoiler).SupportsStreaming(supportsStreaming).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+> SendVideoResponse PostSendVideo(ctx).ChatId(chatId).Video(video).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).Duration(duration).Width(width).Height(height).Thumbnail(thumbnail).Cover(cover).StartTimestamp(startTimestamp).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).ShowCaptionAboveMedia(showCaptionAboveMedia).HasSpoiler(hasSpoiler).SupportsStreaming(supportsStreaming).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).SuggestedPostParameters(suggestedPostParameters).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 
 sendVideo
 
@@ -8258,7 +8798,8 @@ func main() {
 	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	video := "video_example" // string | 
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
-	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
+	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only (optional)
+	directMessagesTopicId := int32(56) // int32 | Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat (optional)
 	duration := int32(56) // int32 | Duration of sent video in seconds (optional)
 	width := int32(56) // int32 | Video width (optional)
 	height := int32(56) // int32 | Video height (optional)
@@ -8275,12 +8816,13 @@ func main() {
 	protectContent := true // bool | Protects the contents of the sent message from forwarding and saving (optional)
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
+	suggestedPostParameters := *openapiclient.NewSuggestedPostParameters() // SuggestedPostParameters |  (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
 	replyMarkup := openapiclient.sendMessageRequest_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessageRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DefaultAPI.PostSendVideo(context.Background()).ChatId(chatId).Video(video).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).Duration(duration).Width(width).Height(height).Thumbnail(thumbnail).Cover(cover).StartTimestamp(startTimestamp).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).ShowCaptionAboveMedia(showCaptionAboveMedia).HasSpoiler(hasSpoiler).SupportsStreaming(supportsStreaming).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+	resp, r, err := apiClient.DefaultAPI.PostSendVideo(context.Background()).ChatId(chatId).Video(video).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).Duration(duration).Width(width).Height(height).Thumbnail(thumbnail).Cover(cover).StartTimestamp(startTimestamp).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).ShowCaptionAboveMedia(showCaptionAboveMedia).HasSpoiler(hasSpoiler).SupportsStreaming(supportsStreaming).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).SuggestedPostParameters(suggestedPostParameters).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSendVideo``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8304,7 +8846,8 @@ Name | Type | Description  | Notes
  **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **video** | **string** |  | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message will be sent | 
- **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | 
+ **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only | 
+ **directMessagesTopicId** | **int32** | Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat | 
  **duration** | **int32** | Duration of sent video in seconds | 
  **width** | **int32** | Video width | 
  **height** | **int32** | Video height | 
@@ -8321,6 +8864,7 @@ Name | Type | Description  | Notes
  **protectContent** | **bool** | Protects the contents of the sent message from forwarding and saving | 
  **allowPaidBroadcast** | **bool** | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance | 
  **messageEffectId** | **string** | Unique identifier of the message effect to be added to the message; for private chats only | 
+ **suggestedPostParameters** | [**SuggestedPostParameters**](SuggestedPostParameters.md) |  | 
  **replyParameters** | [**ReplyParameters**](ReplyParameters.md) |  | 
  **replyMarkup** | [**SendMessageRequestReplyMarkup**](SendMessageRequestReplyMarkup.md) |  | 
 
@@ -8344,7 +8888,7 @@ No authorization required
 
 ## PostSendVideoNote
 
-> SendVideoNoteResponse PostSendVideoNote(ctx).ChatId(chatId).VideoNote(videoNote).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).Duration(duration).Length(length).Thumbnail(thumbnail).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+> SendVideoNoteResponse PostSendVideoNote(ctx).ChatId(chatId).VideoNote(videoNote).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).Duration(duration).Length(length).Thumbnail(thumbnail).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).SuggestedPostParameters(suggestedPostParameters).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 
 sendVideoNote
 
@@ -8366,7 +8910,8 @@ func main() {
 	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	videoNote := "videoNote_example" // string | 
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
-	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
+	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only (optional)
+	directMessagesTopicId := int32(56) // int32 | Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat (optional)
 	duration := int32(56) // int32 | Duration of sent video in seconds (optional)
 	length := int32(56) // int32 | Video width and height, i.e. diameter of the video message (optional)
 	thumbnail := "thumbnail_example" // string |  (optional)
@@ -8374,12 +8919,13 @@ func main() {
 	protectContent := true // bool | Protects the contents of the sent message from forwarding and saving (optional)
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
+	suggestedPostParameters := *openapiclient.NewSuggestedPostParameters() // SuggestedPostParameters |  (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
 	replyMarkup := openapiclient.sendMessageRequest_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessageRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DefaultAPI.PostSendVideoNote(context.Background()).ChatId(chatId).VideoNote(videoNote).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).Duration(duration).Length(length).Thumbnail(thumbnail).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+	resp, r, err := apiClient.DefaultAPI.PostSendVideoNote(context.Background()).ChatId(chatId).VideoNote(videoNote).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).Duration(duration).Length(length).Thumbnail(thumbnail).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).SuggestedPostParameters(suggestedPostParameters).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSendVideoNote``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8403,7 +8949,8 @@ Name | Type | Description  | Notes
  **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **videoNote** | **string** |  | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message will be sent | 
- **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | 
+ **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only | 
+ **directMessagesTopicId** | **int32** | Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat | 
  **duration** | **int32** | Duration of sent video in seconds | 
  **length** | **int32** | Video width and height, i.e. diameter of the video message | 
  **thumbnail** | **string** |  | 
@@ -8411,6 +8958,7 @@ Name | Type | Description  | Notes
  **protectContent** | **bool** | Protects the contents of the sent message from forwarding and saving | 
  **allowPaidBroadcast** | **bool** | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance | 
  **messageEffectId** | **string** | Unique identifier of the message effect to be added to the message; for private chats only | 
+ **suggestedPostParameters** | [**SuggestedPostParameters**](SuggestedPostParameters.md) |  | 
  **replyParameters** | [**ReplyParameters**](ReplyParameters.md) |  | 
  **replyMarkup** | [**SendMessageRequestReplyMarkup**](SendMessageRequestReplyMarkup.md) |  | 
 
@@ -8434,7 +8982,7 @@ No authorization required
 
 ## PostSendVoice
 
-> SendVoiceResponse PostSendVoice(ctx).ChatId(chatId).Voice(voice).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).Duration(duration).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+> SendVoiceResponse PostSendVoice(ctx).ChatId(chatId).Voice(voice).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).Duration(duration).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).SuggestedPostParameters(suggestedPostParameters).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 
 sendVoice
 
@@ -8456,7 +9004,8 @@ func main() {
 	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
 	voice := "voice_example" // string | 
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection on behalf of which the message will be sent (optional)
-	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only (optional)
+	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only (optional)
+	directMessagesTopicId := int32(56) // int32 | Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat (optional)
 	caption := "caption_example" // string | Voice message caption, 0-1024 characters after entities parsing (optional)
 	parseMode := "parseMode_example" // string | Mode for parsing entities in the voice message caption. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. (optional)
 	captionEntities := []openapiclient.MessageEntity{*openapiclient.NewMessageEntity("Type_example", int32(123), int32(123))} // []MessageEntity | A JSON-serialized list of special entities that appear in the caption, which can be specified instead of *parse\\\\_mode* (optional)
@@ -8465,12 +9014,13 @@ func main() {
 	protectContent := true // bool | Protects the contents of the sent message from forwarding and saving (optional)
 	allowPaidBroadcast := true // bool | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance (optional)
 	messageEffectId := "messageEffectId_example" // string | Unique identifier of the message effect to be added to the message; for private chats only (optional)
+	suggestedPostParameters := *openapiclient.NewSuggestedPostParameters() // SuggestedPostParameters |  (optional)
 	replyParameters := *openapiclient.NewReplyParameters(int32(123)) // ReplyParameters |  (optional)
 	replyMarkup := openapiclient.sendMessageRequest_reply_markup{ForceReply: openapiclient.NewForceReply(false)} // SendMessageRequestReplyMarkup |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DefaultAPI.PostSendVoice(context.Background()).ChatId(chatId).Voice(voice).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).Duration(duration).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
+	resp, r, err := apiClient.DefaultAPI.PostSendVoice(context.Background()).ChatId(chatId).Voice(voice).BusinessConnectionId(businessConnectionId).MessageThreadId(messageThreadId).DirectMessagesTopicId(directMessagesTopicId).Caption(caption).ParseMode(parseMode).CaptionEntities(captionEntities).Duration(duration).DisableNotification(disableNotification).ProtectContent(protectContent).AllowPaidBroadcast(allowPaidBroadcast).MessageEffectId(messageEffectId).SuggestedPostParameters(suggestedPostParameters).ReplyParameters(replyParameters).ReplyMarkup(replyMarkup).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PostSendVoice``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8494,7 +9044,8 @@ Name | Type | Description  | Notes
  **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
  **voice** | **string** |  | 
  **businessConnectionId** | **string** | Unique identifier of the business connection on behalf of which the message will be sent | 
- **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of the forum; for forum supergroups only | 
+ **messageThreadId** | **int32** | Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only | 
+ **directMessagesTopicId** | **int32** | Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat | 
  **caption** | **string** | Voice message caption, 0-1024 characters after entities parsing | 
  **parseMode** | **string** | Mode for parsing entities in the voice message caption. See [formatting options](https://core.telegram.org/bots/api/#formatting-options) for more details. | 
  **captionEntities** | [**[]MessageEntity**](MessageEntity.md) | A JSON-serialized list of special entities that appear in the caption, which can be specified instead of *parse\\\\_mode* | 
@@ -8503,6 +9054,7 @@ Name | Type | Description  | Notes
  **protectContent** | **bool** | Protects the contents of the sent message from forwarding and saving | 
  **allowPaidBroadcast** | **bool** | Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot&#39;s balance | 
  **messageEffectId** | **string** | Unique identifier of the message effect to be added to the message; for private chats only | 
+ **suggestedPostParameters** | [**SuggestedPostParameters**](SuggestedPostParameters.md) |  | 
  **replyParameters** | [**ReplyParameters**](ReplyParameters.md) |  | 
  **replyMarkup** | [**SendMessageRequestReplyMarkup**](SendMessageRequestReplyMarkup.md) |  | 
 
@@ -8615,7 +9167,7 @@ import (
 func main() {
 	businessConnectionId := "businessConnectionId_example" // string | Unique identifier of the business connection
 	showGiftButton := true // bool | Pass *True*, if a button for sending a gift to the user or by the business account must always be shown in the input field
-	acceptedGiftTypes := *openapiclient.NewAcceptedGiftTypes(false, false, false, false) // AcceptedGiftTypes | 
+	acceptedGiftTypes := *openapiclient.NewAcceptedGiftTypes(false, false, false, false, false) // AcceptedGiftTypes | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8891,7 +9443,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.BotCommandScopeChat_chat_id{Int32: new(int32)} // BotCommandScopeChatChatId | 
+	chatId := openapiclient.restrictChatMemberRequest_chat_id{Int32: new(int32)} // RestrictChatMemberRequestChatId | 
 	userId := int32(56) // int32 | Unique identifier of the target user
 	customTitle := "customTitle_example" // string | New custom title for the administrator; 0-16 characters, emoji are not allowed
 
@@ -8918,7 +9470,7 @@ Other parameters are passed through a pointer to a apiPostSetChatAdministratorCu
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
+ **chatId** | [**RestrictChatMemberRequestChatId**](RestrictChatMemberRequestChatId.md) |  | 
  **userId** | **int32** | Unique identifier of the target user | 
  **customTitle** | **string** | New custom title for the administrator; 0-16 characters, emoji are not allowed | 
 
@@ -9097,7 +9649,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.BotCommandScopeChat_chat_id{Int32: new(int32)} // BotCommandScopeChatChatId | 
+	chatId := openapiclient.restrictChatMemberRequest_chat_id{Int32: new(int32)} // RestrictChatMemberRequestChatId | 
 	permissions := *openapiclient.NewChatPermissions() // ChatPermissions | 
 	useIndependentChatPermissions := true // bool | Pass *True* if chat permissions are set independently. Otherwise, the *can\\\\_send\\\\_other\\\\_messages* and *can\\\\_add\\\\_web\\\\_page\\\\_previews* permissions will imply the *can\\\\_send\\\\_messages*, *can\\\\_send\\\\_audios*, *can\\\\_send\\\\_documents*, *can\\\\_send\\\\_photos*, *can\\\\_send\\\\_videos*, *can\\\\_send\\\\_video\\\\_notes*, and *can\\\\_send\\\\_voice\\\\_notes* permissions; the *can\\\\_send\\\\_polls* permission will imply the *can\\\\_send\\\\_messages* permission. (optional)
 
@@ -9124,7 +9676,7 @@ Other parameters are passed through a pointer to a apiPostSetChatPermissionsRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
+ **chatId** | [**RestrictChatMemberRequestChatId**](RestrictChatMemberRequestChatId.md) |  | 
  **permissions** | [**ChatPermissions**](ChatPermissions.md) |  | 
  **useIndependentChatPermissions** | **bool** | Pass *True* if chat permissions are set independently. Otherwise, the *can\\\\_send\\\\_other\\\\_messages* and *can\\\\_add\\\\_web\\\\_page\\\\_previews* permissions will imply the *can\\\\_send\\\\_messages*, *can\\\\_send\\\\_audios*, *can\\\\_send\\\\_documents*, *can\\\\_send\\\\_photos*, *can\\\\_send\\\\_videos*, *can\\\\_send\\\\_video\\\\_notes*, and *can\\\\_send\\\\_voice\\\\_notes* permissions; the *can\\\\_send\\\\_polls* permission will imply the *can\\\\_send\\\\_messages* permission. | 
 
@@ -9235,7 +9787,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.BotCommandScopeChat_chat_id{Int32: new(int32)} // BotCommandScopeChatChatId | 
+	chatId := openapiclient.restrictChatMemberRequest_chat_id{Int32: new(int32)} // RestrictChatMemberRequestChatId | 
 	stickerSetName := "stickerSetName_example" // string | Name of the sticker set to be set as the group sticker set
 
 	configuration := openapiclient.NewConfiguration()
@@ -9261,7 +9813,7 @@ Other parameters are passed through a pointer to a apiPostSetChatStickerSetReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
+ **chatId** | [**RestrictChatMemberRequestChatId**](RestrictChatMemberRequestChatId.md) |  | 
  **stickerSetName** | **string** | Name of the sticker set to be set as the group sticker set | 
 
 ### Return type
@@ -10983,7 +11535,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.BotCommandScopeChat_chat_id{Int32: new(int32)} // BotCommandScopeChatChatId | 
+	chatId := openapiclient.restrictChatMemberRequest_chat_id{Int32: new(int32)} // RestrictChatMemberRequestChatId | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -11008,7 +11560,7 @@ Other parameters are passed through a pointer to a apiPostUnhideGeneralForumTopi
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
+ **chatId** | [**RestrictChatMemberRequestChatId**](RestrictChatMemberRequestChatId.md) |  | 
 
 ### Return type
 
@@ -11115,7 +11667,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.BotCommandScopeChat_chat_id{Int32: new(int32)} // BotCommandScopeChatChatId | 
+	chatId := openapiclient.restrictChatMemberRequest_chat_id{Int32: new(int32)} // RestrictChatMemberRequestChatId | 
 	messageThreadId := int32(56) // int32 | Unique identifier for the target message thread of the forum topic
 
 	configuration := openapiclient.NewConfiguration()
@@ -11141,7 +11693,7 @@ Other parameters are passed through a pointer to a apiPostUnpinAllForumTopicMess
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
+ **chatId** | [**RestrictChatMemberRequestChatId**](RestrictChatMemberRequestChatId.md) |  | 
  **messageThreadId** | **int32** | Unique identifier for the target message thread of the forum topic | 
 
 ### Return type
@@ -11183,7 +11735,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.BotCommandScopeChat_chat_id{Int32: new(int32)} // BotCommandScopeChatChatId | 
+	chatId := openapiclient.restrictChatMemberRequest_chat_id{Int32: new(int32)} // RestrictChatMemberRequestChatId | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -11208,7 +11760,7 @@ Other parameters are passed through a pointer to a apiPostUnpinAllGeneralForumTo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
+ **chatId** | [**RestrictChatMemberRequestChatId**](RestrictChatMemberRequestChatId.md) |  | 
 
 ### Return type
 
@@ -11461,7 +12013,7 @@ import (
 )
 
 func main() {
-	chatId := openapiclient.sendMessageRequest_chat_id{Int32: new(int32)} // SendMessageRequestChatId | 
+	chatId := openapiclient.verifyChatRequest_chat_id{Int32: new(int32)} // VerifyChatRequestChatId | 
 	customDescription := "customDescription_example" // string | Custom description for the verification; 0-70 characters. Must be empty if the organization isn't allowed to provide a custom verification description. (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -11487,7 +12039,7 @@ Other parameters are passed through a pointer to a apiPostVerifyChatRequest stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chatId** | [**SendMessageRequestChatId**](SendMessageRequestChatId.md) |  | 
+ **chatId** | [**VerifyChatRequestChatId**](VerifyChatRequestChatId.md) |  | 
  **customDescription** | **string** | Custom description for the verification; 0-70 characters. Must be empty if the organization isn&#39;t allowed to provide a custom verification description. | 
 
 ### Return type

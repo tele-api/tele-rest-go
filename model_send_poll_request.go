@@ -3,11 +3,11 @@
  * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
- *    * - **Copyright**: Copyright (c) 2025 Qntx
+ *    * - **Copyright**: Copyright (c) 2026 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
- *    * - **Generator Version**: 7.14.0
+ *    * - **Version**: 9.3.0
+ *    * - **Modified**: 2026-01-01T02:06:16.405655294Z[Etc/UTC]
+ *    * - **Generator Version**: 7.18.0
  * 
  * <details>
  * <summary><strong>⚠️ Important Disclaimer & Limitation of Liability</strong></summary>
@@ -57,8 +57,8 @@ var _ MappedNullable = &SendPollRequest{}
 type SendPollRequest struct {
 	// Unique identifier of the business connection on behalf of which the message will be sent
 	BusinessConnectionId *string `json:"business_connection_id,omitempty"`
-	ChatId SendMessageRequestChatId `json:"chat_id"`
-	// Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
+	ChatId SendPollRequestChatId `json:"chat_id"`
+	// Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only
 	MessageThreadId *int32 `json:"message_thread_id,omitempty"`
 	// Poll question, 1-300 characters
 	Question string `json:"question"`
@@ -106,7 +106,7 @@ type _SendPollRequest SendPollRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSendPollRequest(chatId SendMessageRequestChatId, question string, options []InputPollOption) *SendPollRequest {
+func NewSendPollRequest(chatId SendPollRequestChatId, question string, options []InputPollOption) *SendPollRequest {
 	this := SendPollRequest{}
 	this.ChatId = chatId
 	this.Question = question
@@ -156,9 +156,9 @@ func (o *SendPollRequest) SetBusinessConnectionId(v string) {
 
 
 // GetChatId returns the ChatId field value
-func (o *SendPollRequest) GetChatId() SendMessageRequestChatId {
+func (o *SendPollRequest) GetChatId() SendPollRequestChatId {
 	if o == nil {
-		var ret SendMessageRequestChatId
+		var ret SendPollRequestChatId
 		return ret
 	}
 
@@ -167,7 +167,7 @@ func (o *SendPollRequest) GetChatId() SendMessageRequestChatId {
 
 // GetChatIdOk returns a tuple with the ChatId field value
 // and a boolean to check if the value has been set.
-func (o *SendPollRequest) GetChatIdOk() (*SendMessageRequestChatId, bool) {
+func (o *SendPollRequest) GetChatIdOk() (*SendPollRequestChatId, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -175,7 +175,7 @@ func (o *SendPollRequest) GetChatIdOk() (*SendMessageRequestChatId, bool) {
 }
 
 // SetChatId sets field value
-func (o *SendPollRequest) SetChatId(v SendMessageRequestChatId) {
+func (o *SendPollRequest) SetChatId(v SendPollRequestChatId) {
 	o.ChatId = v
 }
 
@@ -1004,5 +1004,4 @@ func (v *NullableSendPollRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
 

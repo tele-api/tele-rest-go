@@ -3,11 +3,11 @@
  * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
- *    * - **Copyright**: Copyright (c) 2025 Qntx
+ *    * - **Copyright**: Copyright (c) 2026 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
- *    * - **Generator Version**: 7.14.0
+ *    * - **Version**: 9.3.0
+ *    * - **Modified**: 2026-01-01T02:06:16.405655294Z[Etc/UTC]
+ *    * - **Generator Version**: 7.18.0
  * 
  * <details>
  * <summary><strong>⚠️ Important Disclaimer & Limitation of Liability</strong></summary>
@@ -57,9 +57,9 @@ var _ MappedNullable = &SendGameRequest{}
 type SendGameRequest struct {
 	// Unique identifier of the business connection on behalf of which the message will be sent
 	BusinessConnectionId *string `json:"business_connection_id,omitempty"`
-	// Unique identifier for the target chat
+	// Unique identifier for the target chat. Games can't be sent to channel direct messages chats and channel chats.
 	ChatId int32 `json:"chat_id"`
-	// Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
+	// Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only
 	MessageThreadId *int32 `json:"message_thread_id,omitempty"`
 	// Short name of the game, serves as the unique identifier for the game. Set up your games via [@BotFather](https://t.me/botfather).
 	GameShortName string `json:"game_short_name"`
@@ -520,5 +520,4 @@ func (v *NullableSendGameRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
 

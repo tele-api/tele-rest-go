@@ -7,11 +7,13 @@ Name | Type | Description | Notes
 **Gift** | [**Gift**](Gift.md) |  | 
 **OwnedGiftId** | Pointer to **string** | *Optional*. Unique identifier of the received gift for the bot; only present for gifts received on behalf of business accounts | [optional] 
 **ConvertStarCount** | Pointer to **int32** | *Optional*. Number of Telegram Stars that can be claimed by the receiver by converting the gift; omitted if conversion to Telegram Stars is impossible | [optional] 
-**PrepaidUpgradeStarCount** | Pointer to **int32** | *Optional*. Number of Telegram Stars that were prepaid by the sender for the ability to upgrade the gift | [optional] 
+**PrepaidUpgradeStarCount** | Pointer to **int32** | *Optional*. Number of Telegram Stars that were prepaid for the ability to upgrade the gift | [optional] 
+**IsUpgradeSeparate** | Pointer to **bool** | *Optional*. *True*, if the gift&#39;s upgrade was purchased after the gift was sent | [optional] [default to true]
 **CanBeUpgraded** | Pointer to **bool** | *Optional*. *True*, if the gift can be upgraded to a unique gift | [optional] [default to true]
 **Text** | Pointer to **string** | *Optional*. Text of the message that was added to the gift | [optional] 
 **Entities** | Pointer to [**[]MessageEntity**](MessageEntity.md) | *Optional*. Special entities that appear in the text | [optional] 
 **IsPrivate** | Pointer to **bool** | *Optional*. *True*, if the sender and gift text are shown only to the gift receiver; otherwise, everyone will be able to see them | [optional] [default to true]
+**UniqueGiftNumber** | Pointer to **int32** | *Optional*. Unique number reserved for this gift when upgraded. See the *number* field in [UniqueGift](https://core.telegram.org/bots/api/#uniquegift) | [optional] 
 
 ## Methods
 
@@ -127,6 +129,31 @@ SetPrepaidUpgradeStarCount sets PrepaidUpgradeStarCount field to given value.
 
 HasPrepaidUpgradeStarCount returns a boolean if a field has been set.
 
+### GetIsUpgradeSeparate
+
+`func (o *GiftInfo) GetIsUpgradeSeparate() bool`
+
+GetIsUpgradeSeparate returns the IsUpgradeSeparate field if non-nil, zero value otherwise.
+
+### GetIsUpgradeSeparateOk
+
+`func (o *GiftInfo) GetIsUpgradeSeparateOk() (*bool, bool)`
+
+GetIsUpgradeSeparateOk returns a tuple with the IsUpgradeSeparate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsUpgradeSeparate
+
+`func (o *GiftInfo) SetIsUpgradeSeparate(v bool)`
+
+SetIsUpgradeSeparate sets IsUpgradeSeparate field to given value.
+
+### HasIsUpgradeSeparate
+
+`func (o *GiftInfo) HasIsUpgradeSeparate() bool`
+
+HasIsUpgradeSeparate returns a boolean if a field has been set.
+
 ### GetCanBeUpgraded
 
 `func (o *GiftInfo) GetCanBeUpgraded() bool`
@@ -226,6 +253,31 @@ SetIsPrivate sets IsPrivate field to given value.
 `func (o *GiftInfo) HasIsPrivate() bool`
 
 HasIsPrivate returns a boolean if a field has been set.
+
+### GetUniqueGiftNumber
+
+`func (o *GiftInfo) GetUniqueGiftNumber() int32`
+
+GetUniqueGiftNumber returns the UniqueGiftNumber field if non-nil, zero value otherwise.
+
+### GetUniqueGiftNumberOk
+
+`func (o *GiftInfo) GetUniqueGiftNumberOk() (*int32, bool)`
+
+GetUniqueGiftNumberOk returns a tuple with the UniqueGiftNumber field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUniqueGiftNumber
+
+`func (o *GiftInfo) SetUniqueGiftNumber(v int32)`
+
+SetUniqueGiftNumber sets UniqueGiftNumber field to given value.
+
+### HasUniqueGiftNumber
+
+`func (o *GiftInfo) HasUniqueGiftNumber() bool`
+
+HasUniqueGiftNumber returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

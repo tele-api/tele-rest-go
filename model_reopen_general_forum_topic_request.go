@@ -3,11 +3,11 @@
  * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
- *    * - **Copyright**: Copyright (c) 2025 Qntx
+ *    * - **Copyright**: Copyright (c) 2026 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
- *    * - **Generator Version**: 7.14.0
+ *    * - **Version**: 9.3.0
+ *    * - **Modified**: 2026-01-01T02:06:16.405655294Z[Etc/UTC]
+ *    * - **Generator Version**: 7.18.0
  * 
  * <details>
  * <summary><strong>⚠️ Important Disclaimer & Limitation of Liability</strong></summary>
@@ -55,7 +55,7 @@ var _ MappedNullable = &ReopenGeneralForumTopicRequest{}
 
 // ReopenGeneralForumTopicRequest Request parameters for reopenGeneralForumTopic
 type ReopenGeneralForumTopicRequest struct {
-	ChatId BotCommandScopeChatChatId `json:"chat_id"`
+	ChatId RestrictChatMemberRequestChatId `json:"chat_id"`
 }
 
 type _ReopenGeneralForumTopicRequest ReopenGeneralForumTopicRequest
@@ -64,7 +64,7 @@ type _ReopenGeneralForumTopicRequest ReopenGeneralForumTopicRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewReopenGeneralForumTopicRequest(chatId BotCommandScopeChatChatId) *ReopenGeneralForumTopicRequest {
+func NewReopenGeneralForumTopicRequest(chatId RestrictChatMemberRequestChatId) *ReopenGeneralForumTopicRequest {
 	this := ReopenGeneralForumTopicRequest{}
 	this.ChatId = chatId
 	return &this
@@ -79,9 +79,9 @@ func NewReopenGeneralForumTopicRequestWithDefaults() *ReopenGeneralForumTopicReq
 }
 
 // GetChatId returns the ChatId field value
-func (o *ReopenGeneralForumTopicRequest) GetChatId() BotCommandScopeChatChatId {
+func (o *ReopenGeneralForumTopicRequest) GetChatId() RestrictChatMemberRequestChatId {
 	if o == nil {
-		var ret BotCommandScopeChatChatId
+		var ret RestrictChatMemberRequestChatId
 		return ret
 	}
 
@@ -90,7 +90,7 @@ func (o *ReopenGeneralForumTopicRequest) GetChatId() BotCommandScopeChatChatId {
 
 // GetChatIdOk returns a tuple with the ChatId field value
 // and a boolean to check if the value has been set.
-func (o *ReopenGeneralForumTopicRequest) GetChatIdOk() (*BotCommandScopeChatChatId, bool) {
+func (o *ReopenGeneralForumTopicRequest) GetChatIdOk() (*RestrictChatMemberRequestChatId, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -98,7 +98,7 @@ func (o *ReopenGeneralForumTopicRequest) GetChatIdOk() (*BotCommandScopeChatChat
 }
 
 // SetChatId sets field value
-func (o *ReopenGeneralForumTopicRequest) SetChatId(v BotCommandScopeChatChatId) {
+func (o *ReopenGeneralForumTopicRequest) SetChatId(v RestrictChatMemberRequestChatId) {
 	o.ChatId = v
 }
 
@@ -188,5 +188,4 @@ func (v *NullableReopenGeneralForumTopicRequest) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
 

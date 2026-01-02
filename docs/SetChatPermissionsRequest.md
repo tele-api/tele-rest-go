@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ChatId** | [**BotCommandScopeChatChatId**](BotCommandScopeChatChatId.md) |  | 
+**ChatId** | [**RestrictChatMemberRequestChatId**](RestrictChatMemberRequestChatId.md) |  | 
 **Permissions** | [**ChatPermissions**](ChatPermissions.md) |  | 
 **UseIndependentChatPermissions** | Pointer to **bool** | Pass *True* if chat permissions are set independently. Otherwise, the *can\\_send\\_other\\_messages* and *can\\_add\\_web\\_page\\_previews* permissions will imply the *can\\_send\\_messages*, *can\\_send\\_audios*, *can\\_send\\_documents*, *can\\_send\\_photos*, *can\\_send\\_videos*, *can\\_send\\_video\\_notes*, and *can\\_send\\_voice\\_notes* permissions; the *can\\_send\\_polls* permission will imply the *can\\_send\\_messages* permission. | [optional] 
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewSetChatPermissionsRequest
 
-`func NewSetChatPermissionsRequest(chatId BotCommandScopeChatChatId, permissions ChatPermissions, ) *SetChatPermissionsRequest`
+`func NewSetChatPermissionsRequest(chatId RestrictChatMemberRequestChatId, permissions ChatPermissions, ) *SetChatPermissionsRequest`
 
 NewSetChatPermissionsRequest instantiates a new SetChatPermissionsRequest object
 This constructor will assign default values to properties that have it defined,
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetChatId
 
-`func (o *SetChatPermissionsRequest) GetChatId() BotCommandScopeChatChatId`
+`func (o *SetChatPermissionsRequest) GetChatId() RestrictChatMemberRequestChatId`
 
 GetChatId returns the ChatId field if non-nil, zero value otherwise.
 
 ### GetChatIdOk
 
-`func (o *SetChatPermissionsRequest) GetChatIdOk() (*BotCommandScopeChatChatId, bool)`
+`func (o *SetChatPermissionsRequest) GetChatIdOk() (*RestrictChatMemberRequestChatId, bool)`
 
 GetChatIdOk returns a tuple with the ChatId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChatId
 
-`func (o *SetChatPermissionsRequest) SetChatId(v BotCommandScopeChatChatId)`
+`func (o *SetChatPermissionsRequest) SetChatId(v RestrictChatMemberRequestChatId)`
 
 SetChatId sets ChatId field to given value.
 

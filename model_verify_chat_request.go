@@ -3,11 +3,11 @@
  * The Bot API is an HTTP-based interface created for developers keen on building bots for Telegram. To learn how to create and set up a bot, please consult our Introduction to Bots and Bot FAQ.
  * 
  * ## Metadata
- *    * - **Copyright**: Copyright (c) 2025 Qntx
+ *    * - **Copyright**: Copyright (c) 2026 Qntx
  *    * - **Author**: ΣX <gitctrlx@gmail.com>
- *    * - **Version**: 9.1.0
- *    * - **Modified**: 2025-07-05T02:41:44.515216840Z[Etc/UTC]
- *    * - **Generator Version**: 7.14.0
+ *    * - **Version**: 9.3.0
+ *    * - **Modified**: 2026-01-01T02:06:16.405655294Z[Etc/UTC]
+ *    * - **Generator Version**: 7.18.0
  * 
  * <details>
  * <summary><strong>⚠️ Important Disclaimer & Limitation of Liability</strong></summary>
@@ -55,7 +55,7 @@ var _ MappedNullable = &VerifyChatRequest{}
 
 // VerifyChatRequest Request parameters for verifyChat
 type VerifyChatRequest struct {
-	ChatId SendMessageRequestChatId `json:"chat_id"`
+	ChatId VerifyChatRequestChatId `json:"chat_id"`
 	// Custom description for the verification; 0-70 characters. Must be empty if the organization isn't allowed to provide a custom verification description.
 	CustomDescription *string `json:"custom_description,omitempty"`
 }
@@ -66,7 +66,7 @@ type _VerifyChatRequest VerifyChatRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVerifyChatRequest(chatId SendMessageRequestChatId) *VerifyChatRequest {
+func NewVerifyChatRequest(chatId VerifyChatRequestChatId) *VerifyChatRequest {
 	this := VerifyChatRequest{}
 	this.ChatId = chatId
 	return &this
@@ -81,9 +81,9 @@ func NewVerifyChatRequestWithDefaults() *VerifyChatRequest {
 }
 
 // GetChatId returns the ChatId field value
-func (o *VerifyChatRequest) GetChatId() SendMessageRequestChatId {
+func (o *VerifyChatRequest) GetChatId() VerifyChatRequestChatId {
 	if o == nil {
-		var ret SendMessageRequestChatId
+		var ret VerifyChatRequestChatId
 		return ret
 	}
 
@@ -92,7 +92,7 @@ func (o *VerifyChatRequest) GetChatId() SendMessageRequestChatId {
 
 // GetChatIdOk returns a tuple with the ChatId field value
 // and a boolean to check if the value has been set.
-func (o *VerifyChatRequest) GetChatIdOk() (*SendMessageRequestChatId, bool) {
+func (o *VerifyChatRequest) GetChatIdOk() (*VerifyChatRequestChatId, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -100,7 +100,7 @@ func (o *VerifyChatRequest) GetChatIdOk() (*SendMessageRequestChatId, bool) {
 }
 
 // SetChatId sets field value
-func (o *VerifyChatRequest) SetChatId(v SendMessageRequestChatId) {
+func (o *VerifyChatRequest) SetChatId(v VerifyChatRequestChatId) {
 	o.ChatId = v
 }
 
@@ -226,5 +226,4 @@ func (v *NullableVerifyChatRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
 
